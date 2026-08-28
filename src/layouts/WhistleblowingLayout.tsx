@@ -29,7 +29,7 @@ export function WhistleblowingLayout(): ReactElement {
         </div>
         <nav className="flex-1 space-y-1 px-3 py-5">
           <NavItem to={ROUTES.DASHBOARD} label={t('nav.dashboard', { defaultValue: 'Dashboard' })} icon={LayoutDashboard} expanded={expanded} onClick={close} />
-          <NavItem to={ROUTES.WHISTLEBLOWING} label={t('modules.whistleblowing', { defaultValue: 'Whistleblowing' })} icon={MessageSquareWarning} expanded={expanded} onClick={close} />
+          <NavItem to={ROUTES.WHISTLEBLOWING} label={t('modules.whistleblowing.label', { defaultValue: 'Whistleblowing' })} icon={MessageSquareWarning} expanded={expanded} onClick={close} />
         </nav>
         <div className={`flex items-center border-t border-slate-200 p-3 ${expanded ? '' : 'lg:justify-center lg:px-0'}`}>
           {expanded ? <PortalUserMenu placement="sidebar" profileRoute={ROUTES.PROFILE} settingsRoute={ROUTES.MFA_SETTINGS} logoutRoute={ROUTES.AUTH.LOGIN} /> : <PortalUserMenu placement="sidebar" sidebarCollapsed profileRoute={ROUTES.PROFILE} settingsRoute={ROUTES.MFA_SETTINGS} logoutRoute={ROUTES.AUTH.LOGIN} />}

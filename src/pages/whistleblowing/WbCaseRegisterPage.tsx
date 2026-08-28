@@ -43,6 +43,7 @@ export function WbCaseRegisterPage(): ReactElement {
   const { has } = usePermissions();
   const navigate = useNavigate();
   const canAdmin = has(WB_PERMISSIONS.admin);
+  const canCreateManual = has(WB_PERMISSIONS.create);
   const isRtl = i18n.dir() === 'rtl';
   const tableHeaderClass = cn('px-4 py-2.5 font-medium', isRtl ? 'text-right' : 'text-left');
 
@@ -75,7 +76,7 @@ export function WbCaseRegisterPage(): ReactElement {
         <h2 className="text-base font-semibold text-slate-800 dark:text-slate-200">
           {t('cases.title', { defaultValue: 'Case register' })}
         </h2>
-        {canAdmin && (
+        {canCreateManual && (
           <Button
             size="sm"
             onClick={() => {

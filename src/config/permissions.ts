@@ -77,6 +77,7 @@ export const PERMISSIONS = {
   LAND_ASSET_UPDATE: 'land_asset:update',
   LAND_ASSET_DELETE: 'land_asset:delete',
   WHISTLEBLOWING_CASE_READ: 'whistleblowing_case:read',
+  WHISTLEBLOWING_CASE_CREATE: 'whistleblowing_case:create',
   WHISTLEBLOWING_CASE_INVESTIGATE: 'whistleblowing_case:investigate',
   WHISTLEBLOWING_CASE_ADMIN: 'whistleblowing_case:admin',
   WHISTLEBLOWING_CASE_INDEPENDENT_REVIEW: 'whistleblowing_case:independent_review',

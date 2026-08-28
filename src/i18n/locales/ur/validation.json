@@ -1,0 +1,25 @@
+{
+  "required": "یہ فیلڈ لازمی ہے۔",
+  "requiredNamed": "{{field}} لازمی ہے۔",
+  "email": "درست ای میل پتہ درج کریں۔",
+  "minLength": "کم از کم {{count}} حروف ہونے چاہئیں۔",
+  "maxLength": "زیادہ سے زیادہ {{count}} حروف ہونے چاہئیں۔",
+  "min": "کم از کم {{min}} ہونا چاہیے۔",
+  "max": "زیادہ سے زیادہ {{max}} ہونا چاہیے۔",
+  "passwordsMustMatch": "پاس ورڈز مطابقت نہیں رکھتے۔",
+  "passwordWeak": "پاس ورڈ کم از کم 12 حروف کا ہو اور اس میں حروف اور اعداد شامل ہوں۔",
+  "invalidUrl": "درست URL درج کریں۔",
+  "invalidNumber": "درست نمبر درج کریں۔",
+  "invalidDate": "درست تاریخ درج کریں۔",
+  "positiveNumber": "صفر سے بڑا نمبر درج کریں۔",
+  "selectOption": "ایک آپشن منتخب کریں۔",
+  "fileTooLarge": "فائل بہت بڑی ہے۔ زیادہ سے زیادہ سائز {{maxSize}} ہے۔",
+  "unsupportedFileType": "یہ فائل ٹائپ سپورٹ نہیں ہے۔",
+  "passwordRequirements": {
+    "length": "کم از کم {{count}} حروف",
+    "uppercase": "ایک بڑا انگریزی حرف (A–Z)",
+    "lowercase": "ایک چھوٹا انگریزی حرف (a–z)",
+    "number": "ایک عدد (0–9)",
+    "special": "ایک خصوصی علامت (!@#$…)"
+  }
+}

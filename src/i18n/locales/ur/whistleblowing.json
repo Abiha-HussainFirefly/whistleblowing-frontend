@@ -1,0 +1,858 @@
+{
+  "page": {
+    "title": "شکایت درج کریں",
+    "subtitle": "مبینہ بدعنوانی کی خفیہ طور پر اطلاع دیں۔ آپ گمنام رہ سکتے ہیں۔",
+    "noContext": "کوئی فعال ادارہ سیاق موجود نہیں۔",
+    "loading": "لوڈ ہو رہا ہے…",
+    "notEnabled": "آپ کے ادارے کے لیے وِسل بلوئنگ رپورٹنگ فعال نہیں ہے۔",
+    "loadingSecure": "محفوظ رپورٹنگ پورٹل لوڈ ہو رہا ہے...",
+    "portalUnavailable": "پورٹل دستیاب نہیں",
+    "portalNotFound": "یہ رپورٹنگ پورٹل نہیں ملا۔",
+    "reportSubmitted": "رپورٹ جمع ہو گئی",
+    "reportSubmittedToast": "رپورٹ کامیابی سے جمع ہو گئی۔ براہ کرم اسناد ابھی محفوظ کر لیں۔",
+    "portalSubtitle": "{{organization}} کو خفیہ رپورٹ جمع کرائیں۔ آپ گمنام رہ سکتے ہیں۔"
+  },
+  "form": {
+    "takeTour": "ٹور لیں",
+    "cards": {
+      "overview": {
+        "title": "واقعے کا جائزہ",
+        "subtitle": "جس شکایت کی آپ اطلاع دے رہے ہیں اس کی نوعیت بیان کریں"
+      },
+      "location": {
+        "title": "یہ کہاں پیش آیا؟",
+        "subtitle": "ہمیں واقعے کے مقام کو سمجھنے میں مدد کریں"
+      },
+      "more": {
+        "title": "مزید بتائیں",
+        "subtitle": "اضافی تفصیل ہمیں بھرپور تحقیق میں مدد دیتی ہے"
+      },
+      "contact": {
+        "title": "آپ کی رابطہ تفصیلات",
+        "subtitle": "صرف آپ کی رپورٹ کی پیروی کے لیے استعمال ہوتی ہیں"
+      },
+      "identity": {
+        "title": "شناخت اور رازداری",
+        "subtitle": "منتخب کریں کہ ہم آپ سے کیسے رابطہ کریں اور کن افراد کو خارج رکھا جائے"
+      },
+      "review": {
+        "title": "جائزہ لیں اور جمع کرائیں",
+        "subtitle": "رپورٹ جمع کرانے سے پہلے شرائط کی تصدیق کریں"
+      }
+    },
+    "fields": {
+      "category": "واقعے کی قسم",
+      "whatHappened": "کیا ہوا؟",
+      "whatHappenedHint": "کون، کیا، کہاں، کب اور کیسے۔ آپ کی گمنامی محفوظ ہے۔",
+      "location": "وہ مقام جہاں واقعہ پیش آیا",
+      "city": "شہر",
+      "state": "ریاست / صوبہ",
+      "postalCode": "زپ / پوسٹل کوڈ",
+      "country": "ملک",
+      "region": "خطہ / کاروباری یونٹ",
+      "relationship": "ادارے کے ساتھ آپ کا تعلق",
+      "involved": "اس رویے میں ملوث فرد/افراد",
+      "previouslyReported": "کیا اس کی اطلاع پہلے انتظامیہ کو دی جا چکی ہے؟",
+      "dateOfOccurrence": "وقوع کی تاریخ",
+      "whenLast": "یہ آخری بار کب ہوا؟",
+      "duration": "یہ کب سے ہو رہا ہے؟",
+      "awareness": "آپ کو اس کا علم کیسے ہوا؟",
+      "email": "آپ کا ای میل (اپ ڈیٹس کے لیے)",
+      "phone": "آپ کا فون نمبر",
+      "bestTime": "آپ سے رابطے کا بہترین وقت"
+    },
+    "placeholders": {
+      "selectCategory": "ایک قسم منتخب کریں…",
+      "selectOne": "ایک منتخب کریں…",
+      "notSpecified": "غیر متعین",
+      "whatHappened": "براہِ کرم زیادہ سے زیادہ تفصیل فراہم کریں — کون، کیا، کہاں، کب اور آپ کو یہ کیسے معلوم ہوا۔ اگر آپ گمنام رہنا چاہتے ہیں تو اپنی شناخت شامل کرنے سے گریز کریں۔",
+      "location": "طبعی پتہ، برانچ اور/یا اسٹور نمبر",
+      "whenLast": "مثلاً دو ہفتے پہلے",
+      "email": "you@example.com",
+      "bestTime": "مثلاً ہفتے کے دنوں میں صبح"
+    },
+    "characters": "{{count}} حروف",
+    "anonymous": {
+      "title": "گمنام طور پر جمع کرائیں",
+      "on": "آپ کی شناخت شیئر نہیں کی جائے گی۔",
+      "off": "آپ کی رابطہ تفصیلات شامل کی جائیں گی۔"
+    },
+    "conflictReviewerSelection": {
+      "title": "مخصوص آزادانہ جائزہ لینے والوں کو خارج کریں (اختیاری)",
+      "description": "صرف ان آزادانہ جائزہ لینے والوں کو منتخب کریں جن کے بارے میں مفادات کے ٹکراؤ کا امکان ہو۔ دیگر آزادانہ جائزہ لینے والے اس رپورٹ تک رسائی حاصل کر سکتے ہیں۔",
+      "protected": "ادارے کا مالک ہمیشہ محفوظ رہتا ہے، اور کم از کم ایک اہل منتظم کا دستیاب رہنا ضروری ہے۔",
+      "none": "فی الحال کوئی آزادانہ جائزہ لینے والا تشکیل شدہ نہیں ہے۔"
+    },
+    "conflict": {
+      "title": "مفادات کا ٹکراؤ",
+      "optional": "(اختیاری)",
+      "description": "اگر یہ رپورٹ کسی ایسے شخص سے متعلق ہے جو عام طور پر وسل بلونگ کیسز سنبھالتا ہے تو یہ اختیار منتخب کریں۔ رپورٹ ادارے کی آزادانہ جائزہ ٹیم کو بھیجی جائے گی اور معمول کی ٹیم کو رسائی نہیں دی جائے گی۔"
+    },
+    "terms": "میں اس رپورٹ کو درج کرنے کی شرائط و ضوابط سے متفق ہوں اور تصدیق کرتا/کرتی ہوں کہ فراہم کردہ معلومات میرے علم کے مطابق درست ہیں۔",
+    "submit": "رپورٹ جمع کرائیں",
+    "submitting": "جمع ہو رہی ہے…",
+    "expect": {
+      "title": "کیا توقع رکھیں",
+      "directToCompliance": "آپ کی رپورٹ مناسب آزادانہ جائزہ یا کمپلائنس ٹیم کو بھیجی جائے گی۔",
+      "caseReference": "آپ کو پیش رفت کو ٹریک کرنے کے لیے کیس ریفرنس ملے گا۔",
+      "noRetaliation": "رپورٹ کرنے والوں کے خلاف انتقامی کارروائی سختی سے ممنوع ہے۔"
+    },
+    "validation": {
+      "category": "براہِ کرم واقعے کی قسم منتخب کریں۔",
+      "description": "براہِ کرم مزید مکمل تفصیل فراہم کریں (کم از کم 10 حروف)۔",
+      "email": "ای میل فراہم کریں، یا گمنام طور پر رپورٹ کرنے کا انتخاب کریں۔",
+      "terms": "اپنی رپورٹ جمع کرانے کے لیے براہِ کرم شرائط و ضوابط قبول کریں۔",
+      "descriptionTooLong": "براہِ کرم وضاحت کو 20,000 حروف یا اس سے کم تک مختصر کریں۔",
+      "futureDate": "واقعے کی تاریخ مستقبل میں نہیں ہو سکتی۔"
+    },
+    "steps": {
+      "incident": "واقعے کی تفصیل",
+      "location": "مقام",
+      "details": "افراد اور وقت",
+      "identity": "شناخت",
+      "review": "جائزہ اور جمع کرائیں"
+    },
+    "navigation": {
+      "back": "واپس",
+      "next": "آگے"
+    }
+  },
+  "persons": {
+    "firstName": "پہلا نام",
+    "lastName": "آخری نام",
+    "titleRole": "عہدہ / کردار",
+    "titlePlaceholder": "مثلاً نائٹ سپروائزر",
+    "remove": "فرد ہٹائیں",
+    "addFirst": "فرد شامل کریں",
+    "addAnother": "مزید شامل کریں",
+    "examples": "مثالیں: «John Doe، ڈائریکٹر داخلی آڈٹ» · «نامعلوم، نامعلوم، نائٹ سپروائزر»"
+  },
+  "share": {
+    "title": "قابلِ اشتراک رپورٹنگ لنک",
+    "description": "یہ عوامی لنک ملازمین، ٹھیکیداروں، وینڈرز یا کسی بھی بیرونی فریق کے ساتھ شیئر کریں۔ وہ اکاؤنٹ کے بغیر — اگر چاہیں تو گمنام طور پر — خفیہ رپورٹ جمع کرا سکتے ہیں۔",
+    "copy": "کاپی کریں",
+    "copied": "کاپی ہو گیا",
+    "open": "کھولیں",
+    "publicTitle": "عوامی رپورٹنگ لنک",
+    "publicDescription": "یہ لنک ملازمین، ٹھیکیداروں، وینڈرز یا بیرونی رپورٹ کرنے والوں کے ساتھ شیئر کریں۔",
+    "copyLink": "لنک کاپی کریں",
+    "openPublicForm": "عوامی فارم کھولیں",
+    "bullets": {
+      "noAccount": "رپورٹ جمع کرانے کے لیے اکاؤنٹ ضروری نہیں۔",
+      "anonymous": "گمنام رپورٹنگ دستیاب رہتی ہے۔",
+      "secureFlow": "رپورٹس اسی محفوظ انٹیک فلو تک پہنچتی ہیں۔"
+    }
+  },
+  "credentials": {
+    "receivedTitle": "آپ کی رپورٹ موصول ہو گئی ہے۔",
+    "receivedDescription": "یہ اسناد ابھی محفوظ کر لیں — پاس ورڈ صرف ایک بار دکھایا جاتا ہے اور بحال نہیں کیا جا سکتا۔ دوبارہ لاگ اِن ہو کر اپنے کیس کو ٹریک کرنے کے لیے انہیں استعمال کریں۔",
+    "loginCredentials": "آپ کی لاگ اِن اسناد",
+    "caseReference": "کیس ریفرنس",
+    "password": "پاس ورڈ",
+    "track": "میرا کیس ٹریک کریں",
+    "trackDescription": "ایک نئے ٹیب میں کھلتا ہے تاکہ آپ کا کیس ریفرنس اور پاس ورڈ یہاں نظر آتے رہیں۔ اس صفحے سے جانے سے پہلے انہیں محفوظ کر لیں — پاس ورڈ صرف ایک بار دکھایا جاتا ہے۔",
+    "reveal": "ظاہر کریں",
+    "hide": "چھپائیں",
+    "copy": "کاپی کریں",
+    "copied": "کاپی ہو گیا!",
+    "saveTitle": "یہ اسناد ابھی محفوظ کر لیں۔",
+    "saveDescription": "انہیں ٹیکسٹ فائل کے طور پر ڈاؤن لوڈ کریں یا کسی محفوظ جگہ کاپی کر لیں۔ پاس ورڈ دوبارہ نہیں دکھایا جائے گا۔",
+    "download": "ٹیکسٹ فائل ڈاؤن لوڈ کریں",
+    "downloadTitle": "وسل بلونگ رپورٹ کی اسناد",
+    "downloadReminder": "یہ اسناد محفوظ رکھیں۔ پاس ورڈ صرف ایک بار دکھایا جاتا ہے۔"
+  },
+  "category": {
+    "FRAUD": "دھوکہ دہی",
+    "BRIBERY_CORRUPTION": "رشوت اور بدعنوانی",
+    "HARASSMENT": "ہراسانی",
+    "CONFLICT_OF_INTEREST": "مفادات کا ٹکراؤ",
+    "DATA_PRIVACY": "ڈیٹا پرائیویسی اور تحفظ",
+    "HEALTH_SAFETY": "صحت اور حفاظت",
+    "DISCRIMINATION": "امتیازی سلوک",
+    "RETALIATION": "انتقامی کارروائی",
+    "OTHER_MISCONDUCT": "دیگر بدعنوانی",
+    "ACCOUNTING_AUDITING": "اکاؤنٹنگ، آڈٹنگ اور مالی رپورٹنگ",
+    "COMPENSATION_BENEFITS": "معاوضہ اور مراعات",
+    "SGBP_COMPLIANCE": "معیاری عمومی کاروباری اصولوں کی تعمیل",
+    "CONFIDENTIAL_INFORMATION": "خفیہ اور ملکیتی معلومات",
+    "DISCLOSURE_COMMUNICATIONS": "افشا اور کاروباری مواصلات",
+    "DIVERSITY_EQUITY_INCLUSION": "تنوع، مساوات اور شمولیت",
+    "DUE_DILIGENCE": "اخلاقیات و تعمیل کی مناسب جانچ",
+    "ENVIRONMENTAL": "ماحولیات",
+    "FAIR_COMPETITION": "آزاد اور منصفانہ مقابلہ",
+    "GLOBAL_TRADE": "عالمی تجارت",
+    "HUMAN_RIGHTS": "انسانی حقوق",
+    "IMMINENT_THREAT": "کسی شخص، جانوروں یا املاک کو فوری خطرہ",
+    "INSIDER_TRADING": "اندرونی معلومات پر تجارت",
+    "INTELLECTUAL_PROPERTY": "دانشورانہ املاک",
+    "ASSET_MISUSE": "اثاثوں کا غلط استعمال یا خردبرد",
+    "POLITICAL_ACTIVITY": "سیاسی سرگرمی",
+    "PRODUCT_QUALITY_SAFETY": "مصنوعات کا معیار اور حفاظت",
+    "SUBSTANCE_ABUSE": "منشیات کا استعمال",
+    "IT_ELECTRONIC_COMMS": "آئی ٹی اور برقی مواصلات کا استعمال",
+    "WORKPLACE_CIVILITY": "کام کی جگہ پر شائستگی",
+    "OTHER_BUSINESS_INTEGRITY": "دیگر کاروباری دیانت",
+    "OTHER_HUMAN_RESOURCES": "دیگر انسانی وسائل",
+    "INQUIRY": "استفسار"
+  },
+  "relationship": {
+    "EMPLOYEE": "ملازم",
+    "FORMER_EMPLOYEE": "سابق ملازم",
+    "CONTRACTOR": "ٹھیکیدار",
+    "VENDOR_SUPPLIER": "وینڈر / سپلائر",
+    "CUSTOMER": "گاہک",
+    "BUSINESS_PARTNER": "کاروباری شراکت دار",
+    "OTHER_RELATIONSHIP": "دیگر"
+  },
+  "duration": {
+    "ONE_TIME": "ایک بار کا واقعہ",
+    "LESS_THAN_MONTH": "ایک ماہ سے کم",
+    "ONE_TO_THREE_MONTHS": "1 سے 3 ماہ",
+    "THREE_TO_SIX_MONTHS": "3 سے 6 ماہ",
+    "SIX_TO_TWELVE_MONTHS": "6 سے 12 ماہ",
+    "OVER_A_YEAR": "ایک سال سے زیادہ",
+    "ONGOING": "جاری ہے",
+    "UNKNOWN_DURATION": "نامعلوم"
+  },
+  "awareness": {
+    "WITNESSED": "میں نے خود دیکھا",
+    "TOLD_BY_SOMEONE": "کسی اور نے بتایا",
+    "REVIEWED_DOCUMENTS": "دستاویزات / ریکارڈ کا جائزہ لیا",
+    "RUMOR": "افواہ سنی",
+    "INVOLVED": "میں ملوث تھا",
+    "OTHER_SOURCE": "دیگر"
+  },
+  "previouslyReported": {
+    "YES": "ہاں",
+    "NO": "نہیں",
+    "UNKNOWN": "معلوم نہیں / ظاہر نہیں کرنا چاہتا"
+  },
+  "tour": {
+    "buttons": {
+      "next": "اگلا ←",
+      "back": "→ پیچھے",
+      "done": "مکمل",
+      "skip": "ٹور چھوڑیں"
+    },
+    "welcome": {
+      "title": "👋 فارم کی مختصر رہنمائی",
+      "text": "یہ ٹور آپ کو رپورٹ فارم کے ہر حصے سے گزارتا ہے۔ اس میں تقریباً 60 سیکنڈ لگتے ہیں۔ آپ کی شناخت پورے دوران محفوظ رہتی ہے — گمنام رہنا آپ کے اختیار میں ہے۔"
+    },
+    "category": {
+      "title": "📋 واقعے کی قسم",
+      "text": "پہلے وہ قسم منتخب کریں جو آپ کے مشاہدے کو بہترین طور پر بیان کرے — مثلاً دھوکہ دہی، ہراسانی یا حفاظتی خلاف ورزی۔ اگر یقین نہ ہو تو قریب ترین کا انتخاب کریں۔"
+    },
+    "description": {
+      "title": "✍️ کیا ہوا؟",
+      "text": "واقعے کو زیادہ سے زیادہ تفصیل کے ساتھ بیان کریں — کون ملوث تھا، کیا ہوا، کہاں، کب اور آپ کو یہ کیسے معلوم ہوا۔ جتنی زیادہ تفصیل ہوگی، تحقیق اتنی آسان ہوگی۔ <strong>اگر آپ گمنام رہنا چاہتے ہیں تو اپنا نام شامل نہ کریں</strong>۔"
+    },
+    "location": {
+      "title": "📍 مقام",
+      "text": "جتنی مقام کی تفصیل آپ جانتے ہیں درج کریں — مخصوص جگہ، شہر یا خطہ جہاں واقعہ پیش آیا۔ یہ آپ کی رپورٹ کو درست ٹیم تک پہنچانے میں مدد دیتا ہے۔ یہاں تمام خانے اختیاری ہیں۔"
+    },
+    "relationship": {
+      "title": "🔗 آپ کا تعلق",
+      "text": "ہمیں بتائیں کہ ادارے کے ساتھ آپ کا کیا تعلق ہے — ملازم، ٹھیکیدار، سپلائر وغیرہ۔ یہ ہمیں آپ کی رپورٹ کا سیاق سمجھنے میں مدد دیتا ہے۔ یہ خانہ اختیاری ہے۔"
+    },
+    "involved": {
+      "title": "👤 ملوث افراد",
+      "text": "اُن تمام افراد کے نام شامل کریں جو اس رویے میں براہِ راست ملوث ہیں جس کی آپ اطلاع دے رہے ہیں۔ پہلا نام، آخری نام اور عہدہ سب اختیاری ہیں — جو معلوم ہو فراہم کریں۔"
+    },
+    "dates": {
+      "title": "📅 وقت",
+      "text": "ہمیں بتائیں کہ واقعہ کب پیش آیا اور آیا یہ جاری ہے۔ تخمینی تاریخیں بھی (جیسے «پچھلے مہینے») تفتیش کاروں کو وقتی ترتیب بنانے میں مدد دیتی ہیں۔"
+    },
+    "anonymous": {
+      "title": "🔒 گمنام رہیں؟",
+      "text": "پہلے سے طے شدہ طور پر آپ کی رپورٹ گمنام ہے — ہم کبھی نہیں جانتے کہ آپ کون ہیں۔ اگر آپ اپنے کیس پر اپ ڈیٹس وصول کرنا چاہتے ہیں تو یہ خانہ غیر منتخب کریں اور رابطہ ای میل فراہم کریں۔ آپ کی تفصیلات سختی سے خفیہ رکھی جاتی ہیں۔"
+    },
+    "conflict": {
+      "title": "🛡️ مفادات کا ٹکراؤ",
+      "text": "اگر آپ کی رپورٹ کمپلائنس ٹیم کے کسی رکن سے متعلق ہے تو اس کیس کو اُن سے چھپانے کے لیے یہاں اُن کا نام نشان زد کریں۔ آپ کی رپورٹ پھر بھی کمپلائنس ایڈمنسٹریٹر تک پہنچے گی۔"
+    },
+    "submit": {
+      "title": "✅ جمع کرانے کے لیے تیار",
+      "text": "شرائط قبول کریں اور <strong>رپورٹ جمع کرائیں</strong> پر کلک کریں۔ آپ کو فوراً ایک کیس ریفرنس نمبر ملے گا — اپنی شناخت ظاہر کیے بغیر رپورٹ کی پیش رفت ٹریک کرنے کے لیے اسے محفوظ کر لیں۔"
+    }
+  },
+  "shell": {
+    "defaultOrgName": "وسل بلونگ پورٹل",
+    "organizationLogoAlt": "ادارہ",
+    "subtitle": "خفیہ رپورٹنگ",
+    "footerPrefix": "آپ کی رپورٹ انکرپٹڈ ہے اور خفیہ طور پر سنبھالی جاتی ہے۔ آپ گمنام طور پر رپورٹ کر سکتے ہیں۔",
+    "trackExisting": "موجودہ رپورٹ ٹریک کریں",
+    "trackReport": "رپورٹ ٹریک کریں"
+  },
+  "track": {
+    "actions": {
+      "signOut": "سائن آؤٹ"
+    },
+    "toasts": {
+      "signedOut": "آپ کامیابی سے سائن آؤٹ ہو گئے۔"
+    },
+    "case": {
+      "title": "آپ کی رپورٹ",
+      "loading": "آپ کا کیس لوڈ ہو رہا ہے...",
+      "referenceSubtitle": "حوالہ {{ref}}",
+      "submittedOn": "جمع کرانے کی تاریخ {{date}}",
+      "detailsTitle": "آپ کی رپورٹ",
+      "fields": {
+        "dateOfOccurrence": "واقعے کی تاریخ",
+        "location": "مقام",
+        "relationship": "تعلق",
+        "whenLast": "یہ آخری بار کب ہوا",
+        "duration": "دورانیہ",
+        "previouslyReported": "کیا پہلے رپورٹ کیا گیا"
+      },
+      "identifiedPersons": "آپ کے بتائے گئے افراد",
+      "personTitleSuffix": " - {{title}}",
+      "outcome": "نتیجہ"
+    },
+    "login": {
+      "title": "اپنی رپورٹ ٹریک کریں",
+      "subtitle": "کیس حوالہ اور پاس ورڈ سے لاگ اِن کریں۔",
+      "eyebrow": "خفیہ کیس تک رسائی",
+      "description": "رپورٹ جمع کراتے وقت ملنے والی اسناد استعمال کریں۔ کیس کا پاس ورڈ دوبارہ حاصل نہیں کیا جا سکتا، اس لیے اسے محفوظ رکھیں۔",
+      "cardTitle": "اپنے کیس تک رسائی",
+      "cardSubtitle": "کیس حوالہ اور پاس ورڈ بالکل ویسے درج کریں جیسے دیے گئے تھے۔",
+      "referenceLabel": "کیس حوالہ",
+      "referencePlaceholder": "WB-2026-XXXXXX",
+      "passwordLabel": "پاس ورڈ",
+      "signingIn": "سائن اِن ہو رہا ہے...",
+      "submit": "میرا کیس دیکھیں",
+      "privacyNote": "یہ صفحہ ملازم لاگ اِن سے الگ ہے۔ یہ صرف ان اسناد سے منسلک رپورٹ کھولتا ہے۔",
+      "sessionExpired": "آپ کا سیشن ختم ہو گیا ہے۔ دوبارہ لاگ اِن کریں۔",
+      "validation": {
+        "empty": "کیس حوالہ اور پاس ورڈ درج کریں۔"
+      },
+      "assurances": {
+        "status": "تحقیقات کی صورتحال محفوظ طریقے سے دیکھیں۔",
+        "messages": "اپنی شناخت ظاہر کیے بغیر اضافی معلومات بھیجیں۔",
+        "attachments": "کیس کھلا رہنے تک اضافی ثبوت منسلک کریں۔"
+      }
+    },
+    "messages": {
+      "title": "پیغامات",
+      "emptyTitle": "ابھی کوئی پیغام نہیں۔",
+      "emptyBody": "تحقیقاتی ٹیم آپ سے یہاں رابطہ کر سکتی ہے۔",
+      "authorYou": "آپ",
+      "authorTeam": "تحقیقاتی ٹیم",
+      "loading": "پیغامات لوڈ ہو رہے ہیں...",
+      "placeholder": "مزید معلومات شامل کریں یا تفتیش کاروں کو جواب دیں...",
+      "uploading": "اپ لوڈ ہو رہا ہے...",
+      "attachEvidence": "ثبوت منسلک کریں",
+      "uploadedToast": "آپ کا ثبوت اپ لوڈ ہو گیا۔",
+      "addComment": "تبصرہ شامل کریں",
+      "send": "بھیجیں"
+    },
+    "comments": {
+      "sheetTitle": "تبصرہ شامل کریں",
+      "sheetDescription": "تحقیقاتی ٹیم کو محفوظ فالو اَپ پیغام بھیجیں۔",
+      "helper": "اپنی رپورٹ سے متعلق اپ ڈیٹس، سوالات یا اضافی سیاق و سباق کے لیے اسے استعمال کریں۔",
+      "label": "تبصرہ",
+      "placeholder": "مزید معلومات شامل کریں یا تفتیش کاروں کو جواب دیں...",
+      "cancel": "منسوخ کریں",
+      "sending": "بھیجا جا رہا ہے...",
+      "send": "تبصرہ بھیجیں",
+      "sentToast": "آپ کا تبصرہ بھیج دیا گیا۔"
+    },
+    "attachments": {
+      "title": "آپ کے ثبوت",
+      "count_one": "{{count}} فائل",
+      "count_other": "{{count}} فائلیں",
+      "uploadedToast": "آپ کا ثبوت اپ لوڈ ہو گیا۔"
+    }
+  },
+  "header": {
+    "title": "وسل بلوئنگ اور واقعہ مینجمنٹ",
+    "subtitle": "خفیہ انٹیک، تفتیشی ورک فلو اور بورڈ کے لیے تیار تجزیات۔",
+    "tabs": {
+      "dashboard": "ڈیش بورڈ",
+      "cases": "کیسز"
+    }
+  },
+  "dashboard": {
+    "title": "بورڈ کے لیے تیار جائزہ",
+    "empty": "ابھی دکھانے کے لیے کوئی ڈیٹا نہیں۔",
+    "loading": "تجزیات لوڈ ہو رہی ہیں...",
+    "actions": {
+      "submitReport": "رپورٹ جمع کرائیں",
+      "exporting": "ایکسپورٹ ہو رہا ہے...",
+      "exportCsv": "CSV ایکسپورٹ کریں",
+      "viewAllCases": "تمام کیسز دیکھیں"
+    },
+    "series": {
+      "openCases": "کھلے کیسز",
+      "escalatedCases": "بڑھائے گئے کیسز",
+      "anonymous": "گمنام",
+      "named": "نام ظاہر"
+    },
+    "kpi": {
+      "totalReports": "کل رپورٹس",
+      "openReports": "کھلی رپورٹس",
+      "underInvestigation": "زیر تفتیش",
+      "escalated": "بڑھائے گئے",
+      "closed": "{{count}} بند",
+      "atRisk": "{{count}} خطرے میں",
+      "onTrack": "وقت پر",
+      "slaBreached": "{{count}} SLA خلاف ورزی"
+    },
+    "charts": {
+      "reportsByCategory": {
+        "title": "رپورٹس بلحاظ قسم",
+        "description": "لائف سائیکل میں تقسیم"
+      },
+      "openVsEscalated": {
+        "title": "کھلے بمقابلہ بڑھائے گئے",
+        "description": "موجودہ انٹیک بمقابلہ اسکیلشنز"
+      },
+      "reportsByPriority": {
+        "title": "رپورٹس بلحاظ ترجیح"
+      },
+      "reportsByStatus": {
+        "title": "رپورٹس بلحاظ حیثیت"
+      },
+      "anonymousVsNamed": {
+        "title": "گمنام بمقابلہ نام ظاہر",
+        "description": "رپورٹنگ کی گمنامی کی تقسیم"
+      },
+      "submissionsTrend": {
+        "title": "جمع کرانے کا رجحان",
+        "description": "ماہانہ انٹیک (آخری 6 ماہ)"
+      }
+    }
+  },
+  "cases": {
+    "title": "کیس رجسٹر",
+    "actions": {
+      "newManualCase": "نیا دستی کیس",
+      "view": "دیکھیں"
+    },
+    "filters": {
+      "searchPlaceholder": "حوالہ / تفصیل تلاش کریں...",
+      "allStatuses": "تمام حیثیتیں",
+      "allCategories": "تمام اقسام",
+      "allRiskRatings": "تمام خطرے کی درجہ بندیاں",
+      "assignedToMe": "مجھے تفویض شدہ"
+    },
+    "view": {
+      "grid": "گرڈ ویو",
+      "list": "لسٹ ویو"
+    },
+    "loading": "کیسز لوڈ ہو رہے ہیں...",
+    "empty": "آپ کے فلٹرز سے کوئی کیس نہیں ملا۔",
+    "table": {
+      "reference": "حوالہ",
+      "category": "قسم",
+      "risk": "خطرہ",
+      "status": "حیثیت",
+      "investigator": "تفتیش کار",
+      "sla": "SLA",
+      "submitted": "جمع شدہ"
+    },
+    "reporter": {
+      "anonymous": "گمنام",
+      "named": "نام ظاہر"
+    },
+    "conflictExclusionsApplied": "مفادات کے ٹکراؤ کی پابندیاں لاگو ہیں",
+    "sla": {
+      "breached": "خلاف ورزی",
+      "daysLeft": "{{count}} دن باقی"
+    },
+    "unassigned": "غیر تفویض شدہ",
+    "pagination": {
+      "summary": "صفحہ {{page}} از {{totalPages}} · {{total}} کیسز",
+      "previous": "پچھلا",
+      "next": "اگلا",
+      "total": "{{count}} مقدمات",
+      "pageOf": "صفحہ {{page}} از {{totalPages}}"
+    }
+  },
+  "manualCase": {
+    "title": "کیس دستی طور پر بنائیں",
+    "description": "ای میل، ہاٹ لائن یا بالمشافہ موصول ہونے والی آف پورٹل رپورٹ درج کریں۔",
+    "validation": {
+      "description": "براہِ کرم واقعے کو کم از کم 10 حروف میں بیان کریں۔"
+    },
+    "toasts": {
+      "created": "دستی کیس بن گیا۔"
+    },
+    "draftRestored": "آپ کا پہلے کا غیر محفوظ مسودہ بحال کر دیا گیا۔",
+    "startFresh": "نیا شروع کریں",
+    "fields": {
+      "category": "قسم",
+      "riskRating": "خطرے کی درجہ بندی",
+      "description": "واقعے کی تفصیل",
+      "caseType": "کیس کی قسم",
+      "intakeMethod": "انٹیک طریقہ",
+      "dateOfOccurrence": "وقوع کی تاریخ",
+      "reporterRelationship": "رپورٹر کا تعلق",
+      "location": "مقام",
+      "city": "شہر",
+      "stateCountry": "ریاست / ملک",
+      "personsEngaged": "ملوث فرد/افراد"
+    },
+    "placeholders": {
+      "description": "کیا ہوا؟",
+      "notSpecified": "متعین نہیں",
+      "location": "پتہ / سائٹ / عمارت",
+      "state": "ریاست",
+      "country": "ملک"
+    },
+    "actions": {
+      "cancel": "منسوخ کریں",
+      "creating": "بن رہا ہے...",
+      "create": "کیس بنائیں"
+    }
+  },
+  "status": {
+    "SUBMITTED": "جمع شدہ",
+    "UNDER_TRIAGE": "ابتدائی جائزے میں",
+    "UNDER_INVESTIGATION": "زیر تفتیش",
+    "WB_ESCALATED": "بڑھا دیا گیا",
+    "RESOLVED": "حل شدہ",
+    "WB_CLOSED": "بند",
+    "WB_DISMISSED": "مسترد"
+  },
+  "priority": {
+    "PRIORITY_LOW": "کم",
+    "PRIORITY_MEDIUM": "درمیانہ",
+    "PRIORITY_HIGH": "زیادہ",
+    "PRIORITY_CRITICAL": "انتہائی اہم"
+  },
+  "caseType": {
+    "ALLEGATION": "الزام",
+    "INQUIRY": "استفسار"
+  },
+  "intakeMethod": {
+    "WEB": "ویب",
+    "EMAIL": "ای میل",
+    "PHONE": "فون / ہاٹ لائن",
+    "IN_PERSON": "بالمشافہ",
+    "MAIL": "ڈاک",
+    "OTHER_INTAKE": "دیگر"
+  },
+  "participantRole": {
+    "REPORTER": "رپورٹ کنندہ",
+    "SUBJECT": "متعلقہ فرد",
+    "WITNESS": "گواہ",
+    "OTHER_PARTICIPANT": "دیگر"
+  },
+  "caseConsole": {
+    "header": {
+      "reference": "کیس حوالہ"
+    },
+    "validation": {
+      "selectInvestigator": "تفویض کرنے سے پہلے تفتیش کار منتخب کریں۔",
+      "assessmentMin": "ابتدائی جائزے کے لیے کم از کم 10 حروف لکھیں۔",
+      "findingsMin": "تحقیقاتی نتائج کم از کم 10 حروف پر مشتمل ہونے چاہییں۔",
+      "escalationReasonMin": "بڑھانے کی وجہ کم از کم 10 حروف پر مشتمل ہونی چاہیے۔",
+      "closureOutcomeMin": "بندش کا نتیجہ کم از کم 10 حروف پر مشتمل ہونا چاہیے۔",
+      "commentRequired": "بھیجنے سے پہلے تبصرہ لکھیں۔",
+      "relatedCaseRequired": "درست متعلقہ کیس حوالہ درج کریں۔",
+      "emptyFile": "ایسی فائل منتخب کریں جو خالی نہ ہو۔",
+      "fileTooLarge": "فائل 100 MB یا اس سے کم ہونی چاہیے۔"
+    },
+    "toasts": {
+      "assigned": "تفتیش کار تفویض کر دیا گیا۔",
+      "riskUpdated": "خطرہ اپ ڈیٹ ہو گیا۔",
+      "triaged": "کیس کا ابتدائی جائزہ ہو گیا۔",
+      "resolved": "کیس حل ہو گیا۔",
+      "escalated": "کیس بڑھا دیا گیا۔",
+      "dismissed": "کیس مسترد کر دیا گیا۔",
+      "closed": "کیس بند کر دیا گیا۔",
+      "commentAdded": "تبصرہ شامل ہو گیا۔",
+      "linked": "متعلقہ کیس لنک ہو گیا۔",
+      "unlinked": "متعلقہ کیس کا لنک ختم ہو گیا۔",
+      "evidenceAttached": "ثبوت منسلک ہو گیا۔"
+    },
+    "unknown": "نامعلوم",
+    "tabs": {
+      "overview": "جائزہ",
+      "synopsis": "خلاصہ",
+      "assignment": "تفویض",
+      "classification": "درجہ بندی",
+      "participants": "شرکاء",
+      "investigation": "تحقیقات",
+      "communication": "مواصلات",
+      "evidence": "ثبوت اور متعلقہ"
+    },
+    "reporter": {
+      "anonymous": "گمنام رپورٹ کنندہ",
+      "named": "شناخت شدہ رپورٹ کنندہ"
+    },
+    "sla": {
+      "breached": "SLA کی خلاف ورزی",
+      "remaining": "SLA: {{count}} دن باقی"
+    },
+    "route": {
+      "independent": "آزادانہ جائزہ",
+      "escrow": "ایسکرو میں آزادانہ جائزہ"
+    },
+    "panels": {
+      "incident": "واقعہ",
+      "assignment": "تفویض",
+      "investigationRecord": "تحقیقاتی ریکارڈ",
+      "communication": "مواصلاتی سلسلہ",
+      "evidence": "ثبوت",
+      "triageRisk": "ابتدائی جائزہ اور خطرہ",
+      "resolve": "حل کریں",
+      "escalateClose": "بڑھائیں / بند کریں",
+      "conflictExclusions": "مفادات کے ٹکراؤ کی پابندیاں",
+      "relatedCases": "متعلقہ کیسز",
+      "classification": "درجہ بندی",
+      "synopsisOutcome": "خلاصہ اور نتیجہ",
+      "participants": "شرکاء",
+      "activityEvidence": "سرگرمی اور شواہد",
+      "closure": "اختتام",
+      "escalate": "تصعید",
+      "triage": "ابتدائی جائزہ"
+    },
+    "fields": {
+      "status": "حیثیت",
+      "caseType": "کیس کی قسم",
+      "intakeMethod": "وصولی کا طریقہ",
+      "dateOfOccurrence": "واقعے کی تاریخ",
+      "whenLast": "یہ آخری بار کب ہوا",
+      "duration": "دورانیہ",
+      "awareness": "انہیں کیسے معلوم ہوا",
+      "previouslyReported": "کیا پہلے رپورٹ کیا گیا",
+      "reporterRelationship": "رپورٹ کنندہ کا تعلق",
+      "region": "خطہ",
+      "submitted": "جمع کرایا گیا",
+      "location": "مقام",
+      "reporterPhone": "رپورٹ کنندہ کا فون",
+      "bestTime": "رابطے کا بہترین وقت",
+      "description": "تفصیل",
+      "involvedPersons": "اس رویے میں شامل فرد/افراد",
+      "personsInvolvedNotes": "ملوث افراد (نوٹس)",
+      "preliminaryAssessment": "ابتدائی جائزہ",
+      "findings": "نتائج",
+      "disciplinaryRecommendation": "تادیبی سفارش",
+      "closureOutcome": "بندش کا نتیجہ",
+      "riskRating": "خطرے کی درجہ بندی",
+      "investigationFindings": "تحقیقاتی نتائج",
+      "primaryOutcome": "بنیادی نتیجہ",
+      "secondaryOutcome": "ثانوی نتیجہ",
+      "actionTaken": "کی گئی کارروائی",
+      "potentialNextSteps": "ممکنہ اگلے اقدامات",
+      "synopsisNotes": "خلاصے کے نوٹس",
+      "category": "زمرہ",
+      "escalationReason": "تصعید کی وجہ",
+      "priority": "ترجیح"
+    },
+    "assignment": {
+      "assignInvestigator": "تفتیش کار تفویض کریں",
+      "assignedTo": "{{name}} کو تفویض",
+      "unassigned": "غیر تفویض شدہ",
+      "selectInvestigator": "تفتیش کار منتخب کریں...",
+      "assign": "تفویض کریں",
+      "assignedPrefix": "تفویض کردہ: {{name}}",
+      "sheetDescription": "یہ کیس کسی اہل تفتیش کار کو تفویض کریں۔"
+    },
+    "communication": {
+      "addComment": "تبصرہ شامل کریں",
+      "sheetDescription": "تحقیقاتی ٹیم کو محفوظ فالو اپ پیغام بھیجیں۔",
+      "commentGuidance": "اسے رپورٹ سے متعلق اپ ڈیٹس، سوالات یا اضافی سیاق کے لیے استعمال کریں۔",
+      "commentLabel": "تبصرہ",
+      "sending": "بھیجا جا رہا ہے...",
+      "empty": "ابھی کوئی پیغام نہیں۔",
+      "reporter": "رپورٹ کنندہ",
+      "investigator": "تفتیش کار",
+      "internal": "داخلی",
+      "placeholder": "پیغام لکھیں...",
+      "internalNote": "داخلی نوٹ (رپورٹ کنندہ سے پوشیدہ)",
+      "send": "بھیجیں"
+    },
+    "evidence": {
+      "empty": "کوئی ثبوت منسلک نہیں۔",
+      "reporter": "رپورٹ کنندہ",
+      "investigator": "تفتیش کار",
+      "download": "ڈاؤن لوڈ",
+      "uploading": "اپ لوڈ ہو رہا ہے...",
+      "attach": "ثبوت منسلک کریں"
+    },
+    "actions": {
+      "recordTriage": "ابتدائی جائزہ ریکارڈ کریں",
+      "resolveCase": "کیس حل کریں",
+      "linkRelatedCase": "متعلقہ کیس لنک کریں",
+      "setRisk": "خطرہ مقرر کریں",
+      "triage": "ابتدائی جائزہ",
+      "markResolved": "حل شدہ نشان زد کریں",
+      "escalate": "بڑھائیں",
+      "closeCase": "کیس بند کریں",
+      "dismiss": "مسترد کریں",
+      "close": "بند کریں",
+      "unlink": "لنک ختم کریں",
+      "link": "لنک کریں",
+      "saving": "محفوظ ہو رہا ہے...",
+      "saveClassification": "درجہ بندی محفوظ کریں",
+      "saveSynopsis": "خلاصہ محفوظ کریں",
+      "save": "محفوظ کریں",
+      "cancel": "منسوخ کریں",
+      "edit": "ترمیم کریں",
+      "assignment": "تفویض",
+      "classification": "درجہ بندی",
+      "participants": "شرکاء",
+      "resolve": "حل کریں",
+      "savePriority": "ترجیح محفوظ کریں",
+      "synopsis": "خلاصہ"
+    },
+    "placeholders": {
+      "optionalNotes": "اختیاری نوٹس...",
+      "findings": "تحقیقات کے نتائج کا خلاصہ لکھیں...",
+      "recommendation": "اختیاری سفارش...",
+      "escalationReason": "بڑھانے کی وجہ",
+      "closureOutcome": "بندش کا نتیجہ",
+      "caseReferenceToLink": "لنک کرنے کے لیے کیس حوالہ"
+    },
+    "conflict": {
+      "hiddenFrom": "{{count}} پروفائلز سے مخفی"
+    },
+    "related": {
+      "empty": "کوئی منسلک کیس نہیں۔",
+      "noMatches": "مماثل کیس نہیں ملا۔",
+      "searchLabel": "متعلقہ کیسز تلاش کریں",
+      "searchResults": "تلاش کے نتائج",
+      "sheetDescription": "نظامی مسائل کی نشاندہی کے لیے متعلقہ کیسز جوڑیں۔"
+    },
+    "triage": {
+      "noAssessment": "ابھی کوئی ابتدائی جائزہ ریکارڈ نہیں ہوا۔",
+      "sheetDescription": "ابتدائی جائزہ اور خطرے کی درجہ بندی درج کریں۔"
+    },
+    "resolve": {
+      "empty": "ابھی کوئی حل ریکارڈ نہیں ہوا۔",
+      "sheetDescription": "کیس کو حل شدہ قرار دینے سے پہلے نتائج درج کریں۔"
+    },
+    "synopsis": {
+      "empty": "ابھی کوئی خلاصہ درج نہیں۔",
+      "sheetDescription": "کیس کا نتیجہ اور اگلے اقدامات درج کریں۔"
+    },
+    "participants": {
+      "empty": "ابھی کوئی شریک درج نہیں۔",
+      "name": "نام",
+      "jobTitle": "عہدہ",
+      "relationship": "تعلق",
+      "role": "کردار",
+      "edit": "شریک میں ترمیم کریں",
+      "remove": "شریک ہٹائیں",
+      "add": "شریک شامل کریں",
+      "new": "نیا شریک",
+      "resultsPlaceholder": "نتائج / نوٹس (اختیاری)",
+      "sheetDescription": "اس کیس میں شامل فرد شامل کریں اور اس کا کردار درج کریں۔"
+    },
+    "classification": {
+      "sheetDescription": "کیس کی درجہ بندی اور وصولی کا طریقہ اپ ڈیٹ کریں۔"
+    },
+    "closure": {
+      "sheetDescription": "حتمی نتیجے کی تصدیق کریں اور کیس بند کریں۔"
+    },
+    "escalate": {
+      "sheetDescription": "درج کریں کہ اس کیس کو اعلیٰ سطحی جائزے کی ضرورت کیوں ہے۔"
+    },
+    "groups": {
+      "evidenceDescription": "پیغامات، فائلیں اور متعلقہ کیسز۔",
+      "investigationDescription": "جائزہ، نتائج اور تفتیش کار کے اقدامات۔",
+      "overviewDescription": "بنیادی حقائق اور رپورٹ کنندہ کی فراہم کردہ تفصیلات۔",
+      "peopleDescription": "افراد، تعلقات اور وقت سے متعلق معلومات۔"
+    },
+    "investigation": {
+      "empty": "ابھی تک تفتیشی سرگرمی ریکارڈ نہیں ہوئی۔"
+    },
+    "navigation": {
+      "currentArea": "موجودہ حصہ",
+      "primary": "کیس نیویگیشن"
+    },
+    "progress": {
+      "completed": "مکمل",
+      "inProgress": "جاری ہے",
+      "initialReview": "ابتدائی جائزہ",
+      "investigation": "تفتیش",
+      "received": "موصول",
+      "resolution": "حل",
+      "review": "جائزہ",
+      "title": "کیس کی پیش رفت"
+    }
+  },
+  "oversight": {
+    "readOnly": "صرف پڑھنے کا جائزہ",
+    "back": "جائزہ پر واپس",
+    "title": "وسل بلونگ جائزہ",
+    "subtitle": "رپورٹ شدہ واقعات کی تنظیمی نگرانی (صرف پڑھنا)۔",
+    "confidentialityNotice": "رازداری محفوظ ہے: جس کیس کو رپورٹ کنندہ نے آپ کے پروفائل سے چھپایا ہے (مفادات کا تصادم) وہ ان نظاروں سے باہر ہے۔",
+    "emptyChart": "ابھی کوئی ڈیٹا نہیں۔",
+    "total": "کل",
+    "loading": {
+      "analytics": "وسل بلونگ تجزیات لوڈ ہو رہی ہیں..."
+    },
+    "errors": {
+      "analytics": "تجزیات اس وقت دستیاب نہیں۔"
+    },
+    "filters": {
+      "region": "ریجن",
+      "allRegions": "تمام ریجنز"
+    },
+    "tabs": {
+      "overview": "خلاصہ",
+      "register": "مقدمہ رجسٹر"
+    },
+    "stats": {
+      "totalCases": "کل مقدمات",
+      "open": "کھلے",
+      "escalated": "اسکیلیٹڈ",
+      "slaBreached": "SLA خلاف ورزی",
+      "underInvestigation": "تحقیق کے تحت",
+      "slaAtRisk": "SLA خطرے میں",
+      "closed": "بند",
+      "avgResolution": "اوسط حل"
+    },
+    "charts": {
+      "casesByStatus": {
+        "title": "حیثیت کے لحاظ سے مقدمات",
+        "description": "لائف سائیکل میں تقسیم"
+      },
+      "submissionsTrend": {
+        "title": "جمع ہونے کا رجحان",
+        "description": "ماہانہ جمع شدہ رپورٹس",
+        "series": "جمع شدہ"
+      },
+      "byCategory": {
+        "title": "زمرے کے لحاظ سے"
+      },
+      "byRiskRating": {
+        "title": "خطرے کی درجہ بندی"
+      },
+      "anonymousVsNamed": {
+        "title": "گمنام بمقابلہ نام شدہ",
+        "description": "رپورٹ کنندہ کی شناخت کی تقسیم"
+      }
+    },
+    "detail": {
+      "loading": "مقدمہ لوڈ ہو رہا ہے...",
+      "unavailable": "یہ مقدمہ دستیاب نہیں - رپورٹ کنندہ نے اسے آپ کے پروفائل سے چھپایا ہو سکتا ہے (مفادات کا تصادم)۔",
+      "pipeline": {
+        "triage": "جائزہ",
+        "investigation": "تحقیق",
+        "escalated": "یہ مقدمہ اسکیلیٹ ہو چکا ہے اور معیاری پائپ لائن سے باہر ہے۔",
+        "dismissed": "یہ مقدمہ جائزے کے دوران مسترد ہوا۔"
+      },
+      "sla": {
+        "title": "SLA",
+        "breachedOn": "{{date}} کو خلاف ورزی",
+        "daysLeft": "دن باقی",
+        "opened": "{{date}} کو کھلا",
+        "due": "{{date}} تک"
+      },
+      "activity": {
+        "title": "سرگرمی",
+        "empty": "ابھی کوئی سرگرمی ریکارڈ نہیں۔",
+        "subtitle": "{{messages}} پیغام ? {{files}} فائلز"
+      },
+      "assignment": {
+        "triaged": "جانچا گیا",
+        "assigned": "تفویض",
+        "closed": "بند"
+      }
+    }
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "welcome": "Welcome{{name}}",
+  "subtitle": "Your legal operations hub — manage contracts, matters, compliance, and more.",
+  "viewingDataFor": "Viewing data for:",
+  "cards": {
+    "pendingTasks": "Pending Tasks",
+    "upcomingHearings": "Upcoming Hearings",
+    "contractsExpiring": "Contracts Expiring",
+    "openCases": "Open Matters",
+    "ddReviews": "Due Diligence Reviews"
+  },
+  "stats": {
+    "itemCount_one": "{{count}} item",
+    "itemCount_other": "{{count}} items",
+    "taskCount_one": "{{count}} task",
+    "taskCount_other": "{{count}} tasks",
+    "hearingCount_one": "{{count}} hearing",
+    "hearingCount_other": "{{count}} hearings",
+    "documentCount_one": "{{count}} document",
+    "documentCount_other": "{{count}} documents"
+  },
+  "modules": "Modules",
+  "loadingModules": "Loading your modules…",
+  "empty": "No data yet.",
+  "admin": {
+    "welcome": "Welcome{{name}}",
+    "subtitle": "Platform-wide snapshot for access control, tenants, licensing, and configuration.",
+    "loading": "Loading dashboard stats...",
+    "loadError": "Failed to load dashboard stats.",
+    "cards": {
+      "users": "Users",
+      "organizations": "Organizations",
+      "permissions": "Permissions",
+      "roles": "Roles"
+    },
+    "filters": {
+      "dateMode": "Period",
+      "allTime": "All time",
+      "customDate": "Custom date",
+      "title": "Dashboard filters",
+      "subtitle": "Apply one scope to executive and platform analytics.",
+      "organization": "Organization",
+      "region": "Region",
+      "allOrganizations": "All organizations",
+      "allRegions": "All regions",
+      "dateFrom": "Date from",
+      "dateTo": "Date to",
+      "reset": "Reset"
+    },
+    "rankings": {
+      "title": "Usage leaders",
+      "subtitle": "Compare activity volume with usage percentage in the selected scope.",
+      "entity": "Ranking type",
+      "limit": "Result limit",
+      "organizations": "Organizations",
+      "users": "Users",
+      "top": "Top {{count}}",
+      "activeUsers": "Active users",
+      "successfulLogins": "Session activity",
+      "usagePercentage": "Usage percentage",
+      "organizationUsageDetail": "{{active}} active of {{eligible}} eligible users",
+      "userUsageDetail": "{{active}} active days of {{available}} available days",
+      "noData": "No usage data is available for this scope."
+    },
+    "executive": {
+      "title": "Executive overview",
+      "subtitle": "Growth, adoption, and operating signals for the selected scope.",
+      "noComparison": "No prior comparison",
+      "previousPeriod": "vs previous period",
+      "percentagePoints": "points vs previous period",
+      "deployments": "{{count}} regional deployments",
+      "cards": {
+        "totalOrganizations": "Total organizations",
+        "newOrganizations": "New organizations",
+        "activeUsers": "Active users",
+        "activationRate": "Activation rate",
+        "activeRegions": "Active regions",
+        "needsAttention": "Needs attention"
+      }
+    },
+    "growth": {
+      "title": "Organization and user growth",
+      "subtitle": "New organizations and distinct active users over the selected period.",
+      "organizations": "New organizations",
+      "activeUsers": "Active users"
+    },
+    "activation": {
+      "title": "Invitation activation funnel",
+      "subtitle": "Progress from invitation to first successful platform activity.",
+      "completion": "End-to-end activation",
+      "stages": {
+        "invited": "Invited",
+        "accepted": "Accepted",
+        "verified": "Verified",
+        "activated": "Activated"
+      }
+    },
+    "regional": {
+      "title": "Regional adoption",
+      "subtitle": "Organization reach and user activity by deployed region.",
+      "region": "Region",
+      "organizations": "Organizations",
+      "activeUsers": "Active users",
+      "adoption": "Adoption",
+      "growth": "Growth"
+    },
+    "operations": {
+      "title": "Operational health",
+      "subtitle": "Exceptions requiring platform or onboarding follow-up.",
+      "attentionTitle": "Organizations requiring attention",
+      "noAttention": "No organizations require attention in this scope.",
+      "metrics": {
+        "pendingOrganizationSetup": "Pending organization setup",
+        "pendingInvitations": "Pending invitations",
+        "suspendedOrLockedUsers": "Suspended or locked users",
+        "failedLoginAttempts": "Failed login attempts",
+        "inactiveOrganizations": "Inactive organizations"
+      },
+      "reasons": {
+        "pending_setup": "Onboarding setup is pending",
+        "suspended": "Organization is suspended",
+        "no_recent_activity": "No activity for {{count}} days"
+      }
+    },
+    "userStat": {
+      "topStatus": "Top status: {{status}}",
+      "recentlyCreated": "+{{count}} new this week"
+    },
+    "permissionStat": {
+      "active": "{{count}} active permissions",
+      "topModule": "Top module: {{module}}"
+    },
+    "trend": {
+      "title": "Platform Volume Trend",
+      "subtitle": "Comparative system volume across core administration domains."
+    },
+    "lineLabels": {
+      "users": "Users",
+      "organizations": "Organizations",
+      "permissions": "Permissions",
+      "roles": "Roles"
+    },
+    "modulePanel": {
+      "title": "Permissions by Module",
+      "subtitle": "Vertical distribution of platform capability coverage."
+    },
+    "permissionKpi": {
+      "title": "Permission Activation KPI",
+      "subtitle": "Active permission coverage across the platform catalog.",
+      "activeLabel": "active",
+      "helper": "A healthy catalog keeps inactive or retired permissions low while preserving audit coverage.",
+      "valueText": "{{value}} of {{total}}"
+    },
+    "kpi": {
+      "complete": "Complete",
+      "remaining": "Remaining"
+    },
+    "userRoleDistribution": {
+      "title": "User Role Distribution",
+      "subtitle": "Platform roles assigned to active users."
+    },
+    "organizationLifecycle": {
+      "title": "Organization Lifecycle",
+      "subtitle": "Tenant status across onboarding and operations."
+    },
+    "roleScopeMix": {
+      "title": "Role Scope Mix",
+      "subtitle": "Role templates and organization-specific access models."
+    },
+    "organizationStatusColumns": {
+      "title": "Organization Status Columns",
+      "subtitle": "Status distribution as a vertical column comparison."
+    },
+    "roleScopeColumns": {
+      "title": "Role Scope Columns",
+      "subtitle": "Scope volume across global, template, and organization roles."
+    },
+    "charts": {
+      "noData": "No data",
+      "total": "total"
+    },
+    "chartLabels": {
+      "Users": "Users",
+      "Organizations": "Organizations",
+      "Permissions": "Permissions",
+      "Roles": "Roles",
+      "Value": "Value",
+      "Active": "Active",
+      "Complete": "Complete",
+      "Remaining": "Remaining",
+      "None": "None",
+      "ACTIVE": "Active",
+      "PENDING_VERIFICATION": "Pending verification",
+      "PENDING_SETUP": "Pending setup",
+      "SUSPENDED": "Suspended",
+      "LOCKED": "Locked",
+      "DEACTIVATED": "Deactivated",
+      "ARCHIVED": "Archived",
+      "GLOBAL": "Global",
+      "TEMPLATE": "Template",
+      "ORGANIZATION": "Organization",
+      "Global": "Global",
+      "Template": "Template",
+      "Organization": "Organization",
+      "User": "User",
+      "Tenant": "Tenant",
+      "Super Admin": "Super Admin",
+      "Auth": "Auth",
+      "Land": "Land",
+      "Contracts": "Contracts",
+      "Contract": "Contract",
+      "Litigation": "Litigation",
+      "Reporting": "Reporting",
+      "Whistleblowing": "Whistleblowing",
+      "Compliance": "Compliance",
+      "Assets": "Assets",
+      "Settings": "Settings"
+    },
+    "controlPanel": {
+      "title": "Control Plane",
+      "subtitle": "Operational modules available to the system administrator.",
+      "count": "{{count}} modules"
+    },
+    "moduleStrip": {
+      "items": {
+        "users": {
+          "title": "Users",
+          "meta": {
+            "new": "{{count}} new"
+          }
+        },
+        "organizations": {
+          "title": "Organizations",
+          "meta": {
+            "new": "{{count}} new"
+          }
+        },
+        "permissions": {
+          "title": "Permissions",
+          "meta": {
+            "active": "{{percent}}% active"
+          }
+        },
+        "roles": {
+          "title": "Roles"
+        },
+        "plans": {
+          "title": "Plans",
+          "meta": {
+            "active": "{{count}} active"
+          }
+        },
+        "configPacks": {
+          "title": "Config Packs",
+          "meta": {
+            "artifacts": "{{count}} artifacts"
+          }
+        },
+        "capabilities": {
+          "title": "Capabilities",
+          "value": "Org",
+          "meta": "scoped editor"
+        }
+      }
+    }
+  }
+}

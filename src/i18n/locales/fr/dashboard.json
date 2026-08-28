@@ -1,0 +1,267 @@
+{
+  "welcome": "Bienvenue{{name}}",
+  "subtitle": "Votre centre d'opérations juridiques — gérez les contrats, le contentieux, la conformité, et plus encore.",
+  "viewingDataFor": "Données affichées pour :",
+  "cards": {
+    "pendingTasks": "Tâches en attente",
+    "upcomingHearings": "Audiences à venir",
+    "contractsExpiring": "Contrats arrivant à échéance",
+    "openCases": "Dossiers ouverts",
+    "ddReviews": "Examens de diligence raisonnable"
+  },
+  "stats": {
+    "itemCount_one": "{{count}} élément",
+    "itemCount_other": "{{count}} éléments",
+    "taskCount_one": "{{count}} tâche",
+    "taskCount_other": "{{count}} tâches",
+    "hearingCount_one": "{{count}} audience",
+    "hearingCount_other": "{{count}} audiences",
+    "documentCount_one": "{{count}} document",
+    "documentCount_other": "{{count}} documents"
+  },
+  "modules": "Modules",
+  "loadingModules": "Chargement de vos modules…",
+  "empty": "Aucune donnée pour le moment.",
+  "admin": {
+    "welcome": "Bienvenue{{name}}",
+    "subtitle": "Vue d’ensemble de la plateforme pour le contrôle d’accès, les tenants, les licences et la configuration.",
+    "loading": "Chargement des statistiques du tableau de bord...",
+    "loadError": "Impossible de charger les statistiques du tableau de bord.",
+    "cards": {
+      "users": "Utilisateurs",
+      "organizations": "Organisations",
+      "permissions": "Autorisations",
+      "roles": "Rôles"
+    },
+    "filters": {
+      "dateMode": "Période",
+      "allTime": "Depuis le début",
+      "customDate": "Dates personnalisées",
+      "title": "Filtres du tableau de bord",
+      "subtitle": "Appliquez un périmètre unique aux analyses exécutives et de la plateforme.",
+      "organization": "Organisation",
+      "region": "Région",
+      "allOrganizations": "Toutes les organisations",
+      "allRegions": "Toutes les régions",
+      "dateFrom": "Date de début",
+      "dateTo": "Date de fin",
+      "reset": "Réinitialiser"
+    },
+    "rankings": {
+      "title": "Principaux niveaux d’utilisation",
+      "subtitle": "Comparez le volume d’activité au pourcentage d’utilisation dans le périmètre sélectionné.",
+      "entity": "Type de classement",
+      "limit": "Nombre de résultats",
+      "organizations": "Organisations",
+      "users": "Utilisateurs",
+      "top": "Top {{count}}",
+      "activeUsers": "Utilisateurs actifs",
+      "successfulLogins": "Activité de session",
+      "usagePercentage": "Pourcentage d’utilisation",
+      "organizationUsageDetail": "{{active}} actifs sur {{eligible}} utilisateurs éligibles",
+      "userUsageDetail": "{{active}} jours actifs sur {{available}} jours disponibles",
+      "noData": "Aucune donnée d’utilisation n’est disponible pour ce périmètre."
+    },
+    "executive": {
+      "title": "Vue d’ensemble exécutive",
+      "subtitle": "Indicateurs de croissance, d’adoption et d’exploitation pour le périmètre sélectionné.",
+      "noComparison": "Aucune comparaison antérieure",
+      "previousPeriod": "par rapport à la période précédente",
+      "percentagePoints": "points par rapport à la période précédente",
+      "deployments": "{{count}} déploiements régionaux",
+      "cards": {
+        "totalOrganizations": "Total des organisations",
+        "newOrganizations": "Nouvelles organisations",
+        "activeUsers": "Utilisateurs actifs",
+        "activationRate": "Taux d’activation",
+        "activeRegions": "Régions actives",
+        "needsAttention": "Suivi nécessaire"
+      }
+    },
+    "growth": {
+      "title": "Croissance des organisations et des utilisateurs",
+      "subtitle": "Nouvelles organisations et utilisateurs actifs distincts sur la période sélectionnée.",
+      "organizations": "Nouvelles organisations",
+      "activeUsers": "Utilisateurs actifs"
+    },
+    "activation": {
+      "title": "Entonnoir d’activation des invitations",
+      "subtitle": "Progression de l’invitation à la première activité réussie sur la plateforme.",
+      "completion": "Activation de bout en bout",
+      "stages": {
+        "invited": "Invité",
+        "accepted": "Accepté",
+        "verified": "Vérifié",
+        "activated": "Activé"
+      }
+    },
+    "regional": {
+      "title": "Adoption régionale",
+      "subtitle": "Présence des organisations et activité des utilisateurs par région déployée.",
+      "region": "Région",
+      "organizations": "Organisations",
+      "activeUsers": "Utilisateurs actifs",
+      "adoption": "Adoption",
+      "growth": "Croissance"
+    },
+    "operations": {
+      "title": "Santé opérationnelle",
+      "subtitle": "Exceptions nécessitant un suivi de la plateforme ou de l’intégration.",
+      "attentionTitle": "Organisations nécessitant une attention",
+      "noAttention": "Aucune organisation ne nécessite d’attention dans ce périmètre.",
+      "metrics": {
+        "pendingOrganizationSetup": "Configuration d’organisation en attente",
+        "pendingInvitations": "Invitations en attente",
+        "suspendedOrLockedUsers": "Utilisateurs suspendus ou verrouillés",
+        "failedLoginAttempts": "Tentatives de connexion échouées",
+        "inactiveOrganizations": "Organisations inactives"
+      },
+      "reasons": {
+        "pending_setup": "La configuration d’intégration est en attente",
+        "suspended": "L’organisation est suspendue",
+        "no_recent_activity": "Aucune activité depuis {{count}} jours"
+      }
+    },
+    "userStat": {
+      "topStatus": "Statut principal : {{status}}",
+      "recentlyCreated": "+{{count}} nouveaux cette semaine"
+    },
+    "permissionStat": {
+      "active": "{{count}} autorisations actives",
+      "topModule": "Module principal : {{module}}"
+    },
+    "trend": {
+      "title": "Tendance du volume de la plateforme",
+      "subtitle": "Comparaison du volume système dans les principaux domaines d’administration."
+    },
+    "lineLabels": {
+      "users": "Utilisateurs",
+      "organizations": "Organisations",
+      "permissions": "Autorisations",
+      "roles": "Rôles"
+    },
+    "modulePanel": {
+      "title": "Autorisations par module",
+      "subtitle": "Répartition verticale de la couverture des capacités de la plateforme."
+    },
+    "permissionKpi": {
+      "title": "KPI d’activation des autorisations",
+      "subtitle": "Couverture des autorisations actives dans le catalogue de la plateforme.",
+      "activeLabel": "actif",
+      "helper": "Un catalogue sain limite les autorisations inactives ou retirées tout en conservant la couverture d’audit.",
+      "valueText": "{{value}} sur {{total}}"
+    },
+    "kpi": {
+      "complete": "Terminé",
+      "remaining": "Restant"
+    },
+    "userRoleDistribution": {
+      "title": "Répartition des rôles utilisateur",
+      "subtitle": "Rôles de plateforme attribués aux utilisateurs actifs."
+    },
+    "organizationLifecycle": {
+      "title": "Cycle de vie des organisations",
+      "subtitle": "Statut des tenants entre l’onboarding et les opérations."
+    },
+    "roleScopeMix": {
+      "title": "Répartition des portées de rôle",
+      "subtitle": "Modèles de rôles et modèles d’accès propres aux organisations."
+    },
+    "organizationStatusColumns": {
+      "title": "Colonnes de statut des organisations",
+      "subtitle": "Répartition des statuts sous forme de comparaison verticale."
+    },
+    "roleScopeColumns": {
+      "title": "Colonnes de portée des rôles",
+      "subtitle": "Volume des portées entre rôles globaux, modèles et organisations."
+    },
+    "charts": {
+      "noData": "Aucune donnée",
+      "total": "total"
+    },
+    "chartLabels": {
+      "Users": "Utilisateurs",
+      "Organizations": "Organisations",
+      "Permissions": "Autorisations",
+      "Roles": "Rôles",
+      "Value": "Valeur",
+      "Active": "Actif",
+      "Complete": "Terminé",
+      "Remaining": "Restant",
+      "None": "Aucun",
+      "ACTIVE": "Actif",
+      "PENDING_VERIFICATION": "Vérification en attente",
+      "PENDING_SETUP": "Configuration en attente",
+      "SUSPENDED": "Suspendu",
+      "LOCKED": "Verrouillé",
+      "DEACTIVATED": "Désactivé",
+      "ARCHIVED": "Archivé",
+      "GLOBAL": "Global",
+      "TEMPLATE": "Modèle",
+      "ORGANIZATION": "Organisation",
+      "Global": "Global",
+      "Template": "Modèle",
+      "Organization": "Organisation",
+      "User": "Utilisateur",
+      "Tenant": "Locataire",
+      "Super Admin": "Super administrateur",
+      "Auth": "Authentification",
+      "Land": "Actifs",
+      "Contracts": "Contrats",
+      "Contract": "Contrats",
+      "Litigation": "Contentieux",
+      "Reporting": "Rapports",
+      "Whistleblowing": "Alertes",
+      "Compliance": "Conformité",
+      "Assets": "Actifs",
+      "Settings": "Paramètres"
+    },
+    "controlPanel": {
+      "title": "Plan de contrôle",
+      "subtitle": "Modules opérationnels disponibles pour l’administrateur système.",
+      "count": "{{count}} modules"
+    },
+    "moduleStrip": {
+      "items": {
+        "users": {
+          "title": "Utilisateurs",
+          "meta": {
+            "new": "{{count}} nouveaux"
+          }
+        },
+        "organizations": {
+          "title": "Organisations",
+          "meta": {
+            "new": "{{count}} nouvelles"
+          }
+        },
+        "permissions": {
+          "title": "Autorisations",
+          "meta": {
+            "active": "{{percent}}% actives"
+          }
+        },
+        "roles": {
+          "title": "Rôles"
+        },
+        "plans": {
+          "title": "Plans",
+          "meta": {
+            "active": "{{count}} actifs"
+          }
+        },
+        "configPacks": {
+          "title": "Packs de configuration",
+          "meta": {
+            "artifacts": "{{count}} artefacts"
+          }
+        },
+        "capabilities": {
+          "title": "Capacités",
+          "value": "Org",
+          "meta": "éditeur limité à la portée"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "next": "Next",
+    "back": "Back",
+    "done": "Done",
+    "progress": "{{current}} / {{total}}",
+    "skip": "Skip tour"
+  },
+  "orgMembers": {
+    "s1": {
+      "title": "Managing your team",
+      "description": "Every member’s access comes down to three things: which Portal they log into, their Role, and the Region they work in. This quick tour shows where each lives."
+    },
+    "s2": {
+      "title": "Members vs Invitations",
+      "description": "“Members” are people already in your organization. “Invitations” are pending email invites that haven’t been accepted yet."
+    },
+    "s3": {
+      "title": "Seats",
+      "description": "Your plan includes a number of Admin (Tenant portal) and User (User portal) seats. Each member uses one — these badges show how many are left."
+    },
+    "s4": {
+      "title": "Invite someone",
+      "description": "Inviting asks for Portal → Role → Region. Pick the portal for the kind of work they’ll do, a role that matches their job, and the region whose data they need."
+    },
+    "s5": {
+      "title": "That’s it",
+      "description": "You can change a member’s role, status, or regions anytime from the Edit action. Open Help → “How access works” for the full picture."
+    }
+  },
+  "contractCreate": {
+    "s1": {
+      "title": "Creating a contract",
+      "description": "Fill in the contract’s identity, then its value & term, then ownership. The uploaded file becomes the contract’s first document (OCR-indexed for search)."
+    },
+    "s2": {
+      "title": "Contract type",
+      "description": "The type drives defaults like risk tier and whether legal review is required. Manage the catalog under Contracts → Types."
+    },
+    "s3": {
+      "title": "Department & folder",
+      "description": "Department tags the contract to your org structure (reporting + approval routing). Folder just organizes it in the explorer — neither changes who can see it."
+    },
+    "s4": {
+      "title": "Counterparty & IDD",
+      "description": "Link the third party so its due-diligence status is visible. If you require IDD clearance, the contract can’t be executed until that party is cleared."
+    }
+  },
+  "litigationCases": {
+    "s1": {
+      "title": "Your case library",
+      "description": "This is a file-explorer for litigation cases. Use folders to group them however you like — folders never change who can access a case or its region."
+    },
+    "s2": {
+      "title": "Folders & Home",
+      "description": "Home shows unfiled cases; click a folder to see its cases. A case lives in exactly one folder, or none."
+    },
+    "s3": {
+      "title": "New folder",
+      "description": "Create folders to organize cases by matter, client, year — whatever suits you."
+    },
+    "s4": {
+      "title": "New case",
+      "description": "Start a case here. If you’re inside a folder, the new case lands in it automatically."
+    }
+  },
+  "departments": {
+    "s1": {
+      "title": "Departments",
+      "description": "Departments mirror your internal structure (Department › Sub-Department / Cost Center › Function). They tag contracts and cases for reporting and approval routing — they don’t control who can see data."
+    },
+    "s2": {
+      "title": "Add a department",
+      "description": "Create a top-level department, then nest sub-departments under it. Assign a Head of Department and a cost center if you track them."
+    }
+  },
+  "reportConcern": {
+    "welcome": {
+      "title": "👋 Quick form guide",
+      "text": "This tour walks you through each section of the report form. It takes about 60 seconds. Your identity is protected throughout — you control whether to stay anonymous."
+    },
+    "category": {
+      "title": "📋 Incident category",
+      "text": "Start by picking the category that best describes what you witnessed — for example, fraud, harassment, or safety violation. If unsure, choose the closest match."
+    },
+    "description": {
+      "title": "✍️ What happened?",
+      "text": "Describe the incident in as much detail as you can — who was involved, what occurred, where, when, and how you know about it. The more detail you provide, the easier it is to investigate. <strong>Do not include your own name</strong> if you want to stay anonymous."
+    },
+    "location": {
+      "title": "📍 Location",
+      "text": "Fill in as much location detail as you know — the specific site, city, or region where the incident occurred. This helps route your report to the right team. All fields here are optional."
+    },
+    "relationship": {
+      "title": "🔗 Your relationship",
+      "text": "Let us know how you relate to the organization — employee, contractor, supplier, etc. This helps us understand the context of your report. This field is optional."
+    },
+    "involved": {
+      "title": "👤 Involved persons",
+      "text": "Add the name(s) of anyone directly engaged in the behavior you’re reporting. First name, last name, and job title are all optional — provide whatever you know."
+    },
+    "dates": {
+      "title": "📅 Timing",
+      "text": "Tell us when the incident happened and whether it’s ongoing. Even approximate dates (like “last month”) help investigators establish a timeline."
+    },
+    "anonymous": {
+      "title": "🔒 Stay anonymous?",
+      "text": "By default your report is anonymous — we never know who you are. If you’d like to receive updates on your case, uncheck this box and provide a contact email. Your details are kept strictly confidential."
+    },
+    "conflict": {
+      "title": "🛡️ Conflict of interest",
+      "text": "If your report involves a member of the compliance team, tick their name here to hide this case from them. Your report will still reach the Compliance Administrator."
+    },
+    "submit": {
+      "title": "✅ Ready to submit",
+      "text": "Accept the terms and click <strong>Submit report</strong>. You’ll immediately receive a case reference number — save it to track your report’s progress without revealing your identity."
+    }
+  }
+}

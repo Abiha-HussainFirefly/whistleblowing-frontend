@@ -1,0 +1,1751 @@
+﻿{
+    "app":  {
+                "name":  "Civorah",
+                "tagline":  "Plattform fÃ¼r RechtsablÃ¤ufe"
+            },
+    "sessionRestoration":  {
+                               "title":  "Die Sitzungswiederherstellung erfordert Ihre Aufmerksamkeit",
+                               "description":  "Wir konnten nicht sicher bestÃ¤tigen, ob Ihre Sitzung erneuert wurde. Zum Schutz Ihres Kontos haben wir es nicht automatisch erneut versucht.",
+                               "signInAgain":  "Erneut anmelden"
+                           },
+    "actions":  {
+                    "save":  "Speichern",
+                    "saveChanges":  "Ã„nderungen speichern",
+                    "cancel":  "Abbrechen",
+                    "delete":  "LÃ¶schen",
+                    "edit":  "Bearbeiten",
+                    "close":  "SchlieÃŸen",
+                    "confirm":  "BestÃ¤tigen",
+                    "create":  "Erstellen",
+                    "add":  "HinzufÃ¼gen",
+                    "remove":  "Entfernen",
+                    "search":  "Suchen",
+                    "upload":  "Hochladen",
+                    "download":  "Herunterladen",
+                    "open":  "Oeffnen",
+                    "back":  "ZurÃ¼ck",
+                    "next":  "Weiter",
+                    "retry":  "Erneut versuchen",
+                    "signIn":  "Anmelden",
+                    "signOut":  "Abmelden",
+                    "takeTour":  "Tour starten"
+                },
+    "documentViewer":  {
+                           "fallbackTitle":  "Dokumentvorschau",
+                           "loading":  "Dokument wird geladen...",
+                           "rendering":  "Wird gerendert",
+                           "error":  "Dokument konnte nicht geladen werden.",
+                           "previousPage":  "Vorherige Seite",
+                           "nextPage":  "NÃ¤chste Seite",
+                           "zoomIn":  "VergrÃ¶ÃŸern",
+                           "zoomOut":  "Verkleinern",
+                           "rotateLeft":  "Nach links drehen",
+                           "rotateRight":  "Nach rechts drehen",
+                           "fitView":  "Ansicht einpassen",
+                           "close":  "SchlieÃŸen",
+                           "previewUnavailable":  "Vorschau nicht verfÃ¼gbar",
+                           "previewUnavailableBody":  "Dieser Dateityp kann im Browser nicht angezeigt werden. Laden Sie die Datei herunter, um sie in der passenden Anwendung zu Ã¶ffnen.",
+                           "downloadFile":  "Datei herunterladen",
+                           "noWorksheets":  "Keine ArbeitsblÃ¤tter gefunden.",
+                           "worksheetLoadFailed":  "Arbeitsblatt konnte nicht geladen werden."
+                       },
+    "header":  {
+                   "searchPlaceholder":  "FÃ¤lle, VertrÃ¤ge, Dokumente durchsuchen..."
+               },
+    "shell":  {
+                  "adminBadge":  "Admin",
+                  "tenantBadge":  "Mandant",
+                  "closeMenu":  "MenÃ¼ schlieÃŸen",
+                  "openMenu":  "MenÃ¼ Ã¶ffnen",
+                  "toggleMenu":  "MenÃ¼ umschalten",
+                  "toggleSidebar":  "Seitenleiste umschalten",
+                  "systemConsole":  "Systemkonsole",
+                  "organizationFallback":  "Organisation",
+                  "organizationPortal":  "{{organization}} Portal",
+                  "reportConcern":  "Anliegen melden",
+                  "reportConcernTitle":  "Anliegen melden (vertraulich)"
+              },
+    "regionSwitcher":  {
+                           "platformWide":  "Plattformweit",
+                           "platformWideDescription":  "Systemadministratoren arbeiten organisations- und regionsÃ¼bergreifend.",
+                           "allRegions":  "Alle Regionen",
+                           "allRegionsDescription":  "Alle Regionen in dieser Organisation anzeigen",
+                           "myRegionsDescription":  "Ihr zugÃ¤nglicher Regionsbereich ({{count}})",
+                           "organizationRegions":  "Organisationsregionen",
+                           "myRegions":  "Meine Regionen",
+                           "switchFailed":  "Region konnte nicht gewechselt werden. Bitte versuchen Sie es erneut.",
+                           "more":  "+{{count}} weitere"
+                       },
+    "adminNav":  {
+                     "dashboard":  "Dashboard",
+                     "permissions":  "Berechtigungen",
+                     "roles":  "Rollen",
+                     "organizations":  "Organisationen",
+                     "plans":  "PlÃ¤ne",
+                     "configPacks":  "Konfigurationspakete",
+                     "capabilities":  "Funktionen",
+                     "workspaces":  "Arbeitsbereiche",
+                     "users":  "Benutzer",
+                     "settings":  "Einstellungen"
+                 },
+    "orgNav":  {
+                   "workspaces":  "Arbeitsbereiche",
+                   "groups":  {
+                                  "workspace":  "Arbeitsbereich",
+                                  "insights":  "Einblicke",
+                                  "organization":  "Organisation",
+                                  "administration":  "Administration",
+                                  "help":  "Hilfe"
+                              },
+                   "accessibility":  {
+                                         "toggleGroup":  "Navigation fÃ¼r {{group}} ein- oder ausblenden"
+                                     },
+                   "dashboard":  "Dashboard",
+                   "members":  "Mitglieder",
+                   "contracts":  "VertrÃ¤ge",
+                   "litigation":  "Rechtsstreitigkeiten",
+                   "compliance":  "Compliance",
+                   "land":  "Land \u0026 Immobilien",
+                   "whistleblowing":  "Hinweisgebersystem",
+                   "reporting":  "Berichte",
+                   "externalCounsel":  "Externe Beratung",
+                   "roles":  "Rollen",
+                   "departments":  "Abteilungen",
+                   "regions":  "Regionen",
+                   "planLimits":  "Plan und Limits",
+                   "integrations":  "Integrationen",
+                   "helpConcepts":  "Hilfe und Konzepte",
+                   "settings":  "Einstellungen"
+               },
+    "nav":  {
+                "dashboard":  "Dashboard"
+            },
+    "dashboard":  {
+                      "welcome":  "Willkommen{{name}}",
+                      "subtitle":  "Ihre Zentrale fÃ¼r RechtsablÃ¤ufe â€“ verwalten Sie VertrÃ¤ge, Rechtsstreitigkeiten, Compliance und mehr.",
+                      "viewingDataFor":  "Daten anzeigen fÃ¼r:",
+                      "allRegions":  "Alle Regionen",
+                      "allMyRegions":  "Alle meine Regionen ({{count}})",
+                      "pendingTasks":  "Ausstehende Aufgaben",
+                      "upcomingHearings":  "Anstehende AnhÃ¶rungen",
+                      "contractsExpiring":  "Auslaufende VertrÃ¤ge",
+                      "aiAssistant":  "KI-Assistent",
+                      "ready":  "Bereit",
+                      "locked":  "Gesperrt",
+                      "modules":  "Module",
+                      "loadingModules":  "Ihre Module werden geladen...",
+                      "home":  {
+                                   "overview":  "Ãœbersicht",
+                                   "recentActivity":  "Letzte AktivitÃ¤t",
+                                   "exploreModules":  "Module erkunden",
+                                   "open":  "Ã–ffnen",
+                                   "unavailable":  "Daten derzeit nicht verfÃ¼gbar.",
+                                   "noData":  "Noch keine Daten.",
+                                   "noActivity":  "Alles erledigt â€” keine aktuelle AktivitÃ¤t.",
+                                   "byStatus":  "Nach Status",
+                                   "byRisk":  "Nach Risikostufe",
+                                   "contracts":  {
+                                                     "total":  "Gesamt",
+                                                     "inFlight":  "In Bearbeitung",
+                                                     "expiring":  "Laufen ab",
+                                                     "value":  "Wert"
+                                                 },
+                                   "litigation":  {
+                                                      "total":  "Gesamt",
+                                                      "open":  "Offen",
+                                                      "hearings":  "Termine",
+                                                      "exposure":  "Risiko"
+                                                  },
+                                   "whistleblowing":  {
+                                                          "total":  "Gesamt",
+                                                          "open":  "Offen",
+                                                          "investigating":  "In Ermittlung",
+                                                          "atRisk":  "SLA gefÃ¤hrdet"
+                                                      },
+                                   "compliance":  {
+                                                      "total":  "Parteien",
+                                                      "pending":  "Zu prÃ¼fen",
+                                                      "hits":  "Offene Treffer",
+                                                      "renewals":  "FÃ¤llige Erneuerungen"
+                                                  }
+                               }
+                  },
+    "modules":  {
+                    "contracts":  {
+                                      "label":  "VertrÃ¤ge",
+                                      "description":  "Verwalten Sie den Vertragslebenszyklus vom Entwurf bis zur AusfÃ¼hrung"
+                                  },
+                    "litigation":  {
+                                       "label":  "Rechtsstreitigkeiten",
+                                       "description":  "Verfolgen Sie FÃ¤lle, AnhÃ¶rungen und externe Rechtsberater"
+                                   },
+                    "secretarial":  {
+                                        "label":  "Sekretariat",
+                                        "description":  "Vorstandsunterlagen und Compliance-Kalender"
+                                    },
+                    "compliance":  {
+                                       "label":  "Compliance",
+                                       "description":  "SorgfaltsprÃ¼fung und Screening von Drittparteien"
+                                   },
+                    "land":  {
+                                 "label":  "GrundstÃ¼cke \u0026 Immobilien",
+                                 "description":  "Immobilienverzeichnis und Verfolgung von Belastungen"
+                             },
+                    "whistleblowing":  {
+                                           "label":  "Hinweisgebersystem",
+                                           "description":  "Vertrauliche Meldung und Untersuchung von VorfÃ¤llen"
+                                       },
+                    "reporting":  {
+                                      "label":  "Berichte",
+                                      "description":  "ModulÃ¼bergreifende Analysen, Filter und Exporte"
+                                  },
+                    "ai_assistant":  {
+                                         "label":  "KI-Assistent",
+                                         "description":  "Suche in natÃ¼rlicher Sprache Ã¼ber alle Rechtsdaten hinweg"
+                                     },
+                    "external_access":  {
+                                            "label":  "Externe Rechtsberater",
+                                            "description":  "Externe Rechtsberater anzeigen, die in Ihrer Region tÃ¤tig sind"
+                                        }
+                },
+    "land":  {
+                 "regionScope":  {
+                                     "label":  "Regionsbereich",
+                                     "allAssigned":  "Alle zugewiesenen Regionen ({{count}})",
+                                     "placeholder":  "Regionsbereich auswÃ¤hlen",
+                                     "search":  "Zugewiesene Regionen durchsuchen...",
+                                     "hint":  "Das Asset kann nur mit Angelegenheiten aus dem ausgewÃ¤hlten Regionsbereich verknÃ¼pft werden.",
+                                     "noneAssigned":  "Ihrem Konto sind keine aktiven Regionen zugewiesen."
+                                 },
+                 "title":  "Grundstuecke \u0026 Immobilien",
+                 "subtitle":  "Nach Grundbuchstruktur indexierte Flaechen, Dokumente, Karten und Belastungen.",
+                 "actions":  {
+                                 "newAsset":  "Neues Objekt",
+                                 "create":  "Objekt erstellen",
+                                 "createAndUpload":  "Erstellen \u0026 hochladen",
+                                 "backToRepository":  "Zurueck zum Verzeichnis",
+                                 "scanTag":  "Tag scannen",
+                                 "linkCase":  "Verfahren verknuepfen",
+                                 "unlinkCase":  "Verfahren loesen"
+                             },
+                 "steps":  {
+                               "document":  "Dokument",
+                               "revenueIndex":  "Revenue Index",
+                               "rightsLocation":  "Rechte und Standort",
+                               "encumbranceDocument":  "Belastung und Dokument",
+                               "assetProfile":  "Asset-Profil",
+                               "custodyValue":  "Verwahrung und Wert",
+                               "riskDocument":  "Risiko und Dokument"
+                           },
+                 "documentTypes":  {
+                                       "mapDrawing":  "Karte / Zeichnung",
+                                       "saleDeed":  "Kaufurkunde (Register)",
+                                       "fard":  "Fard",
+                                       "mutation":  "Mutation (Inteqal)",
+                                       "leaseDeed":  "Pachturkunde",
+                                       "revenueRecord":  "Revenue Record",
+                                       "other":  "Sonstige"
+                                   },
+                 "areaUnits":  {
+                                   "acre":  "Acre",
+                                   "kanal":  "Kanal",
+                                   "marla":  "Marla",
+                                   "squareFeet":  "Quadratfuss",
+                                   "squareYard":  "Quadratyard",
+                                   "squareMeter":  "Quadratmeter",
+                                   "hectare":  "Hektar",
+                                   "bigha":  "Bigha",
+                                   "killa":  "Killa",
+                                   "murabba":  "Murabba",
+                                   "guntha":  "Guntha"
+                               },
+                 "stats":  {
+                               "total":  "Objekte gesamt",
+                               "encumbered":  "Belastet",
+                               "documented":  "Dokumentiert",
+                               "linkedLitigation":  "Verknuepfte Verfahren",
+                               "linkedMatters":  "Verknuepfte Verfahren"
+                           },
+                 "charts":  {
+                                "portfolioMix":  {
+                                                     "title":  "Asset-Portfolio-Mix",
+                                                     "description":  "Verteilung der Assets nach Klassen im Verzeichnis."
+                                                 },
+                                "lifecycleStatus":  {
+                                                        "title":  "Lebenszyklusstatus",
+                                                        "description":  "Operativer Zustand der Assets fuer Wartung und Governance."
+                                                    },
+                                "assetGrowth":  {
+                                                    "title":  "Asset-Aufnahmetrend",
+                                                    "description":  "Erfasste Assets und registrierter Gesamtbestand der letzten sechs Kalendermonate.",
+                                                    "added":  "Hinzugefuegte Assets",
+                                                    "total":  "Registrierte Assets"
+                                                },
+                                "documentationCoverage":  {
+                                                              "title":  "Dokumentabdeckung",
+                                                              "description":  "Anteil der registrierten Assets mit mindestens einem Dokument."
+                                                          },
+                                "governanceExposure":  {
+                                                           "title":  "Governance-Exposition",
+                                                           "description":  "Assets mit verknuepften Verfahren oder Belastungskennzeichnung."
+                                                       },
+                                "documentationRisk":  {
+                                                          "title":  "Dokumentation und Risiko",
+                                                          "description":  "Indikatoren fuer Dokumentabdeckung, Belastungen und Verfahrensrisiko."
+                                                      },
+                                "custodyByDepartment":  {
+                                                            "title":  "Verwahrung nach Abteilung",
+                                                            "description":  "Wichtigste Abteilungen mit Verantwortung fuer erfasste Assets."
+                                                        },
+                                "departmentNames":  {
+                                                        "legal":  "Recht",
+                                                        "operations":  "Betrieb",
+                                                        "finance":  "Finanzen",
+                                                        "itOperations":  "IT-Betrieb",
+                                                        "legalOperations":  "Rechtsbetrieb",
+                                                        "litigationSupport":  "Verfahrenssupport",
+                                                        "administration":  "Verwaltung",
+                                                        "facilities":  "Gebaeudedienste",
+                                                        "treasury":  "Treasury",
+                                                        "assetControl":  "Asset-Steuerung",
+                                                        "infrastructureTeam":  "Infrastrukturteam",
+                                                        "applicationOwner":  "Anwendungsverantwortung",
+                                                        "ipCounsel":  "IP-Beratung",
+                                                        "courtServices":  "Gerichtsservices"
+                                                    },
+                                "assetsByLocation":  {
+                                                         "title":  "Assets nach Standort",
+                                                         "description":  "Wichtigste erfasste Standorte nach Asset-Konzentration."
+                                                     },
+                                "documentedAssets":  "Dokumentierte Assets",
+                                "missingDocuments":  "Fehlende Dokumente",
+                                "linkedMatters":  "Mit Verfahren verknuepft",
+                                "encumberedAssets":  "Belastete Assets"
+                            },
+                 "filters":  {
+                                 "search":  "Titel, District, Mauza, Parzelle suchen...",
+                                 "district":  "District",
+                                 "allStatuses":  "Alle Status",
+                                 "allAssetTypes":  "Alle Asset-Typen",
+                                 "allAssetStatuses":  "Alle Asset-Status"
+                             },
+                 "placeholders":  {
+                                      "title":  "z.B. Depotgrundstueck - Industriegebiet",
+                                      "assetType":  "Asset-Typ auswaehlen",
+                                      "searchAssetTypes":  "Asset-Typen suchen...",
+                                      "assetStatus":  "Status auswaehlen",
+                                      "searchAssetStatuses":  "Status suchen...",
+                                      "verificationStatus":  "Status auswaehlen",
+                                      "searchVerificationStatuses":  "Status suchen...",
+                                      "selectDate":  "Datum auswaehlen",
+                                      "searchUnits":  "Einheiten suchen...",
+                                      "documentType":  "Dokumenttyp auswaehlen",
+                                      "searchDocumentTypes":  "Dokumenttypen suchen...",
+                                      "district":  "z.B. Karachi East",
+                                      "tehsil":  "z.B. Korangi",
+                                      "mauza":  "z.B. Deh Mehran",
+                                      "khewat":  "z.B. 145",
+                                      "khatuni":  "z.B. 389",
+                                      "khasra":  "z.B. 22/3",
+                                      "areaSize":  "z.B. 2.5",
+                                      "areaUnit":  "Flaecheneinheit auswaehlen",
+                                      "latitude":  "z.B. 24.8607",
+                                      "longitude":  "z.B. 67.0011",
+                                      "ownership":  "z.B. Eigentum, Pacht, Dienstbarkeit, Wegerecht",
+                                      "description":  "Kontext erfassen: Nutzung, Revenue-Referenzen, Besitznotizen, Kartennotizen.",
+                                      "encumbranceNote":  "Beschreiben Sie Streit, Belastung, Pfandrecht, Stay Order oder andere Belastung.",
+                                      "assetIdentifier":  "z.B. AST-2026-0042",
+                                      "assetSubtype":  "z.B. {{type}} Kategorie, Klasse oder Untertyp",
+                                      "locationName":  "z.B. HQ Etage 4, Depot-Hof, Lager B",
+                                      "manufacturer":  "z.B. Dell, Toyota, Siemens",
+                                      "model":  "z.B. Latitude 7450, Hilux, S7-1200",
+                                      "serialNumber":  "z.B. SN-9K22-1145",
+                                      "custodianName":  "z.B. Operations, IT, Finance oder Mitarbeitername",
+                                      "department":  "z.B. Recht, IT, Operations",
+                                      "currentValue":  "z.B. 250000",
+                                      "currency":  "USD"
+                                  },
+                 "table":  {
+                               "asset":  "Objekt",
+                               "revenueIndex":  "Revenue Index",
+                               "locationIdentifier":  "Standort / Kennung",
+                               "records":  "Akten",
+                               "status":  "Status",
+                               "updated":  "Aktualisiert",
+                               "actions":  "Aktionen",
+                               "recordCounts":  "{{documents}} Dok. / {{cases}} Verfahren"
+                           },
+                 "fields":  {
+                                "title":  "Objekttitel",
+                                "assetIdentifier":  "Asset-ID / Tag",
+                                "assetType":  "Asset-Typ",
+                                "assetSubtype":  "Untertyp / Klasse",
+                                "assetStatus":  "Asset-Status",
+                                "district":  "District",
+                                "tehsil":  "Tehsil",
+                                "mauza":  "Mauza",
+                                "khewat":  "Grundkonto",
+                                "khatuni":  "Unterkonto",
+                                "khasra":  "Parzellennummer",
+                                "area":  "Flaeche",
+                                "areaSize":  "Flaechengroesse",
+                                "areaUnit":  "Einheit",
+                                "latitude":  "Breitengrad",
+                                "longitude":  "Laengengrad",
+                                "ownership":  "Eigentumsart",
+                                "acquisitionDate":  "Erwerbsdatum",
+                                "description":  "Beschreibung",
+                                "documentType":  "Dokumenttyp",
+                                "encumbered":  "Belastet",
+                                "encumbranceNote":  "Belastungsvermerk",
+                                "purchaseDate":  "Kaufdatum",
+                                "purchaseCost":  "Kaufkosten",
+                                "currentValue":  "Aktueller Wert",
+                                "currency":  "Waehrung",
+                                "warrantyExpiryDate":  "Garantie / Verlaengerung Ablauf",
+                                "usefulLifeMonths":  "Nutzungsdauer (Monate)",
+                                "custodianName":  "Verantwortlicher",
+                                "department":  "Abteilung",
+                                "locationName":  "Standort",
+                                "manufacturer":  "Hersteller / Aussteller",
+                                "model":  "Modell / Version",
+                                "serialNumber":  "Serien- / Registrierungsnr."
+                            },
+                 "documentMetadata":  {
+                                          "label":  "Dokumentlabel",
+                                          "reference":  "Referenz",
+                                          "instrumentNumber":  "Urkundennummer",
+                                          "registryNumber":  "Registernummer",
+                                          "fardNumber":  "Fard-Nummer",
+                                          "mutationNumber":  "Mutationsnummer",
+                                          "leaseNumber":  "Leasing-/Pachtnummer",
+                                          "issuingAuthority":  "Ausstellende Behoerde",
+                                          "documentDate":  "Dokumentdatum",
+                                          "effectiveFrom":  "Gueltig ab",
+                                          "effectiveTo":  "Gueltig bis",
+                                          "rightsType":  "Rechtsart",
+                                          "rightHolder":  "Rechtsinhaber / Eigentuemer",
+                                          "shareDescription":  "Anteil / Interesse",
+                                          "surveySheetNumber":  "Vermessungsblattnummer",
+                                          "mapScale":  "Kartenmassstab",
+                                          "mapProjection":  "Projektion / CRS",
+                                          "boundaryDescription":  "Grenzbeschreibung",
+                                          "verificationStatus":  "Verifizierungsstatus",
+                                          "verificationNotes":  "Verifizierungsnotizen"
+                                      },
+                 "documentPlaceholders":  {
+                                              "label":  "z.B. Registerurkunde, zertifizierter Fard oder Vermessungskarte",
+                                              "instrumentNumber":  "z.B. 2024-REG-1145",
+                                              "issuingAuthority":  "z.B. Sub-Registrar Karachi East",
+                                              "registryNumber":  "z.B. Buch I / 245",
+                                              "fardNumber":  "z.B. Fard-3921",
+                                              "mutationNumber":  "z.B. Inteqal 8802",
+                                              "leaseNumber":  "z.B. Pacht-17/2021",
+                                              "rightsType":  "z.B. Eigentum, Pacht, Wegerecht",
+                                              "rightHolder":  "z.B. Civorah",
+                                              "shareDescription":  "z.B. 100% Eigentum oder 1/2 Anteil",
+                                              "surveySheetNumber":  "z.B. Blatt 42-B",
+                                              "mapScale":  "z.B. 1:500",
+                                              "mapProjection":  "z.B. WGS84 / lokales CRS",
+                                              "boundaryDescription":  "Nord-, Sued-, Ost- und Westgrenzen beschreiben.",
+                                              "verificationNotes":  "Pruefnotizen, Maengel, Ablaufdaten oder rechtliche Hinweise erfassen."
+                                          },
+                 "verification":  {
+                                      "UNVERIFIED":  "Nicht verifiziert",
+                                      "UNDER_REVIEW":  "In Pruefung",
+                                      "VERIFIED":  "Verifiziert",
+                                      "REJECTED":  "Abgelehnt",
+                                      "EXPIRED":  "Abgelaufen"
+                                  },
+                 "assetTypes":  {
+                                    "LAND_PROPERTY":  "Grundstueck und Immobilie",
+                                    "VEHICLE":  "Fahrzeug",
+                                    "EQUIPMENT":  "Anlage und Ausruestung",
+                                    "IT_HARDWARE":  "IT-Hardware",
+                                    "SOFTWARE_LICENSE":  "Softwarelizenz",
+                                    "FURNITURE_FIXTURE":  "Moebel und Ausstattung",
+                                    "INTELLECTUAL_PROPERTY":  "Geistiges Eigentum",
+                                    "FINANCIAL_ASSET":  "Finanzieller Vermoegenswert",
+                                    "OTHER":  "Sonstiges Asset"
+                                },
+                 "assetTypeDescriptions":  {
+                                               "LAND_PROPERTY":  "Grundstuecke, Bueros, Depots, Pachten, Dienstbarkeiten und Immobilienrechte.",
+                                               "VEHICLE":  "Fuhrpark, Firmenwagen, LKW und Anhaenger.",
+                                               "EQUIPMENT":  "Maschinen, Werkzeuge, Zaehler, Generatoren und Feldequipment.",
+                                               "IT_HARDWARE":  "Laptops, Server, Netzwerkgeraete, Telefone und Endgeraete.",
+                                               "SOFTWARE_LICENSE":  "SaaS-Abos, Dauerlizenzen und digitale Ansprueche.",
+                                               "FURNITURE_FIXTURE":  "Bueroeinrichtung, Ausbauten, Fixtures und Standort-Assets.",
+                                               "INTELLECTUAL_PROPERTY":  "Marken, Patente, Urheberrechte und Markenwerte.",
+                                               "FINANCIAL_ASSET":  "Einlagen, Wertpapiere, Instrumente, Garantien und Investitionen.",
+                                               "OTHER":  "Jedes Asset, das keiner Standardklasse entspricht."
+                                           },
+                 "assetStatuses":  {
+                                       "ACTIVE":  "Aktiv",
+                                       "IN_USE":  "In Nutzung",
+                                       "IN_STORAGE":  "Eingelagert",
+                                       "MAINTENANCE":  "Wartung",
+                                       "UNDER_REVIEW":  "In Pruefung",
+                                       "RETIRED":  "Ausgemustert",
+                                       "DISPOSED":  "Veraeussert",
+                                       "LOST":  "Verloren"
+                                   },
+                 "form":  {
+                              "createTitle":  "Grundstuecksobjekt erstellen",
+                              "editTitle":  "Grundstuecksobjekt bearbeiten",
+                              "documentMetadataTitle":  "Dokumentmetadaten",
+                              "createDescription":  "Erfassen Sie Grundstueck, Revenue-Index, Rechte, Standort und optional das erste Dokument."
+                          },
+                 "status":  {
+                                "encumbered":  "Belastet",
+                                "clear":  "Frei",
+                                "documents":  "{{count}} Dokumente",
+                                "linkedCases":  "{{count}} verknuepfte Verfahren"
+                            },
+                 "tabs":  {
+                              "overview":  "Uebersicht",
+                              "documents":  "Dokumente",
+                              "litigation":  "Verfahren",
+                              "assetList":  "Asset-Liste",
+                              "graphs":  "Diagramme"
+                          },
+                 "sections":  {
+                                  "location":  "Georaeumliche Referenz",
+                                  "encumbrance":  "Belastung",
+                                  "documentMetadata":  "Metadaten zu Landrechten",
+                                  "documentRights":  "Dokumentrechte-Metadaten",
+                                  "custodian":  "Aktenverantwortlicher",
+                                  "documents":  "Dokumente",
+                                  "litigation":  "Verknuepfte Verfahren",
+                                  "geospatial":  "Georaeumliche Referenz",
+                                  "recordOwner":  "Akteninhaber"
+                              },
+                 "empty":  {
+                               "assets":  "Keine Grundstuecksobjekte gefunden.",
+                               "select":  "Waehlen Sie ein Grundstuecksobjekt.",
+                               "coordinates":  "Keine Koordinaten erfasst.",
+                               "documents":  "Keine Dokumente angehaengt.",
+                               "litigation":  "Keine Verfahren verknuepft.",
+                               "assetDetail":  "Grundstuecksobjekt nicht gefunden oder kein Zugriff."
+                           },
+                 "documents":  {
+                                   "supportedImages":  "PDF, Office-Dateien, Scans, TIFF, JPEG und PNG-Karten werden als gesicherte Grundstuecksakten gespeichert."
+                               },
+                 "litigation":  {
+                                    "linkHelp":  "Verknuepfen Sie Streitigkeiten, Aussetzungsanordnungen, Besitzansprueche oder Belastungen mit diesem Objekt.",
+                                    "searchPlaceholder":  "Alle Verfahrensmetadaten durchsuchen...",
+                                    "selectCase":  "Verfahren auswaehlen",
+                                    "linkedToAnotherAsset":  "mit anderem Objekt verknuepft",
+                                    "linkedToAsset":  "Bereits mit {{asset}} verknuepft",
+                                    "linkedTitle":  "Verknuepfte Verfahren",
+                                    "searchResults":  "Verknuepfbare Verfahren",
+                                    "searchPrompt":  "Geben Sie mindestens 2 Zeichen ein, um nach Fallmetadaten, Parteien, Terminen, Gebuehren, Notizen, Dokumenten, Beratern, Abteilung oder Gerichtsdaten zu suchen.",
+                                    "noMatches":  "Keine verknuepfbaren Verfahren fuer diese Suche gefunden."
+                                },
+                 "toast":  {
+                               "created":  "Grundstuecksobjekt erstellt.",
+                               "updated":  "Grundstuecksobjekt aktualisiert.",
+                               "saveFailed":  "Grundstuecksobjekt konnte nicht gespeichert werden.",
+                               "uploaded":  "Dokument hochgeladen.",
+                               "uploadFailed":  "Dokument konnte nicht hochgeladen werden.",
+                               "downloadFailed":  "Dokument konnte nicht geoeffnet werden.",
+                               "metadataUpdated":  "Dokumentmetadaten aktualisiert.",
+                               "metadataFailed":  "Dokumentmetadaten konnten nicht aktualisiert werden.",
+                               "litigationLinked":  "Verfahren verknuepft.",
+                               "litigationUnlinked":  "Verfahren geloest.",
+                               "litigationLinkFailed":  "Verfahren konnte nicht verknuepft werden.",
+                               "litigationUnlinkFailed":  "Verfahren konnte nicht geloest werden.",
+                               "deleted":  "Asset geloescht.",
+                               "deleteFailed":  "Asset konnte nicht geloescht werden."
+                           },
+                 "delete":  {
+                                "title":  "Asset loeschen?",
+                                "description":  "Moechten Sie {{title}} loeschen? Das Asset wird im Verzeichnis ausgeblendet und fuer Audits aufbewahrt.",
+                                "confirm":  "Asset loeschen"
+                            },
+                 "upload":  {
+                                "chooseFile":  "Datei auswaehlen",
+                                "help":  "Erstellen Sie das Grundstuecksobjekt mit denselben Metadaten wie im Verzeichnis. Die ausgewaehlte Datei wird als erstes gesichertes Dokument angehaengt.",
+                                "fileAttached":  "wird als erstes Grundstuecksrechts-Dokument angehaengt.",
+                                "noFile":  "Kein Dokument angehaengt - das Grundstuecksobjekt wird allein erstellt. Karten und Urkunden koennen spaeter im Objektbereich hochgeladen werden.",
+                                "dropOrBrowse":  "Grundstuecksdokument hier ablegen oder",
+                                "browse":  "durchsuchen",
+                                "acceptedTypes":  "PDF, Office-Dateien, Scans, TIFF/JPEG/PNG bis {{size}}",
+                                "optionalDocument":  "Ein Dokument ist hier optional. Wenn Sie jetzt Urkunde, Fard, Mutation, Pacht oder Karte anhaengen, wird es als erstes Dokument gesichert und verknuepft.",
+                                "fileTooLarge":  "Datei ist zu gross. Maximale Groesse"
+                            },
+                 "viewer":  {
+                                "title":  "{{title}} anzeigen",
+                                "open":  "Viewer oeffnen",
+                                "loading":  "Gesichertes Dokument wird geladen...",
+                                "rendering":  "Wird gerendert...",
+                                "error":  "Dieses Dokument konnte nicht geoeffnet werden.",
+                                "unknownType":  "Unbekannter Dateityp",
+                                "previousPage":  "Vorherige Seite",
+                                "nextPage":  "Naechste Seite",
+                                "zoomIn":  "Vergroessern",
+                                "zoomOut":  "Verkleinern",
+                                "rotateLeft":  "Nach links drehen",
+                                "rotateRight":  "Nach rechts drehen",
+                                "reset":  "Ansicht anpassen",
+                                "unsupportedTitle":  "Vorschau fuer diesen Dateityp nicht verfuegbar",
+                                "unsupportedBody":  "Laden Sie die gesicherte Originaldatei herunter. TIFF/GeoTIFF- und Office-Vorschauen benoetigen vor der Inline-Anzeige eine serverseitige Derivat-Pipeline."
+                            },
+                 "compactNumbers":  "Grundkonto {{khewat}} / Unterkonto {{khatuni}} / Parzelle {{khasra}}",
+                 "view":  {
+                              "grid":  "Kartenansicht",
+                              "list":  "Tabellenansicht"
+                          }
+             },
+    "contracts":  {
+                      "title":  "VertrÃ¤ge",
+                      "subtitle":  "Verwalten Sie den Vertragslebenszyklus â€“ Entwurf, PrÃ¼fung, Genehmigung, AusfÃ¼hrung und VerlÃ¤ngerung.",
+                      "viewingDataFor":  "Daten anzeigen fÃ¼r:",
+                      "nav":  {
+                                  "overview":  "Ãœbersicht",
+                                  "repository":  "Verzeichnis",
+                                  "renewals":  "VerlÃ¤ngerungen",
+                                  "types":  "Vertragsarten",
+                                  "moaRules":  "MoA-Regeln"
+                              }
+                  },
+    "auth":  {
+                 "brand":  {
+                               "title":  "Plattform zur Rechtsdigitalisierung",
+                               "subtitle":  "Zentralisierte Verwaltung von Rechtsunterlagen, Vertragslebenszyklus, Verfolgung von Rechtsstreitigkeiten und Compliance â€“ KI-gestÃ¼tzt.",
+                               "features":  {
+                                                "contracts":  "Vertrag",
+                                                "litigation":  "Rechtsstreitigkeiten",
+                                                "compliance":  "Compliance",
+                                                "aiSearch":  "KI-Suche",
+                                                "matters":  "Rechtsstreitigkeiten"
+                                            },
+                               "copyright":  "Â© {{year}} Civorah. Alle Rechte vorbehalten."
+                           }
+             },
+    "states":  {
+                   "loading":  "Wird geladen...",
+                   "saving":  "Wird gespeichert...",
+                   "noData":  "Noch keine Daten.",
+                   "none":  "Keine"
+               },
+    "menu":  {
+                 "profile":  "Profil",
+                 "language":  "Sprache",
+                 "settings":  "Einstellungen"
+             },
+    "theme":  {
+                  "appearance":  "Darstellung",
+                  "light":  "Hell",
+                  "dark":  "Dunkel",
+                  "system":  "System",
+                  "useTheme":  "{{theme}} Design verwenden",
+                  "comingSoon":  "DemnÃ¤chst",
+                  "soon":  "Bald",
+                  "comingSoonAria":  "{{theme}}-Design â€” demnÃ¤chst"
+              },
+    "errors":  {
+                   "generic":  "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+                   "network":  "Der Server konnte nicht erreicht werden. ÃœberprÃ¼fen Sie Ihre Verbindung und versuchen Sie es erneut.",
+                   "timeout":  "Die Anfrage ist abgelaufen. ÃœberprÃ¼fen Sie Ihre Verbindung und versuchen Sie es erneut.",
+                   "badResponse":  "Unerwartete Antwort vom Server. Bitte versuchen Sie es erneut oder wenden Sie sich an den Support.",
+                   "status":  {
+                                  "400":  "Einige der Angaben scheinen fehlerhaft zu sein. Bitte Ã¼berprÃ¼fen Sie das Formular und versuchen Sie es erneut.",
+                                  "401":  "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.",
+                                  "403":  "Sie haben keine Berechtigung, diese Aktion auszufÃ¼hren.",
+                                  "404":  "Wir konnten das Gesuchte nicht finden.",
+                                  "409":  "Dies steht im Konflikt mit dem aktuellen Zustand. Bitte aktualisieren Sie die Seite und versuchen Sie es erneut.",
+                                  "422":  "Einige der Angaben scheinen fehlerhaft zu sein. Bitte Ã¼berprÃ¼fen Sie das Formular und versuchen Sie es erneut.",
+                                  "429":  "Zu viele Anfragen. Bitte warten Sie einen Moment und versuchen Sie es erneut.",
+                                  "500":  "Der Server ist vorÃ¼bergehend nicht verfÃ¼gbar. Bitte versuchen Sie es in KÃ¼rze erneut."
+                              }
+               },
+    "toast":  {
+                  "title":  {
+                                "success":  "Erfolg",
+                                "error":  "Fehler",
+                                "info":  "Info",
+                                "warning":  "Warnung",
+                                "loading":  "Wird geladen"
+                            }
+              },
+    "accessDenied":  {
+                         "title":  "Zugriff verweigert",
+                         "body":  "Sie haben keine Berechtigung, dieses Modul anzuzeigen. Wenn Sie glauben, dass dies ein Fehler ist, wenden Sie sich an den Administrator Ihrer Organisation.",
+                         "back":  "ZurÃ¼ck zum Dashboard"
+                     },
+    "help":  {
+                 "label":  "Hilfe",
+                 "title":  "Hilfe und Konzepte"
+             },
+    "confirm":  {
+                    "deactivateRegion":  "MÃ¶chten Sie diese Region wirklich deaktivieren?"
+                },
+    "notFound":  {
+                     "title":  "Seite nicht gefunden",
+                     "body":  "Die gesuchte Seite existiert nicht oder wurde mÃ¶glicherweise verschoben.",
+                     "home":  "Zum Dashboard"
+                 },
+    "boundary":  {
+                     "title":  "Etwas ist schiefgelaufen",
+                     "body":  "Ein unerwarteter Fehler ist aufgetreten. Versuchen Sie, die Seite neu zu laden.",
+                     "reload":  "Seite neu laden"
+                 },
+    "profile":  {
+                    "title":  "Profil",
+                    "subtitle":  "Ihre KontoidentitÃ¤t und Zugriffsdetails.",
+                    "guest":  "Gast",
+                    "notSignedIn":  "Nicht angemeldet",
+                    "email":  "E-Mail",
+                    "notAvailable":  "Nicht verfÃ¼gbar",
+                    "accountStatus":  "Kontostatus",
+                    "status":  {
+                                   "PENDING_VERIFICATION":  "Verifizierung ausstehend",
+                                   "ACTIVE":  "Aktiv",
+                                   "SUSPENDED":  "Ausgesetzt",
+                                   "LOCKED":  "Gesperrt",
+                                   "DEACTIVATED":  "Deaktiviert",
+                                   "unknown":  "Unbekannt"
+                               }
+                },
+    "sessions":  {
+                     "title":  "Aktive Sitzungen",
+                     "subtitle":  "GerÃ¤te, die derzeit bei Ihrem Konto angemeldet sind.",
+                     "signOutOthers":  "Andere Sitzungen abmelden",
+                     "thisDevice":  "Dieses GerÃ¤t",
+                     "activeNow":  "Jetzt aktiv",
+                     "revoke":  "Widerrufen",
+                     "unknownDevice":  "Unbekanntes GerÃ¤t",
+                     "deviceOn":  "{{browser}} auf {{os}}",
+                     "lastActive":  "Zuletzt aktiv {{time}}",
+                     "signedIn":  "Angemeldet {{time}}",
+                     "loading":  "Sitzungen werden geladenâ€¦",
+                     "empty":  "Keine aktiven Sitzungen.",
+                     "loadError":  "Ihre Sitzungen konnten nicht geladen werden.",
+                     "revokeError":  "Diese Sitzung konnte nicht widerrufen werden.",
+                     "revokeOthersError":  "Andere Sitzungen konnten nicht abgemeldet werden."
+                 },
+    "orgAdminAssets":  {
+                           "title":  "Anlagenaufsicht",
+                           "subtitle":  "Organisationsweite Sicht auf Anlagen, Immobilien, Verantwortung, Dokumente, Werte und Risiken.",
+                           "tabs":  {
+                                        "overview":  "Ãœbersicht",
+                                        "register":  "Anlagenregister"
+                                    },
+                           "loading":  {
+                                           "overview":  "AnlagenÃ¼bersicht wird geladen...",
+                                           "assets":  "Anlagen werden geladen..."
+                                       },
+                           "kpis":  {
+                                        "registered":  "Registrierte Anlagen"
+                                    },
+                           "charts":  {
+                                          "location":  "Anlagen nach Standort",
+                                          "quality":  "PortfolioqualitÃ¤t"
+                                      },
+                           "register":  {
+                                            "title":  "Anlagenregister",
+                                            "subtitle":  "SchreibgeschÃ¼tzte Mandantenansicht aller zugÃ¤nglichen Anlagen mit Verantwortung, Bewertung, Dokumenten und Risiko."
+                                        },
+                           "filters":  {
+                                           "search":  "Anlage, Tag, Seriennummer, Standort, Bezirk suchen...",
+                                           "allStatuses":  "Alle Status",
+                                           "allRegions":  "Alle meine Regionen"
+                                       },
+                           "view":  {
+                                        "cards":  "Kartenansicht",
+                                        "table":  "Tabellenansicht"
+                                    },
+                           "status":  {
+                                          "clear":  "Frei",
+                                          "encumbered":  "Belastet"
+                                      },
+                           "table":  {
+                                         "asset":  "Anlage",
+                                         "typeStatus":  "Typ / Status",
+                                         "identifier":  "Kennung",
+                                         "locationCustody":  "Standort / Verantwortung",
+                                         "value":  "Wert",
+                                         "records":  "Nachweise",
+                                         "status":  "Status",
+                                         "updated":  "Aktualisiert",
+                                         "cost":  "Kosten"
+                                     },
+                           "empty":  {
+                                         "assets":  "Keine Anlagen gefunden."
+                                     },
+                           "detail":  {
+                                          "back":  "Anlagenaufsicht",
+                                          "loading":  "Anlage wird geladen...",
+                                          "loadError":  "Diese Anlage konnte nicht geladen werden. Sie wurde mÃ¶glicherweise entfernt oder gehÃ¶rt zu einer nicht zugÃ¤nglichen Region.",
+                                          "readOnly":  "SchreibgeschÃ¼tzte Aufsicht",
+                                          "noLocation":  "Kein Standort erfasst",
+                                          "documentCount_one":  "{{count}} Dokument",
+                                          "documentCount_other":  "{{count}} Dokumente",
+                                          "emptyMetadata":  "Keine benutzerdefinierten Metadaten erfasst.",
+                                          "emptyEncumbrance":  "Keine Belastungsnotiz erfasst.",
+                                          "emptyDescription":  "Keine Beschreibung erfasst.",
+                                          "months_one":  "{{count}} Monat",
+                                          "months_other":  "{{count}} Monate",
+                                          "encumbrance":  "Belastung",
+                                          "description":  "Beschreibung",
+                                          "customMetadata":  "Benutzerdefinierte Metadaten",
+                                          "sections":  {
+                                                           "identity":  "AnlagenidentitÃ¤t",
+                                                           "identitySub":  "Kernkennungen und Klassifizierungsdetails.",
+                                                           "location":  "Standort und Verantwortung",
+                                                           "locationSub":  "Wo sich die Anlage befindet und wer verantwortlich ist.",
+                                                           "financials":  "Finanzen und Lebenszyklus",
+                                                           "financialsSub":  "Bewertung, Erwerb, Garantie und Nutzungsdauer.",
+                                                           "risk":  "Risiko und Belastung",
+                                                           "riskSub":  "Aktuelle EinschrÃ¤nkung, Pfandrecht, Streitigkeit oder Anspruchslage.",
+                                                           "descriptionSub":  "Operative Hinweise und geschÃ¤ftlicher Kontext zu dieser Anlage.",
+                                                           "metadataSub":  "Strukturierte Metadaten, die mit diesem Anlagendatensatz erfasst wurden."
+                                                       },
+                                          "tabs":  {
+                                                       "overview":  "Ãœbersicht",
+                                                       "documents":  "Dokumente und Karten",
+                                                       "matters":  "FÃ¤lle",
+                                                       "governance":  "Governance"
+                                                   },
+                                          "facts":  {
+                                                        "assetTag":  "Anlagen-Tag / ID",
+                                                        "assetType":  "Anlagentyp",
+                                                        "location":  "Standort",
+                                                        "custodian":  "Verantwortlicher / Abteilung",
+                                                        "revenueIndex":  "Grundbuchindex",
+                                                        "area":  "FlÃ¤che",
+                                                        "ownershipType":  "Eigentumsart",
+                                                        "acquisitionDate":  "Erwerbsdatum",
+                                                        "purchaseDate":  "Kaufdatum",
+                                                        "warrantyExpiry":  "Garantieablauf",
+                                                        "manufacturer":  "Hersteller / Modell",
+                                                        "serialNumber":  "Seriennummer",
+                                                        "purchaseCost":  "Kaufkosten",
+                                                        "currentValue":  "Aktueller Wert",
+                                                        "usefulLife":  "Nutzungsdauer",
+                                                        "coordinates":  "Koordinaten"
+                                                    },
+                                          "revenue":  {
+                                                          "khewat":  "Khewat",
+                                                          "khatuni":  "Khatuni",
+                                                          "khasra":  "Khasra"
+                                                      },
+                                          "documents":  {
+                                                            "title":  "Dokumente und Nachweise",
+                                                            "subtitle":  "Quelldateien, Urkunden, Karten, Zertifikate, Rechnungen, Garantien, Nachweise und Eigentumsunterlagen zu dieser Anlage.",
+                                                            "empty":  "Keine Dokumente angehÃ¤ngt.",
+                                                            "document":  "Dokument",
+                                                            "reference":  "Referenz",
+                                                            "rights":  "Rechte",
+                                                            "mapMetadata":  "Kartendaten",
+                                                            "verification":  "PrÃ¼fung",
+                                                            "action":  "Aktion",
+                                                            "permission":  "Leseberechtigung fÃ¼r Dokumente ist erforderlich.",
+                                                            "view":  "Anzeigen"
+                                                        },
+                                          "matters":  {
+                                                          "title":  "VerknÃ¼pfte FÃ¤lle",
+                                                          "subtitle":  "Streitigkeiten, AnsprÃ¼che, einstweilige VerfÃ¼gungen, Besitzfragen und andere FÃ¤lle zu dieser Anlage.",
+                                                          "empty":  "Keine FÃ¤lle verknÃ¼pft.",
+                                                          "nextHearing":  "nÃ¤chster Termin",
+                                                          "openCase":  "Fall Ã¶ffnen"
+                                                      },
+                                          "governance":  {
+                                                             "recordCustodian":  "Datensatzverantwortlicher",
+                                                             "created":  "Erstellt",
+                                                             "lastUpdated":  "Zuletzt aktualisiert",
+                                                             "snapshot":  "Governance-Ãœberblick",
+                                                             "documents":  "Dokumente",
+                                                             "linkedCases":  "VerknÃ¼pfte FÃ¤lle",
+                                                             "region":  "Region",
+                                                             "unassigned":  "Nicht zugewiesen"
+                                                         }
+                                      }
+                       },
+    "region":  {
+                   "worldwide":  "Weltweit",
+                   "worldwideAll":  "Weltweit (alle Regionen)",
+                   "countries":  "LÃ¤nder",
+                   "selectPlaceholder":  "Land / Region auswÃ¤hlenâ€¦",
+                   "searchPlaceholder":  "Land oder Code suchenâ€¦",
+                   "ariaLabel":  "Land oder Region"
+               },
+    "currency":  {
+                     "common":  "GÃ¤ngig",
+                     "all":  "Alle WÃ¤hrungen",
+                     "selectPlaceholder":  "WÃ¤hrung auswÃ¤hlenâ€¦",
+                     "searchPlaceholder":  "WÃ¤hrung, Name oder Symbol suchenâ€¦",
+                     "ariaLabel":  "WÃ¤hrung"
+                 },
+    "timezone":  {
+                     "suggested":  "Vorgeschlagen",
+                     "detected":  "erkannt",
+                     "selectPlaceholder":  "Zeitzone auswÃ¤hlenâ€¦",
+                     "searchPlaceholder":  "Stadt, Zone oder Land suchenâ€¦",
+                     "ariaLabel":  "Zeitzone"
+                 },
+    "pagination":  {
+                       "rowsPerPage":  "Zeilen pro Seite",
+                       "pageOf":  "Seite {{page}} von {{totalPages}}",
+                       "previous":  "Zur?ck",
+                       "next":  "Weiter"
+                   },
+    "notifications":  {
+                          "title":  "Benachrichtigungen",
+                          "ariaLabel":  "Benachrichtigungen",
+                          "markAllRead":  "Alle als gelesen markieren",
+                          "empty":  "Alles erledigt.",
+                          "loadOlder":  "Ã„ltere laden",
+                          "loading":  "Wird geladenâ€¦",
+                          "error":  "Benachrichtigungen konnten nicht geladen werden.",
+                          "retry":  "Erneut versuchen",
+                          "time":  {
+                                       "justNow":  "gerade eben",
+                                       "minutes":  "vor {{n}} Min.",
+                                       "hours":  "vor {{n}} Std.",
+                                       "days":  "vor {{n}} T."
+                                   }
+                      },
+    "language":  {
+                     "updated":  "Spracheinstellung aktualisiert."
+                 },
+    "successMessages":  {
+                            "created":  "Erfolgreich erstellt.",
+                            "saved":  "Erfolgreich gespeichert.",
+                            "deleted":  "Erfolgreich gelÃ¶scht.",
+                            "submit":  "Zur Genehmigung eingereicht.",
+                            "approve":  "Erfolgreich genehmigt.",
+                            "reject":  "Abgelehnt.",
+                            "decide":  "Entscheidung erfasst.",
+                            "execute":  "Erfolgreich ausgefÃ¼hrt.",
+                            "terminate":  "Beendet.",
+                            "renew":  "Erfolgreich verlÃ¤ngert.",
+                            "blacklist":  "Gegenpartei wurde gesperrt.",
+                            "screen":  "PrÃ¼fung gestartet.",
+                            "revoke":  "Zugriff widerrufen.",
+                            "restore":  "Erfolgreich wiederhergestellt.",
+                            "accept":  "Erfolgreich angenommen.",
+                            "allocate":  "Erfolgreich zugewiesen.",
+                            "invite":  "Einladung gesendet.",
+                            "resend":  "Erfolgreich erneut gesendet.",
+                            "duplicate":  "Erfolgreich dupliziert.",
+                            "move":  "Erfolgreich verschoben.",
+                            "archive":  "Erfolgreich archiviert.",
+                            "activate":  "Erfolgreich aktiviert.",
+                            "deactivate":  "Erfolgreich deaktiviert.",
+                            "provisionDefaults":  "Standardwerte bereitgestellt.",
+                            "organizationCreated":  "Organisation erfolgreich erstellt.",
+                            "contractCreated":  "Vertrag erfolgreich erstellt.",
+                            "contractUpdated":  "Vertrag erfolgreich aktualisiert.",
+                            "contractDeleted":  "Vertrag erfolgreich gelÃ¶scht.",
+                            "folderCreated":  "Ordner erfolgreich erstellt.",
+                            "folderRenamed":  "Ordner erfolgreich umbenannt.",
+                            "folderDeleted":  "Ordner erfolgreich gelÃ¶scht.",
+                            "contractTypeCreated":  "Vertragstyp erfolgreich erstellt.",
+                            "contractTypeUpdated":  "Vertragstyp erfolgreich aktualisiert.",
+                            "contractTypeDeleted":  "Vertragstyp erfolgreich gelÃ¶scht.",
+                            "noteAdded":  "Notiz erfolgreich hinzugefÃ¼gt.",
+                            "noteDeleted":  "Notiz erfolgreich gelÃ¶scht.",
+                            "obligationAdded":  "Verpflichtung erfolgreich hinzugefÃ¼gt.",
+                            "obligationUpdated":  "Verpflichtung erfolgreich aktualisiert.",
+                            "obligationDeleted":  "Verpflichtung erfolgreich gelÃ¶scht.",
+                            "litigationCaseCreated":  "Prozessfall erfolgreich erstellt.",
+                            "litigationCaseUpdated":  "Prozessfall erfolgreich aktualisiert.",
+                            "litigationCaseDeleted":  "Prozessfall erfolgreich gelÃ¶scht.",
+                            "hearingAdded":  "AnhÃ¶rung erfolgreich hinzugefÃ¼gt.",
+                            "hearingUpdated":  "AnhÃ¶rung erfolgreich aktualisiert.",
+                            "hearingDeleted":  "AnhÃ¶rung erfolgreich gelÃ¶scht.",
+                            "feeRecorded":  "GebÃ¼hr erfolgreich erfasst.",
+                            "feeDeleted":  "GebÃ¼hr erfolgreich gelÃ¶scht.",
+                            "partyAdded":  "Partei erfolgreich hinzugefÃ¼gt.",
+                            "partyUpdated":  "Partei erfolgreich aktualisiert.",
+                            "partyDeleted":  "Partei erfolgreich gelÃ¶scht.",
+                            "whistleblowingCaseCreated":  "Hinweisgeberfall erfolgreich erstellt.",
+                            "whistleblowingCaseUpdated":  "Hinweisgeberfall erfolgreich aktualisiert.",
+                            "commentAdded":  "Kommentar erfolgreich hinzugefÃ¼gt.",
+                            "evidenceAttached":  "Beweis erfolgreich angehÃ¤ngt.",
+                            "participantAdded":  "Beteiligter erfolgreich hinzugefÃ¼gt.",
+                            "participantUpdated":  "Beteiligter erfolgreich aktualisiert.",
+                            "participantRemoved":  "Beteiligter erfolgreich entfernt.",
+                            "counterpartyCreated":  "Gegenpartei erfolgreich erstellt.",
+                            "counterpartyUpdated":  "Gegenpartei erfolgreich aktualisiert.",
+                            "counterpartyDeleted":  "Gegenpartei erfolgreich gelÃ¶scht.",
+                            "documentUploaded":  "Dokument erfolgreich hochgeladen.",
+                            "documentDeleted":  "Dokument erfolgreich gelÃ¶scht.",
+                            "departmentCreated":  "Abteilung erfolgreich erstellt.",
+                            "departmentUpdated":  "Abteilung erfolgreich aktualisiert.",
+                            "departmentDeleted":  "Abteilung erfolgreich gelÃ¶scht.",
+                            "roleCreated":  "Rolle erfolgreich erstellt.",
+                            "roleUpdated":  "Rolle erfolgreich aktualisiert.",
+                            "roleDeleted":  "Rolle erfolgreich gelÃ¶scht.",
+                            "permissionsUpdated":  "Berechtigungen erfolgreich aktualisiert.",
+                            "permissionCreated":  "Berechtigung erfolgreich erstellt.",
+                            "permissionUpdated":  "Berechtigung erfolgreich aktualisiert.",
+                            "permissionDeleted":  "Berechtigung erfolgreich gelÃ¶scht.",
+                            "planCreated":  "Plan erfolgreich erstellt.",
+                            "planUpdated":  "Plan erfolgreich aktualisiert.",
+                            "planDeleted":  "Plan erfolgreich gelÃ¶scht.",
+                            "passwordResetLinkSent":  "Wenn fÃ¼r diese E-Mail ein Konto existiert, wurde ein Link zum ZurÃ¼cksetzen des Passworts gesendet.",
+                            "passwordReset":  "Ihr Passwort wurde zurÃ¼ckgesetzt. Bitte melden Sie sich mit Ihrem neuen Passwort an.",
+                            "passwordUpdated":  "Passwort erfolgreich aktualisiert.",
+                            "mfaDisabled":  "MFA erfolgreich deaktiviert.",
+                            "permissionsAssigned":  "Berechtigungen erfolgreich zugewiesen.",
+                            "rowScopeUpdated":  "ZeilenbereichsbeschrÃ¤nkungen aktualisiert.",
+                            "permissionsRevoked":  "Berechtigungen erfolgreich widerrufen.",
+                            "memberUpdated":  "Mitglied aktualisiert.",
+                            "verificationCodeSent":  "BestÃ¤tigungscode gesendet.",
+                            "invitationAccepted":  "Einladung erfolgreich angenommen.",
+                            "signedIn":  "Erfolgreich angemeldet.",
+                            "signedOut":  "Erfolgreich abgemeldet."
+                        },
+    "readOnly":  "Nur-Lese-Uebersicht",
+    "matterDetail":  {
+                         "oversight":  "Matter-Uebersicht",
+                         "back":  "Zurueck zur Uebersicht",
+                         "readOnly":  "Nur-Lese-Uebersicht",
+                         "loadError":  "Dieses Matter konnte nicht geladen werden. Es wurde moeglicherweise entfernt oder gehoert zu einer Region ohne Zugriff.",
+                         "caseNo":  "Aktenzeichen {{number}}",
+                         "instituted":  "Eingereicht am {{date}}",
+                         "loading":  {
+                                         "case":  "Matter wird geladen...",
+                                         "parties":  "Parteien werden geladen...",
+                                         "hearings":  "Termine werden geladen...",
+                                         "documents":  "Dokumente werden geladen...",
+                                         "fees":  "Gebuehren werden geladen...",
+                                         "notes":  "Notizen werden geladen..."
+                                     },
+                         "tabs":  {
+                                      "overview":  "Uebersicht",
+                                      "parties":  "Parteien",
+                                      "hearings":  "Termine",
+                                      "documents":  "Dokumente",
+                                      "fees":  "Gebuehren",
+                                      "notes":  "Notizen"
+                                  },
+                         "overview":  {
+                                          "nature":  "Art des Matters",
+                                          "court":  "Gericht / Forum",
+                                          "location":  "Ort / Zustaendigkeit",
+                                          "institutionDate":  "Einreichungsdatum",
+                                          "nextHearing":  "Naechster Termin",
+                                          "disposalDate":  "Abschlussdatum",
+                                          "department":  "Abteilung",
+                                          "folder":  "Ordner",
+                                          "linkedAsset":  "Verknuepfter Vermoegenswert",
+                                          "region":  "Region",
+                                          "outcome":  "Ergebnis",
+                                          "khasra":  "Khasra",
+                                          "encumberedAsset":  "Belasteter Vermoegenswert",
+                                          "financialExposure":  "Finanzielles Risiko",
+                                          "claimAmount":  "Forderungsbetrag",
+                                          "contingentLiability":  "Eventualverbindlichkeit",
+                                          "counselAssignment":  "Rechtsberatung und Zuweisung",
+                                          "inHouseLawyer":  "Interner Jurist",
+                                          "externalCounsel":  "Externer Rechtsbeistand",
+                                          "portalAccess":  "Portalzugriff",
+                                          "counselIdd":  "Counsel IDD"
+                                      },
+                         "parties":  {
+                                         "title":  "Parteien",
+                                         "addShort":  "Partei",
+                                         "empty":  "Noch keine Parteien erfasst.",
+                                         "remove":  "Partei entfernen",
+                                         "addTitle":  "Partei hinzufuegen",
+                                         "adding":  "Wird hinzugefuegt...",
+                                         "name":  "Name *",
+                                         "namePlaceholder":  "Name der Partei",
+                                         "role":  "Rolle",
+                                         "description":  "Beschreibung",
+                                         "descriptionPlaceholder":  "Optionale Details zu dieser Partei...",
+                                         "wepEntity":  "Diese Partei ist eine WEP-Einheit",
+                                         "confirmTitle":  "Partei entfernen?",
+                                         "confirmPrefix":  "Entfernen",
+                                         "confirmSuffix":  "aus diesem Matter? Diese Aktion kann nicht rueckgaengig gemacht werden.",
+                                         "toasts":  {
+                                                        "added":  "Partei hinzugefuegt",
+                                                        "removed":  "Partei entfernt"
+                                                    }
+                                     },
+                         "hearings":  {
+                                          "title":  "Termine",
+                                          "addShort":  "Termin",
+                                          "empty":  "Noch keine Termine geplant.",
+                                          "list":  "Liste",
+                                          "calendar":  "Kalender",
+                                          "toasts":  {
+                                                         "added":  "Termin hinzugefuegt"
+                                                     }
+                                      },
+                         "documents":  {
+                                           "title":  "Dokumente",
+                                           "empty":  "Keine Dokumente zu diesem Matter angehaengt.",
+                                           "searchable":  "Durchsuchbar"
+                                       },
+                         "fees":  {
+                                      "title":  "Rechtsgebuehren",
+                                      "addShort":  "Gebuehr",
+                                      "empty":  "Noch keine Rechtsgebuehren erfasst.",
+                                      "paid":  "Bezahlt",
+                                      "unpaid":  "Unbezahlt",
+                                      "columns":  {
+                                                      "type":  "Typ",
+                                                      "invoice":  "Rechnung",
+                                                      "status":  "Status",
+                                                      "amount":  "Betrag"
+                                                  },
+                                      "toasts":  {
+                                                     "recorded":  "Gebuehr erfasst"
+                                                 }
+                                  },
+                         "notes":  {
+                                       "title":  "Matter-Notizen",
+                                       "addShort":  "Notiz",
+                                       "empty":  "Noch keine Notizen.",
+                                       "toasts":  {
+                                                      "added":  "Notiz hinzugefuegt"
+                                                  }
+                                   }
+                     },
+    "reporting":  {
+                      "title":  "Berichte und Analysen",
+                      "subtitle":  "ModulÃ¼bergreifende Analysen mit reichhaltigen Filtern sowie CSV-, Excel- und PDF-Exporten.",
+                      "noOrganization":  "Kein aktiver Organisationskontext.",
+                      "tabs":  {
+                                   "overview":  "Ãœbersicht"
+                               },
+                      "charts":  {
+                                     "trailing12":  "Letzte 12 Monate"
+                                 },
+                      "views":  {
+                                    "stats":  "Statistiken",
+                                    "table":  "Tabelle"
+                                },
+                      "loading":  {
+                                      "workspace":  "Reporting-Arbeitsbereich wird geladen...",
+                                      "overview":  "Ãœbersicht wird geladen...",
+                                      "analytics":  "Analysen werden geladen...",
+                                      "records":  "DatensÃ¤tze werden geladen..."
+                                  },
+                      "errors":  {
+                                     "unavailable":  "Berichte sind fÃ¼r Ihr Konto nicht verfÃ¼gbar.",
+                                     "overview":  "Ãœbersicht kann nicht geladen werden.",
+                                     "analytics":  "Analysen kÃ¶nnen nicht geladen werden.",
+                                     "records":  "DatensÃ¤tze kÃ¶nnen nicht geladen werden.",
+                                     "export":  "Export konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
+                                 },
+                      "toasts":  {
+                                     "downloaded":  "Bericht heruntergeladen"
+                                 },
+                      "filters":  {
+                                      "search":  "Suchen...",
+                                      "allRegions":  "Alle Regionen",
+                                      "allDepartments":  "Alle Abteilungen",
+                                      "anyOwner":  "Beliebiger EigentÃ¼mer / ZustÃ¤ndiger",
+                                      "from":  "Von",
+                                      "to":  "Bis",
+                                      "clear":  "Filter lÃ¶schen",
+                                      "noOptions":  "Keine Optionen"
+                                  },
+                      "table":  {
+                                    "empty":  "Keine DatensÃ¤tze entsprechen den aktuellen Filtern."
+                                },
+                      "export":  {
+                                     "label":  "Export",
+                                     "exporting":  "Export lÃ¤uft..."
+                                 },
+                      "executive":  {
+                                        "empty":  "Noch keine Module fÃ¼r Berichte verfÃ¼gbar.",
+                                        "totalRecords":  "DatensÃ¤tze gesamt"
+                                    },
+                      "total":  "Gesamt"
+                  },
+    "permissionsPage":  {
+                            "title":  "Berechtigungen",
+                            "subtitle":  "Verwalten Sie Plattformberechtigungen fÃ¼r alle Portale.",
+                            "add":  "Berechtigung erstellen",
+                            "searchPlaceholder":  "Berechtigungen nach Modul, Ressource oder Aktion suchen...",
+                            "filters":  {
+                                            "allPortals":  "Alle Portale",
+                                            "allModules":  "Alle Module"
+                                        },
+                            "systemRoles":  {
+                                                "super_admin":  "Super-Admin",
+                                                "tenant":  "Mandant",
+                                                "user":  "Benutzer"
+                                            },
+                            "table":  {
+                                          "portal":  "Portal",
+                                          "module":  "Modul",
+                                          "resource":  "Ressource",
+                                          "action":  "Aktion",
+                                          "displayName":  "Anzeigename",
+                                          "sensitive":  "Sensibel",
+                                          "active":  "Status"
+                                      },
+                            "yes":  "Ja",
+                            "no":  "Nein",
+                            "status":  {
+                                           "active":  "Aktiv",
+                                           "inactive":  "Inaktiv"
+                                       },
+                            "states":  {
+                                           "loading":  "Berechtigungen werden geladen...",
+                                           "loadError":  "Fehler beim Laden der Berechtigungen. {{error}}",
+                                           "empty":  "Keine Berechtigungen gefunden."
+                                       },
+                            "form":  {
+                                         "cancel":  "Abbrechen",
+                                         "create":  "Erstellen",
+                                         "creating":  "Wird erstellt...",
+                                         "portalLabel":  "Portal",
+                                         "module":  "Modul",
+                                         "modulePlaceholder":  "z.B. contracts",
+                                         "resource":  "Ressource",
+                                         "resourcePlaceholder":  "z.B. create",
+                                         "action":  "Aktion",
+                                         "actionPlaceholder":  "z.B. update",
+                                         "displayName":  "Anzeigename",
+                                         "displayNamePlaceholder":  "z.B. Create Contract",
+                                         "description":  "Beschreibung",
+                                         "descriptionPlaceholder":  "Optionale Beschreibung",
+                                         "sensitive":  "Sensible Berechtigung",
+                                         "createError":  "Fehler beim Erstellen der Berechtigung. Bitte Ã¼berprÃ¼fen Sie Ihre Eingabe und versuchen Sie es erneut."
+                                     },
+                            "modules":  {
+                                            "platform":  "Plattform",
+                                            "auth":  "Organisation \u0026 Konto",
+                                            "documents":  "Dokumente",
+                                            "contracts":  "VertrÃ¤ge (CLM)",
+                                            "matters":  "Angelegenheiten",
+                                            "secretarial":  "Sekretariat \u0026 Kalender",
+                                            "compliance":  "Ethik \u0026 Compliance",
+                                            "land":  "VermÃ¶genswerte",
+                                            "whistleblowing":  "Whistleblowing",
+                                            "external_access":  "Externe Ressourcenzuweisung",
+                                            "ai":  "KI-Assistent",
+                                            "reporting":  "Berichterstattung \u0026 Analysen"
+                                        },
+                            "actions":  {
+                                            "create":  "Erstellen",
+                                            "suspend":  "Suspendieren",
+                                            "delete":  "LÃ¶schen",
+                                            "manage":  "Verwalten",
+                                            "read_all":  "Alle lesen",
+                                            "read":  "Lesen",
+                                            "update":  "Aktualisieren",
+                                            "manage_members":  "Mitglieder verwalten",
+                                            "manage_roles":  "Rollen verwalten",
+                                            "view_audit_log":  "Audit-Log anzeigen",
+                                            "read_self":  "Eigenes Profil lesen",
+                                            "update_self":  "Eigenes Profil aktualisieren",
+                                            "manage_mfa_self":  "Eigene MFA verwalten",
+                                            "read_assigned":  "Zugeordnete anzeigen",
+                                            "approve":  "Genehmigen",
+                                            "execute":  "AusfÃ¼hren",
+                                            "review_legal":  "Rechtliche PrÃ¼fung",
+                                            "submit":  "Einreichen",
+                                            "terminate":  "KÃ¼ndigen",
+                                            "renew":  "VerlÃ¤ngern",
+                                            "archive":  "Archivieren",
+                                            "override_workflow":  "Workflow Ã¼berschreiben",
+                                            "manage_obligations":  "Verpflichtungen verwalten",
+                                            "manage_notes":  "Notizen verwalten",
+                                            "manage_documents":  "Dokumente verwalten",
+                                            "read_version":  "Versionen anzeigen",
+                                            "restore_version":  "Version wiederherstellen",
+                                            "manage_folders":  "Ordner verwalten",
+                                            "contribute":  "Beitragen",
+                                            "move_folder":  "Ordner verschieben",
+                                            "manage_hearings":  "AnhÃ¶rungen verwalten",
+                                            "manage_parties":  "Parteien verwalten",
+                                            "allocate":  "Zuweisen",
+                                            "reject":  "Ablehnen",
+                                            "blacklist":  "Auf Blacklist setzen",
+                                            "review":  "PrÃ¼fen",
+                                            "read_dashboard":  "Dashboard anzeigen",
+                                            "manage_settings":  "Einstellungen verwalten",
+                                            "investigate":  "Untersuchen",
+                                            "admin":  "Admin",
+                                            "independent_review":  "UnabhÃ¤ngige PrÃ¼fung",
+                                            "upload":  "Hochladen",
+                                            "edit":  "Bearbeiten",
+                                            "export":  "Exportieren"
+                                        },
+                            "resources":  {
+                                              "platform_org":  "Plattform-Organisation",
+                                              "permission":  "Berechtigung",
+                                              "role_template":  "Rollenvorlage",
+                                              "audit_log":  "Audit-Log",
+                                              "organization":  "Organisation",
+                                              "department":  "Abteilung",
+                                              "integration":  "Integration",
+                                              "user":  "Benutzer",
+                                              "contract":  "Vertrag",
+                                              "contract_type":  "Vertragstyp",
+                                              "moa_rule":  "MoA-Genehmigungsregel",
+                                              "contract_template":  "Vertragsvorlage",
+                                              "litigation_case":  "Angelegenheit",
+                                              "external_counsel":  "Externer Berater",
+                                              "legal_fee":  "AnwaltsgebÃ¼hren",
+                                              "secretarial_record":  "Sekretariatsprotokoll",
+                                              "compliance_event":  "Compliance-Ereignis",
+                                              "counterparty":  "Vertragspartner",
+                                              "screening":  "Screening",
+                                              "dd":  "Due Diligence",
+                                              "land_asset":  "VermÃ¶genswert",
+                                              "whistleblowing_case":  "Whistleblowing-Fall",
+                                              "ai_assistant":  "KI-Assistent",
+                                              "document":  "Dokument",
+                                              "report":  "Bericht"
+                                          },
+                            "displayNames":  {
+                                                 "Create Organization":  "Organisation erstellen",
+                                                 "Suspend Organization":  "Organisation suspendieren",
+                                                 "Delete Organization":  "Organisation lÃ¶schen",
+                                                 "Manage Permission Catalog":  "Berechtigungskatalog verwalten",
+                                                 "Manage Role Templates":  "Rollenvorlagen verwalten",
+                                                 "Read All Audit Logs":  "Alle Audit-Logs lesen",
+                                                 "View Organization":  "Organisation anzeigen",
+                                                 "Update Organization":  "Organisation aktualisieren",
+                                                 "Manage Members":  "Mitglieder verwalten",
+                                                 "Manage Roles":  "Rollen verwalten",
+                                                 "View Audit Log":  "Audit-Log anzeigen",
+                                                 "Manage Departments":  "Abteilungen verwalten",
+                                                 "Manage Integrations":  "Integrationen verwalten",
+                                                 "Read Own Profile":  "Eigenes Profil lesen",
+                                                 "Update Own Profile":  "Eigenes Profil aktualisieren",
+                                                 "Manage Own MFA":  "Eigene MFA verwalten",
+                                                 "Create Contract":  "Vertrag erstellen",
+                                                 "View Contracts":  "VertrÃ¤ge anzeigen",
+                                                 "View Assigned Contracts":  "Zugeordnete VertrÃ¤ge anzeigen",
+                                                 "Edit Contract":  "Vertrag bearbeiten",
+                                                 "Delete Contract":  "Vertrag lÃ¶schen",
+                                                 "Approve Contract":  "Vertrag genehmigen",
+                                                 "Execute Contract":  "Vertrag ausfÃ¼hren",
+                                                 "Legal Review":  "Rechtliche PrÃ¼fung",
+                                                 "Submit Contract":  "Vertrag einreichen",
+                                                 "Terminate Contract":  "Vertrag kÃ¼ndigen",
+                                                 "Renew Contract":  "Vertrag verlÃ¤ngern",
+                                                 "Archive Contract":  "Vertrag archivieren",
+                                                 "Override MoA Workflow":  "Workflow Ã¼berschreiben",
+                                                 "Manage Obligations":  "Verpflichtungen verwalten",
+                                                 "Manage Contract Notes":  "Vertragsnotizen verwalten",
+                                                 "Manage Contract Documents":  "Vertragsdokumente verwalten",
+                                                 "View Contract Versions":  "Vertragsversionen anzeigen",
+                                                 "Restore Contract Version":  "Vertragsversion wiederherstellen",
+                                                 "Manage Contract Folders":  "Vertragsordner verwalten",
+                                                 "Manage Contract Types":  "Vertragstypen verwalten",
+                                                 "Manage MoA Approval Rules":  "MoA-Genehmigungsregeln verwalten",
+                                                 "View MoA Approval Rules":  "MoA-Genehmigungsregeln anzeigen",
+                                                 "Manage Contract Templates":  "Vertragsvorlagen verwalten",
+                                                 "Create Matter":  "Angelegenheit erstellen",
+                                                 "View Matters":  "Angelegenheiten anzeigen",
+                                                 "View Assigned Matters":  "Zugeordnete Angelegenheiten anzeigen",
+                                                 "Contribute to Assigned Matters":  "Zu zugeordneten Angelegenheiten beitragen",
+                                                 "Edit Matter":  "Angelegenheit bearbeiten",
+                                                 "Move Matter Folders":  "Angelegenheiten-Ordner verschieben",
+                                                 "Manage Matter Hearings":  "AnhÃ¶rungen verwalten",
+                                                 "Manage Matter Parties":  "Parteien verwalten",
+                                                 "Manage Matter Notes":  "Notizen verwalten",
+                                                 "Manage Matter Documents":  "Dokumente verwalten",
+                                                 "Delete Matter":  "Angelegenheit lÃ¶schen",
+                                                 "Hire External Counsel":  "Externen Berater einstellen",
+                                                 "Assign External Counsel":  "Externen Berater zuweisen",
+                                                 "View External Counsel":  "Externe Berater anzeigen",
+                                                 "Manage Legal Fees":  "AnwaltsgebÃ¼hren verwalten",
+                                                 "View Secretarial Records":  "Sekretariatsprotokolle anzeigen",
+                                                 "Add Secretarial Record":  "Sekretariatsprotokoll hinzufÃ¼gen",
+                                                 "Edit Secretarial Record":  "Sekretariatsprotokoll bearbeiten",
+                                                 "Delete Secretarial Record":  "Sekretariatsprotokoll lÃ¶schen",
+                                                 "Manage Compliance Calendar":  "Compliance-Kalender verwalten",
+                                                 "Submit Counterparty":  "Vertragspartner einreichen",
+                                                 "View Counterparties":  "Vertragspartner anzeigen",
+                                                 "Edit Counterparty":  "Vertragspartner bearbeiten",
+                                                 "Delete Counterparty":  "Vertragspartner lÃ¶schen",
+                                                 "Approve Counterparty":  "Vertragspartner genehmigen",
+                                                 "Reject Counterparty":  "Vertragspartner ablehnen",
+                                                 "Blacklist Counterparty":  "Vertragspartner auf Blacklist setzen",
+                                                 "Renew Counterparty IDD":  "Vertragspartner IDD erneuern",
+                                                 "Run Screening":  "Screening ausfÃ¼hren",
+                                                 "View Screening Results":  "Screening-Ergebnisse anzeigen",
+                                                 "Review Screening Hits":  "Screening-Treffer Ã¼berprÃ¼fen",
+                                                 "View DD Dashboard":  "Due Diligence Dashboard anzeigen",
+                                                 "Manage DD Settings":  "Due Diligence Einstellungen verwalten",
+                                                 "Create Asset":  "VermÃ¶genswert erstellen",
+                                                 "View Assets":  "VermÃ¶genswerte anzeigen",
+                                                 "Edit Asset":  "VermÃ¶genswert bearbeiten",
+                                                 "Delete Asset":  "VermÃ¶genswert lÃ¶schen",
+                                                 "View WB Cases":  "Whistleblowing-FÃ¤lle anzeigen",
+                                                 "Investigate WB Case":  "Whistleblowing-Fall untersuchen",
+                                                 "WB Compliance Admin":  "Whistleblowing Compliance-Admin",
+                                                 "Use AI Assistant":  "KI-Assistent nutzen",
+                                                 "Upload Documents":  "Dokumente hochladen",
+                                                 "View / Download Documents":  "Dokumente anzeigen / herunterladen",
+                                                 "Edit Documents":  "Dokumente bearbeiten",
+                                                 "Delete Documents":  "Dokumente lÃ¶schen",
+                                                 "View Reports":  "Berichte anzeigen",
+                                                 "Export Reports":  "Berichte exportieren"
+                                             }
+                        },
+    "rolesPage":  {
+                      "title":  "Rollen",
+                      "subtitle":  "Erstellen Sie Rollen fÃ¼r jedes Portal (Super-Admin, Mandant, Benutzer) und verwalten Sie deren Berechtigungen.",
+                      "create":  "Rolle erstellen",
+                      "creating":  "Wird erstellt...",
+                      "cancel":  "Abbrechen",
+                      "allPortals":  "Alle Portale",
+                      "searchPlaceholder":  "Rollen suchen...",
+                      "loading":  "Rollen werden geladen...",
+                      "loadError":  "Fehler beim Laden der Rollen. {{error}}",
+                      "empty":  "Keine Rollen gefunden.",
+                      "grid":  {
+                                   "permissions":  "{{count}} Berechtigung",
+                                   "permissions_plural":  "{{count}} Berechtigungen",
+                                   "locked":  "Gesperrt",
+                                   "editable":  "Bearbeitbar",
+                                   "manage":  "Berechtigungen verwalten"
+                               },
+                      "table":  {
+                                    "name":  "Name",
+                                    "portal":  "Portal",
+                                    "scope":  "Bereich",
+                                    "permissions":  "Berechtigungen",
+                                    "locked":  "Gesperrt",
+                                    "actions":  "Aktionen"
+                                },
+                      "form":  {
+                                   "portalLabel":  "Portal (Systemrolle)",
+                                   "portalSuperAdminHint":  "Erstellt eine GLOBALE Rolle fÃ¼r das Civorah-Plattform-Admin-Portal.",
+                                   "portalTenantHint":  "Erstellt eine VORLAGEN-Rolle fÃ¼r das Mandantenportal. Mandantenbenutzer kÃ¶nnen ihre Organisation verwalten und auch auf Modulberechtigungen zugreifen.",
+                                   "portalUserHint":  "Erstellt eine VORLAGEN-Rolle fÃ¼r das Benutzerportal mit Berechtigungen auf Modulebene.",
+                                   "nameLabel":  "Name",
+                                   "namePlaceholder":  "z.B. Rechtsmanager",
+                                   "descriptionLabel":  "Beschreibung",
+                                   "descriptionPlaceholder":  "Optionale Beschreibung",
+                                   "createError":  "Fehler beim Erstellen der Rolle. Bitte Ã¼berprÃ¼fen Sie Ihre Eingabe und versuchen Sie es erneut."
+                               },
+                      "detail":  {
+                                     "back":  "ZurÃ¼ck zu den Rollen",
+                                     "loading":  "Sicherheitsstrukturen werden geladen...",
+                                     "loadError":  "Fehler beim Initialisieren des Kontextes der Rollendetails",
+                                     "lockedBadge":  "Gesperrt",
+                                     "editableBadge":  "Bearbeitbar",
+                                     "summary":  {
+                                                     "assignedScope":  "Zugewiesener Bereich",
+                                                     "sensitiveKeys":  "Sensible SchlÃ¼ssel",
+                                                     "sensitiveKeysCount":  "{{count}} SchlÃ¼ssel aktiviert",
+                                                     "sensitiveKeysCount_plural":  "{{count}} SchlÃ¼ssel aktiviert",
+                                                     "systemProtection":  "Systemschutz",
+                                                     "systemProtectionLocked":  "Gesperrt / Nur Lesezugriff",
+                                                     "systemProtectionWritable":  "Beschreibbare Matrix",
+                                                     "moduleCoverage":  "Modulabdeckung"
+                                                 },
+                                     "saveSuccess":  "Sicherheitsparameter erfolgreich synchronisiert.",
+                                     "saveAction":  "Ã„nderungen der Matrix speichern",
+                                     "savingAction":  "Wird gespeichert...",
+                                     "filterPlaceholder":  "Module oder bestimmte SchlÃ¼ssel filtern...",
+                                     "moduleHeaderSuffix":  "Modul",
+                                     "selectAll":  "Alle auswÃ¤hlen",
+                                     "deselectAll":  "Alle abwÃ¤hlen",
+                                     "badges":  {
+                                                    "sensitive":  "Sensibel",
+                                                    "appending":  "+ HinzufÃ¼gen",
+                                                    "removing":  "- Entfernen"
+                                                },
+                                     "ownRecordsOnly":  "Nur eigene DatensÃ¤tze einschrÃ¤nken",
+                                     "ownRecordsOnlyDescription":  "BeschrÃ¤nkt die Sichtbarkeit streng auf DatensÃ¤tze, die dem IdentitÃ¤tskontext gehÃ¶ren oder diesem explizit zugewiesen sind",
+                                     "noMatching":  "Keine Ã¼bereinstimmenden Konfigurationen in diesem Ansichtskontext gefunden."
+                                 }
+                  },
+    "organizationsPage":  {
+                              "title":  "Organisationen",
+                              "subtitle":  "Bereitstellen und Verwalten von Mandantenorganisationen auf der Plattform.",
+                              "create":  "Organisation erstellen",
+                              "searchPlaceholder":  "Organisationen suchen...",
+                              "allStatuses":  "Alle Status",
+                              "loading":  "Organisationen werden geladen...",
+                              "loadError":  "Fehler beim Laden der Organisationen. {{error}}",
+                              "empty":  "Keine Organisationen gefunden.",
+                              "table":  {
+                                            "name":  "Name",
+                                            "slug":  "Slug / Kennung",
+                                            "region":  "Region",
+                                            "plan":  "Plan",
+                                            "status":  "Status",
+                                            "actions":  "Aktionen"
+                                        },
+                              "status":  {
+                                             "ACTIVE":  "Aktiv",
+                                             "SUSPENDED":  "Suspendiert",
+                                             "PENDING_SETUP":  "Ausstehende Einrichtung",
+                                             "ARCHIVED":  "Archiviert"
+                                         },
+                              "form":  {
+                                           "title":  "Organisation erstellen",
+                                           "nameLabel":  "Name der Organisation",
+                                           "namePlaceholder":  "z.B. Acme Corp",
+                                           "slugLabel":  "Slug / Kennung",
+                                           "slugPlaceholder":  "z.B. acme",
+                                           "emailLabel":  "E-Mail des Besitzers",
+                                           "emailPlaceholder":  "z.B. admin@acme.com",
+                                           "regionLabel":  "Hosting-Region",
+                                           "timezoneLabel":  "PrimÃ¤re Zeitzone",
+                                           "planLabel":  "Planvorlage",
+                                           "planPlaceholder":  "WÃ¤hlen Sie einen Plan...",
+                                           "create":  "Organisation erstellen",
+                                           "creating":  "Wird erstellt...",
+                                           "cancel":  "Abbrechen",
+                                           "error":  "Fehler beim Erstellen der Organisation. Bitte Ã¼berprÃ¼fen Sie die Felder und versuchen Sie es erneut."
+                                       },
+                              "invite":  {
+                                             "title":  "Organisation bereitgestellt",
+                                             "message":  "Die Mandantenorganisation wurde erfolgreich bereitgestellt. Teilen Sie den folgenden Einladungslink mit dem Mandantenadministrator, um die Einrichtung abzuschlieÃŸen:",
+                                             "copy":  "Link kopieren",
+                                             "copied":  "Kopiert!",
+                                             "close":  "SchlieÃŸen"
+                                         },
+                              "detail":  {
+                                             "back":  "ZurÃ¼ck zu den Organisationen",
+                                             "loading":  "Organisationskontext wird geladen...",
+                                             "loadError":  "Fehler beim Initialisieren der Organisationsdetails",
+                                             "tabs":  {
+                                                          "overview":  "Ãœbersicht",
+                                                          "regions":  "Regionen",
+                                                          "roles":  "Rollen",
+                                                          "members":  "Mitglieder",
+                                                          "invitations":  "Einladungen",
+                                                          "status":  "Status"
+                                                      },
+                                             "overview":  {
+                                                              "slug":  "Slug",
+                                                              "region":  "Region",
+                                                              "timezone":  "Zeitzone",
+                                                              "created":  "Erstellt",
+                                                              "status":  "Status",
+                                                              "billingEmail":  "Rechnungs-E-Mail",
+                                                              "adminSeatsLimit":  "Limit fÃ¼r Admin-Sitze",
+                                                              "adminSeats":  "Admin-Sitze",
+                                                              "userSeats":  "Benutzer-Sitze",
+                                                              "usedPct":  "{{pct}}% genutzt"
+                                                          },
+                                             "regions":  {
+                                                             "title":  "Organisationsregionen",
+                                                             "subtitle":  "Konfigurieren Sie die Hosting-Regionen und Lokalisierungseinstellungen fÃ¼r diese Organisation.",
+                                                             "add":  "Region hinzufÃ¼gen",
+                                                             "table":  {
+                                                                           "code":  "Code",
+                                                                           "name":  "Anzeigename",
+                                                                           "tz":  "Zeitzone",
+                                                                           "currency":  "WÃ¤hrung",
+                                                                           "hq":  "HQ",
+                                                                           "members":  "Mitglieder",
+                                                                           "status":  "Status",
+                                                                           "actions":  "Aktionen"
+                                                                       },
+                                                             "status":  {
+                                                                            "active":  "Aktiv",
+                                                                            "inactive":  "Inaktiv"
+                                                                        },
+                                                             "edit":  "Region bearbeiten",
+                                                             "activate":  "Region aktivieren",
+                                                             "editTitle":  "Region bearbeiten",
+                                                             "save":  "Region speichern",
+                                                             "saving":  "Speichern...",
+                                                             "deactivateTitle":  "Region deaktivieren",
+                                                             "deactivateConfirm":  "Region deaktivieren",
+                                                             "deactivateWarning":  "Mitglieder, die ausschlieÃŸlich dieser Niederlassung zugewiesen sind, kÃ¶nnen die Sichtbarkeit verknÃ¼pfter DatensÃ¤tze verlieren.",
+                                                             "hqAlwaysActive":  "Hauptsitzregionen mÃ¼ssen aktiv bleiben.",
+                                                             "failedUpdate":  "Region konnte nicht aktualisiert werden.",
+                                                             "failedDeactivate":  "Beim Deaktivieren ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+                                                             "adding":  "Wird hinzugef?gt...",
+                                                             "loading":  "Regionen werden geladen...",
+                                                             "failedLoad":  "Regionen konnten nicht geladen werden.",
+                                                             "failedAdd":  "Region konnte nicht hinzugef?gt werden.",
+                                                             "configuredCount":  "{{count}} konfiguriert",
+                                                             "empty":  "Noch keine Regionen konfiguriert.",
+                                                             "regionLabel":  "Region",
+                                                             "namePlaceholder":  "Anzeigename der Niederlassung",
+                                                             "hqSuffix":  "HQ"
+                                                         },
+                                             "roles":  {
+                                                           "title":  "Organisationsrollen",
+                                                           "searchPlaceholder":  "Rollen suchen...",
+                                                           "newRole":  "Neue Rolle",
+                                                           "sync":  "Aus Vorlagen synchronisieren",
+                                                           "table":  {
+                                                                         "name":  "Name",
+                                                                         "permissions":  "Berechtigungen",
+                                                                         "members":  "Mitglieder",
+                                                                         "locked":  "Gesperrt",
+                                                                         "actions":  "Aktionen"
+                                                                     },
+                                                           "syncing":  "Wird synchronisiert...",
+                                                           "count_one":  "{{count}} Rolle",
+                                                           "count_other":  "{{count}} Rollen",
+                                                           "subtitle":  "Richten Sie die Rollen dieser Organisation ein, bevor Sie sie Ã¼bergeben. Erstellen Sie benutzerdefinierte Rollen oder klicken Sie auf eine Rolle, um deren Berechtigungen zu bearbeiten. Der OrganisationseigentÃ¼mer Ã¼bernimmt genau das, was Sie hier einrichten.",
+                                                           "failedLoad":  "Fehler beim Laden der Rollen.",
+                                                           "failedSync":  "Fehler beim Synchronisieren der Rollen. Bitte versuchen Sie es erneut.",
+                                                           "permissionCount_one":  "{{count}} Berechtigung",
+                                                           "permissionCount_other":  "{{count}} Berechtigungen",
+                                                           "emptySearch":  "Keine Rollen f?r \"{{search}}\".",
+                                                           "empty":  "F?r diese Organisation sind keine Rollen konfiguriert.",
+                                                           "emptyHint":  "Synchronisieren Sie Vorlagenrollen oder erstellen Sie vor der ?bergabe eine eigene Rolle.",
+                                                           "syncSuccess":  "Synchronisierung abgeschlossen: {{clonedCount}} Rollen kopiert, {{skippedCount}} waren bereits vorhanden.",
+                                                           "ownerAssigned":  "Eigent?merrolle wurde dem ersten Mitglied automatisch zugewiesen.",
+                                                           "viewPermissions":  "Berechtigungen anzeigen",
+                                                           "editor":  {
+                                                                          "nameRequired":  "Geben Sie der Rolle einen Namen.",
+                                                                          "requiredPermissionsMissing":  "FÃ¼gen Sie vor dem Speichern dieser Rolle die erforderlichen Berechtigungen hinzu.",
+                                                                          "createTitle":  "Rolle erstellen",
+                                                                          "editTitle":  "Rolle bearbeiten: {{name}}",
+                                                                          "createDescription":  "Definieren Sie eine Rolle und w?hlen Sie genau aus, was ihre Mitglieder tun d?rfen. Der Organisationseigent?mer ?bernimmt dies nach der ?bergabe.",
+                                                                          "lockedDescription":  "Dies ist eine Standardrolle und schreibgesch?tzt. Klonen Sie sie zur Anpassung.",
+                                                                          "editDescription":  "Schalten Sie die Aktionen um, die Mitglieder dieser Rolle ausf?hren d?rfen.",
+                                                                          "selectedCount":  "{{count}} Berechtigungen ausgew?hlt",
+                                                                          "saving":  "Speichern...",
+                                                                          "create":  "Rolle erstellen",
+                                                                          "save":  "?nderungen speichern",
+                                                                          "loading":  "Laden...",
+                                                                          "lockedNotice":  "Diese Rolle ist gesperrt, wird von der Plattform verwaltet und kann nicht bearbeitet werden.",
+                                                                          "nameLabel":  "Rollenname *",
+                                                                          "namePlaceholder":  "z.B. Contract Reviewer",
+                                                                          "descriptionLabel":  "Beschreibung",
+                                                                          "descriptionPlaceholder":  "Wof?r ist diese Rolle gedacht?",
+                                                                          "portalLabel":  "Portal",
+                                                                          "portalUser":  "Modulbenutzer",
+                                                                          "portalTenant":  "Organisationsadministrator",
+                                                                          "portalUserDescription":  "Arbeitet in Modulen (Vertr?ge, Vorg?nge...)",
+                                                                          "portalTenantDescription":  "Verwaltet Mitglieder, Rollen und Organisationseinstellungen",
+                                                                          "planHint":  "Es werden nur Module angezeigt, die im Plan dieser Organisation enthalten sind."
+                                                                      }
+                                                       },
+                                             "members":  {
+                                                             "title":  "Organisationsmitglieder",
+                                                             "searchPlaceholder":  "Mitglieder suchen...",
+                                                             "table":  {
+                                                                           "member":  "Mitglied",
+                                                                           "region":  "Region",
+                                                                           "status":  "Status",
+                                                                           "roles":  "Rollen",
+                                                                           "joined":  "Beigetreten am",
+                                                                           "actions":  "Aktionen"
+                                                                       },
+                                                             "totalCount_one":  "{{count}} Mitglied insgesamt",
+                                                             "totalCount_other":  "{{count}} Mitglieder insgesamt",
+                                                             "empty":  "Keine Mitglieder gefunden",
+                                                             "loading":  "Mitglieder werden geladen...",
+                                                             "failedLoad":  "Mitglieder konnten nicht geladen werden. Bitte versuchen Sie es erneut.",
+                                                             "emptySearch":  "Keine Mitglieder f?r \"{{search}}\".",
+                                                             "emptyOrg":  "F?r diese Organisation wurden keine Mitglieder gefunden.",
+                                                             "unnamed":  "Unbenannt",
+                                                             "noRoles":  "Keine Rollen",
+                                                             "joinedOn":  "Beigetreten am {{date}}",
+                                                             "joinedUnknown":  "Beigetreten ---",
+                                                             "view":  "Anzeigen"
+                                                         },
+                                             "invitations":  {
+                                                                 "title":  "Plattform-Einladungen",
+                                                                 "inviteUser":  "Benutzer einladen",
+                                                                 "table":  {
+                                                                               "email":  "E-Mail",
+                                                                               "region":  "Region",
+                                                                               "status":  "Status",
+                                                                               "expires":  "LÃ¤uft ab",
+                                                                               "invitedBy":  "Eingeladen von",
+                                                                               "actions":  "Aktionen"
+                                                                           },
+                                                                 "inviteSent":  "Einladung gesendet",
+                                                                 "inviteTitle":  "Benutzer zur Organisation einladen",
+                                                                 "inviteSentSuccess":  "Einladung erfolgreich gesendet.",
+                                                                 "inviteUrl":  "Einladungslink",
+                                                                 "copy":  "Kopieren",
+                                                                 "copied":  "Kopiert",
+                                                                 "expireMsg":  "Teilen Sie diesen Link mit dem Eingeladenen. Er lÃ¤uft ab am",
+                                                                 "email":  "E-Mail",
+                                                                 "displayName":  "Anzeigename",
+                                                                 "role":  "Rolle",
+                                                                 "selectRole":  "Rolle auswÃ¤hlen...",
+                                                                 "roleHelp":  "Die Rolle, die diesem Benutzer nach Annahme der Einladung zugewiesen wird.",
+                                                                 "region":  "Region",
+                                                                 "selectRegion":  "Region auswÃ¤hlen...",
+                                                                 "regionHelpActive":  "WÃ¤hlen Sie aus den konfigurierten Regionen der Organisation.",
+                                                                 "regionHelpGlobal":  "Keine Regionen konfiguriert â€” wÃ¤hlen Sie aus der globalen Liste.",
+                                                                 "failedSend":  "Fehler beim Senden der Einladung. Bitte Ã¼berprÃ¼fen Sie die E-Mail und versuchen Sie es erneut.",
+                                                                 "done":  "Fertig",
+                                                                 "cancel":  "Abbrechen",
+                                                                 "sending":  "Wird gesendet...",
+                                                                 "send":  "Einladung senden"
+                                                             },
+                                             "edit":  {
+                                                          "title":  "Details bearbeiten",
+                                                          "subtitle":  "Aktualisieren Sie die Kerninformationen und Sitzlimits der Organisation.",
+                                                          "orgName":  "Name der Organisation",
+                                                          "billingEmail":  "Rechnungs-E-Mail",
+                                                          "timezone":  "Zeitzone",
+                                                          "region":  "Region",
+                                                          "seatLimits":  "Sitzlimits",
+                                                          "maxAdminSeats":  "Max. Admin-Sitze",
+                                                          "maxAdminSeatsDesc":  "Maximale Anzahl an Admin-Sitzen, die fÃ¼r diese Organisation zulÃ¤ssig sind.",
+                                                          "maxUserSeats":  "Max. Benutzer-Sitze",
+                                                          "maxUserSeatsDesc":  "Maximale Anzahl an regulÃ¤ren Benutzer-Sitzen, die fÃ¼r diese Organisation zulÃ¤ssig sind.",
+                                                          "entitlements":  "Berechtigungen",
+                                                          "entitlementsDesc":  "Weisen Sie einen Plan zu, um dessen Module, Sitze und KI-Guthaben zu Ã¼bernehmen â€“ oder passen Sie die Module unten an. Nur aktivierte Module kÃ¶nnen von dieser Organisation verwendet werden.",
+                                                          "plan":  "Plan",
+                                                          "planDesc":  "Durch die Auswahl eines Plans werden die folgenden Felder vorausgefÃ¼llt. Ã„nderungen gelten als organisationsspezifische Ãœberschreibungen.",
+                                                          "enabledModules":  "Aktivierte Module",
+                                                          "aiBalance":  "KI-Guthaben",
+                                                          "aiBalanceDesc":  "Aktuell verfÃ¼gbares KI-Guthaben.",
+                                                          "aiAllowance":  "Monatliches KI-Guthaben",
+                                                          "aiAllowanceDesc":  "Wiederkehrende monatliche KI-Guthabenzuweisung.",
+                                                          "save":  "Ã„nderungen speichern",
+                                                          "saving":  "Wird gespeichert...",
+                                                          "success":  "Organisation erfolgreich aktualisiert.",
+                                                          "failed":  "Fehler beim Aktualisieren der Organisation. Bitte versuchen Sie es erneut.",
+                                                          "customPlan":  "Benutzerdefiniert (kein Plan)",
+                                                          "maxWorkspaces":  "Aktive Arbeitsbereiche",
+                                                          "maxExternalSeats":  "Sitze für externe Beratung",
+                                                          "storageLimitMb":  "Speicherlimit (MB)"
+                                                      },
+                                             "status":  {
+                                                            "title":  "Statusverwaltung",
+                                                            "subtitle":  "Verwalten Sie den Lebenszyklusstatus dieser Organisation.",
+                                                            "current":  "Aktueller Status:",
+                                                            "noTransitions":  "FÃ¼r diese Organisation sind keine StatusÃ¼bergÃ¤nge verfÃ¼gbar.",
+                                                            "availableTransitions":  "VerfÃ¼gbare ÃœbergÃ¤nge:",
+                                                            "activate":  "Aktivieren",
+                                                            "suspend":  "Suspendieren",
+                                                            "archive":  "Archivieren",
+                                                            "confirmTitle":  "Sind Sie sicher, dass Sie dies tun mÃ¶chten?",
+                                                            "confirmWarningTitle":  "Dies ist Ã¤uÃŸerst wichtig.",
+                                                            "confirmWarningDesc":  "Die Ã„nderung des Betriebsstatus dieser Organisation wird sofort wirksam und aktualisiert die Systemberechtigungen.",
+                                                            "verifyPrompt":  "Geben Sie zur ÃœberprÃ¼fung {{phrase}} genau so ein, wie es fÃ¼r die Organisation {{name}} angezeigt wird:",
+                                                            "cancel":  "Abbrechen"
+                                                        }
+                                         }
+                          },
+    "viewToggle":  {
+                       "grid":  "Rasteransicht",
+                       "list":  "Listenansicht"
+                   },
+    "permissionMatrix":  {
+                             "ariaLabel":  "Rollenberechtigungen",
+                             "title":  "Rollenberechtigungen",
+                             "description":  "W?hlen Sie die Aktionen aus, die diese Rolle ausf?hren kann. Verwenden Sie das Kontrollk?stchen Alle in einem Abschnitt, wenn die Rolle diesen Bereich vollst?ndig verwalten soll.",
+                             "sensitiveHint":  "Sensible Aktionen erfordern besondere Sorgfalt",
+                             "defaultPlanHint":  "Es werden nur Berechtigungen angezeigt, die im Plan dieser Organisation enthalten sind.",
+                             "searchPlaceholder":  "Berechtigungen suchen",
+                             "missingRequired":  "Einige ausgew?hlte Aktionen ben?tigen {{count}} erforderliche Berechtigung, um zu funktionieren.",
+                             "addRequired":  "Erforderliche hinzuf?gen",
+                             "noMatches":  "Keine Berechtigungen entsprechen der Suche.",
+                             "selectAllAria":  "Alle {{module}}-Berechtigungen ausw?hlen",
+                             "all":  "Alle",
+                             "sensitive":  "Sensibel",
+                             "ownRecordsOnly":  "Nur eigene Datens?tze",
+                             "ownRecordsHelp":  "auf Datens?tze beschr?nken, die diese Person erstellt hat, besitzt oder denen sie zugewiesen ist.",
+                             "recordVisibility":  "Datensichtbarkeit",
+                             "allRecords":  "Alle Datens?tze in meinen berechtigten Regionen",
+                             "ownRecords":  "Eigene Datens?tze",
+                             "assignedOrInvolved":  "Zugewiesene oder beteiligte Vertr?ge",
+                             "assignedOrInvolvedHelp":  "Nur Vertr?ge, die diese Person erstellt oder besitzt oder denen sie im MoA-Ablauf zugewiesen wurde."
+                         }
+}

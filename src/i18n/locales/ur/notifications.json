@@ -1,0 +1,222 @@
+{
+  "contract": {
+    "ownerAssigned": {
+      "title": "معاہدہ آپ کو تفویض کر دیا گیا",
+      "body": "اب آپ معاہدہ \"{{contractTitle}}\" کے مالک ہیں۔"
+    },
+    "legalReviewAssigned": {
+      "title": "قانونی جائزہ آپ کو تفویض کر دیا گیا",
+      "body": "معاہدہ \"{{contractTitle}}\" کا قانونی جائزہ مرحلہ \"{{stepName}}\" آپ کو تفویض کیا گیا ہے۔"
+    },
+    "executionAssigned": {
+      "title": "معاہدے پر عملدرآمد آپ کو تفویض کر دیا گیا",
+      "body": "معاہدہ \"{{contractTitle}}\" پر مرحلہ \"{{stepName}}\" میں عملدرآمد آپ کو تفویض کیا گیا ہے۔"
+    },
+    "approvalEscalated": {
+      "title": "معاہدے کی منظوری بڑھا دی گئی",
+      "body": "\"{{contractTitle}}\" کو \"{{stepName}}\" پر بڑھایا گیا ہے۔ معاہدہ مینیجر کو مرحلہ دوبارہ تفویض کرنا یا رکاوٹ حل کرنا ہوگا۔"
+    },
+    "approvalRejectedPostExecution": {
+      "body": "\"{{contractTitle}}\" کو عملدرآمد کے بعد مرحلہ \"{{stepName}}\" پر مسترد کیا گیا۔ نافذ معاہدہ برقرار ہے اور اصلاح درکار ہے۔"
+    },
+    "postExecutionCompleted": {
+      "title": "عملدرآمد کے بعد کا ورک فلو مکمل",
+      "body": "\"{{contractTitle}}\" نے عملدرآمد کے بعد منظوری کے تمام مراحل مکمل کر لیے ہیں۔"
+    },
+    "executed": { "title": "معاہدہ نافذ ہو گیا", "body": "\"{{contractTitle}}\" نافذ ہو گیا ہے۔" },
+    "renewed": {
+      "title": "معاہدہ تجدید ہو گیا",
+      "body": "\"{{contractTitle}}\" کی تجدید ہو گئی ہے۔"
+    },
+    "terminated": {
+      "title": "معاہدہ ختم ہو گیا",
+      "body": "\"{{contractTitle}}\" ختم کر دیا گیا ہے۔"
+    },
+    "archived": {
+      "title": "معاہدہ محفوظ کر دیا گیا",
+      "body": "\"{{contractTitle}}\" محفوظ کر دیا گیا ہے۔"
+    },
+    "obligationAssigned": {
+      "title": "معاہدے کی ذمہ داری آپ کو سونپی گئی",
+      "body": "آپ معاہدہ \"{{contractTitle}}\" پر \"{{obligationTitle}}\" کے ذمہ دار ہیں۔"
+    },
+    "approvalAssigned": {
+      "title": "معاہدے کی منظوری آپ کو سونپی گئی",
+      "body": "آپ کو معاہدہ \"{{contractTitle}}\" پر \"{{stepName}}\" سونپا گیا ہے۔ براہ کرم جائزہ لیں اور اپنا فیصلہ درج کریں۔"
+    },
+    "approvalRejected": {
+      "title": "معاہدے کی منظوری مسترد",
+      "body": "\"{{contractTitle}}\" کو \"{{stepName}}\" پر مسترد کر کے نظرثانی کے لیے مسودے میں واپس کر دیا گیا۔"
+    },
+    "approvalRejectedExternal": {
+      "title": "معاہدے کی منظوری مسترد",
+      "body": "\"{{contractTitle}}\" کو بیرونی وکیل نے \"{{stepName}}\" پر مسترد کر کے مسودے میں واپس کر دیا۔"
+    },
+    "fullyApproved": {
+      "title": "معاہدہ مکمل طور پر منظور",
+      "body": "\"{{contractTitle}}\" اپنی مکمل منظوری کی زنجیر عبور کر چکا ہے اور عملدرآمد کے لیے تیار ہے۔"
+    },
+    "expiryDue": {
+      "title": "معاہدے کی میعاد {{days}} دن میں ختم",
+      "body": "\"{{contractTitle}}\" کی میعاد {{date}} کو ختم ہو رہی ہے ({{days}} دن)۔"
+    },
+    "renewalDue": {
+      "title": "معاہدے کی تجدید {{days}} دن میں",
+      "body": "\"{{contractTitle}}\" کی تجدید {{date}} کو واجب ہے ({{days}} دن)۔"
+    },
+    "obligationDue": {
+      "title": "ذمہ داری {{days}} دن میں واجب",
+      "body": "معاہدہ \"{{contractTitle}}\" پر \"{{obligationTitle}}\" {{date}} کو واجب ہے ({{days}} دن)۔"
+    }
+  },
+  "litigation": {
+    "matterAssigned": {
+      "title": "مقدمہ آپ کو سونپا گیا",
+      "body": "اب آپ \"{{caseTitle}}\" ({{fileNumber}}) کے ذمہ دار وکیل ہیں۔"
+    },
+    "matterAllocated": {
+      "title": "نیا مقدمہ آپ کو تفویض کیا گیا",
+      "body": "آپ کو ایک مقدمے تک دیکھنے کی رسائی دی گئی ہے۔"
+    }
+  },
+  "compliance": {
+    "counterpartyCreated": {
+      "title": "کاؤنٹر پارٹی اسکریننگ کے لیے تیار ہے",
+      "body": "\"{{name}}\" بنائی گئی ہے اور ڈیو ڈیلیجنس اسکریننگ کے لیے تیار ہے۔"
+    },
+    "screeningReviewRequested": {
+      "title": "اسکریننگ کا جائزہ ضروری ہے",
+      "body": "براہ کرم \"{{name}}\" کے اسکریننگ میچز کا جائزہ لیں۔"
+    },
+    "iddDecisionRequested": {
+      "title": "IDD فیصلے کی ضرورت ہے",
+      "body": "\"{{name}}\" کی اسکریننگ مکمل ہو گئی ہے۔ براہ کرم IDD کیس منظور، مسترد یا ایسکلیٹ کریں۔"
+    },
+    "iddApproved": {
+      "title": "IDD منظور ہو گئی",
+      "body": "\"{{name}}\" کو {{date}} تک IDD کے لیے کلیئر کر دیا گیا ہے۔"
+    },
+    "iddRejected": {
+      "title": "IDD مسترد ہو گئی",
+      "body": "\"{{name}}\" مسترد کر دی گئی۔ وجہ: {{reason}}"
+    },
+    "iddBlacklisted": {
+      "title": "کاؤنٹر پارٹی بلیک لسٹ کر دی گئی",
+      "body": "\"{{name}}\" کو بلیک لسٹ کر دیا گیا۔ وجہ: {{reason}}"
+    },
+    "iddRenewed": {
+      "title": "IDD کی تجدید شروع ہو گئی",
+      "body": "\"{{name}}\" کو IDD کی تجدید کے لیے دوبارہ کھول دیا گیا ہے۔"
+    },
+    "reviewScheduled": {
+      "title": "اگلا IDD جائزہ شیڈول ہو گیا",
+      "body": "\"{{name}}\" کا اگلا IDD جائزہ {{date}} کو شیڈول ہے۔"
+    },
+    "caseEscalated": {
+      "title": "IDD کیس ایسکلیٹ کر دیا گیا",
+      "body": "\"{{name}}\" کو ایسکلیٹ کر دیا گیا۔ وجہ: {{reason}}"
+    },
+    "iddReviewDue": {
+      "title": "ڈیو ڈیلیجنس جائزہ {{days}} دن میں واجب",
+      "body": "\"{{name}}\" کے لیے ڈیو ڈیلیجنس {{days}} دن میں واجب ہے ({{date}})۔"
+    },
+    "iddOverdue": {
+      "title": "ڈیو ڈیلیجنس کی منظوری تجدید کے لیے واجب الادا",
+      "body": "\"{{name}}\" کے لیے ڈیو ڈیلیجنس تاخیر کا شکار ہے ({{date}})۔"
+    }
+  },
+  "idd": {
+    "cleared": {
+      "title": "ڈیو ڈیلیجنس منظور: {{counselName}}",
+      "body": "بیرونی وکیل \"{{counselName}}\" ({{counterpartyName}}) کے لیے دیانتی ڈیو ڈیلیجنس منظور ہو گئی ہے۔ اب انہیں مقدمات اور معاہدوں پر تفویض کیا جا سکتا ہے۔"
+    },
+    "rejected": {
+      "title": "ڈیو ڈیلیجنس مسترد: {{counselName}}",
+      "body": "بیرونی وکیل \"{{counselName}}\" ({{counterpartyName}}) کے لیے دیانتی ڈیو ڈیلیجنس مسترد کر دی گئی۔"
+    },
+    "blacklisted": {
+      "title": "ڈیو ڈیلیجنس بلیک لسٹ: {{counselName}}",
+      "body": "بیرونی وکیل \"{{counselName}}\" ({{counterpartyName}}) کے لیے دیانتی ڈیو ڈیلیجنس کو بلیک لسٹ کر دیا گیا۔"
+    }
+  },
+  "externalAccess": {
+    "iddAlreadyCleared": {
+      "title": "ڈیو ڈیلیجنس پہلے ہی منظور",
+      "body": "\"{{name}}\" کے لیے ڈیو ڈیلیجنس پہلے ہی منظور ہے — {{userName}} کو مقدمات پر تفویض کیا جا سکتا ہے۔"
+    },
+    "iddScreeningRequested": {
+      "title": "ڈیو ڈیلیجنس اسکریننگ کی درخواست",
+      "body": "براہ کرم \"{{name}}\" کے لیے ڈیو ڈیلیجنس اسکریننگ کریں (بیرونی وکیل {{userName}})۔"
+    },
+    "iddScreeningRequestedWithNote": {
+      "body": "براہ کرم \"{{name}}\" کے لیے ڈیو ڈیلیجنس اسکریننگ کریں (بیرونی وکیل {{userName}})۔ نوٹ: {{note}}"
+    },
+    "matterAllocated": {
+      "title": "نیا مقدمہ آپ کو تفویض کیا گیا"
+    },
+    "matterAllocatedContribute": {
+      "body": "آپ کو \"{{resourceTitle}}\" پر شراکت کی رسائی دی گئی ہے۔"
+    },
+    "matterAllocatedView": {
+      "body": "آپ کو \"{{resourceTitle}}\" پر دیکھنے کی رسائی دی گئی ہے۔"
+    },
+    "accessRevoked": {
+      "title": "مقدمے کی رسائی منسوخ",
+      "body": "\"{{matterTitle}}\" تک آپ کی رسائی ہٹا دی گئی ہے۔"
+    },
+    "accessRevokedGeneric": {
+      "body": "ایک مقدمے تک آپ کی رسائی ہٹا دی گئی ہے۔"
+    }
+  },
+  "contribution": {
+    "awaitingReview": {
+      "title": "بیرونی شراکت جائزے کی منتظر",
+      "body": "ایک بیرونی وکیل نے آپ کے جائزے کے لیے {{kind}} جمع کرایا۔"
+    },
+    "approved": {
+      "title": "آپ کی شراکت منظور ہو گئی",
+      "body": "آپ کا {{kind}} منظور ہو کر ریکارڈ میں شامل کر دیا گیا ہے۔"
+    },
+    "declined": {
+      "title": "آپ کی شراکت مسترد ہو گئی",
+      "body": "آپ کا {{kind}} مسترد کر دیا گیا۔"
+    },
+    "declinedWithReason": {
+      "body": "آپ کا {{kind}} مسترد کر دیا گیا۔ وجہ: {{reason}}"
+    }
+  },
+  "whistleblowing": {
+    "caseAssigned": {
+      "title": "وِسل بلوئنگ کیس سونپا گیا: {{ref}}",
+      "body": "آپ کو کیس {{ref}} کی تحقیقات سونپی گئی ہیں۔"
+    },
+    "caseEscalated": {
+      "title": "وِسل بلوئنگ کیس بڑھا دیا گیا: {{ref}}",
+      "body": "کیس {{ref}} کو آگے بڑھا دیا گیا ہے۔ وجہ: {{reason}}"
+    },
+    "newReport": {
+      "title": "نئی وِسل بلوئنگ رپورٹ: {{ref}}",
+      "body": "{{category}} قسم کی ایک نئی رپورٹ جمع کرائی گئی ہے اور اسے چھانٹنے کی ضرورت ہے۔"
+    },
+    "reporterMessage": {
+      "title": "{{ref}} پر مخبر کی طرف سے نیا پیغام"
+    },
+    "reporterEvidence": {
+      "title": "{{ref}} پر مخبر کی طرف سے نئے شواہد"
+    },
+    "reporterActivity": {
+      "body": "مخبر نے کیس {{ref}} پر ایک اپ ڈیٹ شامل کی۔"
+    },
+    "slaBreached": {
+      "title": "SLA کی خلاف ورزی: {{ref}}",
+      "body": "کیس {{ref}} اپنی SLA حل کی آخری مدت سے تجاوز کر گیا ہے۔"
+    },
+    "slaBreachedEscalated": {
+      "body": "کیس {{ref}} اپنی SLA حل کی آخری مدت سے تجاوز کر گیا ہے اور خودکار طور پر اعلیٰ انتظامیہ کو بھیج دیا گیا ہے۔"
+    },
+    "slaApproaching": {
+      "title": "SLA قریب: {{ref}}",
+      "body": "کیس {{ref}} اپنی SLA حل کی آخری مدت کے قریب ہے۔ براہ کرم اس پر کارروائی کریں۔"
+    }
+  }
+}

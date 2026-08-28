@@ -1,0 +1,213 @@
+{
+  "contract": {
+    "ownerAssigned": {
+      "title": "Contrat qui vous est attribué",
+      "body": "Vous êtes désormais responsable du contrat « {{contractTitle}} »."
+    },
+    "legalReviewAssigned": {
+      "title": "Revue juridique du contrat qui vous est attribuée",
+      "body": "L’étape de revue juridique « {{stepName}} » du contrat « {{contractTitle}} » vous est attribuée."
+    },
+    "executionAssigned": {
+      "title": "Exécution du contrat qui vous est attribuée",
+      "body": "Vous devez exécuter le contrat « {{contractTitle}} » à l’étape « {{stepName}} »."
+    },
+    "approvalEscalated": {
+      "title": "Approbation du contrat escaladée",
+      "body": "« {{contractTitle}} » a été escaladé à l’étape « {{stepName}} ». Un responsable des contrats doit réaffecter l’étape ou résoudre le blocage."
+    },
+    "approvalRejectedPostExecution": {
+      "body": "« {{contractTitle}} » a été rejeté à l’étape postérieure à l’exécution « {{stepName}} ». L’accord exécuté reste en vigueur et nécessite une correction."
+    },
+    "postExecutionCompleted": {
+      "title": "Flux postérieur à l’exécution terminé",
+      "body": "« {{contractTitle}} » a franchi toutes les étapes d’approbation postérieures à l’exécution."
+    },
+    "executed": { "title": "Contrat exécuté", "body": "« {{contractTitle}} » a été exécuté." },
+    "renewed": { "title": "Contrat renouvelé", "body": "« {{contractTitle}} » a été renouvelé." },
+    "terminated": { "title": "Contrat résilié", "body": "« {{contractTitle}} » a été résilié." },
+    "archived": { "title": "Contrat archivé", "body": "« {{contractTitle}} » a été archivé." },
+    "obligationAssigned": {
+      "title": "Une obligation contractuelle vous a été attribuée",
+      "body": "Vous êtes responsable de « {{obligationTitle}} » sur le contrat « {{contractTitle}} »."
+    },
+    "approvalAssigned": {
+      "title": "Une approbation de contrat vous a été attribuée",
+      "body": "Vous êtes affecté à « {{stepName}} » sur le contrat « {{contractTitle}} ». Veuillez examiner et enregistrer votre décision."
+    },
+    "approvalRejected": {
+      "title": "Approbation du contrat rejetée",
+      "body": "« {{contractTitle}} » a été rejeté à l'étape « {{stepName}} » et renvoyé au brouillon pour révision."
+    },
+    "approvalRejectedExternal": {
+      "title": "Approbation du contrat rejetée",
+      "body": "« {{contractTitle}} » a été rejeté par le conseil externe à l'étape « {{stepName}} » et renvoyé au brouillon."
+    },
+    "fullyApproved": {
+      "title": "Contrat entièrement approuvé",
+      "body": "« {{contractTitle}} » a franchi toute sa chaîne d'approbation et est prêt à être exécuté."
+    },
+    "expiryDue": {
+      "title": "Expiration du contrat dans {{days}} jours",
+      "body": "« {{contractTitle}} » expire le {{date}} ({{days}} jours)."
+    },
+    "renewalDue": {
+      "title": "Renouvellement du contrat dans {{days}} jours",
+      "body": "« {{contractTitle}} » doit être renouvelé le {{date}} ({{days}} jours)."
+    },
+    "obligationDue": {
+      "title": "Obligation à échéance dans {{days}} jours",
+      "body": "« {{obligationTitle}} » sur le contrat « {{contractTitle}} » est due le {{date}} ({{days}} jours)."
+    }
+  },
+  "litigation": {
+    "matterAssigned": {
+      "title": "Une affaire contentieuse vous a été attribuée",
+      "body": "Vous êtes désormais l'avocat responsable de « {{caseTitle}} » ({{fileNumber}})."
+    },
+    "matterAllocated": {
+      "title": "Une nouvelle affaire vous a été attribuée",
+      "body": "Un accès en consultation à une affaire contentieuse vous a été accordé."
+    }
+  },
+  "compliance": {
+    "counterpartyCreated": {
+      "title": "La contrepartie est prête pour le contrôle",
+      "body": "\"{{name}}\" a été créée et est prête pour la diligence raisonnable."
+    },
+    "screeningReviewRequested": {
+      "title": "Examen du contrôle requis",
+      "body": "Veuillez examiner les correspondances du contrôle pour \"{{name}}\"."
+    },
+    "iddDecisionRequested": {
+      "title": "Décision de diligence requise",
+      "body": "L’examen du contrôle de \"{{name}}\" est terminé. Veuillez approuver, rejeter ou faire remonter le dossier de diligence."
+    },
+    "iddApproved": {
+      "title": "Diligence approuvée",
+      "body": "\"{{name}}\" a été approuvée pour la diligence jusqu’au {{date}}."
+    },
+    "iddRejected": {
+      "title": "Diligence rejetée",
+      "body": "\"{{name}}\" a été rejetée. Motif : {{reason}}"
+    },
+    "iddBlacklisted": {
+      "title": "Contrepartie mise sur liste noire",
+      "body": "\"{{name}}\" a été mise sur liste noire. Motif : {{reason}}"
+    },
+    "iddRenewed": {
+      "title": "Renouvellement de la diligence démarré",
+      "body": "\"{{name}}\" a été rouverte pour le renouvellement de la diligence."
+    },
+    "reviewScheduled": {
+      "title": "Prochain examen de diligence planifié",
+      "body": "Le prochain examen de diligence pour \"{{name}}\" est planifié le {{date}}."
+    },
+    "caseEscalated": {
+      "title": "Dossier de diligence escaladé",
+      "body": "\"{{name}}\" a été escaladé. Motif : {{reason}}"
+    },
+    "iddReviewDue": {
+      "title": "Revue de diligence raisonnable due dans {{days}} jours",
+      "body": "La diligence raisonnable pour « {{name}} » est due dans {{days}} jours ({{date}})."
+    },
+    "iddOverdue": {
+      "title": "Homologation de diligence raisonnable en retard pour renouvellement",
+      "body": "La diligence raisonnable pour « {{name}} » est en retard ({{date}})."
+    }
+  },
+  "idd": {
+    "cleared": {
+      "title": "Diligence raisonnable validée : {{counselName}}",
+      "body": "La diligence raisonnable d'intégrité pour le conseil externe « {{counselName}} » ({{counterpartyName}}) a été validée. Il peut désormais être affecté à des affaires et des contrats."
+    },
+    "rejected": {
+      "title": "Diligence raisonnable rejetée : {{counselName}}",
+      "body": "La diligence raisonnable d'intégrité pour le conseil externe « {{counselName}} » ({{counterpartyName}}) a été rejetée."
+    },
+    "blacklisted": {
+      "title": "Diligence raisonnable mise sur liste noire : {{counselName}}",
+      "body": "La diligence raisonnable d'intégrité pour le conseil externe « {{counselName}} » ({{counterpartyName}}) a été mise sur liste noire."
+    }
+  },
+  "externalAccess": {
+    "iddAlreadyCleared": {
+      "title": "Diligence raisonnable déjà validée",
+      "body": "La diligence raisonnable pour « {{name}} » est déjà validée — {{userName}} peut être affecté à des affaires."
+    },
+    "iddScreeningRequested": {
+      "title": "Vérification de diligence raisonnable demandée",
+      "body": "Veuillez effectuer la vérification de diligence raisonnable pour « {{name}} » (conseil externe {{userName}})."
+    },
+    "iddScreeningRequestedWithNote": {
+      "body": "Veuillez effectuer la vérification de diligence raisonnable pour « {{name}} » (conseil externe {{userName}}). Note : {{note}}"
+    },
+    "matterAllocated": {
+      "title": "Une nouvelle affaire vous a été attribuée"
+    },
+    "matterAllocatedContribute": {
+      "body": "Un accès contributeur à « {{resourceTitle}} » vous a été accordé."
+    },
+    "matterAllocatedView": {
+      "body": "Un accès en consultation à « {{resourceTitle}} » vous a été accordé."
+    },
+    "accessRevoked": {
+      "title": "Accès à l'affaire révoqué",
+      "body": "Votre accès à « {{matterTitle}} » a été supprimé."
+    },
+    "accessRevokedGeneric": {
+      "body": "Votre accès à une affaire a été supprimé."
+    }
+  },
+  "contribution": {
+    "awaitingReview": {
+      "title": "Contribution externe en attente d'examen",
+      "body": "Un conseil externe a soumis un(e) {{kind}} pour votre examen."
+    },
+    "approved": {
+      "title": "Votre contribution a été approuvée",
+      "body": "Votre {{kind}} a été approuvé(e) et ajouté(e) au dossier."
+    },
+    "declined": {
+      "title": "Votre contribution a été refusée",
+      "body": "Votre {{kind}} a été refusé(e)."
+    },
+    "declinedWithReason": {
+      "body": "Votre {{kind}} a été refusé(e). Motif : {{reason}}"
+    }
+  },
+  "whistleblowing": {
+    "caseAssigned": {
+      "title": "Affaire de lancement d'alerte attribuée : {{ref}}",
+      "body": "Vous avez été chargé d'enquêter sur l'affaire {{ref}}."
+    },
+    "caseEscalated": {
+      "title": "Affaire de lancement d'alerte transmise : {{ref}}",
+      "body": "L'affaire {{ref}} a été transmise. Motif : {{reason}}"
+    },
+    "newReport": {
+      "title": "Nouveau signalement d'alerte : {{ref}}",
+      "body": "Un nouveau signalement de type {{category}} a été soumis et nécessite un tri."
+    },
+    "reporterMessage": {
+      "title": "Nouveau message du lanceur d'alerte concernant {{ref}}"
+    },
+    "reporterEvidence": {
+      "title": "Nouvelles preuves du lanceur d'alerte concernant {{ref}}"
+    },
+    "reporterActivity": {
+      "body": "Le lanceur d'alerte a ajouté une mise à jour à l'affaire {{ref}}."
+    },
+    "slaBreached": {
+      "title": "SLA non respecté : {{ref}}",
+      "body": "L'affaire {{ref}} a dépassé son délai de résolution SLA."
+    },
+    "slaBreachedEscalated": {
+      "body": "L'affaire {{ref}} a dépassé son délai de résolution SLA et a été automatiquement transmise à la direction."
+    },
+    "slaApproaching": {
+      "title": "SLA bientôt atteint : {{ref}}",
+      "body": "L'affaire {{ref}} approche de son délai de résolution SLA. Veuillez la traiter."
+    }
+  }
+}

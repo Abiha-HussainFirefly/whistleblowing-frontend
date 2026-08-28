@@ -1,0 +1,35 @@
+{
+  "title": "Config Packs",
+  "subtitle": "Snapshot an organization's branding, terminology, features, custom fields, layouts, and lifecycle settings into a reusable pack, then apply it to onboard another organization. Applying is additive — it never deletes existing configuration.",
+  "create": {
+    "title": "Create a pack from an organization",
+    "sourceOrganization": "Source organization",
+    "sourcePlaceholder": "Select organization…",
+    "packName": "Pack name",
+    "packNamePlaceholder": "e.g. Legal Enterprise Base",
+    "creating": "Creating…",
+    "submit": "Create pack",
+    "error": "Failed to create the config pack."
+  },
+  "states": {
+    "loading": "Loading packs…",
+    "empty": "No config packs yet.",
+    "emptyHint": "Create one from an organization above."
+  },
+  "pack": {
+    "deleteAria": "Delete pack",
+    "counts": {
+      "branding": "{{count}} branding",
+      "labels": "{{count}} labels",
+      "features": "{{count}} features",
+      "fields": "{{count}} fields",
+      "layouts": "{{count}} layouts",
+      "lifecycle": "{{count}} lifecycle"
+    },
+    "applyToOrganization": "Apply to organization",
+    "organizationPlaceholder": "Select organization…",
+    "applying": "Applying…",
+    "apply": "Apply",
+    "applied": "Applied"
+  }
+}

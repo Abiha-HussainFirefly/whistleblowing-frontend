@@ -1,0 +1,134 @@
+﻿{
+    "title":  "LizenzplÃ¤ne",
+    "description":  "Wiederverwendbare Pakete aus Modulen, Sitzen und KI-Guthaben. Weisen Sie einer Organisation einen Plan zu, um ihre Berechtigungen zu Ã¼bernehmen, und passen Sie jede Organisation weiterhin individuell an.",
+    "actions":  {
+                    "newPlan":  "Neuer Plan",
+                    "editPlan":  "Plan bearbeiten",
+                    "deletePlan":  "Plan lÃ¶schen",
+                    "cancel":  "Abbrechen",
+                    "saveChanges":  "Ã„nderungen speichern",
+                    "createPlan":  "Plan erstellen",
+                    "closePanel":  "Panel schlieÃŸen",
+                    "cardView":  "Kartenansicht",
+                    "tableView":  "Tabellenansicht"
+                },
+    "stats":  {
+                  "activePlans":  "Aktive PlÃ¤ne",
+                  "totalPlans":  "{{count}} PlÃ¤ne insgesamt",
+                  "organizations":  "Organisationen",
+                  "subscribed":  "Ãœber alle PlÃ¤ne abonniert",
+                  "aiCredits":  "KI-Guthaben / Monat",
+                  "allocated":  "Ãœber alle PlÃ¤ne zugewiesen",
+                  "inactivePlans":  "Inaktive PlÃ¤ne",
+                  "archived":  "Archiviert und fÃ¼r bestehende Organisationen erhalten"
+              },
+    "filters":  {
+                    "searchPlaceholder":  "PlÃ¤ne suchen...",
+                    "allStatus":  "Alle Status",
+                    "active":  "Aktiv",
+                    "inactive":  "Inaktiv",
+                    "noPlans":  "Keine PlÃ¤ne gefunden",
+                    "adjustSearch":  "Passen Sie Ihre Suche oder den Statusfilter an.",
+                    "createFirst":  "Erstellen Sie Ihren ersten Plan, um zu beginnen."
+                },
+    "states":  {
+                   "loading":  "PlÃ¤ne werden geladenâ€¦",
+                   "loadError":  "PlÃ¤ne konnten nicht geladen werden.",
+                   "saveError":  "Plan konnte nicht gespeichert werden.",
+                   "saving":  "Wird gespeichertâ€¦",
+                   "deleting":  "Wird gelÃ¶schtâ€¦"
+               },
+    "card":  {
+                 "month":  "/ Monat",
+                 "noModules":  "Keine Module",
+                 "adminSeats":  "Admin-Sitze",
+                 "userSeats":  "Benutzersitze",
+                 "aiCredits":  "KI-Guthaben/Monat",
+                 "organizationOne":  "Organisation in diesem Plan",
+                 "organizationMany":  "Organisationen in diesem Plan"
+             },
+    "table":  {
+                  "name":  "Name",
+                  "price":  "Preis",
+                  "includedModules":  "Enthaltene Module",
+                  "adminSeats":  "Admin-Sitze",
+                  "userSeats":  "Benutzersitze",
+                  "aiCredits":  "KI-Guthaben/Monat",
+                  "actions":  "Aktionen"
+              },
+    "editor":  {
+                   "editTitle":  "Plan bearbeiten",
+                   "newTitle":  "Neuer Plan",
+                   "name":  "Name *",
+                   "namePlaceholder":  "z. B. Professional",
+                   "status":  "Status",
+                   "activeAvailable":  "Aktiv (zur Zuweisung verfÃ¼gbar)",
+                   "description":  "Beschreibung",
+                   "descriptionPlaceholder":  "Kurze Beschreibung des Plans",
+                   "includedModules":  "Enthaltene Module",
+                   "adminSeats":  "Admin-Sitze",
+                   "userSeats":  "Benutzersitze",
+                   "aiCredits":  "KI-Guthaben / Monat",
+                   "price":  "Preis / Monat (optional)",
+                   "pricePlaceholder":  "z. B. 499",
+                   "currency":  "WÃ¤hrung",
+                   "externalSeats":  "Externe Sitze",
+                   "workspaces":  "Arbeitsbereiche",
+                   "storageMb":  "Speicher (MB)"
+               },
+    "validation":  {
+                       "nameRequired":  "Der Planname ist erforderlich."
+                   },
+    "delete":  {
+                   "title":  "Plan lÃ¶schen?",
+                   "body":  "Organisationen, die diesen Plan bereits verwenden, behalten ihre aktuellen Berechtigungen und werden nicht geÃ¤ndert. Der Plan wird archiviert und kann nicht mehr zugewiesen werden."
+               },
+    "modules":  {
+                    "contracts":  {
+                                      "label":  "VertrÃ¤ge (CLM)",
+                                      "description":  "Vertragslebenszyklus verwalten."
+                                  },
+                    "matters":  {
+                                    "label":  "VorgÃ¤nge",
+                                    "description":  "VorgÃ¤nge, AnhÃ¶rungen und Rechtskosten."
+                                },
+                    "compliance":  {
+                                       "label":  "Ethik \u0026 Compliance",
+                                       "description":  "Due Diligence von GeschÃ¤ftspartnern (IDD / ABC)."
+                                   },
+                    "secretarial":  {
+                                        "label":  "Sekretariat",
+                                        "description":  "Vorstandsunterlagen und Compliance-Kalender."
+                                    },
+                    "land":  {
+                                 "label":  "VermÃ¶genswerte",
+                                 "description":  "VermÃ¶genswerte der Organisation."
+                             },
+                    "whistleblowing":  {
+                                           "label":  "Hinweisgebersystem",
+                                           "description":  "Vertrauliche Meldung von VorfÃ¤llen."
+                                       },
+                    "external_access":  {
+                                            "label":  "Externe Beratung",
+                                            "description":  "Zuweisung externer Ressourcen und Portal."
+                                        },
+                    "ai":  {
+                               "label":  "KI-Assistent",
+                               "description":  "Juristischer KI-Assistent auf Guthabenbasis."
+                           }
+                },
+    "seeded":  {
+                   "starter":  {
+                                   "name":  "Starter",
+                                   "description":  "Einstiegsplan â€” nur VertrÃ¤ge, kleines Team."
+                               },
+                   "professional":  {
+                                        "name":  "Professional",
+                                        "description":  "Zentrale RechtsablÃ¤ufe â€” VertrÃ¤ge, VorgÃ¤nge, Compliance, Sekretariat und externe Beratung."
+                                    },
+                   "enterprise":  {
+                                      "name":  "Enterprise",
+                                      "description":  "VollstÃ¤ndige Plattform â€” jedes Modul plus KI-Assistent."
+                                  }
+               }
+}

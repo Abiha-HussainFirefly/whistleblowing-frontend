@@ -1,0 +1,134 @@
+{
+  "title": "Paramètres",
+  "subtitle": "Gérez la configuration de votre organisation et votre compte.",
+  "tabs": {
+    "organization": "Organisation",
+    "appearance": "Apparence",
+    "language": "Langue",
+    "security": "Sécurité",
+    "notifications": "Notifications"
+  },
+  "language": {
+    "title": "Langue",
+    "description": "Choisissez la langue utilisée dans l'interface. Votre choix est enregistré dans votre profil.",
+    "label": "Langue d'affichage",
+    "current": "Langue actuelle",
+    "saved": "Préférence de langue enregistrée.",
+    "saveError": "Nous n'avons pas pu enregistrer votre préférence de langue. Elle s'appliquera tout de même sur cet appareil."
+  },
+  "appearance": {
+    "title": "Apparence",
+    "description": "Choisissez comment l'interface doit s'adapter à vos préférences d'affichage.",
+    "theme": "Thème",
+    "light": "Clair",
+    "dark": "Sombre",
+    "system": "Système",
+    "lightSubtitle": "interface claire",
+    "darkSubtitle": "interface sombre",
+    "systemSubtitle": "utiliser le paramètre de l'appareil",
+    "comingSoon": "Bientôt disponible",
+    "soon": "Bientôt",
+    "useTheme": "Utiliser"
+  },
+  "profile": {
+    "title": "Profil",
+    "displayName": "Nom d'affichage",
+    "email": "Adresse e-mail",
+    "phone": "Numéro de téléphone",
+    "save": "Enregistrer le profil"
+  },
+  "mfa": {
+    "loading": "Chargement des paramètres MFA...",
+    "tryAgain": "Réessayer",
+    "error": {
+      "loadFailed": "Échec du chargement de l'état MFA. Veuillez réessayer.",
+      "enrollFailed": "Échec du démarrage de l'inscription. Veuillez réessayer.",
+      "invalidCode": "Code invalide. Veuillez réessayer."
+    },
+    "step1": {
+      "title": "Étape 1 : Scanner le code QR",
+      "description": "Scannez ce code QR avec votre application d'authentification (Google Authenticator, Authy, etc.)",
+      "manualEntry": "Code d'entrée manuelle",
+      "copySecret": "Copier le secret",
+      "qrCodeAlt": "QR Code MFA"
+    },
+    "step2": {
+      "title": "Étape 2 : Vérifier la configuration",
+      "description": "Entrez le code à 6 chiffres affiché dans votre application d'authentification pour confirmer la configuration."
+    },
+    "step3": {
+      "title": "Étape 3 : Enregistrer les codes de récupération",
+      "newTitle": "Nouveaux codes de récupération",
+      "warning": "Enregistrez ces codes en lieu sûr. Vous ne pourrez plus les voir. Chaque code ne peut être utilisé qu'une seule fois."
+    },
+    "done": {
+      "title": "Authentification à deux facteurs activée",
+      "description": "Votre compte est maintenant protégé par l'authentification à deux facteurs.",
+      "recoveryCodesRemaining": "Il vous reste {{count}} codes de récupération.",
+      "backToSettings": "Retour aux paramètres MFA"
+    },
+    "actions": {
+      "cancel": "Annuler",
+      "next": "Suivant",
+      "back": "Retour",
+      "verify": "Vérifier",
+      "verifying": "Vérification...",
+      "copyAll": "Tout copier",
+      "copied": "Copié !",
+      "downloadAsText": "Télécharger en texte",
+      "done": "Terminé",
+      "savedCodes": "J'ai enregistré mes codes"
+    },
+    "disable": {
+      "title": "Confirmer la désactivation du 2FA",
+      "description": "Entrez votre code d'authentification à 6 chiffres pour confirmer la désactivation de l'authentification à deux facteurs.",
+      "button": "Désactiver le 2FA",
+      "disabling": "Désactivation..."
+    },
+    "regenerate": {
+      "title": "Régénérer les codes de récupération",
+      "description": "Entrez votre code d'authentification à 6 chiffres pour générer de nouveaux codes de récupération. Vos codes existants seront invalidés.",
+      "button": "Régénérer",
+      "regenerating": "Régénération en cours..."
+    },
+    "totp": {
+      "ariaLabel": "Code TOTP",
+      "digit": "Chiffre {{count}}"
+    }
+  },
+  "security": {
+    "title": "Sécurité",
+    "description": "Gérez le mot de passe du compte et l'authentification à deux facteurs.",
+    "password": {
+      "title": "Mot de passe",
+      "description": "Mettre à jour le mot de passe de connexion"
+    },
+    "twoFactor": {
+      "title": "Authentification à deux facteurs",
+      "enable": "Activer le 2FA",
+      "disable": "Désactiver le 2FA"
+    }
+  },
+  "password": {
+    "sheetTitle": "Mettre à jour le mot de passe",
+    "title": "Mot de passe",
+    "description": "Gardez votre mot de passe fort et unique pour ce compte.",
+    "currentPassword": "Mot de passe actuel",
+    "currentPasswordPlaceholder": "Entrez le mot de passe actuel",
+    "newPassword": "Nouveau mot de passe",
+    "newPasswordPlaceholder": "Créer un nouveau mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Ressaisir le nouveau mot de passe",
+    "passwordMismatch": "Les mots de passe ne correspondent pas.",
+    "hint": "Vous utiliserez le nouveau mot de passe lors de la prochaine connexion.",
+    "updating": "Mise à jour...",
+    "updateButton": "Mettre à jour le mot de passe",
+    "error": "Échec de la mise à jour du mot de passe. Veuillez réessayer."
+  },
+  "recoveryCodes": {
+    "title": "Codes de récupération MFA Civorah",
+    "separator": "========================",
+    "saveHint": "Enregistrez ces codes en lieu sûr.",
+    "onceHint": "Chaque code ne peut être utilisé qu'une seule fois."
+  }
+}

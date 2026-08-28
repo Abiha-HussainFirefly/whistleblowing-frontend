@@ -1,0 +1,134 @@
+﻿{
+    "title":  "Forfaits de licence",
+    "description":  "Ensembles rÃ©utilisables de modules, de siÃ¨ges et de crÃ©dits IA. Attribuez un forfait Ã  une organisation pour enregistrer ses droits, tout en conservant la possibilitÃ© de personnaliser chaque organisation.",
+    "actions":  {
+                    "newPlan":  "Nouveau forfait",
+                    "editPlan":  "Modifier le forfait",
+                    "deletePlan":  "Supprimer le forfait",
+                    "cancel":  "Annuler",
+                    "saveChanges":  "Enregistrer les modifications",
+                    "createPlan":  "CrÃ©er le forfait",
+                    "closePanel":  "Fermer le panneau",
+                    "cardView":  "Vue cartes",
+                    "tableView":  "Vue tableau"
+                },
+    "stats":  {
+                  "activePlans":  "Forfaits actifs",
+                  "totalPlans":  "{{count}} forfaits au total",
+                  "organizations":  "Organisations",
+                  "subscribed":  "AbonnÃ©es sur tous les forfaits",
+                  "aiCredits":  "CrÃ©dits IA / mois",
+                  "allocated":  "AllouÃ©s sur tous les forfaits",
+                  "inactivePlans":  "Forfaits inactifs",
+                  "archived":  "ArchivÃ©s et conservÃ©s pour les organisations existantes"
+              },
+    "filters":  {
+                    "searchPlaceholder":  "Rechercher des forfaits...",
+                    "allStatus":  "Tous les statuts",
+                    "active":  "Actif",
+                    "inactive":  "Inactif",
+                    "noPlans":  "Aucun forfait trouvÃ©",
+                    "adjustSearch":  "Essayez de modifier votre recherche ou le filtre de statut.",
+                    "createFirst":  "CrÃ©ez votre premier forfait pour commencer."
+                },
+    "states":  {
+                   "loading":  "Chargement des forfaitsâ€¦",
+                   "loadError":  "Impossible de charger les forfaits.",
+                   "saveError":  "Impossible dâ€™enregistrer le forfait.",
+                   "saving":  "Enregistrementâ€¦",
+                   "deleting":  "Suppressionâ€¦"
+               },
+    "card":  {
+                 "month":  "/ mois",
+                 "noModules":  "Aucun module",
+                 "adminSeats":  "SiÃ¨ges admin",
+                 "userSeats":  "SiÃ¨ges utilisateurs",
+                 "aiCredits":  "CrÃ©dits IA/mois",
+                 "organizationOne":  "organisation sur ce forfait",
+                 "organizationMany":  "organisations sur ce forfait"
+             },
+    "table":  {
+                  "name":  "Nom",
+                  "price":  "Prix",
+                  "includedModules":  "Modules inclus",
+                  "adminSeats":  "SiÃ¨ges admin",
+                  "userSeats":  "SiÃ¨ges utilisateurs",
+                  "aiCredits":  "CrÃ©dits IA/mois",
+                  "actions":  "Actions"
+              },
+    "editor":  {
+                   "editTitle":  "Modifier le forfait",
+                   "newTitle":  "Nouveau forfait",
+                   "name":  "Nom *",
+                   "namePlaceholder":  "ex. Professionnel",
+                   "status":  "Statut",
+                   "activeAvailable":  "Actif (disponible Ã  lâ€™attribution)",
+                   "description":  "Description",
+                   "descriptionPlaceholder":  "BrÃ¨ve description du forfait",
+                   "includedModules":  "Modules inclus",
+                   "adminSeats":  "SiÃ¨ges admin",
+                   "userSeats":  "SiÃ¨ges utilisateurs",
+                   "aiCredits":  "CrÃ©dits IA / mois",
+                   "price":  "Prix / mois (facultatif)",
+                   "pricePlaceholder":  "ex. 499",
+                   "currency":  "Devise",
+                   "externalSeats":  "Sièges externes",
+                   "workspaces":  "Espaces de travail",
+                   "storageMb":  "Stockage (Mo)"
+               },
+    "validation":  {
+                       "nameRequired":  "Le nom du forfait est obligatoire."
+                   },
+    "delete":  {
+                   "title":  "Supprimer le forfait ?",
+                   "body":  "Les organisations dÃ©jÃ  sur ce forfait conservent leurs droits actuels et ne sont pas modifiÃ©es. Le forfait est archivÃ© et ne peut plus Ãªtre attribuÃ©."
+               },
+    "modules":  {
+                    "contracts":  {
+                                      "label":  "Contrats (CLM)",
+                                      "description":  "Gestion du cycle de vie des contrats."
+                                  },
+                    "matters":  {
+                                    "label":  "Dossiers",
+                                    "description":  "Dossiers, audiences et frais juridiques."
+                                },
+                    "compliance":  {
+                                       "label":  "Ã‰thique et conformitÃ©",
+                                       "description":  "Diligence raisonnable des contreparties (IDD / ABC)."
+                                   },
+                    "secretarial":  {
+                                        "label":  "SecrÃ©tariat",
+                                        "description":  "Registres du conseil et calendrier de conformitÃ©."
+                                    },
+                    "land":  {
+                                 "label":  "Actifs",
+                                 "description":  "RÃ©fÃ©rentiel des actifs de lâ€™organisation."
+                             },
+                    "whistleblowing":  {
+                                           "label":  "Alerte Ã©thique",
+                                           "description":  "Signalement confidentiel des incidents."
+                                       },
+                    "external_access":  {
+                                            "label":  "Conseil externe",
+                                            "description":  "Allocation de ressources externes et portail."
+                                        },
+                    "ai":  {
+                               "label":  "Assistant IA",
+                               "description":  "Assistant juridique IA basÃ© sur des crÃ©dits."
+                           }
+                },
+    "seeded":  {
+                   "starter":  {
+                                   "name":  "Essentiel",
+                                   "description":  "Forfait dâ€™entrÃ©e â€” contrats uniquement, petite Ã©quipe."
+                               },
+                   "professional":  {
+                                        "name":  "Professionnel",
+                                        "description":  "OpÃ©rations juridiques essentielles â€” contrats, dossiers, conformitÃ©, secrÃ©tariat et conseil externe."
+                                    },
+                   "enterprise":  {
+                                      "name":  "Entreprise",
+                                      "description":  "Plateforme complÃ¨te â€” tous les modules et lâ€™assistant IA."
+                                  }
+               }
+}

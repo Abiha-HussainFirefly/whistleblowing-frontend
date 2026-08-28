@@ -1,0 +1,134 @@
+{
+  "title": "Einstellungen",
+  "subtitle": "Verwalten Sie die Konfiguration Ihrer Organisation und Ihr Konto.",
+  "tabs": {
+    "organization": "Organisation",
+    "appearance": "Darstellung",
+    "language": "Sprache",
+    "security": "Sicherheit",
+    "notifications": "Benachrichtigungen"
+  },
+  "language": {
+    "title": "Sprache",
+    "description": "Wählen Sie die in der gesamten Oberfläche verwendete Sprache. Ihre Auswahl wird in Ihrem Profil gespeichert.",
+    "label": "Anzeigesprache",
+    "current": "Aktuelle Sprache",
+    "saved": "Spracheinstellung gespeichert.",
+    "saveError": "Wir konnten Ihre Spracheinstellung nicht speichern. Sie gilt dennoch auf diesem Gerät."
+  },
+  "appearance": {
+    "title": "Darstellung",
+    "description": "Wählen Sie, wie die Oberfläche an Ihre Anzeigeeinstellungen angepasst werden soll.",
+    "theme": "Design",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System",
+    "lightSubtitle": "helle Oberfläche",
+    "darkSubtitle": "dunkle Oberfläche",
+    "systemSubtitle": "Geräteeinstellung verwenden",
+    "comingSoon": "Demnächst",
+    "soon": "Bald",
+    "useTheme": "Verwenden"
+  },
+  "profile": {
+    "title": "Profil",
+    "displayName": "Anzeigename",
+    "email": "E-Mail-Adresse",
+    "phone": "Telefonnummer",
+    "save": "Profil speichern"
+  },
+  "mfa": {
+    "loading": "MFA-Einstellungen werden geladen...",
+    "tryAgain": "Erneut versuchen",
+    "error": {
+      "loadFailed": "MFA-Status konnte nicht geladen werden. Bitte versuchen Sie es erneut.",
+      "enrollFailed": "Registrierung konnte nicht gestartet werden. Bitte versuchen Sie es erneut.",
+      "invalidCode": "Ungültiger Code. Bitte versuchen Sie es erneut."
+    },
+    "step1": {
+      "title": "Schritt 1: QR-Code scannen",
+      "description": "Scannen Sie diesen QR-Code mit Ihrer Authenticator-App (Google Authenticator, Authy usw.)",
+      "manualEntry": "Manueller Eingabecode",
+      "copySecret": "Geheimnis kopieren",
+      "qrCodeAlt": "MFA QR-Code"
+    },
+    "step2": {
+      "title": "Schritt 2: Einrichtung überprüfen",
+      "description": "Geben Sie den 6-stelligen Code ein, der in Ihrer Authenticator-App angezeigt wird, um die Einrichtung zu bestätigen."
+    },
+    "step3": {
+      "title": "Schritt 3: Wiederherstellungscodes speichern",
+      "newTitle": "Neue Wiederherstellungscodes",
+      "warning": "Speichern Sie diese Codes an einem sicheren Ort. Sie können sie nicht mehr sehen. Jeder Code kann nur einmal verwendet werden."
+    },
+    "done": {
+      "title": "Zwei-Faktor-Authentifizierung aktiviert",
+      "description": "Ihr Konto ist jetzt mit Zwei-Faktor-Authentifizierung geschützt.",
+      "recoveryCodesRemaining": "Sie haben noch {{count}} Wiederherstellungscodes.",
+      "backToSettings": "Zurück zu MFA-Einstellungen"
+    },
+    "actions": {
+      "cancel": "Abbrechen",
+      "next": "Weiter",
+      "back": "Zurück",
+      "verify": "Überprüfen",
+      "verifying": "Überprüfung...",
+      "copyAll": "Alle kopieren",
+      "copied": "Kopiert!",
+      "downloadAsText": "Als Text herunterladen",
+      "done": "Fertig",
+      "savedCodes": "Ich habe meine Codes gespeichert"
+    },
+    "disable": {
+      "title": "2FA-Deaktivierung bestätigen",
+      "description": "Geben Sie Ihren 6-stelligen Authenticator-Code ein, um die Deaktivierung der Zwei-Faktor-Authentifizierung zu bestätigen.",
+      "button": "2FA deaktivieren",
+      "disabling": "Deaktivierung..."
+    },
+    "regenerate": {
+      "title": "Wiederherstellungscodes neu generieren",
+      "description": "Geben Sie Ihren 6-stelligen Authenticator-Code ein, um neue Wiederherstellungscodes zu generieren. Ihre vorhandenen Codes werden ungültig.",
+      "button": "Neu generieren",
+      "regenerating": "Neugenerierung läuft..."
+    },
+    "totp": {
+      "ariaLabel": "TOTP-Code",
+      "digit": "Ziffer {{count}}"
+    }
+  },
+  "security": {
+    "title": "Sicherheit",
+    "description": "Verwalten Sie das Kontopasswort und die Zwei-Faktor-Authentifizierung.",
+    "password": {
+      "title": "Passwort",
+      "description": "Anmeldepasswort aktualisieren"
+    },
+    "twoFactor": {
+      "title": "Zwei-Faktor-Authentifizierung",
+      "enable": "2FA aktivieren",
+      "disable": "2FA deaktivieren"
+    }
+  },
+  "password": {
+    "sheetTitle": "Passwort aktualisieren",
+    "title": "Passwort",
+    "description": "Halten Sie Ihr Passwort stark und einzigartig für dieses Konto.",
+    "currentPassword": "Aktuelles Passwort",
+    "currentPasswordPlaceholder": "Aktuelles Passwort eingeben",
+    "newPassword": "Neues Passwort",
+    "newPasswordPlaceholder": "Neues Passwort erstellen",
+    "confirmPassword": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Neues Passwort erneut eingeben",
+    "passwordMismatch": "Passwörter stimmen nicht überein.",
+    "hint": "Sie verwenden das neue Passwort bei der nächsten Anmeldung.",
+    "updating": "Aktualisierung...",
+    "updateButton": "Passwort aktualisieren",
+    "error": "Passwort konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut."
+  },
+  "recoveryCodes": {
+    "title": "Civorah MFA-Wiederherstellungscodes",
+    "separator": "========================",
+    "saveHint": "Speichern Sie diese Codes an einem sicheren Ort.",
+    "onceHint": "Jeder Code kann nur einmal verwendet werden."
+  }
+}

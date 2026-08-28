@@ -1,0 +1,1 @@
+export function MfaVerifyPage() { return <main className="auth-frame"><section className="auth-card"><h2>Multi-factor verification</h2><p>Complete the verification step provided by your organization.</p></section></main>; }

@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": "Funktionen",
+    "description": "Konfigurieren Sie die Module, Funktionen, Anbieter, Anmeldemethoden und Grenzwerte, die jeder Organisation zustehen. Der im Code definierte Katalog ist die zentrale Datenquelle; jede Organisation speichert nur ihre Abweichungen. Änderungen werden vor dem Speichern auf Abhängigkeiten und Konflikte geprüft.",
+    "organization": "Organisation",
+    "selectOrganization": "Organisation auswählen…",
+    "importOverlay": "Abweichungs-JSON importieren",
+    "selectPrompt": "Wählen Sie eine Organisation aus, um ihre Funktionen zu konfigurieren."
+  },
+  "groups": {
+    "modules": "Module",
+    "integrations": "Integrationen",
+    "auth": "Authentifizierung",
+    "documents": "Dokumente",
+    "search": "Suche",
+    "notifications": "Benachrichtigungen",
+    "ui": "Benutzeroberfläche",
+    "governance": "Governance",
+    "access": "Zugriff",
+    "limits": "Grenzwerte"
+  },
+  "import": {
+    "jsonLabel": "Abweichungs-JSON (reduziert — nur Unterschiede)",
+    "jsonPlaceholder": "{ \"modules\": { \"whistleblowing\": { \"enabled\": false } } }",
+    "applying": "Wird angewendet…",
+    "apply": "Abweichungen anwenden",
+    "cancel": "Abbrechen"
+  },
+  "editor": {
+    "loading": "Funktionen werden geladen…",
+    "noData": "Keine Daten.",
+    "listView": "Listenansicht",
+    "gridView": "Rasteransicht",
+    "count": "{{visible}} von {{total}} Funktionen",
+    "saving": "· Wird gespeichert…",
+    "searchPlaceholder": "In {{group}} suchen…",
+    "noMatches": "Keine Funktionen entsprechen „{{search}}“.",
+    "emptyGroup": "Keine Funktionen in dieser Gruppe.",
+    "commaSeparated": "kommagetrennte,Werte"
+  },
+  "badges": {
+    "addOn": "Zusatzmodul",
+    "locked": "gesperrt",
+    "scaffolded": "vorbereitet",
+    "provisioning": "Bereitstellung erforderlich",
+    "override": "Abweichung",
+    "default": "Standard"
+  },
+  "actions": {
+    "reset": "Auf Standard zurücksetzen",
+    "resetTitle": "Auf Katalogstandard zurücksetzen"
+  },
+  "manifest": {
+    "overlay": "Abweichungen (reduziert)",
+    "effective": "Wirksames Manifest",
+    "copyJson": "JSON kopieren",
+    "jsonContent": "Manifest-JSON",
+    "emptyOverlay": "Noch keine Abweichungen — diese Organisation übernimmt alle Katalogstandards. Ändern Sie oben eine Funktion (oder importieren Sie Abweichungen), damit der Unterschied hier erscheint. Die Registerkarte „Wirksames Manifest“ zeigt immer die vollständige aufgelöste Konfiguration."
+  },
+  "errors": {
+    "invalidJson": "Ungültiges JSON.",
+    "overlayObject": "Die Abweichungen müssen ein JSON-Objekt sein.",
+    "importFailed": "Import fehlgeschlagen.",
+    "requestFailed": "Anfrage fehlgeschlagen."
+  }
+}

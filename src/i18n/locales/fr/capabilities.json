@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": "Fonctionnalités",
+    "description": "Configurez les modules, les fonctionnalités, les fournisseurs, les méthodes de connexion et les limites auxquels chaque organisation a droit. Le catalogue défini dans le code constitue la source unique de vérité ; chaque organisation ne stocke que ses différences. Les dépendances et les conflits sont validés avant l’enregistrement des modifications.",
+    "organization": "Organisation",
+    "selectOrganization": "Sélectionner une organisation…",
+    "importOverlay": "Importer le JSON des dérogations",
+    "selectPrompt": "Sélectionnez une organisation pour configurer ses fonctionnalités."
+  },
+  "groups": {
+    "modules": "Modules",
+    "integrations": "Intégrations",
+    "auth": "Authentification",
+    "documents": "Documents",
+    "search": "Recherche",
+    "notifications": "Notifications",
+    "ui": "Interface utilisateur",
+    "governance": "Gouvernance",
+    "access": "Accès",
+    "limits": "Limites"
+  },
+  "import": {
+    "jsonLabel": "JSON des dérogations (clairsemé — différences uniquement)",
+    "jsonPlaceholder": "{ \"modules\": { \"whistleblowing\": { \"enabled\": false } } }",
+    "applying": "Application…",
+    "apply": "Appliquer les dérogations",
+    "cancel": "Annuler"
+  },
+  "editor": {
+    "loading": "Chargement des fonctionnalités…",
+    "noData": "Aucune donnée.",
+    "listView": "Vue en liste",
+    "gridView": "Vue en grille",
+    "count": "{{visible}} fonctionnalités sur {{total}}",
+    "saving": "· Enregistrement…",
+    "searchPlaceholder": "Rechercher dans {{group}}…",
+    "noMatches": "Aucune fonctionnalité ne correspond à « {{search}} ».",
+    "emptyGroup": "Aucune fonctionnalité dans ce groupe.",
+    "commaSeparated": "valeurs,séparées,par,des,virgules"
+  },
+  "badges": {
+    "addOn": "module complémentaire",
+    "locked": "verrouillé",
+    "scaffolded": "préconfiguré",
+    "provisioning": "approvisionnement requis",
+    "override": "dérogation",
+    "default": "Par défaut"
+  },
+  "actions": {
+    "reset": "Rétablir la valeur par défaut",
+    "resetTitle": "Rétablir la valeur par défaut du catalogue"
+  },
+  "manifest": {
+    "overlay": "Dérogations (clairsemées)",
+    "effective": "Manifeste effectif",
+    "copyJson": "Copier le JSON",
+    "jsonContent": "JSON du manifeste",
+    "emptyOverlay": "Aucune dérogation pour le moment — cette organisation hérite de toutes les valeurs par défaut du catalogue. Modifiez une fonctionnalité ci-dessus (ou importez des dérogations) pour faire apparaître sa différence ici. L’onglet « Manifeste effectif » affiche toujours la configuration résolue complète."
+  },
+  "errors": {
+    "invalidJson": "JSON non valide.",
+    "overlayObject": "Les dérogations doivent être un objet JSON.",
+    "importFailed": "Échec de l’importation.",
+    "requestFailed": "Échec de la requête."
+  }
+}

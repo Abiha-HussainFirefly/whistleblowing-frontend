@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "next": "Weiter",
+    "back": "Zurück",
+    "done": "Fertig",
+    "progress": "{{current}} / {{total}}",
+    "skip": "Tour überspringen"
+  },
+  "orgMembers": {
+    "s1": {
+      "title": "Ihr Team verwalten",
+      "description": "Der Zugriff jedes Mitglieds hängt von drei Dingen ab: über welches Portal es sich anmeldet, seiner Rolle und der Region, in der es arbeitet. Diese kurze Tour zeigt, wo sich jedes befindet."
+    },
+    "s2": {
+      "title": "Mitglieder vs. Einladungen",
+      "description": "„Mitglieder“ sind Personen, die bereits in Ihrer Organisation sind. „Einladungen“ sind ausstehende E-Mail-Einladungen, die noch nicht angenommen wurden."
+    },
+    "s3": {
+      "title": "Sitze",
+      "description": "Ihr Tarif enthält eine Anzahl von Admin- (Tenant-Portal) und Benutzer- (Benutzer-Portal) Sitzen. Jedes Mitglied belegt einen — diese Abzeichen zeigen, wie viele übrig sind."
+    },
+    "s4": {
+      "title": "Jemanden einladen",
+      "description": "Zum Einladen werden Portal → Rolle → Region abgefragt. Wählen Sie das Portal passend zur Tätigkeit, eine Rolle, die zur Aufgabe passt, und die Region, deren Daten benötigt werden."
+    },
+    "s5": {
+      "title": "Das war’s",
+      "description": "Sie können Rolle, Status oder Regionen eines Mitglieds jederzeit über die Aktion „Bearbeiten“ ändern. Öffnen Sie Hilfe → „Wie der Zugriff funktioniert“ für das vollständige Bild."
+    }
+  },
+  "contractCreate": {
+    "s1": {
+      "title": "Einen Vertrag erstellen",
+      "description": "Erfassen Sie die Identität des Vertrags, dann Wert & Laufzeit, dann die Eigentümerschaft. Die hochgeladene Datei wird das erste Dokument des Vertrags (OCR-indiziert für die Suche)."
+    },
+    "s2": {
+      "title": "Vertragstyp",
+      "description": "Der Typ steuert Voreinstellungen wie die Risikostufe und ob eine rechtliche Prüfung erforderlich ist. Verwalten Sie den Katalog unter Verträge → Typen."
+    },
+    "s3": {
+      "title": "Abteilung & Ordner",
+      "description": "Die Abteilung ordnet den Vertrag Ihrer Organisationsstruktur zu (Berichte + Genehmigungs-Routing). Der Ordner organisiert ihn nur im Explorer — keines von beiden ändert, wer ihn sehen kann."
+    },
+    "s4": {
+      "title": "Gegenpartei & IDD",
+      "description": "Verknüpfen Sie den Dritten, damit dessen Due-Diligence-Status sichtbar ist. Wenn Sie eine IDD-Freigabe verlangen, kann der Vertrag erst ausgeführt werden, wenn diese Partei freigegeben ist."
+    }
+  },
+  "litigationCases": {
+    "s1": {
+      "title": "Ihre Fallbibliothek",
+      "description": "Dies ist ein Datei-Explorer für Rechtsstreitfälle. Verwenden Sie Ordner, um sie beliebig zu gruppieren — Ordner ändern nie, wer auf einen Fall oder seine Region zugreifen kann."
+    },
+    "s2": {
+      "title": "Ordner & Start",
+      "description": "Start zeigt nicht abgelegte Fälle; klicken Sie auf einen Ordner, um dessen Fälle zu sehen. Ein Fall liegt in genau einem Ordner oder in keinem."
+    },
+    "s3": {
+      "title": "Neuer Ordner",
+      "description": "Erstellen Sie Ordner, um Fälle nach Angelegenheit, Mandant oder Jahr zu organisieren — ganz wie es Ihnen passt."
+    },
+    "s4": {
+      "title": "Neuer Fall",
+      "description": "Starten Sie hier einen Fall. Wenn Sie sich in einem Ordner befinden, landet der neue Fall automatisch darin."
+    }
+  },
+  "departments": {
+    "s1": {
+      "title": "Abteilungen",
+      "description": "Abteilungen spiegeln Ihre interne Struktur wider (Abteilung › Unterabteilung / Kostenstelle › Funktion). Sie kennzeichnen Verträge und Fälle für Berichte und Genehmigungs-Routing — sie steuern nicht, wer Daten sieht."
+    },
+    "s2": {
+      "title": "Abteilung hinzufügen",
+      "description": "Erstellen Sie eine Abteilung der obersten Ebene und verschachteln Sie dann Unterabteilungen darunter. Weisen Sie eine Abteilungsleitung und eine Kostenstelle zu, falls Sie diese verfolgen."
+    }
+  },
+  "reportConcern": {
+    "welcome": {
+      "title": "👋 Kurze Formular-Anleitung",
+      "text": "Diese Tour führt Sie durch jeden Abschnitt des Meldeformulars. Sie dauert etwa 60 Sekunden. Ihre Identität ist durchgehend geschützt — Sie entscheiden, ob Sie anonym bleiben."
+    },
+    "category": {
+      "title": "📋 Vorfallkategorie",
+      "text": "Wählen Sie zunächst die Kategorie, die am besten beschreibt, was Sie beobachtet haben — etwa Betrug, Belästigung oder Sicherheitsverstoß. Wenn Sie unsicher sind, wählen Sie die nächstliegende."
+    },
+    "description": {
+      "title": "✍️ Was ist passiert?",
+      "text": "Beschreiben Sie den Vorfall so ausführlich wie möglich — wer beteiligt war, was geschah, wo, wann und woher Sie davon wissen. Je mehr Details, desto einfacher die Untersuchung. <strong>Geben Sie nicht Ihren Namen an</strong>, wenn Sie anonym bleiben möchten."
+    },
+    "location": {
+      "title": "📍 Ort",
+      "text": "Geben Sie so viele Ortsangaben an, wie Sie kennen — den konkreten Standort, die Stadt oder Region des Vorfalls. Das hilft, Ihre Meldung an das richtige Team zu leiten. Alle Felder hier sind optional."
+    },
+    "relationship": {
+      "title": "🔗 Ihr Verhältnis",
+      "text": "Teilen Sie uns mit, in welchem Verhältnis Sie zur Organisation stehen — Mitarbeiter, Auftragnehmer, Lieferant usw. Das hilft uns, den Kontext Ihrer Meldung zu verstehen. Dieses Feld ist optional."
+    },
+    "involved": {
+      "title": "👤 Beteiligte Personen",
+      "text": "Fügen Sie die Namen aller Personen hinzu, die direkt an dem gemeldeten Verhalten beteiligt sind. Vorname, Nachname und Funktion sind alle optional — geben Sie an, was Sie wissen."
+    },
+    "dates": {
+      "title": "📅 Zeitpunkt",
+      "text": "Teilen Sie uns mit, wann der Vorfall geschah und ob er noch andauert. Selbst ungefähre Angaben (wie „letzten Monat“) helfen den Ermittlern, einen Zeitverlauf zu erstellen."
+    },
+    "anonymous": {
+      "title": "🔒 Anonym bleiben?",
+      "text": "Standardmäßig ist Ihre Meldung anonym — wir erfahren nie, wer Sie sind. Wenn Sie Updates zu Ihrem Fall erhalten möchten, deaktivieren Sie dieses Kästchen und geben Sie eine Kontakt-E-Mail an. Ihre Angaben werden streng vertraulich behandelt."
+    },
+    "conflict": {
+      "title": "🛡️ Interessenkonflikt",
+      "text": "Betrifft Ihre Meldung ein Mitglied des Compliance-Teams, markieren Sie dessen Namen hier, um diesen Fall vor ihm zu verbergen. Ihre Meldung erreicht dennoch den Compliance-Administrator."
+    },
+    "submit": {
+      "title": "✅ Bereit zum Absenden",
+      "text": "Akzeptieren Sie die Bedingungen und klicken Sie auf <strong>Meldung absenden</strong>. Sie erhalten sofort eine Fall-Referenznummer — speichern Sie sie, um den Fortschritt Ihrer Meldung zu verfolgen, ohne Ihre Identität preiszugeben."
+    }
+  }
+}

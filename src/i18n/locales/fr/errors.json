@@ -1,0 +1,40 @@
+{
+  "generic": "Une erreur est survenue. Veuillez réessayer.",
+  "network": "Impossible de joindre le serveur. Vérifiez votre connexion et réessayez.",
+  "timeout": "La requête a expiré. Vérifiez votre connexion et réessayez.",
+  "badResponse": "Réponse inattendue du serveur. Veuillez réessayer ou contacter le support.",
+  "unauthorized": "Votre session a expiré. Veuillez vous reconnecter.",
+  "forbidden": "Vous n'avez pas l'autorisation d'effectuer cette action.",
+  "notFound": "Nous n'avons pas trouvé ce que vous cherchiez.",
+  "conflict": "Cela entre en conflit avec l'état actuel. Veuillez actualiser et réessayer.",
+  "tooManyRequests": "Trop de requêtes. Veuillez patienter un instant et réessayer.",
+  "serverError": "Le serveur est temporairement indisponible. Veuillez réessayer sous peu.",
+  "validation": "Certaines informations semblent incorrectes. Veuillez vérifier le formulaire et réessayer.",
+  "status": {
+    "400": "Certaines informations semblent incorrectes. Veuillez vérifier le formulaire et réessayer.",
+    "401": "Votre session a expiré. Veuillez vous reconnecter.",
+    "403": "Vous n'avez pas l'autorisation d'effectuer cette action.",
+    "404": "Nous n'avons pas trouvé ce que vous cherchiez.",
+    "409": "Cela entre en conflit avec l'état actuel. Veuillez actualiser et réessayer.",
+    "422": "Certaines informations semblent incorrectes. Veuillez vérifier le formulaire et réessayer.",
+    "429": "Trop de requêtes. Veuillez patienter un instant et réessayer.",
+    "500": "Le serveur est temporairement indisponible. Veuillez réessayer sous peu."
+  },
+  "whistleblowing": {
+    "termsRequired": "Vous devez accepter les conditions de signalement pour envoyer un signalement.",
+    "namedEmailRequired": "Une adresse e-mail est requise lorsque vous choisissez de révéler votre identité.",
+    "independentReviewUnavailable": "La revue indépendante n’est pas configurée pour cette organisation. Contactez l’administrateur du signalement.",
+    "conflictReviewerProtected": "Le propriétaire de l’organisation et le dernier administrateur habilité ne peuvent pas être exclus.",
+    "administratorUnavailable": "Aucun administrateur actif des signalements n’est disponible pour recevoir ce signalement.",
+    "invalidCredentials": "Référence du dossier ou mot de passe invalide.",
+    "caseNotFound": "Dossier introuvable.",
+    "portalClosed": "Ce dossier est clôturé et le portail de signalement n’est plus disponible.",
+    "portalNotFound": "Portail de signalement introuvable.",
+    "portalDisabled": "Cette organisation n’a pas activé le portail de signalement.",
+    "invalidRegion": "La région sélectionnée est invalide.",
+    "closedNoUpdates": "Ce dossier est clôturé ; aucune nouvelle mise à jour ne peut être ajoutée.",
+    "referenceAllocationFailed": "Impossible d’attribuer une référence au dossier. Veuillez réessayer.",
+    "invalidSession": "Session invalide ou expirée. Veuillez vous reconnecter.",
+    "invalidSessionToken": "Jeton de session invalide."
+  }
+}

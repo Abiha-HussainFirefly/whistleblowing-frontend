@@ -1,0 +1,858 @@
+{
+  "page": {
+    "title": "Signaler une préoccupation",
+    "subtitle": "Signalez confidentiellement une inconduite présumée. Vous pouvez rester anonyme.",
+    "noContext": "Aucun contexte d'organisation actif.",
+    "loading": "Chargement…",
+    "notEnabled": "Le signalement d'alerte n'est pas activé pour votre organisation.",
+    "loadingSecure": "Chargement du portail sécurisé de signalement...",
+    "portalUnavailable": "Portail indisponible",
+    "portalNotFound": "Ce portail de signalement est introuvable.",
+    "reportSubmitted": "Signalement envoyé",
+    "reportSubmittedToast": "Signalement envoyé avec succès. Enregistrez les identifiants maintenant.",
+    "portalSubtitle": "Envoyez un signalement confidentiel à {{organization}}. Vous pouvez rester anonyme."
+  },
+  "form": {
+    "takeTour": "Faire une visite guidée",
+    "cards": {
+      "overview": {
+        "title": "Aperçu de l'incident",
+        "subtitle": "Décrivez la nature de la préoccupation que vous signalez"
+      },
+      "location": {
+        "title": "Où cela s'est-il produit ?",
+        "subtitle": "Aidez-nous à comprendre le lieu de l'incident"
+      },
+      "more": {
+        "title": "Dites-nous en plus",
+        "subtitle": "Un contexte supplémentaire nous aide à enquêter en profondeur"
+      },
+      "contact": {
+        "title": "Vos coordonnées",
+        "subtitle": "Utilisées uniquement pour assurer le suivi de votre signalement"
+      },
+      "identity": {
+        "title": "Identité et confidentialité",
+        "subtitle": "Choisissez comment nous pouvons vous contacter et qui doit être exclu"
+      },
+      "review": {
+        "title": "Vérifier et envoyer",
+        "subtitle": "Confirmez les conditions du signalement avant l’envoi"
+      }
+    },
+    "fields": {
+      "category": "Catégorie de l'incident",
+      "whatHappened": "Que s'est-il passé ?",
+      "whatHappenedHint": "Qui, quoi, où, quand et comment. Votre anonymat est protégé.",
+      "location": "Lieu où l'incident s'est produit",
+      "city": "Ville",
+      "state": "État / Province",
+      "postalCode": "Code postal",
+      "country": "Pays",
+      "region": "Région / unité opérationnelle",
+      "relationship": "Votre relation avec l'organisation",
+      "involved": "Personne(s) impliquée(s) dans ce comportement",
+      "previouslyReported": "Cela a-t-il déjà été signalé à la direction ?",
+      "dateOfOccurrence": "Date de survenue",
+      "whenLast": "Quand cela s'est-il produit pour la dernière fois ?",
+      "duration": "Depuis combien de temps cela dure-t-il ?",
+      "awareness": "Comment en avez-vous eu connaissance ?",
+      "email": "Votre e-mail (pour les mises à jour)",
+      "phone": "Votre numéro de téléphone",
+      "bestTime": "Meilleur moment pour vous joindre"
+    },
+    "placeholders": {
+      "selectCategory": "Sélectionner une catégorie…",
+      "selectOne": "Sélectionner une option…",
+      "notSpecified": "Non précisé",
+      "whatHappened": "Veuillez fournir autant de détails que possible — qui, quoi, où, quand et comment vous le savez. Évitez d'inclure votre propre identité si vous souhaitez rester anonyme.",
+      "location": "Adresse physique, succursale et/ou numéro de magasin",
+      "whenLast": "ex. Il y a deux semaines",
+      "email": "vous@exemple.com",
+      "bestTime": "ex. En semaine le matin"
+    },
+    "characters": "{{count}} caractères",
+    "anonymous": {
+      "title": "Envoyer anonymement",
+      "on": "Votre identité ne sera pas divulguée.",
+      "off": "Vos coordonnées seront incluses."
+    },
+    "conflictReviewerSelection": {
+      "title": "Exclure certains réviseurs indépendants (facultatif)",
+      "description": "Sélectionnez uniquement les réviseurs indépendants susceptibles d’être en conflit. Les autres pourront accéder à ce signalement.",
+      "protected": "Le propriétaire de l’organisation est toujours protégé et au moins un administrateur habilité doit rester disponible.",
+      "none": "Aucun réviseur indépendant n’est actuellement configuré."
+    },
+    "conflict": {
+      "title": "Conflit d'intérêts",
+      "optional": "(facultatif)",
+      "description": "Si ce signalement concerne une personne qui traite habituellement les signalements, sélectionnez cette option. Il sera transmis à l’équipe de revue indépendante de l’organisation et l’équipe habituelle n’y aura pas accès."
+    },
+    "terms": "J'accepte les conditions générales de ce signalement et je confirme que les informations fournies sont exactes à ma connaissance.",
+    "submit": "Envoyer le signalement",
+    "submitting": "Envoi en cours…",
+    "expect": {
+      "title": "À quoi s'attendre",
+      "directToCompliance": "Votre signalement est transmis à l’équipe de revue indépendante ou de conformité appropriée.",
+      "caseReference": "Vous recevrez une référence de dossier pour suivre l'avancement.",
+      "noRetaliation": "Toute représaille contre les lanceurs d'alerte est strictement interdite."
+    },
+    "validation": {
+      "category": "Veuillez choisir une catégorie d'incident.",
+      "description": "Veuillez fournir une description plus complète (au moins 10 caractères).",
+      "email": "Indiquez un e-mail, ou choisissez de signaler anonymement.",
+      "terms": "Veuillez accepter les conditions générales pour envoyer votre signalement.",
+      "descriptionTooLong": "Veuillez réduire la description à 20 000 caractères ou moins.",
+      "futureDate": "La date de l’incident ne peut pas être dans le futur."
+    },
+    "steps": {
+      "incident": "Détails de l’incident",
+      "location": "Lieu",
+      "details": "Personnes et calendrier",
+      "identity": "Identité",
+      "review": "Vérification et envoi"
+    },
+    "navigation": {
+      "back": "Retour",
+      "next": "Suivant"
+    }
+  },
+  "persons": {
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "titleRole": "Titre / fonction",
+    "titlePlaceholder": "ex. Superviseur de nuit",
+    "remove": "Supprimer la personne",
+    "addFirst": "Ajouter une personne",
+    "addAnother": "Ajouter une autre",
+    "examples": "Exemples : « John Doe, Directeur de l'audit interne » · « Inconnu, Inconnu, Superviseur de nuit »"
+  },
+  "share": {
+    "title": "Lien de signalement partageable",
+    "description": "Partagez ce lien public avec des employés, des sous-traitants, des fournisseurs ou toute partie externe. Ils peuvent soumettre un signalement confidentiel — anonymement s'ils le souhaitent — sans compte.",
+    "copy": "Copier",
+    "copied": "Copié",
+    "open": "Ouvrir",
+    "publicTitle": "Lien public de signalement",
+    "publicDescription": "Partagez ce lien avec les employés, sous-traitants, fournisseurs ou signalants externes.",
+    "copyLink": "Copier le lien",
+    "openPublicForm": "Ouvrir le formulaire public",
+    "bullets": {
+      "noAccount": "Aucun compte n’est nécessaire pour envoyer un signalement.",
+      "anonymous": "Le signalement anonyme reste disponible.",
+      "secureFlow": "Les signalements suivent le même parcours sécurisé."
+    }
+  },
+  "credentials": {
+    "receivedTitle": "Votre signalement a bien été reçu.",
+    "receivedDescription": "Enregistrez ces identifiants maintenant — le mot de passe n'est affiché qu'une seule fois et ne peut pas être récupéré. Utilisez-les pour vous reconnecter et suivre votre dossier.",
+    "loginCredentials": "Vos identifiants de connexion",
+    "caseReference": "Référence du dossier",
+    "password": "Mot de passe",
+    "track": "Suivre mon dossier",
+    "trackDescription": "S'ouvre dans un nouvel onglet afin que votre référence de dossier et votre mot de passe restent visibles ici. Enregistrez-les avant de quitter cette page — le mot de passe n'est affiché qu'une seule fois.",
+    "reveal": "Afficher",
+    "hide": "Masquer",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "saveTitle": "Enregistrez ces identifiants maintenant.",
+    "saveDescription": "Téléchargez-les sous forme de fichier texte ou copiez-les dans un endroit sécurisé. Le mot de passe ne sera plus affiché.",
+    "download": "Télécharger le fichier texte",
+    "downloadTitle": "Identifiants du signalement d’alerte",
+    "downloadReminder": "Conservez ces identifiants en sécurité. Le mot de passe n’est affiché qu’une seule fois."
+  },
+  "category": {
+    "FRAUD": "Fraude",
+    "BRIBERY_CORRUPTION": "Corruption et pots-de-vin",
+    "HARASSMENT": "Harcèlement",
+    "CONFLICT_OF_INTEREST": "Conflit d'intérêts",
+    "DATA_PRIVACY": "Confidentialité et protection des données",
+    "HEALTH_SAFETY": "Santé et sécurité",
+    "DISCRIMINATION": "Discrimination",
+    "RETALIATION": "Représailles",
+    "OTHER_MISCONDUCT": "Autre inconduite",
+    "ACCOUNTING_AUDITING": "Comptabilité, audit et information financière",
+    "COMPENSATION_BENEFITS": "Rémunération et avantages sociaux",
+    "SGBP_COMPLIANCE": "Respect des principes généraux d'activité standard",
+    "CONFIDENTIAL_INFORMATION": "Informations confidentielles et propriétaires",
+    "DISCLOSURE_COMMUNICATIONS": "Divulgation et communications commerciales",
+    "DIVERSITY_EQUITY_INCLUSION": "Diversité, équité et inclusion",
+    "DUE_DILIGENCE": "Diligence raisonnable éthique et conformité",
+    "ENVIRONMENTAL": "Environnement",
+    "FAIR_COMPETITION": "Concurrence libre et loyale",
+    "GLOBAL_TRADE": "Commerce international",
+    "HUMAN_RIGHTS": "Droits de l'homme",
+    "IMMINENT_THREAT": "Menace imminente pour une personne, des animaux ou des biens",
+    "INSIDER_TRADING": "Délit d'initié",
+    "INTELLECTUAL_PROPERTY": "Propriété intellectuelle",
+    "ASSET_MISUSE": "Utilisation abusive ou détournement d'actifs",
+    "POLITICAL_ACTIVITY": "Activité politique",
+    "PRODUCT_QUALITY_SAFETY": "Qualité et sécurité des produits",
+    "SUBSTANCE_ABUSE": "Toxicomanie",
+    "IT_ELECTRONIC_COMMS": "Utilisation de l'informatique et des communications électroniques",
+    "WORKPLACE_CIVILITY": "Civilité au travail",
+    "OTHER_BUSINESS_INTEGRITY": "Autre intégrité des affaires",
+    "OTHER_HUMAN_RESOURCES": "Autres ressources humaines",
+    "INQUIRY": "Demande d'information"
+  },
+  "relationship": {
+    "EMPLOYEE": "Employé",
+    "FORMER_EMPLOYEE": "Ancien employé",
+    "CONTRACTOR": "Sous-traitant",
+    "VENDOR_SUPPLIER": "Vendeur / Fournisseur",
+    "CUSTOMER": "Client",
+    "BUSINESS_PARTNER": "Partenaire commercial",
+    "OTHER_RELATIONSHIP": "Autre"
+  },
+  "duration": {
+    "ONE_TIME": "Événement ponctuel",
+    "LESS_THAN_MONTH": "Moins d'un mois",
+    "ONE_TO_THREE_MONTHS": "1 à 3 mois",
+    "THREE_TO_SIX_MONTHS": "3 à 6 mois",
+    "SIX_TO_TWELVE_MONTHS": "6 à 12 mois",
+    "OVER_A_YEAR": "Plus d'un an",
+    "ONGOING": "En cours",
+    "UNKNOWN_DURATION": "Inconnu"
+  },
+  "awareness": {
+    "WITNESSED": "J'en ai été témoin personnellement",
+    "TOLD_BY_SOMEONE": "Quelqu'un d'autre me l'a dit",
+    "REVIEWED_DOCUMENTS": "J'ai examiné des documents / dossiers",
+    "RUMOR": "J'ai entendu une rumeur",
+    "INVOLVED": "J'étais impliqué",
+    "OTHER_SOURCE": "Autre"
+  },
+  "previouslyReported": {
+    "YES": "Oui",
+    "NO": "Non",
+    "UNKNOWN": "Ne sait pas / ne souhaite pas divulguer"
+  },
+  "tour": {
+    "buttons": {
+      "next": "Suivant →",
+      "back": "← Retour",
+      "done": "Terminé",
+      "skip": "Passer la visite"
+    },
+    "welcome": {
+      "title": "👋 Guide rapide du formulaire",
+      "text": "Cette visite vous présente chaque section du formulaire de signalement. Elle dure environ 60 secondes. Votre identité est protégée tout au long — vous choisissez de rester anonyme ou non."
+    },
+    "category": {
+      "title": "📋 Catégorie de l'incident",
+      "text": "Commencez par choisir la catégorie qui décrit le mieux ce dont vous avez été témoin — par exemple fraude, harcèlement ou infraction à la sécurité. En cas de doute, choisissez la plus proche."
+    },
+    "description": {
+      "title": "✍️ Que s'est-il passé ?",
+      "text": "Décrivez l'incident avec autant de détails que possible — qui était impliqué, ce qui s'est passé, où, quand et comment vous le savez. Plus vous fournissez de détails, plus l'enquête est facile. <strong>N'indiquez pas votre propre nom</strong> si vous souhaitez rester anonyme."
+    },
+    "location": {
+      "title": "📍 Lieu",
+      "text": "Indiquez autant de détails de lieu que vous connaissez — le site précis, la ville ou la région où l'incident s'est produit. Cela aide à orienter votre signalement vers la bonne équipe. Tous les champs ici sont facultatifs."
+    },
+    "relationship": {
+      "title": "🔗 Votre relation",
+      "text": "Indiquez-nous votre relation avec l'organisation — employé, sous-traitant, fournisseur, etc. Cela nous aide à comprendre le contexte de votre signalement. Ce champ est facultatif."
+    },
+    "involved": {
+      "title": "👤 Personnes impliquées",
+      "text": "Ajoutez le(s) nom(s) de toute personne directement impliquée dans le comportement que vous signalez. Le prénom, le nom et la fonction sont tous facultatifs — indiquez ce que vous savez."
+    },
+    "dates": {
+      "title": "📅 Chronologie",
+      "text": "Indiquez-nous quand l'incident s'est produit et s'il est toujours en cours. Même des dates approximatives (comme « le mois dernier ») aident les enquêteurs à établir une chronologie."
+    },
+    "anonymous": {
+      "title": "🔒 Rester anonyme ?",
+      "text": "Par défaut, votre signalement est anonyme — nous ne savons jamais qui vous êtes. Si vous souhaitez recevoir des mises à jour sur votre dossier, décochez cette case et fournissez une adresse e-mail. Vos coordonnées restent strictement confidentielles."
+    },
+    "conflict": {
+      "title": "🛡️ Conflit d'intérêts",
+      "text": "Si votre signalement concerne un membre de l'équipe de conformité, cochez son nom ici pour lui masquer ce dossier. Votre signalement parviendra tout de même à l'administrateur de la conformité."
+    },
+    "submit": {
+      "title": "✅ Prêt à envoyer",
+      "text": "Acceptez les conditions et cliquez sur <strong>Envoyer le signalement</strong>. Vous recevrez immédiatement un numéro de référence de dossier — enregistrez-le pour suivre l'avancement de votre signalement sans révéler votre identité."
+    }
+  },
+  "shell": {
+    "defaultOrgName": "Portail d’alerte",
+    "organizationLogoAlt": "Organisation",
+    "subtitle": "Signalement confidentiel",
+    "footerPrefix": "Votre signalement est chiffré et traité de manière confidentielle. Vous pouvez signaler anonymement.",
+    "trackExisting": "Suivre un signalement existant",
+    "trackReport": "Suivre un signalement"
+  },
+  "track": {
+    "actions": {
+      "signOut": "Se déconnecter"
+    },
+    "toasts": {
+      "signedOut": "Déconnexion réussie."
+    },
+    "case": {
+      "title": "Votre signalement",
+      "loading": "Chargement de votre dossier...",
+      "referenceSubtitle": "Référence {{ref}}",
+      "submittedOn": "Envoyé le {{date}}",
+      "detailsTitle": "Votre signalement",
+      "fields": {
+        "dateOfOccurrence": "Date de l’incident",
+        "location": "Lieu",
+        "relationship": "Relation",
+        "whenLast": "Dernière occurrence",
+        "duration": "Durée",
+        "previouslyReported": "Déjà signalé"
+      },
+      "identifiedPersons": "Personne(s) que vous avez identifiée(s)",
+      "personTitleSuffix": " - {{title}}",
+      "outcome": "Résultat"
+    },
+    "login": {
+      "title": "Suivre votre signalement",
+      "subtitle": "Connectez-vous avec la référence du dossier et le mot de passe.",
+      "eyebrow": "Accès confidentiel au dossier",
+      "description": "Utilisez les identifiants générés lors de l’envoi du signalement. Le mot de passe du dossier ne peut pas être récupéré, gardez-le privé.",
+      "cardTitle": "Accéder à votre dossier",
+      "cardSubtitle": "Saisissez exactement la référence du dossier et le mot de passe fournis.",
+      "referenceLabel": "Référence du dossier",
+      "referencePlaceholder": "WB-2026-XXXXXX",
+      "passwordLabel": "Mot de passe",
+      "signingIn": "Connexion en cours...",
+      "submit": "Voir mon dossier",
+      "privacyNote": "Cette page est séparée de la connexion employé. Elle ouvre uniquement le signalement lié à ces identifiants.",
+      "sessionExpired": "Votre session a expiré. Veuillez vous reconnecter.",
+      "validation": {
+        "empty": "Saisissez la référence du dossier et le mot de passe."
+      },
+      "assurances": {
+        "status": "Consultez l’état de l’enquête en toute sécurité.",
+        "messages": "Envoyez des informations complémentaires sans révéler votre identité.",
+        "attachments": "Joignez des preuves supplémentaires tant que le dossier reste ouvert."
+      }
+    },
+    "messages": {
+      "title": "Messagerie",
+      "emptyTitle": "Aucun message pour le moment.",
+      "emptyBody": "L’équipe d’enquête peut vous contacter ici.",
+      "authorYou": "Vous",
+      "authorTeam": "Équipe d’enquête",
+      "placeholder": "Ajoutez des informations ou répondez aux enquêteurs...",
+      "uploading": "Téléversement en cours...",
+      "attachEvidence": "Joindre une preuve",
+      "uploadedToast": "Votre preuve a été téléversée.",
+      "send": "Envoyer",
+      "loading": "Chargement des messages...",
+      "addComment": "Ajouter un commentaire"
+    },
+    "comments": {
+      "sheetTitle": "Ajouter un commentaire",
+      "sheetDescription": "Envoyez un message de suivi sécurisé à l’équipe d’enquête.",
+      "helper": "Utilisez ceci pour les mises à jour, les questions ou tout contexte supplémentaire lié à votre signalement.",
+      "label": "Commentaire",
+      "placeholder": "Ajoutez des informations ou répondez aux enquêteurs...",
+      "cancel": "Annuler",
+      "sending": "Envoi en cours...",
+      "send": "Envoyer le commentaire",
+      "sentToast": "Votre commentaire a été envoyé."
+    },
+    "attachments": {
+      "title": "Vos preuves",
+      "count_one": "{{count}} fichier",
+      "count_other": "{{count}} fichiers",
+      "uploadedToast": "Votre preuve a été téléversée."
+    }
+  },
+  "header": {
+    "title": "Gestion des alertes et des incidents",
+    "subtitle": "Réception confidentielle, workflow d'enquête et analyses prêtes pour le conseil.",
+    "tabs": {
+      "dashboard": "Tableau de bord",
+      "cases": "Dossiers"
+    }
+  },
+  "dashboard": {
+    "title": "Vue d'ensemble prête pour le conseil",
+    "empty": "Aucune donnée à afficher pour le moment.",
+    "loading": "Chargement des analyses...",
+    "actions": {
+      "submitReport": "Envoyer un signalement",
+      "exporting": "Exportation...",
+      "exportCsv": "Exporter CSV",
+      "viewAllCases": "Voir tous les dossiers"
+    },
+    "series": {
+      "openCases": "Dossiers ouverts",
+      "escalatedCases": "Dossiers escaladés",
+      "anonymous": "Anonyme",
+      "named": "Identifié"
+    },
+    "kpi": {
+      "totalReports": "Total des signalements",
+      "openReports": "Signalements ouverts",
+      "underInvestigation": "En enquête",
+      "escalated": "Escaladés",
+      "closed": "{{count}} clôturés",
+      "atRisk": "{{count}} à risque",
+      "onTrack": "Dans les délais",
+      "slaBreached": "{{count}} SLA dépassé"
+    },
+    "charts": {
+      "reportsByCategory": {
+        "title": "Signalements par catégorie",
+        "description": "Répartition sur le cycle de vie"
+      },
+      "openVsEscalated": {
+        "title": "Ouverts vs escaladés",
+        "description": "Réception actuelle par rapport aux escalades"
+      },
+      "reportsByPriority": {
+        "title": "Signalements par priorité"
+      },
+      "reportsByStatus": {
+        "title": "Signalements par statut"
+      },
+      "anonymousVsNamed": {
+        "title": "Anonymes vs identifiés",
+        "description": "Répartition de l'anonymat des signalements"
+      },
+      "submissionsTrend": {
+        "title": "Tendance des soumissions",
+        "description": "Réception mensuelle (6 derniers mois)"
+      }
+    }
+  },
+  "cases": {
+    "title": "Registre des dossiers",
+    "actions": {
+      "newManualCase": "Nouveau dossier manuel",
+      "view": "Voir"
+    },
+    "filters": {
+      "searchPlaceholder": "Rechercher référence / description...",
+      "allStatuses": "Tous les statuts",
+      "allCategories": "Toutes les catégories",
+      "allRiskRatings": "Tous les niveaux de risque",
+      "assignedToMe": "Assigné à moi"
+    },
+    "view": {
+      "grid": "Vue grille",
+      "list": "Vue liste"
+    },
+    "loading": "Chargement des dossiers...",
+    "empty": "Aucun dossier ne correspond à vos filtres.",
+    "table": {
+      "reference": "Référence",
+      "category": "Catégorie",
+      "risk": "Risque",
+      "status": "Statut",
+      "investigator": "Enquêteur",
+      "sla": "SLA",
+      "submitted": "Envoyé"
+    },
+    "reporter": {
+      "anonymous": "Anonyme",
+      "named": "Identifié"
+    },
+    "conflictExclusionsApplied": "Exclusions pour conflit d'intérêts appliquées",
+    "sla": {
+      "breached": "Dépassé",
+      "daysLeft": "{{count}} j restants"
+    },
+    "unassigned": "Non assigné",
+    "pagination": {
+      "summary": "Page {{page}} sur {{totalPages}} · {{total}} dossiers",
+      "previous": "Précédent",
+      "next": "Suivant",
+      "total": "{{count}} cases",
+      "pageOf": "Page {{page}} of {{totalPages}}"
+    }
+  },
+  "manualCase": {
+    "title": "Créer un dossier manuellement",
+    "description": "Capturez un signalement hors portail reçu par e-mail, hotline ou en personne.",
+    "validation": {
+      "description": "Veuillez décrire l'incident en au moins 10 caractères."
+    },
+    "toasts": {
+      "created": "Dossier manuel créé."
+    },
+    "draftRestored": "Votre brouillon non enregistré a été restauré.",
+    "startFresh": "Recommencer",
+    "fields": {
+      "category": "Catégorie",
+      "riskRating": "Niveau de risque",
+      "description": "Description de l'incident",
+      "caseType": "Type de dossier",
+      "intakeMethod": "Mode de réception",
+      "dateOfOccurrence": "Date de survenue",
+      "reporterRelationship": "Relation du déclarant",
+      "location": "Lieu",
+      "city": "Ville",
+      "stateCountry": "État / Pays",
+      "personsEngaged": "Personne(s) impliquée(s)"
+    },
+    "placeholders": {
+      "description": "Que s'est-il passé ?",
+      "notSpecified": "Non précisé",
+      "location": "Adresse / site / bâtiment",
+      "state": "État",
+      "country": "Pays"
+    },
+    "actions": {
+      "cancel": "Annuler",
+      "creating": "Création...",
+      "create": "Créer le dossier"
+    }
+  },
+  "status": {
+    "SUBMITTED": "Envoyé",
+    "UNDER_TRIAGE": "En cours de triage",
+    "UNDER_INVESTIGATION": "En enquête",
+    "WB_ESCALATED": "Escaladé",
+    "RESOLVED": "Résolu",
+    "WB_CLOSED": "Fermé",
+    "WB_DISMISSED": "Rejeté"
+  },
+  "priority": {
+    "PRIORITY_LOW": "Faible",
+    "PRIORITY_MEDIUM": "Moyenne",
+    "PRIORITY_HIGH": "Élevée",
+    "PRIORITY_CRITICAL": "Critique"
+  },
+  "caseType": {
+    "ALLEGATION": "Allégation",
+    "INQUIRY": "Demande d'information"
+  },
+  "intakeMethod": {
+    "WEB": "Web",
+    "EMAIL": "E-mail",
+    "PHONE": "Téléphone / hotline",
+    "IN_PERSON": "En personne",
+    "MAIL": "Courrier",
+    "OTHER_INTAKE": "Autre"
+  },
+  "participantRole": {
+    "REPORTER": "Signalant",
+    "SUBJECT": "Personne concernée",
+    "WITNESS": "Témoin",
+    "OTHER_PARTICIPANT": "Autre"
+  },
+  "caseConsole": {
+    "header": {
+      "reference": "Référence du dossier"
+    },
+    "validation": {
+      "selectInvestigator": "Sélectionnez un enquêteur avant d'assigner.",
+      "assessmentMin": "Saisissez au moins 10 caractères pour l'évaluation préliminaire.",
+      "findingsMin": "Les conclusions d'enquête doivent contenir au moins 10 caractères.",
+      "escalationReasonMin": "Le motif d'escalade doit contenir au moins 10 caractères.",
+      "closureOutcomeMin": "Le résultat de clôture doit contenir au moins 10 caractères.",
+      "commentRequired": "Rédigez un commentaire avant l'envoi.",
+      "relatedCaseRequired": "Saisissez une référence de dossier lié valide.",
+      "emptyFile": "Choisissez un fichier non vide.",
+      "fileTooLarge": "Le fichier doit faire 100 Mo ou moins."
+    },
+    "toasts": {
+      "assigned": "Enquêteur assigné.",
+      "riskUpdated": "Risque mis à jour.",
+      "triaged": "Dossier trié.",
+      "resolved": "Dossier résolu.",
+      "escalated": "Dossier escaladé.",
+      "dismissed": "Dossier rejeté.",
+      "closed": "Dossier clôturé.",
+      "commentAdded": "Commentaire ajouté.",
+      "linked": "Dossier lié ajouté.",
+      "unlinked": "Dossier lié retiré.",
+      "evidenceAttached": "Preuve jointe."
+    },
+    "unknown": "Inconnu",
+    "tabs": {
+      "overview": "Vue d'ensemble",
+      "synopsis": "Synthèse",
+      "assignment": "Affectation",
+      "classification": "Classement",
+      "participants": "Personnes participantes",
+      "investigation": "Enquête",
+      "communication": "Échanges",
+      "evidence": "Preuves et éléments liés"
+    },
+    "reporter": {
+      "anonymous": "Signalant anonyme",
+      "named": "Signalant identifié"
+    },
+    "sla": {
+      "breached": "SLA dépassé",
+      "remaining": "SLA : {{count}} j restants"
+    },
+    "route": {
+      "independent": "Revue indépendante",
+      "escrow": "Revue indépendante sous séquestre"
+    },
+    "panels": {
+      "incident": "Événement",
+      "assignment": "Affectation",
+      "investigationRecord": "Dossier d'enquête",
+      "communication": "Fil de communication",
+      "evidence": "Preuves",
+      "triageRisk": "Triage et risque",
+      "resolve": "Résoudre",
+      "escalateClose": "Escalader / fermer",
+      "conflictExclusions": "Exclusions pour conflit d'intérêts",
+      "relatedCases": "Dossiers liés",
+      "classification": "Classement",
+      "synopsisOutcome": "Synthèse et résultat",
+      "participants": "Personnes participantes",
+      "activityEvidence": "Activité et éléments de preuve",
+      "closure": "Clôture",
+      "escalate": "Escalade",
+      "triage": "Évaluation initiale"
+    },
+    "fields": {
+      "status": "Statut",
+      "caseType": "Type de dossier",
+      "intakeMethod": "Méthode de réception",
+      "dateOfOccurrence": "Date de l'incident",
+      "whenLast": "Dernière occurrence",
+      "duration": "Durée",
+      "awareness": "Mode de connaissance",
+      "previouslyReported": "Déjà signalé",
+      "reporterRelationship": "Relation du signalant",
+      "region": "Région",
+      "submitted": "Envoyé",
+      "location": "Lieu",
+      "reporterPhone": "Téléphone du signalant",
+      "bestTime": "Meilleur moment pour contacter",
+      "description": "Descriptif",
+      "involvedPersons": "Personne(s) impliquée(s) dans ce comportement",
+      "personsInvolvedNotes": "Personnes impliquées (notes)",
+      "preliminaryAssessment": "Évaluation préliminaire",
+      "findings": "Constats",
+      "disciplinaryRecommendation": "Recommandation disciplinaire",
+      "closureOutcome": "Résultat de clôture",
+      "riskRating": "Niveau de risque",
+      "investigationFindings": "Constats de l'enquête",
+      "primaryOutcome": "Résultat principal",
+      "secondaryOutcome": "Résultat secondaire",
+      "actionTaken": "Action effectuée",
+      "potentialNextSteps": "Prochaines étapes possibles",
+      "synopsisNotes": "Notes de synthèse",
+      "category": "Category",
+      "escalationReason": "Motif de l’escalade",
+      "priority": "Priorité"
+    },
+    "assignment": {
+      "assignInvestigator": "Assigner un enquêteur",
+      "assignedTo": "Affecté à {{name}}",
+      "unassigned": "Non affecté",
+      "selectInvestigator": "Sélectionner un enquêteur...",
+      "assign": "Affecter",
+      "assignedPrefix": "Affecté à : {{name}}",
+      "sheetDescription": "Affectez ce dossier à un enquêteur habilité."
+    },
+    "communication": {
+      "addComment": "Ajouter un commentaire",
+      "sheetDescription": "Envoyez un message de suivi sécurisé à l'équipe d'enquête.",
+      "commentGuidance": "Utilisez ceci pour les mises à jour, questions ou contexte supplémentaire liés au signalement.",
+      "commentLabel": "Commentaire",
+      "sending": "Envoi...",
+      "empty": "Aucun message pour le moment.",
+      "reporter": "Signalant",
+      "investigator": "Enquêteur",
+      "internal": "Interne",
+      "placeholder": "Écrire un message...",
+      "internalNote": "Note interne (masquée au signalant)",
+      "send": "Envoyer"
+    },
+    "evidence": {
+      "empty": "Aucune preuve jointe.",
+      "reporter": "signalant",
+      "investigator": "enquêteur",
+      "download": "Télécharger",
+      "uploading": "Téléversement en cours...",
+      "attach": "Joindre une preuve"
+    },
+    "actions": {
+      "recordTriage": "Enregistrer le tri",
+      "resolveCase": "Résoudre le dossier",
+      "linkRelatedCase": "Lier un dossier associé",
+      "setRisk": "Définir le risque",
+      "triage": "Trier",
+      "markResolved": "Marquer comme résolu",
+      "escalate": "Escalader",
+      "closeCase": "Fermer le dossier",
+      "dismiss": "Rejeter",
+      "close": "Fermer",
+      "unlink": "Dissocier",
+      "link": "Lier",
+      "saving": "Enregistrement...",
+      "saveClassification": "Enregistrer la classification",
+      "saveSynopsis": "Enregistrer la synthèse",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "edit": "Modifier",
+      "assignment": "Affectation",
+      "classification": "Classification",
+      "participants": "Participants",
+      "resolve": "Résoudre",
+      "savePriority": "Enregistrer la priorité",
+      "synopsis": "Synthèse"
+    },
+    "placeholders": {
+      "optionalNotes": "Notes facultatives...",
+      "findings": "Résumez ce que l'enquête a établi...",
+      "recommendation": "Recommandation facultative...",
+      "escalationReason": "Motif d'escalade",
+      "closureOutcome": "Résultat de clôture",
+      "caseReferenceToLink": "Référence du dossier à lier"
+    },
+    "conflict": {
+      "hiddenFrom": "Masqué pour {{count}} profil(s)"
+    },
+    "related": {
+      "empty": "Aucun dossier lié.",
+      "noMatches": "Aucun dossier correspondant trouvé.",
+      "searchLabel": "Rechercher des dossiers associés",
+      "searchResults": "Résultats de recherche",
+      "sheetDescription": "Associez des dossiers pour identifier les problèmes systémiques."
+    },
+    "triage": {
+      "noAssessment": "Aucune évaluation préliminaire enregistrée pour le moment.",
+      "sheetDescription": "Enregistrez l’évaluation initiale et le niveau de risque."
+    },
+    "resolve": {
+      "empty": "Aucune résolution enregistrée pour le moment.",
+      "sheetDescription": "Documentez les conclusions avant de marquer le dossier comme résolu."
+    },
+    "synopsis": {
+      "empty": "Aucune synthèse enregistrée pour le moment.",
+      "sheetDescription": "Saisissez le résultat du dossier et les prochaines étapes."
+    },
+    "participants": {
+      "empty": "Aucun participant enregistré.",
+      "name": "Nom",
+      "jobTitle": "Fonction",
+      "relationship": "Relation",
+      "role": "Rôle",
+      "edit": "Modifier le participant",
+      "remove": "Supprimer le participant",
+      "add": "Ajouter un participant",
+      "new": "Nouveau participant",
+      "resultsPlaceholder": "Résultats / notes (facultatif)",
+      "sheetDescription": "Ajoutez une personne impliquée et indiquez son rôle."
+    },
+    "classification": {
+      "sheetDescription": "Mettez à jour la classification et le canal de réception du dossier."
+    },
+    "closure": {
+      "sheetDescription": "Confirmez le résultat final et clôturez le dossier."
+    },
+    "escalate": {
+      "sheetDescription": "Indiquez pourquoi ce dossier nécessite une revue hiérarchique."
+    },
+    "groups": {
+      "evidenceDescription": "Messages, fichiers et dossiers associés.",
+      "investigationDescription": "Évaluation, conclusions et actions de l’enquêteur.",
+      "overviewDescription": "Faits essentiels et informations fournies par le déclarant.",
+      "peopleDescription": "Personnes, relations et informations temporelles."
+    },
+    "investigation": {
+      "empty": "Aucune activité d’enquête n’est encore enregistrée."
+    },
+    "navigation": {
+      "currentArea": "Zone actuelle",
+      "primary": "Navigation du dossier"
+    },
+    "progress": {
+      "completed": "Terminé",
+      "inProgress": "En cours",
+      "initialReview": "Examen initial",
+      "investigation": "Enquête",
+      "received": "Reçu",
+      "resolution": "Résolution",
+      "review": "Examen",
+      "title": "Avancement du dossier"
+    }
+  },
+  "oversight": {
+    "readOnly": "Vue en lecture seule",
+    "back": "Retour a la supervision",
+    "title": "Supervision des alertes",
+    "subtitle": "Suivi global des incidents signales (lecture seule).",
+    "confidentialityNotice": "La confidentialite est preservee : tout dossier masque par le declarant pour conflit d interet est exclu de ces vues.",
+    "emptyChart": "No data yet.",
+    "total": "Total",
+    "loading": {
+      "analytics": "Loading whistleblowing analytics..."
+    },
+    "errors": {
+      "analytics": "Analytics are unavailable right now."
+    },
+    "filters": {
+      "region": "Region",
+      "allRegions": "Toutes les regions"
+    },
+    "tabs": {
+      "overview": "Apercu",
+      "register": "Registre des dossiers"
+    },
+    "stats": {
+      "totalCases": "Total cases",
+      "open": "Open",
+      "escalated": "Escalated",
+      "slaBreached": "SLA breached",
+      "underInvestigation": "Under investigation",
+      "slaAtRisk": "SLA at risk",
+      "closed": "Closed",
+      "avgResolution": "Avg resolution"
+    },
+    "charts": {
+      "casesByStatus": {
+        "title": "Cases by Status",
+        "description": "Distribution across the lifecycle"
+      },
+      "submissionsTrend": {
+        "title": "Submissions Trend",
+        "description": "Reports submitted by month",
+        "series": "Submissions"
+      },
+      "byCategory": {
+        "title": "By Category"
+      },
+      "byRiskRating": {
+        "title": "By Risk Rating"
+      },
+      "anonymousVsNamed": {
+        "title": "Anonymous vs. Named",
+        "description": "Reporter identification split"
+      }
+    },
+    "detail": {
+      "loading": "Loading case...",
+      "unavailable": "This case is unavailable - it may have been hidden from your profile by the reporter (conflict of interest).",
+      "pipeline": {
+        "triage": "Triage",
+        "investigation": "Investigation",
+        "escalated": "This case has been escalated and is outside the standard pipeline.",
+        "dismissed": "This case was dismissed during review."
+      },
+      "sla": {
+        "title": "SLA",
+        "breachedOn": "Breached on {{date}}",
+        "daysLeft": "days left",
+        "opened": "Opened {{date}}",
+        "due": "Due {{date}}"
+      },
+      "activity": {
+        "title": "Activity",
+        "empty": "No activity recorded yet.",
+        "subtitle": "{{messages}} messages ? {{files}} files"
+      },
+      "assignment": {
+        "triaged": "Triaged",
+        "assigned": "Assigned",
+        "closed": "Closed"
+      }
+    }
+  }
+}

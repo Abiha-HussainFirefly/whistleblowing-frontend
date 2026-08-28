@@ -1,0 +1,283 @@
+{
+  "welcome": "مرحبًا{{name}}",
+  "subtitle": "مركز عملياتك القانونية — إدارة العقود والتقاضي والامتثال والمزيد.",
+  "viewingDataFor": "عرض البيانات لـ:",
+  "cards": {
+    "pendingTasks": "المهام المعلقة",
+    "upcomingHearings": "الجلسات القادمة",
+    "contractsExpiring": "العقود المنتهية قريبًا",
+    "openCases": "القضايا المفتوحة",
+    "ddReviews": "مراجعات العناية الواجبة"
+  },
+  "stats": {
+    "itemCount_zero": "لا توجد عناصر",
+    "itemCount_one": "عنصر واحد",
+    "itemCount_two": "عنصران",
+    "itemCount_few": "{{count}} عناصر",
+    "itemCount_many": "{{count}} عنصرًا",
+    "itemCount_other": "{{count}} عنصر",
+    "taskCount_zero": "لا توجد مهام",
+    "taskCount_one": "مهمة واحدة",
+    "taskCount_two": "مهمتان",
+    "taskCount_few": "{{count}} مهام",
+    "taskCount_many": "{{count}} مهمة",
+    "taskCount_other": "{{count}} مهمة",
+    "hearingCount_zero": "لا توجد جلسات",
+    "hearingCount_one": "جلسة واحدة",
+    "hearingCount_two": "جلستان",
+    "hearingCount_few": "{{count}} جلسات",
+    "hearingCount_many": "{{count}} جلسة",
+    "hearingCount_other": "{{count}} جلسة",
+    "documentCount_zero": "لا توجد مستندات",
+    "documentCount_one": "مستند واحد",
+    "documentCount_two": "مستندان",
+    "documentCount_few": "{{count}} مستندات",
+    "documentCount_many": "{{count}} مستندًا",
+    "documentCount_other": "{{count}} مستند"
+  },
+  "modules": "الوحدات",
+  "loadingModules": "جارٍ تحميل وحداتك…",
+  "empty": "لا توجد بيانات بعد.",
+  "admin": {
+    "welcome": "مرحباً{{name}}",
+    "subtitle": "لمحة على مستوى المنصة عن التحكم في الوصول والمستأجرين والتراخيص والإعدادات.",
+    "loading": "جاري تحميل إحصاءات لوحة المعلومات...",
+    "loadError": "تعذر تحميل إحصاءات لوحة المعلومات.",
+    "cards": {
+      "users": "المستخدمون",
+      "organizations": "المؤسسات",
+      "permissions": "الصلاحيات",
+      "roles": "الأدوار"
+    },
+    "filters": {
+      "dateMode": "الفترة",
+      "allTime": "كل الوقت",
+      "customDate": "نطاق مخصص",
+      "title": "مرشحات لوحة المعلومات",
+      "subtitle": "طبّق نطاقًا واحدًا على التحليلات التنفيذية وتحليلات المنصة.",
+      "organization": "المؤسسة",
+      "region": "المنطقة",
+      "allOrganizations": "جميع المؤسسات",
+      "allRegions": "جميع المناطق",
+      "dateFrom": "من تاريخ",
+      "dateTo": "إلى تاريخ",
+      "reset": "إعادة ضبط"
+    },
+    "rankings": {
+      "title": "الأعلى استخدامًا",
+      "subtitle": "قارن حجم النشاط بنسبة الاستخدام ضمن النطاق المحدد.",
+      "entity": "نوع التصنيف",
+      "limit": "عدد النتائج",
+      "organizations": "المؤسسات",
+      "users": "المستخدمون",
+      "top": "أعلى {{count}}",
+      "activeUsers": "المستخدمون النشطون",
+      "successfulLogins": "نشاط الجلسات",
+      "usagePercentage": "نسبة الاستخدام",
+      "organizationUsageDetail": "{{active}} نشطون من أصل {{eligible}} مستخدمًا مؤهلًا",
+      "userUsageDetail": "{{active}} أيام نشطة من أصل {{available}} يومًا متاحًا",
+      "noData": "لا تتوفر بيانات استخدام لهذا النطاق."
+    },
+    "executive": {
+      "title": "النظرة التنفيذية",
+      "subtitle": "مؤشرات النمو والتبني والتشغيل للنطاق المحدد.",
+      "noComparison": "لا توجد مقارنة سابقة",
+      "previousPeriod": "مقارنة بالفترة السابقة",
+      "percentagePoints": "نقطة مقارنة بالفترة السابقة",
+      "deployments": "{{count}} عمليات نشر إقليمية",
+      "cards": {
+        "totalOrganizations": "إجمالي المؤسسات",
+        "newOrganizations": "المؤسسات الجديدة",
+        "activeUsers": "المستخدمون النشطون",
+        "activationRate": "معدل التفعيل",
+        "activeRegions": "المناطق النشطة",
+        "needsAttention": "تحتاج إلى متابعة"
+      }
+    },
+    "growth": {
+      "title": "نمو المؤسسات والمستخدمين",
+      "subtitle": "المؤسسات الجديدة والمستخدمون النشطون المميزون خلال الفترة المحددة.",
+      "organizations": "المؤسسات الجديدة",
+      "activeUsers": "المستخدمون النشطون"
+    },
+    "activation": {
+      "title": "مسار تفعيل الدعوات",
+      "subtitle": "التقدم من الدعوة إلى أول نشاط ناجح على المنصة.",
+      "completion": "التفعيل الكامل",
+      "stages": {
+        "invited": "تمت الدعوة",
+        "accepted": "تم القبول",
+        "verified": "تم التحقق",
+        "activated": "تم التفعيل"
+      }
+    },
+    "regional": {
+      "title": "التبني الإقليمي",
+      "subtitle": "انتشار المؤسسات ونشاط المستخدمين حسب المنطقة.",
+      "region": "المنطقة",
+      "organizations": "المؤسسات",
+      "activeUsers": "المستخدمون النشطون",
+      "adoption": "التبني",
+      "growth": "النمو"
+    },
+    "operations": {
+      "title": "الصحة التشغيلية",
+      "subtitle": "الحالات التي تتطلب متابعة المنصة أو الإعداد.",
+      "attentionTitle": "المؤسسات التي تتطلب المتابعة",
+      "noAttention": "لا توجد مؤسسات تتطلب المتابعة ضمن هذا النطاق.",
+      "metrics": {
+        "pendingOrganizationSetup": "إعداد المؤسسة معلق",
+        "pendingInvitations": "الدعوات المعلقة",
+        "suspendedOrLockedUsers": "المستخدمون الموقوفون أو المقفلون",
+        "failedLoginAttempts": "محاولات تسجيل الدخول الفاشلة",
+        "inactiveOrganizations": "المؤسسات غير النشطة"
+      },
+      "reasons": {
+        "pending_setup": "إعداد الانضمام معلق",
+        "suspended": "المؤسسة موقوفة",
+        "no_recent_activity": "لا يوجد نشاط منذ {{count}} يومًا"
+      }
+    },
+    "userStat": {
+      "topStatus": "أعلى حالة: {{status}}",
+      "recentlyCreated": "+{{count}} جديد هذا الأسبوع"
+    },
+    "permissionStat": {
+      "active": "{{count}} صلاحية فعالة",
+      "topModule": "أعلى وحدة: {{module}}"
+    },
+    "trend": {
+      "title": "اتجاه حجم المنصة",
+      "subtitle": "مقارنة حجم النظام عبر مجالات الإدارة الأساسية."
+    },
+    "lineLabels": {
+      "users": "المستخدمون",
+      "organizations": "المؤسسات",
+      "permissions": "الصلاحيات",
+      "roles": "الأدوار"
+    },
+    "modulePanel": {
+      "title": "الصلاحيات حسب الوحدة",
+      "subtitle": "التوزيع الرأسي لتغطية قدرات المنصة."
+    },
+    "permissionKpi": {
+      "title": "مؤشر تفعيل الصلاحيات",
+      "subtitle": "تغطية الصلاحيات الفعالة عبر كتالوج المنصة.",
+      "activeLabel": "فعال",
+      "helper": "يحافظ الكتالوج الصحي على انخفاض الصلاحيات غير الفعالة أو المتقاعدة مع الحفاظ على التغطية التدقيقية.",
+      "valueText": "{{value}} من {{total}}"
+    },
+    "kpi": {
+      "complete": "مكتمل",
+      "remaining": "متبقٍ"
+    },
+    "userRoleDistribution": {
+      "title": "توزيع أدوار المستخدمين",
+      "subtitle": "أدوار المنصة المعينة للمستخدمين النشطين."
+    },
+    "organizationLifecycle": {
+      "title": "دورة حياة المؤسسة",
+      "subtitle": "حالات المستأجرين عبر الإعداد والتشغيل."
+    },
+    "roleScopeMix": {
+      "title": "مزيج نطاقات الأدوار",
+      "subtitle": "قوالب الأدوار ونماذج الوصول الخاصة بالمؤسسات."
+    },
+    "organizationStatusColumns": {
+      "title": "أعمدة حالات المؤسسات",
+      "subtitle": "توزيع الحالات كمقارنة أعمدة رأسية."
+    },
+    "roleScopeColumns": {
+      "title": "أعمدة نطاقات الأدوار",
+      "subtitle": "حجم النطاقات عبر الأدوار العامة والقوالب وأدوار المؤسسات."
+    },
+    "charts": {
+      "noData": "لا توجد بيانات",
+      "total": "الإجمالي"
+    },
+    "chartLabels": {
+      "Users": "المستخدمون",
+      "Organizations": "المؤسسات",
+      "Permissions": "الصلاحيات",
+      "Roles": "الأدوار",
+      "Value": "القيمة",
+      "Active": "فعال",
+      "Complete": "مكتمل",
+      "Remaining": "متبقٍ",
+      "None": "لا شيء",
+      "ACTIVE": "فعال",
+      "PENDING_VERIFICATION": "بانتظار التحقق",
+      "PENDING_SETUP": "بانتظار الإعداد",
+      "SUSPENDED": "معلّق",
+      "LOCKED": "مقفل",
+      "DEACTIVATED": "معطّل",
+      "ARCHIVED": "مؤرشف",
+      "GLOBAL": "عام",
+      "TEMPLATE": "قالب",
+      "ORGANIZATION": "مؤسسة",
+      "Global": "عام",
+      "Template": "قالب",
+      "Organization": "مؤسسة",
+      "User": "مستخدم",
+      "Tenant": "مستأجر",
+      "Super Admin": "مشرف عام",
+      "Auth": "المصادقة",
+      "Land": "الأصول",
+      "Contracts": "العقود",
+      "Contract": "العقود",
+      "Litigation": "التقاضي",
+      "Reporting": "التقارير",
+      "Whistleblowing": "الإبلاغ",
+      "Compliance": "الامتثال",
+      "Assets": "الأصول",
+      "Settings": "الإعدادات"
+    },
+    "controlPanel": {
+      "title": "لوحة التحكم",
+      "subtitle": "الوحدات التشغيلية المتاحة لمسؤول النظام.",
+      "count": "{{count}} وحدات"
+    },
+    "moduleStrip": {
+      "items": {
+        "users": {
+          "title": "المستخدمون",
+          "meta": {
+            "new": "{{count}} جديد"
+          }
+        },
+        "organizations": {
+          "title": "المؤسسات",
+          "meta": {
+            "new": "{{count}} جديد"
+          }
+        },
+        "permissions": {
+          "title": "الصلاحيات",
+          "meta": {
+            "active": "{{percent}}% فعال"
+          }
+        },
+        "roles": {
+          "title": "الأدوار"
+        },
+        "plans": {
+          "title": "الخطط",
+          "meta": {
+            "active": "{{count}} فعالة"
+          }
+        },
+        "configPacks": {
+          "title": "حزم الإعداد",
+          "meta": {
+            "artifacts": "{{count}} عناصر"
+          }
+        },
+        "capabilities": {
+          "title": "القدرات",
+          "value": "مؤسسة",
+          "meta": "محرر محدود النطاق"
+        }
+      }
+    }
+  }
+}

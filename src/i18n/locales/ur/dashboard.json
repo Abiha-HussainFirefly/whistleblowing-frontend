@@ -1,0 +1,267 @@
+{
+  "welcome": "خوش آمدید{{name}}",
+  "subtitle": "آپ کا قانونی آپریشنز مرکز — معاہدوں، مقدمات، تعمیل اور دیگر امور کا انتظام کریں۔",
+  "viewingDataFor": "دکھایا گیا ڈیٹا:",
+  "cards": {
+    "pendingTasks": "زیر التوا کام",
+    "upcomingHearings": "آنے والی سماعتیں",
+    "contractsExpiring": "ختم ہونے والے معاہدے",
+    "openCases": "کھلے مقدمات",
+    "ddReviews": "ڈیو ڈیلیجنس جائزے"
+  },
+  "stats": {
+    "itemCount_one": "{{count}} آئٹم",
+    "itemCount_other": "{{count}} آئٹمز",
+    "taskCount_one": "{{count}} کام",
+    "taskCount_other": "{{count}} کام",
+    "hearingCount_one": "{{count}} سماعت",
+    "hearingCount_other": "{{count}} سماعتیں",
+    "documentCount_one": "{{count}} دستاویز",
+    "documentCount_other": "{{count}} دستاویزات"
+  },
+  "modules": "ماڈیولز",
+  "loadingModules": "آپ کے ماڈیولز لوڈ ہو رہے ہیں…",
+  "empty": "ابھی کوئی ڈیٹا نہیں۔",
+  "admin": {
+    "welcome": "خوش آمدید{{name}}",
+    "subtitle": "رسائی کنٹرول، ٹیننٹس، لائسنسنگ، اور کنفیگریشن کا پلیٹ فارم سطح کا جائزہ۔",
+    "loading": "ڈیش بورڈ اعداد و شمار لوڈ ہو رہے ہیں...",
+    "loadError": "ڈیش بورڈ اعداد و شمار لوڈ نہیں ہو سکے۔",
+    "cards": {
+      "users": "صارفین",
+      "organizations": "تنظیمیں",
+      "permissions": "اجازتیں",
+      "roles": "کردار"
+    },
+    "filters": {
+      "dateMode": "مدت",
+      "allTime": "تمام وقت",
+      "customDate": "مخصوص تاریخیں",
+      "title": "ڈیش بورڈ فلٹرز",
+      "subtitle": "ایگزیکٹو اور پلیٹ فارم تجزیات پر ایک ہی دائرہ لاگو کریں۔",
+      "organization": "ادارہ",
+      "region": "خطہ",
+      "allOrganizations": "تمام ادارے",
+      "allRegions": "تمام خطے",
+      "dateFrom": "تاریخ سے",
+      "dateTo": "تاریخ تک",
+      "reset": "دوبارہ ترتیب دیں"
+    },
+    "rankings": {
+      "title": "استعمال میں سرفہرست",
+      "subtitle": "منتخب دائرے میں سرگرمی کی تعداد اور استعمال کی شرح کا موازنہ کریں۔",
+      "entity": "درجہ بندی کی قسم",
+      "limit": "نتائج کی حد",
+      "organizations": "ادارے",
+      "users": "صارفین",
+      "top": "سرفہرست {{count}}",
+      "activeUsers": "فعال صارفین",
+      "successfulLogins": "سیشن سرگرمی",
+      "usagePercentage": "استعمال کی شرح",
+      "organizationUsageDetail": "{{eligible}} اہل صارفین میں سے {{active}} فعال",
+      "userUsageDetail": "{{available}} دستیاب دنوں میں سے {{active}} فعال دن",
+      "noData": "اس دائرے کے لیے استعمال کا ڈیٹا دستیاب نہیں ہے۔"
+    },
+    "executive": {
+      "title": "ایگزیکٹو جائزہ",
+      "subtitle": "منتخب دائرے کے لیے ترقی، اپنانے اور آپریشن کے اشاریے۔",
+      "noComparison": "پچھلا موازنہ دستیاب نہیں",
+      "previousPeriod": "گزشتہ مدت کے مقابلے میں",
+      "percentagePoints": "پوائنٹس گزشتہ مدت کے مقابلے میں",
+      "deployments": "{{count}} علاقائی تعیناتیاں",
+      "cards": {
+        "totalOrganizations": "کل ادارے",
+        "newOrganizations": "نئے ادارے",
+        "activeUsers": "فعال صارفین",
+        "activationRate": "فعالیت کی شرح",
+        "activeRegions": "فعال خطے",
+        "needsAttention": "توجہ درکار"
+      }
+    },
+    "growth": {
+      "title": "اداروں اور صارفین کی ترقی",
+      "subtitle": "منتخب مدت میں نئے ادارے اور منفرد فعال صارفین۔",
+      "organizations": "نئے ادارے",
+      "activeUsers": "فعال صارفین"
+    },
+    "activation": {
+      "title": "دعوت کی فعالیت کا سلسلہ",
+      "subtitle": "دعوت سے پلیٹ فارم کی پہلی کامیاب سرگرمی تک پیش رفت۔",
+      "completion": "مکمل فعالیت",
+      "stages": {
+        "invited": "دعوت دی گئی",
+        "accepted": "قبول کی گئی",
+        "verified": "تصدیق شدہ",
+        "activated": "فعال"
+      }
+    },
+    "regional": {
+      "title": "علاقائی اپنائیت",
+      "subtitle": "تعینات خطے کے لحاظ سے اداروں کی رسائی اور صارف کی سرگرمی۔",
+      "region": "خطہ",
+      "organizations": "ادارے",
+      "activeUsers": "فعال صارفین",
+      "adoption": "اپنائیت",
+      "growth": "ترقی"
+    },
+    "operations": {
+      "title": "آپریشنل صحت",
+      "subtitle": "وہ استثنائی حالات جن پر پلیٹ فارم یا آن بورڈنگ کی توجہ درکار ہے۔",
+      "attentionTitle": "توجہ طلب ادارے",
+      "noAttention": "اس دائرے میں کسی ادارے کو توجہ درکار نہیں۔",
+      "metrics": {
+        "pendingOrganizationSetup": "ادارے کا سیٹ اپ زیر التوا",
+        "pendingInvitations": "زیر التوا دعوتیں",
+        "suspendedOrLockedUsers": "معطل یا مقفل صارفین",
+        "failedLoginAttempts": "ناکام لاگ ان کوششیں",
+        "inactiveOrganizations": "غیر فعال ادارے"
+      },
+      "reasons": {
+        "pending_setup": "آن بورڈنگ سیٹ اپ زیر التوا ہے",
+        "suspended": "ادارہ معطل ہے",
+        "no_recent_activity": "{{count}} دن سے کوئی سرگرمی نہیں"
+      }
+    },
+    "userStat": {
+      "topStatus": "اہم حالت: {{status}}",
+      "recentlyCreated": "+{{count}} اس ہفتے نئے"
+    },
+    "permissionStat": {
+      "active": "{{count}} فعال اجازتیں",
+      "topModule": "اہم ماڈیول: {{module}}"
+    },
+    "trend": {
+      "title": "پلیٹ فارم حجم کا رجحان",
+      "subtitle": "بنیادی انتظامی شعبوں میں سسٹم حجم کا تقابلی جائزہ۔"
+    },
+    "lineLabels": {
+      "users": "صارفین",
+      "organizations": "تنظیمیں",
+      "permissions": "اجازتیں",
+      "roles": "کردار"
+    },
+    "modulePanel": {
+      "title": "ماڈیول کے لحاظ سے اجازتیں",
+      "subtitle": "پلیٹ فارم صلاحیتوں کی عمودی تقسیم۔"
+    },
+    "permissionKpi": {
+      "title": "اجازت فعال کرنے کا KPI",
+      "subtitle": "پلیٹ فارم کیٹلاگ میں فعال اجازتوں کی کوریج۔",
+      "activeLabel": "فعال",
+      "helper": "ایک صحت مند کیٹلاگ غیر فعال یا ختم شدہ اجازتوں کو کم رکھتا ہے جبکہ آڈٹ کوریج برقرار رکھتا ہے۔",
+      "valueText": "{{total}} میں سے {{value}}"
+    },
+    "kpi": {
+      "complete": "مکمل",
+      "remaining": "باقی"
+    },
+    "userRoleDistribution": {
+      "title": "صارف کرداروں کی تقسیم",
+      "subtitle": "فعال صارفین کو تفویض کردہ پلیٹ فارم کردار۔"
+    },
+    "organizationLifecycle": {
+      "title": "تنظیم کا لائف سائیکل",
+      "subtitle": "آن بورڈنگ اور آپریشنز میں ٹیننٹ کی حالت۔"
+    },
+    "roleScopeMix": {
+      "title": "کردار کے دائرہ کار کا مکس",
+      "subtitle": "کردار ٹیمپلیٹس اور تنظیم کے مخصوص رسائی ماڈلز۔"
+    },
+    "organizationStatusColumns": {
+      "title": "تنظیم حالت کے کالم",
+      "subtitle": "حالت کی تقسیم بطور عمودی کالم موازنہ۔"
+    },
+    "roleScopeColumns": {
+      "title": "کردار دائرہ کار کے کالم",
+      "subtitle": "عالمی، ٹیمپلیٹ، اور تنظیمی کرداروں میں دائرہ کار کا حجم۔"
+    },
+    "charts": {
+      "noData": "کوئی ڈیٹا نہیں",
+      "total": "کل"
+    },
+    "chartLabels": {
+      "Users": "صارفین",
+      "Organizations": "تنظیمیں",
+      "Permissions": "اجازتیں",
+      "Roles": "کردار",
+      "Value": "قدر",
+      "Active": "فعال",
+      "Complete": "مکمل",
+      "Remaining": "باقی",
+      "None": "کوئی نہیں",
+      "ACTIVE": "فعال",
+      "PENDING_VERIFICATION": "تصدیق زیر التوا",
+      "PENDING_SETUP": "سیٹ اپ زیر التوا",
+      "SUSPENDED": "معطل",
+      "LOCKED": "مقفل",
+      "DEACTIVATED": "غیر فعال",
+      "ARCHIVED": "محفوظ شدہ",
+      "GLOBAL": "عالمی",
+      "TEMPLATE": "ٹیمپلیٹ",
+      "ORGANIZATION": "تنظیم",
+      "Global": "عالمی",
+      "Template": "ٹیمپلیٹ",
+      "Organization": "تنظیم",
+      "User": "صارف",
+      "Tenant": "ٹیننٹ",
+      "Super Admin": "سپر ایڈمن",
+      "Auth": "تصدیق",
+      "Land": "اثاثے",
+      "Contracts": "معاہدے",
+      "Contract": "معاہدے",
+      "Litigation": "قانونی چارہ جوئی",
+      "Reporting": "رپورٹنگ",
+      "Whistleblowing": "وسل بلوئنگ",
+      "Compliance": "تعمیل",
+      "Assets": "اثاثے",
+      "Settings": "ترتیبات"
+    },
+    "controlPanel": {
+      "title": "کنٹرول پلین",
+      "subtitle": "سسٹم ایڈمنسٹریٹر کے لیے دستیاب آپریشنل ماڈیولز۔",
+      "count": "{{count}} ماڈیولز"
+    },
+    "moduleStrip": {
+      "items": {
+        "users": {
+          "title": "صارفین",
+          "meta": {
+            "new": "{{count}} نئے"
+          }
+        },
+        "organizations": {
+          "title": "تنظیمیں",
+          "meta": {
+            "new": "{{count}} نئی"
+          }
+        },
+        "permissions": {
+          "title": "اجازتیں",
+          "meta": {
+            "active": "{{percent}}% فعال"
+          }
+        },
+        "roles": {
+          "title": "کردار"
+        },
+        "plans": {
+          "title": "منصوبے",
+          "meta": {
+            "active": "{{count}} فعال"
+          }
+        },
+        "configPacks": {
+          "title": "کنفیگ پیک",
+          "meta": {
+            "artifacts": "{{count}} آرٹیفیکٹس"
+          }
+        },
+        "capabilities": {
+          "title": "صلاحیتیں",
+          "value": "تنظیم",
+          "meta": "دائرہ کار والا ایڈیٹر"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "required": "Ce champ est obligatoire.",
+  "requiredNamed": "{{field}} est obligatoire.",
+  "email": "Veuillez saisir une adresse e-mail valide.",
+  "minLength": "Doit comporter au moins {{count}} caractères.",
+  "maxLength": "Doit comporter au plus {{count}} caractères.",
+  "min": "Doit être au minimum {{min}}.",
+  "max": "Doit être au maximum {{max}}.",
+  "passwordsMustMatch": "Les mots de passe ne correspondent pas.",
+  "passwordWeak": "Le mot de passe doit comporter au moins 12 caractères et inclure des lettres et des chiffres.",
+  "invalidUrl": "Veuillez saisir une URL valide.",
+  "invalidNumber": "Veuillez saisir un nombre valide.",
+  "invalidDate": "Veuillez saisir une date valide.",
+  "positiveNumber": "Veuillez saisir un nombre supérieur à zéro.",
+  "selectOption": "Veuillez sélectionner une option.",
+  "fileTooLarge": "Le fichier est trop volumineux. La taille maximale est de {{maxSize}}.",
+  "unsupportedFileType": "Ce type de fichier n'est pas pris en charge.",
+  "passwordRequirements": {
+    "length": "Au moins {{count}} caractères",
+    "uppercase": "Une lettre majuscule (A–Z)",
+    "lowercase": "Une lettre minuscule (a–z)",
+    "number": "Un chiffre (0–9)",
+    "special": "Un caractère spécial (!@#$…)"
+  }
+}

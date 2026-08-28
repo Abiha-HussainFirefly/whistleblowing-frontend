@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": "Capabilities",
+    "description": "Configure the modules, features, providers, login methods and limits each organization is entitled to. The catalog is code (the single source of truth); each organization stores only its differences. Changes are validated against dependencies and conflicts before saving.",
+    "organization": "Organization",
+    "selectOrganization": "Select organization…",
+    "importOverlay": "Import overlay JSON",
+    "selectPrompt": "Select an organization to configure its capabilities."
+  },
+  "groups": {
+    "modules": "Modules",
+    "integrations": "Integrations",
+    "auth": "Authentication",
+    "documents": "Documents",
+    "search": "Search",
+    "notifications": "Notifications",
+    "ui": "User interface",
+    "governance": "Governance",
+    "access": "Access",
+    "limits": "Limits"
+  },
+  "import": {
+    "jsonLabel": "Overlay JSON (sparse — only differences)",
+    "jsonPlaceholder": "{ \"modules\": { \"whistleblowing\": { \"enabled\": false } } }",
+    "applying": "Applying…",
+    "apply": "Apply overlay",
+    "cancel": "Cancel"
+  },
+  "editor": {
+    "loading": "Loading capabilities…",
+    "noData": "No data.",
+    "listView": "List view",
+    "gridView": "Grid view",
+    "count": "{{visible}} of {{total}} capabilities",
+    "saving": "· Saving…",
+    "searchPlaceholder": "Search {{group}}…",
+    "noMatches": "No capabilities matching \"{{search}}\".",
+    "emptyGroup": "No capabilities in this group.",
+    "commaSeparated": "comma,separated"
+  },
+  "badges": {
+    "addOn": "add-on",
+    "locked": "locked",
+    "scaffolded": "scaffolded",
+    "provisioning": "provisioning",
+    "override": "override",
+    "default": "Default"
+  },
+  "actions": {
+    "reset": "Reset to default",
+    "resetTitle": "Reset to catalog default"
+  },
+  "manifest": {
+    "overlay": "Overlay (sparse)",
+    "effective": "Effective manifest",
+    "copyJson": "Copy JSON",
+    "jsonContent": "Manifest JSON",
+    "emptyOverlay": "No overrides yet — this organization inherits every catalog default. Change a capability above (or import an overlay) and its difference will appear here. The “Effective manifest” tab always shows the full resolved configuration."
+  },
+  "errors": {
+    "invalidJson": "Invalid JSON.",
+    "overlayObject": "Overlay must be a JSON object.",
+    "importFailed": "Import failed.",
+    "requestFailed": "Request failed."
+  }
+}

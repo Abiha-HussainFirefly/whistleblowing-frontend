@@ -1,0 +1,1073 @@
+﻿{
+    "dashboard":  {
+                      "welcome":  "Bienvenue{{name}}.",
+                      "consoleFor":  "Console de gestion de l\u0027organisation pour {{org}}. GÃ©rez les membres, la supervision, les rÃ´les, les rÃ©gions et les paramÃ¨tres ici.",
+                      "yourOrganization":  "votre organisation",
+                      "planBadge":  "Formule {{plan}}",
+                      "activeRegion":  "RÃ©gion active : {{region}}",
+                      "allRegions":  "Toutes les rÃ©gions",
+                      "loading":  "Chargement du tableau de bordâ€¦",
+                      "loadError":  "Ã‰chec du chargement des statistiques du tableau de bord.",
+                      "viewOversight":  "Voir la supervision",
+                      "moduleTabs":  {
+                                         "label":  "Vue du tableau de bord",
+                                         "overview":  "Vue d\u0027ensemble",
+                                         "contracts":  "Contrats",
+                                         "matters":  "Dossiers",
+                                         "assets":  "Actifs",
+                                         "whistleblowing":  "Signalements",
+                                         "empty":  "Aucun tableau de bord de module n\u0027est activÃ© pour cette organisation."
+                                     },
+                      "attention":  {
+                                        "title":  "Requiert votre attention",
+                                        "adminSeats":  "SiÃ¨ges admin presque pleins ({{used}}/{{max}})",
+                                        "userSeats":  "SiÃ¨ges utilisateur presque pleins ({{used}}/{{max}})",
+                                        "pendingInvites":  "Invitations en attente : {{count}}"
+                                    },
+                      "overview":  {
+                                       "title":  "Vue d\u0027ensemble de l\u0027organisation",
+                                       "members":  "Total des membres",
+                                       "membersSub":  "Admins : {{admins}} Â· Utilisateurs : {{users}}",
+                                       "pendingInvitations":  "Invitations en attente",
+                                       "pendingInvitationsSub":  "Total acceptÃ©es : {{count}}",
+                                       "activeRegions":  "RÃ©gions actives",
+                                       "activeRegionsSub":  "Total des rÃ©gions : {{count}}",
+                                       "modulesEnabled":  "Modules activÃ©s",
+                                       "modulesEnabledSub":  "Modules sous licence",
+                                       "modulesEnabledPlan":  "Formule {{plan}}"
+                                   },
+                      "licensing":  {
+                                        "title":  "Licence et siÃ¨ges",
+                                        "adminSeats":  "SiÃ¨ges admin",
+                                        "userSeats":  "SiÃ¨ges utilisateur",
+                                        "approachingLimit":  "Limite de siÃ¨ges bientÃ´t atteinte",
+                                        "aiCredits":  "CrÃ©dits IA",
+                                        "low":  "Faible",
+                                        "aiAllowance":  "Allocation mensuelle restante"
+                                    },
+                      "members":  {
+                                      "byRegion":  "Membres par rÃ©gion",
+                                      "byRole":  "Membres par type de rÃ´le",
+                                      "admins":  "Admins",
+                                      "users":  "Utilisateurs"
+                                  },
+                      "quick":  {
+                                    "title":  "AccÃ¨s rapide",
+                                    "manage":  "GÃ©rer",
+                                    "members":  "Membres de l\u0027Ã©quipe",
+                                    "membersBody":  "Invitez de nouveaux membres, gÃ©rez les rÃ´les et examinez les invitations en attente.",
+                                    "roles":  "RÃ´les et permissions",
+                                    "rolesBody":  "CrÃ©ez des rÃ´les personnalisÃ©s et affinez leurs permissions.",
+                                    "plan":  "Formule et limites",
+                                    "planBody":  "Consultez votre formule, l\u0027utilisation des siÃ¨ges, les crÃ©dits IA et les droits des modules.",
+                                    "settings":  "ParamÃ¨tres",
+                                    "settingsBody":  "Configurez le profil de l\u0027organisation, l\u0027identitÃ© visuelle et les intÃ©grations."
+                                },
+                      "contracts":  {
+                                        "title":  "Contrats",
+                                        "sub":  "Portefeuille de contrats en un coup d\u0027Å“il",
+                                        "total":  "Total des contrats",
+                                        "totalSub":  "Actifs : {{count}}",
+                                        "inFlight":  "En cours",
+                                        "inFlightSub":  "Brouillon, revue et approbation",
+                                        "inFlightPending":  "Approbations en attente : {{count}}",
+                                        "expiring":  "Expirent bientÃ´t",
+                                        "expiringSub":  "90 prochains jours",
+                                        "expiredSub":  "ExpirÃ©s : {{count}}",
+                                        "value":  "Valeur totale",
+                                        "valueSub":  "Valeur du portefeuille exÃ©cutÃ©",
+                                        "chartStatus":  "Contrats par statut",
+                                        "chartStatusSub":  "RÃ©partition sur le cycle de vie",
+                                        "chartExecExpiring":  "ExÃ©cutÃ©s vs expirants",
+                                        "chartExecExpiringSub":  "ExÃ©cution annuelle contre expirations",
+                                        "chartType":  "Contrats par type",
+                                        "chartRegion":  "Contrats par rÃ©gion",
+                                        "chartClassification":  "Standard vs non standard",
+                                        "chartClassificationSub":  "RÃ©partition de la classification des contrats",
+                                        "approvalsAlert":  "DÃ©cisions d\u0027approbation en attente dans l\u0027organisation : {{count}}"
+                                    },
+                      "litigation":  {
+                                         "title":  "Contentieux",
+                                         "sub":  "Portefeuille d\u0027affaires en un coup d\u0027Å“il",
+                                         "total":  "Total des affaires",
+                                         "totalSub":  "ClÃ´turÃ©es : {{count}}",
+                                         "open":  "Affaires ouvertes",
+                                         "openSub":  "Dossiers actifs",
+                                         "hearings":  "Audiences Ã  venir",
+                                         "hearingsSub":  "30 prochains jours",
+                                         "hearingsOverdue":  "En retard : {{count}}",
+                                         "liability":  "Passif Ã©ventuel",
+                                         "liabilitySub":  "DÃ©penses juridiques {{spend}}",
+                                         "chartStatus":  "Affaires par statut",
+                                         "chartStatusSub":  "RÃ©partition sur le cycle de vie",
+                                         "chartFiledDisposed":  "Affaires dÃ©posÃ©es vs traitÃ©es",
+                                         "chartFiledDisposedSub":  "EntrÃ©es annuelles contre clÃ´tures",
+                                         "chartRisk":  "Affaires par niveau de risque",
+                                         "chartRegion":  "Affaires par rÃ©gion",
+                                         "chartOutcome":  "RÃ©partition des issues",
+                                         "chartOutcomeSub":  "RÃ©partition des issues des affaires rÃ©solues",
+                                         "overdueAlert":  "Audiences dÃ©passant leur date prÃ©vue nÃ©cessitant une issue : {{count}}"
+                                     },
+                      "land":  {
+                                   "title":  "Terrains et biens",
+                                   "sub":  "Portefeuille foncier, documents et charges en un coup d\u0027oeil",
+                                   "total":  "Total des actifs",
+                                   "totalSub":  "Districts : {{count}}",
+                                   "encumbered":  "Greves",
+                                   "encumberedSub":  "Litige, surete, charge ou reclamation",
+                                   "documented":  "Documentes",
+                                   "documentedSub":  "Actifs avec dossiers securises",
+                                   "chartDistrict":  "Actifs par district",
+                                   "chartQuality":  "Qualite du portefeuille",
+                                   "linkedMatters":  "Contentieux lies",
+                                   "linkedMattersSub":  "Dossiers juridiques connectes"
+                               },
+                      "whistleblowing":  {
+                                             "title":  "Lancement d\u0027alerte",
+                                             "sub":  "Portefeuille d\u0027affaires confidentielles en un coup d\u0027Å“il",
+                                             "total":  "Total des affaires",
+                                             "totalSub":  "ClÃ´turÃ©es : {{count}}",
+                                             "open":  "Ouvertes",
+                                             "openSub":  "EscaladÃ©es : {{count}}",
+                                             "investigating":  "En enquÃªte",
+                                             "investigatingSub":  "En cours",
+                                             "investigatingAvg":  "RÃ©solution moy. : {{days}} j",
+                                             "atRisk":  "SLA Ã  risque",
+                                             "atRiskSub":  "Dans les dÃ©lais",
+                                             "breachedSub":  "DÃ©passÃ©s : {{count}}",
+                                             "chartStatus":  "Affaires par statut",
+                                             "chartCategory":  "Affaires par catÃ©gorie",
+                                             "chartPriority":  "Affaires par niveau de risque",
+                                             "breachedAlert":  "Affaires ayant dÃ©passÃ© leur dÃ©lai SLA nÃ©cessitant attention : {{count}}"
+                                         },
+                      "health":  {
+                                     "title":  "SantÃ© de l\u0027organisation",
+                                     "good":  "Sain",
+                                     "watch":  "Ã€ surveiller",
+                                     "critical":  "Action requise"
+                                 }
+                  },
+    "matters":  {
+                    "title":  "Supervision des affaires",
+                    "subtitleAll":  "Vue organisationnelle de toutes les affaires saisies par vos membres. Toutes les rÃ©gions.",
+                    "subtitleScoped":  "Vue organisationnelle de toutes les affaires saisies par vos membres. Vos rÃ©gions.",
+                    "tabs":  {
+                                 "overview":  "Vue d\u0027ensemble",
+                                 "register":  "Registre des affaires"
+                             },
+                    "filters":  {
+                                    "region":  "RÃ©gion",
+                                    "allRegions":  "Toutes les rÃ©gions",
+                                    "year":  "AnnÃ©e",
+                                    "allTime":  "Toute pÃ©riode",
+                                    "search":  "Rechercher des affaires...",
+                                    "status":  "Statut",
+                                    "allStatuses":  "Tous les statuts"
+                                },
+                    "view":  {
+                                 "grid":  "Vue cartes",
+                                 "list":  "Vue liste"
+                             },
+                    "grid":  {
+                                 "noHearing":  "Aucune audience dÃ©finie"
+                             },
+                    "loading":  {
+                                    "analytics":  "Chargement des analyses des affaires...",
+                                    "cases":  "Chargement des affaires..."
+                                },
+                    "errors":  {
+                                   "analytics":  "Les analyses des affaires sont indisponibles pour le moment."
+                               },
+                    "empty":  {
+                                  "register":  "Aucune affaire ne correspond aux filtres actuels."
+                              },
+                    "hearings":  {
+                                     "description":  "Dans toute l\u0027organisation Â· 60 prochains jours"
+                                 },
+                    "kpis":  {
+                                 "total":  "Total des affaires",
+                                 "totalHint":  "{{count}} clÃ´turÃ©es",
+                                 "open":  "Affaires ouvertes",
+                                 "hearings":  "Audiences Ã  venir",
+                                 "hearingsHint":  "30 prochains jours",
+                                 "hearingsOverdue":  "{{count}} en retard",
+                                 "liability":  "Passif Ã©ventuel",
+                                 "liabilityHint":  "DÃ©penses juridiques {{spend}}"
+                             },
+                    "charts":  {
+                                   "risk":  "RÃ©partition par risque",
+                                   "riskSub":  "RÃ©partition du portefeuille par niveau de risque",
+                                   "filedDisposed":  "Affaires dÃ©posÃ©es vs clÃ´turÃ©es",
+                                   "filedDisposedSub":  "EntrÃ©es annuelles comparÃ©es aux clÃ´tures",
+                                   "region":  "Affaires par rÃ©gion",
+                                   "filingTrend":  "Tendance des dÃ©pÃ´ts",
+                                   "filingTrendSub":  "Affaires dÃ©posÃ©es et clÃ´turÃ©es dans le temps",
+                                   "filingVolume":  "Volume des dÃ©pÃ´ts",
+                                   "filingVolumeSub":  "Volume annuel des dÃ©pÃ´ts et clÃ´tures",
+                                   "status":  "RÃ©partition des statuts",
+                                   "statusSub":  "Part des statuts dans le portefeuille",
+                                   "outcome":  "RÃ©partition des rÃ©sultats",
+                                   "outcomeSub":  "RÃ©partition des rÃ©sultats des affaires rÃ©solues",
+                                   "category":  "Affaires par catÃ©gorie"
+                               },
+                    "series":  {
+                                   "filed":  "DÃ©posÃ©es",
+                                   "disposed":  "ClÃ´turÃ©es"
+                               },
+                    "alerts":  {
+                                   "overdueHearings":  "{{count}} audience a dÃ©passÃ© sa date prÃ©vue et nÃ©cessite un rÃ©sultat.",
+                                   "overdueHearings_plural":  "{{count}} audiences ont dÃ©passÃ© leur date prÃ©vue et nÃ©cessitent un rÃ©sultat."
+                               },
+                    "table":  {
+                                  "case":  "Affaire",
+                                  "status":  "Statut",
+                                  "region":  "RÃ©gion",
+                                  "courtLocation":  "Tribunal / lieu",
+                                  "nextHearing":  "Prochaine audience",
+                                  "lawyer":  "Avocat",
+                                  "contingentLiability":  "Passif Ã©ventuel",
+                                  "unassigned":  "Non attribuÃ©"
+                              }
+                },
+    "members":  {
+                    "invite":  {
+                                   "member":  "Inviter un membre",
+                                   "firstMember":  "Inviter votre premier membre",
+                                   "emailInvalid":  "Enter a valid email address (e.g. name@company.com).",
+                                   "failed":  "Failed to send invitation.",
+                                   "accessEquals":  "Access =",
+                                   "portalStep":  "1 Portal",
+                                   "roleStep":  "2 Role",
+                                   "regionStep":  "3 Region",
+                                   "accessHint":  "These three choices decide what the person can do. You can change any of them later.",
+                                   "portal":  "Portal (System Role) *",
+                                   "portalHint":  "Tenant = manage the organization. User = do day-to-day legal work.",
+                                   "tenantHelp":  "This user will have access to the Tenant portal and can manage members, roles, and regions.",
+                                   "userHelp":  "This user will have access to the User portal with module-level permissions.",
+                                   "email":  "Email *",
+                                   "displayName":  "Display Name",
+                                   "displayNamePlaceholder":  "Optional display name",
+                                   "role":  "Role *",
+                                   "roleHint":  "A role bundles the permissions for a job. Only roles for the selected portal are shown.",
+                                   "selectRole":  "Select role...",
+                                   "adminSeatsUsed":  "Admin seats: {{used}}/{{max}} used",
+                                   "userSeatsUsed":  "User seats: {{used}}/{{max}} used",
+                                   "region":  "Region *",
+                                   "regionHint":  "The branch whose data this member will work in.",
+                                   "selectRegion":  "Select region...",
+                                   "regionScopeHint":  "You can only invite members to regions you are an admin of.",
+    "workspacesHint":  "Sélectionnez uniquement les espaces accessibles par cette invitation, puis choisissez un rôle et une région pour chacun. Aucun accès n'est accordé tant que ces choix ne sont pas terminés.",
+    "workspaceRoles": "Rôles de l'espace de travail *",
+    "workspaceRegions": "Régions de l'espace de travail *",
+    "allocationIncomplete": "Chaque espace sélectionné nécessite au moins un rôle et une région.",
+    "noWorkspaceRoles": "Aucun rôle d'espace de travail n'est disponible pour ce portail.",
+                                   "defaultWorkspace":  "Par défaut",
+                                   "workspaces":  "Espaces de travail"
+                               },
+                    "title":  "Membres de l\u0027?quipe",
+                    "subtitleAll":  "G?rez les membres et invitations de l\u0027organisation dans toutes les r?gions.",
+                    "subtitleScoped":  "Managing members for: {{regions}}.",
+                    "yourRegion":  "your region",
+                    "admin":  "Admin",
+                    "user":  "User",
+                    "seatsInfo":  "Admin seats are Tenant-portal users; User seats are User-portal users. Each member uses one.",
+                    "intro":  {
+                                  "title":  "How team access works",
+                                  "body":  "A member access is three choices: portal, role, and region. Set them when you invite, and change them later from Edit."
+                              },
+                    "tabs":  {
+                                 "members":  "Membres",
+                                 "invitations":  "Invitations"
+                             },
+                    "search":  "Search by name or email...",
+                    "loadingMembers":  "Loading members...",
+                    "loadMembersFailed":  "Failed to load members.",
+                    "tryAgain":  "Please try again later.",
+                    "noMatch":  "No members match your search.",
+                    "noMembers":  "No members yet.",
+                    "emptyHint":  "Invite colleagues to your organization. You will choose their portal, role, and region for each person.",
+                    "table":  {
+                                  "nameEmail":  "Name / Email",
+                                  "regions":  "Regions",
+                                  "status":  "Status",
+                                  "roles":  "Roles",
+                                  "joined":  "Joined",
+                                  "actions":  "Actions",
+                                  "email":  "Email",
+                                  "region":  "Region",
+                                  "expires":  "Expires",
+                                  "invitedBy":  "Invited By"
+                              },
+                    "none":  "None",
+                    "noName":  "No name",
+                    "notAvailable":  "N/A",
+                    "edit":  "Edit",
+                    "cancel":  "Cancel",
+                    "status":  {
+                                   "active":  "Actif",
+                                   "suspended":  "Suspendu",
+                                   "removed":  "SupprimÃ©"
+                               },
+                    "editSheet":  {
+                                      "externalCounselRolesLocked":  "Les rÃ´les du conseil externe sont gÃ©rÃ©s via le flux dâ€™invitation du conseil externe.",
+                                      "title":  "Modifier {{name}}",
+                                      "titlePrefix":  "Modifier",
+                                      "fallbackTitle":  "Modifier le membre",
+                                      "saving":  "Enregistrement...",
+                                      "saveChanges":  "Enregistrer les modifications",
+                                      "regionAssignments":  "Affectations de rÃ©gion",
+                                      "regionAssignmentsHint":  "Cochez une rÃ©gion pour accorder l\u0027adhÃ©sion; dÃ©cochez-la pour la rÃ©voquer. Les rÃ©gions actuelles sont prÃ©cochÃ©es.",
+                                      "primary":  "principal",
+                                      "regionScopedHint":  "Vous pouvez modifier le rÃ´le et le statut de ce membre dans votre rÃ©gion. Seul le propriÃ©taire de l\u0027organisation peut accorder l\u0027accÃ¨s Ã  d\u0027autres rÃ©gions."
+                                  },
+                    "sending":  "Sending...",
+                    "sendInvitation":  "Send Invitation",
+                    "invitationsIntro":  "Pending email invites. They expire after 7 days; revoke any you no longer want.",
+                    "loadingInvitations":  "Loading invitations...",
+                    "loadInvitationsFailed":  "Failed to load invitations.",
+                    "noInvitations":  "No pending invitations.",
+                    "noInvitationsHint":  "Invite a colleague and their pending invite will appear here until they accept it.",
+                    "revoke":  "Revoke",
+                    "help":  {
+                                 "relatedTopics":  "Sujets associÃ©s",
+                                 "concepts":  {
+                                                  "how-access-works":  {
+                                                                           "title":  "Fonctionnement de l\u0027accÃ¨s : portail -\u003e rÃ´le -\u003e rÃ©gion",
+                                                                           "summary":  "Trois choix dÃ©terminent ce qu\u0027une personne peut faire. DÃ©finissez-les lors de l\u0027invitation, puis modifiez-les Ã  tout moment.",
+                                                                           "learnMoreButton":  "En savoir plus sur l\u0027accÃ¨s"
+                                                                       },
+                                                  "portals-system-roles":  {
+                                                                               "title":  "Portails (rÃ´les systÃ¨me)",
+                                                                               "summary":  "Le portail dÃ©termine si la personne utilise le portail administrateur ou le portail utilisateur.",
+                                                                               "learnMoreButton":  "En savoir plus sur les portails"
+                                                                           },
+                                                  "roles-permissions":  {
+                                                                            "title":  "RÃ´les et autorisations",
+                                                                            "summary":  "Un rÃ´le est un ensemble nommÃ© d\u0027autorisations. Un membre peut avoir un ou plusieurs rÃ´les.",
+                                                                            "learnMoreButton":  "En savoir plus sur les rÃ´les"
+                                                                        },
+                                                  "regions":  {
+                                                                  "title":  "RÃ©gions",
+                                                                  "summary":  "Une rÃ©gion est une branche ou juridiction. L\u0027adhÃ©sion et l\u0027accÃ¨s sont limitÃ©s par rÃ©gion.",
+                                                                  "learnMoreButton":  "En savoir plus sur les rÃ©gions"
+                                                              },
+                                                  "departments":  {
+                                                                      "title":  "DÃ©partements",
+                                                                      "summary":  "Votre structure organisationnelle interne. Identifie les contrats \u0026 dossiers pour les rapports et l\u0027approbation.",
+                                                                      "learnMoreButton":  "En savoir plus sur les dÃ©partements"
+                                                                  },
+                                                  "folders":  {
+                                                                  "title":  "Dossiers",
+                                                                  "summary":  "Conteneurs simples pour organiser les dossiers/contrats. Ils ne modifient jamais l\u0027accÃ¨s ou la rÃ©gion.",
+                                                                  "learnMoreButton":  "En savoir plus sur les dossiers"
+                                                              },
+                                                  "counterparties-idd":  {
+                                                                             "title":  "Co-contractants \u0026 validation IDD",
+                                                                             "summary":  "Le tiers externe au contrat. L\u0027IDD procÃ¨de Ã  son contrÃ´le avant que le contrat ne puisse Ãªtre signÃ©.",
+                                                                             "learnMoreButton":  "En savoir plus sur les co-contractants"
+                                                                         },
+                                                  "moa-approvals":  {
+                                                                        "title":  "Approbations de la matrice de dÃ©lÃ©gation de pouvoirs (MoA)",
+                                                                        "summary":  "RÃ¨gles configurables dÃ©finissant le circuit d\u0027approbation qu\u0027un contrat doit valider avant signature.",
+                                                                        "learnMoreButton":  "En savoir plus sur les approbations MoA"
+                                                                    },
+                                                  "external-counsel":  {
+                                                                           "title":  "Conseil externe",
+                                                                           "summary":  "Avocats externes bÃ©nÃ©ficiant d\u0027un accÃ¨s restreint Ã  des dossiers ou contrats spÃ©cifiques via des affectations.",
+                                                                           "learnMoreButton":  "En savoir plus sur le conseil externe"
+                                                                       },
+                                                  "seats-licensing":  {
+                                                                          "title":  "Licences \u0026 places",
+                                                                          "summary":  "Votre abonnement inclut un nombre dÃ©fini de places administrateur et utilisateur. L\u0027invitation en consomme une.",
+                                                                          "learnMoreButton":  "En savoir plus sur les places"
+                                                                      },
+                                                  "integrations":  {
+                                                                       "title":  "IntÃ©grations",
+                                                                       "summary":  "Connectez votre organisation avec des fournisseurs externes tels que DocuSign ou World-Check.",
+                                                                       "learnMoreButton":  "En savoir plus sur les intÃ©grations"
+                                                                   }
+                                              },
+                                 "howAccess":  {
+                                                   "body":  {
+                                                                "intro":  "L\u0027accÃ¨s de chaque membre combine trois choix indÃ©pendants :",
+                                                                "portal":  "\u003cterm\u003e1. Portail\u003c/term\u003e dÃ©termine l\u0027application de connexion. Le portail tenant sert Ã  administrer l\u0027organisation; le portail utilisateur sert au travail juridique quotidien.",
+                                                                "role":  "\u003cterm\u003e2. RÃ´le\u003c/term\u003e dÃ©termine ce que la personne peut faire. Choisissez un ou plusieurs rÃ´les adaptÃ©s Ã  son poste.",
+                                                                "region":  "\u003cterm\u003e3. RÃ©gion\u003c/term\u003e dÃ©termine les donnÃ©es de branche ou juridiction visibles. Une mÃªme personne peut avoir des rÃ´les diffÃ©rents selon les rÃ©gions.",
+                                                                "example":  "Exemple : un responsable des matters aux EAU et utilisateur du portail au Pakistan est une affectation complÃ¨te. Modifiez ces choix depuis Membres."
+                                                            }
+                                               },
+                                 "portals-system-roles":  {
+                                                              "body":  {
+                                                                           "intro":  "Un membre appartient Ã  exactement un des deux portails internes, choisi lors de son invitation :",
+                                                                           "tenant":  "\u003cterm\u003ePortail Tenant\u003c/term\u003e (admin) â€” gÃ©rez les membres \u0026 invitations, les rÃ´les, les rÃ©gions, les dÃ©partements, et accÃ©dez Ã  la supervision globale des contrats et litiges de l\u0027organisation. C\u0027est l\u0027endroit oÃ¹ vous vous trouvez actuellement.",
+                                                                           "user":  "\u003cterm\u003ePortail Utilisateur\u003c/term\u003e â€” l\u0027espace de travail des modules : crÃ©ez et gÃ©rez des contrats, des dossiers de litiges, de la conformitÃ©, et plus, dans la limite de la ou des rÃ©gions affectÃ©es au membre.",
+                                                                           "outro":  "Le portail que vous choisissez dÃ©termine la connexion utilisÃ©e par le membre ainsi que les \u003cterm\u003erÃ´les\u003c/term\u003e pouvant lui Ãªtre assignÃ©s. (Un troisiÃ¨me niveau, \u003cterm\u003eSuper Admin\u003c/term\u003e, est destinÃ© aux opÃ©rateurs Civorah et n\u0027est pas gÃ©rÃ© ici.)"
+                                                                       }
+                                                          },
+                                 "roles-permissions":  {
+                                                           "body":  {
+                                                                        "intro":  "\u003cterm\u003eLes autorisations\u003c/term\u003e sont des capacitÃ©s dÃ©taillÃ©es telles que \"crÃ©er un contrat\" ou \"approuver les frais de dossier\". Vous ne les attribuez jamais une par une â€” vous assignez plutÃ´t des \u003cterm\u003erÃ´les\u003c/term\u003e, qui regroupent les autorisations liÃ©es Ã  un poste.",
+                                                                        "bullet1":  "Un membre peut dÃ©tenir \u003cterm\u003eplusieurs rÃ´les\u003c/term\u003e ; son accÃ¨s effectif est la \u003cterm\u003erÃ©union\u003c/term\u003e de toutes les autorisations de ces rÃ´les.",
+                                                                        "bullet2":  "Civorah propose des modÃ¨les prÃªts Ã  l\u0027emploi â€” par exemple \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” et vous pouvez crÃ©er les vÃ´tres sous \u003cterm\u003eRÃ´les\u003c/term\u003e.",
+                                                                        "bullet3":  "Les rÃ´les sont liÃ©s Ã  un portail : les rÃ´les du portail Tenant confÃ¨rent des droits administratifs ; ceux du portail Utilisateur confÃ¨rent des droits liÃ©s aux modules."
+                                                                    }
+                                                       },
+                                 "regions":  {
+                                                 "body":  {
+                                                              "intro":  "Une rÃ©gion est une branche ou une juridiction de votre organisation (souvent un pays, par exemple les Ã‰mirats arabes unis, le Pakistan). Une rÃ©gion sert de siÃ¨ge social.",
+                                                              "bullet1":  "Les contrats, dossiers, dÃ©partements et membres appartiennent tous Ã  une rÃ©gion â€” changer de rÃ©gion active filtre le contenu visible.",
+                                                              "bullet2":  "Une personne peut Ãªtre membre de plusieurs rÃ©gions, avec un rÃ´le diffÃ©rent dans chacune d\u0027elles. Le propriÃ©taire de l\u0027organisation travaille sur toutes les rÃ©gions.",
+                                                              "bullet3":  "La rÃ©gion constitue une frontiÃ¨re d\u0027accÃ¨s et de donnÃ©es â€” contrairement Ã  un dossier ou un dÃ©partement, elle contrÃ´le la visibilitÃ©."
+                                                          }
+                                             },
+                                 "departments":  {
+                                                     "body":  {
+                                                                  "intro":  "Les dÃ©partements reflÃ¨tent votre structure interne sous forme de hiÃ©rarchie : DÃ©partement â€º Sous-dÃ©partement / Centre de coÃ»t â€º Domaine / Fonction.",
+                                                                  "bullet1":  "Lors de la crÃ©ation d\u0027un contrat ou d\u0027un dossier, vous pouvez l\u0027associer Ã  un dÃ©partement â€” utilisÃ© pour les rapports et pour diriger les approbations MoA vers les personnes appropriÃ©es.",
+                                                                  "bullet2":  "Un dÃ©partement peut disposer d\u0027un chef de dÃ©partement et d\u0027un centre de coÃ»t ou d\u0027un domaine d\u0027activitÃ© pour le regroupement financier.",
+                                                                  "bullet3":  "Les dÃ©partements sont de nature organisationnelle et ne constituent pas une barriÃ¨re de sÃ©curitÃ© â€” ils ne dÃ©terminent pas qui peut voir un dossier (ce rÃ´le est dÃ©volu Ã  la rÃ©gion et aux rÃ´les).",
+                                                                  "outro":  "Optionnel mais recommandÃ© â€” configurez-les depuis la page DÃ©partements."
+                                                              }
+                                                 },
+                                 "folders":  {
+                                                 "body":  {
+                                                              "intro":  "Les dossiers sont les conteneurs Ã©tiquetÃ©s dans la vue Explorateur de fichiers â€” une mÃ©thode pratique pour regrouper les dossiers ou contrats associÃ©s (par affaire, client, annÃ©e... selon votre convenance).",
+                                                              "bullet1":  "Un enregistrement appartient Ã  un dossier unique ou Ã  aucun. Les enregistrements sans dossier apparaissent sous Non classÃ©s dans la vue Accueil.",
+                                                              "bullet2":  "Les dossiers sont purement organisationnels â€” ils ne modifient jamais l\u0027accÃ¨s d\u0027un enregistrement, sa rÃ©gion ou ses approbations.",
+                                                              "bullet3":  "Supprimer un dossier ne supprime pas ses enregistrements ; ils retournent simplement sous Non classÃ©s.",
+                                                              "outro":  "ConsidÃ©rez les dossiers comme des dossiers sur votre ordinateur, et les dÃ©partements comme un organigramme â€” deux fonctions diffÃ©rentes."
+                                                          }
+                                             },
+                                 "counterparties-idd":  {
+                                                            "body":  {
+                                                                         "intro":  "Le \u003cterm\u003eco-contractant\u003c/term\u003e est la partie externe de l\u0027autre cÃ´tÃ© d\u0027un contrat (un fournisseur, client, partenaire). Il est crÃ©Ã© une fois sous \u003cterm\u003eConformitÃ© â†’ Co-contractants\u003c/term\u003e puis associÃ© Ã  n\u0027importe quel contrat.",
+                                                                         "bullet1":  "\u003cterm\u003eL\u0027IDD\u003c/term\u003e (Integrity Due Diligence / Lutte contre la corruption) vÃ©rifie un co-contractant par rapport aux listes de surveillance (World-Check) et lui attribue un niveau de risque.",
+                                                                         "bullet2":  "Si l\u0027option \u003cterm\u003e\"Exiger validation IDD\"\u003c/term\u003e est cochÃ©e pour un contrat, celui-ci \u003cterm\u003ene peut pas Ãªtre signÃ©\u003c/term\u003e tant que son co-contractant n\u0027a pas reÃ§u de validation IDD approuvÃ©e.",
+                                                                         "bullet3":  "Le formulaire de contrat indique le statut de validation actuel du co-contractant afin que vous en soyez informÃ© avant de commencer."
+                                                                     }
+                                                        },
+                                 "moa-approvals":  {
+                                                       "body":  {
+                                                                    "intro":  "La matrice de dÃ©lÃ©gation de pouvoirs dÃ©termine qui doit approuver un contrat avant signature. Vous dÃ©finissez les rÃ¨gles une fois ; le circuit appropriÃ© est gÃ©nÃ©rÃ© automatiquement par contrat.",
+                                                                    "bullet1":  "Une rÃ¨gle correspond Ã  un contrat selon des critÃ¨res prÃ©cis â€” type, dÃ©partement, tranche de valeur et niveau de risque â€” et liste des Ã©tapes d\u0027approbation ordonnÃ©es (une personne ou un rÃ´le spÃ©cifique, avec SLA).",
+                                                                    "bullet2":  "Lors de la soumission d\u0027un contrat, la rÃ¨gle correspondante la plus spÃ©cifique construit son circuit d\u0027approbation ; chaque approbateur valide Ã  son tour.",
+                                                                    "bullet3":  "Configurez les rÃ¨gles sous Contrats â†’ RÃ¨gles MoA."
+                                                                }
+                                                   },
+                                 "external-counsel":  {
+                                                          "body":  {
+                                                                       "intro":  "\u003cterm\u003eLe conseil externe\u003c/term\u003e dÃ©signe des avocats ou consultants externes nÃ©cessitant de consulter des dossiers prÃ©cis sans Ãªtre membres Ã  part entiÃ¨re de votre organisation.",
+                                                                       "bullet1":  "Vous leur donnez accÃ¨s via une \u003cterm\u003eaffectation\u003c/term\u003e sur un dossier ou contrat unique, au niveau \u003cterm\u003eLecture\u003c/term\u003e ou \u003cterm\u003eContribution\u003c/term\u003e, Ã©ventuellement avec une date d\u0027expiration.",
+                                                                       "bullet2":  "Ils se connectent Ã  un \u003cterm\u003eportail externe\u003c/term\u003e dÃ©diÃ© et simplifiÃ© affichant uniquement leurs dossiers affectÃ©s.",
+                                                                       "bullet3":  "Les affectations sont gÃ©rÃ©es par les administrateurs Tenant ; les utilisateurs des modules disposent d\u0027un annuaire en lecture seule des avocats externes sollicitÃ©s dans leur rÃ©gion."
+                                                                   }
+                                                      },
+                                 "seats-licensing":  {
+                                                         "body":  {
+                                                                      "intro":  "Votre abonnement inclut deux pools de places :",
+                                                                      "bullet1":  "\u003cterm\u003ePlaces administrateur\u003c/term\u003e â€” consommÃ©es par les membres du \u003cterm\u003eportail Tenant\u003c/term\u003e.",
+                                                                      "bullet2":  "\u003cterm\u003ePlaces utilisateur\u003c/term\u003e â€” consommÃ©es par les membres du \u003cterm\u003eportail Utilisateur\u003c/term\u003e.",
+                                                                      "outro":  "Les indicateurs sur la page Membres affichent \u003cterm\u003eutilisÃ© / total\u003c/term\u003e. L\u0027invitation d\u0027un tiers rÃ©serve une place du portail choisi ; si un pool est plein, libÃ©rez-en une (attribuez Ã  un membre le statut \u003cterm\u003eSupprimÃ©\u003c/term\u003e) ou contactez votre responsable de compte pour relever la limite."
+                                                                  }
+                                                     },
+                                 "integrations":  {
+                                                      "body":  {
+                                                                   "intro":  "Les intÃ©grations permettent Ã  Civorah de se connecter directement Ã  des services externes pour automatiser les tÃ¢ches.",
+                                                                   "bullet1":  "\u003cterm\u003eSignatures Ã©lectroniques (DocuSign)\u003c/term\u003e â€” envoyez automatiquement les contrats finalisÃ©s Ã  DocuSign pour signature lÃ©gale, et suivez le statut dans Civorah.",
+                                                                   "bullet2":  "\u003cterm\u003eContrÃ´le des tiers (World-Check)\u003c/term\u003e â€” exÃ©cutez des vÃ©rifications IDD automatisÃ©es sur vos tiers par rapport aux listes de sanctions mondiales, PEP et d\u0027application.",
+                                                                   "bullet3":  "\u003cterm\u003eAuthentification unique (SSO)\u003c/term\u003e â€” permettez aux membres de se connecter en toute sÃ©curitÃ© Ã  l\u0027aide de leurs identifiants de travail Microsoft ou Google existants."
+                                                               }
+                                                  },
+                                 "title":  "Aide \u0026 Concepts",
+                                 "subtitle":  "Explications simples sur le fonctionnement de la plateforme â€” portails, rÃ´les, rÃ©gions, dÃ©partements, dossiers, approbations, etc.",
+                                 "searchPlaceholder":  "Rechercher des sujetsâ€¦",
+                                 "noTopics":  "Aucun sujet ne correspond Ã  \"{{query}}\"."
+                             }
+                },
+    "regions":  {
+                    "title":  "RÃ©gions et succursales",
+                    "subtitle":  "GÃ©rez les rÃ©gions gÃ©ographiques et les succursales au sein de votre organisation.",
+                    "addRegion":  "Ajouter une rÃ©gion",
+                    "introCallout":  "Une rÃ©gion est une succursale ou une juridiction de votre organisation. Contrairement aux dossiers ou aux dÃ©partements, une rÃ©gion est une limite de donnÃ©es et d\u0027accÃ¨s : les membres, les contrats et les dossiers appartiennent tous Ã  une rÃ©gion, et les utilisateurs ne voient que la ou les rÃ©gions auxquelles ils sont affectÃ©s. Une rÃ©gion est votre siÃ¨ge social.",
+                    "loading":  "Chargement des rÃ©gions...",
+                    "loadError":  "Ã‰chec du chargement des rÃ©gions.",
+                    "emptyState":  "Aucune rÃ©gion configurÃ©e pour le moment. Cliquez sur \"Ajouter une rÃ©gion\" pour en crÃ©er une.",
+                    "table":  {
+                                  "code":  "Code de rÃ©gion",
+                                  "name":  "Nom d\u0027affichage",
+                                  "timezone":  "Fuseau horaire",
+                                  "currency":  "Devise",
+                                  "hq":  "SiÃ¨ge social",
+                                  "status":  "Statut",
+                                  "members":  "Membres",
+                                  "actions":  "Actions"
+                              },
+                    "status":  {
+                                   "active":  "Actif",
+                                   "inactive":  "Inactif"
+                               },
+                    "actions":  {
+                                    "deactivate":  "DÃ©sactiver",
+                                    "cancel":  "Annuler",
+                                    "create":  "CrÃ©er",
+                                    "saving":  "Enregistrement en cours...",
+                                    "creating":  "CrÃ©ation en cours..."
+                                },
+                    "form":  {
+                                 "title":  "Nouvelle rÃ©gion",
+                                 "subtitle":  "CrÃ©ez une nouvelle rÃ©gion gÃ©ographique ou une succursale pour votre organisation.",
+                                 "nameLabel":  "Nom d\u0027affichage *",
+                                 "nameHelp":  "Un nom convivial pour cette succursale. Rempli automatiquement Ã  partir du pays, mais vous pouvez le personnaliser.",
+                                 "timezoneLabel":  "Fuseau horaire *",
+                                 "currencyLabel":  "Devise *",
+                                 "codePlaceholder":  "Code de rÃ©gion",
+                                 "namePlaceholder":  "ex. Pakistan - SiÃ¨ge",
+                                 "countryPlaceholder":  "SÃ©lectionner un pays...",
+                                 "timezonePlaceholder":  "SÃ©lectionner le fuseau horaire...",
+                                 "currencyPlaceholder":  "SÃ©lectionner la devise...",
+                                 "countryLabel":  "Pays / RÃ©gion *",
+                                 "createError":  "Ã‰chec de la crÃ©ation de la rÃ©gion. Veuillez vÃ©rifier votre saisie et rÃ©essayer."
+                             },
+                    "deactivateModal":  {
+                                            "title":  "DÃ©sactiver la rÃ©gion",
+                                            "confirm":  "Confirmer la dÃ©sactivation",
+                                            "deactivating":  "DÃ©sactivation en cours...",
+                                            "warning":  "La dÃ©sactivation de cette rÃ©gion modifie ses paramÃ¨tres de donnÃ©es et d\u0027accÃ¨s. Les membres affectÃ©s strictement Ã  cette succursale peuvent perdre la visibilitÃ© sur les entitÃ©s connectÃ©es.",
+                                            "error":  "Une erreur est survenue lors de la dÃ©sactivation. Veuillez rÃ©essayer."
+                                        },
+                    "edit":  "Modifier la rÃ©gion",
+                    "activate":  "Activer la rÃ©gion",
+                    "editTitle":  "Modifier la rÃ©gion",
+                    "save":  "Enregistrer la rÃ©gion",
+                    "saving":  "Enregistrement...",
+                    "deactivateTitle":  "DÃ©sactiver la rÃ©gion",
+                    "deactivateConfirm":  "DÃ©sactiver la rÃ©gion",
+                    "deactivateWarning":  "Les membres affectÃ©s uniquement Ã  cette branche peuvent perdre la visibilitÃ© sur les Ã©lÃ©ments liÃ©s.",
+                    "hqAlwaysActive":  "Les rÃ©gions siÃ¨ge doivent rester actives.",
+                    "failedUpdate":  "Ã‰chec de la mise Ã  jour de la rÃ©gion.",
+                    "failedDeactivate":  "Une erreur est survenue lors de la dÃ©sactivation. Veuillez rÃ©essayer."
+                },
+    "departments":  {
+                        "title":  "DÃ©partements",
+                        "subtitle":  "Configurez la hiÃ©rarchie de l\u0027organisation utilisÃ©e pour classer et acheminer les contrats et les dossiers : DÃ©partement â†’ Sous-dÃ©partement / Centre de coÃ»t, avec une fonction commerciale et un chef de dÃ©partement. La matrice de dÃ©lÃ©gation de pouvoirs (MoA) peut acheminer par dÃ©partement.",
+                        "introCallout":  "Les dÃ©partements reflÃ¨tent votre structure interne et sont utilisÃ©s pour Ã©tiqueter les contrats et les dossiers pour les rapports et pour acheminer les approbations. Ils ne constituent pas un contrÃ´le de visibilitÃ© â€” qui peut voir un enregistrement est dÃ©terminÃ© par sa rÃ©gion et les rÃ´les du membre, et non par son dÃ©partement.",
+                        "emptyState":  "Aucun dÃ©partement pour le moment. CrÃ©ez votre premier dÃ©partement.",
+                        "editTitle":  "Modifier le dÃ©partement",
+                        "newTitle":  "Nouveau dÃ©partement",
+                        "formSubtitle":  "DÃ©partement, sous-dÃ©partement / centre de coÃ»t, fonction commerciale et chef.",
+                        "activeLabel":  "Actif (disponible dans les formulaires de module)",
+                        "nameRequired":  "Le nom du dÃ©partement est requis.",
+                        "noneTopLevel":  "Aucun (niveau supÃ©rieur)",
+                        "loading":  "Chargement des dÃ©partementsâ€¦",
+                        "actions":  {
+                                        "cancel":  "Annuler",
+                                        "create":  "CrÃ©er",
+                                        "saveChanges":  "Enregistrer les modifications",
+                                        "saving":  "Enregistrement en cours...",
+                                        "edit":  "Modifier",
+                                        "delete":  "Supprimer"
+                                    },
+                        "form":  {
+                                     "nameLabel":  "Nom *",
+                                     "codeLabel":  "Code",
+                                     "costCenterLabel":  "Centre de coÃ»t",
+                                     "functionLabel":  "Fonction commerciale",
+                                     "regionLabel":  "RÃ©gion",
+                                     "parentLabel":  "DÃ©partement parent",
+                                     "headLabel":  "Chef de dÃ©partement",
+                                     "none":  "Aucun",
+                                     "descriptionLabel":  "Description",
+                                     "namePlaceholder":  "ex. Achats",
+                                     "codePlaceholder":  "ex. PROC",
+                                     "costCenterPlaceholder":  "ex. CC-1024",
+                                     "functionPlaceholder":  "ex. ChaÃ®ne d\u0027approvisionnement"
+                                 },
+                        "deleteModal":  {
+                                            "title":  "Supprimer le dÃ©partement",
+                                            "confirmQuestion":  "ÃŠtes-vous sÃ»r de vouloir supprimer le dÃ©partement ",
+                                            "confirmQuestionEnd":  " ? Cette action ne peut pas Ãªtre annulÃ©e.",
+                                            "confirmShort":  "ÃŠtes-vous sÃ»r de vouloir supprimer ce dÃ©partement ? Cette action ne peut pas Ãªtre annulÃ©e."
+                                        },
+                        "status":  {
+                                       "inactive":  "Inactif"
+                                   },
+                        "costCenter":  "Centre de coÃ»t : ",
+                        "function":  "Fonction : ",
+                        "contractsCount":  " contrat(s) Â· ",
+                        "casesCount":  " dossier(s)",
+                        "addSubDepartment":  "Ajouter un sous-dÃ©partement"
+                    },
+    "plan":  {
+                 "introCallout":  "Votre abonnement comprend des pools distincts de places administrateur (pour gÃ©rer l\u0027organisation) et de places utilisateur (pour le travail des modules comme les contrats, les litiges et la conformitÃ©). L\u0027invitation d\u0027un membre consomme une place du pool de portail correspondant.",
+                 "title":  "Formules et limites",
+                 "subtitle":  "L\u0027abonnement de votre organisation, les modules qu\u0027il comprend et la part de chaque limite que vous utilisez.",
+                 "currentPlan":  "Formule actuelle",
+                 "customEntitlement":  "Droit personnalisÃ©",
+                 "bespokeConfig":  "Cette organisation est configurÃ©e avec un ensemble personnalisÃ© de modules et de limites plutÃ´t qu\u0027une formule catalogue.",
+                 "adminSeats":  "Places administrateur",
+                 "userSeats":  "Places utilisateur",
+                 "aiCredits":  "CrÃ©dits IA",
+                 "units":  {
+                               "seats":  "places",
+                               "credits":  "crÃ©dits",
+                               "workspaces":  "espaces",
+                               "MB":  "Mo"
+                           },
+                 "ofLimit":  "sur une limite de {{limit}} {{unit}}",
+                 "remaining":  "{{count}} {{unit}} restantes",
+                 "percentLeft":  "il reste {{pct}}%",
+                 "percentUsed":  "{{pct}}% utilisÃ©",
+                 "notIncluded":  "Non inclus",
+                 "perMonth":  "/ {{allowance}} par mois",
+                 "monthlyAllowance":  "Allocation mensuelle de l\u0027assistant IA.",
+                 "askAdmin":  "Demandez Ã  votre administrateur d\u0027activer les crÃ©dits IA.",
+                 "includedModules":  "Modules inclus",
+                 "includedInPlan":  "Inclus dans votre formule",
+                 "planLimits":  "Limites de la formule",
+                 "supportHint":  "Les limites et les modules sont gÃ©rÃ©s par votre administrateur Civorah. Pour mettre Ã  niveau votre formule ou modifier une limite, contactez le support Civorah.",
+                 "modules":  {
+                                 "contracts":  "Contrats (CLM)",
+                                 "litigation":  "Litiges",
+                                 "compliance":  "Ã‰thique \u0026 ConformitÃ©",
+                                 "due_diligence":  "Due Diligence",
+                                 "duediligence":  "Due Diligence",
+                                 "secretarial":  "SecrÃ©tariat",
+                                 "land":  "Terres \u0026 PropriÃ©tÃ©s",
+                                 "whistleblowing":  "Signalement",
+                                 "reporting":  "Rapports",
+                                 "ai_assistant":  "Assistant IA",
+                                 "aiassistant":  "Assistant IA",
+                                 "external_counsel":  "Conseils Externes",
+                                 "externalcounsel":  "Conseils Externes"
+                             },
+                 "limits":  {
+                                "documentMaxUpload":  "Taille maximale de tÃ©lÃ©chargement de document",
+                                "throttlePerMinute":  "RequÃªtes API / minute",
+                                "contractRenewalThresholds":  "Rappels de renouvellement de contrat (jours avant expiration)",
+                                "whistleblowingSla":  "SLA de rÃ©solution de signalement (jours)",
+                                "complianceRenewalMonths":  "Cadence de re-contrÃ´le du tiers (mois)"
+                            },
+                 "externalSeats":  "Sièges de conseil externe",
+                 "workspaces":  "Espaces de travail",
+                 "storage":  "Stockage"
+             },
+    "integrations":  {
+                         "introCallout":  "Connectez votre organisation avec des fournisseurs externes (comme DocuSign pour la signature de contrats ou World-Check pour le contrÃ´le des tiers) afin d\u0027automatiser vos flux de travail de conformitÃ© et de contractualisation.",
+                         "title":  "IntÃ©grations",
+                         "subtitle":  "Connectez vos propres comptes de fournisseurs ou exÃ©cutez chaque fonctionnalitÃ© manuellement avec une piste d\u0027audit complÃ¨te. Les identifiants sont chiffrÃ©s au repos et ne sont plus jamais affichÃ©s.",
+                         "modeLabels":  {
+                                            "byo":  "Connectez le vÃ´tre",
+                                            "platform":  "Utiliser Civorah",
+                                            "manual":  "Manuel",
+                                            "disabled":  "DÃ©sactivÃ©"
+                                        },
+                         "modeHelp":  {
+                                          "byo":  "Connectez votre propre compte fournisseur. L\u0027utilisation est facturÃ©e sur votre compte.",
+                                          "platform":  "Utiliser la formule gÃ©rÃ©e de Civorah (prochainement).",
+                                          "manual":  "Aucun fournisseur externe â€” votre Ã©quipe signe ou valide manuellement dans Civorah, avec une piste d\u0027audit complÃ¨te.",
+                                          "disabled":  "Aucune intÃ©gration tierce. Votre Ã©quipe effectue toujours cette validation manuellement dans Civorah (signature de documents / enregistrement des validations) â€” ceci masque uniquement l\u0027option de connexion Ã  un fournisseur."
+                                      },
+                         "domains":  {
+                                         "esignature":  "Signature Ã©lectronique",
+                                         "screening":  "ContrÃ´le des sanctions et listes de surveillance",
+                                         "sso_microsoft":  "Connexion unique Microsoft",
+                                         "sso_google":  "Connexion unique Google"
+                                     },
+                         "blurbs":  {
+                                        "esignature":  "Envoyez des contrats pour signature Ã©lectronique lÃ©galement contraignante.",
+                                        "screening":  "ContrÃ´lez les co-contractants par rapport aux sanctions, aux PEP et aux listes de surveillance.",
+                                        "sso_microsoft":  "Permettez Ã  votre Ã©quipe de se connecter avec leurs comptes professionnels Microsoft.",
+                                        "sso_google":  "Permettez Ã  votre Ã©quipe de se connecter avec leurs comptes Google Workspace."
+                                    },
+                         "providers":  {
+                                           "docusign":  {
+                                                            "name":  "DocuSign",
+                                                            "blurb":  "Autorisez Civorah Ã  envoyer des enveloppes depuis votre compte DocuSign."
+                                                        },
+                                           "worldcheck":  {
+                                                              "name":  "World-Check One",
+                                                              "blurb":  "IntÃ©grez Refinitiv World-Check One pour le contrÃ´le KYC en temps rÃ©el des co-contractants."
+                                                          }
+                                       },
+                         "status":  {
+                                        "connected":  "PrÃªt",
+                                        "expired":  "Reconnexion requise",
+                                        "error":  "Erreur",
+                                        "revoked":  "RÃ©voquÃ©",
+                                        "not_configured":  "Non configurÃ©",
+                                        "comingSoon":  "BientÃ´t disponible",
+                                        "connectedDetail":  "ConnectÃ© Â· {{detail}}",
+                                        "encryptedHint":  "ChiffrÃ© au repos. Le secret n\u0027est plus jamais affichÃ©."
+                                    },
+                         "actions":  {
+                                         "disconnect":  "DÃ©connecter",
+                                         "connect":  "Connecter",
+                                         "testConnection":  "Tester la connexion",
+                                         "configure":  "Configurer",
+                                         "save":  "Enregistrer",
+                                         "cancel":  "Annuler",
+                                         "connecting":  "Connexion...",
+                                         "saving":  "Enregistrement...",
+                                         "testing":  "Test...",
+                                         "disconnecting":  "DÃ©connexion...",
+                                         "reconnect":  "Reconnecter"
+                                     },
+                         "worldcheck":  {
+                                            "enter":  "Saisissez vos identifiants World-Check One",
+                                            "reconnect":  "Reconnectez votre compte World-Check One",
+                                            "findConsole":  "Trouvez-les dans la console World-Check One sous",
+                                            "adminApi":  "Administration â†’ Administration de l\u0027API",
+                                            "apiUrl":  "URL de l\u0027API",
+                                            "apiKey":  "ClÃ© API",
+                                            "apiKeyPlaceholder":  "ClÃ© API (keyId)",
+                                            "apiSecret":  "Secret API",
+                                            "groupId":  "ID de groupe (facultatif)",
+                                            "groupIdPlaceholder":  "ID de groupe de gestion des cas",
+                                            "connectAction":  "Connecter World-Check",
+                                            "reconnectAction":  "Reconnecter World-Check"
+                                        }
+                     },
+    "settings":  {
+                     "header":  {
+                                    "title":  "ParamÃ¨tres",
+                                    "subtitle":  "GÃ©rez la configuration de votre organisation et la sÃ©curitÃ© de votre compte."
+                                },
+                     "tabs":  {
+                                  "organization":  "Organisation",
+                                  "terminology":  "Terminologie",
+                                  "features":  "FonctionnalitÃ©s",
+                                  "customFields":  "Champs personnalisÃ©s",
+                                  "layouts":  "Mises en page",
+                                  "lifecycle":  "Cycle de vie",
+                                  "security":  "SÃ©curitÃ© (MFA)"
+                              },
+                     "organization":  {
+                                          "loading":  "Chargement des paramÃ¨tres de l\u0027organisation...",
+                                          "loadError":  "Ã‰chec du chargement des paramÃ¨tres. {{message}}",
+                                          "empty":  "Aucun paramÃ¨tre disponible.",
+                                          "success":  "ParamÃ¨tres mis Ã  jour avec succÃ¨s.",
+                                          "error":  "Ã‰chec de la mise Ã  jour des paramÃ¨tres. Veuillez vÃ©rifier votre saisie et rÃ©essayer.",
+                                          "readOnly":  {
+                                                           "title":  "Informations de l\u0027organisation",
+                                                           "subtitle":  "Ces valeurs sont gÃ©rÃ©es par les administrateurs de la plateforme et ne peuvent pas Ãªtre modifiÃ©es ici.",
+                                                           "field":  "Champ",
+                                                           "value":  "Valeur",
+                                                           "labels":  {
+                                                                          "name":  "Nom",
+                                                                          "slug":  "Slug",
+                                                                          "status":  "Statut",
+                                                                          "adminSeats":  "Places administrateur",
+                                                                          "userSeats":  "Places utilisateur",
+                                                                          "country":  "Pays",
+                                                                          "timezone":  "Fuseau horaire",
+                                                                          "created":  "CrÃ©Ã© le"
+                                                                      },
+                                                           "showing":  "Affichage de {{start}} Ã  {{end}} sur {{total}} champs"
+                                                       },
+                                          "editable":  {
+                                                           "title":  "ParamÃ¨tres modifiables",
+                                                           "subtitle":  "Mettez Ã  jour les champs ci-dessous et cliquez sur Enregistrer pour appliquer les modifications.",
+                                                           "billingEmail":  "E-mail de facturation",
+                                                           "timezone":  "Fuseau horaire",
+                                                           "domain":  "Domaine",
+                                                           "nonStandardLegalReviewRequired":  "Exiger une revue juridique pour les contrats non standard",
+                                                           "nonStandardLegalReviewRequiredHelp":  "Lorsqu\u0027elle est activÃ©e, chaque rÃ¨gle MoA pour un contrat non standard doit comporter une Ã©tape de revue juridique.",
+                                                           "saving":  "Enregistrement...",
+                                                           "saveAction":  "Enregistrer les paramÃ¨tres",
+                                                           "billingPlaceholder":  "billing@example.com",
+                                                           "domainPlaceholder":  "ex. acme.com"
+                                                       }
+                                      },
+                     "terminology":  {
+                                         "loading":  "Chargement de la terminologie...",
+                                         "description":  "Renommez les termes de la plateforme pour correspondre au vocabulaire de votre organisation (par ex. Â« Contrepartie Â» â†’ Â« Fournisseur Â»). Les remplacements s\u0027appliquent Ã  toute l\u0027application pour tous les membres de votre organisation. Laissez vide pour utiliser la valeur par dÃ©faut.",
+                                         "groups":  {
+                                                        "moduleNames":  "Noms des modules",
+                                                        "contracts":  "Contrats",
+                                                        "matters":  "Affaires",
+                                                        "compliance":  "ConformitÃ©",
+                                                        "whistleblowing":  "Signalement",
+                                                        "general":  "GÃ©nÃ©ral"
+                                                    },
+                                         "labels":  {
+                                                        "module_contracts":  "Contrats",
+                                                        "module_litigation":  "Affaires",
+                                                        "module_compliance":  "ConformitÃ©",
+                                                        "module_whistleblowing":  "Signalement",
+                                                        "module_secretarial":  "SecrÃ©tariat",
+                                                        "module_land":  "Actifs",
+                                                        "module_reporting":  "Reporting",
+                                                        "contracts_counterparty":  "Contrepartie",
+                                                        "contracts_contract":  "Contrat",
+                                                        "litigation_case":  "Affaire",
+                                                        "litigation_hearing":  "Audience",
+                                                        "compliance_counterparty":  "Contrepartie",
+                                                        "compliance_screening":  "Filtrage",
+                                                        "whistleblowing_case":  "Rapport",
+                                                        "common_department":  "DÃ©partement",
+                                                        "common_region":  "RÃ©gion"
+                                                    },
+                                         "descriptions":  {
+                                                              "module_contracts":  "Le nom du module Contrats (barre latÃ©rale / tableau de bord).",
+                                                              "module_litigation":  "Le nom du module Affaires.",
+                                                              "module_compliance":  "Le nom du module ConformitÃ©.",
+                                                              "module_whistleblowing":  "Le nom du module Signalement.",
+                                                              "module_secretarial":  "Le nom du module SecrÃ©tariat.",
+                                                              "module_land":  "Le nom du module Actifs.",
+                                                              "module_reporting":  "Le nom du module Reporting.",
+                                                              "contracts_counterparty":  "La partie externe Ã  un contrat (par ex. Â« Fournisseur Â», Â« Prestataire Â»).",
+                                                              "contracts_contract":  "Un enregistrement de contrat unique.",
+                                                              "litigation_case":  "Un enregistrement d\u0027affaire.",
+                                                              "litigation_hearing":  "Une audience judiciaire planifiÃ©e.",
+                                                              "compliance_counterparty":  "Un tiers soumis Ã  une diligence raisonnable.",
+                                                              "compliance_screening":  "Une demande de filtrage de diligence raisonnable.",
+                                                              "whistleblowing_case":  "Un rapport / cas de signalement.",
+                                                              "common_department":  "DÃ©partement organisationnel / centre de coÃ»ts.",
+                                                              "common_region":  "Succursale / rÃ©gion."
+                                                          },
+                                         "saveAction":  "Enregistrer",
+                                         "resetAction":  "RÃ©initialiser"
+                                     },
+                     "features":  {
+                                      "loading":  "Chargement des fonctionnalitÃ©s...",
+                                      "description":  "Activez ou dÃ©sactivez les capacitÃ©s optionnelles de votre organisation. Elles sont plus fines que l\u0027accÃ¨s aux modules (qui est dÃ©fini par votre administrateur de plateforme).",
+                                      "empty":  "Aucune fonctionnalitÃ© configurable disponible.",
+                                      "labels":  {
+                                                     "contracts.esignature":  "Signature Ã©lectronique (DocuSign)",
+                                                     "contracts.idd_gate":  "Porte de diligence raisonnable sur les contrats",
+                                                     "ai.summarize":  "RÃ©sumÃ© de documents par IA",
+                                                     "search.semantic":  "Recherche sÃ©mantique (IA)"
+                                                 },
+                                      "descriptions":  {
+                                                           "contracts.esignature":  "Envoyer des contrats prÃªts pour exÃ©cution pour signature Ã©lectronique.",
+                                                           "contracts.idd_gate":  "Bloquer l\u0027exÃ©cution du contrat jusqu\u0027Ã  ce que la diligence raisonnable de la contrepartie soit validÃ©e.",
+                                                           "ai.summarize":  "GÃ©nÃ©rer des rÃ©sumÃ©s exÃ©cutifs de documents longs.",
+                                                           "search.semantic":  "RequÃªte en langage naturel sur les enregistrements indexÃ©s."
+                                                       }
+                                  },
+                     "customFields":  {
+                                          "studio":  {
+                                                         "title":  "Studio de champs personnalisÃ©s",
+                                                         "description":  "Ajoutez des champs spÃ©cifiques Ã  l\u0027organisation pour les contrats, les affaires, les contreparties et les actifs."
+                                                     },
+                                          "stats":  {
+                                                        "configured":  "ConfigurÃ©",
+                                                        "modules":  "Modules",
+                                                        "required":  "Obligatoire",
+                                                        "sensitive":  "Sensible"
+                                                    },
+                                          "badge":  {
+                                                        "selected":  "SÃ©lectionnÃ©"
+                                                    },
+                                          "list":  {
+                                                       "title":  "Champs {{entity}}",
+                                                       "addAction":  "Ajouter un champ personnalisÃ©",
+                                                       "loading":  "Chargement des champs...",
+                                                       "emptyTitle":  "Aucun champ personnalisÃ© pour {{entity}}",
+                                                       "emptyDescription":  "Ajoutez un champ personnalisÃ© pour capturer les donnÃ©es spÃ©cifiques Ã  l\u0027organisation sur les enregistrements {{entity}}.",
+                                                       "deleteAction":  "Supprimer"
+                                                   },
+                                          "fieldBadge":  {
+                                                             "required":  "Obligatoire",
+                                                             "searchable":  "Recherchable",
+                                                             "sensitive":  "Sensible",
+                                                             "inactive":  "Inactif"
+                                                         },
+                                          "guide":  {
+                                                        "title":  "Guide de placement"
+                                                    },
+                                          "drawer":  {
+                                                         "title":  "Ajouter un champ {{entity}}",
+                                                         "subtitle":  "DÃ©finissez un nouveau champ personnalisÃ© pour les enregistrements {{entity}}.",
+                                                         "placementHeader":  "Placement",
+                                                         "sectionLabel":  "Section",
+                                                         "detailsHeader":  "DÃ©tails du champ",
+                                                         "label":  "LibellÃ© du champ",
+                                                         "apiKeyLabel":  "ClÃ© API",
+                                                         "apiKeyHint":  "GÃ©nÃ©rÃ© automatiquement Ã  partir du libellÃ©. UtilisÃ© dans les exports et les rÃ©ponses API.",
+                                                         "typeLabel":  "Type de champ",
+                                                         "optionsLabel":  "Options",
+                                                         "optionsHint":  "Une option par ligne.",
+                                                         "behaviorHeader":  "Comportement",
+                                                         "behavior":  {
+                                                                          "required":  {
+                                                                                           "title":  "Obligatoire",
+                                                                                           "hint":  "Doit Ãªtre rempli avant que l\u0027enregistrement puisse Ãªtre sauvegardÃ©."
+                                                                                       },
+                                                                          "searchable":  {
+                                                                                             "title":  "Recherchable",
+                                                                                             "hint":  "Inclure dans les rÃ©sultats de recherche globale."
+                                                                                         },
+                                                                          "sensitive":  {
+                                                                                            "title":  "Sensible",
+                                                                                            "hint":  "Masquer la valeur pour les utilisateurs non administrateurs."
+                                                                                        }
+                                                                      },
+                                                         "resetAction":  "RÃ©initialiser",
+                                                         "adding":  "Ajout en cours...",
+                                                         "addAction":  "Ajouter le champ",
+                                                         "labelPlaceholder":  "ex. Code centre de coÃ»t",
+                                                         "apiKeyPlaceholder":  "cost_center_code",
+                                                         "optionsPlaceholder":  "Faible\nMoyen\nÃ‰levÃ©"
+                                                     },
+                                          "entities":  {
+                                                           "contract":  {
+                                                                            "label":  "Contrats",
+                                                                            "module":  "Contrats",
+                                                                            "description":  "MÃ©tadonnÃ©es d\u0027accord, propriÃ©tÃ©, valeur et champs du cycle de vie.",
+                                                                            "appearsOn":  "DÃ©tail du contrat \u003e Informations supplÃ©mentaires",
+                                                                            "placements":  {
+                                                                                               "identity":  {
+                                                                                                                "label":  "IdentitÃ©",
+                                                                                                                "description":  "Identifiants de contrat de base."
+                                                                                                            },
+                                                                                               "valueampterm":  {
+                                                                                                                    "label":  "Valeur et durÃ©e",
+                                                                                                                    "description":  "Conditions commerciales et dates."
+                                                                                                                },
+                                                                                               "ownership":  {
+                                                                                                                 "label":  "PropriÃ©tÃ©",
+                                                                                                                 "description":  "PropriÃ©taire, conseil et contexte du dÃ©partement."
+                                                                                                             },
+                                                                                               "compliance":  {
+                                                                                                                  "label":  "ConformitÃ©",
+                                                                                                                  "description":  "MÃ©tadonnÃ©es de risque, approbation et politique."
+                                                                                                              }
+                                                                                           }
+                                                                        },
+                                                           "litigation_case":  {
+                                                                                   "label":  "Affaires",
+                                                                                   "module":  "Affaires",
+                                                                                   "description":  "IdentitÃ© de l\u0027affaire, dÃ©tails du tribunal, affectation, risques et rÃ©sultats.",
+                                                                                   "appearsOn":  "DÃ©tail de l\u0027affaire \u003e Informations supplÃ©mentaires",
+                                                                                   "placements":  {
+                                                                                                      "identity":  {
+                                                                                                                       "label":  "IdentitÃ©",
+                                                                                                                       "description":  "Titre de l\u0027affaire, numÃ©ro de dossier et catÃ©gorie."
+                                                                                                                   },
+                                                                                                      "courtampschedule":  {
+                                                                                                                               "label":  "Tribunal et calendrier",
+                                                                                                                               "description":  "Tribunal, audience et champs de date."
+                                                                                                                           },
+                                                                                                      "assignment":  {
+                                                                                                                         "label":  "Affectation",
+                                                                                                                         "description":  "AffectÃ©, dÃ©partement, parties et conseil."
+                                                                                                                     },
+                                                                                                      "riskampoutcome":  {
+                                                                                                                             "label":  "Risque et rÃ©sultat",
+                                                                                                                             "description":  "Exposition, statut et contexte de clÃ´ture."
+                                                                                                                         }
+                                                                                                  }
+                                                                               },
+                                                           "counterparty":  {
+                                                                                "label":  "Contreparties",
+                                                                                "module":  "ConformitÃ©",
+                                                                                "description":  "Diligence raisonnable du tiers, profil et donnÃ©es de relation.",
+                                                                                "appearsOn":  "DÃ©tail de la contrepartie \u003e Informations supplÃ©mentaires",
+                                                                                "placements":  {
+                                                                                                   "profile":  {
+                                                                                                                   "label":  "Profil",
+                                                                                                                   "description":  "IdentitÃ©, enregistrement et informations de contact."
+                                                                                                               },
+                                                                                                   "duediligence":  {
+                                                                                                                        "label":  "Diligence raisonnable",
+                                                                                                                        "description":  "Statut IDD, filtrage et approbations."
+                                                                                                                    },
+                                                                                                   "relationship":  {
+                                                                                                                        "label":  "Relation",
+                                                                                                                        "description":  "Sponsor, type de relation et portÃ©e de l\u0027engagement."
+                                                                                                                    },
+                                                                                                   "risk":  {
+                                                                                                                "label":  "Risque",
+                                                                                                                "description":  "Niveau de risque, renouvellement et mÃ©tadonnÃ©es de rÃ©vision."
+                                                                                                            }
+                                                                                               }
+                                                                            },
+                                                           "land_asset":  {
+                                                                              "label":  "Actifs",
+                                                                              "module":  "Actifs",
+                                                                              "description":  "Profil de l\u0027actif, garde, localisation, Ã©valuation et champs de risque.",
+                                                                              "appearsOn":  "DÃ©tail de l\u0027actif \u003e AperÃ§u \u003e Informations supplÃ©mentaires",
+                                                                              "placements":  {
+                                                                                                 "assetprofile":  {
+                                                                                                                      "label":  "Profil de l\u0027actif",
+                                                                                                                      "description":  "IdentitÃ©, type et statut de l\u0027actif."
+                                                                                                                  },
+                                                                                                 "location":  {
+                                                                                                                  "label":  "Emplacement",
+                                                                                                                  "description":  "District, tehsil, mauza, coordonnÃ©es et contexte du site."
+                                                                                                              },
+                                                                                                 "custodyampvalue":  {
+                                                                                                                         "label":  "Garde et valeur",
+                                                                                                                         "description":  "Gardien, dÃ©partement, coÃ»t et valeur actuelle."
+                                                                                                                     },
+                                                                                                 "riskampdocument":  {
+                                                                                                                         "label":  "Risque et document",
+                                                                                                                         "description":  "Saisie, garantie et mÃ©tadonnÃ©es d\u0027enregistrement."
+                                                                                                                     }
+                                                                                             }
+                                                                          }
+                                                       },
+                                          "types":  {
+                                                        "TEXT":  {
+                                                                     "help":  "Texte court sur une ligne"
+                                                                 },
+                                                        "TEXTAREA":  {
+                                                                         "help":  "Notes ou description longues"
+                                                                     },
+                                                        "NUMBER":  {
+                                                                       "help":  "Nombre entier"
+                                                                   },
+                                                        "DECIMAL":  {
+                                                                        "help":  "Montant dÃ©cimal ou mesure"
+                                                                    },
+                                                        "BOOLEAN":  {
+                                                                        "help":  "Case Ã  cocher Oui / Non"
+                                                                    },
+                                                        "DATE":  {
+                                                                     "help":  "Date calendrier"
+                                                                 },
+                                                        "DATETIME":  {
+                                                                         "help":  "Date et heure"
+                                                                     },
+                                                        "SELECT":  {
+                                                                       "help":  "Une option dans une liste"
+                                                                   },
+                                                        "MULTISELECT":  {
+                                                                            "help":  "Plusieurs options dans une liste"
+                                                                        },
+                                                        "EMAIL":  {
+                                                                      "help":  "Adresse e-mail"
+                                                                  },
+                                                        "URL":  {
+                                                                    "help":  "Site web ou lien"
+                                                                }
+                                                    },
+                                          "bottomNotice":  "Les champs personnalisÃ©s sont actuellement activÃ©s pour les contrats, les affaires, les contreparties et les actifs. D\u0027autres modules peuvent Ãªtre ajoutÃ©s lorsque leurs pages de dÃ©tails exposent une section Informations supplÃ©mentaires stable."
+                                      },
+                     "layouts":  {
+                                     "description":  "Choisissez les colonnes qui apparaissent dans les vues liste et contrÃ´lez leur ordre. Les modifications s\u0027appliquent Ã  tous les membres de votre organisation.",
+                                     "listLabel":  "Liste",
+                                     "columnsHeader":  "Colonnes",
+                                     "loading":  "Chargement de la mise en page...",
+                                     "saved":  "EnregistrÃ©",
+                                     "resetAction":  "RÃ©initialiser par dÃ©faut",
+                                     "saving":  "Enregistrement...",
+                                     "saveAction":  "Enregistrer la mise en page",
+                                     "moveUp":  "DÃ©placer vers le haut",
+                                     "moveDown":  "DÃ©placer vers le bas"
+                                 },
+                     "lifecycle":  {
+                                       "description":  "Personnalisez les libellÃ©s et couleurs de statut utilisÃ©s dans les vues du cycle de vie des {{entity}}. Les remplacements s\u0027appliquent Ã  toute votre organisation.",
+                                       "recordTypeLabel":  "Type d\u0027enregistrement",
+                                       "statusesHeader":  "Statuts",
+                                       "loading":  "Chargement du cycle de vie...",
+                                       "defaultColor":  "Couleur par dÃ©faut",
+                                       "showing":  "Affichage de {{start}} Ã  {{end}} sur {{total}} statuts",
+                                       "saved":  "EnregistrÃ©",
+                                       "resetAction":  "RÃ©initialiser par dÃ©faut",
+                                       "saving":  "Enregistrement...",
+                                       "saveAction":  "Enregistrer les statuts"
+                                   }
+                 }
+}

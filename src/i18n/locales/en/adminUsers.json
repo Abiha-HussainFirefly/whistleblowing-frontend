@@ -1,0 +1,191 @@
+{
+  "page": {
+    "title": "Users",
+    "subtitle": "Manage platform users, their roles, and account status."
+  },
+  "filters": {
+    "searchPlaceholder": "Search users by email or name...",
+    "allStatuses": "All Statuses",
+    "allRoles": "All Roles"
+  },
+  "view": {
+    "list": "List view",
+    "grid": "Grid view"
+  },
+  "table": {
+    "email": "Email",
+    "displayName": "Display Name",
+    "platformRole": "Platform Role",
+    "status": "Status",
+    "mfa": "MFA",
+    "lastLogin": "Last Login",
+    "organization": "Organization",
+    "region": "Region",
+    "roles": "Roles",
+    "joined": "Joined",
+    "actions": "Actions"
+  },
+  "cards": {
+    "mfa": "MFA {{state}}",
+    "lastLogin": "Last login: {{value}}"
+  },
+  "pagination": {
+    "summary": "Page {{page}} of {{totalPages}} ({{total}} total)",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "states": {
+    "loading": "Loading users...",
+    "loadError": "Failed to load users.",
+    "empty": "No users found."
+  },
+  "roles": {
+    "user": "User",
+    "tenant": "Tenant",
+    "support": "Support",
+    "superAdmin": "Super Admin"
+  },
+  "statuses": {
+    "active": "Active",
+    "pendingVerification": "Pending Verification",
+    "suspended": "Suspended",
+    "locked": "Locked",
+    "deactivated": "Deactivated",
+    "invited": "Invited",
+    "removed": "Removed"
+  },
+  "accountKinds": {
+    "standard": "Standard",
+    "externalCounsel": "External Counsel",
+    "whistleblower": "Whistleblower",
+    "serviceAccount": "Service Account"
+  },
+  "actions": {
+    "activate": "Activate",
+    "suspend": "Suspend",
+    "deactivate": "Deactivate",
+    "reactivate": "Reactivate",
+    "unlockActivate": "Unlock & Activate",
+    "updateRole": "Update Role",
+    "addToOrganization": "Add to Organization",
+    "addMembership": "Add Membership",
+    "edit": "Edit",
+    "editRoles": "Edit Roles",
+    "remove": "Remove",
+    "saveRoles": "Save Roles",
+    "transferOwnership": "Transfer Ownership"
+  },
+  "common": {
+    "notSet": "Not set",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "on": "On",
+    "off": "Off",
+    "never": "Never",
+    "cancel": "Cancel",
+    "close": "Close",
+    "processing": "Processing...",
+    "saving": "Saving...",
+    "organization": "Organization",
+    "region": "Region",
+    "rolesAtLeastOne": "Roles (select at least one)",
+    "loadingRoles": "Loading roles...",
+    "noRoles": "No roles available for this organization.",
+    "selectOrganization": "Select an organization...",
+    "alreadyInAllOrganizations": "User is already a member of all organizations.",
+    "search": "Search..."
+  },
+  "detail": {
+    "back": "Back to Users",
+    "loading": "Loading user...",
+    "loadError": "Failed to load user. The user may not exist or you may not have permission to view them.",
+    "header": {
+      "unnamed": "Unnamed User",
+      "accountType": "Account type: {{type}}"
+    },
+    "summary": {
+      "email": "Email",
+      "verified": "Verified",
+      "unverified": "Unverified",
+      "phone": "Phone",
+      "mfa": "MFA",
+      "joined": "Joined",
+      "lastLogin": "Last Login",
+      "regions": "Regions"
+    },
+    "tabs": {
+      "organizationRoles": "Organization Roles",
+      "systemRole": "System Role",
+      "status": "Status Management",
+      "memberships": "Organization Memberships"
+    },
+    "organizationRoles": {
+      "title": "Organization Roles",
+      "subtitle": "Roles assigned to this user within each organization. Select Edit to change them.",
+      "empty": "This user is not a member of any organization.",
+      "noRoles": "No roles"
+    },
+    "systemRole": {
+      "title": "System Role",
+      "subtitle": "Platform-wide access level (not organization-specific)",
+      "platformRole": "Platform Role"
+    },
+    "status": {
+      "title": "Status Management",
+      "subtitle": "Manage this user's account status. Destructive actions require typed confirmation.",
+      "current": "Current status:",
+      "noTransitions": "No status transitions available."
+    },
+    "memberships": {
+      "title": "Organization Memberships",
+      "empty": "This user is not a member of any organization.",
+      "primaryOwner": "Primary owner"
+    },
+    "addMembership": {
+      "title": "Add to Organization",
+      "adding": "Adding...",
+      "loadRolesError": "Failed to load roles for this organization.",
+      "addError": "Failed to add user to organization. Please try again."
+    },
+    "editRoles": {
+      "title": "Edit Roles",
+      "updateError": "Failed to update roles. Please try again."
+    },
+    "transferOwnership": {
+      "title": "Transfer Primary Ownership",
+      "warning": "This changes the organization's primary owner immediately. The former owner keeps access through the selected replacement role.",
+      "loadingOptions": "Loading eligible members and roles...",
+      "loadError": "Unable to load the ownership transfer options.",
+      "newOwner": "New primary owner",
+      "selectNewOwner": "Select the new primary owner...",
+      "noEligibleMembers": "No eligible internal members are available for ownership transfer.",
+      "formerOwnerRole": "Former owner role",
+      "selectFormerOwnerRole": "Select a role for the former owner...",
+      "confirmWord": "TRANSFER",
+      "confirmLabel": "Type {{word}} to confirm",
+      "success": "Organization ownership transferred successfully."
+    },
+    "confirmation": {
+      "title": "Are you sure you want to do this?",
+      "important": "This is extremely important.",
+      "warningStatus": "Changing this user's account status takes effect immediately and updates their system access.",
+      "verifyStatus": "To verify, type {{word}} exactly as it appears for {{user}}:",
+      "confirmAction": "Confirm & {{action}}",
+      "warningRemove": "Removing this membership revokes all of this user's roles in the organization immediately.",
+      "verifyRemove": "To verify, type {{word}} to remove {{user}} from {{organization}}:",
+      "confirmRemove": "Confirm & remove",
+      "words": {
+        "suspend": "suspend",
+        "deactivate": "deactivate",
+        "remove": "remove"
+      }
+    },
+    "messages": {
+      "updateFailed": "Failed to update user. Please try again.",
+      "removeFailed": "Failed to remove membership. Please try again.",
+      "removed": "User removed from organization successfully.",
+      "added": "User added to organization successfully.",
+      "rolesUpdated": "Membership roles updated successfully."
+    }
+  }
+}

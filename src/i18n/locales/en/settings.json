@@ -1,0 +1,134 @@
+{
+  "title": "Settings",
+  "subtitle": "Manage your organization configuration and account.",
+  "tabs": {
+    "organization": "Organization",
+    "appearance": "Appearance",
+    "language": "Language",
+    "security": "Security",
+    "notifications": "Notifications"
+  },
+  "language": {
+    "title": "Language",
+    "description": "Choose the language used across the interface. Your choice is saved to your profile.",
+    "label": "Display language",
+    "current": "Current language",
+    "saved": "Language preference saved.",
+    "saveError": "We couldn't save your language preference. It will still apply on this device."
+  },
+  "appearance": {
+    "title": "Appearance",
+    "description": "Choose how the interface should adapt to your display preferences.",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "lightSubtitle": "light interface",
+    "darkSubtitle": "dark interface",
+    "systemSubtitle": "use device setting",
+    "comingSoon": "Coming soon",
+    "soon": "Soon",
+    "useTheme": "Use"
+  },
+  "profile": {
+    "title": "Profile",
+    "displayName": "Display name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "save": "Save profile"
+  },
+  "mfa": {
+    "loading": "Loading MFA settings...",
+    "tryAgain": "Try again",
+    "error": {
+      "loadFailed": "Failed to load MFA status. Please try again.",
+      "enrollFailed": "Failed to start enrollment. Please try again.",
+      "invalidCode": "Invalid code. Please try again."
+    },
+    "step1": {
+      "title": "Step 1: Scan QR Code",
+      "description": "Scan this QR code with your authenticator app (Google Authenticator, Authy, etc.)",
+      "manualEntry": "Manual entry code",
+      "copySecret": "Copy secret",
+      "qrCodeAlt": "MFA QR Code"
+    },
+    "step2": {
+      "title": "Step 2: Verify Setup",
+      "description": "Enter the 6-digit code shown in your authenticator app to confirm setup."
+    },
+    "step3": {
+      "title": "Step 3: Save Recovery Codes",
+      "newTitle": "New Recovery Codes",
+      "warning": "Save these codes somewhere safe. You won't be able to see them again. Each code can only be used once."
+    },
+    "done": {
+      "title": "Two-Factor Authentication Enabled",
+      "description": "Your account is now protected with two-factor authentication.",
+      "recoveryCodesRemaining": "You have {{count}} recovery codes remaining.",
+      "backToSettings": "Back to MFA settings"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "next": "Next",
+      "back": "Back",
+      "verify": "Verify",
+      "verifying": "Verifying...",
+      "copyAll": "Copy All",
+      "copied": "Copied!",
+      "downloadAsText": "Download as Text",
+      "done": "Done",
+      "savedCodes": "I've saved my codes"
+    },
+    "disable": {
+      "title": "Confirm Disable 2FA",
+      "description": "Enter your 6-digit authenticator code to confirm disabling two-factor authentication.",
+      "button": "Disable 2FA",
+      "disabling": "Disabling..."
+    },
+    "regenerate": {
+      "title": "Regenerate Recovery Codes",
+      "description": "Enter your 6-digit authenticator code to generate new recovery codes. Your existing codes will be invalidated.",
+      "button": "Regenerate",
+      "regenerating": "Regenerating..."
+    },
+    "totp": {
+      "ariaLabel": "TOTP code",
+      "digit": "Digit {{count}}"
+    }
+  },
+  "security": {
+    "title": "Security",
+    "description": "Manage account password and two-factor authentication.",
+    "password": {
+      "title": "Password",
+      "description": "Update sign-in password"
+    },
+    "twoFactor": {
+      "title": "Two-Factor Authentication",
+      "enable": "Enable 2FA",
+      "disable": "Disable 2FA"
+    }
+  },
+  "password": {
+    "sheetTitle": "Update Password",
+    "title": "Password",
+    "description": "Keep your password strong and unique for this account.",
+    "currentPassword": "Current Password",
+    "currentPasswordPlaceholder": "Enter current password",
+    "newPassword": "New Password",
+    "newPasswordPlaceholder": "Create new password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter new password",
+    "passwordMismatch": "Passwords do not match.",
+    "hint": "You will use the new password next sign-in.",
+    "updating": "Updating...",
+    "updateButton": "Update Password",
+    "error": "Failed to update password. Please try again."
+  },
+  "recoveryCodes": {
+    "title": "Civorah MFA Recovery Codes",
+    "separator": "========================",
+    "saveHint": "Save these codes in a secure location.",
+    "onceHint": "Each code can only be used once."
+  }
+}

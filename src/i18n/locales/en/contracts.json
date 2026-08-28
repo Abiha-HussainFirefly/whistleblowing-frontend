@@ -1,0 +1,186 @@
+{
+  "contractTypes": {
+    "defaultNonStandard": "Default new contracts to Non-Standard classification"
+  },
+  "table": {
+    "columns": {
+      "contract": "Contract",
+      "counterparty": "Counterparty",
+      "type": "Type",
+      "value": "Value",
+      "expiry": "Expiry",
+      "owner": "Owner",
+      "status": "Status"
+    }
+  },
+  "repository": {
+    "newContract": "New Contract"
+  },
+  "lifecycle": {
+    "steps": {
+      "draft": "Draft",
+      "inReview": "In Review",
+      "pendingApproval": "Pending Approval",
+      "approved": "Approved",
+      "pendingExecution": "Pending Execution",
+      "executed": "Executed"
+    },
+    "next": {
+      "submit": "Next: submit for approval — a colleague with the Submit permission must submit it. The creator cannot submit their own contract.",
+      "approvals": "Next: approvals — assigned approvers decide in order. The creator cannot approve their own contract.",
+      "execute": "Next: execute — someone with the Execute permission can sign in Civorah, send via DocuSign, or record a manual execution.",
+      "signatures": "Next: finalize signatures — awaiting signers, then the contract is executed."
+    },
+    "terminal": {
+      "active": "This contract is active.",
+      "executed": "This contract is executed.",
+      "expired": "This contract has expired.",
+      "terminated": "This contract has been terminated.",
+      "renewed": "This contract has been renewed.",
+      "archived": "This contract is archived."
+    }
+  },
+  "obligations": {
+    "title": "Obligations & Renewals",
+    "addShort": "Obligation",
+    "empty": "No obligations tracked. Add renewal deadlines and key milestones to get automated alerts.",
+    "markOpen": "Mark as open",
+    "markComplete": "Mark as complete",
+    "due": "Due {{date}}",
+    "alerts": "Alerts: {{days}}d before",
+    "deleteAria": "Delete obligation",
+    "newTitle": "New Obligation",
+    "newSubtitle": "Track a renewal deadline, milestone, or recurring requirement",
+    "fieldTitle": "Title",
+    "titlePlaceholder": "e.g. Renewal notice deadline",
+    "scheduling": "Scheduling",
+    "dueDate": "Due Date",
+    "selectDate": "Select date",
+    "alertDaysBefore": "Alert Days Before",
+    "alertsPlaceholder": "180, 120, 90, 60, 30",
+    "commaSeparated": "Comma-separated days",
+    "description": "Description",
+    "descriptionPlaceholder": "Additional context about this obligation",
+    "descriptionHint": "Help the team understand what action is required and why",
+    "addObligation": "Add Obligation",
+    "added": "Added",
+    "confirmDeleteTitle": "Delete obligation?",
+    "confirmDeletePrefix": "Delete",
+    "confirmDeleteSuffix": "? This action cannot be undone.",
+    "toast": {
+      "added": "Obligation added",
+      "deleted": "Obligation deleted",
+      "markedComplete": "Obligation marked complete",
+      "reopened": "Obligation reopened"
+    }
+  },
+  "approvals": {
+    "ownerGate": {
+      "how": "The selected Contract Owner starts MoA with the Submit permission; the creator cannot own or start their own contract.",
+      "title": "Contract Owner approval",
+      "strictOrder": "The Contract Owner starts the flow. MoA steps are approved strictly in order.",
+      "starting": "Starting MoA...",
+      "startButton": "Approve & Start MoA",
+      "started": "MoA workflow started",
+      "creatorHint": "You created this contract, so you cannot be its owner or start MoA. The selected Contract Owner must review it.",
+      "onlyOwnerHint": "Only the selected Contract Owner can review this contract and start MoA.",
+      "ownerPermissionHint": "You are the Contract Owner. Your role also needs the Submit Contract permission to start MoA.",
+      "ownerCannotDecide": "You started this contract's MoA workflow as Contract Owner, so another assigned approver must decide this step."
+    },
+    "title": "Approval Workflow",
+    "how": {
+      "title": "How contract approval works",
+      "create": "Create and edit the draft using the Create/Edit permission.",
+      "submit": "Submit for approval is done by a different colleague with the Submit permission; the creator cannot submit their own contract.",
+      "chain": "On submit, the approval chain is generated automatically from MoA rules, or built manually if no rule matches.",
+      "approvers": "Approvers decide each step in order. The creator cannot approve their own contract.",
+      "execute": "Once approved, someone with Execute permission executes it in Civorah, via DocuSign, or by recording manual execution."
+    },
+    "submit": {
+      "title": "Submit for approval",
+      "checkingMoa": "Checking your MoA rules...",
+      "generatedOnSubmit": "The approval steps for this rule are generated when the contract is submitted.",
+      "legal": "Legal",
+      "anyApprover": "any approver",
+      "strictOrder": "Approved strictly in order; the creator cannot approve their own contract.",
+      "submitting": "Submitting...",
+      "submitButton": "Submit for Approval",
+      "step": "Step",
+      "stepPlaceholder": "e.g. General Manager Approval",
+      "approver": "Approver *",
+      "removeStep": "Remove step",
+      "addStep": "Add step",
+      "progression": "Progression is non-bypassable. Earlier steps must be decided first."
+    }
+  },
+  "statusManagedByWorkflow": "Status changes through permitted approval, execution, renewal, termination, or archive actions.",
+  "workflowUi": {
+    "rolesAnyHolderApproves": "Roles (any eligible holder approves)",
+    "roleOption": "{{role}} — {{count}} member(s)",
+    "anyEligibleHolder": "any eligible holder",
+    "roleLabel": "Role",
+    "action": {
+      "approve": "Approval",
+      "review_legal": "Legal Review",
+      "execute": "Execution",
+      "review": "Review"
+    },
+    "decisionCommentPlaceholder": "Decision comment (required for rejection or escalation)…",
+    "escalate": "Escalate",
+    "escalateHint": "Use only if you cannot decide this step (wrong assignee, conflict of interest, or unavailable approver). A Contract Manager will reassign the step.",
+    "reassignApprover": "Reassign approver",
+    "reassign": "Reassign"
+  },
+  "actions": {
+    "renew": "Renew",
+    "archive": "Archive",
+    "renewed": "Contract renewed",
+    "archived": "Contract archived",
+    "renewConfirmTitle": "Renew contract?",
+    "renewConfirmDescription": "The contract will be marked renewed as of today.",
+    "archiveConfirmTitle": "Archive contract?",
+    "archiveConfirmDescription": "The contract will become a read-only historical record.",
+    "deleteConfirmTitle": "Delete contract?",
+    "deleteConfirmDescription": "This contract will be soft-deleted (retained for audit) and hidden from the repository. This action cannot be undone."
+  },
+  "moa": {
+    "assignmentType": "Assign step to",
+    "specificUser": "Specific user",
+    "rolePool": "Role (all eligible members)",
+    "approver": "Approver",
+    "selectUser": "Select an eligible user…",
+    "selectRole": "Select an eligible role…",
+    "roleOption": "{{role}} — {{count}} member(s)",
+    "markLegalReviewStep": "Mark as legal review step",
+    "markExecutionStep": "Mark as execution step",
+    "validation": {
+      "ruleNameRequired": "Rule name is required.",
+      "atLeastOneStep": "Add at least one approval step.",
+      "missingApprover": "Every step must be assigned to exactly one user or one role.",
+      "exclusiveStepType": "A step cannot be both Legal Review and Execution.",
+      "singleExecutionStep": "A rule may contain only one Execution step.",
+      "missingLegalReview": "A non-standard contract rule must contain a Legal Review step."
+    }
+  },
+  "assignment": {
+    "owner": "Contract Owner",
+    "legalCounsel": "Legal Counsel",
+    "selectOwner": "Select contract owner",
+    "none": "None"
+  },
+  "documents": {
+    "title": "Documents",
+    "upload": "Upload",
+    "empty": "No documents attached. Upload drafts, executed agreements, and amendments - they're OCR-processed and made searchable automatically.",
+    "ocr": {
+      "searchable": "Searchable",
+      "processing": "Processing OCR",
+      "failed": "OCR failed"
+    },
+    "actions": {
+      "edit": "Edit",
+      "history": "History",
+      "open": "Open"
+    }
+  }
+}

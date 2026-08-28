@@ -1,0 +1,1751 @@
+﻿{
+    "app":  {
+                "name":  "Civorah",
+                "tagline":  "Legal Operations Platform"
+            },
+    "sessionRestoration":  {
+                               "title":  "Session restoration needs attention",
+                               "description":  "We could not safely confirm whether your session was refreshed. To protect your account, we did not try again automatically.",
+                               "signInAgain":  "Sign in again"
+                           },
+    "actions":  {
+                    "save":  "Save",
+                    "saveChanges":  "Save Changes",
+                    "cancel":  "Cancel",
+                    "delete":  "Delete",
+                    "edit":  "Edit",
+                    "close":  "Close",
+                    "confirm":  "Confirm",
+                    "create":  "Create",
+                    "add":  "Add",
+                    "remove":  "Remove",
+                    "search":  "Search",
+                    "upload":  "Upload",
+                    "download":  "Download",
+                    "open":  "Open",
+                    "back":  "Back",
+                    "next":  "Next",
+                    "retry":  "Try again",
+                    "signIn":  "Sign in",
+                    "signOut":  "Sign out",
+                    "takeTour":  "Take a tour"
+                },
+    "documentViewer":  {
+                           "fallbackTitle":  "Document preview",
+                           "loading":  "Loading document...",
+                           "rendering":  "Rendering",
+                           "error":  "Could not load document.",
+                           "previousPage":  "Previous page",
+                           "nextPage":  "Next page",
+                           "zoomIn":  "Zoom in",
+                           "zoomOut":  "Zoom out",
+                           "rotateLeft":  "Rotate left",
+                           "rotateRight":  "Rotate right",
+                           "fitView":  "Fit view",
+                           "close":  "Close",
+                           "previewUnavailable":  "Preview is not available",
+                           "previewUnavailableBody":  "This file type cannot be previewed in the browser viewer. Download it to view it in the correct application.",
+                           "downloadFile":  "Download file",
+                           "noWorksheets":  "No worksheets found.",
+                           "worksheetLoadFailed":  "Worksheet could not be loaded."
+                       },
+    "header":  {
+                   "searchPlaceholder":  "Search cases, contracts, documents..."
+               },
+    "shell":  {
+                  "adminBadge":  "Admin",
+                  "tenantBadge":  "Tenant",
+                  "closeMenu":  "Close menu",
+                  "openMenu":  "Open menu",
+                  "toggleMenu":  "Toggle menu",
+                  "toggleSidebar":  "Toggle sidebar",
+                  "systemConsole":  "System Console",
+                  "organizationFallback":  "Organization",
+                  "organizationPortal":  "{{organization}} Portal",
+                  "reportConcern":  "Report a concern",
+                  "reportConcernTitle":  "Report a concern (confidential)"
+              },
+    "regionSwitcher":  {
+                           "platformWide":  "Platform-wide",
+                           "platformWideDescription":  "System administrators operate across every organization and region.",
+                           "allRegions":  "All Regions",
+                           "allRegionsDescription":  "See every region in this organization",
+                           "myRegionsDescription":  "Your accessible region scope ({{count}})",
+                           "organizationRegions":  "Organization regions",
+                           "myRegions":  "My regions",
+                           "switchFailed":  "Unable to switch region. Please try again.",
+                           "more":  "+{{count}} more"
+                       },
+    "adminNav":  {
+                     "dashboard":  "Dashboard",
+                     "permissions":  "Permissions",
+                     "roles":  "Roles",
+                     "organizations":  "Organizations",
+                     "plans":  "Plans",
+                     "configPacks":  "Config Packs",
+                     "capabilities":  "Capabilities",
+                     "workspaces":  "Workspaces",
+                     "users":  "Users",
+                     "settings":  "Settings"
+                 },
+    "orgNav":  {
+                   "workspaces":  "Workspaces",
+                   "groups":  {
+                                  "workspace":  "Workspace",
+                                  "insights":  "Insights",
+                                  "organization":  "Organization",
+                                  "administration":  "Administration",
+                                  "help":  "Help"
+                              },
+                   "accessibility":  {
+                                         "toggleGroup":  "Toggle {{group}} navigation"
+                                     },
+                   "dashboard":  "Dashboard",
+                   "members":  "Members",
+                   "contracts":  "Contracts",
+                   "litigation":  "Matters",
+                   "compliance":  "Compliance",
+                   "land":  "Assets",
+                   "whistleblowing":  "Whistleblowing",
+                   "reporting":  "Reporting",
+                   "externalCounsel":  "External Counsel",
+                   "roles":  "Roles",
+                   "departments":  "Departments",
+                   "regions":  "Regions",
+                   "planLimits":  "Plan \u0026 Limits",
+                   "integrations":  "Integrations",
+                   "helpConcepts":  "Help \u0026 Concepts",
+                   "settings":  "Settings"
+               },
+    "nav":  {
+                "dashboard":  "Dashboard"
+            },
+    "dashboard":  {
+                      "welcome":  "Welcome{{name}}",
+                      "subtitle":  "Your legal operations hub - manage contracts, matters, compliance, and more.",
+                      "viewingDataFor":  "Viewing data for:",
+                      "allRegions":  "All Regions",
+                      "allMyRegions":  "All My Regions ({{count}})",
+                      "pendingTasks":  "Pending Tasks",
+                      "upcomingHearings":  "Upcoming Hearings",
+                      "contractsExpiring":  "Contracts Expiring",
+                      "aiAssistant":  "AI Assistant",
+                      "ready":  "Ready",
+                      "locked":  "Locked",
+                      "modules":  "Modules",
+                      "loadingModules":  "Loading your modules...",
+                      "home":  {
+                                   "overview":  "Overview",
+                                   "recentActivity":  "Recent Activity",
+                                   "exploreModules":  "Explore Modules",
+                                   "open":  "Open",
+                                   "unavailable":  "Data unavailable right now.",
+                                   "noData":  "No data yet.",
+                                   "noActivity":  "You\u0027re all caught up â€” no recent activity.",
+                                   "byStatus":  "By status",
+                                   "byRisk":  "By risk tier",
+                                   "contracts":  {
+                                                     "total":  "Total",
+                                                     "inFlight":  "In flight",
+                                                     "expiring":  "Expiring",
+                                                     "value":  "Value"
+                                                 },
+                                   "litigation":  {
+                                                      "total":  "Total",
+                                                      "open":  "Open",
+                                                      "hearings":  "Hearings",
+                                                      "exposure":  "Exposure"
+                                                  },
+                                   "whistleblowing":  {
+                                                          "total":  "Total",
+                                                          "open":  "Open",
+                                                          "investigating":  "Investigating",
+                                                          "atRisk":  "SLA at risk"
+                                                      },
+                                   "compliance":  {
+                                                      "total":  "Parties",
+                                                      "pending":  "Pending review",
+                                                      "hits":  "Open hits",
+                                                      "renewals":  "Renewals due"
+                                                  }
+                               }
+                  },
+    "modules":  {
+                    "contracts":  {
+                                      "label":  "Contracts",
+                                      "description":  "Manage contract lifecycle from draft to execution"
+                                  },
+                    "litigation":  {
+                                       "label":  "Matters",
+                                       "description":  "Track cases, hearings, and external counsel"
+                                   },
+                    "secretarial":  {
+                                        "label":  "Secretarial",
+                                        "description":  "Board records and compliance calendar"
+                                    },
+                    "compliance":  {
+                                       "label":  "Compliance",
+                                       "description":  "Third-party due diligence and screening"
+                                   },
+                    "land":  {
+                                 "label":  "Assets",
+                                 "description":  "Organization asset register, documents, custody, and risk tracking"
+                             },
+                    "whistleblowing":  {
+                                           "label":  "Whistleblowing",
+                                           "description":  "Confidential incident reporting and investigation"
+                                       },
+                    "reporting":  {
+                                      "label":  "Reporting",
+                                      "description":  "Cross-module analytics, filters, and exports"
+                                  },
+                    "ai_assistant":  {
+                                         "label":  "AI Assistant",
+                                         "description":  "Natural-language search across all legal data"
+                                     },
+                    "external_access":  {
+                                            "label":  "External Counsel",
+                                            "description":  "View outside counsel engaged in your region"
+                                        }
+                },
+    "land":  {
+                 "title":  "Assets",
+                 "subtitle":  "Organization-wide asset register for land, fleet, equipment, IT, IP, financial, and other assets.",
+                 "regionScope":  {
+                                     "label":  "Region scope",
+                                     "allAssigned":  "All assigned regions ({{count}})",
+                                     "placeholder":  "Select region scope",
+                                     "search":  "Search assigned regions...",
+                                     "hint":  "The asset can only be linked to matters from the selected region scope.",
+                                     "noneAssigned":  "No active regions are assigned to your account."
+                                 },
+                 "actions":  {
+                                 "newAsset":  "New Asset",
+                                 "create":  "Create Asset",
+                                 "createAndUpload":  "Create \u0026 Upload",
+                                 "backToRepository":  "Back to Repository",
+                                 "scanTag":  "Scan Tag",
+                                 "linkCase":  "Link Case",
+                                 "unlinkCase":  "Unlink Case"
+                             },
+                 "steps":  {
+                               "document":  "Document",
+                               "assetProfile":  "Asset Profile",
+                               "revenueIndex":  "Revenue Index",
+                               "rightsLocation":  "Rights \u0026 Location",
+                               "custodyValue":  "Custody \u0026 Value",
+                               "riskDocument":  "Risk \u0026 Document",
+                               "encumbranceDocument":  "Encumbrance \u0026 Document"
+                           },
+                 "documentTypes":  {
+                                       "mapDrawing":  "Map / Drawing",
+                                       "saleDeed":  "Sale Deed (Registry)",
+                                       "fard":  "Fard",
+                                       "mutation":  "Mutation (Inteqal)",
+                                       "leaseDeed":  "Lease Deed",
+                                       "revenueRecord":  "Revenue Record",
+                                       "other":  "Other"
+                                   },
+                 "areaUnits":  {
+                                   "acre":  "Acre",
+                                   "kanal":  "Kanal",
+                                   "marla":  "Marla",
+                                   "squareFeet":  "Square Feet",
+                                   "squareYard":  "Square Yard",
+                                   "squareMeter":  "Square Meter",
+                                   "hectare":  "Hectare",
+                                   "bigha":  "Bigha",
+                                   "killa":  "Killa",
+                                   "murabba":  "Murabba",
+                                   "guntha":  "Guntha"
+                               },
+                 "stats":  {
+                               "total":  "Total Assets",
+                               "encumbered":  "Encumbered",
+                               "documented":  "Documented",
+                               "linkedLitigation":  "Linked Matters",
+                               "linkedMatters":  "Linked Matters"
+                           },
+                 "charts":  {
+                                "portfolioMix":  {
+                                                     "title":  "Asset portfolio mix",
+                                                     "description":  "Distribution by asset class across the register."
+                                                 },
+                                "lifecycleStatus":  {
+                                                        "title":  "Lifecycle status",
+                                                        "description":  "Operational state of assets for maintenance and governance follow-up."
+                                                    },
+                                "assetGrowth":  {
+                                                    "title":  "Asset onboarding trend",
+                                                    "description":  "Assets recorded and registered portfolio total over the last six calendar months.",
+                                                    "added":  "Assets added",
+                                                    "total":  "Registered assets"
+                                                },
+                                "documentationCoverage":  {
+                                                              "title":  "Documentation coverage",
+                                                              "description":  "Share of registered assets with at least one document."
+                                                          },
+                                "governanceExposure":  {
+                                                           "title":  "Governance exposure",
+                                                           "description":  "Assets linked to matters or marked as encumbered."
+                                                       },
+                                "documentationRisk":  {
+                                                          "title":  "Documentation and risk posture",
+                                                          "description":  "Document coverage, encumbrance, and matter exposure indicators."
+                                                      },
+                                "custodyByDepartment":  {
+                                                            "title":  "Custody by department",
+                                                            "description":  "Top departments accountable for recorded assets."
+                                                        },
+                                "departmentNames":  {
+                                                        "legal":  "Legal",
+                                                        "operations":  "Operations",
+                                                        "finance":  "Finance",
+                                                        "itOperations":  "IT Operations",
+                                                        "legalOperations":  "Legal Operations",
+                                                        "litigationSupport":  "Litigation Support",
+                                                        "administration":  "Administration",
+                                                        "facilities":  "Facilities",
+                                                        "treasury":  "Treasury",
+                                                        "assetControl":  "Asset Control",
+                                                        "infrastructureTeam":  "Infrastructure Team",
+                                                        "applicationOwner":  "Application Owner",
+                                                        "ipCounsel":  "IP Counsel",
+                                                        "courtServices":  "Court Services"
+                                                    },
+                                "assetsByLocation":  {
+                                                         "title":  "Assets by location",
+                                                         "description":  "Top recorded locations for asset concentration."
+                                                     },
+                                "documentedAssets":  "Documented assets",
+                                "missingDocuments":  "Missing documents",
+                                "linkedMatters":  "Linked to matters",
+                                "encumberedAssets":  "Encumbered assets"
+                            },
+                 "filters":  {
+                                 "search":  "Search title, type, identifier, custodian, serial, district...",
+                                 "district":  "District",
+                                 "allStatuses":  "All Risk Statuses",
+                                 "allAssetTypes":  "All Asset Types",
+                                 "allAssetStatuses":  "All Asset Statuses"
+                             },
+                 "placeholders":  {
+                                      "title":  "e.g. Depot Plot - Korangi Industrial Area",
+                                      "assetType":  "Select asset type",
+                                      "searchAssetTypes":  "Search asset types...",
+                                      "assetStatus":  "Select status",
+                                      "searchAssetStatuses":  "Search statuses...",
+                                      "verificationStatus":  "Select status",
+                                      "searchVerificationStatuses":  "Search statuses...",
+                                      "selectDate":  "Select date",
+                                      "searchUnits":  "Search units...",
+                                      "documentType":  "Select document type",
+                                      "searchDocumentTypes":  "Search document types...",
+                                      "assetIdentifier":  "e.g. AST-2026-0042",
+                                      "assetSubtype":  "e.g. {{type}} category, class, or subtype",
+                                      "district":  "e.g. Karachi East",
+                                      "tehsil":  "e.g. Korangi",
+                                      "mauza":  "e.g. Deh Mehran",
+                                      "khewat":  "e.g. 145",
+                                      "khatuni":  "e.g. 389",
+                                      "khasra":  "e.g. 22/3",
+                                      "areaSize":  "e.g. 2.5",
+                                      "areaUnit":  "Select area unit",
+                                      "latitude":  "e.g. 24.8607",
+                                      "longitude":  "e.g. 67.0011",
+                                      "ownership":  "e.g. Owned, leased, easement, right of way",
+                                      "locationName":  "e.g. HQ floor 4, depot yard, warehouse B",
+                                      "manufacturer":  "e.g. Dell, Toyota, Siemens",
+                                      "model":  "e.g. Latitude 7450, Hilux, S7-1200",
+                                      "serialNumber":  "e.g. SN-9K22-1145",
+                                      "custodianName":  "e.g. Operations, IT, Finance, or employee name",
+                                      "department":  "e.g. Legal, IT, Operations",
+                                      "currentValue":  "e.g. 250000",
+                                      "currency":  "USD",
+                                      "description":  "Add useful context: business use, custody, condition, legal references, or possession notes.",
+                                      "encumbranceNote":  "Describe dispute, charge, lien, stay order, right-of-way issue, or other encumbrance."
+                                  },
+                 "table":  {
+                               "asset":  "Asset",
+                               "revenueIndex":  "Revenue Index",
+                               "locationIdentifier":  "Location / Identifier",
+                               "records":  "Records",
+                               "status":  "Status",
+                               "updated":  "Updated",
+                               "actions":  "Actions",
+                               "recordCounts":  "{{documents}} docs / {{cases}} cases"
+                           },
+                 "fields":  {
+                                "title":  "Asset Title",
+                                "assetIdentifier":  "Asset ID / Tag",
+                                "assetType":  "Asset Type",
+                                "assetSubtype":  "Subtype / Class",
+                                "assetStatus":  "Asset Status",
+                                "district":  "District",
+                                "tehsil":  "Tehsil",
+                                "mauza":  "Mauza",
+                                "khewat":  "Khewat",
+                                "khatuni":  "Khatuni",
+                                "khasra":  "Khasra",
+                                "area":  "Area",
+                                "areaSize":  "Area Size",
+                                "areaUnit":  "Area Unit",
+                                "latitude":  "Latitude",
+                                "longitude":  "Longitude",
+                                "ownership":  "Ownership Type",
+                                "acquisitionDate":  "Acquisition Date",
+                                "purchaseDate":  "Purchase Date",
+                                "purchaseCost":  "Purchase Cost",
+                                "currentValue":  "Current Value",
+                                "currency":  "Currency",
+                                "warrantyExpiryDate":  "Warranty / Renewal Expiry",
+                                "usefulLifeMonths":  "Useful Life (months)",
+                                "custodianName":  "Custodian",
+                                "department":  "Department",
+                                "locationName":  "Location",
+                                "manufacturer":  "Manufacturer / Issuer",
+                                "model":  "Model / Version",
+                                "serialNumber":  "Serial / Registration No.",
+                                "description":  "Description",
+                                "documentType":  "Document Type",
+                                "encumbered":  "Encumbered",
+                                "encumbranceNote":  "Encumbrance Note"
+                            },
+                 "documentMetadata":  {
+                                          "label":  "Document Label",
+                                          "reference":  "Reference",
+                                          "instrumentNumber":  "Instrument Number",
+                                          "registryNumber":  "Registry Number",
+                                          "fardNumber":  "Fard Number",
+                                          "mutationNumber":  "Mutation Number",
+                                          "leaseNumber":  "Lease Number",
+                                          "issuingAuthority":  "Issuing Authority",
+                                          "documentDate":  "Document Date",
+                                          "effectiveFrom":  "Effective From",
+                                          "effectiveTo":  "Effective To",
+                                          "rightsType":  "Rights Type",
+                                          "rightHolder":  "Right Holder / Owner",
+                                          "shareDescription":  "Share / Interest",
+                                          "surveySheetNumber":  "Survey Sheet Number",
+                                          "mapScale":  "Map Scale",
+                                          "mapProjection":  "Map Projection / CRS",
+                                          "boundaryDescription":  "Boundary Description",
+                                          "verificationStatus":  "Verification Status",
+                                          "verificationNotes":  "Verification Notes"
+                                      },
+                 "documentPlaceholders":  {
+                                              "label":  "e.g. Registry deed, certified fard, or survey map",
+                                              "instrumentNumber":  "e.g. 2024-REG-1145",
+                                              "issuingAuthority":  "e.g. Sub-Registrar Karachi East",
+                                              "registryNumber":  "e.g. Book I / 245",
+                                              "fardNumber":  "e.g. Fard-3921",
+                                              "mutationNumber":  "e.g. Inteqal 8802",
+                                              "leaseNumber":  "e.g. Lease-17/2021",
+                                              "rightsType":  "e.g. Ownership, lease, right of way",
+                                              "rightHolder":  "e.g. Civorah",
+                                              "shareDescription":  "e.g. 100% ownership or 1/2 share",
+                                              "surveySheetNumber":  "e.g. Sheet 42-B",
+                                              "mapScale":  "e.g. 1:500",
+                                              "mapProjection":  "e.g. WGS84 / local CRS",
+                                              "boundaryDescription":  "Describe north, south, east, and west boundaries.",
+                                              "verificationNotes":  "Add reviewer notes, defects, expiry, or legal observations."
+                                          },
+                 "verification":  {
+                                      "UNVERIFIED":  "Unverified",
+                                      "UNDER_REVIEW":  "Under Review",
+                                      "VERIFIED":  "Verified",
+                                      "REJECTED":  "Rejected",
+                                      "EXPIRED":  "Expired"
+                                  },
+                 "assetTypes":  {
+                                    "LAND_PROPERTY":  "Land \u0026 property",
+                                    "VEHICLE":  "Vehicle",
+                                    "EQUIPMENT":  "Plant \u0026 equipment",
+                                    "IT_HARDWARE":  "IT hardware",
+                                    "SOFTWARE_LICENSE":  "Software license",
+                                    "FURNITURE_FIXTURE":  "Furniture \u0026 fixture",
+                                    "INTELLECTUAL_PROPERTY":  "Intellectual property",
+                                    "FINANCIAL_ASSET":  "Financial asset",
+                                    "OTHER":  "Other asset"
+                                },
+                 "assetTypeDescriptions":  {
+                                               "LAND_PROPERTY":  "Plots, offices, depots, leases, easements, and real-estate rights.",
+                                               "VEHICLE":  "Fleet, company cars, trucks, and trailers.",
+                                               "EQUIPMENT":  "Operational machinery, tools, meters, generators, and field equipment.",
+                                               "IT_HARDWARE":  "Laptops, servers, network devices, phones, and endpoints.",
+                                               "SOFTWARE_LICENSE":  "SaaS subscriptions, perpetual licenses, and digital entitlements.",
+                                               "FURNITURE_FIXTURE":  "Office furniture, fit-outs, fixtures, and facilities assets.",
+                                               "INTELLECTUAL_PROPERTY":  "Trademarks, patents, copyrights, and brand assets.",
+                                               "FINANCIAL_ASSET":  "Deposits, securities, instruments, guarantees, and investments.",
+                                               "OTHER":  "Any asset that does not fit a standard class."
+                                           },
+                 "assetStatuses":  {
+                                       "ACTIVE":  "Active",
+                                       "IN_USE":  "In use",
+                                       "IN_STORAGE":  "In storage",
+                                       "MAINTENANCE":  "Maintenance",
+                                       "UNDER_REVIEW":  "Under review",
+                                       "RETIRED":  "Retired",
+                                       "DISPOSED":  "Disposed",
+                                       "LOST":  "Lost"
+                                   },
+                 "form":  {
+                              "createTitle":  "Create Asset",
+                              "editTitle":  "Edit Asset",
+                              "documentMetadataTitle":  "Document Metadata",
+                              "createDescription":  "Register the asset profile, custody, value, legal status, and optional first document."
+                          },
+                 "status":  {
+                                "encumbered":  "Encumbered",
+                                "clear":  "Clear",
+                                "documents":  "{{count}} Documents",
+                                "linkedCases":  "{{count}} Linked Cases"
+                            },
+                 "tabs":  {
+                              "overview":  "Overview",
+                              "documents":  "Documents",
+                              "litigation":  "Matters",
+                              "assetList":  "Asset list",
+                              "graphs":  "Graphs"
+                          },
+                 "sections":  {
+                                  "location":  "Location",
+                                  "geospatial":  "Geospatial Reference",
+                                  "encumbrance":  "Encumbrance",
+                                  "documentMetadata":  "Land Rights Metadata",
+                                  "documentRights":  "Document Rights Metadata",
+                                  "custodian":  "Record Custodian",
+                                  "recordOwner":  "Record Owner",
+                                  "documents":  "Documents",
+                                  "litigation":  "Linked Matters"
+                              },
+                 "empty":  {
+                               "assets":  "No assets found.",
+                               "select":  "Select an asset.",
+                               "coordinates":  "No coordinates recorded.",
+                               "documents":  "No documents attached.",
+                               "litigation":  "No matters linked.",
+                               "assetDetail":  "Asset not found or you do not have access."
+                           },
+                 "documents":  {
+                                   "supportedImages":  "PDF, Office files, scans, TIFF, JPEG, and PNG files are stored as secured asset records."
+                               },
+                 "litigation":  {
+                                    "linkHelp":  "Connect disputes, stay orders, possession claims, or encumbrance matters to this asset.",
+                                    "searchPlaceholder":  "Search all matter metadata...",
+                                    "selectCase":  "Select matter",
+                                    "linkedToAnotherAsset":  "linked to another asset",
+                                    "linkedToAsset":  "Already linked to {{asset}}",
+                                    "linkedTitle":  "Linked matters",
+                                    "searchResults":  "Linkable matters",
+                                    "searchPrompt":  "Enter at least 2 characters to search linkable matters by metadata, parties, hearings, fees, notes, documents, counsel, department, or court details.",
+                                    "noMatches":  "No linkable matters match this search."
+                                },
+                 "toast":  {
+                               "created":  "Asset created.",
+                               "updated":  "Asset updated.",
+                               "saveFailed":  "Could not save asset.",
+                               "uploaded":  "Document uploaded.",
+                               "uploadFailed":  "Could not upload document.",
+                               "downloadFailed":  "Could not open document.",
+                               "metadataUpdated":  "Document metadata updated.",
+                               "metadataFailed":  "Could not update document metadata.",
+                               "litigationLinked":  "Matter linked.",
+                               "litigationUnlinked":  "Matter unlinked.",
+                               "litigationLinkFailed":  "Could not link matter.",
+                               "litigationUnlinkFailed":  "Could not unlink matter.",
+                               "deleted":  "Asset deleted.",
+                               "deleteFailed":  "Could not delete asset."
+                           },
+                 "delete":  {
+                                "title":  "Delete asset?",
+                                "description":  "Are you sure you want to delete {{title}}? The asset will be hidden from the repository and retained for audit.",
+                                "confirm":  "Delete asset"
+                            },
+                 "upload":  {
+                                "chooseFile":  "Choose file",
+                                "help":  "Choose the asset type first. The form adapts for land, fleet, equipment, IT, software, IP, financial, or other asset records.",
+                                "fileAttached":  "will be attached as the first secured asset document.",
+                                "noFile":  "No document attached - the asset will be created on its own. You can upload supporting documents from the asset panel anytime.",
+                                "dropOrBrowse":  "Drag \u0026 drop an asset document, or",
+                                "browse":  "browse",
+                                "acceptedTypes":  "PDF, Office files, scans, TIFF/JPEG/PNG up to {{size}}",
+                                "optionalDocument":  "Document upload is optional here. If you attach a deed, invoice, registration, license, certificate, or policy now, it will be secured and linked as the asset\u0027s first document.",
+                                "fileTooLarge":  "File is too large. Maximum size is"
+                            },
+                 "viewer":  {
+                                "title":  "View {{title}}",
+                                "open":  "Open viewer",
+                                "loading":  "Loading secure document...",
+                                "rendering":  "Rendering...",
+                                "error":  "Could not open this document.",
+                                "unknownType":  "Unknown file type",
+                                "previousPage":  "Previous page",
+                                "nextPage":  "Next page",
+                                "zoomIn":  "Zoom in",
+                                "zoomOut":  "Zoom out",
+                                "rotateLeft":  "Rotate left",
+                                "rotateRight":  "Rotate right",
+                                "reset":  "Fit view",
+                                "unsupportedTitle":  "Preview is not available for this file type",
+                                "unsupportedBody":  "Download the original secured file. TIFF/GeoTIFF and Office previews need a server-side derivative pipeline before they can be rendered inline."
+                            },
+                 "compactNumbers":  "Khewat {{khewat}} / Khatuni {{khatuni}} / Khasra {{khasra}}",
+                 "view":  {
+                              "grid":  "Grid view",
+                              "list":  "List view"
+                          }
+             },
+    "contracts":  {
+                      "title":  "Contracts",
+                      "subtitle":  "Manage the contract lifecycle - draft, review, approval, execution, and renewal.",
+                      "viewingDataFor":  "Viewing data for:",
+                      "nav":  {
+                                  "overview":  "Overview",
+                                  "repository":  "Repository",
+                                  "renewals":  "Renewals",
+                                  "types":  "Contract Types",
+                                  "moaRules":  "MoA Rules"
+                              }
+                  },
+    "auth":  {
+                 "brand":  {
+                               "title":  "Legal Digitization Platform",
+                               "subtitle":  "Centralized legal records management, contract lifecycle, matters tracking, and compliance - powered by AI.",
+                               "features":  {
+                                                "contracts":  "Contract",
+                                                "litigation":  "Matters",
+                                                "matters":  "Matters",
+                                                "compliance":  "Compliance",
+                                                "aiSearch":  "AI Search"
+                                            },
+                               "copyright":  "Â© {{year}} Civorah. All rights reserved."
+                           }
+             },
+    "states":  {
+                   "loading":  "Loading...",
+                   "saving":  "Saving...",
+                   "noData":  "No data yet.",
+                   "none":  "None"
+               },
+    "menu":  {
+                 "profile":  "Profile",
+                 "language":  "Language",
+                 "settings":  "Settings"
+             },
+    "theme":  {
+                  "appearance":  "Appearance",
+                  "light":  "Light",
+                  "dark":  "Dark",
+                  "system":  "System",
+                  "useTheme":  "Use {{theme}} theme",
+                  "comingSoon":  "Coming soon",
+                  "soon":  "Soon",
+                  "comingSoonAria":  "{{theme}} theme â€” coming soon"
+              },
+    "errors":  {
+                   "generic":  "Something went wrong. Please try again.",
+                   "network":  "Could not reach the server. Check your connection and try again.",
+                   "timeout":  "The request timed out. Check your connection and try again.",
+                   "badResponse":  "Unexpected response from the server. Please try again or contact support.",
+                   "status":  {
+                                  "400":  "Some of the information looks incorrect. Please review the form and try again.",
+                                  "401":  "Your session has expired. Please sign in again.",
+                                  "403":  "You don\u0027t have permission to perform this action.",
+                                  "404":  "We couldn\u0027t find what you were looking for.",
+                                  "409":  "That conflicts with the current state. Please refresh and try again.",
+                                  "422":  "Some of the information looks incorrect. Please review the form and try again.",
+                                  "429":  "Too many requests. Please wait a moment and try again.",
+                                  "500":  "The server is temporarily unavailable. Please try again shortly."
+                              }
+               },
+    "toast":  {
+                  "title":  {
+                                "success":  "Success",
+                                "error":  "Error",
+                                "info":  "Info",
+                                "warning":  "Warning",
+                                "loading":  "Loading"
+                            }
+              },
+    "accessDenied":  {
+                         "title":  "Access denied",
+                         "body":  "You don\u0027t have permission to view this module. If you believe this is a mistake, contact your organization administrator to request access.",
+                         "back":  "Back to dashboard"
+                     },
+    "help":  {
+                 "label":  "Help",
+                 "title":  "Help \u0026 concepts"
+             },
+    "confirm":  {
+                    "deactivateRegion":  "Are you sure you want to deactivate this region?"
+                },
+    "notFound":  {
+                     "title":  "Page not found",
+                     "body":  "The page you\u0027re looking for doesn\u0027t exist or may have moved.",
+                     "home":  "Go to dashboard"
+                 },
+    "boundary":  {
+                     "title":  "Something went wrong",
+                     "body":  "An unexpected error occurred. Try reloading the page.",
+                     "reload":  "Reload page"
+                 },
+    "profile":  {
+                    "title":  "Profile",
+                    "subtitle":  "Your account identity and access details.",
+                    "guest":  "Guest",
+                    "notSignedIn":  "Not signed in",
+                    "email":  "Email",
+                    "notAvailable":  "Not available",
+                    "accountStatus":  "Account Status",
+                    "status":  {
+                                   "PENDING_VERIFICATION":  "Pending verification",
+                                   "ACTIVE":  "Active",
+                                   "SUSPENDED":  "Suspended",
+                                   "LOCKED":  "Locked",
+                                   "DEACTIVATED":  "Deactivated",
+                                   "unknown":  "Unknown"
+                               }
+                },
+    "sessions":  {
+                     "title":  "Active Sessions",
+                     "subtitle":  "Devices currently signed in to your account.",
+                     "signOutOthers":  "Sign out other sessions",
+                     "thisDevice":  "This device",
+                     "activeNow":  "Active now",
+                     "revoke":  "Revoke",
+                     "unknownDevice":  "Unknown device",
+                     "deviceOn":  "{{browser}} on {{os}}",
+                     "lastActive":  "Last active {{time}}",
+                     "signedIn":  "Signed in {{time}}",
+                     "loading":  "Loading sessionsâ€¦",
+                     "empty":  "No active sessions.",
+                     "loadError":  "Could not load your sessions.",
+                     "revokeError":  "Could not revoke that session.",
+                     "revokeOthersError":  "Could not sign out other sessions."
+                 },
+    "orgAdminAssets":  {
+                           "title":  "Assets Oversight",
+                           "subtitle":  "Organization-wide visibility into fixed assets, property, custody, documents, value, and risk.",
+                           "tabs":  {
+                                        "overview":  "Overview",
+                                        "register":  "Asset Register"
+                                    },
+                           "loading":  {
+                                           "overview":  "Loading assets overview...",
+                                           "assets":  "Loading assets..."
+                                       },
+                           "kpis":  {
+                                        "registered":  "Registered assets"
+                                    },
+                           "charts":  {
+                                          "location":  "Assets by Location",
+                                          "quality":  "Portfolio Quality"
+                                      },
+                           "register":  {
+                                            "title":  "Asset Register",
+                                            "subtitle":  "Read-only tenant view of all accessible assets with custody, valuation, documents, and risk."
+                                        },
+                           "filters":  {
+                                           "search":  "Search asset, tag, serial, location, district...",
+                                           "allStatuses":  "All statuses",
+                                           "allRegions":  "All my regions"
+                                       },
+                           "view":  {
+                                        "cards":  "Card view",
+                                        "table":  "Table view"
+                                    },
+                           "status":  {
+                                          "clear":  "Clear",
+                                          "encumbered":  "Encumbered"
+                                      },
+                           "table":  {
+                                         "asset":  "Asset",
+                                         "typeStatus":  "Type / Status",
+                                         "identifier":  "Identifier",
+                                         "locationCustody":  "Location / Custody",
+                                         "value":  "Value",
+                                         "records":  "Records",
+                                         "status":  "Status",
+                                         "updated":  "Updated",
+                                         "cost":  "Cost"
+                                     },
+                           "empty":  {
+                                         "assets":  "No assets found."
+                                     },
+                           "detail":  {
+                                          "back":  "Assets Oversight",
+                                          "loading":  "Loading asset...",
+                                          "loadError":  "This asset could not be loaded. It may have been removed or belongs to a region you cannot access.",
+                                          "readOnly":  "Read-only oversight",
+                                          "noLocation":  "No location recorded",
+                                          "documentCount_one":  "{{count}} document",
+                                          "documentCount_other":  "{{count}} documents",
+                                          "emptyMetadata":  "No custom metadata recorded.",
+                                          "emptyEncumbrance":  "No encumbrance note recorded.",
+                                          "emptyDescription":  "No description recorded.",
+                                          "months_one":  "{{count}} month",
+                                          "months_other":  "{{count}} months",
+                                          "encumbrance":  "Encumbrance",
+                                          "description":  "Description",
+                                          "customMetadata":  "Custom Metadata",
+                                          "sections":  {
+                                                           "identity":  "Asset Identity",
+                                                           "identitySub":  "Core identifiers and classification details.",
+                                                           "location":  "Location \u0026 Custody",
+                                                           "locationSub":  "Where the asset sits and who is accountable for it.",
+                                                           "financials":  "Financials \u0026 Lifecycle",
+                                                           "financialsSub":  "Valuation, acquisition, warranty, and useful life signals.",
+                                                           "risk":  "Risk \u0026 Encumbrance",
+                                                           "riskSub":  "Current restriction, lien, dispute, or claim posture.",
+                                                           "descriptionSub":  "Operational notes and business context recorded for this asset.",
+                                                           "metadataSub":  "Structured metadata captured with this asset record."
+                                                       },
+                                          "tabs":  {
+                                                       "overview":  "Overview",
+                                                       "documents":  "Documents \u0026 Maps",
+                                                       "matters":  "Matters",
+                                                       "governance":  "Governance"
+                                                   },
+                                          "facts":  {
+                                                        "assetTag":  "Asset Tag / ID",
+                                                        "assetType":  "Asset Type",
+                                                        "location":  "Location",
+                                                        "custodian":  "Custodian / Department",
+                                                        "revenueIndex":  "Revenue Index",
+                                                        "area":  "Area",
+                                                        "ownershipType":  "Ownership Type",
+                                                        "acquisitionDate":  "Acquisition Date",
+                                                        "purchaseDate":  "Purchase Date",
+                                                        "warrantyExpiry":  "Warranty Expiry",
+                                                        "manufacturer":  "Manufacturer / Model",
+                                                        "serialNumber":  "Serial Number",
+                                                        "purchaseCost":  "Purchase Cost",
+                                                        "currentValue":  "Current Value",
+                                                        "usefulLife":  "Useful Life",
+                                                        "coordinates":  "Coordinates"
+                                                    },
+                                          "revenue":  {
+                                                          "khewat":  "Khewat",
+                                                          "khatuni":  "Khatuni",
+                                                          "khasra":  "Khasra"
+                                                      },
+                                          "documents":  {
+                                                            "title":  "Documents \u0026 Evidence",
+                                                            "subtitle":  "Source files, deeds, maps, certificates, invoices, warranties, evidence, and ownership records linked to this asset.",
+                                                            "empty":  "No documents attached.",
+                                                            "document":  "Document",
+                                                            "reference":  "Reference",
+                                                            "rights":  "Rights",
+                                                            "mapMetadata":  "Map Metadata",
+                                                            "verification":  "Verification",
+                                                            "action":  "Action",
+                                                            "permission":  "Document read permission is required.",
+                                                            "view":  "View"
+                                                        },
+                                          "matters":  {
+                                                          "title":  "Linked Matters",
+                                                          "subtitle":  "Disputes, claims, injunctions, possession matters, and other cases linked to this asset.",
+                                                          "empty":  "No matters linked.",
+                                                          "nextHearing":  "next hearing",
+                                                          "openCase":  "Open case"
+                                                      },
+                                          "governance":  {
+                                                             "recordCustodian":  "Record Custodian",
+                                                             "created":  "Created",
+                                                             "lastUpdated":  "Last Updated",
+                                                             "snapshot":  "Governance Snapshot",
+                                                             "documents":  "Documents",
+                                                             "linkedCases":  "Linked Cases",
+                                                             "region":  "Region",
+                                                             "unassigned":  "Unassigned"
+                                                         }
+                                      }
+                       },
+    "region":  {
+                   "worldwide":  "Worldwide",
+                   "worldwideAll":  "Worldwide (All Regions)",
+                   "countries":  "Countries",
+                   "selectPlaceholder":  "Select country / regionâ€¦",
+                   "searchPlaceholder":  "Search country or codeâ€¦",
+                   "ariaLabel":  "Country or region"
+               },
+    "currency":  {
+                     "common":  "Common",
+                     "all":  "All currencies",
+                     "selectPlaceholder":  "Select currencyâ€¦",
+                     "searchPlaceholder":  "Search currency, name or symbolâ€¦",
+                     "ariaLabel":  "Currency"
+                 },
+    "timezone":  {
+                     "suggested":  "Suggested",
+                     "detected":  "detected",
+                     "selectPlaceholder":  "Select timezoneâ€¦",
+                     "searchPlaceholder":  "Search city, zone or countryâ€¦",
+                     "ariaLabel":  "Timezone"
+                 },
+    "pagination":  {
+                       "rowsPerPage":  "Rows per page",
+                       "pageOf":  "Page {{page}} of {{totalPages}}",
+                       "previous":  "Previous",
+                       "next":  "Next"
+                   },
+    "notifications":  {
+                          "title":  "Notifications",
+                          "ariaLabel":  "Notifications",
+                          "markAllRead":  "Mark all read",
+                          "empty":  "You\u0027re all caught up.",
+                          "loadOlder":  "Load older",
+                          "loading":  "Loadingâ€¦",
+                          "error":  "Unable to load notifications.",
+                          "retry":  "Try again",
+                          "time":  {
+                                       "justNow":  "just now",
+                                       "minutes":  "{{n}}m ago",
+                                       "hours":  "{{n}}h ago",
+                                       "days":  "{{n}}d ago"
+                                   }
+                      },
+    "language":  {
+                     "updated":  "Language preference updated."
+                 },
+    "successMessages":  {
+                            "created":  "Created successfully.",
+                            "saved":  "Saved successfully.",
+                            "deleted":  "Deleted successfully.",
+                            "submit":  "Submitted for approval.",
+                            "approve":  "Approved successfully.",
+                            "reject":  "Rejected.",
+                            "decide":  "Decision recorded.",
+                            "execute":  "Executed successfully.",
+                            "terminate":  "Terminated.",
+                            "renew":  "Renewed successfully.",
+                            "blacklist":  "Counterparty blacklisted.",
+                            "screen":  "Screening started.",
+                            "revoke":  "Access revoked.",
+                            "restore":  "Restored successfully.",
+                            "accept":  "Accepted successfully.",
+                            "allocate":  "Allocated successfully.",
+                            "invite":  "Invitation sent.",
+                            "resend":  "Resent successfully.",
+                            "duplicate":  "Duplicated successfully.",
+                            "move":  "Moved successfully.",
+                            "archive":  "Archived successfully.",
+                            "activate":  "Activated successfully.",
+                            "deactivate":  "Deactivated successfully.",
+                            "provisionDefaults":  "Defaults provisioned.",
+                            "organizationCreated":  "Organization created successfully.",
+                            "contractCreated":  "Contract created successfully.",
+                            "contractUpdated":  "Contract updated successfully.",
+                            "contractDeleted":  "Contract deleted successfully.",
+                            "folderCreated":  "Folder created successfully.",
+                            "folderRenamed":  "Folder renamed successfully.",
+                            "folderDeleted":  "Folder deleted successfully.",
+                            "contractTypeCreated":  "Contract type created successfully.",
+                            "contractTypeUpdated":  "Contract type updated successfully.",
+                            "contractTypeDeleted":  "Contract type deleted successfully.",
+                            "noteAdded":  "Note added successfully.",
+                            "noteDeleted":  "Note deleted successfully.",
+                            "obligationAdded":  "Obligation added successfully.",
+                            "obligationUpdated":  "Obligation updated successfully.",
+                            "obligationDeleted":  "Obligation deleted successfully.",
+                            "litigationCaseCreated":  "Litigation case created successfully.",
+                            "litigationCaseUpdated":  "Litigation case updated successfully.",
+                            "litigationCaseDeleted":  "Litigation case deleted successfully.",
+                            "hearingAdded":  "Hearing added successfully.",
+                            "hearingUpdated":  "Hearing updated successfully.",
+                            "hearingDeleted":  "Hearing deleted successfully.",
+                            "feeRecorded":  "Fee recorded successfully.",
+                            "feeDeleted":  "Fee deleted successfully.",
+                            "partyAdded":  "Party added successfully.",
+                            "partyUpdated":  "Party updated successfully.",
+                            "partyDeleted":  "Party deleted successfully.",
+                            "whistleblowingCaseCreated":  "Whistleblowing case created successfully.",
+                            "whistleblowingCaseUpdated":  "Whistleblowing case updated successfully.",
+                            "commentAdded":  "Comment added successfully.",
+                            "evidenceAttached":  "Evidence attached successfully.",
+                            "participantAdded":  "Participant added successfully.",
+                            "participantUpdated":  "Participant updated successfully.",
+                            "participantRemoved":  "Participant removed successfully.",
+                            "counterpartyCreated":  "Counterparty created successfully.",
+                            "counterpartyUpdated":  "Counterparty updated successfully.",
+                            "counterpartyDeleted":  "Counterparty deleted successfully.",
+                            "documentUploaded":  "Document uploaded successfully.",
+                            "documentDeleted":  "Document deleted successfully.",
+                            "departmentCreated":  "Department created successfully.",
+                            "departmentUpdated":  "Department updated successfully.",
+                            "departmentDeleted":  "Department deleted successfully.",
+                            "roleCreated":  "Role created successfully.",
+                            "roleUpdated":  "Role updated successfully.",
+                            "roleDeleted":  "Role deleted successfully.",
+                            "permissionsUpdated":  "Permissions updated successfully.",
+                            "permissionCreated":  "Permission created successfully.",
+                            "permissionUpdated":  "Permission updated successfully.",
+                            "permissionDeleted":  "Permission deleted successfully.",
+                            "planCreated":  "Plan created successfully.",
+                            "planUpdated":  "Plan updated successfully.",
+                            "planDeleted":  "Plan deleted successfully.",
+                            "passwordResetLinkSent":  "If an account exists for that email, a password reset link has been sent.",
+                            "passwordReset":  "Your password has been reset. Please sign in with your new password.",
+                            "passwordUpdated":  "Password updated successfully.",
+                            "mfaDisabled":  "MFA disabled successfully.",
+                            "permissionsAssigned":  "Permissions assigned successfully.",
+                            "rowScopeUpdated":  "Row-scope constraints updated.",
+                            "permissionsRevoked":  "Permissions revoked successfully.",
+                            "memberUpdated":  "Member updated.",
+                            "verificationCodeSent":  "Verification code sent.",
+                            "invitationAccepted":  "Invitation accepted successfully.",
+                            "signedIn":  "Signed in successfully.",
+                            "signedOut":  "Signed out successfully."
+                        },
+    "readOnly":  "Read-only oversight",
+    "matterDetail":  {
+                         "oversight":  "Matters Oversight",
+                         "back":  "Back to oversight",
+                         "readOnly":  "Read-only oversight",
+                         "loadError":  "This matter could not be loaded. It may have been removed or it belongs to a region you cannot access.",
+                         "caseNo":  "Case No. {{number}}",
+                         "instituted":  "Instituted {{date}}",
+                         "loading":  {
+                                         "case":  "Loading matter...",
+                                         "parties":  "Loading parties...",
+                                         "hearings":  "Loading hearings...",
+                                         "documents":  "Loading documents...",
+                                         "fees":  "Loading fees...",
+                                         "notes":  "Loading notes..."
+                                     },
+                         "tabs":  {
+                                      "overview":  "Overview",
+                                      "parties":  "Parties",
+                                      "hearings":  "Hearings",
+                                      "documents":  "Documents",
+                                      "fees":  "Fees",
+                                      "notes":  "Notes"
+                                  },
+                         "overview":  {
+                                          "nature":  "Nature of Case",
+                                          "court":  "Court / Forum",
+                                          "location":  "Location / Jurisdiction",
+                                          "institutionDate":  "Date of Institution",
+                                          "nextHearing":  "Next Hearing",
+                                          "disposalDate":  "Date of Disposal",
+                                          "department":  "Department",
+                                          "folder":  "Folder",
+                                          "linkedAsset":  "Linked Asset",
+                                          "region":  "Region",
+                                          "outcome":  "Outcome",
+                                          "khasra":  "Khasra",
+                                          "encumberedAsset":  "Encumbered asset",
+                                          "financialExposure":  "Financial Exposure",
+                                          "claimAmount":  "Claim Amount",
+                                          "contingentLiability":  "Contingent Liability",
+                                          "counselAssignment":  "Counsel \u0026 Assignment",
+                                          "inHouseLawyer":  "In-house Lawyer",
+                                          "externalCounsel":  "External Counsel",
+                                          "portalAccess":  "Portal access",
+                                          "counselIdd":  "Counsel IDD"
+                                      },
+                         "parties":  {
+                                         "title":  "Parties",
+                                         "addShort":  "Party",
+                                         "empty":  "No parties recorded yet.",
+                                         "remove":  "Remove party",
+                                         "addTitle":  "Add Party",
+                                         "adding":  "Adding...",
+                                         "name":  "Name *",
+                                         "namePlaceholder":  "Party name",
+                                         "role":  "Role",
+                                         "description":  "Description",
+                                         "descriptionPlaceholder":  "Optional details about this party...",
+                                         "wepEntity":  "This party is a WEP entity",
+                                         "confirmTitle":  "Remove party?",
+                                         "confirmPrefix":  "Remove",
+                                         "confirmSuffix":  "from this matter? This action cannot be undone.",
+                                         "toasts":  {
+                                                        "added":  "Party added",
+                                                        "removed":  "Party removed"
+                                                    }
+                                     },
+                         "hearings":  {
+                                          "title":  "Hearings",
+                                          "addShort":  "Hearing",
+                                          "empty":  "No hearings scheduled yet.",
+                                          "list":  "List",
+                                          "calendar":  "Calendar",
+                                          "toasts":  {
+                                                         "added":  "Hearing added"
+                                                     }
+                                      },
+                         "documents":  {
+                                           "title":  "Documents",
+                                           "empty":  "No documents attached to this matter.",
+                                           "searchable":  "Searchable"
+                                       },
+                         "fees":  {
+                                      "title":  "Legal Fees",
+                                      "addShort":  "Fee",
+                                      "empty":  "No legal fees recorded yet.",
+                                      "paid":  "Paid",
+                                      "unpaid":  "Unpaid",
+                                      "columns":  {
+                                                      "type":  "Type",
+                                                      "invoice":  "Invoice",
+                                                      "status":  "Status",
+                                                      "amount":  "Amount"
+                                                  },
+                                      "toasts":  {
+                                                     "recorded":  "Fee recorded"
+                                                 }
+                                  },
+                         "notes":  {
+                                       "title":  "Case Notes",
+                                       "addShort":  "Note",
+                                       "empty":  "No notes yet.",
+                                       "toasts":  {
+                                                      "added":  "Note added"
+                                                  }
+                                   }
+                     },
+    "reporting":  {
+                      "title":  "Reporting \u0026 Analytics",
+                      "subtitle":  "Cross-module analytics with rich filters and CSV, Excel \u0026 PDF exports.",
+                      "noOrganization":  "No active organization context.",
+                      "tabs":  {
+                                   "overview":  "Overview"
+                               },
+                      "charts":  {
+                                     "trailing12":  "Trailing 12 months"
+                                 },
+                      "views":  {
+                                    "stats":  "Stats",
+                                    "table":  "Table"
+                                },
+                      "loading":  {
+                                      "workspace":  "Loading reporting workspace...",
+                                      "overview":  "Loading overview...",
+                                      "analytics":  "Loading analytics...",
+                                      "records":  "Loading records..."
+                                  },
+                      "errors":  {
+                                     "unavailable":  "Reporting is not available for your account.",
+                                     "overview":  "Unable to load the overview.",
+                                     "analytics":  "Unable to load analytics.",
+                                     "records":  "Unable to load records.",
+                                     "export":  "Could not generate the export. Please try again."
+                                 },
+                      "toasts":  {
+                                     "downloaded":  "Report downloaded"
+                                 },
+                      "filters":  {
+                                      "search":  "Search...",
+                                      "allRegions":  "All regions",
+                                      "allDepartments":  "All departments",
+                                      "anyOwner":  "Any owner / assignee",
+                                      "from":  "From",
+                                      "to":  "To",
+                                      "clear":  "Clear filters",
+                                      "noOptions":  "No options"
+                                  },
+                      "table":  {
+                                    "empty":  "No records match the current filters."
+                                },
+                      "export":  {
+                                     "label":  "Export",
+                                     "exporting":  "Exporting..."
+                                 },
+                      "executive":  {
+                                        "empty":  "No modules are available to report on yet.",
+                                        "totalRecords":  "Total records"
+                                    },
+                      "total":  "Total"
+                  },
+    "permissionsPage":  {
+                            "title":  "Permissions",
+                            "subtitle":  "Manage platform permissions for all portals.",
+                            "add":  "Create Permission",
+                            "searchPlaceholder":  "Search permissions by module, resource, or action...",
+                            "filters":  {
+                                            "allPortals":  "All Portals",
+                                            "allModules":  "All Modules"
+                                        },
+                            "systemRoles":  {
+                                                "super_admin":  "Super Admin",
+                                                "tenant":  "Tenant",
+                                                "user":  "User"
+                                            },
+                            "table":  {
+                                          "portal":  "Portal",
+                                          "module":  "Module",
+                                          "resource":  "Resource",
+                                          "action":  "Action",
+                                          "displayName":  "Display Name",
+                                          "sensitive":  "Sensitive",
+                                          "active":  "Status"
+                                      },
+                            "yes":  "Yes",
+                            "no":  "No",
+                            "status":  {
+                                           "active":  "Active",
+                                           "inactive":  "Inactive"
+                                       },
+                            "states":  {
+                                           "loading":  "Loading permissions...",
+                                           "loadError":  "Failed to load permissions. {{error}}",
+                                           "empty":  "No permissions found."
+                                       },
+                            "form":  {
+                                         "cancel":  "Cancel",
+                                         "create":  "Create",
+                                         "creating":  "Creating...",
+                                         "portalLabel":  "Portal",
+                                         "module":  "Module",
+                                         "modulePlaceholder":  "e.g. contracts",
+                                         "resource":  "Resource",
+                                         "resourcePlaceholder":  "e.g. create",
+                                         "action":  "Action",
+                                         "actionPlaceholder":  "e.g. update",
+                                         "displayName":  "Display Name",
+                                         "displayNamePlaceholder":  "e.g. Create Contract",
+                                         "description":  "Description",
+                                         "descriptionPlaceholder":  "Optional description",
+                                         "sensitive":  "Sensitive permission",
+                                         "createError":  "Failed to create permission. Please check your input and try again."
+                                     },
+                            "modules":  {
+                                            "platform":  "Platform",
+                                            "auth":  "Organization \u0026 Account",
+                                            "documents":  "Documents",
+                                            "contracts":  "Contracts (CLM)",
+                                            "matters":  "Matters",
+                                            "secretarial":  "Secretarial \u0026 Calendar",
+                                            "compliance":  "Ethics \u0026 Compliance (Due Diligence)",
+                                            "land":  "Assets",
+                                            "whistleblowing":  "Whistleblowing",
+                                            "external_access":  "External Resource Allocation",
+                                            "ai":  "AI Assistant",
+                                            "reporting":  "Reporting \u0026 Analytics"
+                                        },
+                            "actions":  {
+                                            "create":  "Create",
+                                            "suspend":  "Suspend",
+                                            "delete":  "Delete",
+                                            "manage":  "Manage",
+                                            "read_all":  "Read All",
+                                            "read":  "Read",
+                                            "update":  "Update",
+                                            "manage_members":  "Manage Members",
+                                            "manage_roles":  "Manage Roles",
+                                            "view_audit_log":  "View Audit Log",
+                                            "read_self":  "Read Own Profile",
+                                            "update_self":  "Update Own Profile",
+                                            "manage_mfa_self":  "Manage Own MFA",
+                                            "read_assigned":  "View Assigned",
+                                            "approve":  "Approve",
+                                            "execute":  "Execute",
+                                            "review_legal":  "Legal Review",
+                                            "submit":  "Submit",
+                                            "terminate":  "Terminate",
+                                            "renew":  "Renew",
+                                            "archive":  "Archive",
+                                            "override_workflow":  "Override Workflow",
+                                            "manage_obligations":  "Manage Obligations",
+                                            "manage_notes":  "Manage Notes",
+                                            "manage_documents":  "Manage Documents",
+                                            "read_version":  "View Versions",
+                                            "restore_version":  "Restore Version",
+                                            "manage_folders":  "Manage Folders",
+                                            "contribute":  "Contribute",
+                                            "move_folder":  "Move Folders",
+                                            "manage_hearings":  "Manage Hearings",
+                                            "manage_parties":  "Manage Parties",
+                                            "allocate":  "Assign",
+                                            "reject":  "Reject",
+                                            "blacklist":  "Blacklist",
+                                            "review":  "Review",
+                                            "read_dashboard":  "View Dashboard",
+                                            "manage_settings":  "Manage Settings",
+                                            "investigate":  "Investigate",
+                                            "admin":  "Admin",
+                                            "independent_review":  "Independent Review",
+                                            "upload":  "Upload",
+                                            "edit":  "Edit",
+                                            "export":  "Export"
+                                        },
+                            "resources":  {
+                                              "platform_org":  "Platform Organization",
+                                              "permission":  "Permission",
+                                              "role_template":  "Role Template",
+                                              "audit_log":  "Audit Log",
+                                              "organization":  "Organization",
+                                              "department":  "Department",
+                                              "integration":  "Integration",
+                                              "user":  "User",
+                                              "contract":  "Contract",
+                                              "contract_type":  "Contract Type",
+                                              "moa_rule":  "MoA Approval Rule",
+                                              "contract_template":  "Contract Template",
+                                              "litigation_case":  "Matter",
+                                              "external_counsel":  "External Counsel",
+                                              "legal_fee":  "Legal Fee",
+                                              "secretarial_record":  "Secretarial Record",
+                                              "compliance_event":  "Compliance Event",
+                                              "counterparty":  "Counterparty",
+                                              "screening":  "Screening",
+                                              "dd":  "Due Diligence",
+                                              "land_asset":  "Asset",
+                                              "whistleblowing_case":  "WB Case",
+                                              "ai_assistant":  "AI Assistant",
+                                              "document":  "Document",
+                                              "report":  "Report"
+                                          },
+                            "displayNames":  {
+                                                 "Create Organization":  "Create Organization",
+                                                 "Suspend Organization":  "Suspend Organization",
+                                                 "Delete Organization":  "Delete Organization",
+                                                 "Manage Permission Catalog":  "Manage Permission Catalog",
+                                                 "Manage Role Templates":  "Manage Role Templates",
+                                                 "Read All Audit Logs":  "Read All Audit Logs",
+                                                 "View Organization":  "View Organization",
+                                                 "Update Organization":  "Update Organization",
+                                                 "Manage Members":  "Manage Members",
+                                                 "Manage Roles":  "Manage Roles",
+                                                 "View Audit Log":  "View Audit Log",
+                                                 "Manage Departments":  "Manage Departments",
+                                                 "Manage Integrations":  "Manage Integrations",
+                                                 "Read Own Profile":  "Read Own Profile",
+                                                 "Update Own Profile":  "Update Own Profile",
+                                                 "Manage Own MFA":  "Manage Own MFA",
+                                                 "Create Contract":  "Create Contract",
+                                                 "View Contracts":  "View Contracts",
+                                                 "View Assigned Contracts":  "View Assigned Contracts",
+                                                 "Edit Contract":  "Edit Contract",
+                                                 "Delete Contract":  "Delete Contract",
+                                                 "Approve Contract":  "Approve Contract",
+                                                 "Execute Contract":  "Execute Contract",
+                                                 "Legal Review":  "Legal Review",
+                                                 "Submit Contract":  "Submit Contract",
+                                                 "Terminate Contract":  "Terminate Contract",
+                                                 "Renew Contract":  "Renew Contract",
+                                                 "Archive Contract":  "Archive Contract",
+                                                 "Override MoA Workflow":  "Override MoA Workflow",
+                                                 "Manage Obligations":  "Manage Obligations",
+                                                 "Manage Contract Notes":  "Manage Contract Notes",
+                                                 "Manage Contract Documents":  "Manage Contract Documents",
+                                                 "View Contract Versions":  "View Contract Versions",
+                                                 "Restore Contract Version":  "Restore Contract Version",
+                                                 "Manage Contract Folders":  "Manage Contract Folders",
+                                                 "Manage Contract Types":  "Manage Contract Types",
+                                                 "Manage MoA Approval Rules":  "Manage MoA Approval Rules",
+                                                 "View MoA Approval Rules":  "View MoA Approval Rules",
+                                                 "Manage Contract Templates":  "Manage Contract Templates",
+                                                 "Create Matter":  "Create Matter",
+                                                 "View Matters":  "View Matters",
+                                                 "View Assigned Matters":  "View Assigned Matters",
+                                                 "Contribute to Assigned Matters":  "Contribute to Assigned Matters",
+                                                 "Edit Matter":  "Edit Matter",
+                                                 "Move Matter Folders":  "Move Matter Folders",
+                                                 "Manage Matter Hearings":  "Manage Matter Hearings",
+                                                 "Manage Matter Parties":  "Manage Matter Parties",
+                                                 "Manage Matter Notes":  "Manage Matter Notes",
+                                                 "Manage Matter Documents":  "Manage Matter Documents",
+                                                 "Delete Matter":  "Delete Matter",
+                                                 "Hire External Counsel":  "Hire External Counsel",
+                                                 "Assign External Counsel":  "Assign External Counsel",
+                                                 "View External Counsel":  "View External Counsel",
+                                                 "Manage Legal Fees":  "Manage Legal Fees",
+                                                 "View Secretarial Records":  "View Secretarial Records",
+                                                 "Add Secretarial Record":  "Add Secretarial Record",
+                                                 "Edit Secretarial Record":  "Edit Secretarial Record",
+                                                 "Delete Secretarial Record":  "Delete Secretarial Record",
+                                                 "Manage Compliance Calendar":  "Manage Compliance Calendar",
+                                                 "Submit Counterparty":  "Submit Counterparty",
+                                                 "View Counterparties":  "View Counterparties",
+                                                 "Edit Counterparty":  "Edit Counterparty",
+                                                 "Delete Counterparty":  "Delete Counterparty",
+                                                 "Approve Counterparty":  "Approve Counterparty",
+                                                 "Reject Counterparty":  "Reject Counterparty",
+                                                 "Blacklist Counterparty":  "Blacklist Counterparty",
+                                                 "Renew Counterparty IDD":  "Renew Counterparty IDD",
+                                                 "Run Screening":  "Run Screening",
+                                                 "View Screening Results":  "View Screening Results",
+                                                 "Review Screening Hits":  "Review Screening Hits",
+                                                 "View DD Dashboard":  "View DD Dashboard",
+                                                 "Manage DD Settings":  "Manage DD Settings",
+                                                 "Create Asset":  "Create Asset",
+                                                 "View Assets":  "View Assets",
+                                                 "Edit Asset":  "Edit Asset",
+                                                 "Delete Asset":  "Delete Asset",
+                                                 "View WB Cases":  "View WB Cases",
+                                                 "Investigate WB Case":  "Investigate WB Case",
+                                                 "WB Compliance Admin":  "WB Compliance Admin",
+                                                 "Use AI Assistant":  "Use AI Assistant",
+                                                 "Upload Documents":  "Upload Documents",
+                                                 "View / Download Documents":  "View / Download Documents",
+                                                 "Edit Documents":  "Edit Documents",
+                                                 "Delete Documents":  "Delete Documents",
+                                                 "View Reports":  "View Reports",
+                                                 "Export Reports":  "Export Reports"
+                                             }
+                        },
+    "rolesPage":  {
+                      "title":  "Roles",
+                      "subtitle":  "Create roles for each portal (Super Admin, Tenant, User) and manage their permissions.",
+                      "create":  "Create Role",
+                      "creating":  "Creating...",
+                      "cancel":  "Cancel",
+                      "allPortals":  "All Portals",
+                      "searchPlaceholder":  "Search roles...",
+                      "loading":  "Loading roles...",
+                      "loadError":  "Failed to load roles. {{error}}",
+                      "empty":  "No roles found.",
+                      "grid":  {
+                                   "permissions":  "{{count}} permission",
+                                   "permissions_plural":  "{{count}} permissions",
+                                   "locked":  "Locked",
+                                   "editable":  "Editable",
+                                   "manage":  "Manage Permissions"
+                               },
+                      "table":  {
+                                    "name":  "Name",
+                                    "portal":  "Portal",
+                                    "scope":  "Scope",
+                                    "permissions":  "Permissions",
+                                    "locked":  "Locked",
+                                    "actions":  "Actions"
+                                },
+                      "form":  {
+                                   "portalLabel":  "Portal (System Role)",
+                                   "portalSuperAdminHint":  "Creates a GLOBAL role for the Civorah platform admin portal.",
+                                   "portalTenantHint":  "Creates a TEMPLATE role for the Tenant portal. Tenant users can manage their organization and also access module permissions.",
+                                   "portalUserHint":  "Creates a TEMPLATE role for the User portal with module-level permissions.",
+                                   "nameLabel":  "Name",
+                                   "namePlaceholder":  "e.g. Legal Manager",
+                                   "descriptionLabel":  "Description",
+                                   "descriptionPlaceholder":  "Optional description",
+                                   "createError":  "Failed to create role. Please check your input and try again."
+                               },
+                      "detail":  {
+                                     "back":  "Back to Roles",
+                                     "loading":  "Loading security structures...",
+                                     "loadError":  "Failed to initialize role details context",
+                                     "lockedBadge":  "Locked",
+                                     "editableBadge":  "Editable",
+                                     "summary":  {
+                                                     "assignedScope":  "Assigned Scope",
+                                                     "sensitiveKeys":  "Sensitive Keys",
+                                                     "sensitiveKeysCount":  "{{count}} key enabled",
+                                                     "sensitiveKeysCount_plural":  "{{count}} keys enabled",
+                                                     "systemProtection":  "System Protection",
+                                                     "systemProtectionLocked":  "Locked / Read-Only",
+                                                     "systemProtectionWritable":  "Writable Matrix",
+                                                     "moduleCoverage":  "Module Coverage"
+                                                 },
+                                     "saveSuccess":  "Security parameters successfully synced.",
+                                     "saveAction":  "Save Matrix Changes",
+                                     "savingAction":  "Saving...",
+                                     "filterPlaceholder":  "Filter modules or specific keys...",
+                                     "moduleHeaderSuffix":  "Module",
+                                     "selectAll":  "Select All",
+                                     "deselectAll":  "Deselect All",
+                                     "badges":  {
+                                                    "sensitive":  "Sensitive",
+                                                    "appending":  "+ Appending",
+                                                    "removing":  "- Removing"
+                                                },
+                                     "ownRecordsOnly":  "Own records constraints only",
+                                     "ownRecordsOnlyDescription":  "Limits visibility strictly to datasets owned by or delegated explicitly to the identity context",
+                                     "noMatching":  "No matching configurations found inside this tab domain viewport context."
+                                 }
+                  },
+    "viewToggle":  {
+                       "grid":  "Grid view",
+                       "list":  "List view"
+                   },
+    "permissionMatrix":  {
+                             "ariaLabel":  "Role permissions",
+                             "title":  "Role permissions",
+                             "description":  "Pick the actions this role can perform. Use the All checkbox in a section when the role should fully manage that area.",
+                             "sensitiveHint":  "Sensitive actions need extra care",
+                             "defaultPlanHint":  "Only permissions included in this organization\u0027s plan are shown.",
+                             "searchPlaceholder":  "Search permissions",
+                             "missingRequired":  "Some selected actions need {{count}} required permission to work.",
+                             "addRequired":  "Add required",
+                             "noMatches":  "No permissions match your search.",
+                             "selectAllAria":  "Select all {{module}} permissions",
+                             "all":  "All",
+                             "sensitive":  "Sensitive",
+                             "ownRecordsOnly":  "Own records only",
+                             "ownRecordsHelp":  "limit to records this person created, owns, or is assigned to.",
+                             "recordVisibility":  "Record visibility",
+                             "allRecords":  "All records in my authorized region",
+                             "ownRecords":  "Own records",
+                             "assignedOrInvolved":  "Assigned or involved contracts",
+                             "assignedOrInvolvedHelp":  "Only contracts this person created, owns, or is assigned to in the MoA workflow."
+                         },
+    "organizationsPage":  {
+                              "title":  "Organizations",
+                              "subtitle":  "Provision and manage tenant organizations on the platform.",
+                              "create":  "Create Organization",
+                              "searchPlaceholder":  "Search organizations...",
+                              "allStatuses":  "All Statuses",
+                              "loading":  "Loading organizations...",
+                              "loadError":  "Failed to load organizations. {{error}}",
+                              "empty":  "No organizations found.",
+                              "table":  {
+                                            "name":  "Name",
+                                            "slug":  "Slug",
+                                            "region":  "Region",
+                                            "plan":  "Plan",
+                                            "status":  "Status",
+                                            "actions":  "Actions"
+                                        },
+                              "status":  {
+                                             "ACTIVE":  "Active",
+                                             "SUSPENDED":  "Suspended",
+                                             "PENDING_SETUP":  "Pending Setup",
+                                             "ARCHIVED":  "Archived"
+                                         },
+                              "form":  {
+                                           "title":  "Create Organization",
+                                           "nameLabel":  "Organization Name",
+                                           "namePlaceholder":  "e.g. Acme Corp",
+                                           "slugLabel":  "Slug / Identifier",
+                                           "slugPlaceholder":  "e.g. acme",
+                                           "emailLabel":  "Owner Email",
+                                           "emailPlaceholder":  "e.g. admin@acme.com",
+                                           "regionLabel":  "Hosting Region",
+                                           "timezoneLabel":  "Primary Timezone",
+                                           "planLabel":  "Plan Template",
+                                           "planPlaceholder":  "Select a plan...",
+                                           "create":  "Create Organization",
+                                           "creating":  "Creating...",
+                                           "cancel":  "Cancel",
+                                           "error":  "Failed to create organization. Please verify fields and try again."
+                                       },
+                              "invite":  {
+                                             "title":  "Organization Provisioned",
+                                             "message":  "The tenant organization has been successfully provisioned. Share the invitation link below with the tenant administrator to complete their setup:",
+                                             "copy":  "Copy Link",
+                                             "copied":  "Copied!",
+                                             "close":  "Close"
+                                         },
+                              "detail":  {
+                                             "back":  "Back to Organizations",
+                                             "loading":  "Loading organization context...",
+                                             "loadError":  "Failed to initialize organization details",
+                                             "tabs":  {
+                                                          "overview":  "Overview",
+                                                          "regions":  "Regions",
+                                                          "roles":  "Roles",
+                                                          "members":  "Members",
+                                                          "invitations":  "Invitations",
+                                                          "status":  "Status"
+                                                      },
+                                             "overview":  {
+                                                              "slug":  "Slug",
+                                                              "region":  "Region",
+                                                              "timezone":  "Timezone",
+                                                              "created":  "Created",
+                                                              "status":  "Status",
+                                                              "billingEmail":  "Billing Email",
+                                                              "adminSeatsLimit":  "Admin Seats Limit",
+                                                              "adminSeats":  "Admin Seats",
+                                                              "userSeats":  "User Seats",
+                                                              "usedPct":  "{{pct}}% used"
+                                                          },
+                                             "regions":  {
+                                                             "title":  "Organization Regions",
+                                                             "subtitle":  "Configure hosting regions and localization settings for this organization.",
+                                                             "add":  "Add Region",
+                                                             "adding":  "Adding...",
+                                                             "loading":  "Loading regions...",
+                                                             "failedLoad":  "Failed to load regions.",
+                                                             "failedAdd":  "Failed to add region.",
+                                                             "configuredCount":  "{{count}} configured",
+                                                             "empty":  "No regions configured yet.",
+                                                             "regionLabel":  "Region",
+                                                             "namePlaceholder":  "Branch display name",
+                                                             "hqSuffix":  "HQ",
+                                                             "table":  {
+                                                                           "code":  "Code",
+                                                                           "name":  "Display Name",
+                                                                           "tz":  "Timezone",
+                                                                           "currency":  "Currency",
+                                                                           "hq":  "HQ",
+                                                                           "members":  "Members",
+                                                                           "status":  "Status",
+                                                                           "actions":  "Actions"
+                                                                       },
+                                                             "status":  {
+                                                                            "active":  "Active",
+                                                                            "inactive":  "Inactive"
+                                                                        },
+                                                             "edit":  "Edit region",
+                                                             "activate":  "Activate region",
+                                                             "editTitle":  "Edit Region",
+                                                             "save":  "Save Region",
+                                                             "saving":  "Saving...",
+                                                             "deactivateTitle":  "Deactivate region",
+                                                             "deactivateConfirm":  "Deactivate region",
+                                                             "deactivateWarning":  "Members assigned strictly to this branch may lose visibility on connected entities.",
+                                                             "hqAlwaysActive":  "Headquarters regions must remain active.",
+                                                             "failedUpdate":  "Failed to update region.",
+                                                             "failedDeactivate":  "An error occurred while deactivating. Please try again."
+                                                         },
+                                             "roles":  {
+                                                           "title":  "Organization Roles",
+                                                           "searchPlaceholder":  "Search roles...",
+                                                           "newRole":  "New Role",
+                                                           "sync":  "Sync from Templates",
+                                                           "permissionCount_one":  "{{count}} permission",
+                                                           "permissionCount_other":  "{{count}} permissions",
+                                                           "emptySearch":  "No roles matching \"{{search}}\".",
+                                                           "empty":  "No roles configured for this organization.",
+                                                           "emptyHint":  "Sync template roles or create a custom role before handover.",
+                                                           "syncSuccess":  "Sync complete: {{clonedCount}} roles cloned, {{skippedCount}} already existed.",
+                                                           "ownerAssigned":  "Owner role auto-assigned to first member.",
+                                                           "viewPermissions":  "View Permissions",
+                                                           "table":  {
+                                                                         "name":  "Name",
+                                                                         "permissions":  "Permissions",
+                                                                         "members":  "Members",
+                                                                         "locked":  "Locked",
+                                                                         "actions":  "Actions"
+                                                                     },
+                                                           "syncing":  "Syncing...",
+                                                           "count_one":  "{{count}} role",
+                                                           "count_other":  "{{count}} roles",
+                                                           "subtitle":  "Pre-provision this organization\u0027s roles before handing it over. Create custom roles or click a role to edit its permissions â€” the org owner inherits exactly what you set up here.",
+                                                           "failedLoad":  "Failed to load roles.",
+                                                           "failedSync":  "Failed to sync roles. Please try again.",
+                                                           "editor":  {
+                                                                          "nameRequired":  "Give the role a name.",
+                                                                          "requiredPermissionsMissing":  "Add the required permissions before saving this role.",
+                                                                          "createTitle":  "Create role",
+                                                                          "editTitle":  "Edit role: {{name}}",
+                                                                          "createDescription":  "Define a role and pick exactly what its members can do. The org owner will inherit these once handed over.",
+                                                                          "lockedDescription":  "This is a stock role and is read-only. Clone it to customize.",
+                                                                          "editDescription":  "Toggle the actions members of this role are allowed to perform.",
+                                                                          "selectedCount":  "{{count}} permissions selected",
+                                                                          "saving":  "Saving...",
+                                                                          "create":  "Create role",
+                                                                          "save":  "Save changes",
+                                                                          "loading":  "Loading...",
+                                                                          "lockedNotice":  "This role is locked (a platform-managed stock role) and cannot be edited.",
+                                                                          "nameLabel":  "Role name *",
+                                                                          "namePlaceholder":  "e.g. Contract Reviewer",
+                                                                          "descriptionLabel":  "Description",
+                                                                          "descriptionPlaceholder":  "What is this role for?",
+                                                                          "portalLabel":  "Portal",
+                                                                          "portalUser":  "Module user",
+                                                                          "portalTenant":  "Organization admin",
+                                                                          "portalUserDescription":  "Works inside modules (Contracts, Matters...)",
+                                                                          "portalTenantDescription":  "Manages members, roles, and org settings",
+                                                                          "planHint":  "Only modules included in this organization\u0027s plan are shown."
+                                                                      }
+                                                       },
+                                             "members":  {
+                                                             "title":  "Organization Members",
+                                                             "searchPlaceholder":  "Search members...",
+                                                             "totalCount_one":  "{{count}} member total",
+                                                             "totalCount_other":  "{{count}} members total",
+                                                             "empty":  "No members found",
+                                                             "loading":  "Loading members...",
+                                                             "failedLoad":  "Failed to load members. Please try again.",
+                                                             "emptySearch":  "No members matching \"{{search}}\".",
+                                                             "emptyOrg":  "No members found for this organization.",
+                                                             "unnamed":  "Unnamed",
+                                                             "noRoles":  "No roles",
+                                                             "joinedOn":  "Joined {{date}}",
+                                                             "joinedUnknown":  "Joined ---",
+                                                             "view":  "View",
+                                                             "table":  {
+                                                                           "member":  "Member",
+                                                                           "region":  "Region",
+                                                                           "status":  "Status",
+                                                                           "roles":  "Roles",
+                                                                           "joined":  "Joined",
+                                                                           "actions":  "Actions"
+                                                                       }
+                                                         },
+                                             "invitations":  {
+                                                                 "title":  "Organization Invitations",
+                                                                 "inviteUser":  "Invite User",
+                                                                 "table":  {
+                                                                               "email":  "Email",
+                                                                               "region":  "Region",
+                                                                               "status":  "Status",
+                                                                               "expires":  "Expires",
+                                                                               "invitedBy":  "Invited By",
+                                                                               "actions":  "Actions"
+                                                                           },
+                                                                 "inviteSent":  "Invitation Sent",
+                                                                 "inviteTitle":  "Invite User to Organization",
+                                                                 "inviteSentSuccess":  "Invitation sent successfully.",
+                                                                 "inviteUrl":  "Invite URL",
+                                                                 "copy":  "Copy",
+                                                                 "copied":  "Copied",
+                                                                 "expireMsg":  "Share this link with the invitee. It expires on",
+                                                                 "email":  "Email",
+                                                                 "displayName":  "Display Name",
+                                                                 "role":  "Role",
+                                                                 "selectRole":  "Select a role...",
+                                                                 "roleHelp":  "The role this user will be assigned upon accepting the invitation.",
+                                                                 "region":  "Region",
+                                                                 "selectRegion":  "Select a region...",
+                                                                 "regionHelpActive":  "Select from the organization\u0027s configured regions.",
+                                                                 "regionHelpGlobal":  "No regions configured â€” select from global list.",
+                                                                 "failedSend":  "Failed to send invitation. Please check the email and try again.",
+                                                                 "done":  "Done",
+                                                                 "cancel":  "Cancel",
+                                                                 "sending":  "Sending...",
+                                                                 "send":  "Send Invitation"
+                                                             },
+                                             "edit":  {
+                                                          "title":  "Edit Details",
+                                                          "subtitle":  "Update the organization\u0027s core information and seat limits.",
+                                                          "orgName":  "Organization Name",
+                                                          "billingEmail":  "Billing Email",
+                                                          "timezone":  "Timezone",
+                                                          "region":  "Region",
+                                                          "seatLimits":  "Seat Limits",
+                                                          "maxAdminSeats":  "Max Admin Seats",
+                                                          "maxAdminSeatsDesc":  "Maximum number of admin seats allowed for this organization.",
+                                                          "maxUserSeats":  "Max User Seats",
+                                                          "maxUserSeatsDesc":  "Maximum number of regular user seats allowed for this organization.",
+                                                          "entitlements":  "Entitlements",
+                                                          "entitlementsDesc":  "Assign a plan to snapshot its modules, seats, and AI credits â€” or fine-tune the modules below. Only enabled modules are usable by this organization.",
+                                                          "plan":  "Plan",
+                                                          "planDesc":  "Selecting a plan pre-fills the fields below; edits become per-org overrides.",
+                                                          "customPlan":  "Custom (no plan)",
+                                                          "enabledModules":  "Enabled modules",
+                                                          "aiBalance":  "AI credit balance",
+                                                          "aiBalanceDesc":  "Current spendable AI credits.",
+                                                          "aiAllowance":  "AI monthly allowance",
+                                                          "aiAllowanceDesc":  "Recurring monthly AI credit grant.",
+                                                          "save":  "Save Changes",
+                                                          "saving":  "Saving...",
+                                                          "success":  "Organization updated successfully.",
+                                                          "failed":  "Failed to update organization. Please try again.",
+                                                          "maxWorkspaces":  "Active workspaces",
+                                                          "maxExternalSeats":  "External counsel seats",
+                                                          "storageLimitMb":  "Storage limit (MB)"
+                                                      },
+                                             "status":  {
+                                                            "title":  "Status Management",
+                                                            "subtitle":  "Manage the lifecycle state of this organization.",
+                                                            "current":  "Current status:",
+                                                            "noTransitions":  "No status transitions available for this organization.",
+                                                            "availableTransitions":  "Available transitions:",
+                                                            "activate":  "Activate",
+                                                            "suspend":  "Suspend",
+                                                            "archive":  "Archive",
+                                                            "confirmTitle":  "Are you sure you want to do this?",
+                                                            "confirmWarningTitle":  "This is extremely important.",
+                                                            "confirmWarningDesc":  "Altering the operational state of this organization takes effect immediately and updates system permissions.",
+                                                            "verifyPrompt":  "To verify, type {{phrase}} exactly as it appears for {{name}} organization:",
+                                                            "cancel":  "Cancel"
+                                                        }
+                                         }
+                          }
+}

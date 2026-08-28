@@ -1,0 +1,191 @@
+{
+  "page": {
+    "title": "Benutzer",
+    "subtitle": "Verwalten Sie Plattformbenutzer, ihre Rollen und ihren Kontostatus."
+  },
+  "filters": {
+    "searchPlaceholder": "Benutzer nach E-Mail oder Name suchen...",
+    "allStatuses": "Alle Status",
+    "allRoles": "Alle Rollen"
+  },
+  "view": {
+    "list": "Listenansicht",
+    "grid": "Rasteransicht"
+  },
+  "table": {
+    "email": "E-Mail",
+    "displayName": "Anzeigename",
+    "platformRole": "Plattformrolle",
+    "status": "Status",
+    "mfa": "MFA",
+    "lastLogin": "Letzte Anmeldung",
+    "organization": "Organisation",
+    "region": "Region",
+    "roles": "Rollen",
+    "joined": "Beigetreten",
+    "actions": "Aktionen"
+  },
+  "cards": {
+    "mfa": "MFA: {{state}}",
+    "lastLogin": "Letzte Anmeldung: {{value}}"
+  },
+  "pagination": {
+    "summary": "Seite {{page}} von {{totalPages}} ({{total}} insgesamt)",
+    "previous": "Zurück",
+    "next": "Weiter"
+  },
+  "states": {
+    "loading": "Benutzer werden geladen...",
+    "loadError": "Benutzer konnten nicht geladen werden.",
+    "empty": "Keine Benutzer gefunden."
+  },
+  "roles": {
+    "user": "Benutzer",
+    "tenant": "Organisationsinhaber",
+    "support": "Support",
+    "superAdmin": "Superadministrator"
+  },
+  "statuses": {
+    "active": "Aktiv",
+    "pendingVerification": "Verifizierung ausstehend",
+    "suspended": "Ausgesetzt",
+    "locked": "Gesperrt",
+    "deactivated": "Deaktiviert",
+    "invited": "Eingeladen",
+    "removed": "Entfernt"
+  },
+  "accountKinds": {
+    "standard": "Standard",
+    "externalCounsel": "Externe Rechtsberatung",
+    "whistleblower": "Hinweisgeber",
+    "serviceAccount": "Dienstkonto"
+  },
+  "actions": {
+    "activate": "Aktivieren",
+    "suspend": "Aussetzen",
+    "deactivate": "Deaktivieren",
+    "reactivate": "Reaktivieren",
+    "unlockActivate": "Entsperren und aktivieren",
+    "updateRole": "Rolle aktualisieren",
+    "addToOrganization": "Zu Organisation hinzufügen",
+    "addMembership": "Mitgliedschaft hinzufügen",
+    "edit": "Bearbeiten",
+    "editRoles": "Rollen bearbeiten",
+    "remove": "Entfernen",
+    "saveRoles": "Rollen speichern",
+    "transferOwnership": "Inhaberschaft übertragen"
+  },
+  "common": {
+    "notSet": "Nicht festgelegt",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert",
+    "on": "Ein",
+    "off": "Aus",
+    "never": "Nie",
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "processing": "Verarbeitung...",
+    "saving": "Speichern...",
+    "organization": "Organisation",
+    "region": "Region",
+    "rolesAtLeastOne": "Rollen (mindestens eine auswählen)",
+    "loadingRoles": "Rollen werden geladen...",
+    "noRoles": "Für diese Organisation sind keine Rollen verfügbar.",
+    "selectOrganization": "Organisation auswählen...",
+    "alreadyInAllOrganizations": "Der Benutzer ist bereits Mitglied aller Organisationen.",
+    "search": "Suchen..."
+  },
+  "detail": {
+    "back": "Zurück zu den Benutzern",
+    "loading": "Benutzer wird geladen...",
+    "loadError": "Der Benutzer konnte nicht geladen werden. Er ist möglicherweise nicht vorhanden oder Sie dürfen ihn nicht anzeigen.",
+    "header": {
+      "unnamed": "Unbenannter Benutzer",
+      "accountType": "Kontotyp: {{type}}"
+    },
+    "summary": {
+      "email": "E-Mail",
+      "verified": "Verifiziert",
+      "unverified": "Nicht verifiziert",
+      "phone": "Telefon",
+      "mfa": "MFA",
+      "joined": "Beigetreten",
+      "lastLogin": "Letzte Anmeldung",
+      "regions": "Regionen"
+    },
+    "tabs": {
+      "organizationRoles": "Organisationsrollen",
+      "systemRole": "Systemrolle",
+      "status": "Statusverwaltung",
+      "memberships": "Organisationsmitgliedschaften"
+    },
+    "organizationRoles": {
+      "title": "Organisationsrollen",
+      "subtitle": "Rollen dieses Benutzers in den einzelnen Organisationen. Wählen Sie Bearbeiten, um sie zu ändern.",
+      "empty": "Dieser Benutzer ist kein Mitglied einer Organisation.",
+      "noRoles": "Keine Rollen"
+    },
+    "systemRole": {
+      "title": "Systemrolle",
+      "subtitle": "Plattformweite Zugriffsebene (nicht organisationsspezifisch)",
+      "platformRole": "Plattformrolle"
+    },
+    "status": {
+      "title": "Statusverwaltung",
+      "subtitle": "Verwalten Sie den Kontostatus dieses Benutzers. Destruktive Aktionen erfordern eine Texteingabe zur Bestätigung.",
+      "current": "Aktueller Status:",
+      "noTransitions": "Keine Statusänderungen verfügbar."
+    },
+    "memberships": {
+      "title": "Organisationsmitgliedschaften",
+      "empty": "Dieser Benutzer ist kein Mitglied einer Organisation.",
+      "primaryOwner": "Primäre Inhaberin oder primärer Inhaber"
+    },
+    "addMembership": {
+      "title": "Zu Organisation hinzufügen",
+      "adding": "Wird hinzugefügt...",
+      "loadRolesError": "Die Rollen dieser Organisation konnten nicht geladen werden.",
+      "addError": "Der Benutzer konnte nicht zur Organisation hinzugefügt werden. Bitte versuchen Sie es erneut."
+    },
+    "editRoles": {
+      "title": "Rollen bearbeiten",
+      "updateError": "Die Rollen konnten nicht aktualisiert werden. Bitte versuchen Sie es erneut."
+    },
+    "transferOwnership": {
+      "title": "Primäre Inhaberschaft übertragen",
+      "warning": "Dadurch ändert sich die primäre Inhaberin oder der primäre Inhaber der Organisation sofort. Die bisherige Inhaberin oder der bisherige Inhaber behält den Zugriff über die ausgewählte Ersatzrolle.",
+      "loadingOptions": "Berechtigte Mitglieder und Rollen werden geladen...",
+      "loadError": "Die Optionen für die Übertragung der Inhaberschaft konnten nicht geladen werden.",
+      "newOwner": "Neue primäre Inhaberin oder neuer primärer Inhaber",
+      "selectNewOwner": "Neue primäre Inhaberin oder neuen primären Inhaber auswählen...",
+      "noEligibleMembers": "Für die Übertragung der Inhaberschaft sind keine berechtigten internen Mitglieder verfügbar.",
+      "formerOwnerRole": "Rolle der bisherigen Inhaberin oder des bisherigen Inhabers",
+      "selectFormerOwnerRole": "Rolle für die bisherige Inhaberin oder den bisherigen Inhaber auswählen...",
+      "confirmWord": "ÜBERTRAGEN",
+      "confirmLabel": "Zur Bestätigung {{word}} eingeben",
+      "success": "Die Organisationsinhaberschaft wurde erfolgreich übertragen."
+    },
+    "confirmation": {
+      "title": "Möchten Sie diese Aktion wirklich ausführen?",
+      "important": "Diese Aktion ist äußerst wichtig.",
+      "warningStatus": "Die Änderung des Kontostatus wird sofort wirksam und aktualisiert den Systemzugriff des Benutzers.",
+      "verifyStatus": "Geben Sie zur Bestätigung {{word}} genau wie angezeigt für {{user}} ein:",
+      "confirmAction": "Bestätigen: {{action}}",
+      "warningRemove": "Durch das Entfernen dieser Mitgliedschaft werden sofort alle Rollen des Benutzers in der Organisation widerrufen.",
+      "verifyRemove": "Geben Sie zur Bestätigung {{word}} ein, um {{user}} aus {{organization}} zu entfernen:",
+      "confirmRemove": "Entfernen bestätigen",
+      "words": {
+        "suspend": "aussetzen",
+        "deactivate": "deaktivieren",
+        "remove": "entfernen"
+      }
+    },
+    "messages": {
+      "updateFailed": "Der Benutzer konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut.",
+      "removeFailed": "Die Mitgliedschaft konnte nicht entfernt werden. Bitte versuchen Sie es erneut.",
+      "removed": "Der Benutzer wurde erfolgreich aus der Organisation entfernt.",
+      "added": "Der Benutzer wurde erfolgreich zur Organisation hinzugefügt.",
+      "rolesUpdated": "Die Mitgliedschaftsrollen wurden erfolgreich aktualisiert."
+    }
+  }
+}

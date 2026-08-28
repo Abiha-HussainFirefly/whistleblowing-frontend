@@ -1,0 +1,186 @@
+{
+  "contractTypes": {
+    "defaultNonStandard": "Neue Verträge standardmäßig als nicht standardisiert klassifizieren"
+  },
+  "table": {
+    "columns": {
+      "contract": "Vertrag",
+      "counterparty": "Gegenpartei",
+      "type": "Typ",
+      "value": "Wert",
+      "expiry": "Ablauf",
+      "owner": "Verantwortlich",
+      "status": "Status"
+    }
+  },
+  "repository": {
+    "newContract": "Neuer Vertrag"
+  },
+  "lifecycle": {
+    "steps": {
+      "draft": "Entwurf",
+      "inReview": "In Prüfung",
+      "pendingApproval": "Ausstehende Genehmigung",
+      "approved": "Genehmigt",
+      "pendingExecution": "Ausstehende Ausführung",
+      "executed": "Ausgeführt"
+    },
+    "next": {
+      "submit": "Nächster Schritt: zur Genehmigung einreichen — ein Kollege mit Einreichungsberechtigung muss dies tun. Der Ersteller kann seinen eigenen Vertrag nicht einreichen.",
+      "approvals": "Nächster Schritt: Genehmigungen — die zugewiesenen Genehmiger entscheiden der Reihe nach. Der Ersteller kann seinen eigenen Vertrag nicht genehmigen.",
+      "execute": "Nächster Schritt: ausführen — jemand mit Ausführungsberechtigung kann in Civorah unterschreiben, über DocuSign senden oder eine manuelle Ausführung erfassen.",
+      "signatures": "Nächster Schritt: Signaturen abschließen — es wird auf Unterzeichner gewartet, danach ist der Vertrag ausgeführt."
+    },
+    "terminal": {
+      "active": "Dieser Vertrag ist aktiv.",
+      "executed": "Dieser Vertrag ist ausgeführt.",
+      "expired": "Dieser Vertrag ist abgelaufen.",
+      "terminated": "Dieser Vertrag wurde beendet.",
+      "renewed": "Dieser Vertrag wurde verlängert.",
+      "archived": "Dieser Vertrag ist archiviert."
+    }
+  },
+  "obligations": {
+    "title": "Verpflichtungen & Verlängerungen",
+    "addShort": "Verpflichtung",
+    "empty": "Keine Verpflichtungen erfasst. Fügen Sie Verlängerungsfristen und wichtige Meilensteine hinzu, um automatische Benachrichtigungen zu erhalten.",
+    "markOpen": "Als offen markieren",
+    "markComplete": "Als erledigt markieren",
+    "due": "Fällig {{date}}",
+    "alerts": "Benachrichtigungen: {{days}} T vorher",
+    "deleteAria": "Verpflichtung löschen",
+    "newTitle": "Neue Verpflichtung",
+    "newSubtitle": "Verfolgen Sie eine Verlängerungsfrist, einen Meilenstein oder eine wiederkehrende Anforderung",
+    "fieldTitle": "Titel",
+    "titlePlaceholder": "z. B. Frist für Verlängerungshinweis",
+    "scheduling": "Terminplanung",
+    "dueDate": "Fälligkeitsdatum",
+    "selectDate": "Datum auswählen",
+    "alertDaysBefore": "Benachrichtigungstage vorher",
+    "alertsPlaceholder": "180, 120, 90, 60, 30",
+    "commaSeparated": "Durch Komma getrennte Tage",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Zusätzlicher Kontext zu dieser Verpflichtung",
+    "descriptionHint": "Helfen Sie dem Team zu verstehen, welche Maßnahme erforderlich ist und warum",
+    "addObligation": "Verpflichtung hinzufügen",
+    "added": "Hinzugefügt",
+    "confirmDeleteTitle": "Verpflichtung löschen?",
+    "confirmDeletePrefix": "Löschen",
+    "confirmDeleteSuffix": "? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "toast": {
+      "added": "Verpflichtung hinzugefügt",
+      "deleted": "Verpflichtung gelöscht",
+      "markedComplete": "Verpflichtung als erledigt markiert",
+      "reopened": "Verpflichtung wieder geöffnet"
+    }
+  },
+  "approvals": {
+    "ownerGate": {
+      "how": "Die ausgewählte Vertragsverantwortung startet MoA mit der Einreichen-Berechtigung; der Ersteller kann den eigenen Vertrag weder verantworten noch starten.",
+      "title": "Freigabe durch Vertragsverantwortung",
+      "strictOrder": "Die Vertragsverantwortung startet den Ablauf. MoA-Schritte werden strikt der Reihe nach genehmigt.",
+      "starting": "MoA wird gestartet...",
+      "startButton": "Freigeben und MoA starten",
+      "started": "MoA-Ablauf gestartet",
+      "creatorHint": "Sie haben diesen Vertrag erstellt und können daher weder Vertragsverantwortung sein noch MoA starten. Die ausgewählte Vertragsverantwortung muss ihn prüfen.",
+      "onlyOwnerHint": "Nur die ausgewählte Vertragsverantwortung kann diesen Vertrag prüfen und MoA starten.",
+      "ownerPermissionHint": "Sie sind die Vertragsverantwortung. Ihre Rolle benötigt außerdem die Berechtigung Vertrag einreichen, um MoA zu starten.",
+      "ownerCannotDecide": "Sie haben den MoA-Ablauf dieses Vertrags als Vertragsverantwortung gestartet. Ein anderer zugewiesener Genehmiger muss diesen Schritt entscheiden."
+    },
+    "title": "Genehmigungsworkflow",
+    "how": {
+      "title": "So funktioniert die Vertragsgenehmigung",
+      "create": "Entwurf mit der Berechtigung Erstellen/Bearbeiten erstellen und bearbeiten.",
+      "submit": "Die Einreichung erfolgt durch einen anderen Kollegen mit Einreichen-Berechtigung; der Ersteller kann den eigenen Vertrag nicht einreichen.",
+      "chain": "Beim Einreichen wird die Genehmigungskette automatisch aus MoA-Regeln erzeugt oder manuell erstellt, wenn keine Regel passt.",
+      "approvers": "Genehmiger entscheiden jeden Schritt der Reihe nach. Der Ersteller kann den eigenen Vertrag nicht genehmigen.",
+      "execute": "Nach der Genehmigung f?hrt eine Person mit Ausf?hren-Berechtigung den Vertrag in Civorah, ?ber DocuSign oder durch manuelle Ausf?hrung aus."
+    },
+    "submit": {
+      "title": "Zur Genehmigung einreichen",
+      "checkingMoa": "MoA-Regeln werden gepr?ft...",
+      "generatedOnSubmit": "Die Genehmigungsschritte dieser Regel werden beim Einreichen des Vertrags erzeugt.",
+      "legal": "Rechtlich",
+      "anyApprover": "beliebiger Genehmiger",
+      "strictOrder": "Strikt der Reihe nach genehmigt; der Ersteller kann den eigenen Vertrag nicht genehmigen.",
+      "submitting": "Wird eingereicht...",
+      "submitButton": "Zur Genehmigung einreichen",
+      "step": "Schritt",
+      "stepPlaceholder": "z. B. Genehmigung durch Gesch?ftsleitung",
+      "approver": "Genehmiger *",
+      "removeStep": "Schritt entfernen",
+      "addStep": "Schritt hinzuf?gen",
+      "progression": "Der Ablauf kann nicht ?bersprungen werden. Fr?here Schritte m?ssen zuerst entschieden werden."
+    }
+  },
+  "statusManagedByWorkflow": "Der Status ändert sich durch berechtigte Genehmigungs-, Ausführungs-, Verlängerungs-, Beendigungs- oder Archivierungsaktionen.",
+  "workflowUi": {
+    "rolesAnyHolderApproves": "Rollen (jedes berechtigte Mitglied kann genehmigen)",
+    "roleOption": "{{role}} — {{count}} Mitglied(er)",
+    "anyEligibleHolder": "jedes berechtigte Mitglied",
+    "roleLabel": "Rolle",
+    "action": {
+      "approve": "Freigabe",
+      "review_legal": "Rechtliche Prüfung",
+      "execute": "Ausführung",
+      "review": "Prüfung"
+    },
+    "decisionCommentPlaceholder": "Entscheidungskommentar (bei Ablehnung oder Eskalation erforderlich)…",
+    "escalate": "Eskalieren",
+    "escalateHint": "Nur verwenden, wenn Sie diesen Schritt nicht entscheiden können (falsche Zuweisung, Interessenkonflikt oder nicht verfügbarer Prüfer). Ein Vertragsmanager weist ihn neu zu.",
+    "reassignApprover": "Freigebenden neu zuweisen",
+    "reassign": "Neu zuweisen"
+  },
+  "actions": {
+    "renew": "Verlängern",
+    "archive": "Archivieren",
+    "renewed": "Vertrag verlängert",
+    "archived": "Vertrag archiviert",
+    "renewConfirmTitle": "Vertrag verlängern?",
+    "renewConfirmDescription": "Der Vertrag wird mit dem heutigen Datum als verlängert markiert.",
+    "archiveConfirmTitle": "Vertrag archivieren?",
+    "archiveConfirmDescription": "Der Vertrag wird zu einem schreibgeschützten historischen Datensatz.",
+    "deleteConfirmTitle": "Vertrag löschen?",
+    "deleteConfirmDescription": "Dieser Vertrag wird soft-gelöscht (für Audits aufbewahrt) und aus dem Repository ausgeblendet. Diese Aktion kann nicht rückgängig gemacht werden."
+  },
+  "moa": {
+    "assignmentType": "Schritt zuweisen an",
+    "specificUser": "Bestimmte Person",
+    "rolePool": "Rolle (alle berechtigten Mitglieder)",
+    "approver": "Genehmigende Person",
+    "selectUser": "Berechtigte Person auswählen…",
+    "selectRole": "Berechtigte Rolle auswählen…",
+    "roleOption": "{{role}} — {{count}} Mitglied(er)",
+    "markLegalReviewStep": "Als rechtlichen Prüfungsschritt markieren",
+    "markExecutionStep": "Als Ausführungsschritt markieren",
+    "validation": {
+      "ruleNameRequired": "Der Regelname ist erforderlich.",
+      "atLeastOneStep": "Fügen Sie mindestens einen Genehmigungsschritt hinzu.",
+      "missingApprover": "Jeder Schritt muss genau einer Person oder einer Rolle zugewiesen sein.",
+      "exclusiveStepType": "Ein Schritt kann nicht gleichzeitig rechtliche Prüfung und Ausführung sein.",
+      "singleExecutionStep": "Eine Regel darf nur einen Ausführungsschritt enthalten.",
+      "missingLegalReview": "Eine Regel für nicht standardisierte Verträge muss einen rechtlichen Prüfungsschritt enthalten."
+    }
+  },
+  "assignment": {
+    "owner": "Vertragsverantwortung",
+    "legalCounsel": "Rechtsberatung",
+    "selectOwner": "Vertragsverantwortung auswählen",
+    "none": "Keine"
+  },
+  "documents": {
+    "title": "Dokumente",
+    "upload": "Hochladen",
+    "empty": "Keine Dokumente angehangt. Laden Sie Entwurfe, ausgefuhrte Vereinbarungen und Nachtrage hoch; sie werden per OCR verarbeitet und automatisch durchsuchbar gemacht.",
+    "ocr": {
+      "searchable": "Durchsuchbar",
+      "processing": "OCR wird verarbeitet",
+      "failed": "OCR fehlgeschlagen"
+    },
+    "actions": {
+      "edit": "Bearbeiten",
+      "history": "Historie",
+      "open": "Offnen"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "next": "Suivant",
+    "back": "Précédent",
+    "done": "Terminé",
+    "progress": "{{current}} / {{total}}",
+    "skip": "Passer la visite"
+  },
+  "orgMembers": {
+    "s1": {
+      "title": "Gérer votre équipe",
+      "description": "L’accès de chaque membre repose sur trois éléments : le portail auquel il se connecte, son rôle et la région où il travaille. Cette visite rapide montre où se trouve chacun."
+    },
+    "s2": {
+      "title": "Membres vs Invitations",
+      "description": "Les « Membres » sont des personnes déjà présentes dans votre organisation. Les « Invitations » sont des invitations par e-mail en attente qui n’ont pas encore été acceptées."
+    },
+    "s3": {
+      "title": "Sièges",
+      "description": "Votre forfait inclut un certain nombre de sièges Admin (portail Locataire) et Utilisateur (portail Utilisateur). Chaque membre en utilise un — ces badges indiquent combien il en reste."
+    },
+    "s4": {
+      "title": "Inviter quelqu’un",
+      "description": "L’invitation demande Portail → Rôle → Région. Choisissez le portail selon le type de travail, un rôle correspondant à sa fonction et la région dont il a besoin des données."
+    },
+    "s5": {
+      "title": "C’est tout",
+      "description": "Vous pouvez modifier le rôle, le statut ou les régions d’un membre à tout moment via l’action « Modifier ». Ouvrez Aide → « Comment fonctionne l’accès » pour la vue d’ensemble."
+    }
+  },
+  "contractCreate": {
+    "s1": {
+      "title": "Créer un contrat",
+      "description": "Renseignez l’identité du contrat, puis sa valeur et sa durée, puis la propriété. Le fichier téléversé devient le premier document du contrat (indexé par OCR pour la recherche)."
+    },
+    "s2": {
+      "title": "Type de contrat",
+      "description": "Le type détermine des valeurs par défaut comme le niveau de risque et la nécessité d’une revue juridique. Gérez le catalogue sous Contrats → Types."
+    },
+    "s3": {
+      "title": "Département et dossier",
+      "description": "Le département rattache le contrat à votre structure organisationnelle (rapports + routage des approbations). Le dossier ne fait que l’organiser dans l’explorateur — ni l’un ni l’autre ne change qui peut le voir."
+    },
+    "s4": {
+      "title": "Contrepartie et IDD",
+      "description": "Liez le tiers afin que son statut de diligence raisonnable soit visible. Si vous exigez une validation IDD, le contrat ne peut être exécuté tant que ce tiers n’est pas validé."
+    }
+  },
+  "litigationCases": {
+    "s1": {
+      "title": "Votre bibliothèque de dossiers",
+      "description": "Ceci est un explorateur de fichiers pour les dossiers contentieux. Utilisez des dossiers pour les regrouper à votre guise — les dossiers ne changent jamais qui peut accéder à une affaire ou à sa région."
+    },
+    "s2": {
+      "title": "Dossiers et Accueil",
+      "description": "Accueil affiche les affaires non classées ; cliquez sur un dossier pour voir ses affaires. Une affaire se trouve dans exactement un dossier, ou aucun."
+    },
+    "s3": {
+      "title": "Nouveau dossier",
+      "description": "Créez des dossiers pour organiser les affaires par sujet, client ou année — comme il vous convient."
+    },
+    "s4": {
+      "title": "Nouvelle affaire",
+      "description": "Démarrez une affaire ici. Si vous êtes dans un dossier, la nouvelle affaire y est placée automatiquement."
+    }
+  },
+  "departments": {
+    "s1": {
+      "title": "Départements",
+      "description": "Les départements reflètent votre structure interne (Département › Sous-département / Centre de coûts › Fonction). Ils étiquettent les contrats et les affaires pour les rapports et le routage des approbations — ils ne contrôlent pas qui voit les données."
+    },
+    "s2": {
+      "title": "Ajouter un département",
+      "description": "Créez un département de premier niveau, puis imbriquez des sous-départements en dessous. Attribuez un chef de département et un centre de coûts si vous les suivez."
+    }
+  },
+  "reportConcern": {
+    "welcome": {
+      "title": "👋 Guide rapide du formulaire",
+      "text": "Cette visite vous guide à travers chaque section du formulaire de signalement. Elle dure environ 60 secondes. Votre identité est protégée tout du long — vous décidez de rester anonyme ou non."
+    },
+    "category": {
+      "title": "📋 Catégorie de l’incident",
+      "text": "Commencez par choisir la catégorie qui décrit le mieux ce que vous avez constaté — par exemple fraude, harcèlement ou violation de sécurité. En cas de doute, choisissez la plus proche."
+    },
+    "description": {
+      "title": "✍️ Que s’est-il passé ?",
+      "text": "Décrivez l’incident avec le plus de détails possible — qui était impliqué, ce qui s’est produit, où, quand et comment vous le savez. Plus il y a de détails, plus l’enquête est facile. <strong>N’indiquez pas votre nom</strong> si vous souhaitez rester anonyme."
+    },
+    "location": {
+      "title": "📍 Lieu",
+      "text": "Indiquez autant de détails de lieu que possible — le site précis, la ville ou la région où l’incident s’est produit. Cela aide à orienter votre signalement vers la bonne équipe. Tous les champs ici sont facultatifs."
+    },
+    "relationship": {
+      "title": "🔗 Votre relation",
+      "text": "Indiquez-nous votre lien avec l’organisation — employé, prestataire, fournisseur, etc. Cela nous aide à comprendre le contexte de votre signalement. Ce champ est facultatif."
+    },
+    "involved": {
+      "title": "👤 Personnes impliquées",
+      "text": "Ajoutez le(s) nom(s) de toute personne directement impliquée dans le comportement que vous signalez. Prénom, nom et intitulé de poste sont tous facultatifs — indiquez ce que vous savez."
+    },
+    "dates": {
+      "title": "📅 Chronologie",
+      "text": "Indiquez-nous quand l’incident s’est produit et s’il est toujours en cours. Même des dates approximatives (comme « le mois dernier ») aident les enquêteurs à établir une chronologie."
+    },
+    "anonymous": {
+      "title": "🔒 Rester anonyme ?",
+      "text": "Par défaut, votre signalement est anonyme — nous ne savons jamais qui vous êtes. Si vous souhaitez recevoir des mises à jour sur votre dossier, décochez cette case et indiquez un e-mail de contact. Vos informations restent strictement confidentielles."
+    },
+    "conflict": {
+      "title": "🛡️ Conflit d’intérêts",
+      "text": "Si votre signalement concerne un membre de l’équipe conformité, cochez son nom ici pour lui masquer ce dossier. Votre signalement parviendra tout de même à l’administrateur conformité."
+    },
+    "submit": {
+      "title": "✅ Prêt à envoyer",
+      "text": "Acceptez les conditions et cliquez sur <strong>Envoyer le signalement</strong>. Vous recevrez immédiatement un numéro de référence — conservez-le pour suivre l’avancement de votre signalement sans révéler votre identité."
+    }
+  }
+}

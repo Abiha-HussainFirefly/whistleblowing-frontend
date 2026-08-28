@@ -1,0 +1,1 @@
+.attachment{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.65rem 0;border-bottom:1px solid #e5eaf0;overflow-wrap:anywhere}.attachment button{flex:0 0 auto}@media(max-width:700px){.attachment{align-items:flex-start;flex-direction:column}.attachment button{width:100%}}

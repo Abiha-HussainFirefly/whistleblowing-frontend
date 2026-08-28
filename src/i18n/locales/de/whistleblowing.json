@@ -1,0 +1,858 @@
+{
+  "page": {
+    "title": "Ein Anliegen melden",
+    "subtitle": "Melden Sie vertraulich vermutetes Fehlverhalten. Sie können anonym bleiben.",
+    "noContext": "Kein aktiver Organisationskontext.",
+    "loading": "Wird geladen…",
+    "notEnabled": "Die Hinweisgebermeldung ist für Ihre Organisation nicht aktiviert.",
+    "loadingSecure": "Geschütztes Meldeportal wird geladen...",
+    "portalUnavailable": "Portal nicht verfügbar",
+    "portalNotFound": "Dieses Meldeportal konnte nicht gefunden werden.",
+    "reportSubmitted": "Meldung gesendet",
+    "reportSubmittedToast": "Meldung erfolgreich gesendet. Speichern Sie die Zugangsdaten jetzt.",
+    "portalSubtitle": "Senden Sie eine vertrauliche Meldung an {{organization}}. Sie können anonym bleiben."
+  },
+  "form": {
+    "takeTour": "Tour starten",
+    "cards": {
+      "overview": {
+        "title": "Übersicht des Vorfalls",
+        "subtitle": "Beschreiben Sie die Art des gemeldeten Anliegens"
+      },
+      "location": {
+        "title": "Wo ist das passiert?",
+        "subtitle": "Helfen Sie uns, den Ort des Vorfalls zu verstehen"
+      },
+      "more": {
+        "title": "Erzählen Sie uns mehr",
+        "subtitle": "Zusätzlicher Kontext hilft uns, gründlich zu ermitteln"
+      },
+      "contact": {
+        "title": "Ihre Kontaktdaten",
+        "subtitle": "Werden nur zur Nachverfolgung Ihrer Meldung verwendet"
+      },
+      "identity": {
+        "title": "Identität und Vertraulichkeit",
+        "subtitle": "Wählen Sie, wie wir Sie kontaktieren dürfen und wer ausgeschlossen werden soll"
+      },
+      "review": {
+        "title": "Prüfen und absenden",
+        "subtitle": "Bestätigen Sie die Bedingungen der Meldung vor dem Absenden"
+      }
+    },
+    "fields": {
+      "category": "Vorfallkategorie",
+      "whatHappened": "Was ist passiert?",
+      "whatHappenedHint": "Wer, was, wo, wann und wie. Ihre Anonymität ist geschützt.",
+      "location": "Ort, an dem der Vorfall stattfand",
+      "city": "Stadt",
+      "state": "Bundesland / Provinz",
+      "postalCode": "Postleitzahl",
+      "country": "Land",
+      "region": "Region / Geschäftseinheit",
+      "relationship": "Ihre Beziehung zur Organisation",
+      "involved": "An diesem Verhalten beteiligte Person(en)",
+      "previouslyReported": "Wurde dies bereits der Geschäftsleitung gemeldet?",
+      "dateOfOccurrence": "Datum des Vorfalls",
+      "whenLast": "Wann ist dies zuletzt passiert?",
+      "duration": "Wie lange geht das schon so?",
+      "awareness": "Wie sind Sie darauf aufmerksam geworden?",
+      "email": "Ihre E-Mail (für Updates)",
+      "phone": "Ihre Telefonnummer",
+      "bestTime": "Beste Zeit, um Sie zu erreichen"
+    },
+    "placeholders": {
+      "selectCategory": "Kategorie auswählen…",
+      "selectOne": "Bitte auswählen…",
+      "notSpecified": "Nicht angegeben",
+      "whatHappened": "Bitte geben Sie so viele Details wie möglich an — wer, was, wo, wann und woher Sie dies wissen. Vermeiden Sie es, Ihre eigene Identität anzugeben, wenn Sie anonym bleiben möchten.",
+      "location": "Physische Adresse, Filiale und/oder Filialnummer",
+      "whenLast": "z. B. Vor zwei Wochen",
+      "email": "sie@beispiel.com",
+      "bestTime": "z. B. Wochentags vormittags"
+    },
+    "characters": "{{count}} Zeichen",
+    "anonymous": {
+      "title": "Anonym übermitteln",
+      "on": "Ihre Identität wird nicht weitergegeben.",
+      "off": "Ihre Kontaktdaten werden einbezogen."
+    },
+    "conflictReviewerSelection": {
+      "title": "Bestimmte unabhängige Prüfer ausschließen (optional)",
+      "description": "Wählen Sie nur unabhängige Prüfer aus, bei denen ein Konflikt bestehen könnte. Andere unabhängige Prüfer können diese Meldung bearbeiten.",
+      "protected": "Der Organisationsinhaber ist immer geschützt, und mindestens ein berechtigter Administrator muss verfügbar bleiben.",
+      "none": "Derzeit sind keine unabhängigen Prüfer konfiguriert."
+    },
+    "conflict": {
+      "title": "Interessenkonflikt",
+      "optional": "(freiwillig)",
+      "description": "Wenn diese Meldung eine Person betrifft, die normalerweise Whistleblowing-Fälle bearbeitet, wählen Sie diese Option. Die Meldung wird an das unabhängige Prüfungsteam der Organisation geleitet; das reguläre Team erhält keinen Zugriff."
+    },
+    "terms": "Ich stimme den Geschäftsbedingungen für diese Meldung zu und bestätige, dass die angegebenen Informationen nach bestem Wissen wahr sind.",
+    "submit": "Meldung absenden",
+    "submitting": "Wird gesendet…",
+    "expect": {
+      "title": "Was Sie erwartet",
+      "directToCompliance": "Ihre Meldung wird an das zuständige unabhängige Prüfungs- oder Compliance-Team weitergeleitet.",
+      "caseReference": "Sie erhalten eine Fallreferenz, um den Fortschritt zu verfolgen.",
+      "noRetaliation": "Vergeltungsmaßnahmen gegen Hinweisgeber sind strengstens untersagt."
+    },
+    "validation": {
+      "category": "Bitte wählen Sie eine Vorfallkategorie.",
+      "description": "Bitte geben Sie eine ausführlichere Beschreibung an (mindestens 10 Zeichen).",
+      "email": "Geben Sie eine E-Mail an oder wählen Sie die anonyme Meldung.",
+      "terms": "Bitte akzeptieren Sie die Geschäftsbedingungen, um Ihre Meldung abzusenden.",
+      "descriptionTooLong": "Bitte kürzen Sie die Beschreibung auf höchstens 20.000 Zeichen.",
+      "futureDate": "Das Datum des Vorfalls darf nicht in der Zukunft liegen."
+    },
+    "steps": {
+      "incident": "Vorfallsdetails",
+      "location": "Ort",
+      "details": "Personen und Zeitpunkt",
+      "identity": "Identität",
+      "review": "Prüfen und absenden"
+    },
+    "navigation": {
+      "back": "Zurück",
+      "next": "Weiter"
+    }
+  },
+  "persons": {
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "titleRole": "Titel / Funktion",
+    "titlePlaceholder": "z. B. Nachtschichtleiter",
+    "remove": "Person entfernen",
+    "addFirst": "Person hinzufügen",
+    "addAnother": "Weitere hinzufügen",
+    "examples": "Beispiele: „John Doe, Leiter der Internen Revision“ · „Unbekannt, Unbekannt, Nachtschichtleiter“"
+  },
+  "share": {
+    "title": "Teilbarer Meldelink",
+    "description": "Teilen Sie diesen öffentlichen Link mit Mitarbeitenden, Auftragnehmern, Lieferanten oder jeder externen Partei. Sie können eine vertrauliche Meldung einreichen — auf Wunsch anonym — ganz ohne Konto.",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "open": "Öffnen",
+    "publicTitle": "Öffentlicher Meldelink",
+    "publicDescription": "Teilen Sie diesen Link mit Mitarbeitenden, Auftragnehmern, Lieferanten oder externen Hinweisgebern.",
+    "copyLink": "Link kopieren",
+    "openPublicForm": "Öffentliches Formular öffnen",
+    "bullets": {
+      "noAccount": "Zum Absenden ist kein Konto erforderlich.",
+      "anonymous": "Anonyme Meldungen bleiben möglich.",
+      "secureFlow": "Meldungen laufen über denselben geschützten Eingangsprozess."
+    }
+  },
+  "credentials": {
+    "receivedTitle": "Ihre Meldung ist eingegangen.",
+    "receivedDescription": "Speichern Sie diese Zugangsdaten jetzt — das Passwort wird nur einmal angezeigt und kann nicht wiederhergestellt werden. Verwenden Sie sie, um sich wieder anzumelden und Ihren Fall zu verfolgen.",
+    "loginCredentials": "Ihre Anmeldedaten",
+    "caseReference": "Fallreferenz",
+    "password": "Passwort",
+    "track": "Meinen Fall verfolgen",
+    "trackDescription": "Wird in einem neuen Tab geöffnet, damit Ihre Fallreferenz und Ihr Passwort hier sichtbar bleiben. Speichern Sie sie, bevor Sie diese Seite verlassen — das Passwort wird nur einmal angezeigt.",
+    "reveal": "Anzeigen",
+    "hide": "Verbergen",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "saveTitle": "Speichern Sie diese Zugangsdaten jetzt.",
+    "saveDescription": "Laden Sie sie als Textdatei herunter oder kopieren Sie sie an einen sicheren Ort. Das Passwort wird nicht erneut angezeigt.",
+    "download": "Textdatei herunterladen",
+    "downloadTitle": "Zugangsdaten zur Hinweisgebermeldung",
+    "downloadReminder": "Bewahren Sie diese Zugangsdaten sicher auf. Das Passwort wird nur einmal angezeigt."
+  },
+  "category": {
+    "FRAUD": "Betrug",
+    "BRIBERY_CORRUPTION": "Bestechung & Korruption",
+    "HARASSMENT": "Belästigung",
+    "CONFLICT_OF_INTEREST": "Interessenkonflikt",
+    "DATA_PRIVACY": "Datenschutz & Datensicherheit",
+    "HEALTH_SAFETY": "Gesundheit & Sicherheit",
+    "DISCRIMINATION": "Diskriminierung",
+    "RETALIATION": "Vergeltung",
+    "OTHER_MISCONDUCT": "Sonstiges Fehlverhalten",
+    "ACCOUNTING_AUDITING": "Rechnungswesen, Prüfung & Finanzberichterstattung",
+    "COMPENSATION_BENEFITS": "Vergütung & Sozialleistungen",
+    "SGBP_COMPLIANCE": "Einhaltung der Allgemeinen Geschäftsgrundsätze",
+    "CONFIDENTIAL_INFORMATION": "Vertrauliche & geschützte Informationen",
+    "DISCLOSURE_COMMUNICATIONS": "Offenlegung & Geschäftskommunikation",
+    "DIVERSITY_EQUITY_INCLUSION": "Vielfalt, Gerechtigkeit & Inklusion",
+    "DUE_DILIGENCE": "E&C-Sorgfaltsprüfung",
+    "ENVIRONMENTAL": "Umwelt",
+    "FAIR_COMPETITION": "Freier & fairer Wettbewerb",
+    "GLOBAL_TRADE": "Welthandel",
+    "HUMAN_RIGHTS": "Menschenrechte",
+    "IMMINENT_THREAT": "Unmittelbare Gefahr für eine Person, Tiere oder Eigentum",
+    "INSIDER_TRADING": "Insiderhandel",
+    "INTELLECTUAL_PROPERTY": "Geistiges Eigentum",
+    "ASSET_MISUSE": "Missbrauch oder Veruntreuung von Vermögenswerten",
+    "POLITICAL_ACTIVITY": "Politische Aktivität",
+    "PRODUCT_QUALITY_SAFETY": "Produktqualität & -sicherheit",
+    "SUBSTANCE_ABUSE": "Substanzmissbrauch",
+    "IT_ELECTRONIC_COMMS": "Nutzung von IT & elektronischer Kommunikation",
+    "WORKPLACE_CIVILITY": "Anstand am Arbeitsplatz",
+    "OTHER_BUSINESS_INTEGRITY": "Sonstige Geschäftsintegrität",
+    "OTHER_HUMAN_RESOURCES": "Sonstige Personalangelegenheiten",
+    "INQUIRY": "Anfrage"
+  },
+  "relationship": {
+    "EMPLOYEE": "Mitarbeiter",
+    "FORMER_EMPLOYEE": "Ehemaliger Mitarbeiter",
+    "CONTRACTOR": "Auftragnehmer",
+    "VENDOR_SUPPLIER": "Verkäufer / Lieferant",
+    "CUSTOMER": "Kunde",
+    "BUSINESS_PARTNER": "Geschäftspartner",
+    "OTHER_RELATIONSHIP": "Sonstige"
+  },
+  "duration": {
+    "ONE_TIME": "Einmaliges Ereignis",
+    "LESS_THAN_MONTH": "Weniger als ein Monat",
+    "ONE_TO_THREE_MONTHS": "1 bis 3 Monate",
+    "THREE_TO_SIX_MONTHS": "3 bis 6 Monate",
+    "SIX_TO_TWELVE_MONTHS": "6 bis 12 Monate",
+    "OVER_A_YEAR": "Über ein Jahr",
+    "ONGOING": "Andauernd",
+    "UNKNOWN_DURATION": "Unbekannt"
+  },
+  "awareness": {
+    "WITNESSED": "Persönlich beobachtet",
+    "TOLD_BY_SOMEONE": "Von jemand anderem erfahren",
+    "REVIEWED_DOCUMENTS": "Dokumente / Aufzeichnungen geprüft",
+    "RUMOR": "Ein Gerücht gehört",
+    "INVOLVED": "Ich war beteiligt",
+    "OTHER_SOURCE": "Sonstige"
+  },
+  "previouslyReported": {
+    "YES": "Ja",
+    "NO": "Nein",
+    "UNKNOWN": "Weiß nicht / möchte ich nicht offenlegen"
+  },
+  "tour": {
+    "buttons": {
+      "next": "Weiter →",
+      "back": "← Zurück",
+      "done": "Fertig",
+      "skip": "Tour überspringen"
+    },
+    "welcome": {
+      "title": "👋 Kurze Formularführung",
+      "text": "Diese Tour führt Sie durch jeden Abschnitt des Meldeformulars. Sie dauert etwa 60 Sekunden. Ihre Identität ist durchgehend geschützt — Sie entscheiden, ob Sie anonym bleiben."
+    },
+    "category": {
+      "title": "📋 Vorfallkategorie",
+      "text": "Wählen Sie zunächst die Kategorie, die am besten beschreibt, was Sie beobachtet haben — zum Beispiel Betrug, Belästigung oder Sicherheitsverstoß. Wählen Sie im Zweifel die passendste."
+    },
+    "description": {
+      "title": "✍️ Was ist passiert?",
+      "text": "Beschreiben Sie den Vorfall so ausführlich wie möglich — wer beteiligt war, was geschah, wo, wann und woher Sie davon wissen. Je mehr Details, desto einfacher die Ermittlung. <strong>Geben Sie nicht Ihren eigenen Namen an</strong>, wenn Sie anonym bleiben möchten."
+    },
+    "location": {
+      "title": "📍 Ort",
+      "text": "Geben Sie so viele Ortsangaben an, wie Sie kennen — den konkreten Standort, die Stadt oder die Region, in der der Vorfall stattfand. Das hilft, Ihre Meldung an das richtige Team weiterzuleiten. Alle Felder hier sind optional."
+    },
+    "relationship": {
+      "title": "🔗 Ihre Beziehung",
+      "text": "Teilen Sie uns mit, in welcher Beziehung Sie zur Organisation stehen — Mitarbeiter, Auftragnehmer, Lieferant usw. Das hilft uns, den Kontext Ihrer Meldung zu verstehen. Dieses Feld ist optional."
+    },
+    "involved": {
+      "title": "👤 Beteiligte Personen",
+      "text": "Fügen Sie den/die Namen aller Personen hinzu, die direkt an dem gemeldeten Verhalten beteiligt sind. Vorname, Nachname und Funktion sind alle optional — geben Sie an, was Sie wissen."
+    },
+    "dates": {
+      "title": "📅 Zeitpunkt",
+      "text": "Teilen Sie uns mit, wann der Vorfall stattfand und ob er noch andauert. Selbst ungefähre Angaben (wie „letzten Monat“) helfen den Ermittlern, einen zeitlichen Ablauf zu erstellen."
+    },
+    "anonymous": {
+      "title": "🔒 Anonym bleiben?",
+      "text": "Standardmäßig ist Ihre Meldung anonym — wir erfahren nie, wer Sie sind. Wenn Sie Updates zu Ihrem Fall erhalten möchten, deaktivieren Sie dieses Kästchen und geben Sie eine Kontakt-E-Mail an. Ihre Daten werden streng vertraulich behandelt."
+    },
+    "conflict": {
+      "title": "🛡️ Interessenkonflikt",
+      "text": "Wenn Ihre Meldung ein Mitglied des Compliance-Teams betrifft, markieren Sie hier dessen Namen, um diesen Fall vor ihm zu verbergen. Ihre Meldung erreicht dennoch den Compliance-Administrator."
+    },
+    "submit": {
+      "title": "✅ Bereit zum Absenden",
+      "text": "Akzeptieren Sie die Bedingungen und klicken Sie auf <strong>Meldung absenden</strong>. Sie erhalten sofort eine Fallreferenznummer — speichern Sie sie, um den Fortschritt Ihrer Meldung zu verfolgen, ohne Ihre Identität preiszugeben."
+    }
+  },
+  "shell": {
+    "defaultOrgName": "Hinweisgeberportal",
+    "organizationLogoAlt": "Organisation",
+    "subtitle": "Vertrauliche Meldung",
+    "footerPrefix": "Ihre Meldung wird verschlüsselt und vertraulich behandelt. Sie können anonym melden.",
+    "trackExisting": "Bestehende Meldung verfolgen",
+    "trackReport": "Meldung verfolgen"
+  },
+  "track": {
+    "actions": {
+      "signOut": "Abmelden"
+    },
+    "toasts": {
+      "signedOut": "Erfolgreich abgemeldet."
+    },
+    "case": {
+      "title": "Ihre Meldung",
+      "loading": "Ihr Fall wird geladen...",
+      "referenceSubtitle": "Referenz {{ref}}",
+      "submittedOn": "Gesendet am {{date}}",
+      "detailsTitle": "Ihre Meldung",
+      "fields": {
+        "dateOfOccurrence": "Datum des Vorfalls",
+        "location": "Ort",
+        "relationship": "Beziehung",
+        "whenLast": "Wann es zuletzt passiert ist",
+        "duration": "Dauer",
+        "previouslyReported": "Zuvor gemeldet"
+      },
+      "identifiedPersons": "Von Ihnen benannte Person(en)",
+      "personTitleSuffix": " - {{title}}",
+      "outcome": "Ergebnis"
+    },
+    "login": {
+      "title": "Ihre Meldung verfolgen",
+      "subtitle": "Melden Sie sich mit Fallreferenz und Passwort an.",
+      "eyebrow": "Vertraulicher Fallzugang",
+      "description": "Verwenden Sie die Zugangsdaten, die beim Absenden der Meldung erstellt wurden. Das Fallpasswort kann nicht wiederhergestellt werden, bewahren Sie es daher vertraulich auf.",
+      "cardTitle": "Auf Ihren Fall zugreifen",
+      "cardSubtitle": "Geben Sie Fallreferenz und Passwort genau wie bereitgestellt ein.",
+      "referenceLabel": "Fallreferenz",
+      "referencePlaceholder": "WB-2026-XXXXXX",
+      "passwordLabel": "Passwort",
+      "signingIn": "Anmeldung läuft...",
+      "submit": "Meinen Fall anzeigen",
+      "privacyNote": "Diese Seite ist von der Mitarbeiteranmeldung getrennt. Sie öffnet nur die mit diesen Zugangsdaten verknüpfte Meldung.",
+      "sessionExpired": "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.",
+      "validation": {
+        "empty": "Geben Sie Fallreferenz und Passwort ein."
+      },
+      "assurances": {
+        "status": "Prüfen Sie den Ermittlungsstatus sicher.",
+        "messages": "Senden Sie Folgeinformationen, ohne Ihre Identität offenzulegen.",
+        "attachments": "Fügen Sie zusätzliche Beweise hinzu, solange der Fall offen ist."
+      }
+    },
+    "messages": {
+      "title": "Nachrichten",
+      "emptyTitle": "Noch keine Nachrichten.",
+      "emptyBody": "Das Ermittlungsteam kann Sie hier kontaktieren.",
+      "authorYou": "Sie",
+      "authorTeam": "Ermittlungsteam",
+      "placeholder": "Fügen Sie weitere Informationen hinzu oder antworten Sie den Ermittlern...",
+      "uploading": "Wird hochgeladen...",
+      "attachEvidence": "Beweis anhängen",
+      "uploadedToast": "Ihr Beweis wurde hochgeladen.",
+      "send": "Senden",
+      "loading": "Nachrichten werden geladen...",
+      "addComment": "Kommentar hinzufügen"
+    },
+    "comments": {
+      "sheetTitle": "Kommentar hinzufügen",
+      "sheetDescription": "Senden Sie eine geschützte Folgenachricht an das Ermittlungsteam.",
+      "helper": "Nutzen Sie dies für Updates, Fragen oder zusätzlichen Kontext zu Ihrer Meldung.",
+      "label": "Kommentar",
+      "placeholder": "Fügen Sie weitere Informationen hinzu oder antworten Sie den Ermittlern...",
+      "cancel": "Abbrechen",
+      "sending": "Wird gesendet...",
+      "send": "Kommentar senden",
+      "sentToast": "Ihr Kommentar wurde gesendet."
+    },
+    "attachments": {
+      "title": "Ihre Beweise",
+      "count_one": "{{count}} Datei",
+      "count_other": "{{count}} Dateien",
+      "uploadedToast": "Ihr Beweis wurde hochgeladen."
+    }
+  },
+  "header": {
+    "title": "Hinweisgebersystem & Vorfallmanagement",
+    "subtitle": "Vertrauliche Aufnahme, Ermittlungsworkflow und berichtsfähige Analysen.",
+    "tabs": {
+      "dashboard": "Dashboard",
+      "cases": "Fälle"
+    }
+  },
+  "dashboard": {
+    "title": "Übersicht für das Board",
+    "empty": "Noch keine Daten verfügbar.",
+    "loading": "Analysen werden geladen...",
+    "actions": {
+      "submitReport": "Meldung einreichen",
+      "exporting": "Export läuft...",
+      "exportCsv": "CSV exportieren",
+      "viewAllCases": "Alle Fälle anzeigen"
+    },
+    "series": {
+      "openCases": "Offene Fälle",
+      "escalatedCases": "Eskalierte Fälle",
+      "anonymous": "Anonym",
+      "named": "Namentlich"
+    },
+    "kpi": {
+      "totalReports": "Meldungen gesamt",
+      "openReports": "Offene Meldungen",
+      "underInvestigation": "In Ermittlung",
+      "escalated": "Eskaliert",
+      "closed": "{{count}} geschlossen",
+      "atRisk": "{{count}} gefährdet",
+      "onTrack": "Im Zeitplan",
+      "slaBreached": "{{count}} SLA verletzt"
+    },
+    "charts": {
+      "reportsByCategory": {
+        "title": "Meldungen nach Kategorie",
+        "description": "Verteilung über den Lebenszyklus"
+      },
+      "openVsEscalated": {
+        "title": "Offen vs. eskaliert",
+        "description": "Aktuelle Aufnahme gegenüber Eskalationen"
+      },
+      "reportsByPriority": {
+        "title": "Meldungen nach Priorität"
+      },
+      "reportsByStatus": {
+        "title": "Meldungen nach Status"
+      },
+      "anonymousVsNamed": {
+        "title": "Anonym vs. namentlich",
+        "description": "Aufteilung nach Anonymität der Meldung"
+      },
+      "submissionsTrend": {
+        "title": "Einreichungstrend",
+        "description": "Monatliche Aufnahme (letzte 6 Monate)"
+      }
+    }
+  },
+  "cases": {
+    "title": "Fallregister",
+    "actions": {
+      "newManualCase": "Neuer manueller Fall",
+      "view": "Ansehen"
+    },
+    "filters": {
+      "searchPlaceholder": "Referenz / Beschreibung suchen...",
+      "allStatuses": "Alle Status",
+      "allCategories": "Alle Kategorien",
+      "allRiskRatings": "Alle Risikobewertungen",
+      "assignedToMe": "Mir zugewiesen"
+    },
+    "view": {
+      "grid": "Rasteransicht",
+      "list": "Listenansicht"
+    },
+    "loading": "Fälle werden geladen...",
+    "empty": "Keine Fälle entsprechen Ihren Filtern.",
+    "table": {
+      "reference": "Referenz",
+      "category": "Kategorie",
+      "risk": "Risiko",
+      "status": "Status",
+      "investigator": "Ermittler",
+      "sla": "SLA",
+      "submitted": "Eingereicht"
+    },
+    "reporter": {
+      "anonymous": "Anonym",
+      "named": "Namentlich"
+    },
+    "conflictExclusionsApplied": "Interessenkonflikt-Ausschlüsse angewendet",
+    "sla": {
+      "breached": "Verletzt",
+      "daysLeft": "{{count}} T. verbleibend"
+    },
+    "unassigned": "Nicht zugewiesen",
+    "pagination": {
+      "summary": "Seite {{page}} von {{totalPages}} · {{total}} Fälle",
+      "previous": "Zurück",
+      "next": "Weiter",
+      "total": "{{count}} cases",
+      "pageOf": "Page {{page}} of {{totalPages}}"
+    }
+  },
+  "manualCase": {
+    "title": "Fall manuell erstellen",
+    "description": "Erfassen Sie eine Meldung außerhalb des Portals, die per E-Mail, Hotline oder persönlich eingegangen ist.",
+    "validation": {
+      "description": "Bitte beschreiben Sie den Vorfall mit mindestens 10 Zeichen."
+    },
+    "toasts": {
+      "created": "Manueller Fall erstellt."
+    },
+    "draftRestored": "Ihr nicht gespeicherter Entwurf wurde wiederhergestellt.",
+    "startFresh": "Neu beginnen",
+    "fields": {
+      "category": "Kategorie",
+      "riskRating": "Risikobewertung",
+      "description": "Beschreibung des Vorfalls",
+      "caseType": "Falltyp",
+      "intakeMethod": "Aufnahmeweg",
+      "dateOfOccurrence": "Datum des Vorfalls",
+      "reporterRelationship": "Beziehung der meldenden Person",
+      "location": "Ort",
+      "city": "Stadt",
+      "stateCountry": "Bundesland / Land",
+      "personsEngaged": "Beteiligte Person(en)"
+    },
+    "placeholders": {
+      "description": "Was ist passiert?",
+      "notSpecified": "Nicht angegeben",
+      "location": "Adresse / Standort / Gebäude",
+      "state": "Bundesland",
+      "country": "Land"
+    },
+    "actions": {
+      "cancel": "Abbrechen",
+      "creating": "Wird erstellt...",
+      "create": "Fall erstellen"
+    }
+  },
+  "status": {
+    "SUBMITTED": "Gesendet",
+    "UNDER_TRIAGE": "In Prüfung",
+    "UNDER_INVESTIGATION": "In Ermittlung",
+    "WB_ESCALATED": "Eskaliert",
+    "RESOLVED": "Gelöst",
+    "WB_CLOSED": "Geschlossen",
+    "WB_DISMISSED": "Abgewiesen"
+  },
+  "priority": {
+    "PRIORITY_LOW": "Niedrig",
+    "PRIORITY_MEDIUM": "Mittel",
+    "PRIORITY_HIGH": "Hoch",
+    "PRIORITY_CRITICAL": "Kritisch"
+  },
+  "caseType": {
+    "ALLEGATION": "Vorwurf",
+    "INQUIRY": "Anfrage"
+  },
+  "intakeMethod": {
+    "WEB": "Web",
+    "EMAIL": "E-Mail",
+    "PHONE": "Telefon / Hotline",
+    "IN_PERSON": "Persönlich",
+    "MAIL": "Post",
+    "OTHER_INTAKE": "Sonstige"
+  },
+  "participantRole": {
+    "REPORTER": "Hinweisgeber",
+    "SUBJECT": "Betroffene Person",
+    "WITNESS": "Zeuge",
+    "OTHER_PARTICIPANT": "Sonstige"
+  },
+  "caseConsole": {
+    "header": {
+      "reference": "Fallreferenz"
+    },
+    "validation": {
+      "selectInvestigator": "Wählen Sie vor der Zuweisung einen Ermittler aus.",
+      "assessmentMin": "Schreiben Sie mindestens 10 Zeichen für die vorläufige Bewertung.",
+      "findingsMin": "Ermittlungsergebnisse müssen mindestens 10 Zeichen enthalten.",
+      "escalationReasonMin": "Der Eskalationsgrund muss mindestens 10 Zeichen enthalten.",
+      "closureOutcomeMin": "Das Abschlussergebnis muss mindestens 10 Zeichen enthalten.",
+      "commentRequired": "Schreiben Sie vor dem Senden einen Kommentar.",
+      "relatedCaseRequired": "Geben Sie eine gültige verknüpfte Fallreferenz ein.",
+      "emptyFile": "Wählen Sie eine nicht leere Datei aus.",
+      "fileTooLarge": "Die Datei darf höchstens 100 MB groß sein."
+    },
+    "toasts": {
+      "assigned": "Ermittler zugewiesen.",
+      "riskUpdated": "Risiko aktualisiert.",
+      "triaged": "Fall triagiert.",
+      "resolved": "Fall gelöst.",
+      "escalated": "Fall eskaliert.",
+      "dismissed": "Fall abgewiesen.",
+      "closed": "Fall geschlossen.",
+      "commentAdded": "Kommentar hinzugefügt.",
+      "linked": "Verknüpfter Fall hinzugefügt.",
+      "unlinked": "Verknüpfter Fall entfernt.",
+      "evidenceAttached": "Beweis angehängt."
+    },
+    "unknown": "Unbekannt",
+    "tabs": {
+      "overview": "Übersicht",
+      "synopsis": "Zusammenfassung",
+      "assignment": "Zuweisung",
+      "classification": "Klassifizierung",
+      "participants": "Beteiligte",
+      "investigation": "Ermittlung",
+      "communication": "Kommunikation",
+      "evidence": "Beweise und Verknüpftes"
+    },
+    "reporter": {
+      "anonymous": "Anonymer Hinweisgeber",
+      "named": "Namentlicher Hinweisgeber"
+    },
+    "sla": {
+      "breached": "SLA überschritten",
+      "remaining": "SLA: {{count}} T verbleibend"
+    },
+    "route": {
+      "independent": "Unabhängige Prüfung",
+      "escrow": "Unabhängige Prüfung im Escrow"
+    },
+    "panels": {
+      "incident": "Vorfall",
+      "assignment": "Zuweisung",
+      "investigationRecord": "Ermittlungsakte",
+      "communication": "Kommunikationsverlauf",
+      "evidence": "Beweise",
+      "triageRisk": "Prüfung und Risiko",
+      "resolve": "Lösen",
+      "escalateClose": "Eskalieren / schließen",
+      "conflictExclusions": "Ausschlüsse wegen Interessenkonflikt",
+      "relatedCases": "Verknüpfte Fälle",
+      "classification": "Klassifizierung",
+      "synopsisOutcome": "Zusammenfassung und Ergebnis",
+      "participants": "Beteiligte",
+      "activityEvidence": "Aktivität und Beweismittel",
+      "closure": "Abschluss",
+      "escalate": "Eskalation",
+      "triage": "Ersteinschätzung"
+    },
+    "fields": {
+      "status": "Status",
+      "caseType": "Falltyp",
+      "intakeMethod": "Eingangsmethode",
+      "dateOfOccurrence": "Datum des Vorfalls",
+      "whenLast": "Wann es zuletzt passiert ist",
+      "duration": "Dauer",
+      "awareness": "Wie davon Kenntnis erlangt wurde",
+      "previouslyReported": "Zuvor gemeldet",
+      "reporterRelationship": "Beziehung des Hinweisgebers",
+      "region": "Bereich",
+      "submitted": "Gesendet",
+      "location": "Ort",
+      "reporterPhone": "Telefon des Hinweisgebers",
+      "bestTime": "Beste Kontaktzeit",
+      "description": "Beschreibung",
+      "involvedPersons": "An diesem Verhalten beteiligte Person(en)",
+      "personsInvolvedNotes": "Beteiligte Personen (Notizen)",
+      "preliminaryAssessment": "Vorläufige Bewertung",
+      "findings": "Feststellungen",
+      "disciplinaryRecommendation": "Disziplinarische Empfehlung",
+      "closureOutcome": "Abschlussergebnis",
+      "riskRating": "Risikobewertung",
+      "investigationFindings": "Ermittlungsergebnisse",
+      "primaryOutcome": "Primäres Ergebnis",
+      "secondaryOutcome": "Sekundäres Ergebnis",
+      "actionTaken": "Ergriffene Maßnahme",
+      "potentialNextSteps": "Mögliche nächste Schritte",
+      "synopsisNotes": "Zusammenfassungsnotizen",
+      "category": "Category",
+      "escalationReason": "Grund der Eskalation",
+      "priority": "Priorität"
+    },
+    "assignment": {
+      "assignInvestigator": "Ermittler zuweisen",
+      "assignedTo": "{{name}} zugewiesen",
+      "unassigned": "Nicht zugewiesen",
+      "selectInvestigator": "Ermittler auswählen...",
+      "assign": "Zuweisen",
+      "assignedPrefix": "Zugewiesen an: {{name}}",
+      "sheetDescription": "Weisen Sie diesen Fall einer berechtigten ermittelnden Person zu."
+    },
+    "communication": {
+      "addComment": "Kommentar hinzufügen",
+      "sheetDescription": "Senden Sie eine sichere Folgenachricht an das Ermittlungsteam.",
+      "commentGuidance": "Nutzen Sie dies für Aktualisierungen, Fragen oder zusätzlichen Kontext zur Meldung.",
+      "commentLabel": "Kommentar",
+      "sending": "Wird gesendet...",
+      "empty": "Noch keine Nachrichten.",
+      "reporter": "Hinweisgeber",
+      "investigator": "Ermittler",
+      "internal": "Intern",
+      "placeholder": "Nachricht schreiben...",
+      "internalNote": "Interne Notiz (für Hinweisgeber verborgen)",
+      "send": "Senden"
+    },
+    "evidence": {
+      "empty": "Keine Beweise angehängt.",
+      "reporter": "Hinweisgeber",
+      "investigator": "Ermittler",
+      "download": "Herunterladen",
+      "uploading": "Wird hochgeladen...",
+      "attach": "Beweis anhängen"
+    },
+    "actions": {
+      "recordTriage": "Triage erfassen",
+      "resolveCase": "Fall lösen",
+      "linkRelatedCase": "Verknüpften Fall hinzufügen",
+      "setRisk": "Risiko festlegen",
+      "triage": "Prüfen",
+      "markResolved": "Als gelöst markieren",
+      "escalate": "Eskalieren",
+      "closeCase": "Fall schließen",
+      "dismiss": "Abweisen",
+      "close": "Schließen",
+      "unlink": "Verknüpfung entfernen",
+      "link": "Verknüpfen",
+      "saving": "Wird gespeichert...",
+      "saveClassification": "Klassifizierung speichern",
+      "saveSynopsis": "Zusammenfassung speichern",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "edit": "Bearbeiten",
+      "assignment": "Zuweisung",
+      "classification": "Klassifizierung",
+      "participants": "Beteiligte",
+      "resolve": "Lösen",
+      "savePriority": "Priorität speichern",
+      "synopsis": "Zusammenfassung"
+    },
+    "placeholders": {
+      "optionalNotes": "Optionale Notizen...",
+      "findings": "Fassen Sie zusammen, was die Ermittlung ergeben hat...",
+      "recommendation": "Optionale Empfehlung...",
+      "escalationReason": "Grund für Eskalation",
+      "closureOutcome": "Abschlussergebnis",
+      "caseReferenceToLink": "Fallreferenz zum Verknüpfen"
+    },
+    "conflict": {
+      "hiddenFrom": "Vor {{count}} Profil(en) verborgen"
+    },
+    "related": {
+      "empty": "Keine verknüpften Fälle.",
+      "noMatches": "Keine passenden Fälle gefunden.",
+      "searchLabel": "Verknüpfte Fälle suchen",
+      "searchResults": "Suchergebnisse",
+      "sheetDescription": "Verknüpfen Sie Fälle, um systemische Probleme zu erkennen."
+    },
+    "triage": {
+      "noAssessment": "Noch keine vorläufige Bewertung erfasst.",
+      "sheetDescription": "Erfassen Sie die erste Einschätzung und die Risikobewertung."
+    },
+    "resolve": {
+      "empty": "Noch keine Lösung erfasst.",
+      "sheetDescription": "Dokumentieren Sie die Ergebnisse, bevor Sie den Fall als gelöst markieren."
+    },
+    "synopsis": {
+      "empty": "Noch keine Zusammenfassung erfasst.",
+      "sheetDescription": "Erfassen Sie Ergebnis und nächste Schritte des Falls."
+    },
+    "participants": {
+      "empty": "Keine Beteiligten erfasst.",
+      "name": "Vollständiger Name",
+      "jobTitle": "Position",
+      "relationship": "Beziehung",
+      "role": "Rolle",
+      "edit": "Beteiligten bearbeiten",
+      "remove": "Beteiligten entfernen",
+      "add": "Beteiligten hinzufügen",
+      "new": "Neuer Beteiligter",
+      "resultsPlaceholder": "Ergebnisse / Notizen (optional)",
+      "sheetDescription": "Fügen Sie eine beteiligte Person hinzu und erfassen Sie deren Rolle."
+    },
+    "classification": {
+      "sheetDescription": "Aktualisieren Sie Klassifizierung und Eingangskanal des Falls."
+    },
+    "closure": {
+      "sheetDescription": "Bestätigen Sie das Endergebnis und schließen Sie den Fall."
+    },
+    "escalate": {
+      "sheetDescription": "Dokumentieren Sie, warum dieser Fall eine übergeordnete Prüfung benötigt."
+    },
+    "groups": {
+      "evidenceDescription": "Nachrichten, Dateien und verknüpfte Fälle.",
+      "investigationDescription": "Bewertung, Ergebnisse und Maßnahmen der Ermittlung.",
+      "overviewDescription": "Kernfakten und Angaben der meldenden Person.",
+      "peopleDescription": "Personen, Beziehungen und Zeitangaben."
+    },
+    "investigation": {
+      "empty": "Noch keine Untersuchungstätigkeit erfasst."
+    },
+    "navigation": {
+      "currentArea": "Aktueller Bereich",
+      "primary": "Fallnavigation"
+    },
+    "progress": {
+      "completed": "Abgeschlossen",
+      "inProgress": "In Bearbeitung",
+      "initialReview": "Erstprüfung",
+      "investigation": "Untersuchung",
+      "received": "Eingegangen",
+      "resolution": "Lösung",
+      "review": "Prüfung",
+      "title": "Fallfortschritt"
+    }
+  },
+  "oversight": {
+    "readOnly": "Nur-Lese-Uebersicht",
+    "back": "Zurueck zur Uebersicht",
+    "title": "Whistleblowing-Uebersicht",
+    "subtitle": "Organisationsweite Ueberwachung gemeldeter Vorfaelle (nur lesend).",
+    "confidentialityNotice": "Vertraulichkeit bleibt gewahrt: Faelle, die ein Melder wegen Interessenkonflikt vor Ihrem Profil verborgen hat, sind hier ausgeschlossen.",
+    "emptyChart": "No data yet.",
+    "total": "Gesamt",
+    "loading": {
+      "analytics": "Loading whistleblowing analytics..."
+    },
+    "errors": {
+      "analytics": "Analytics are unavailable right now."
+    },
+    "filters": {
+      "region": "Region",
+      "allRegions": "Alle Regionen"
+    },
+    "tabs": {
+      "overview": "Uebersicht",
+      "register": "Fallregister"
+    },
+    "stats": {
+      "totalCases": "Total cases",
+      "open": "Open",
+      "escalated": "Escalated",
+      "slaBreached": "SLA breached",
+      "underInvestigation": "Under investigation",
+      "slaAtRisk": "SLA at risk",
+      "closed": "Closed",
+      "avgResolution": "Avg resolution"
+    },
+    "charts": {
+      "casesByStatus": {
+        "title": "Cases by Status",
+        "description": "Distribution across the lifecycle"
+      },
+      "submissionsTrend": {
+        "title": "Submissions Trend",
+        "description": "Reports submitted by month",
+        "series": "Submissions"
+      },
+      "byCategory": {
+        "title": "By Category"
+      },
+      "byRiskRating": {
+        "title": "By Risk Rating"
+      },
+      "anonymousVsNamed": {
+        "title": "Anonymous vs. Named",
+        "description": "Reporter identification split"
+      }
+    },
+    "detail": {
+      "loading": "Loading case...",
+      "unavailable": "This case is unavailable - it may have been hidden from your profile by the reporter (conflict of interest).",
+      "pipeline": {
+        "triage": "Triage",
+        "investigation": "Investigation",
+        "escalated": "This case has been escalated and is outside the standard pipeline.",
+        "dismissed": "This case was dismissed during review."
+      },
+      "sla": {
+        "title": "SLA",
+        "breachedOn": "Breached on {{date}}",
+        "daysLeft": "days left",
+        "opened": "Opened {{date}}",
+        "due": "Due {{date}}"
+      },
+      "activity": {
+        "title": "Activity",
+        "empty": "No activity recorded yet.",
+        "subtitle": "{{messages}} messages ? {{files}} files"
+      },
+      "assignment": {
+        "triaged": "Triaged",
+        "assigned": "Assigned",
+        "closed": "Closed"
+      }
+    }
+  }
+}

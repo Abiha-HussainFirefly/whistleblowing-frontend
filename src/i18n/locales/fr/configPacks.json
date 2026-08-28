@@ -1,0 +1,35 @@
+{
+  "title": "Packs de configuration",
+  "subtitle": "Capturez l’identité visuelle, la terminologie, les fonctionnalités, les champs personnalisés, les mises en page et les cycles de vie d’une organisation dans un pack réutilisable, puis appliquez-le pour intégrer une autre organisation. L’application est additive et ne supprime jamais la configuration existante.",
+  "create": {
+    "title": "Créer un pack depuis une organisation",
+    "sourceOrganization": "Organisation source",
+    "sourcePlaceholder": "Sélectionner une organisation…",
+    "packName": "Nom du pack",
+    "packNamePlaceholder": "ex. Base entreprise juridique",
+    "creating": "Création…",
+    "submit": "Créer le pack",
+    "error": "Impossible de créer le pack de configuration."
+  },
+  "states": {
+    "loading": "Chargement des packs…",
+    "empty": "Aucun pack de configuration pour le moment.",
+    "emptyHint": "Créez-en un depuis une organisation ci-dessus."
+  },
+  "pack": {
+    "deleteAria": "Supprimer le pack",
+    "counts": {
+      "branding": "{{count}} identité",
+      "labels": "{{count}} libellés",
+      "features": "{{count}} fonctionnalités",
+      "fields": "{{count}} champs",
+      "layouts": "{{count}} mises en page",
+      "lifecycle": "{{count}} cycle de vie"
+    },
+    "applyToOrganization": "Appliquer à l’organisation",
+    "organizationPlaceholder": "Sélectionner une organisation…",
+    "applying": "Application…",
+    "apply": "Appliquer",
+    "applied": "Appliqué"
+  }
+}

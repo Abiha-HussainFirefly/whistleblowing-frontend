@@ -1,0 +1,858 @@
+{
+  "page": {
+    "title": "Report a concern",
+    "subtitle": "Confidentially report suspected misconduct. You may remain anonymous.",
+    "noContext": "No active organization context.",
+    "loading": "Loading…",
+    "notEnabled": "Whistleblowing reporting is not enabled for your organization.",
+    "loadingSecure": "Loading secure intake portal...",
+    "portalUnavailable": "Portal unavailable",
+    "portalNotFound": "This reporting portal could not be found.",
+    "reportSubmitted": "Report submitted",
+    "reportSubmittedToast": "Report submitted successfully. Save the credentials now.",
+    "portalSubtitle": "Submit a confidential report to {{organization}}. You may remain anonymous."
+  },
+  "form": {
+    "takeTour": "Take a tour",
+    "steps": {
+      "incident": "Incident details",
+      "location": "Location",
+      "details": "People & timing",
+      "identity": "Identity",
+      "review": "Review & submit"
+    },
+    "cards": {
+      "overview": {
+        "title": "Incident Overview",
+        "subtitle": "Describe the nature of the concern you're reporting"
+      },
+      "location": {
+        "title": "Where Did This Happen?",
+        "subtitle": "Help us understand the location of the incident"
+      },
+      "more": {
+        "title": "Tell Us More",
+        "subtitle": "Additional context helps us investigate thoroughly"
+      },
+      "contact": {
+        "title": "Your Contact Details",
+        "subtitle": "Used only to follow up on your report"
+      },
+      "identity": {
+        "title": "Identity & Confidentiality",
+        "subtitle": "Choose how we may contact you and who should be excluded"
+      },
+      "review": {
+        "title": "Review & Submit",
+        "subtitle": "Confirm the report terms before submitting"
+      }
+    },
+    "fields": {
+      "category": "Incident category",
+      "whatHappened": "What happened?",
+      "whatHappenedHint": "Who, what, where, when, and how. Your anonymity is protected.",
+      "location": "Location where incident occurred",
+      "city": "City",
+      "state": "State / Province",
+      "postalCode": "Zip / Postal code",
+      "country": "Country",
+      "region": "Region / business unit",
+      "relationship": "Your relationship to the organization",
+      "involved": "Person(s) engaged in this behavior",
+      "previouslyReported": "Has this been previously reported to management?",
+      "dateOfOccurrence": "Date of occurrence",
+      "whenLast": "When did this last happen?",
+      "duration": "How long has this been happening?",
+      "awareness": "How did you become aware of this?",
+      "email": "Your email (for updates)",
+      "phone": "Your phone number",
+      "bestTime": "Best time to reach you"
+    },
+    "placeholders": {
+      "selectCategory": "Select a category…",
+      "selectOne": "Select one…",
+      "notSpecified": "Not specified",
+      "whatHappened": "Please provide as much detail as possible — who, what, where, when and how you know this. Avoid including your own identity if you wish to remain anonymous.",
+      "location": "Physical address, branch and/or store number",
+      "whenLast": "e.g. Two weeks ago",
+      "email": "you@example.com",
+      "bestTime": "e.g. Weekday mornings"
+    },
+    "characters": "{{count}} characters",
+    "anonymous": {
+      "title": "Submit anonymously",
+      "on": "Your identity will not be shared.",
+      "off": "Your contact details will be included."
+    },
+    "conflictReviewerSelection": {
+      "title": "Exclude specific independent reviewers (optional)",
+      "description": "Select only the independent reviewer(s) who may have a conflict. Other independent reviewers can access this report.",
+      "protected": "The organization owner is always protected, and at least one eligible administrator must remain available.",
+      "none": "No independent reviewers are currently configured."
+    },
+    "conflict": {
+      "title": "Conflict of interest",
+      "optional": "(optional)",
+      "description": "If this report involves someone who may normally handle whistleblowing cases, select this option. The report will be routed to the organization’s independent-review team and the ordinary team will not receive access."
+    },
+    "terms": "I agree to the terms and conditions of making this report and confirm the information provided is true to the best of my knowledge.",
+    "submit": "Submit report",
+    "submitting": "Submitting…",
+    "navigation": {
+      "back": "Back",
+      "next": "Next"
+    },
+    "expect": {
+      "title": "What to expect",
+      "directToCompliance": "Your report goes to the appropriate independent review or Compliance team.",
+      "caseReference": "You'll receive a case reference to track progress.",
+      "noRetaliation": "Retaliation against reporters is strictly prohibited."
+    },
+    "validation": {
+      "category": "Please choose an incident category.",
+      "description": "Please provide a fuller description (at least 10 characters).",
+      "email": "Provide an email, or choose to report anonymously.",
+      "terms": "Please accept the terms and conditions to submit your report.",
+      "descriptionTooLong": "Please shorten the description to 20,000 characters or fewer.",
+      "futureDate": "The incident date cannot be in the future."
+    }
+  },
+  "persons": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "titleRole": "Title / role",
+    "titlePlaceholder": "e.g. Night Supervisor",
+    "remove": "Remove person",
+    "addFirst": "Add a person",
+    "addAnother": "Add another",
+    "examples": "Examples: “John Doe, Director of Internal Audit” · “Unknown, Unknown, Night Supervisor”"
+  },
+  "share": {
+    "title": "Shareable reporting link",
+    "description": "Share this public link with employees, contractors, vendors or any external party. They can submit a confidential report — anonymously if they wish — without an account.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "open": "Open",
+    "publicTitle": "Public reporting link",
+    "publicDescription": "Share this with employees, contractors, vendors, or external reporters.",
+    "copyLink": "Copy link",
+    "openPublicForm": "Open public form",
+    "bullets": {
+      "noAccount": "No account is required to submit.",
+      "anonymous": "Anonymous reporting stays available.",
+      "secureFlow": "Reports route to the same secure intake flow."
+    }
+  },
+  "credentials": {
+    "receivedTitle": "Your report has been received.",
+    "receivedDescription": "Save these credentials now — the password is shown only once and cannot be recovered. Use them to log back in and track your case.",
+    "saveTitle": "Save these credentials now.",
+    "saveDescription": "Download them as a text file or copy them somewhere secure. The password will not be shown again.",
+    "loginCredentials": "Your login credentials",
+    "caseReference": "Case reference",
+    "password": "Password",
+    "track": "Track my case",
+    "download": "Download text file",
+    "downloadTitle": "Whistleblowing report credentials",
+    "downloadReminder": "Save these credentials securely. The password is shown only once.",
+    "trackDescription": "Opens in a new tab so your case reference and password stay visible here. Save them before you leave this page — the password is shown only once.",
+    "reveal": "Reveal",
+    "hide": "Hide",
+    "copy": "Copy",
+    "copied": "Copied!"
+  },
+  "shell": {
+    "defaultOrgName": "Whistleblowing Portal",
+    "organizationLogoAlt": "Organization",
+    "subtitle": "Confidential reporting",
+    "footerPrefix": "Your report is encrypted and handled confidentially. You may report anonymously.",
+    "trackExisting": "Track an existing report",
+    "trackReport": "Track a report"
+  },
+  "track": {
+    "actions": {
+      "signOut": "Sign out"
+    },
+    "toasts": {
+      "signedOut": "Signed out successfully."
+    },
+    "case": {
+      "title": "Your report",
+      "loading": "Loading your case...",
+      "referenceSubtitle": "Reference {{ref}}",
+      "submittedOn": "Submitted {{date}}",
+      "detailsTitle": "Your report",
+      "fields": {
+        "dateOfOccurrence": "Date of occurrence",
+        "location": "Location",
+        "relationship": "Relationship",
+        "whenLast": "When it last happened",
+        "duration": "Duration",
+        "previouslyReported": "Previously reported"
+      },
+      "identifiedPersons": "Person(s) you identified",
+      "personTitleSuffix": " - {{title}}",
+      "outcome": "Outcome"
+    },
+    "login": {
+      "title": "Track your report",
+      "subtitle": "Log in with your case reference and password.",
+      "eyebrow": "Confidential case access",
+      "description": "Use the credentials generated when you submitted the report. The case password is not recoverable, so keep it private.",
+      "cardTitle": "Access your case",
+      "cardSubtitle": "Enter the case reference and password exactly as provided.",
+      "referenceLabel": "Case reference",
+      "referencePlaceholder": "WB-2026-XXXXXX",
+      "passwordLabel": "Password",
+      "signingIn": "Signing in...",
+      "submit": "View my case",
+      "privacyNote": "This page is separate from employee login. It only opens the report linked to these credentials.",
+      "sessionExpired": "Your session has expired. Please log in again.",
+      "validation": {
+        "empty": "Enter your case reference and password."
+      },
+      "assurances": {
+        "status": "Check investigation status securely.",
+        "messages": "Send follow-up information without exposing your identity.",
+        "attachments": "Attach additional evidence when the case remains open."
+      }
+    },
+    "messages": {
+      "title": "Messages",
+      "emptyTitle": "No messages yet.",
+      "emptyBody": "The investigation team may contact you here.",
+      "authorYou": "You",
+      "authorTeam": "Investigation team",
+      "loading": "Loading messages...",
+      "placeholder": "Add more information or respond to the investigators...",
+      "uploading": "Uploading...",
+      "attachEvidence": "Attach evidence",
+      "addComment": "Add comment",
+      "send": "Send",
+      "uploadedToast": "Your evidence was uploaded."
+    },
+    "comments": {
+      "sheetTitle": "Add comment",
+      "sheetDescription": "Send a secure follow-up message to the investigation team.",
+      "helper": "Use this for updates, questions, or additional context related to your report.",
+      "label": "Comment",
+      "placeholder": "Add more information or respond to the investigators...",
+      "cancel": "Cancel",
+      "sending": "Sending...",
+      "send": "Send comment",
+      "sentToast": "Your comment was sent."
+    },
+    "attachments": {
+      "title": "Your evidence",
+      "count_one": "{{count}} file",
+      "count_other": "{{count}} files",
+      "uploadedToast": "Your evidence was uploaded."
+    }
+  },
+  "header": {
+    "title": "Whistleblowing & Incident Management",
+    "subtitle": "Confidential intake, investigation workflow & board-ready analytics.",
+    "tabs": {
+      "dashboard": "Dashboard",
+      "cases": "Cases"
+    }
+  },
+  "dashboard": {
+    "title": "Board-ready overview",
+    "empty": "No data to display yet.",
+    "loading": "Loading analytics...",
+    "actions": {
+      "submitReport": "Submit a report",
+      "exporting": "Exporting...",
+      "exportCsv": "Export CSV",
+      "viewAllCases": "View all cases"
+    },
+    "series": {
+      "openCases": "Open Cases",
+      "escalatedCases": "Escalated Cases",
+      "anonymous": "Anonymous",
+      "named": "Named"
+    },
+    "kpi": {
+      "totalReports": "Total Reports",
+      "openReports": "Open Reports",
+      "underInvestigation": "Under Investigation",
+      "escalated": "Escalated",
+      "closed": "{{count}} closed",
+      "atRisk": "{{count}} at risk",
+      "onTrack": "On track",
+      "slaBreached": "{{count}} SLA breached"
+    },
+    "charts": {
+      "reportsByCategory": {
+        "title": "Reports by Category",
+        "description": "Distribution across the lifecycle"
+      },
+      "openVsEscalated": {
+        "title": "Open vs Escalated",
+        "description": "Current intake against escalations"
+      },
+      "reportsByPriority": {
+        "title": "Reports by Priority"
+      },
+      "reportsByStatus": {
+        "title": "Reports by Status"
+      },
+      "anonymousVsNamed": {
+        "title": "Anonymous vs Named",
+        "description": "Reporting anonymity split"
+      },
+      "submissionsTrend": {
+        "title": "Submissions Trend",
+        "description": "Monthly intake (last 6 months)"
+      }
+    }
+  },
+  "cases": {
+    "title": "Case register",
+    "actions": {
+      "newManualCase": "New manual case",
+      "view": "View"
+    },
+    "filters": {
+      "searchPlaceholder": "Search reference / description...",
+      "allStatuses": "All statuses",
+      "allCategories": "All categories",
+      "allRiskRatings": "All risk ratings",
+      "assignedToMe": "Assigned to me"
+    },
+    "view": {
+      "grid": "Grid view",
+      "list": "List view"
+    },
+    "loading": "Loading cases...",
+    "empty": "No cases match your filters.",
+    "table": {
+      "reference": "Reference",
+      "category": "Category",
+      "risk": "Risk",
+      "status": "Status",
+      "investigator": "Investigator",
+      "sla": "SLA",
+      "submitted": "Submitted"
+    },
+    "reporter": {
+      "anonymous": "Anonymous",
+      "named": "Named"
+    },
+    "conflictExclusionsApplied": "Conflict-of-interest exclusions applied",
+    "sla": {
+      "breached": "Breached",
+      "daysLeft": "{{count}}d left"
+    },
+    "unassigned": "Unassigned",
+    "pagination": {
+      "summary": "Page {{page}} of {{totalPages}} · {{total}} cases",
+      "previous": "Previous",
+      "next": "Next",
+      "total": "{{count}} cases",
+      "pageOf": "Page {{page}} of {{totalPages}}"
+    }
+  },
+  "manualCase": {
+    "title": "Create case manually",
+    "description": "Capture an off-portal report received by email, hotline or in person.",
+    "validation": {
+      "description": "Please describe the incident in at least 10 characters."
+    },
+    "toasts": {
+      "created": "Manual case created."
+    },
+    "draftRestored": "Restored your unsaved draft from earlier.",
+    "startFresh": "Start fresh",
+    "fields": {
+      "category": "Category",
+      "riskRating": "Risk rating",
+      "description": "Incident description",
+      "caseType": "Case type",
+      "intakeMethod": "Intake method",
+      "dateOfOccurrence": "Date of occurrence",
+      "reporterRelationship": "Reporter relationship",
+      "location": "Location",
+      "city": "City",
+      "stateCountry": "State / Country",
+      "personsEngaged": "Person(s) engaged"
+    },
+    "placeholders": {
+      "description": "What happened?",
+      "notSpecified": "Not specified",
+      "location": "Address / site / building",
+      "state": "State",
+      "country": "Country"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "creating": "Creating...",
+      "create": "Create case"
+    }
+  },
+  "category": {
+    "FRAUD": "Fraud",
+    "BRIBERY_CORRUPTION": "Bribery & Corruption",
+    "HARASSMENT": "Harassment",
+    "CONFLICT_OF_INTEREST": "Conflict of Interest",
+    "DATA_PRIVACY": "Data Privacy & Protection",
+    "HEALTH_SAFETY": "Health & Safety",
+    "DISCRIMINATION": "Discrimination",
+    "RETALIATION": "Retaliation",
+    "OTHER_MISCONDUCT": "Other Misconduct",
+    "ACCOUNTING_AUDITING": "Accounting, Auditing & Financial Reporting",
+    "COMPENSATION_BENEFITS": "Compensation & Benefits",
+    "SGBP_COMPLIANCE": "Compliance with Standard General Business Principles",
+    "CONFIDENTIAL_INFORMATION": "Confidential & Proprietary Information",
+    "DISCLOSURE_COMMUNICATIONS": "Disclosure & Business Communications",
+    "DIVERSITY_EQUITY_INCLUSION": "Diversity, Equity & Inclusion",
+    "DUE_DILIGENCE": "E&C Due Diligence",
+    "ENVIRONMENTAL": "Environmental",
+    "FAIR_COMPETITION": "Free & Fair Competition",
+    "GLOBAL_TRADE": "Global Trade",
+    "HUMAN_RIGHTS": "Human Rights",
+    "IMMINENT_THREAT": "Imminent Threat to a Person, Animals or Property",
+    "INSIDER_TRADING": "Insider Trading",
+    "INTELLECTUAL_PROPERTY": "Intellectual Property",
+    "ASSET_MISUSE": "Misuse or Misappropriation of Assets",
+    "POLITICAL_ACTIVITY": "Political Activity",
+    "PRODUCT_QUALITY_SAFETY": "Product Quality & Safety",
+    "SUBSTANCE_ABUSE": "Substance Abuse",
+    "IT_ELECTRONIC_COMMS": "Use of IT & Electronic Communications",
+    "WORKPLACE_CIVILITY": "Workplace Civility",
+    "OTHER_BUSINESS_INTEGRITY": "Other Business Integrity",
+    "OTHER_HUMAN_RESOURCES": "Other Human Resources",
+    "INQUIRY": "Inquiry"
+  },
+  "relationship": {
+    "EMPLOYEE": "Employee",
+    "FORMER_EMPLOYEE": "Former Employee",
+    "CONTRACTOR": "Contractor",
+    "VENDOR_SUPPLIER": "Vendor / Supplier",
+    "CUSTOMER": "Customer",
+    "BUSINESS_PARTNER": "Business Partner",
+    "OTHER_RELATIONSHIP": "Other"
+  },
+  "duration": {
+    "ONE_TIME": "One-time occurrence",
+    "LESS_THAN_MONTH": "Less than a month",
+    "ONE_TO_THREE_MONTHS": "1 to 3 months",
+    "THREE_TO_SIX_MONTHS": "3 to 6 months",
+    "SIX_TO_TWELVE_MONTHS": "6 to 12 months",
+    "OVER_A_YEAR": "Over a year",
+    "ONGOING": "Ongoing",
+    "UNKNOWN_DURATION": "Unknown"
+  },
+  "awareness": {
+    "WITNESSED": "Personally witnessed it",
+    "TOLD_BY_SOMEONE": "Told by someone else",
+    "REVIEWED_DOCUMENTS": "Reviewed documents / records",
+    "RUMOR": "Heard a rumor",
+    "INVOLVED": "I was involved",
+    "OTHER_SOURCE": "Other"
+  },
+  "previouslyReported": {
+    "YES": "Yes",
+    "NO": "No",
+    "UNKNOWN": "Do not know / do not wish to disclose"
+  },
+  "status": {
+    "SUBMITTED": "Submitted",
+    "UNDER_TRIAGE": "Under Triage",
+    "UNDER_INVESTIGATION": "Under Investigation",
+    "WB_ESCALATED": "Escalated",
+    "RESOLVED": "Resolved",
+    "WB_CLOSED": "Closed",
+    "WB_DISMISSED": "Dismissed"
+  },
+  "priority": {
+    "PRIORITY_LOW": "Low",
+    "PRIORITY_MEDIUM": "Medium",
+    "PRIORITY_HIGH": "High",
+    "PRIORITY_CRITICAL": "Critical"
+  },
+  "caseType": {
+    "ALLEGATION": "Allegation",
+    "INQUIRY": "Inquiry"
+  },
+  "intakeMethod": {
+    "WEB": "Web",
+    "EMAIL": "E-mail",
+    "PHONE": "Phone / Hotline",
+    "IN_PERSON": "In Person",
+    "MAIL": "Mail",
+    "OTHER_INTAKE": "Other"
+  },
+  "participantRole": {
+    "REPORTER": "Reporter",
+    "SUBJECT": "Subject",
+    "WITNESS": "Witness",
+    "OTHER_PARTICIPANT": "Other"
+  },
+  "caseConsole": {
+    "unknown": "Unknown",
+    "header": {
+      "reference": "Case reference"
+    },
+    "validation": {
+      "selectInvestigator": "Select an investigator before assigning.",
+      "assessmentMin": "Write at least 10 characters for the preliminary assessment.",
+      "findingsMin": "Investigation findings must be at least 10 characters.",
+      "escalationReasonMin": "Escalation reason must be at least 10 characters.",
+      "closureOutcomeMin": "Closure outcome must be at least 10 characters.",
+      "commentRequired": "Write a comment before sending.",
+      "relatedCaseRequired": "Enter a valid related case reference.",
+      "emptyFile": "Choose a file that is not empty.",
+      "fileTooLarge": "File must be 100 MB or smaller."
+    },
+    "toasts": {
+      "assigned": "Investigator assigned.",
+      "riskUpdated": "Risk updated.",
+      "triaged": "Case triaged.",
+      "resolved": "Case resolved.",
+      "escalated": "Case escalated.",
+      "dismissed": "Case dismissed.",
+      "closed": "Case closed.",
+      "commentAdded": "Comment added.",
+      "linked": "Related case linked.",
+      "unlinked": "Related case unlinked.",
+      "evidenceAttached": "Evidence attached."
+    },
+    "tabs": {
+      "overview": "Overview",
+      "synopsis": "Synopsis",
+      "assignment": "Assignment",
+      "classification": "Classification",
+      "participants": "Participants",
+      "investigation": "Investigation",
+      "communication": "Communication",
+      "evidence": "Evidence & related"
+    },
+    "reporter": {
+      "anonymous": "Anonymous reporter",
+      "named": "Named reporter"
+    },
+    "sla": {
+      "breached": "SLA breached",
+      "remaining": "SLA: {{count}}d remaining"
+    },
+    "route": {
+      "independent": "Independent review",
+      "escrow": "Independent review escrow"
+    },
+    "panels": {
+      "incident": "Incident",
+      "assignment": "Assignment",
+      "investigationRecord": "Investigation record",
+      "communication": "Communication thread",
+      "evidence": "Evidence",
+      "triageRisk": "Triage & risk",
+      "resolve": "Resolve",
+      "escalateClose": "Escalate / close",
+      "conflictExclusions": "Conflict-of-interest exclusions",
+      "relatedCases": "Related cases",
+      "classification": "Classification",
+      "synopsisOutcome": "Synopsis & outcome",
+      "participants": "Participants",
+      "triage": "Triage",
+      "escalate": "Escalate",
+      "closure": "Closure",
+      "activityEvidence": "Activity & evidence"
+    },
+    "fields": {
+      "caseType": "Case type",
+      "intakeMethod": "Intake method",
+      "dateOfOccurrence": "Date of occurrence",
+      "whenLast": "When it last happened",
+      "duration": "Duration",
+      "awareness": "How they became aware",
+      "previouslyReported": "Previously reported",
+      "reporterRelationship": "Reporter relationship",
+      "region": "Region",
+      "submitted": "Submitted",
+      "location": "Location",
+      "reporterPhone": "Reporter phone",
+      "bestTime": "Best time to contact",
+      "description": "Description",
+      "involvedPersons": "Person(s) engaged in this behavior",
+      "personsInvolvedNotes": "Persons involved (notes)",
+      "preliminaryAssessment": "Preliminary assessment",
+      "findings": "Findings",
+      "disciplinaryRecommendation": "Disciplinary recommendation",
+      "closureOutcome": "Closure outcome",
+      "riskRating": "Risk rating",
+      "status": "Status",
+      "investigationFindings": "Investigation findings",
+      "primaryOutcome": "Primary outcome",
+      "secondaryOutcome": "Secondary outcome",
+      "actionTaken": "Action taken",
+      "potentialNextSteps": "Potential next steps",
+      "synopsisNotes": "Synopsis notes",
+      "category": "Category",
+      "priority": "Priority",
+      "escalationReason": "Escalation reason"
+    },
+    "assignment": {
+      "assignedTo": "Assigned to {{name}}",
+      "assignInvestigator": "Assign investigator",
+      "unassigned": "Unassigned",
+      "selectInvestigator": "Select investigator...",
+      "assign": "Assign",
+      "assignedPrefix": "Assigned: {{name}}",
+      "sheetDescription": "Assign this case to an eligible investigator."
+    },
+    "communication": {
+      "empty": "No messages yet.",
+      "addComment": "Add comment",
+      "sheetDescription": "Send a secure follow-up message to the investigation team.",
+      "commentGuidance": "Use this for updates, questions, or additional context related to the report.",
+      "commentLabel": "Comment",
+      "reporter": "Reporter",
+      "investigator": "Investigator",
+      "internal": "Internal",
+      "placeholder": "Write a message...",
+      "internalNote": "Internal note (hidden from reporter)",
+      "sending": "Sending...",
+      "send": "Send"
+    },
+    "evidence": {
+      "empty": "No evidence attached.",
+      "reporter": "reporter",
+      "investigator": "investigator",
+      "download": "Download",
+      "uploading": "Uploading...",
+      "attach": "Attach evidence"
+    },
+    "actions": {
+      "recordTriage": "Record triage",
+      "setRisk": "Set risk",
+      "triage": "Triage",
+      "resolveCase": "Resolve case",
+      "markResolved": "Mark resolved",
+      "escalate": "Escalate",
+      "closeCase": "Close case",
+      "dismiss": "Dismiss",
+      "close": "Close",
+      "unlink": "Unlink",
+      "linkRelatedCase": "Link related case",
+      "link": "Link",
+      "saving": "Saving...",
+      "saveClassification": "Save classification",
+      "saveSynopsis": "Save synopsis",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "assignment": "Assignment",
+      "classification": "Classification",
+      "participants": "Participants",
+      "resolve": "Resolve",
+      "savePriority": "Save priority",
+      "synopsis": "Synopsis"
+    },
+    "placeholders": {
+      "optionalNotes": "Optional notes...",
+      "findings": "Summarize what the investigation found...",
+      "recommendation": "Optional recommendation...",
+      "escalationReason": "Escalation reason",
+      "closureOutcome": "Closure outcome",
+      "caseReferenceToLink": "Case reference to link"
+    },
+    "conflict": {
+      "hiddenFrom": "Hidden from {{count}} profile(s)"
+    },
+    "related": {
+      "empty": "No linked cases.",
+      "noMatches": "No matching cases found.",
+      "searchLabel": "Search related cases",
+      "searchResults": "Search results",
+      "sheetDescription": "Link related cases to identify systemic issues."
+    },
+    "triage": {
+      "noAssessment": "No preliminary assessment recorded yet.",
+      "sheetDescription": "Record the initial assessment and risk rating."
+    },
+    "resolve": {
+      "empty": "No resolution recorded yet.",
+      "sheetDescription": "Document the findings before marking the case resolved."
+    },
+    "synopsis": {
+      "empty": "No synopsis recorded yet.",
+      "sheetDescription": "Capture the case outcome and next steps."
+    },
+    "participants": {
+      "empty": "No participants recorded.",
+      "name": "Name",
+      "jobTitle": "Job title",
+      "relationship": "Relationship",
+      "role": "Role",
+      "edit": "Edit participant",
+      "remove": "Remove participant",
+      "add": "Add participant",
+      "new": "New participant",
+      "resultsPlaceholder": "Results / notes (optional)",
+      "sheetDescription": "Add a person involved in this case and record their role."
+    },
+    "groups": {
+      "overviewDescription": "Core facts and reporter-provided details.",
+      "peopleDescription": "People, relationships, and timing information.",
+      "investigationDescription": "Assessment, findings, and investigator actions.",
+      "evidenceDescription": "Messages, files, and related cases."
+    },
+    "navigation": {
+      "primary": "Case navigation",
+      "currentArea": "Current area"
+    },
+    "progress": {
+      "title": "Case progress",
+      "received": "Received",
+      "initialReview": "Initial review",
+      "review": "Review",
+      "investigation": "Investigation",
+      "resolution": "Resolution",
+      "inProgress": "In progress",
+      "completed": "Completed"
+    },
+    "investigation": {
+      "empty": "No investigation activity recorded yet."
+    },
+    "closure": {
+      "sheetDescription": "Confirm the final outcome and close the case."
+    },
+    "escalate": {
+      "sheetDescription": "Record why this case requires senior review."
+    },
+    "classification": {
+      "sheetDescription": "Update the case classification and intake method."
+    }
+  },
+  "tour": {
+    "buttons": {
+      "next": "Next →",
+      "back": "← Back",
+      "done": "Done",
+      "skip": "Skip tour"
+    },
+    "welcome": {
+      "title": "👋 Quick form guide",
+      "text": "This tour walks you through each section of the report form. It takes about 60 seconds. Your identity is protected throughout — you control whether to stay anonymous."
+    },
+    "category": {
+      "title": "📋 Incident category",
+      "text": "Start by picking the category that best describes what you witnessed — for example, fraud, harassment, or safety violation. If unsure, choose the closest match."
+    },
+    "description": {
+      "title": "✍️ What happened?",
+      "text": "Describe the incident in as much detail as you can — who was involved, what occurred, where, when, and how you know about it. The more detail you provide, the easier it is to investigate. <strong>Do not include your own name</strong> if you want to stay anonymous."
+    },
+    "location": {
+      "title": "📍 Location",
+      "text": "Fill in as much location detail as you know — the specific site, city, or region where the incident occurred. This helps route your report to the right team. All fields here are optional."
+    },
+    "relationship": {
+      "title": "🔗 Your relationship",
+      "text": "Let us know how you relate to the organization — employee, contractor, supplier, etc. This helps us understand the context of your report. This field is optional."
+    },
+    "involved": {
+      "title": "👤 Involved persons",
+      "text": "Add the name(s) of anyone directly engaged in the behavior you're reporting. First name, last name, and job title are all optional — provide whatever you know."
+    },
+    "dates": {
+      "title": "📅 Timing",
+      "text": "Tell us when the incident happened and whether it's ongoing. Even approximate dates (like \"last month\") help investigators establish a timeline."
+    },
+    "anonymous": {
+      "title": "🔒 Stay anonymous?",
+      "text": "By default your report is anonymous — we never know who you are. If you'd like to receive updates on your case, uncheck this box and provide a contact email. Your details are kept strictly confidential."
+    },
+    "conflict": {
+      "title": "🛡️ Conflict of interest",
+      "text": "If your report involves a member of the compliance team, tick their name here to hide this case from them. Your report will still reach the Compliance Administrator."
+    },
+    "submit": {
+      "title": "✅ Ready to submit",
+      "text": "Accept the terms and click <strong>Submit report</strong>. You'll immediately receive a case reference number — save it to track your report's progress without revealing your identity."
+    }
+  },
+  "oversight": {
+    "readOnly": "Read-only oversight",
+    "back": "Back to oversight",
+    "title": "Whistleblowing Oversight",
+    "subtitle": "Organization-wide monitoring of reported incidents (read-only).",
+    "confidentialityNotice": "Confidentiality is preserved: any case a reporter has chosen to hide from your profile (conflict of interest) is excluded from these views.",
+    "emptyChart": "No data yet.",
+    "total": "Total",
+    "loading": {
+      "analytics": "Loading whistleblowing analytics..."
+    },
+    "errors": {
+      "analytics": "Analytics are unavailable right now."
+    },
+    "filters": {
+      "region": "Region",
+      "allRegions": "All regions"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "register": "Case Register"
+    },
+    "stats": {
+      "totalCases": "Total cases",
+      "open": "Open",
+      "escalated": "Escalated",
+      "slaBreached": "SLA breached",
+      "underInvestigation": "Under investigation",
+      "slaAtRisk": "SLA at risk",
+      "closed": "Closed",
+      "avgResolution": "Avg resolution"
+    },
+    "charts": {
+      "casesByStatus": {
+        "title": "Cases by Status",
+        "description": "Distribution across the lifecycle"
+      },
+      "submissionsTrend": {
+        "title": "Submissions Trend",
+        "description": "Reports submitted by month",
+        "series": "Submissions"
+      },
+      "byCategory": {
+        "title": "By Category"
+      },
+      "byRiskRating": {
+        "title": "By Risk Rating"
+      },
+      "anonymousVsNamed": {
+        "title": "Anonymous vs. Named",
+        "description": "Reporter identification split"
+      }
+    },
+    "detail": {
+      "loading": "Loading case...",
+      "unavailable": "This case is unavailable - it may have been hidden from your profile by the reporter (conflict of interest).",
+      "pipeline": {
+        "triage": "Triage",
+        "investigation": "Investigation",
+        "escalated": "This case has been escalated and is outside the standard pipeline.",
+        "dismissed": "This case was dismissed during review."
+      },
+      "sla": {
+        "title": "SLA",
+        "breachedOn": "Breached on {{date}}",
+        "daysLeft": "days left",
+        "opened": "Opened {{date}}",
+        "due": "Due {{date}}"
+      },
+      "activity": {
+        "title": "Activity",
+        "empty": "No activity recorded yet.",
+        "subtitle": "{{messages}} messages ? {{files}} files"
+      },
+      "assignment": {
+        "triaged": "Triaged",
+        "assigned": "Assigned",
+        "closed": "Closed"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Konfigurationspakete",
+  "subtitle": "Speichern Sie Branding, Terminologie, Funktionen, benutzerdefinierte Felder, Layouts und Lebenszyklen einer Organisation in einem wiederverwendbaren Paket und wenden Sie es anschließend beim Onboarding einer weiteren Organisation an. Die Anwendung ist additiv und löscht keine bestehende Konfiguration.",
+  "create": {
+    "title": "Paket aus einer Organisation erstellen",
+    "sourceOrganization": "Quellorganisation",
+    "sourcePlaceholder": "Organisation auswählen…",
+    "packName": "Paketname",
+    "packNamePlaceholder": "z. B. Rechtliches Unternehmens-Basispaket",
+    "creating": "Wird erstellt…",
+    "submit": "Paket erstellen",
+    "error": "Das Konfigurationspaket konnte nicht erstellt werden."
+  },
+  "states": {
+    "loading": "Pakete werden geladen…",
+    "empty": "Noch keine Konfigurationspakete vorhanden.",
+    "emptyHint": "Erstellen Sie oben eines aus einer Organisation."
+  },
+  "pack": {
+    "deleteAria": "Paket löschen",
+    "counts": {
+      "branding": "{{count}} Branding",
+      "labels": "{{count}} Bezeichnungen",
+      "features": "{{count}} Funktionen",
+      "fields": "{{count}} Felder",
+      "layouts": "{{count}} Layouts",
+      "lifecycle": "{{count}} Lebenszyklus"
+    },
+    "applyToOrganization": "Auf Organisation anwenden",
+    "organizationPlaceholder": "Organisation auswählen…",
+    "applying": "Wird angewendet…",
+    "apply": "Anwenden",
+    "applied": "Angewendet"
+  }
+}

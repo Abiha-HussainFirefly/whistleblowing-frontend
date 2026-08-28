@@ -1,0 +1,25 @@
+{
+  "required": "Dieses Feld ist erforderlich.",
+  "requiredNamed": "{{field}} ist erforderlich.",
+  "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+  "minLength": "Muss mindestens {{count}} Zeichen lang sein.",
+  "maxLength": "Darf höchstens {{count}} Zeichen lang sein.",
+  "min": "Muss mindestens {{min}} betragen.",
+  "max": "Darf höchstens {{max}} betragen.",
+  "passwordsMustMatch": "Die Passwörter stimmen nicht überein.",
+  "passwordWeak": "Das Passwort muss mindestens 12 Zeichen lang sein und Buchstaben sowie Zahlen enthalten.",
+  "invalidUrl": "Bitte geben Sie eine gültige URL ein.",
+  "invalidNumber": "Bitte geben Sie eine gültige Zahl ein.",
+  "invalidDate": "Bitte geben Sie ein gültiges Datum ein.",
+  "positiveNumber": "Bitte geben Sie eine Zahl größer als null ein.",
+  "selectOption": "Bitte wählen Sie eine Option aus.",
+  "fileTooLarge": "Die Datei ist zu groß. Die maximale Größe beträgt {{maxSize}}.",
+  "unsupportedFileType": "Dieser Dateityp wird nicht unterstützt.",
+  "passwordRequirements": {
+    "length": "Mindestens {{count}} Zeichen",
+    "uppercase": "Ein Großbuchstabe (A–Z)",
+    "lowercase": "Ein Kleinbuchstabe (a–z)",
+    "number": "Eine Zahl (0–9)",
+    "special": "Ein Sonderzeichen (!@#$…)"
+  }
+}

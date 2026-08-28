@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 100" role="img" aria-label="Civorah">
+  <g fill="#C9A66B" font-family="Tahoma, Noto Sans Arabic, sans-serif">
+    <text x="120" y="58" font-size="24" font-weight="500" text-anchor="end" letter-spacing="1">Civorah</text>
+  </g>
+  <g fill="none" stroke="#43A047" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M135 22 L160 78 L180 38 L200 78 L220 22" transform="translate(-10,0)" />
+  </g>
+</svg>

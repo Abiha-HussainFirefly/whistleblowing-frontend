@@ -1,0 +1,225 @@
+{
+  "contract": {
+    "ownerAssigned": {
+      "title": "Contract assigned to you",
+      "body": "You are now the owner of \"{{contractTitle}}\"."
+    },
+    "legalReviewAssigned": {
+      "title": "Contract legal review assigned to you",
+      "body": "You are assigned to legal review step \"{{stepName}}\" on contract \"{{contractTitle}}\"."
+    },
+    "executionAssigned": {
+      "title": "Contract execution assigned to you",
+      "body": "You are assigned to execute contract \"{{contractTitle}}\" at step \"{{stepName}}\"."
+    },
+    "approvalEscalated": {
+      "title": "Contract approval escalated",
+      "body": "\"{{contractTitle}}\" was escalated at \"{{stepName}}\". A Contract Manager must reassign the step or resolve the blocker."
+    },
+    "approvalRejectedPostExecution": {
+      "body": "\"{{contractTitle}}\" was rejected at post-execution step \"{{stepName}}\". The executed agreement remains in force and requires remediation."
+    },
+    "postExecutionCompleted": {
+      "title": "Post-execution workflow completed",
+      "body": "\"{{contractTitle}}\" has cleared every post-execution approval step."
+    },
+    "executed": {
+      "title": "Contract executed",
+      "body": "\"{{contractTitle}}\" has been executed."
+    },
+    "renewed": {
+      "title": "Contract renewed",
+      "body": "\"{{contractTitle}}\" has been renewed."
+    },
+    "terminated": {
+      "title": "Contract terminated",
+      "body": "\"{{contractTitle}}\" has been terminated."
+    },
+    "archived": {
+      "title": "Contract archived",
+      "body": "\"{{contractTitle}}\" has been archived."
+    },
+    "obligationAssigned": {
+      "title": "Contract obligation assigned to you",
+      "body": "You are responsible for \"{{obligationTitle}}\" on contract \"{{contractTitle}}\"."
+    },
+    "approvalAssigned": {
+      "title": "Contract approval assigned to you",
+      "body": "You are assigned to \"{{stepName}}\" on contract \"{{contractTitle}}\". Please review and record your decision."
+    },
+    "approvalRejected": {
+      "title": "Contract approval rejected",
+      "body": "\"{{contractTitle}}\" was rejected at \"{{stepName}}\" and returned to draft for revision."
+    },
+    "approvalRejectedExternal": {
+      "title": "Contract approval rejected",
+      "body": "\"{{contractTitle}}\" was rejected by external counsel at \"{{stepName}}\" and returned to draft."
+    },
+    "fullyApproved": {
+      "title": "Contract fully approved",
+      "body": "\"{{contractTitle}}\" has cleared its full approval chain and is ready to execute."
+    },
+    "expiryDue": {
+      "title": "Contract expiry in {{days}} days",
+      "body": "\"{{contractTitle}}\" is due for expiry on {{date}} ({{days}} days)."
+    },
+    "renewalDue": {
+      "title": "Contract renewal in {{days}} days",
+      "body": "\"{{contractTitle}}\" is due for renewal on {{date}} ({{days}} days)."
+    },
+    "obligationDue": {
+      "title": "Obligation due in {{days}} days",
+      "body": "\"{{obligationTitle}}\" on contract \"{{contractTitle}}\" is due {{date}} ({{days}} days)."
+    }
+  },
+  "litigation": {
+    "matterAssigned": {
+      "title": "Matters matter assigned to you",
+      "body": "You are now the responsible lawyer for \"{{caseTitle}}\" ({{fileNumber}})."
+    },
+    "matterAllocated": {
+      "title": "New matter allocated to you",
+      "body": "You have been granted view access to a litigation matter."
+    }
+  },
+  "compliance": {
+    "counterpartyCreated": {
+      "title": "Counterparty ready for screening",
+      "body": "\"{{name}}\" was created and is ready for due-diligence screening."
+    },
+    "screeningReviewRequested": {
+      "title": "Screening review required",
+      "body": "Please review screening hits for \"{{name}}\"."
+    },
+    "iddDecisionRequested": {
+      "title": "IDD decision required",
+      "body": "Screening review is complete for \"{{name}}\". Please approve, reject, or escalate the IDD case."
+    },
+    "iddApproved": {
+      "title": "IDD approved",
+      "body": "\"{{name}}\" has been cleared for IDD until {{date}}."
+    },
+    "iddRejected": {
+      "title": "IDD rejected",
+      "body": "\"{{name}}\" was rejected. Reason: {{reason}}"
+    },
+    "iddBlacklisted": {
+      "title": "Counterparty blacklisted",
+      "body": "\"{{name}}\" was blacklisted. Reason: {{reason}}"
+    },
+    "iddRenewed": {
+      "title": "IDD renewal started",
+      "body": "\"{{name}}\" has been reopened for IDD renewal."
+    },
+    "reviewScheduled": {
+      "title": "Next IDD review scheduled",
+      "body": "The next IDD review for \"{{name}}\" is scheduled for {{date}}."
+    },
+    "caseEscalated": {
+      "title": "IDD case escalated",
+      "body": "\"{{name}}\" was escalated. Reason: {{reason}}"
+    },
+    "iddReviewDue": {
+      "title": "IDD review due in {{days}} days",
+      "body": "Due diligence for \"{{name}}\" is due in {{days}} days ({{date}})."
+    },
+    "iddOverdue": {
+      "title": "IDD clearance overdue for renewal",
+      "body": "Due diligence for \"{{name}}\" is overdue ({{date}})."
+    }
+  },
+  "idd": {
+    "cleared": {
+      "title": "IDD cleared: {{counselName}}",
+      "body": "Integrity due diligence for external counsel \"{{counselName}}\" ({{counterpartyName}}) has been cleared. They can now be assigned to cases and contracts."
+    },
+    "rejected": {
+      "title": "IDD rejected: {{counselName}}",
+      "body": "Integrity due diligence for external counsel \"{{counselName}}\" ({{counterpartyName}}) was rejected."
+    },
+    "blacklisted": {
+      "title": "IDD blacklisted: {{counselName}}",
+      "body": "Integrity due diligence for external counsel \"{{counselName}}\" ({{counterpartyName}}) was blacklisted."
+    }
+  },
+  "externalAccess": {
+    "iddAlreadyCleared": {
+      "title": "IDD already cleared",
+      "body": "Due diligence for \"{{name}}\" is already cleared — {{userName}} can be assigned to matters."
+    },
+    "iddScreeningRequested": {
+      "title": "IDD screening requested",
+      "body": "Please run due-diligence screening for \"{{name}}\" (external counsel {{userName}})."
+    },
+    "iddScreeningRequestedWithNote": {
+      "body": "Please run due-diligence screening for \"{{name}}\" (external counsel {{userName}}). Note: {{note}}"
+    },
+    "matterAllocated": {
+      "title": "New matter allocated to you"
+    },
+    "matterAllocatedContribute": {
+      "body": "You have been granted contributor access to \"{{resourceTitle}}\"."
+    },
+    "matterAllocatedView": {
+      "body": "You have been granted view access to \"{{resourceTitle}}\"."
+    },
+    "accessRevoked": {
+      "title": "Matter access revoked",
+      "body": "Your access to \"{{matterTitle}}\" has been removed."
+    },
+    "accessRevokedGeneric": {
+      "body": "Your access to a matter has been removed."
+    }
+  },
+  "contribution": {
+    "awaitingReview": {
+      "title": "External contribution awaiting review",
+      "body": "An external counsel submitted a {{kind}} for your review."
+    },
+    "approved": {
+      "title": "Your contribution was approved",
+      "body": "Your {{kind}} has been approved and added to the record."
+    },
+    "declined": {
+      "title": "Your contribution was declined",
+      "body": "Your {{kind}} was declined."
+    },
+    "declinedWithReason": {
+      "body": "Your {{kind}} was declined. Reason: {{reason}}"
+    }
+  },
+  "whistleblowing": {
+    "caseAssigned": {
+      "title": "Whistleblowing case assigned: {{ref}}",
+      "body": "You have been assigned to investigate case {{ref}}."
+    },
+    "caseEscalated": {
+      "title": "Whistleblowing case escalated: {{ref}}",
+      "body": "Case {{ref}} has been escalated. Reason: {{reason}}"
+    },
+    "newReport": {
+      "title": "New whistleblowing report: {{ref}}",
+      "body": "A new {{category}} report has been submitted and requires triage."
+    },
+    "reporterMessage": {
+      "title": "New reporter message on {{ref}}"
+    },
+    "reporterEvidence": {
+      "title": "New reporter evidence on {{ref}}"
+    },
+    "reporterActivity": {
+      "body": "The reporter added an update to case {{ref}}."
+    },
+    "slaBreached": {
+      "title": "SLA breached: {{ref}}",
+      "body": "Case {{ref}} has breached its SLA resolution deadline."
+    },
+    "slaBreachedEscalated": {
+      "body": "Case {{ref}} has breached its SLA resolution deadline and was auto-escalated to senior management."
+    },
+    "slaApproaching": {
+      "title": "SLA approaching: {{ref}}",
+      "body": "Case {{ref}} is approaching its SLA resolution deadline. Please action it."
+    }
+  }
+}

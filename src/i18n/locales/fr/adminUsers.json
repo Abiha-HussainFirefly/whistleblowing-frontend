@@ -1,0 +1,191 @@
+{
+  "page": {
+    "title": "Utilisateurs",
+    "subtitle": "Gérez les utilisateurs de la plateforme, leurs rôles et l'état de leur compte."
+  },
+  "filters": {
+    "searchPlaceholder": "Rechercher par e-mail ou par nom...",
+    "allStatuses": "Tous les statuts",
+    "allRoles": "Tous les rôles"
+  },
+  "view": {
+    "list": "Vue en liste",
+    "grid": "Vue en grille"
+  },
+  "table": {
+    "email": "E-mail",
+    "displayName": "Nom affiché",
+    "platformRole": "Rôle de plateforme",
+    "status": "Statut",
+    "mfa": "MFA",
+    "lastLogin": "Dernière connexion",
+    "organization": "Organisation",
+    "region": "Région",
+    "roles": "Rôles",
+    "joined": "Date d'adhésion",
+    "actions": "Actions"
+  },
+  "cards": {
+    "mfa": "MFA : {{state}}",
+    "lastLogin": "Dernière connexion : {{value}}"
+  },
+  "pagination": {
+    "summary": "Page {{page}} sur {{totalPages}} ({{total}} au total)",
+    "previous": "Précédent",
+    "next": "Suivant"
+  },
+  "states": {
+    "loading": "Chargement des utilisateurs...",
+    "loadError": "Échec du chargement des utilisateurs.",
+    "empty": "Aucun utilisateur trouvé."
+  },
+  "roles": {
+    "user": "Utilisateur",
+    "tenant": "Propriétaire d'organisation",
+    "support": "Assistance",
+    "superAdmin": "Super administrateur"
+  },
+  "statuses": {
+    "active": "Actif",
+    "pendingVerification": "Vérification en attente",
+    "suspended": "Suspendu",
+    "locked": "Verrouillé",
+    "deactivated": "Désactivé",
+    "invited": "Invité",
+    "removed": "Supprimé"
+  },
+  "accountKinds": {
+    "standard": "Standard",
+    "externalCounsel": "Conseil externe",
+    "whistleblower": "Lanceur d'alerte",
+    "serviceAccount": "Compte de service"
+  },
+  "actions": {
+    "activate": "Activer",
+    "suspend": "Suspendre",
+    "deactivate": "Désactiver",
+    "reactivate": "Réactiver",
+    "unlockActivate": "Déverrouiller et activer",
+    "updateRole": "Mettre à jour le rôle",
+    "addToOrganization": "Ajouter à une organisation",
+    "addMembership": "Ajouter l'adhésion",
+    "edit": "Modifier",
+    "editRoles": "Modifier les rôles",
+    "remove": "Supprimer",
+    "saveRoles": "Enregistrer les rôles",
+    "transferOwnership": "Transférer la propriété"
+  },
+  "common": {
+    "notSet": "Non défini",
+    "enabled": "Activée",
+    "disabled": "Désactivée",
+    "on": "Activée",
+    "off": "Désactivée",
+    "never": "Jamais",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "processing": "Traitement...",
+    "saving": "Enregistrement...",
+    "organization": "Organisation",
+    "region": "Région",
+    "rolesAtLeastOne": "Rôles (sélectionnez-en au moins un)",
+    "loadingRoles": "Chargement des rôles...",
+    "noRoles": "Aucun rôle disponible pour cette organisation.",
+    "selectOrganization": "Sélectionner une organisation...",
+    "alreadyInAllOrganizations": "L'utilisateur est déjà membre de toutes les organisations.",
+    "search": "Rechercher..."
+  },
+  "detail": {
+    "back": "Retour aux utilisateurs",
+    "loading": "Chargement de l'utilisateur...",
+    "loadError": "Impossible de charger l'utilisateur. Il n'existe peut-être pas ou vous n'êtes pas autorisé à le consulter.",
+    "header": {
+      "unnamed": "Utilisateur sans nom",
+      "accountType": "Type de compte : {{type}}"
+    },
+    "summary": {
+      "email": "E-mail",
+      "verified": "Vérifié",
+      "unverified": "Non vérifié",
+      "phone": "Téléphone",
+      "mfa": "MFA",
+      "joined": "Date d'adhésion",
+      "lastLogin": "Dernière connexion",
+      "regions": "Régions"
+    },
+    "tabs": {
+      "organizationRoles": "Rôles d'organisation",
+      "systemRole": "Rôle système",
+      "status": "Gestion du statut",
+      "memberships": "Adhésions aux organisations"
+    },
+    "organizationRoles": {
+      "title": "Rôles d'organisation",
+      "subtitle": "Rôles attribués à cet utilisateur dans chaque organisation. Sélectionnez Modifier pour les changer.",
+      "empty": "Cet utilisateur n'est membre d'aucune organisation.",
+      "noRoles": "Aucun rôle"
+    },
+    "systemRole": {
+      "title": "Rôle système",
+      "subtitle": "Niveau d'accès à l'ensemble de la plateforme (non spécifique à une organisation)",
+      "platformRole": "Rôle de plateforme"
+    },
+    "status": {
+      "title": "Gestion du statut",
+      "subtitle": "Gérez le statut du compte de cet utilisateur. Les actions destructives nécessitent une confirmation saisie.",
+      "current": "Statut actuel :",
+      "noTransitions": "Aucune transition de statut disponible."
+    },
+    "memberships": {
+      "title": "Adhésions aux organisations",
+      "empty": "Cet utilisateur n'est membre d'aucune organisation.",
+      "primaryOwner": "Propriétaire principal"
+    },
+    "addMembership": {
+      "title": "Ajouter à une organisation",
+      "adding": "Ajout en cours...",
+      "loadRolesError": "Échec du chargement des rôles de cette organisation.",
+      "addError": "Impossible d'ajouter l'utilisateur à l'organisation. Veuillez réessayer."
+    },
+    "editRoles": {
+      "title": "Modifier les rôles",
+      "updateError": "Impossible de mettre à jour les rôles. Veuillez réessayer."
+    },
+    "transferOwnership": {
+      "title": "Transférer la propriété principale",
+      "warning": "Cette action change immédiatement le propriétaire principal de l'organisation. L'ancien propriétaire conserve l'accès avec le rôle de remplacement sélectionné.",
+      "loadingOptions": "Chargement des membres et rôles éligibles...",
+      "loadError": "Impossible de charger les options de transfert de propriété.",
+      "newOwner": "Nouveau propriétaire principal",
+      "selectNewOwner": "Sélectionner le nouveau propriétaire principal...",
+      "noEligibleMembers": "Aucun membre interne éligible n'est disponible pour le transfert de propriété.",
+      "formerOwnerRole": "Rôle de l'ancien propriétaire",
+      "selectFormerOwnerRole": "Sélectionner un rôle pour l'ancien propriétaire...",
+      "confirmWord": "TRANSFERER",
+      "confirmLabel": "Saisissez {{word}} pour confirmer",
+      "success": "La propriété de l'organisation a été transférée avec succès."
+    },
+    "confirmation": {
+      "title": "Voulez-vous vraiment effectuer cette action ?",
+      "important": "Cette action est extrêmement importante.",
+      "warningStatus": "La modification du statut de ce compte prend effet immédiatement et met à jour son accès au système.",
+      "verifyStatus": "Pour confirmer, saisissez {{word}} exactement comme indiqué pour {{user}} :",
+      "confirmAction": "Confirmer : {{action}}",
+      "warningRemove": "La suppression de cette adhésion révoque immédiatement tous les rôles de cet utilisateur dans l'organisation.",
+      "verifyRemove": "Pour confirmer, saisissez {{word}} afin de supprimer {{user}} de {{organization}} :",
+      "confirmRemove": "Confirmer la suppression",
+      "words": {
+        "suspend": "suspendre",
+        "deactivate": "désactiver",
+        "remove": "supprimer"
+      }
+    },
+    "messages": {
+      "updateFailed": "Impossible de mettre à jour l'utilisateur. Veuillez réessayer.",
+      "removeFailed": "Impossible de supprimer l'adhésion. Veuillez réessayer.",
+      "removed": "L'utilisateur a été supprimé de l'organisation.",
+      "added": "L'utilisateur a été ajouté à l'organisation.",
+      "rolesUpdated": "Les rôles de l'adhésion ont été mis à jour."
+    }
+  }
+}

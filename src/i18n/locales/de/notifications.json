@@ -1,0 +1,213 @@
+{
+  "contract": {
+    "ownerAssigned": {
+      "title": "Vertrag wurde Ihnen zugewiesen",
+      "body": "Sie sind jetzt für den Vertrag „{{contractTitle}}“ verantwortlich."
+    },
+    "legalReviewAssigned": {
+      "title": "Rechtliche Vertragsprüfung wurde Ihnen zugewiesen",
+      "body": "Ihnen wurde die rechtliche Prüfung „{{stepName}}“ für den Vertrag „{{contractTitle}}“ zugewiesen."
+    },
+    "executionAssigned": {
+      "title": "Vertragsausführung wurde Ihnen zugewiesen",
+      "body": "Sie sollen den Vertrag „{{contractTitle}}“ im Schritt „{{stepName}}“ ausführen."
+    },
+    "approvalEscalated": {
+      "title": "Vertragsfreigabe eskaliert",
+      "body": "„{{contractTitle}}“ wurde bei „{{stepName}}“ eskaliert. Eine Vertragsverwaltung muss den Schritt neu zuweisen oder das Hindernis lösen."
+    },
+    "approvalRejectedPostExecution": {
+      "body": "„{{contractTitle}}“ wurde im nachgelagerten Schritt „{{stepName}}“ abgelehnt. Die ausgeführte Vereinbarung bleibt in Kraft und muss korrigiert werden."
+    },
+    "postExecutionCompleted": {
+      "title": "Nachgelagerter Workflow abgeschlossen",
+      "body": "„{{contractTitle}}“ hat alle nachgelagerten Freigabeschritte durchlaufen."
+    },
+    "executed": { "title": "Vertrag ausgeführt", "body": "„{{contractTitle}}“ wurde ausgeführt." },
+    "renewed": { "title": "Vertrag verlängert", "body": "„{{contractTitle}}“ wurde verlängert." },
+    "terminated": { "title": "Vertrag beendet", "body": "„{{contractTitle}}“ wurde beendet." },
+    "archived": { "title": "Vertrag archiviert", "body": "„{{contractTitle}}“ wurde archiviert." },
+    "obligationAssigned": {
+      "title": "Ihnen wurde eine Vertragspflicht zugewiesen",
+      "body": "Sie sind verantwortlich für „{{obligationTitle}}“ im Vertrag „{{contractTitle}}“."
+    },
+    "approvalAssigned": {
+      "title": "Ihnen wurde eine Vertragsfreigabe zugewiesen",
+      "body": "Sie wurden „{{stepName}}“ im Vertrag „{{contractTitle}}“ zugewiesen. Bitte prüfen Sie und halten Sie Ihre Entscheidung fest."
+    },
+    "approvalRejected": {
+      "title": "Vertragsfreigabe abgelehnt",
+      "body": "„{{contractTitle}}“ wurde bei „{{stepName}}“ abgelehnt und zur Überarbeitung in den Entwurf zurückgesetzt."
+    },
+    "approvalRejectedExternal": {
+      "title": "Vertragsfreigabe abgelehnt",
+      "body": "„{{contractTitle}}“ wurde vom externen Rechtsbeistand bei „{{stepName}}“ abgelehnt und in den Entwurf zurückgesetzt."
+    },
+    "fullyApproved": {
+      "title": "Vertrag vollständig freigegeben",
+      "body": "„{{contractTitle}}“ hat die gesamte Freigabekette durchlaufen und ist bereit zur Ausführung."
+    },
+    "expiryDue": {
+      "title": "Vertragsablauf in {{days}} Tagen",
+      "body": "„{{contractTitle}}“ läuft am {{date}} ab ({{days}} Tage)."
+    },
+    "renewalDue": {
+      "title": "Vertragsverlängerung in {{days}} Tagen",
+      "body": "„{{contractTitle}}“ ist am {{date}} zur Verlängerung fällig ({{days}} Tage)."
+    },
+    "obligationDue": {
+      "title": "Verpflichtung fällig in {{days}} Tagen",
+      "body": "„{{obligationTitle}}“ im Vertrag „{{contractTitle}}“ ist am {{date}} fällig ({{days}} Tage)."
+    }
+  },
+  "litigation": {
+    "matterAssigned": {
+      "title": "Ihnen wurde ein Rechtsstreit zugewiesen",
+      "body": "Sie sind nun der verantwortliche Anwalt für „{{caseTitle}}“ ({{fileNumber}})."
+    },
+    "matterAllocated": {
+      "title": "Ihnen wurde ein neuer Fall zugewiesen",
+      "body": "Ihnen wurde Lesezugriff auf einen Rechtsstreit gewährt."
+    }
+  },
+  "compliance": {
+    "counterpartyCreated": {
+      "title": "Geschäftspartner bereit für die Prüfung",
+      "body": "\"{{name}}\" wurde erstellt und ist für die Sorgfaltsprüfung bereit."
+    },
+    "screeningReviewRequested": {
+      "title": "Prüfung der Screening-Ergebnisse erforderlich",
+      "body": "Bitte prüfen Sie die Screening-Treffer für \"{{name}}\"."
+    },
+    "iddDecisionRequested": {
+      "title": "IDD-Entscheidung erforderlich",
+      "body": "Die Screening-Prüfung für \"{{name}}\" ist abgeschlossen. Bitte genehmigen, lehnen Sie den IDD-Fall ab oder eskalieren Sie ihn."
+    },
+    "iddApproved": {
+      "title": "IDD genehmigt",
+      "body": "\"{{name}}\" wurde bis {{date}} für die IDD freigegeben."
+    },
+    "iddRejected": {
+      "title": "IDD abgelehnt",
+      "body": "\"{{name}}\" wurde abgelehnt. Grund: {{reason}}"
+    },
+    "iddBlacklisted": {
+      "title": "Geschäftspartner auf die Sperrliste gesetzt",
+      "body": "\"{{name}}\" wurde auf die Sperrliste gesetzt. Grund: {{reason}}"
+    },
+    "iddRenewed": {
+      "title": "IDD-Erneuerung gestartet",
+      "body": "\"{{name}}\" wurde für die Erneuerung der IDD wieder geöffnet."
+    },
+    "reviewScheduled": {
+      "title": "Nächste IDD-Prüfung geplant",
+      "body": "Die nächste IDD-Prüfung für \"{{name}}\" ist für {{date}} geplant."
+    },
+    "caseEscalated": {
+      "title": "IDD-Fall eskaliert",
+      "body": "\"{{name}}\" wurde eskaliert. Grund: {{reason}}"
+    },
+    "iddReviewDue": {
+      "title": "Sorgfaltsprüfung fällig in {{days}} Tagen",
+      "body": "Die Sorgfaltsprüfung für „{{name}}“ ist in {{days}} Tagen fällig ({{date}})."
+    },
+    "iddOverdue": {
+      "title": "Freigabe der Sorgfaltsprüfung überfällig zur Verlängerung",
+      "body": "Die Sorgfaltsprüfung für „{{name}}“ ist überfällig ({{date}})."
+    }
+  },
+  "idd": {
+    "cleared": {
+      "title": "Sorgfaltsprüfung freigegeben: {{counselName}}",
+      "body": "Die Integritäts-Sorgfaltsprüfung für den externen Rechtsbeistand „{{counselName}}“ ({{counterpartyName}}) wurde freigegeben. Er kann nun Fällen und Verträgen zugewiesen werden."
+    },
+    "rejected": {
+      "title": "Sorgfaltsprüfung abgelehnt: {{counselName}}",
+      "body": "Die Integritäts-Sorgfaltsprüfung für den externen Rechtsbeistand „{{counselName}}“ ({{counterpartyName}}) wurde abgelehnt."
+    },
+    "blacklisted": {
+      "title": "Sorgfaltsprüfung auf schwarze Liste gesetzt: {{counselName}}",
+      "body": "Die Integritäts-Sorgfaltsprüfung für den externen Rechtsbeistand „{{counselName}}“ ({{counterpartyName}}) wurde auf die schwarze Liste gesetzt."
+    }
+  },
+  "externalAccess": {
+    "iddAlreadyCleared": {
+      "title": "Sorgfaltsprüfung bereits freigegeben",
+      "body": "Die Sorgfaltsprüfung für „{{name}}“ ist bereits freigegeben — {{userName}} kann Fällen zugewiesen werden."
+    },
+    "iddScreeningRequested": {
+      "title": "Sorgfaltsprüfung angefordert",
+      "body": "Bitte führen Sie die Sorgfaltsprüfung für „{{name}}“ durch (externer Rechtsbeistand {{userName}})."
+    },
+    "iddScreeningRequestedWithNote": {
+      "body": "Bitte führen Sie die Sorgfaltsprüfung für „{{name}}“ durch (externer Rechtsbeistand {{userName}}). Hinweis: {{note}}"
+    },
+    "matterAllocated": {
+      "title": "Ihnen wurde ein neuer Fall zugewiesen"
+    },
+    "matterAllocatedContribute": {
+      "body": "Ihnen wurde Bearbeiterzugriff auf „{{resourceTitle}}“ gewährt."
+    },
+    "matterAllocatedView": {
+      "body": "Ihnen wurde Lesezugriff auf „{{resourceTitle}}“ gewährt."
+    },
+    "accessRevoked": {
+      "title": "Fallzugriff entzogen",
+      "body": "Ihr Zugriff auf „{{matterTitle}}“ wurde entfernt."
+    },
+    "accessRevokedGeneric": {
+      "body": "Ihr Zugriff auf einen Fall wurde entfernt."
+    }
+  },
+  "contribution": {
+    "awaitingReview": {
+      "title": "Externer Beitrag wartet auf Prüfung",
+      "body": "Ein externer Rechtsbeistand hat einen {{kind}} zur Prüfung eingereicht."
+    },
+    "approved": {
+      "title": "Ihr Beitrag wurde genehmigt",
+      "body": "Ihr {{kind}} wurde genehmigt und zum Datensatz hinzugefügt."
+    },
+    "declined": {
+      "title": "Ihr Beitrag wurde abgelehnt",
+      "body": "Ihr {{kind}} wurde abgelehnt."
+    },
+    "declinedWithReason": {
+      "body": "Ihr {{kind}} wurde abgelehnt. Grund: {{reason}}"
+    }
+  },
+  "whistleblowing": {
+    "caseAssigned": {
+      "title": "Whistleblowing-Fall zugewiesen: {{ref}}",
+      "body": "Sie wurden mit der Untersuchung des Falls {{ref}} beauftragt."
+    },
+    "caseEscalated": {
+      "title": "Whistleblowing-Fall eskaliert: {{ref}}",
+      "body": "Fall {{ref}} wurde eskaliert. Grund: {{reason}}"
+    },
+    "newReport": {
+      "title": "Neue Whistleblowing-Meldung: {{ref}}",
+      "body": "Eine neue Meldung der Kategorie {{category}} wurde eingereicht und muss gesichtet werden."
+    },
+    "reporterMessage": {
+      "title": "Neue Nachricht des Hinweisgebers zu {{ref}}"
+    },
+    "reporterEvidence": {
+      "title": "Neue Nachweise des Hinweisgebers zu {{ref}}"
+    },
+    "reporterActivity": {
+      "body": "Der Hinweisgeber hat eine Aktualisierung zum Fall {{ref}} hinzugefügt."
+    },
+    "slaBreached": {
+      "title": "SLA verletzt: {{ref}}",
+      "body": "Fall {{ref}} hat seine SLA-Lösungsfrist überschritten."
+    },
+    "slaBreachedEscalated": {
+      "body": "Fall {{ref}} hat seine SLA-Lösungsfrist überschritten und wurde automatisch an die Geschäftsleitung eskaliert."
+    },
+    "slaApproaching": {
+      "title": "SLA-Frist nähert sich: {{ref}}",
+      "body": "Fall {{ref}} nähert sich seiner SLA-Lösungsfrist. Bitte bearbeiten Sie ihn."
+    }
+  }
+}

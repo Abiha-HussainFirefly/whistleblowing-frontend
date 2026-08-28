@@ -1,0 +1,134 @@
+﻿{
+    "title":  "Licensing Plans",
+    "description":  "Reusable bundles of modules, seats, and AI credits. Assign a plan to an organization to snapshot its entitlement â€” you can still override any organization individually.",
+    "actions":  {
+                    "newPlan":  "New Plan",
+                    "editPlan":  "Edit plan",
+                    "deletePlan":  "Delete plan",
+                    "cancel":  "Cancel",
+                    "saveChanges":  "Save Changes",
+                    "createPlan":  "Create Plan",
+                    "closePanel":  "Close panel",
+                    "cardView":  "Card view",
+                    "tableView":  "Table view"
+                },
+    "stats":  {
+                  "activePlans":  "Active Plans",
+                  "totalPlans":  "{{count}} total plans",
+                  "organizations":  "Organizations",
+                  "subscribed":  "Subscribed across all plans",
+                  "aiCredits":  "AI Credits / mo",
+                  "allocated":  "Allocated across all plans",
+                  "inactivePlans":  "Inactive Plans",
+                  "archived":  "Archived, kept for existing orgs"
+              },
+    "filters":  {
+                    "searchPlaceholder":  "Search plans...",
+                    "allStatus":  "All Status",
+                    "active":  "Active",
+                    "inactive":  "Inactive",
+                    "noPlans":  "No plans found",
+                    "adjustSearch":  "Try adjusting your search or status filter.",
+                    "createFirst":  "Create your first plan to get started."
+                },
+    "states":  {
+                   "loading":  "Loading plansâ€¦",
+                   "loadError":  "Failed to load plans.",
+                   "saveError":  "Failed to save plan.",
+                   "saving":  "Savingâ€¦",
+                   "deleting":  "Deletingâ€¦"
+               },
+    "card":  {
+                 "month":  "/ month",
+                 "noModules":  "No modules",
+                 "adminSeats":  "Admin seats",
+                 "userSeats":  "User seats",
+                 "aiCredits":  "AI credits/mo",
+                 "organizationOne":  "organization on this plan",
+                 "organizationMany":  "organizations on this plan"
+             },
+    "table":  {
+                  "name":  "Name",
+                  "price":  "Price",
+                  "includedModules":  "Included Modules",
+                  "adminSeats":  "Admin Seats",
+                  "userSeats":  "User Seats",
+                  "aiCredits":  "AI Credits/mo",
+                  "actions":  "Actions"
+              },
+    "editor":  {
+                   "editTitle":  "Edit Plan",
+                   "newTitle":  "New Plan",
+                   "name":  "Name *",
+                   "namePlaceholder":  "e.g. Professional",
+                   "status":  "Status",
+                   "activeAvailable":  "Active (available to assign)",
+                   "description":  "Description",
+                   "descriptionPlaceholder":  "Short description of the plan",
+                   "includedModules":  "Included modules",
+                   "adminSeats":  "Admin seats",
+                   "userSeats":  "User seats",
+                   "aiCredits":  "AI credits / mo",
+                   "price":  "Price / month (optional)",
+                   "pricePlaceholder":  "e.g. 499",
+                   "currency":  "Currency",
+                   "externalSeats":  "External seats",
+                   "workspaces":  "Workspaces",
+                   "storageMb":  "Storage (MB)"
+               },
+    "validation":  {
+                       "nameRequired":  "Plan name is required."
+                   },
+    "delete":  {
+                   "title":  "Delete plan?",
+                   "body":  "Organizations already on this plan keep their current entitlement â€” they are not changed. The plan is archived and can no longer be assigned."
+               },
+    "modules":  {
+                    "contracts":  {
+                                      "label":  "Contracts (CLM)",
+                                      "description":  "Contract lifecycle management."
+                                  },
+                    "matters":  {
+                                    "label":  "Matters",
+                                    "description":  "Matters, hearings, and legal fees."
+                                },
+                    "compliance":  {
+                                       "label":  "Ethics \u0026 Compliance",
+                                       "description":  "Counterparty due diligence (IDD / ABC)."
+                                   },
+                    "secretarial":  {
+                                        "label":  "Secretarial",
+                                        "description":  "Board records \u0026 compliance calendar."
+                                    },
+                    "land":  {
+                                 "label":  "Assets",
+                                 "description":  "Organization asset repository."
+                             },
+                    "whistleblowing":  {
+                                           "label":  "Whistleblowing",
+                                           "description":  "Confidential incident reporting."
+                                       },
+                    "external_access":  {
+                                            "label":  "External Counsel",
+                                            "description":  "External resource allocation \u0026 portal."
+                                        },
+                    "ai":  {
+                               "label":  "AI Assistant",
+                               "description":  "AI legal assistant (credit-based)."
+                           }
+                },
+    "seeded":  {
+                   "starter":  {
+                                   "name":  "Starter",
+                                   "description":  "Entry plan â€” Contracts only, small team."
+                               },
+                   "professional":  {
+                                        "name":  "Professional",
+                                        "description":  "Core legal operations â€” Contracts, Matters, Compliance, Secretarial \u0026 External Counsel."
+                                    },
+                   "enterprise":  {
+                                      "name":  "Enterprise",
+                                      "description":  "Full platform â€” every module plus the AI assistant."
+                                  }
+               }
+}

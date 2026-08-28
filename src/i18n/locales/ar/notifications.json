@@ -1,0 +1,213 @@
+{
+  "contract": {
+    "ownerAssigned": {
+      "title": "تم إسناد العقد إليك",
+      "body": "أصبحت الآن مالك العقد \"{{contractTitle}}\"."
+    },
+    "legalReviewAssigned": {
+      "title": "تم إسناد المراجعة القانونية إليك",
+      "body": "تم إسناد خطوة المراجعة القانونية \"{{stepName}}\" في العقد \"{{contractTitle}}\" إليك."
+    },
+    "executionAssigned": {
+      "title": "تم إسناد تنفيذ العقد إليك",
+      "body": "تم إسناد تنفيذ العقد \"{{contractTitle}}\" عند الخطوة \"{{stepName}}\" إليك."
+    },
+    "approvalEscalated": {
+      "title": "تم تصعيد اعتماد العقد",
+      "body": "تم تصعيد \"{{contractTitle}}\" عند \"{{stepName}}\". يجب على مدير العقود إعادة تعيين الخطوة أو حل العائق."
+    },
+    "approvalRejectedPostExecution": {
+      "body": "تم رفض \"{{contractTitle}}\" في خطوة ما بعد التنفيذ \"{{stepName}}\". تظل الاتفاقية المنفذة سارية وتتطلب معالجة."
+    },
+    "postExecutionCompleted": {
+      "title": "اكتمل سير العمل بعد التنفيذ",
+      "body": "أكمل \"{{contractTitle}}\" جميع خطوات الاعتماد بعد التنفيذ."
+    },
+    "executed": { "title": "تم تنفيذ العقد", "body": "تم تنفيذ \"{{contractTitle}}\"." },
+    "renewed": { "title": "تم تجديد العقد", "body": "تم تجديد \"{{contractTitle}}\"." },
+    "terminated": { "title": "تم إنهاء العقد", "body": "تم إنهاء \"{{contractTitle}}\"." },
+    "archived": { "title": "تمت أرشفة العقد", "body": "تمت أرشفة \"{{contractTitle}}\"." },
+    "obligationAssigned": {
+      "title": "تم إسناد التزام عقد إليك",
+      "body": "أنت مسؤول عن \"{{obligationTitle}}\" في العقد \"{{contractTitle}}\"."
+    },
+    "approvalAssigned": {
+      "title": "تم إسناد اعتماد عقد إليك",
+      "body": "تم إسنادك إلى \"{{stepName}}\" في العقد \"{{contractTitle}}\". يرجى المراجعة وتسجيل قرارك."
+    },
+    "approvalRejected": {
+      "title": "تم رفض اعتماد العقد",
+      "body": "تم رفض \"{{contractTitle}}\" عند \"{{stepName}}\" وأُعيد إلى المسودة للمراجعة."
+    },
+    "approvalRejectedExternal": {
+      "title": "تم رفض اعتماد العقد",
+      "body": "تم رفض \"{{contractTitle}}\" من قِبل المستشار الخارجي عند \"{{stepName}}\" وأُعيد إلى المسودة."
+    },
+    "fullyApproved": {
+      "title": "تم اعتماد العقد بالكامل",
+      "body": "أكمل \"{{contractTitle}}\" سلسلة الاعتماد بالكامل وأصبح جاهزًا للتنفيذ."
+    },
+    "expiryDue": {
+      "title": "انتهاء العقد خلال {{days}} يومًا",
+      "body": "ينتهي \"{{contractTitle}}\" في {{date}} ({{days}} يومًا)."
+    },
+    "renewalDue": {
+      "title": "تجديد العقد خلال {{days}} يومًا",
+      "body": "يستحق \"{{contractTitle}}\" التجديد في {{date}} ({{days}} يومًا)."
+    },
+    "obligationDue": {
+      "title": "التزام مستحق خلال {{days}} يومًا",
+      "body": "\"{{obligationTitle}}\" في العقد \"{{contractTitle}}\" مستحق في {{date}} ({{days}} يومًا)."
+    }
+  },
+  "litigation": {
+    "matterAssigned": {
+      "title": "تم إسناد قضية تقاضٍ إليك",
+      "body": "أنت الآن المحامي المسؤول عن \"{{caseTitle}}\" ({{fileNumber}})."
+    },
+    "matterAllocated": {
+      "title": "تم تخصيص قضية جديدة لك",
+      "body": "تم منحك صلاحية الاطلاع على قضية تقاضٍ."
+    }
+  },
+  "compliance": {
+    "counterpartyCreated": {
+      "title": "الطرف المقابل جاهز للفحص",
+      "body": "تم إنشاء \"{{name}}\" وأصبح جاهزًا لفحص العناية الواجبة."
+    },
+    "screeningReviewRequested": {
+      "title": "مراجعة الفحص مطلوبة",
+      "body": "يرجى مراجعة نتائج الفحص الخاصة بـ \"{{name}}\"."
+    },
+    "iddDecisionRequested": {
+      "title": "قرار العناية الواجبة مطلوب",
+      "body": "اكتملت مراجعة الفحص لـ \"{{name}}\". يرجى اعتماد حالة العناية الواجبة أو رفضها أو تصعيدها."
+    },
+    "iddApproved": {
+      "title": "تم اعتماد العناية الواجبة",
+      "body": "تمت الموافقة على \"{{name}}\" للعناية الواجبة حتى {{date}}."
+    },
+    "iddRejected": {
+      "title": "تم رفض العناية الواجبة",
+      "body": "تم رفض \"{{name}}\". السبب: {{reason}}"
+    },
+    "iddBlacklisted": {
+      "title": "تم إدراج الطرف المقابل في القائمة السوداء",
+      "body": "تم إدراج \"{{name}}\" في القائمة السوداء. السبب: {{reason}}"
+    },
+    "iddRenewed": {
+      "title": "بدأ تجديد العناية الواجبة",
+      "body": "تمت إعادة فتح \"{{name}}\" لتجديد العناية الواجبة."
+    },
+    "reviewScheduled": {
+      "title": "تمت جدولة مراجعة العناية الواجبة التالية",
+      "body": "تمت جدولة مراجعة العناية الواجبة التالية لـ \"{{name}}\" في {{date}}."
+    },
+    "caseEscalated": {
+      "title": "تم تصعيد حالة العناية الواجبة",
+      "body": "تم تصعيد \"{{name}}\". السبب: {{reason}}"
+    },
+    "iddReviewDue": {
+      "title": "مراجعة العناية الواجبة مستحقة خلال {{days}} يومًا",
+      "body": "العناية الواجبة لـ \"{{name}}\" مستحقة خلال {{days}} يومًا ({{date}})."
+    },
+    "iddOverdue": {
+      "title": "انتهت صلاحية اعتماد العناية الواجبة ويلزم تجديدها",
+      "body": "العناية الواجبة لـ \"{{name}}\" متأخرة ({{date}})."
+    }
+  },
+  "idd": {
+    "cleared": {
+      "title": "تمت الموافقة على العناية الواجبة: {{counselName}}",
+      "body": "تمت الموافقة على العناية الواجبة النزاهية للمستشار الخارجي \"{{counselName}}\" ({{counterpartyName}}). يمكن الآن إسناده إلى القضايا والعقود."
+    },
+    "rejected": {
+      "title": "تم رفض العناية الواجبة: {{counselName}}",
+      "body": "تم رفض العناية الواجبة النزاهية للمستشار الخارجي \"{{counselName}}\" ({{counterpartyName}})."
+    },
+    "blacklisted": {
+      "title": "تم إدراج العناية الواجبة في القائمة السوداء: {{counselName}}",
+      "body": "تم إدراج العناية الواجبة النزاهية للمستشار الخارجي \"{{counselName}}\" ({{counterpartyName}}) في القائمة السوداء."
+    }
+  },
+  "externalAccess": {
+    "iddAlreadyCleared": {
+      "title": "العناية الواجبة معتمدة مسبقًا",
+      "body": "العناية الواجبة لـ \"{{name}}\" معتمدة مسبقًا — يمكن إسناد {{userName}} إلى القضايا."
+    },
+    "iddScreeningRequested": {
+      "title": "تم طلب فحص العناية الواجبة",
+      "body": "يرجى إجراء فحص العناية الواجبة لـ \"{{name}}\" (المستشار الخارجي {{userName}})."
+    },
+    "iddScreeningRequestedWithNote": {
+      "body": "يرجى إجراء فحص العناية الواجبة لـ \"{{name}}\" (المستشار الخارجي {{userName}}). ملاحظة: {{note}}"
+    },
+    "matterAllocated": {
+      "title": "تم تخصيص قضية جديدة لك"
+    },
+    "matterAllocatedContribute": {
+      "body": "تم منحك صلاحية المساهمة في \"{{resourceTitle}}\"."
+    },
+    "matterAllocatedView": {
+      "body": "تم منحك صلاحية الاطلاع على \"{{resourceTitle}}\"."
+    },
+    "accessRevoked": {
+      "title": "تم إلغاء صلاحية الوصول إلى القضية",
+      "body": "تمت إزالة صلاحية وصولك إلى \"{{matterTitle}}\"."
+    },
+    "accessRevokedGeneric": {
+      "body": "تمت إزالة صلاحية وصولك إلى إحدى القضايا."
+    }
+  },
+  "contribution": {
+    "awaitingReview": {
+      "title": "مساهمة خارجية بانتظار المراجعة",
+      "body": "قدّم مستشار خارجي {{kind}} لمراجعتك."
+    },
+    "approved": {
+      "title": "تمت الموافقة على مساهمتك",
+      "body": "تمت الموافقة على {{kind}} الخاصة بك وإضافتها إلى السجل."
+    },
+    "declined": {
+      "title": "تم رفض مساهمتك",
+      "body": "تم رفض {{kind}} الخاصة بك."
+    },
+    "declinedWithReason": {
+      "body": "تم رفض {{kind}} الخاصة بك. السبب: {{reason}}"
+    }
+  },
+  "whistleblowing": {
+    "caseAssigned": {
+      "title": "تم إسناد بلاغ مخالفة: {{ref}}",
+      "body": "تم إسنادك للتحقيق في القضية {{ref}}."
+    },
+    "caseEscalated": {
+      "title": "تمت تصعيد بلاغ المخالفة: {{ref}}",
+      "body": "تم تصعيد القضية {{ref}}. السبب: {{reason}}"
+    },
+    "newReport": {
+      "title": "بلاغ مخالفة جديد: {{ref}}",
+      "body": "تم تقديم بلاغ جديد من فئة {{category}} ويتطلب الفرز."
+    },
+    "reporterMessage": {
+      "title": "رسالة جديدة من المُبلِّغ بشأن {{ref}}"
+    },
+    "reporterEvidence": {
+      "title": "أدلة جديدة من المُبلِّغ بشأن {{ref}}"
+    },
+    "reporterActivity": {
+      "body": "أضاف المُبلِّغ تحديثًا على القضية {{ref}}."
+    },
+    "slaBreached": {
+      "title": "تم خرق اتفاقية مستوى الخدمة: {{ref}}",
+      "body": "تجاوزت القضية {{ref}} الموعد النهائي لحل اتفاقية مستوى الخدمة."
+    },
+    "slaBreachedEscalated": {
+      "body": "تجاوزت القضية {{ref}} الموعد النهائي لحل اتفاقية مستوى الخدمة وتم تصعيدها تلقائيًا إلى الإدارة العليا."
+    },
+    "slaApproaching": {
+      "title": "اقتراب موعد اتفاقية مستوى الخدمة: {{ref}}",
+      "body": "تقترب القضية {{ref}} من الموعد النهائي لحل اتفاقية مستوى الخدمة. يرجى اتخاذ إجراء."
+    }
+  }
+}

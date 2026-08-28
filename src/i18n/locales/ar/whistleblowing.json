@@ -1,0 +1,858 @@
+{
+  "page": {
+    "title": "الإبلاغ عن مخالفة",
+    "subtitle": "أبلغ بسرّية عن سوء سلوك مشتبه به. يمكنك البقاء مجهول الهوية.",
+    "noContext": "لا يوجد سياق مؤسسة نشط.",
+    "loading": "جارٍ التحميل…",
+    "notEnabled": "الإبلاغ عن المخالفات غير مُفعّل لمؤسستك.",
+    "loadingSecure": "جارٍ تحميل بوابة الإبلاغ الآمنة...",
+    "portalUnavailable": "البوابة غير متاحة",
+    "portalNotFound": "تعذر العثور على بوابة الإبلاغ هذه.",
+    "reportSubmitted": "تم إرسال البلاغ",
+    "reportSubmittedToast": "تم إرسال البلاغ بنجاح. احفظ بيانات الاعتماد الآن.",
+    "portalSubtitle": "أرسل بلاغًا سريًا إلى {{organization}}. يمكنك البقاء مجهول الهوية."
+  },
+  "form": {
+    "takeTour": "جولة تعريفية",
+    "cards": {
+      "overview": {
+        "title": "نظرة عامة على الحادثة",
+        "subtitle": "صف طبيعة المخالفة التي تبلغ عنها"
+      },
+      "location": {
+        "title": "أين حدث ذلك؟",
+        "subtitle": "ساعدنا على فهم مكان وقوع الحادثة"
+      },
+      "more": {
+        "title": "أخبرنا المزيد",
+        "subtitle": "يساعدنا السياق الإضافي على التحقيق بدقة"
+      },
+      "contact": {
+        "title": "بيانات الاتصال الخاصة بك",
+        "subtitle": "تُستخدم فقط لمتابعة بلاغك"
+      },
+      "identity": {
+        "title": "الهوية والسرية",
+        "subtitle": "اختر كيف يمكننا التواصل معك ومن يجب استبعاده"
+      },
+      "review": {
+        "title": "المراجعة والإرسال",
+        "subtitle": "أكد شروط البلاغ قبل الإرسال"
+      }
+    },
+    "fields": {
+      "category": "فئة الحادثة",
+      "whatHappened": "ماذا حدث؟",
+      "whatHappenedHint": "من، وماذا، وأين، ومتى، وكيف. سرّية هويتك محمية.",
+      "location": "مكان وقوع الحادثة",
+      "city": "المدينة",
+      "state": "الولاية / المحافظة",
+      "postalCode": "الرمز البريدي",
+      "country": "الدولة",
+      "region": "المنطقة / وحدة العمل",
+      "relationship": "علاقتك بالمؤسسة",
+      "involved": "الأشخاص المتورطون في هذا السلوك",
+      "previouslyReported": "هل تم الإبلاغ عن هذا للإدارة سابقًا؟",
+      "dateOfOccurrence": "تاريخ الوقوع",
+      "whenLast": "متى حدث هذا آخر مرة؟",
+      "duration": "منذ متى وهذا يحدث؟",
+      "awareness": "كيف علمت بهذا الأمر؟",
+      "email": "بريدك الإلكتروني (للتحديثات)",
+      "phone": "رقم هاتفك",
+      "bestTime": "أفضل وقت للتواصل معك"
+    },
+    "placeholders": {
+      "selectCategory": "اختر فئة…",
+      "selectOne": "اختر واحدًا…",
+      "notSpecified": "غير محدد",
+      "whatHappened": "يرجى تقديم أكبر قدر ممكن من التفاصيل — من، وماذا، وأين، ومتى، وكيف عرفت بذلك. تجنّب ذكر هويتك إذا كنت ترغب في البقاء مجهولًا.",
+      "location": "العنوان الفعلي، الفرع و/أو رقم المتجر",
+      "whenLast": "مثال: قبل أسبوعين",
+      "email": "you@example.com",
+      "bestTime": "مثال: صباح أيام العمل"
+    },
+    "characters": "{{count}} حرفًا",
+    "anonymous": {
+      "title": "الإرسال بشكل مجهول",
+      "on": "لن تتم مشاركة هويتك.",
+      "off": "سيتم تضمين بيانات الاتصال الخاصة بك."
+    },
+    "conflictReviewerSelection": {
+      "title": "استبعاد مراجعين مستقلين محددين (اختياري)",
+      "description": "حدد فقط المراجعين المستقلين الذين قد يكون لديهم تعارض. يمكن للمراجعين المستقلين الآخرين الوصول إلى هذا البلاغ.",
+      "protected": "يظل مالك المؤسسة محميًا دائمًا، ويجب أن يظل مسؤول مؤهل واحد على الأقل متاحًا.",
+      "none": "لا يوجد مراجعون مستقلون مُعدّون حالياً."
+    },
+    "conflict": {
+      "title": "تضارب المصالح",
+      "optional": "(اختياري)",
+      "description": "إذا كان هذا البلاغ يتعلق بشخص يتولى عادةً معالجة بلاغات المخالفات، فحدد هذا الخيار. سيُوجّه البلاغ إلى فريق المراجعة المستقلة في المؤسسة ولن يحصل الفريق المعتاد على صلاحية الوصول."
+    },
+    "terms": "أوافق على شروط وأحكام تقديم هذا البلاغ وأؤكد أن المعلومات المقدمة صحيحة على حد علمي.",
+    "submit": "إرسال البلاغ",
+    "submitting": "جارٍ الإرسال…",
+    "expect": {
+      "title": "ما الذي يمكن توقعه",
+      "directToCompliance": "سيصل بلاغك إلى فريق المراجعة المستقلة أو فريق الامتثال المناسب.",
+      "caseReference": "ستتلقى رقمًا مرجعيًا للحالة لتتبع التقدم.",
+      "noRetaliation": "الانتقام من المبلّغين محظور تمامًا."
+    },
+    "validation": {
+      "category": "يرجى اختيار فئة الحادثة.",
+      "description": "يرجى تقديم وصف أوفى (10 أحرف على الأقل).",
+      "email": "قدّم بريدًا إلكترونيًا، أو اختر الإبلاغ بشكل مجهول.",
+      "terms": "يرجى قبول الشروط والأحكام لإرسال بلاغك.",
+      "descriptionTooLong": "يرجى اختصار الوصف إلى ٢٠٬٠٠٠ حرف أو أقل.",
+      "futureDate": "لا يمكن أن يكون تاريخ الحادثة في المستقبل."
+    },
+    "steps": {
+      "incident": "تفاصيل الحادثة",
+      "location": "الموقع",
+      "details": "الأشخاص والتوقيت",
+      "identity": "الهوية",
+      "review": "المراجعة والإرسال"
+    },
+    "navigation": {
+      "back": "رجوع",
+      "next": "التالي"
+    }
+  },
+  "persons": {
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "titleRole": "المسمى / الدور",
+    "titlePlaceholder": "مثال: مشرف الوردية الليلية",
+    "remove": "إزالة الشخص",
+    "addFirst": "إضافة شخص",
+    "addAnother": "إضافة شخص آخر",
+    "examples": "أمثلة: «John Doe، مدير التدقيق الداخلي» · «غير معروف، غير معروف، مشرف الوردية الليلية»"
+  },
+  "share": {
+    "title": "رابط إبلاغ قابل للمشاركة",
+    "description": "شارك هذا الرابط العام مع الموظفين أو المتعاقدين أو المورّدين أو أي طرف خارجي. يمكنهم تقديم بلاغ سرّي — بشكل مجهول إذا رغبوا — دون الحاجة إلى حساب.",
+    "copy": "نسخ",
+    "copied": "تم النسخ",
+    "open": "فتح",
+    "publicTitle": "رابط الإبلاغ العام",
+    "publicDescription": "شارك هذا الرابط مع الموظفين أو المتعاقدين أو الموردين أو المبلّغين الخارجيين.",
+    "copyLink": "نسخ الرابط",
+    "openPublicForm": "فتح النموذج العام",
+    "bullets": {
+      "noAccount": "لا يلزم وجود حساب لإرسال البلاغ.",
+      "anonymous": "يبقى الإبلاغ المجهول متاحًا.",
+      "secureFlow": "تصل البلاغات إلى مسار الاستقبال الآمن نفسه."
+    }
+  },
+  "credentials": {
+    "receivedTitle": "تم استلام بلاغك.",
+    "receivedDescription": "احفظ بيانات الاعتماد هذه الآن — تُعرض كلمة المرور مرة واحدة فقط ولا يمكن استعادتها. استخدمها لتسجيل الدخول مجددًا وتتبع حالتك.",
+    "loginCredentials": "بيانات تسجيل الدخول الخاصة بك",
+    "caseReference": "الرقم المرجعي للحالة",
+    "password": "كلمة المرور",
+    "track": "تتبع حالتي",
+    "trackDescription": "يُفتح في علامة تبويب جديدة حتى يبقى رقمك المرجعي وكلمة المرور مرئيين هنا. احفظهما قبل مغادرة هذه الصفحة — تُعرض كلمة المرور مرة واحدة فقط.",
+    "reveal": "إظهار",
+    "hide": "إخفاء",
+    "copy": "نسخ",
+    "copied": "تم النسخ!",
+    "saveTitle": "احفظ بيانات الاعتماد هذه الآن.",
+    "saveDescription": "نزّلها كملف نصي أو انسخها في مكان آمن. لن تظهر كلمة المرور مرة أخرى.",
+    "download": "تنزيل ملف نصي",
+    "downloadTitle": "بيانات اعتماد بلاغ الإبلاغ عن المخالفات",
+    "downloadReminder": "احفظ بيانات الاعتماد هذه بأمان. تظهر كلمة المرور مرة واحدة فقط."
+  },
+  "category": {
+    "FRAUD": "الاحتيال",
+    "BRIBERY_CORRUPTION": "الرشوة والفساد",
+    "HARASSMENT": "التحرش",
+    "CONFLICT_OF_INTEREST": "تضارب المصالح",
+    "DATA_PRIVACY": "خصوصية البيانات وحمايتها",
+    "HEALTH_SAFETY": "الصحة والسلامة",
+    "DISCRIMINATION": "التمييز",
+    "RETALIATION": "الانتقام",
+    "OTHER_MISCONDUCT": "سوء سلوك آخر",
+    "ACCOUNTING_AUDITING": "المحاسبة والتدقيق والتقارير المالية",
+    "COMPENSATION_BENEFITS": "التعويضات والمزايا",
+    "SGBP_COMPLIANCE": "الامتثال لمبادئ العمل العامة القياسية",
+    "CONFIDENTIAL_INFORMATION": "المعلومات السرّية والمملوكة",
+    "DISCLOSURE_COMMUNICATIONS": "الإفصاح والاتصالات التجارية",
+    "DIVERSITY_EQUITY_INCLUSION": "التنوع والإنصاف والشمول",
+    "DUE_DILIGENCE": "العناية الواجبة للأخلاقيات والامتثال",
+    "ENVIRONMENTAL": "البيئة",
+    "FAIR_COMPETITION": "المنافسة الحرة والعادلة",
+    "GLOBAL_TRADE": "التجارة العالمية",
+    "HUMAN_RIGHTS": "حقوق الإنسان",
+    "IMMINENT_THREAT": "تهديد وشيك لشخص أو حيوانات أو ممتلكات",
+    "INSIDER_TRADING": "التداول بناءً على معلومات داخلية",
+    "INTELLECTUAL_PROPERTY": "الملكية الفكرية",
+    "ASSET_MISUSE": "إساءة استخدام الأصول أو الاستيلاء عليها",
+    "POLITICAL_ACTIVITY": "النشاط السياسي",
+    "PRODUCT_QUALITY_SAFETY": "جودة المنتج وسلامته",
+    "SUBSTANCE_ABUSE": "تعاطي المواد المخدرة",
+    "IT_ELECTRONIC_COMMS": "استخدام تقنية المعلومات والاتصالات الإلكترونية",
+    "WORKPLACE_CIVILITY": "اللياقة في مكان العمل",
+    "OTHER_BUSINESS_INTEGRITY": "نزاهة الأعمال الأخرى",
+    "OTHER_HUMAN_RESOURCES": "موارد بشرية أخرى",
+    "INQUIRY": "استفسار"
+  },
+  "relationship": {
+    "EMPLOYEE": "موظف",
+    "FORMER_EMPLOYEE": "موظف سابق",
+    "CONTRACTOR": "متعاقد",
+    "VENDOR_SUPPLIER": "بائع / مورّد",
+    "CUSTOMER": "عميل",
+    "BUSINESS_PARTNER": "شريك تجاري",
+    "OTHER_RELATIONSHIP": "أخرى"
+  },
+  "duration": {
+    "ONE_TIME": "حدث لمرة واحدة",
+    "LESS_THAN_MONTH": "أقل من شهر",
+    "ONE_TO_THREE_MONTHS": "من شهر إلى 3 أشهر",
+    "THREE_TO_SIX_MONTHS": "من 3 إلى 6 أشهر",
+    "SIX_TO_TWELVE_MONTHS": "من 6 إلى 12 شهرًا",
+    "OVER_A_YEAR": "أكثر من عام",
+    "ONGOING": "مستمر",
+    "UNKNOWN_DURATION": "غير معروف"
+  },
+  "awareness": {
+    "WITNESSED": "شاهدته بنفسي",
+    "TOLD_BY_SOMEONE": "أخبرني به شخص آخر",
+    "REVIEWED_DOCUMENTS": "راجعت مستندات / سجلات",
+    "RUMOR": "سمعت إشاعة",
+    "INVOLVED": "كنت متورطًا",
+    "OTHER_SOURCE": "أخرى"
+  },
+  "previouslyReported": {
+    "YES": "نعم",
+    "NO": "لا",
+    "UNKNOWN": "لا أعرف / لا أرغب في الإفصاح"
+  },
+  "tour": {
+    "buttons": {
+      "next": "التالي ←",
+      "back": "→ رجوع",
+      "done": "تم",
+      "skip": "تخطّي الجولة"
+    },
+    "welcome": {
+      "title": "👋 دليل سريع للنموذج",
+      "text": "ترشدك هذه الجولة إلى كل قسم من أقسام نموذج البلاغ. تستغرق نحو 60 ثانية. هويتك محمية طوال الوقت — وأنت تتحكم في البقاء مجهولًا."
+    },
+    "category": {
+      "title": "📋 فئة الحادثة",
+      "text": "ابدأ باختيار الفئة التي تصف على نحو أفضل ما شاهدته — مثل الاحتيال أو التحرش أو مخالفة السلامة. إذا لم تكن متأكدًا، اختر الأقرب."
+    },
+    "description": {
+      "title": "✍️ ماذا حدث؟",
+      "text": "صف الحادثة بأكبر قدر ممكن من التفاصيل — من كان متورطًا، وماذا حدث، وأين، ومتى، وكيف علمت بذلك. كلما زادت التفاصيل، سهُل التحقيق. <strong>لا تُضمّن اسمك</strong> إذا كنت ترغب في البقاء مجهولًا."
+    },
+    "location": {
+      "title": "📍 الموقع",
+      "text": "أدخل أكبر قدر تعرفه من تفاصيل الموقع — الموقع المحدد أو المدينة أو المنطقة التي وقعت فيها الحادثة. يساعد ذلك على توجيه بلاغك إلى الفريق المناسب. كل الحقول هنا اختيارية."
+    },
+    "relationship": {
+      "title": "🔗 علاقتك",
+      "text": "أخبرنا بعلاقتك بالمؤسسة — موظف، متعاقد، مورّد، إلخ. يساعدنا ذلك على فهم سياق بلاغك. هذا الحقل اختياري."
+    },
+    "involved": {
+      "title": "👤 الأشخاص المتورطون",
+      "text": "أضف اسم/أسماء أي شخص متورط مباشرة في السلوك الذي تبلغ عنه. الاسم الأول واسم العائلة والمسمى الوظيفي كلها اختيارية — قدّم ما تعرفه."
+    },
+    "dates": {
+      "title": "📅 التوقيت",
+      "text": "أخبرنا متى وقعت الحادثة وما إذا كانت مستمرة. حتى التواريخ التقريبية (مثل «الشهر الماضي») تساعد المحققين على وضع جدول زمني."
+    },
+    "anonymous": {
+      "title": "🔒 البقاء مجهولًا؟",
+      "text": "بلاغك مجهول افتراضيًا — لا نعرف هويتك أبدًا. إذا كنت ترغب في تلقّي تحديثات عن حالتك، فألغِ تحديد هذا المربع وقدّم بريدًا إلكترونيًا للتواصل. تُحفظ بياناتك بسرّية تامة."
+    },
+    "conflict": {
+      "title": "🛡️ تضارب المصالح",
+      "text": "إذا كان بلاغك يتعلق بأحد أعضاء فريق الامتثال، فحدّد اسمه هنا لإخفاء هذه الحالة عنه. سيظل بلاغك يصل إلى مسؤول الامتثال."
+    },
+    "submit": {
+      "title": "✅ جاهز للإرسال",
+      "text": "اقبل الشروط وانقر على <strong>إرسال البلاغ</strong>. ستتلقى فورًا رقمًا مرجعيًا للحالة — احفظه لتتبع تقدم بلاغك دون الكشف عن هويتك."
+    }
+  },
+  "shell": {
+    "defaultOrgName": "بوابة الإبلاغ عن المخالفات",
+    "organizationLogoAlt": "المؤسسة",
+    "subtitle": "إبلاغ سري",
+    "footerPrefix": "بلاغك مشفّر ويتم التعامل معه بسرية. يمكنك الإبلاغ دون الكشف عن هويتك.",
+    "trackExisting": "تتبع بلاغًا موجودًا",
+    "trackReport": "تتبع بلاغ"
+  },
+  "track": {
+    "actions": {
+      "signOut": "تسجيل الخروج"
+    },
+    "toasts": {
+      "signedOut": "تم تسجيل الخروج بنجاح."
+    },
+    "case": {
+      "title": "بلاغك",
+      "loading": "جارٍ تحميل حالتك...",
+      "referenceSubtitle": "المرجع {{ref}}",
+      "submittedOn": "تم الإرسال {{date}}",
+      "detailsTitle": "بلاغك",
+      "fields": {
+        "dateOfOccurrence": "تاريخ الحادثة",
+        "location": "الموقع",
+        "relationship": "العلاقة",
+        "whenLast": "متى حدث ذلك آخر مرة",
+        "duration": "المدة",
+        "previouslyReported": "تم الإبلاغ عنه سابقًا"
+      },
+      "identifiedPersons": "الأشخاص الذين حددتهم",
+      "personTitleSuffix": " - {{title}}",
+      "outcome": "النتيجة"
+    },
+    "login": {
+      "title": "تتبع بلاغك",
+      "subtitle": "سجّل الدخول باستخدام مرجع الحالة وكلمة المرور.",
+      "eyebrow": "وصول سري إلى الحالة",
+      "description": "استخدم بيانات الاعتماد التي تم إنشاؤها عند إرسال البلاغ. لا يمكن استعادة كلمة مرور الحالة، لذا احتفظ بها بسرية.",
+      "cardTitle": "الوصول إلى حالتك",
+      "cardSubtitle": "أدخل مرجع الحالة وكلمة المرور تمامًا كما تم تزويدك بهما.",
+      "referenceLabel": "مرجع الحالة",
+      "referencePlaceholder": "WB-2026-XXXXXX",
+      "passwordLabel": "كلمة المرور",
+      "signingIn": "جارٍ تسجيل الدخول...",
+      "submit": "عرض حالتي",
+      "privacyNote": "هذه الصفحة منفصلة عن تسجيل دخول الموظفين. تفتح فقط البلاغ المرتبط بهذه البيانات.",
+      "sessionExpired": "انتهت جلستك. يرجى تسجيل الدخول مرة أخرى.",
+      "validation": {
+        "empty": "أدخل مرجع الحالة وكلمة المرور."
+      },
+      "assurances": {
+        "status": "تحقق من حالة التحقيق بأمان.",
+        "messages": "أرسل معلومات متابعة دون الكشف عن هويتك.",
+        "attachments": "أرفق أدلة إضافية عندما تبقى الحالة مفتوحة."
+      }
+    },
+    "messages": {
+      "title": "الرسائل",
+      "emptyTitle": "لا توجد رسائل بعد.",
+      "emptyBody": "قد يتواصل معك فريق التحقيق هنا.",
+      "authorYou": "أنت",
+      "authorTeam": "فريق التحقيق",
+      "placeholder": "أضف معلومات أخرى أو رد على المحققين...",
+      "uploading": "جارٍ الرفع...",
+      "attachEvidence": "إرفاق دليل",
+      "uploadedToast": "تم رفع الدليل الخاص بك.",
+      "addComment": "إضافة تعليق",
+      "send": "إرسال",
+      "loading": "جارٍ تحميل الرسائل..."
+    },
+    "comments": {
+      "sheetTitle": "إضافة تعليق",
+      "sheetDescription": "أرسل رسالة متابعة آمنة إلى فريق التحقيق.",
+      "helper": "استخدم هذا للتحديثات أو الأسئلة أو أي سياق إضافي مرتبط ببلاغك.",
+      "label": "تعليق",
+      "placeholder": "أضف معلومات أخرى أو رد على المحققين...",
+      "cancel": "إلغاء",
+      "sending": "جارٍ الإرسال...",
+      "send": "إرسال التعليق",
+      "sentToast": "تم إرسال تعليقك."
+    },
+    "attachments": {
+      "title": "أدلتك",
+      "count_one": "{{count}} ملف",
+      "count_other": "{{count}} ملفات",
+      "uploadedToast": "تم رفع الدليل الخاص بك."
+    }
+  },
+  "header": {
+    "title": "الإبلاغ عن المخالفات وإدارة الحوادث",
+    "subtitle": "استقبال سري، سير عمل التحقيق، وتحليلات جاهزة لمجلس الإدارة.",
+    "tabs": {
+      "dashboard": "لوحة التحكم",
+      "cases": "الحالات"
+    }
+  },
+  "dashboard": {
+    "title": "نظرة عامة جاهزة لمجلس الإدارة",
+    "empty": "لا توجد بيانات لعرضها بعد.",
+    "loading": "جارٍ تحميل التحليلات...",
+    "actions": {
+      "submitReport": "إرسال بلاغ",
+      "exporting": "جارٍ التصدير...",
+      "exportCsv": "تصدير CSV",
+      "viewAllCases": "عرض كل الحالات"
+    },
+    "series": {
+      "openCases": "الحالات المفتوحة",
+      "escalatedCases": "الحالات المصعّدة",
+      "anonymous": "مجهول",
+      "named": "مُعرّف"
+    },
+    "kpi": {
+      "totalReports": "إجمالي البلاغات",
+      "openReports": "البلاغات المفتوحة",
+      "underInvestigation": "قيد التحقيق",
+      "escalated": "مصعّدة",
+      "closed": "{{count}} مغلقة",
+      "atRisk": "{{count}} معرّضة للخطر",
+      "onTrack": "على المسار",
+      "slaBreached": "{{count}} خرق SLA"
+    },
+    "charts": {
+      "reportsByCategory": {
+        "title": "البلاغات حسب الفئة",
+        "description": "التوزيع عبر دورة الحياة"
+      },
+      "openVsEscalated": {
+        "title": "مفتوحة مقابل مصعّدة",
+        "description": "البلاغات الحالية مقابل التصعيدات"
+      },
+      "reportsByPriority": {
+        "title": "البلاغات حسب الأولوية"
+      },
+      "reportsByStatus": {
+        "title": "البلاغات حسب الحالة"
+      },
+      "anonymousVsNamed": {
+        "title": "مجهول مقابل مُعرّف",
+        "description": "تقسيم سرية هوية المبلّغ"
+      },
+      "submissionsTrend": {
+        "title": "اتجاه الإرسالات",
+        "description": "البلاغات الشهرية (آخر 6 أشهر)"
+      }
+    }
+  },
+  "cases": {
+    "title": "سجل الحالات",
+    "actions": {
+      "newManualCase": "حالة يدوية جديدة",
+      "view": "View"
+    },
+    "filters": {
+      "searchPlaceholder": "بحث بالمرجع / الوصف...",
+      "allStatuses": "كل الحالات",
+      "allCategories": "كل الفئات",
+      "allRiskRatings": "كل تقييمات المخاطر",
+      "assignedToMe": "مُسندة إليّ"
+    },
+    "view": {
+      "grid": "عرض شبكي",
+      "list": "عرض قائمة"
+    },
+    "loading": "جارٍ تحميل الحالات...",
+    "empty": "لا توجد حالات تطابق عوامل التصفية.",
+    "table": {
+      "reference": "المرجع",
+      "category": "الفئة",
+      "risk": "المخاطر",
+      "status": "الحالة",
+      "investigator": "المحقق",
+      "sla": "SLA",
+      "submitted": "تاريخ الإرسال"
+    },
+    "reporter": {
+      "anonymous": "مجهول",
+      "named": "مُعرّف"
+    },
+    "conflictExclusionsApplied": "تم تطبيق استبعادات تضارب المصالح",
+    "sla": {
+      "breached": "تم الخرق",
+      "daysLeft": "متبقٍ {{count}} يومًا"
+    },
+    "unassigned": "غير مُسند",
+    "pagination": {
+      "summary": "الصفحة {{page}} من {{totalPages}} · {{total}} حالات",
+      "previous": "السابق",
+      "next": "التالي",
+      "total": "{{count}} cases",
+      "pageOf": "Page {{page}} of {{totalPages}}"
+    }
+  },
+  "manualCase": {
+    "title": "إنشاء حالة يدويًا",
+    "description": "تسجيل بلاغ خارج البوابة تم استلامه عبر البريد الإلكتروني أو الخط الساخن أو شخصيًا.",
+    "validation": {
+      "description": "يرجى وصف الحادثة في 10 أحرف على الأقل."
+    },
+    "toasts": {
+      "created": "تم إنشاء الحالة اليدوية."
+    },
+    "draftRestored": "تمت استعادة مسودتك غير المحفوظة السابقة.",
+    "startFresh": "بدء جديد",
+    "fields": {
+      "category": "الفئة",
+      "riskRating": "تقييم المخاطر",
+      "description": "وصف الحادثة",
+      "caseType": "نوع الحالة",
+      "intakeMethod": "طريقة الاستلام",
+      "dateOfOccurrence": "تاريخ الوقوع",
+      "reporterRelationship": "علاقة المبلّغ",
+      "location": "الموقع",
+      "city": "المدينة",
+      "stateCountry": "الولاية / الدولة",
+      "personsEngaged": "الأشخاص المتورطون"
+    },
+    "placeholders": {
+      "description": "ماذا حدث؟",
+      "notSpecified": "غير محدد",
+      "location": "العنوان / الموقع / المبنى",
+      "state": "الولاية",
+      "country": "الدولة"
+    },
+    "actions": {
+      "cancel": "إلغاء",
+      "creating": "جارٍ الإنشاء...",
+      "create": "إنشاء حالة"
+    }
+  },
+  "status": {
+    "SUBMITTED": "مُرسل",
+    "UNDER_TRIAGE": "قيد الفرز",
+    "UNDER_INVESTIGATION": "قيد التحقيق",
+    "WB_ESCALATED": "تم التصعيد",
+    "RESOLVED": "تم الحل",
+    "WB_CLOSED": "مغلق",
+    "WB_DISMISSED": "مرفوض"
+  },
+  "priority": {
+    "PRIORITY_LOW": "منخفض",
+    "PRIORITY_MEDIUM": "متوسط",
+    "PRIORITY_HIGH": "مرتفع",
+    "PRIORITY_CRITICAL": "حرج"
+  },
+  "caseType": {
+    "ALLEGATION": "ادعاء",
+    "INQUIRY": "استفسار"
+  },
+  "intakeMethod": {
+    "WEB": "الويب",
+    "EMAIL": "البريد الإلكتروني",
+    "PHONE": "الهاتف / الخط الساخن",
+    "IN_PERSON": "شخصيًا",
+    "MAIL": "البريد",
+    "OTHER_INTAKE": "أخرى"
+  },
+  "participantRole": {
+    "REPORTER": "المبلّغ",
+    "SUBJECT": "المعني",
+    "WITNESS": "شاهد",
+    "OTHER_PARTICIPANT": "أخرى"
+  },
+  "caseConsole": {
+    "header": {
+      "reference": "مرجع الحالة"
+    },
+    "validation": {
+      "selectInvestigator": "اختر محققًا قبل الإسناد.",
+      "assessmentMin": "اكتب 10 أحرف على الأقل للتقييم الأولي.",
+      "findingsMin": "يجب أن تكون نتائج التحقيق 10 أحرف على الأقل.",
+      "escalationReasonMin": "يجب أن يكون سبب التصعيد 10 أحرف على الأقل.",
+      "closureOutcomeMin": "يجب أن تكون نتيجة الإغلاق 10 أحرف على الأقل.",
+      "commentRequired": "اكتب تعليقًا قبل الإرسال.",
+      "relatedCaseRequired": "أدخل مرجع حالة مرتبطًا صالحًا.",
+      "emptyFile": "اختر ملفًا غير فارغ.",
+      "fileTooLarge": "يجب ألا يتجاوز الملف 100 ميغابايت."
+    },
+    "toasts": {
+      "assigned": "تم إسناد المحقق.",
+      "riskUpdated": "تم تحديث المخاطر.",
+      "triaged": "تم فرز الحالة.",
+      "resolved": "تم حل الحالة.",
+      "escalated": "تم تصعيد الحالة.",
+      "dismissed": "تم رفض الحالة.",
+      "closed": "تم إغلاق الحالة.",
+      "commentAdded": "تمت إضافة التعليق.",
+      "linked": "تم ربط الحالة ذات الصلة.",
+      "unlinked": "تم إلغاء ربط الحالة ذات الصلة.",
+      "evidenceAttached": "تم إرفاق الدليل."
+    },
+    "unknown": "غير معروف",
+    "tabs": {
+      "overview": "نظرة عامة",
+      "synopsis": "ملخص",
+      "assignment": "التكليف",
+      "classification": "التصنيف",
+      "participants": "المشاركون",
+      "investigation": "التحقيق",
+      "communication": "التواصل",
+      "evidence": "الأدلة وما يتعلق بها"
+    },
+    "reporter": {
+      "anonymous": "مبلّغ مجهول",
+      "named": "مبلّغ معروف"
+    },
+    "sla": {
+      "breached": "تم تجاوز اتفاقية مستوى الخدمة",
+      "remaining": "اتفاقية مستوى الخدمة: {{count}} يوم متبقٍ"
+    },
+    "route": {
+      "independent": "مراجعة مستقلة",
+      "escrow": "مراجعة مستقلة في الحفظ المؤقت"
+    },
+    "panels": {
+      "incident": "الحادثة",
+      "assignment": "التكليف",
+      "investigationRecord": "سجل التحقيق",
+      "communication": "سلسلة التواصل",
+      "evidence": "الأدلة",
+      "triageRisk": "الفرز والمخاطر",
+      "resolve": "الحل",
+      "escalateClose": "تصعيد / إغلاق",
+      "conflictExclusions": "استبعادات تضارب المصالح",
+      "relatedCases": "الحالات ذات الصلة",
+      "classification": "التصنيف",
+      "synopsisOutcome": "الملخص والنتيجة",
+      "participants": "المشاركون",
+      "activityEvidence": "النشاط والأدلة",
+      "closure": "الإغلاق",
+      "escalate": "تصعيد",
+      "triage": "الفرز الأولي"
+    },
+    "fields": {
+      "caseType": "نوع الحالة",
+      "intakeMethod": "طريقة الاستقبال",
+      "dateOfOccurrence": "تاريخ الحادثة",
+      "whenLast": "متى حدث ذلك آخر مرة",
+      "duration": "المدة",
+      "awareness": "كيف أصبحوا على علم",
+      "previouslyReported": "تم الإبلاغ عنه سابقًا",
+      "reporterRelationship": "علاقة المبلّغ",
+      "region": "المنطقة",
+      "submitted": "تاريخ الإرسال",
+      "location": "الموقع",
+      "reporterPhone": "هاتف المبلّغ",
+      "bestTime": "أفضل وقت للتواصل",
+      "description": "الوصف",
+      "involvedPersons": "الأشخاص المشاركون في هذا السلوك",
+      "personsInvolvedNotes": "الأشخاص المشاركون (ملاحظات)",
+      "preliminaryAssessment": "التقييم الأولي",
+      "findings": "النتائج",
+      "disciplinaryRecommendation": "التوصية التأديبية",
+      "closureOutcome": "نتيجة الإغلاق",
+      "riskRating": "تصنيف المخاطر",
+      "status": "الحالة",
+      "investigationFindings": "نتائج التحقيق",
+      "primaryOutcome": "النتيجة الأساسية",
+      "secondaryOutcome": "النتيجة الثانوية",
+      "actionTaken": "الإجراء المتخذ",
+      "potentialNextSteps": "الخطوات التالية المحتملة",
+      "synopsisNotes": "ملاحظات الملخص",
+      "category": "Category",
+      "escalationReason": "سبب التصعيد",
+      "priority": "الأولوية"
+    },
+    "assignment": {
+      "assignInvestigator": "إسناد محقق",
+      "assignedTo": "مكلّف إلى {{name}}",
+      "unassigned": "غير مكلّف",
+      "selectInvestigator": "اختر محققًا...",
+      "assign": "تعيين",
+      "assignedPrefix": "مُعيّن إلى: {{name}}",
+      "sheetDescription": "عيّن هذه القضية إلى محقق مؤهل."
+    },
+    "communication": {
+      "addComment": "إضافة تعليق",
+      "sheetDescription": "أرسل رسالة متابعة آمنة إلى فريق التحقيق.",
+      "commentGuidance": "استخدم هذا للتحديثات أو الأسئلة أو السياق الإضافي المتعلق بالبلاغ.",
+      "commentLabel": "تعليق",
+      "sending": "جارٍ الإرسال...",
+      "empty": "لا توجد رسائل بعد.",
+      "reporter": "المبلّغ",
+      "investigator": "المحقق",
+      "internal": "داخلي",
+      "placeholder": "اكتب رسالة...",
+      "internalNote": "ملاحظة داخلية (مخفية عن المبلّغ)",
+      "send": "إرسال"
+    },
+    "evidence": {
+      "empty": "لا توجد أدلة مرفقة.",
+      "reporter": "المبلّغ",
+      "investigator": "المحقق",
+      "download": "تنزيل",
+      "uploading": "جارٍ الرفع...",
+      "attach": "إرفاق دليل"
+    },
+    "actions": {
+      "recordTriage": "تسجيل الفرز",
+      "resolveCase": "حل الحالة",
+      "linkRelatedCase": "ربط حالة ذات صلة",
+      "setRisk": "تعيين المخاطر",
+      "triage": "فرز",
+      "markResolved": "وضع علامة تم الحل",
+      "escalate": "تصعيد",
+      "closeCase": "إغلاق الحالة",
+      "dismiss": "رفض",
+      "close": "إغلاق",
+      "unlink": "إلغاء الربط",
+      "link": "ربط",
+      "saving": "جارٍ الحفظ...",
+      "saveClassification": "حفظ التصنيف",
+      "saveSynopsis": "حفظ الملخص",
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "edit": "تعديل",
+      "assignment": "التعيين",
+      "classification": "التصنيف",
+      "participants": "المشاركون",
+      "resolve": "الحل",
+      "savePriority": "حفظ الأولوية",
+      "synopsis": "الملخص"
+    },
+    "placeholders": {
+      "optionalNotes": "ملاحظات اختيارية...",
+      "findings": "لخّص ما توصل إليه التحقيق...",
+      "recommendation": "توصية اختيارية...",
+      "escalationReason": "سبب التصعيد",
+      "closureOutcome": "نتيجة الإغلاق",
+      "caseReferenceToLink": "مرجع الحالة المراد ربطه"
+    },
+    "conflict": {
+      "hiddenFrom": "مخفي عن {{count}} ملف/ملفات تعريف"
+    },
+    "related": {
+      "empty": "لا توجد حالات مرتبطة.",
+      "noMatches": "لم يتم العثور على قضايا مطابقة.",
+      "searchLabel": "البحث عن قضايا مرتبطة",
+      "searchResults": "نتائج البحث",
+      "sheetDescription": "اربط القضايا ذات الصلة لتحديد المشكلات النظامية."
+    },
+    "triage": {
+      "noAssessment": "لم يتم تسجيل تقييم أولي بعد.",
+      "sheetDescription": "سجّل التقييم الأولي ودرجة المخاطر."
+    },
+    "resolve": {
+      "empty": "لم يتم تسجيل حل بعد.",
+      "sheetDescription": "وثّق النتائج قبل وضع القضية في حالة الحل."
+    },
+    "synopsis": {
+      "empty": "لم يتم تسجيل ملخص بعد.",
+      "sheetDescription": "سجّل نتيجة القضية والخطوات التالية."
+    },
+    "participants": {
+      "empty": "لم يتم تسجيل أي مشاركين.",
+      "name": "الاسم",
+      "jobTitle": "المسمى الوظيفي",
+      "relationship": "العلاقة",
+      "role": "الدور",
+      "edit": "تعديل المشارك",
+      "remove": "إزالة المشارك",
+      "add": "إضافة مشارك",
+      "new": "مشارك جديد",
+      "resultsPlaceholder": "النتائج / الملاحظات (اختياري)",
+      "sheetDescription": "أضف شخصاً مشاركاً في القضية وسجّل دوره."
+    },
+    "classification": {
+      "sheetDescription": "حدّث تصنيف القضية وطريقة استقبالها."
+    },
+    "closure": {
+      "sheetDescription": "أكد النتيجة النهائية وأغلق القضية."
+    },
+    "escalate": {
+      "sheetDescription": "سجّل سبب حاجة القضية إلى مراجعة عليا."
+    },
+    "groups": {
+      "evidenceDescription": "الرسائل والملفات والقضايا ذات الصلة.",
+      "investigationDescription": "التقييم والنتائج وإجراءات المحقق.",
+      "overviewDescription": "الحقائق الأساسية والتفاصيل التي قدمها المُبلّغ.",
+      "peopleDescription": "الأشخاص والعلاقات ومعلومات التوقيت."
+    },
+    "investigation": {
+      "empty": "لم يتم تسجيل نشاط تحقيق بعد."
+    },
+    "navigation": {
+      "currentArea": "المنطقة الحالية",
+      "primary": "التنقل في القضية"
+    },
+    "progress": {
+      "completed": "مكتمل",
+      "inProgress": "قيد التنفيذ",
+      "initialReview": "المراجعة الأولية",
+      "investigation": "التحقيق",
+      "received": "تم الاستلام",
+      "resolution": "الحل",
+      "review": "المراجعة",
+      "title": "تقدم القضية"
+    }
+  },
+  "oversight": {
+    "readOnly": "Read-only oversight",
+    "back": "Back to oversight",
+    "title": "Whistleblowing Oversight",
+    "subtitle": "Organization-wide monitoring of reported incidents (read-only).",
+    "confidentialityNotice": "Confidentiality is preserved: any case a reporter has chosen to hide from your profile (conflict of interest) is excluded from these views.",
+    "emptyChart": "No data yet.",
+    "total": "Total",
+    "loading": {
+      "analytics": "Loading whistleblowing analytics..."
+    },
+    "errors": {
+      "analytics": "Analytics are unavailable right now."
+    },
+    "filters": {
+      "region": "Region",
+      "allRegions": "All regions"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "register": "Case Register"
+    },
+    "stats": {
+      "totalCases": "Total cases",
+      "open": "Open",
+      "escalated": "Escalated",
+      "slaBreached": "SLA breached",
+      "underInvestigation": "Under investigation",
+      "slaAtRisk": "SLA at risk",
+      "closed": "Closed",
+      "avgResolution": "Avg resolution"
+    },
+    "charts": {
+      "casesByStatus": {
+        "title": "Cases by Status",
+        "description": "Distribution across the lifecycle"
+      },
+      "submissionsTrend": {
+        "title": "Submissions Trend",
+        "description": "Reports submitted by month",
+        "series": "Submissions"
+      },
+      "byCategory": {
+        "title": "By Category"
+      },
+      "byRiskRating": {
+        "title": "By Risk Rating"
+      },
+      "anonymousVsNamed": {
+        "title": "Anonymous vs. Named",
+        "description": "Reporter identification split"
+      }
+    },
+    "detail": {
+      "loading": "Loading case...",
+      "unavailable": "This case is unavailable - it may have been hidden from your profile by the reporter (conflict of interest).",
+      "pipeline": {
+        "triage": "Triage",
+        "investigation": "Investigation",
+        "escalated": "This case has been escalated and is outside the standard pipeline.",
+        "dismissed": "This case was dismissed during review."
+      },
+      "sla": {
+        "title": "SLA",
+        "breachedOn": "Breached on {{date}}",
+        "daysLeft": "days left",
+        "opened": "Opened {{date}}",
+        "due": "Due {{date}}"
+      },
+      "activity": {
+        "title": "Activity",
+        "empty": "No activity recorded yet.",
+        "subtitle": "{{messages}} messages ? {{files}} files"
+      },
+      "assignment": {
+        "triaged": "Triaged",
+        "assigned": "Assigned",
+        "closed": "Closed"
+      }
+    }
+  }
+}

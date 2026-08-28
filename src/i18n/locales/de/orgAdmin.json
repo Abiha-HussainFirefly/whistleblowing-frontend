@@ -1,0 +1,1073 @@
+﻿{
+    "dashboard":  {
+                      "welcome":  "Willkommen{{name}}.",
+                      "consoleFor":  "Verwaltungskonsole der Organisation fÃ¼r {{org}}. Verwalten Sie hier Mitglieder, Aufsicht, Rollen, Regionen und Einstellungen.",
+                      "yourOrganization":  "Ihre Organisation",
+                      "planBadge":  "{{plan}}-Tarif",
+                      "activeRegion":  "Aktive Region: {{region}}",
+                      "allRegions":  "Alle Regionen",
+                      "loading":  "Dashboard wird geladenâ€¦",
+                      "loadError":  "Dashboard-Statistiken konnten nicht geladen werden.",
+                      "viewOversight":  "Aufsicht anzeigen",
+                      "moduleTabs":  {
+                                         "label":  "Dashboard-Ansicht",
+                                         "overview":  "Ãœbersicht",
+                                         "contracts":  "VertrÃ¤ge",
+                                         "matters":  "Angelegenheiten",
+                                         "assets":  "Assets",
+                                         "whistleblowing":  "Hinweisgebersystem",
+                                         "empty":  "FÃ¼r diese Organisation sind keine Modul-Dashboards aktiviert."
+                                     },
+                      "attention":  {
+                                        "title":  "Erfordert Ihre Aufmerksamkeit",
+                                        "adminSeats":  "Admin-PlÃ¤tze fast voll ({{used}}/{{max}})",
+                                        "userSeats":  "BenutzerplÃ¤tze fast voll ({{used}}/{{max}})",
+                                        "pendingInvites":  "Ausstehende Einladungen: {{count}}"
+                                    },
+                      "overview":  {
+                                       "title":  "OrganisationsÃ¼bersicht",
+                                       "members":  "Mitglieder gesamt",
+                                       "membersSub":  "Admins: {{admins}} Â· Benutzer: {{users}}",
+                                       "pendingInvitations":  "Ausstehende Einladungen",
+                                       "pendingInvitationsSub":  "Angenommen gesamt: {{count}}",
+                                       "activeRegions":  "Aktive Regionen",
+                                       "activeRegionsSub":  "Regionen gesamt: {{count}}",
+                                       "modulesEnabled":  "Aktivierte Module",
+                                       "modulesEnabledSub":  "Lizenzierte Module",
+                                       "modulesEnabledPlan":  "{{plan}}-Tarif"
+                                   },
+                      "licensing":  {
+                                        "title":  "Lizenz \u0026 PlÃ¤tze",
+                                        "adminSeats":  "Admin-PlÃ¤tze",
+                                        "userSeats":  "BenutzerplÃ¤tze",
+                                        "approachingLimit":  "Platzlimit fast erreicht",
+                                        "aiCredits":  "KI-Guthaben",
+                                        "low":  "Niedrig",
+                                        "aiAllowance":  "Verbleibendes Monatskontingent"
+                                    },
+                      "members":  {
+                                      "byRegion":  "Mitglieder nach Region",
+                                      "byRole":  "Mitglieder nach Rollentyp",
+                                      "admins":  "Admins",
+                                      "users":  "Benutzer"
+                                  },
+                      "quick":  {
+                                    "title":  "Schnellzugriff",
+                                    "manage":  "Verwalten",
+                                    "members":  "Teammitglieder",
+                                    "membersBody":  "Neue Mitglieder einladen, Rollen verwalten und ausstehende Einladungen prÃ¼fen.",
+                                    "roles":  "Rollen \u0026 Berechtigungen",
+                                    "rolesBody":  "Erstellen Sie benutzerdefinierte Rollen und passen Sie deren Berechtigungen an.",
+                                    "plan":  "Tarif \u0026 Limits",
+                                    "planBody":  "PrÃ¼fen Sie Tarif, Platznutzung, KI-Guthaben und Modulberechtigungen.",
+                                    "settings":  "Einstellungen",
+                                    "settingsBody":  "Organisationsprofil, Branding und Integrationen konfigurieren."
+                                },
+                      "contracts":  {
+                                        "title":  "VertrÃ¤ge",
+                                        "sub":  "Vertragsportfolio auf einen Blick",
+                                        "total":  "VertrÃ¤ge gesamt",
+                                        "totalSub":  "Aktiv: {{count}}",
+                                        "inFlight":  "In Bearbeitung",
+                                        "inFlightSub":  "Entwurf, PrÃ¼fung \u0026 Freigabe",
+                                        "inFlightPending":  "Ausstehende Freigaben: {{count}}",
+                                        "expiring":  "Laufen bald ab",
+                                        "expiringSub":  "NÃ¤chste 90 Tage",
+                                        "expiredSub":  "Abgelaufen: {{count}}",
+                                        "value":  "Gesamtwert",
+                                        "valueSub":  "Wert des ausgefÃ¼hrten Portfolios",
+                                        "chartStatus":  "VertrÃ¤ge nach Status",
+                                        "chartStatusSub":  "Verteilung Ã¼ber den Lebenszyklus",
+                                        "chartExecExpiring":  "AusgefÃ¼hrt vs. ablaufend",
+                                        "chartExecExpiringSub":  "JÃ¤hrliche AusfÃ¼hrung gegen AblÃ¤ufe",
+                                        "chartType":  "VertrÃ¤ge nach Typ",
+                                        "chartRegion":  "VertrÃ¤ge nach Region",
+                                        "chartClassification":  "Standard vs. Nicht-Standard",
+                                        "chartClassificationSub":  "Aufteilung der Vertragsklassifizierung",
+                                        "approvalsAlert":  "Ausstehende Freigabeentscheidungen in der Organisation: {{count}}"
+                                    },
+                      "litigation":  {
+                                         "title":  "Rechtsstreitigkeiten",
+                                         "sub":  "Fallportfolio auf einen Blick",
+                                         "total":  "FÃ¤lle gesamt",
+                                         "totalSub":  "Geschlossen: {{count}}",
+                                         "open":  "Offene FÃ¤lle",
+                                         "openSub":  "Aktive Angelegenheiten",
+                                         "hearings":  "Anstehende Termine",
+                                         "hearingsSub":  "NÃ¤chste 30 Tage",
+                                         "hearingsOverdue":  "ÃœberfÃ¤llig: {{count}}",
+                                         "liability":  "Eventualverbindlichkeit",
+                                         "liabilitySub":  "Rechtsausgaben {{spend}}",
+                                         "chartStatus":  "FÃ¤lle nach Status",
+                                         "chartStatusSub":  "Verteilung Ã¼ber den Lebenszyklus",
+                                         "chartFiledDisposed":  "Eingereichte vs. erledigte FÃ¤lle",
+                                         "chartFiledDisposedSub":  "JÃ¤hrlicher Zugang gegen AbschlÃ¼sse",
+                                         "chartRisk":  "FÃ¤lle nach Risikostufe",
+                                         "chartRegion":  "FÃ¤lle nach Region",
+                                         "chartOutcome":  "Ergebnismix",
+                                         "chartOutcomeSub":  "Aufteilung der Ergebnisse gelÃ¶ster FÃ¤lle",
+                                         "overdueAlert":  "ÃœberfÃ¤llige Termine, die ein Ergebnis benÃ¶tigen: {{count}}"
+                                     },
+                      "land":  {
+                                   "title":  "Land \u0026 Immobilien",
+                                   "sub":  "Landportfolio, Dokumente und Belastungen auf einen Blick",
+                                   "total":  "Assets gesamt",
+                                   "totalSub":  "Distrikte: {{count}}",
+                                   "encumbered":  "Belastet",
+                                   "encumberedSub":  "Streit, Pfand, Last oder Anspruch",
+                                   "documented":  "Dokumentiert",
+                                   "documentedSub":  "Assets mit gesicherten Unterlagen",
+                                   "chartDistrict":  "Assets nach Distrikt",
+                                   "chartQuality":  "Portfolioqualitaet",
+                                   "linkedMatters":  "Verknuepfte Verfahren",
+                                   "linkedMattersSub":  "Verbundene Rechtsangelegenheiten"
+                               },
+                      "whistleblowing":  {
+                                             "title":  "Hinweisgebersystem",
+                                             "sub":  "Vertrauliches Fallportfolio auf einen Blick",
+                                             "total":  "FÃ¤lle gesamt",
+                                             "totalSub":  "Geschlossen: {{count}}",
+                                             "open":  "Offen",
+                                             "openSub":  "Eskaliert: {{count}}",
+                                             "investigating":  "In Ermittlung",
+                                             "investigatingSub":  "In Bearbeitung",
+                                             "investigatingAvg":  "Ã˜ Bearbeitung: {{days}} T",
+                                             "atRisk":  "SLA gefÃ¤hrdet",
+                                             "atRiskSub":  "Innerhalb der Frist",
+                                             "breachedSub":  "Ãœberschritten: {{count}}",
+                                             "chartStatus":  "FÃ¤lle nach Status",
+                                             "chartCategory":  "FÃ¤lle nach Kategorie",
+                                             "chartPriority":  "FÃ¤lle nach Risikobewertung",
+                                             "breachedAlert":  "FÃ¤lle mit Ã¼berschrittener SLA-Frist, die Aufmerksamkeit erfordern: {{count}}"
+                                         },
+                      "health":  {
+                                     "title":  "Organisationsstatus",
+                                     "good":  "Stabil",
+                                     "watch":  "Beobachten",
+                                     "critical":  "Handlung erforderlich"
+                                 }
+                  },
+    "matters":  {
+                    "title":  "Matter-Ãœberblick",
+                    "subtitleAll":  "Organisationsweite Ansicht aller von Ihren Mitgliedern erfassten Matters. Alle Regionen.",
+                    "subtitleScoped":  "Organisationsweite Ansicht aller von Ihren Mitgliedern erfassten Matters. Ihre Regionen.",
+                    "tabs":  {
+                                 "overview":  "Ãœbersicht",
+                                 "register":  "Fallregister"
+                             },
+                    "filters":  {
+                                    "region":  "Region",
+                                    "allRegions":  "Alle Regionen",
+                                    "year":  "Jahr",
+                                    "allTime":  "Alle ZeitrÃ¤ume",
+                                    "search":  "FÃ¤lle suchen...",
+                                    "status":  "Status",
+                                    "allStatuses":  "Alle Status"
+                                },
+                    "view":  {
+                                 "grid":  "Kartenansicht",
+                                 "list":  "Listenansicht"
+                             },
+                    "grid":  {
+                                 "noHearing":  "Keine AnhÃ¶rung festgelegt"
+                             },
+                    "loading":  {
+                                    "analytics":  "Matter-Analysen werden geladen...",
+                                    "cases":  "FÃ¤lle werden geladen..."
+                                },
+                    "errors":  {
+                                   "analytics":  "Matter-Analysen sind derzeit nicht verfÃ¼gbar."
+                               },
+                    "empty":  {
+                                  "register":  "Keine FÃ¤lle entsprechen den aktuellen Filtern."
+                              },
+                    "hearings":  {
+                                     "description":  "Organisationsweit Â· nÃ¤chste 60 Tage"
+                                 },
+                    "kpis":  {
+                                 "total":  "FÃ¤lle insgesamt",
+                                 "totalHint":  "{{count}} geschlossen",
+                                 "open":  "Offene FÃ¤lle",
+                                 "hearings":  "Anstehende AnhÃ¶rungen",
+                                 "hearingsHint":  "NÃ¤chste 30 Tage",
+                                 "hearingsOverdue":  "{{count}} Ã¼berfÃ¤llig",
+                                 "liability":  "Eventualverbindlichkeit",
+                                 "liabilityHint":  "Rechtskosten {{spend}}"
+                             },
+                    "charts":  {
+                                   "risk":  "Risikostufen",
+                                   "riskSub":  "Portfolioaufteilung nach Risikostufe",
+                                   "filedDisposed":  "Eingereichte vs. erledigte FÃ¤lle",
+                                   "filedDisposedSub":  "JÃ¤hrliche EingÃ¤nge gegenÃ¼ber AbschlÃ¼ssen",
+                                   "region":  "FÃ¤lle nach Region",
+                                   "filingTrend":  "Einreichungstrend",
+                                   "filingTrendSub":  "Eingereichte und erledigte Matters im Zeitverlauf",
+                                   "filingVolume":  "Einreichungsvolumen",
+                                   "filingVolumeSub":  "JÃ¤hrliches Volumen von Einreichungen und Erledigungen",
+                                   "status":  "Statusmix",
+                                   "statusSub":  "Statusanteile im Portfolio",
+                                   "outcome":  "Ergebnismix",
+                                   "outcomeSub":  "Ergebnisverteilung erledigter FÃ¤lle",
+                                   "category":  "FÃ¤lle nach Kategorie"
+                               },
+                    "series":  {
+                                   "filed":  "Eingereicht",
+                                   "disposed":  "Erledigt"
+                               },
+                    "alerts":  {
+                                   "overdueHearings":  "{{count}} AnhÃ¶rung liegt hinter dem geplanten Termin und benÃ¶tigt ein Ergebnis.",
+                                   "overdueHearings_plural":  "{{count}} AnhÃ¶rungen liegen hinter dem geplanten Termin und benÃ¶tigen ein Ergebnis."
+                               },
+                    "table":  {
+                                  "case":  "Fall",
+                                  "status":  "Status",
+                                  "region":  "Region",
+                                  "courtLocation":  "Gericht / Ort",
+                                  "nextHearing":  "NÃ¤chste AnhÃ¶rung",
+                                  "lawyer":  "Anwalt",
+                                  "contingentLiability":  "Eventualverbindlichkeit",
+                                  "unassigned":  "Nicht zugewiesen"
+                              }
+                },
+    "members":  {
+                    "invite":  {
+                                   "member":  "Mitglied einladen",
+                                   "firstMember":  "Erstes Mitglied einladen",
+                                   "emailInvalid":  "Enter a valid email address (e.g. name@company.com).",
+                                   "failed":  "Failed to send invitation.",
+                                   "accessEquals":  "Access =",
+                                   "portalStep":  "1 Portal",
+                                   "roleStep":  "2 Role",
+                                   "regionStep":  "3 Region",
+                                   "accessHint":  "These three choices decide what the person can do. You can change any of them later.",
+                                   "portal":  "Portal (System Role) *",
+                                   "portalHint":  "Tenant = manage the organization. User = do day-to-day legal work.",
+                                   "tenantHelp":  "This user will have access to the Tenant portal and can manage members, roles, and regions.",
+                                   "userHelp":  "This user will have access to the User portal with module-level permissions.",
+                                   "email":  "Email *",
+                                   "displayName":  "Display Name",
+                                   "displayNamePlaceholder":  "Optional display name",
+                                   "role":  "Role *",
+                                   "roleHint":  "A role bundles the permissions for a job. Only roles for the selected portal are shown.",
+                                   "selectRole":  "Select role...",
+                                   "adminSeatsUsed":  "Admin seats: {{used}}/{{max}} used",
+                                   "userSeatsUsed":  "User seats: {{used}}/{{max}} used",
+                                   "region":  "Region *",
+                                   "regionHint":  "The branch whose data this member will work in.",
+                                   "selectRegion":  "Select region...",
+                                   "regionScopeHint":  "You can only invite members to regions you are an admin of.",
+    "workspacesHint":  "Wählen Sie nur die Arbeitsbereiche, auf die diese Einladung zugreifen darf, und dann für jeden eine Rolle und Region. Ohne vollständige Auswahl wird kein Arbeitsbereichszugriff gewährt.",
+    "workspaceRoles": "Arbeitsbereichsrollen *",
+    "workspaceRegions": "Arbeitsbereichsregionen *",
+    "allocationIncomplete": "Jeder ausgewählte Arbeitsbereich benötigt mindestens eine Rolle und eine Region.",
+    "noWorkspaceRoles": "Für dieses Portal sind keine Arbeitsbereichsrollen verfügbar.",
+                                   "defaultWorkspace":  "Standard",
+                                   "workspaces":  "Arbeitsbereiche"
+                               },
+                    "title":  "Teammitglieder",
+                    "subtitleAll":  "Mitglieder und Einladungen der Organisation ?ber alle Regionen verwalten.",
+                    "subtitleScoped":  "Managing members for: {{regions}}.",
+                    "yourRegion":  "your region",
+                    "admin":  "Admin",
+                    "user":  "User",
+                    "seatsInfo":  "Admin seats are Tenant-portal users; User seats are User-portal users. Each member uses one.",
+                    "intro":  {
+                                  "title":  "How team access works",
+                                  "body":  "A member access is three choices: portal, role, and region. Set them when you invite, and change them later from Edit."
+                              },
+                    "tabs":  {
+                                 "members":  "Mitglieder",
+                                 "invitations":  "Einladungen"
+                             },
+                    "search":  "Search by name or email...",
+                    "loadingMembers":  "Loading members...",
+                    "loadMembersFailed":  "Failed to load members.",
+                    "tryAgain":  "Please try again later.",
+                    "noMatch":  "No members match your search.",
+                    "noMembers":  "No members yet.",
+                    "emptyHint":  "Invite colleagues to your organization. You will choose their portal, role, and region for each person.",
+                    "table":  {
+                                  "nameEmail":  "Name / Email",
+                                  "regions":  "Regions",
+                                  "status":  "Status",
+                                  "roles":  "Roles",
+                                  "joined":  "Joined",
+                                  "actions":  "Actions",
+                                  "email":  "Email",
+                                  "region":  "Region",
+                                  "expires":  "Expires",
+                                  "invitedBy":  "Invited By"
+                              },
+                    "none":  "None",
+                    "noName":  "No name",
+                    "notAvailable":  "N/A",
+                    "edit":  "Edit",
+                    "cancel":  "Cancel",
+                    "status":  {
+                                   "active":  "Aktiv",
+                                   "suspended":  "Gesperrt",
+                                   "removed":  "Entfernt"
+                               },
+                    "editSheet":  {
+                                      "externalCounselRolesLocked":  "Die Rollen externer Berater werden Ã¼ber den Einladungsprozess fÃ¼r externe Berater verwaltet.",
+                                      "title":  "{{name}} bearbeiten",
+                                      "titlePrefix":  "Bearbeiten",
+                                      "fallbackTitle":  "Mitglied bearbeiten",
+                                      "saving":  "Speichern...",
+                                      "saveChanges":  "Ã„nderungen speichern",
+                                      "regionAssignments":  "Regionszuweisungen",
+                                      "regionAssignmentsHint":  "Aktivieren Sie eine Region, um Mitgliedschaft zu gewÃ¤hren; deaktivieren Sie sie, um sie zu entziehen. Aktuelle Regionen sind vorausgewÃ¤hlt.",
+                                      "primary":  "primÃ¤r",
+                                      "regionScopedHint":  "Sie kÃ¶nnen Rolle und Status dieses Mitglieds innerhalb Ihrer Region Ã¤ndern. Nur der OrganisationseigentÃ¼mer kann Zugriff auf zusÃ¤tzliche Regionen gewÃ¤hren."
+                                  },
+                    "sending":  "Sending...",
+                    "sendInvitation":  "Send Invitation",
+                    "invitationsIntro":  "Pending email invites. They expire after 7 days; revoke any you no longer want.",
+                    "loadingInvitations":  "Loading invitations...",
+                    "loadInvitationsFailed":  "Failed to load invitations.",
+                    "noInvitations":  "No pending invitations.",
+                    "noInvitationsHint":  "Invite a colleague and their pending invite will appear here until they accept it.",
+                    "revoke":  "Revoke",
+                    "help":  {
+                                 "relatedTopics":  "Verwandte Themen",
+                                 "concepts":  {
+                                                  "how-access-works":  {
+                                                                           "title":  "So funktioniert Zugriff: Portal -\u003e Rolle -\u003e Region",
+                                                                           "summary":  "Drei Auswahlen bestimmen, was eine Person tun kann. Legen Sie sie bei der Einladung fest und Ã¤ndern Sie sie jederzeit.",
+                                                                           "learnMoreButton":  "Mehr erfahren"
+                                                                       },
+                                                  "portals-system-roles":  {
+                                                                               "title":  "Portale \u0026 Systemrollen",
+                                                                               "summary":  "Das Portal bestimmt, ob jemand das Tenant-Admin-Portal oder das Benutzerportal verwendet.",
+                                                                               "learnMoreButton":  "Mehr erfahren"
+                                                                           },
+                                                  "roles-permissions":  {
+                                                                            "title":  "Rollen und Berechtigungen",
+                                                                            "summary":  "Eine Rolle ist ein benanntes BÃ¼ndel von Berechtigungen. Mitglieder kÃ¶nnen eine oder mehrere Rollen haben.",
+                                                                            "learnMoreButton":  "Mehr erfahren"
+                                                                        },
+                                                  "regions":  {
+                                                                  "title":  "Regionen",
+                                                                  "summary":  "Eine Region ist eine Niederlassung oder ZustÃ¤ndigkeit. Mitgliedschaft und Zugriff sind regional begrenzt.",
+                                                                  "learnMoreButton":  "Mehr erfahren"
+                                                              },
+                                                  "departments":  {
+                                                                      "title":  "Abteilungen",
+                                                                      "summary":  "Abteilungen spiegeln Ihre interne Struktur wider, um Genehmigungen weiterzuleiten und Daten zu kennzeichnen.",
+                                                                      "learnMoreButton":  "Mehr erfahren"
+                                                                  },
+                                                  "folders":  {
+                                                                  "title":  "Ordner",
+                                                                  "summary":  "Ordner gruppieren VertrÃ¤ge und FÃ¤lle in einer Explorer-Ansicht zur Organisation.",
+                                                                  "learnMoreButton":  "Mehr erfahren"
+                                                              },
+                                                  "counterparties-idd":  {
+                                                                             "title":  "Vertragspartner \u0026 IDD",
+                                                                             "summary":  "Externe Parteien mÃ¼ssen IDD-SicherheitsprÃ¼fungen bestehen, bevor VertrÃ¤ge ausgefÃ¼hrt werden kÃ¶nnen.",
+                                                                             "learnMoreButton":  "Mehr erfahren"
+                                                                         },
+                                                  "moa-approvals":  {
+                                                                        "title":  "Genehmigungen (MoA)",
+                                                                        "summary":  "Die Matrix of Authority leitet VertrÃ¤ge automatisch durch eine Kette von Genehmigern.",
+                                                                        "learnMoreButton":  "Mehr erfahren"
+                                                                    },
+                                                  "external-counsel":  {
+                                                                           "title":  "Externe AnwÃ¤lte",
+                                                                           "summary":  "Externe AnwÃ¤lte kÃ¶nnen auf bestimmte FÃ¤lle oder VertrÃ¤ge Ã¼ber ein eigenes Portal zugreifen.",
+                                                                           "learnMoreButton":  "Mehr erfahren"
+                                                                       },
+                                                  "seats-licensing":  {
+                                                                          "title":  "Lizenzen \u0026 Kontingente",
+                                                                          "summary":  "Mitglieder verbrauchen Lizenzen aus den Admin- oder Benutzer-Pools Ihrer Organisation.",
+                                                                          "learnMoreButton":  "Mehr erfahren"
+                                                                      },
+                                                  "integrations":  {
+                                                                       "title":  "Integrationen",
+                                                                       "summary":  "Civorah verbindet sich mit externen Anbietern (DocuSign, World-Check), um Workflows zu automatisieren.",
+                                                                       "learnMoreButton":  "Mehr erfahren"
+                                                                   }
+                                              },
+                                 "portals-system-roles":  {
+                                                              "body":  {
+                                                                           "intro":  "Ihr Abonnement umfasst zwei getrennte Portale:",
+                                                                           "tenant":  "\u003cterm\u003e1. Tenant-Portal\u003c/term\u003e (Administrationskonsole) â€” fÃ¼r das Management der Organisation (Mitglieder, Rollen, Regionen, Abteilungen, Abrechnung). Nur Mitglieder mit Admin-Rechten nutzen dieses Portal.",
+                                                                           "user":  "\u003cterm\u003e2. Benutzerportal\u003c/term\u003e (Mitarbeiterkonsole) â€” fÃ¼r die tÃ¤gliche juristische Arbeit in Modulen wie VertrÃ¤gen, Rechtsstreitigkeiten und Compliance.",
+                                                                           "outro":  "Das ausgewÃ¤hlte Portal bestimmt, welche Anmeldung das Mitglied nutzt und welche \u003cterm\u003eRollen\u003c/term\u003e zur Zuweisung verfÃ¼gbar sind. (Ein drittes, Plattform-level \u003cterm\u003eSuper-Admin\u003c/term\u003e-Portal existiert fÃ¼r die Civorah-Betreiber und wird hier nicht verwaltet.)"
+                                                                       }
+                                                          },
+                                 "roles-permissions":  {
+                                                           "body":  {
+                                                                        "intro":  "\u003cterm\u003eBerechtigungen\u003c/term\u003e sind feingranulare FÃ¤higkeiten wie \"Vertrag erstellen\" oder \"FallgebÃ¼hren genehmigen\". Sie weisen diese niemals einzeln zu â€” stattdessen weisen Sie \u003cterm\u003eRollen\u003c/term\u003e zu, die verwandte Berechtigungen fÃ¼r eine Aufgabe bÃ¼ndeln.",
+                                                                        "bullet1":  "Ein Mitglied kann \u003cterm\u003emehr als eine Rolle\u003c/term\u003e besitzen; sein effektiver Zugriff ist die \u003cterm\u003eVereinigung\u003c/term\u003e aller Berechtigungen Ã¼ber diese Rollen.",
+                                                                        "bullet2":  "Civorah wird mit fertigen Vorlagen geliefert â€” z. B. \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” und Sie kÃ¶nnen unter \u003cterm\u003eRollen\u003c/term\u003e Ihre eigenen erstellen.",
+                                                                        "bullet3":  "Rollen sind an ein Portal gebunden: Tenant-Portal-Rollen gewÃ¤hren Admin-FÃ¤higkeiten; Benutzerportal-Rollen gewÃ¤hren ModulfÃ¤higkeiten."
+                                                                    }
+                                                       },
+                                 "regions":  {
+                                                 "body":  {
+                                                              "intro":  "Eine Region ist eine Niederlassung oder ein ZustÃ¤ndigkeitsbereich Ihrer Organisation (oft ein Land, z. B. VAE, Deutschland). Eine Region ist Ihr Hauptsitz.",
+                                                              "bullet1":  "VertrÃ¤ge, FÃ¤lle, Abteilungen und Mitglieder gehÃ¶ren alle zu einer Region â€” das Umschalten der aktiven Region filtert, was Sie sehen.",
+                                                              "bullet2":  "Eine Person kann Mitglied in mehreren Regionen sein, mit einer unterschiedlichen Rolle in jeder. Der OrganisationseigentÃ¼mer arbeitet Ã¼ber alle Regionen hinweg.",
+                                                              "bullet3":  "Die Region ist eine Daten- und Zugriffsgrenze â€” im Gegensatz zu einem Ordner oder einer Abteilung steuert sie die Sichtbarkeit."
+                                                          }
+                                             },
+                                 "departments":  {
+                                                     "body":  {
+                                                                  "intro":  "Abteilungen spiegeln Ihre interne Struktur als Hierarchie wider: Abteilung â€º Unterabteilung / Kostenstelle â€º GeschÃ¤ftsbereich / Funktion.",
+                                                                  "bullet1":  "Beim Erstellen eines Vertrags oder Falls kÃ¶nnen Sie diesen mit einer Abteilung kennzeichnen â€” verwendet fÃ¼r Berichte und zur Weiterleitung von Matrix-of-Authority-Genehmigungen an die richtigen Personen.",
+                                                                  "bullet2":  "Eine Abteilung kann einen Abteilungsleiter und eine Kostenstelle / einen GeschÃ¤ftsbereich fÃ¼r die finanzielle Gruppierung haben.",
+                                                                  "bullet3":  "Abteilungen sind organisatorischer Natur, keine Sicherheitsgrenze â€” sie entscheiden nicht darÃ¼ber, wer einen Datensatz sehen kann (Region und Rollen tun dies).",
+                                                                  "outro":  "Optional, aber empfohlen â€” richten Sie diese auf der Abteilungs-Seite ein."
+                                                              }
+                                                 },
+                                 "folders":  {
+                                                 "body":  {
+                                                              "intro":  "Ordner sind die beschrifteten Container in der Datei-Explorer-Ansicht â€” eine bequeme MÃ¶glichkeit, verwandte FÃ¤lle oder VertrÃ¤ge zu gruppieren (nach Angelegenheit, Kunde, Jahr... wie Sie mÃ¶chten).",
+                                                              "bullet1":  "Ein Datensatz befindet sich in genau einem Ordner oder in keinem. DatensÃ¤tze ohne Ordner werden in der Startansicht unter Nicht abgelegt angezeigt.",
+                                                              "bullet2":  "Ordner sind rein organisatorisch â€” sie Ã¤ndern niemals, wer auf einen Datensatz zugreifen kann, seine Region oder seine Genehmigungen.",
+                                                              "bullet3":  "Das LÃ¶schen eines Ordners lÃ¶scht nicht seine DatensÃ¤tze; sie werden einfach wieder in Nicht abgelegt verschoben.",
+                                                              "outro":  "Denken Sie bei Ordnern an Ordner auf Ihrem Computer und bei Abteilungen an ein Organigramm â€” unterschiedliche Aufgaben."
+                                                          }
+                                             },
+                                 "counterparties-idd":  {
+                                                            "body":  {
+                                                                         "intro":  "Ein \u003cterm\u003eVertragspartner\u003c/term\u003e ist die externe Partei auf der anderen Seite eines Vertrags (ein Lieferant, Kunde, Partner). Sie werden einmal unter \u003cterm\u003eCompliance â†’ Vertragspartner\u003c/term\u003e erstellt und dann mit jedem Vertrag verknÃ¼pft.",
+                                                                         "bullet1":  "\u003cterm\u003eIDD\u003c/term\u003e (Integrity Due Diligence / Antikorruption) prÃ¼ft einen Vertragspartner gegen Beobachtungslisten (World-Check) und weist eine Risikostufe zu.",
+                                                                         "bullet2":  "Wenn bei einem Vertrag die Option \u003cterm\u003e\"IDD-Freigabe erforderlich\"\u003c/term\u003e aktiviert ist, kann er erst \u003cterm\u003eausgefÃ¼hrt werden\u003c/term\u003e, wenn sein verknÃ¼pfter Vertragspartner eine genehmigte IDD-Freigabe hat.",
+                                                                         "bullet3":  "Das Vertragsformular zeigt den aktuellen Freigabestatus des Vertragspartners an, damit Sie vor dem Start Bescheid wissen."
+                                                                     }
+                                                        },
+                                 "moa-approvals":  {
+                                                       "body":  {
+                                                                    "intro":  "Die Matrix of Authority entscheidet, wer einen Vertrag genehmigen muss, bevor er ausgefÃ¼hrt werden kann. Sie definieren Regeln einmal; die richtige Kette wird automatisch pro Vertrag generiert.",
+                                                                    "bullet1":  "Eine Regel gleicht VertrÃ¤ge nach Kriterien ab â€” Typ, Abteilung, Wertbereich und Risikostufe â€” und listet geordnete Genehmigungsschritte auf (eine bestimmte Person oder eine Rolle, mit einem SLA).",
+                                                                    "bullet2":  "Wenn ein Vertrag eingereicht wird, erstellt die am genauesten passende Regel seine Genehmigungskette; jeder Genehmiger zeichnet der Reihe nach ab.",
+                                                                    "bullet3":  "Konfigurieren Sie Regeln unter VertrÃ¤ge â†’ MoA-Regeln."
+                                                                }
+                                                   },
+                                 "external-counsel":  {
+                                                          "body":  {
+                                                                       "intro":  "\u003cterm\u003eExterne AnwÃ¤lte\u003c/term\u003e sind externe AnwÃ¤lte oder Berater, die bestimmte Angelegenheiten einsehen mÃ¼ssen, ohne vollwertige Mitglieder Ihrer Organisation zu sein.",
+                                                                       "bullet1":  "Sie gewÃ¤hren Zugriff durch eine \u003cterm\u003eZuweisung\u003c/term\u003e zu einem einzelnen Fall oder Vertrag, auf der Ebene \u003cterm\u003eAnzeigen\u003c/term\u003e oder \u003cterm\u003eMitwirken\u003c/term\u003e, optional mit einem Ablaufdatum.",
+                                                                       "bullet2":  "Sie melden sich an einem dedizierten, vereinfachten \u003cterm\u003eexternen Portal\u003c/term\u003e an, das nur die ihnen zugewiesenen Angelegenheiten anzeigt.",
+                                                                       "bullet3":  "Zuweisungen werden von Tenant-Admins verwaltet; Modulbenutzer erhalten ein schreibgeschÃ¼tztes Verzeichnis der in ihrer Region beauftragten externen AnwÃ¤lte."
+                                                                   }
+                                                      },
+                                 "seats-licensing":  {
+                                                         "body":  {
+                                                                      "intro":  "Ihr Abonnement umfasst zwei Lizenzpools:",
+                                                                      "bullet1":  "\u003cterm\u003eAdmin-Lizenzen\u003c/term\u003e â€” verbraucht von Mitgliedern im \u003cterm\u003eTenant-Portal\u003c/term\u003e.",
+                                                                      "bullet2":  "\u003cterm\u003eBenutzer-Lizenzen\u003c/term\u003e â€” verbraucht von Mitgliedern im \u003cterm\u003eBenutzerportal\u003c/term\u003e.",
+                                                                      "outro":  "Die Badges auf der Mitgliederseite zeigen \u003cterm\u003egenutzt / gesamt\u003c/term\u003e. Das Einladen von jemandem reserviert eine Lizenz des von Ihnen gewÃ¤hlten Portals; wenn ein Pool voll ist, geben Sie eine frei (setzen Sie ein Mitglied auf \u003cterm\u003eEntfernt\u003c/term\u003e) oder kontaktieren Sie Ihren Account Manager, um das Limit zu erhÃ¶hen."
+                                                                  }
+                                                     },
+                                 "integrations":  {
+                                                      "body":  {
+                                                                   "intro":  "Integrationen ermÃ¶glichen es Civorah, sich direkt mit externen Diensten zu verbinden, um ArbeitsablÃ¤ufe zu automatisieren.",
+                                                                   "bullet1":  "\u003cterm\u003eE-Signaturen (DocuSign)\u003c/term\u003e â€” senden Sie finalisierte VertrÃ¤ge automatisch an DocuSign zur rechtsverbindlichen Unterzeichnung und verfolgen Sie den Status in Civorah.",
+                                                                   "bullet2":  "\u003cterm\u003eVertragspartner-PrÃ¼fung (World-Check)\u003c/term\u003e â€” fÃ¼hren Sie automatisierte IDD-PrÃ¼fungen fÃ¼r Ihre Drittparteien gegen globale Sanktions-, PEP- und Strafverfolgungslisten durch.",
+                                                                   "bullet3":  "\u003cterm\u003eSingle Sign-On (SSO)\u003c/term\u003e â€” ermÃ¶glichen Sie es Mitgliedern, sich sicher mit ihren bestehenden Microsoft- oder Google-Arbeitskonten anzumelden."
+                                                               }
+                                                  },
+                                 "howAccess":  {
+                                                   "body":  {
+                                                                "intro":  "Der Zugriff jedes Mitglieds besteht aus drei unabhÃ¤ngigen Auswahlen:",
+                                                                "portal":  "\u003cterm\u003e1. Portal\u003c/term\u003e bestimmt, in welche App sich die Person einloggt. Das Tenant-Portal dient der Verwaltung; das Benutzerportal der tÃ¤glichen juristischen Arbeit.",
+                                                                "role":  "\u003cterm\u003e2. Rolle\u003c/term\u003e bestimmt, was die Person dort tun kann. WÃ¤hlen Sie eine oder mehrere passende Rollen.",
+                                                                "region":  "\u003cterm\u003e3. Region\u003c/term\u003e bestimmt, welche Niederlassungs- oder ZustÃ¤ndigkeitsdaten sichtbar sind. Dieselbe Person kann je Region unterschiedliche Rollen haben.",
+                                                                "example":  "Beispiel: Matter Manager in den VAE und Portalnutzer in Pakistan ist eine vollstÃ¤ndige Zuweisung. Ã„ndern Sie jede Auswahl unter Mitglieder."
+                                                            }
+                                               },
+                                 "title":  "Hilfe \u0026 Konzepte",
+                                 "subtitle":  "Einfache ErklÃ¤rungen zur Funktionsweise der Plattform â€” Portale, Rollen, Regionen, Abteilungen, Ordner, Genehmigungen und mehr.",
+                                 "searchPlaceholder":  "Themen suchenâ€¦",
+                                 "noTopics":  "Keine Themen entsprechen \"{{query}}\"."
+                             }
+                },
+    "regions":  {
+                    "title":  "Regionen \u0026 Niederlassungen",
+                    "subtitle":  "Verwalten Sie die geografischen Regionen und Niederlassungen innerhalb Ihrer Organisation.",
+                    "addRegion":  "Region hinzufÃ¼gen",
+                    "introCallout":  "Eine Region ist eine Niederlassung oder ein ZustÃ¤ndigkeitsbereich Ihrer Organisation. Im Gegensatz zu Ordnern oder Abteilungen ist eine Region eine Daten- und Zugriffsgrenze: Mitglieder, VertrÃ¤ge und FÃ¤lle gehÃ¶ren alle zu einer Region, und Personen sehen nur die Region(en), denen sie zugewiesen sind. Eine Region ist Ihr Hauptsitz.",
+                    "loading":  "Regionen werden geladen...",
+                    "loadError":  "Fehler beim Laden der Regionen.",
+                    "emptyState":  "Noch keine Regionen konfiguriert. Klicken Sie auf \"Region hinzufÃ¼gen\", um eine zu erstellen.",
+                    "table":  {
+                                  "code":  "Regionalkodierung",
+                                  "name":  "Anzeigename",
+                                  "timezone":  "Zeitzone",
+                                  "currency":  "WÃ¤hrung",
+                                  "hq":  "Hauptsitz",
+                                  "status":  "Status",
+                                  "members":  "Mitglieder",
+                                  "actions":  "Aktionen"
+                              },
+                    "status":  {
+                                   "active":  "Aktiv",
+                                   "inactive":  "Inaktiv"
+                               },
+                    "actions":  {
+                                    "deactivate":  "Deaktivieren",
+                                    "cancel":  "Abbrechen",
+                                    "create":  "Erstellen",
+                                    "saving":  "Wird gespeichert...",
+                                    "creating":  "Wird erstellt..."
+                                },
+                    "form":  {
+                                 "title":  "Neue Region",
+                                 "subtitle":  "Erstellen Sie eine neue geografische Region oder Niederlassung fÃ¼r Ihre Organisation.",
+                                 "nameLabel":  "Anzeigename *",
+                                 "nameHelp":  "Ein freundlicher Name fÃ¼r diese Niederlassung. Wird automatisch aus dem Land ausgefÃ¼llt, kann aber angepasst werden.",
+                                 "timezoneLabel":  "Zeitzone *",
+                                 "currencyLabel":  "WÃ¤hrung *",
+                                 "codePlaceholder":  "Regionalkodierung",
+                                 "namePlaceholder":  "z. B. Pakistan - Hauptsitz",
+                                 "countryPlaceholder":  "Land auswÃ¤hlen...",
+                                 "timezonePlaceholder":  "Zeitzone auswÃ¤hlen...",
+                                 "currencyPlaceholder":  "WÃ¤hrung auswÃ¤hlen...",
+                                 "createError":  "Fehler beim Erstellen der Region. Bitte Ã¼berprÃ¼fen Sie Ihre Eingabe und versuchen Sie es erneut.",
+                                 "countryLabel":  "Land / Region *"
+                             },
+                    "deactivateModal":  {
+                                            "title":  "Region deaktivieren",
+                                            "confirm":  "Deaktivierung bestÃ¤tigen",
+                                            "deactivating":  "Wird deaktiviert...",
+                                            "warning":  "Das Deaktivieren dieser Region Ã¤ndert ihre Daten- und Zugriffsparameter. Mitglieder, die ausschlieÃŸlich dieser Niederlassung zugewiesen sind, verlieren mÃ¶glicherweise die Sichtbarkeit auf verknÃ¼pfte EntitÃ¤ten.",
+                                            "error":  "Ein Fehler ist bei der Deaktivierung aufgetreten. Bitte versuchen Sie es erneut."
+                                        },
+                    "edit":  "Region bearbeiten",
+                    "activate":  "Region aktivieren",
+                    "editTitle":  "Region bearbeiten",
+                    "save":  "Region speichern",
+                    "saving":  "Speichern...",
+                    "deactivateTitle":  "Region deaktivieren",
+                    "deactivateConfirm":  "Region deaktivieren",
+                    "deactivateWarning":  "Mitglieder, die ausschlieÃŸlich dieser Niederlassung zugewiesen sind, kÃ¶nnen die Sichtbarkeit verknÃ¼pfter DatensÃ¤tze verlieren.",
+                    "hqAlwaysActive":  "Hauptsitzregionen mÃ¼ssen aktiv bleiben.",
+                    "failedUpdate":  "Region konnte nicht aktualisiert werden.",
+                    "failedDeactivate":  "Beim Deaktivieren ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+                },
+    "departments":  {
+                        "title":  "Abteilungen",
+                        "subtitle":  "Konfigurieren Sie die Organisationshierarchie zur Klassifizierung und Weiterleitung von VertrÃ¤gen und FÃ¤llen: Abteilung â†’ Unterabteilung / Kostenstelle, mit einem GeschÃ¤ftsbereich und einem Abteilungsleiter. Die Matrix-of-Authority-Genehmigungsmatrix (MoA) kann nach Abteilung weitergeleitet werden.",
+                        "introCallout":  "Abteilungen spiegeln Ihre interne Struktur wider und werden zur Kennzeichnung von VertrÃ¤gen und FÃ¤llen fÃ¼r Berichte und zur Weiterleitung von Genehmigungen verwendet. Sie sind keine Sichtbarkeitskontrolle â€” wer einen Datensatz sehen kann, wird durch seine Region und die Rollen des Mitglieds bestimmt, nicht durch seine Abteilung.",
+                        "emptyState":  "Noch keine Abteilungen vorhanden. Erstellen Sie Ihre erste Abteilung.",
+                        "editTitle":  "Abteilung bearbeiten",
+                        "newTitle":  "Neue Abteilung",
+                        "formSubtitle":  "Abteilung, Unterabteilung / Kostenstelle, GeschÃ¤ftsbereich und Leiter.",
+                        "activeLabel":  "Aktiv (verfÃ¼gbar in Modulformularen)",
+                        "nameRequired":  "Abteilungsname ist erforderlich.",
+                        "noneTopLevel":  "Keine (oberste Ebene)",
+                        "loading":  "Abteilungen werden geladenâ€¦",
+                        "actions":  {
+                                        "cancel":  "Abbrechen",
+                                        "create":  "Erstellen",
+                                        "saveChanges":  "Ã„nderungen speichern",
+                                        "saving":  "Wird gespeichert...",
+                                        "edit":  "Bearbeiten",
+                                        "delete":  "LÃ¶schen"
+                                    },
+                        "form":  {
+                                     "nameLabel":  "Name *",
+                                     "codeLabel":  "Code",
+                                     "costCenterLabel":  "Kostenstelle",
+                                     "functionLabel":  "GeschÃ¤ftsbereich",
+                                     "regionLabel":  "Region",
+                                     "parentLabel":  "Ãœbergeordnete Abteilung",
+                                     "headLabel":  "Abteilungsleiter",
+                                     "none":  "Keine",
+                                     "descriptionLabel":  "Beschreibung",
+                                     "namePlaceholder":  "z. B. Beschaffung",
+                                     "codePlaceholder":  "z. B. PROC",
+                                     "costCenterPlaceholder":  "z. B. CC-1024",
+                                     "functionPlaceholder":  "z. B. Lieferkette"
+                                 },
+                        "deleteModal":  {
+                                            "title":  "Abteilung lÃ¶schen",
+                                            "confirmQuestion":  "Sind Sie sicher, dass Sie die Abteilung lÃ¶schen mÃ¶chten: ",
+                                            "confirmQuestionEnd":  "? Diese Aktion kann nicht rÃ¼ckgÃ¤ngig gemacht werden.",
+                                            "confirmShort":  "Sind Sie sicher, dass Sie diese Abteilung lÃ¶schen mÃ¶chten? Diese Aktion kann nicht rÃ¼ckgÃ¤ngig gemacht werden."
+                                        },
+                        "status":  {
+                                       "inactive":  "Inaktiv"
+                                   },
+                        "costCenter":  "Kostenstelle: ",
+                        "function":  "Funktion: ",
+                        "contractsCount":  " Vertrag (VertrÃ¤ge) Â· ",
+                        "casesCount":  " Fall (FÃ¤lle)",
+                        "addSubDepartment":  "Unterabteilung hinzufÃ¼gen"
+                    },
+    "plan":  {
+                 "introCallout":  "Ihr Abonnement umfasst separate Pools fÃ¼r Admin-Lizenzen (zur Verwaltung der Organisation) und Benutzer-Lizenzen (fÃ¼r die Arbeit in Modulen wie VertrÃ¤gen, Rechtsstreitigkeiten und Compliance). Das Einladen eines Mitglieds verbraucht eine Lizenz aus dem entsprechenden Portal-Pool.",
+                 "title":  "Tarif \u0026 Limits",
+                 "subtitle":  "Das Abonnement Ihrer Organisation, die darin enthaltenen Module und die genutzten Limits.",
+                 "currentPlan":  "Aktueller Tarif",
+                 "customEntitlement":  "Benutzerdefiniertes Anrecht",
+                 "bespokeConfig":  "Diese Organisation ist mit einem maÃŸgeschneiderten Satz an Modulen und Limits anstelle eines Katalogtarifs konfiguriert.",
+                 "adminSeats":  "Admin-Lizenzen",
+                 "userSeats":  "Benutzer-Lizenzen",
+                 "aiCredits":  "KI-Guthaben",
+                 "units":  {
+                               "seats":  "Lizenzen",
+                               "credits":  "Guthaben",
+                               "workspaces":  "Arbeitsbereiche",
+                               "MB":  "MB"
+                           },
+                 "ofLimit":  "von {{limit}} {{unit}} Limit",
+                 "remaining":  "{{count}} {{unit}} verbleibend",
+                 "percentLeft":  "{{pct}}% Ã¼brig",
+                 "percentUsed":  "{{pct}}% genutzt",
+                 "notIncluded":  "Nicht enthalten",
+                 "perMonth":  "/ {{allowance}} pro Monat",
+                 "monthlyAllowance":  "Monatliches KI-Assistenten-Budget.",
+                 "askAdmin":  "Bitten Sie Ihren Administrator, KI-Guthaben zu aktivieren.",
+                 "includedModules":  "Enthaltene Module",
+                 "includedInPlan":  "In Ihrem Tarif enthalten",
+                 "planLimits":  "Tarifgrenzen",
+                 "supportHint":  "Limits und Module werden von Ihrem Civorah-Administrator verwaltet. Wenden Sie sich an den Civorah-Support, um Ihren Tarif zu aktualisieren oder ein Limit zu Ã¤ndern.",
+                 "modules":  {
+                                 "contracts":  "VertrÃ¤ge (CLM)",
+                                 "litigation":  "Rechtsstreitigkeiten",
+                                 "compliance":  "Ethik \u0026 Compliance",
+                                 "due_diligence":  "Due Diligence",
+                                 "duediligence":  "Due Diligence",
+                                 "secretarial":  "Sekretariat",
+                                 "land":  "Land \u0026 Immobilien",
+                                 "whistleblowing":  "Whistleblowing",
+                                 "reporting":  "Berichterstattung",
+                                 "ai_assistant":  "KI-Assistent",
+                                 "aiassistant":  "KI-Assistent",
+                                 "external_counsel":  "Externe AnwÃ¤lte",
+                                 "externalcounsel":  "Externe AnwÃ¤lte"
+                             },
+                 "limits":  {
+                                "documentMaxUpload":  "Maximale DateigrÃ¶ÃŸe fÃ¼r Uploads",
+                                "throttlePerMinute":  "API-Anfragen / Minute",
+                                "contractRenewalThresholds":  "VertragsverlÃ¤ngerungserinnerungen (Tage vor Ablauf)",
+                                "whistleblowingSla":  "SLA fÃ¼r Whistleblowing-LÃ¶sung (Tage)",
+                                "complianceRenewalMonths":  "HÃ¤ufigkeit der erneuten PrÃ¼fung von Vertragspartnern (Monate)"
+                            },
+                 "externalSeats":  "Sitze für externe Beratung",
+                 "workspaces":  "Arbeitsbereiche",
+                 "storage":  "Speicher"
+             },
+    "integrations":  {
+                         "introCallout":  "Verbinden Sie Ihre Organisation mit externen Anbietern (wie DocuSign zur Unterzeichnung von VertrÃ¤gen oder World-Check zur ÃœberprÃ¼fung von Vertragspartnern), um Ihre Compliance- und VertragsablÃ¤ufe zu automatisieren.",
+                         "title":  "Integrationen",
+                         "subtitle":  "Verbinden Sie Ihre eigenen Anbieterkonten oder fÃ¼hren Sie Funktionen manuell mit lÃ¼ckenlosem Audit-Trail aus. Zugangsdaten werden verschlÃ¼sselt gespeichert und nie wieder angezeigt.",
+                         "modeLabels":  {
+                                            "byo":  "Eigenen verbinden",
+                                            "platform":  "Civorah nutzen",
+                                            "manual":  "Manuell",
+                                            "disabled":  "Aus"
+                                        },
+                         "modeHelp":  {
+                                          "byo":  "Verbinden Sie Ihr eigenes Anbieterkonto. Die Nutzung wird Ã¼ber Ihr Konto abgerechnet.",
+                                          "platform":  "Nutzen Sie den verwalteten Tarif von Civorah (in KÃ¼rze).",
+                                          "manual":  "Kein externer Anbieter â€” Ihr Team unterzeichnet oder prÃ¼ft manuell in Civorah, mit vollstÃ¤ndigem Audit-Trail.",
+                                          "disabled":  "Keine Drittanbieter-Integration. Ihr Team schlieÃŸt dies weiterhin manuell in Civorah ab (Dokumente unterzeichnen / Freigaben erfassen) â€” dies blendet lediglich die Option aus."
+                                      },
+                         "domains":  {
+                                         "esignature":  "E-Signatur",
+                                         "screening":  "Sanktions- \u0026 Beobachtungslisten-PrÃ¼fung",
+                                         "sso_microsoft":  "Microsoft SSO",
+                                         "sso_google":  "Google SSO"
+                                     },
+                         "blurbs":  {
+                                        "esignature":  "Senden Sie VertrÃ¤ge zur rechtsverbindlichen elektronischen Unterzeichnung.",
+                                        "screening":  "PrÃ¼fen Sie Vertragspartner gegen Sanktions-, PEP- und Beobachtungslisten.",
+                                        "sso_microsoft":  "Erlauben Sie Ihrem Team, sich mit Microsoft-Arbeitskonten anzumelden.",
+                                        "sso_google":  "Erlauben Sie Ihrem Team, sich mit Google Workspace-Konten anzumelden."
+                                    },
+                         "providers":  {
+                                           "docusign":  {
+                                                            "name":  "DocuSign",
+                                                            "blurb":  "Autorisieren Sie Civorah, UmschlÃ¤ge Ã¼ber Ihr DocuSign-Konto zu senden."
+                                                        },
+                                           "worldcheck":  {
+                                                              "name":  "World-Check One",
+                                                              "blurb":  "Integrieren Sie Refinitiv World-Check One fÃ¼r KYC-EchtzeitprÃ¼fungen von Vertragspartnern."
+                                                          }
+                                       },
+                         "status":  {
+                                        "connected":  "Bereit",
+                                        "expired":  "Verbindung erneuern",
+                                        "error":  "Fehler",
+                                        "revoked":  "Widerrufen",
+                                        "not_configured":  "Nicht konfiguriert",
+                                        "comingSoon":  "DemnÃ¤chst",
+                                        "connectedDetail":  "Verbunden Â· {{detail}}",
+                                        "encryptedHint":  "VerschlÃ¼sselt gespeichert. Das Geheimnis wird nie wieder angezeigt."
+                                    },
+                         "actions":  {
+                                         "disconnect":  "Trennen",
+                                         "connect":  "Verbinden",
+                                         "testConnection":  "Verbindung testen",
+                                         "configure":  "Konfigurieren",
+                                         "save":  "Speichern",
+                                         "cancel":  "Abbrechen",
+                                         "connecting":  "Wird verbunden...",
+                                         "saving":  "Wird gespeichert...",
+                                         "testing":  "Wird getestet...",
+                                         "disconnecting":  "Wird getrennt...",
+                                         "reconnect":  "Verbindung erneuern"
+                                     },
+                         "worldcheck":  {
+                                            "enter":  "Geben Sie Ihre World-Check One-Zugangsdaten ein",
+                                            "reconnect":  "Verbinden Sie Ihr World-Check One-Konto erneut",
+                                            "findConsole":  "Sie finden diese in der World-Check One-Konsole unter",
+                                            "adminApi":  "Verwaltung â†’ API-Verwaltung",
+                                            "apiUrl":  "API-URL",
+                                            "apiKey":  "API-SchlÃ¼ssel",
+                                            "apiKeyPlaceholder":  "API-SchlÃ¼ssel (keyId)",
+                                            "apiSecret":  "API-Geheimnis",
+                                            "groupId":  "Gruppen-ID (optional)",
+                                            "groupIdPlaceholder":  "Fallmanagement-Gruppen-ID",
+                                            "connectAction":  "World-Check verbinden",
+                                            "reconnectAction":  "World-Check erneut verbinden"
+                                        }
+                     },
+    "settings":  {
+                     "header":  {
+                                    "title":  "Einstellungen",
+                                    "subtitle":  "Verwalten Sie die Konfiguration Ihrer Organisation und die Sicherheit Ihres Kontos."
+                                },
+                     "tabs":  {
+                                  "organization":  "Organisation",
+                                  "terminology":  "Terminologie",
+                                  "features":  "Funktionen",
+                                  "customFields":  "Benutzerdefinierte Felder",
+                                  "layouts":  "Layouts",
+                                  "lifecycle":  "Lebenszyklus",
+                                  "security":  "Sicherheit (MFA)"
+                              },
+                     "organization":  {
+                                          "loading":  "Organisationseinstellungen werden geladen...",
+                                          "loadError":  "Einstellungen konnten nicht geladen werden. {{message}}",
+                                          "empty":  "Keine Einstellungen verfÃ¼gbar.",
+                                          "success":  "Einstellungen erfolgreich aktualisiert.",
+                                          "error":  "Einstellungen konnten nicht aktualisiert werden. Bitte Ã¼berprÃ¼fen Sie Ihre Eingabe und versuchen Sie es erneut.",
+                                          "readOnly":  {
+                                                           "title":  "Organisationsinformationen",
+                                                           "subtitle":  "Diese Werte werden von Plattformadministratoren verwaltet und kÃ¶nnen hier nicht bearbeitet werden.",
+                                                           "field":  "Feld",
+                                                           "value":  "Wert",
+                                                           "labels":  {
+                                                                          "name":  "Name",
+                                                                          "slug":  "Slug",
+                                                                          "status":  "Status",
+                                                                          "adminSeats":  "Admin-PlÃ¤tze",
+                                                                          "userSeats":  "Benutzer-PlÃ¤tze",
+                                                                          "country":  "Land",
+                                                                          "timezone":  "Zeitzone",
+                                                                          "created":  "Erstellt am"
+                                                                      },
+                                                           "showing":  "Zeige {{start}}-{{end}} von {{total}} Feldern"
+                                                       },
+                                          "editable":  {
+                                                           "title":  "Bearbeitbare Einstellungen",
+                                                           "subtitle":  "Aktualisieren Sie die folgenden Felder und klicken Sie auf Speichern, um Ã„nderungen zu Ã¼bernehmen.",
+                                                           "billingEmail":  "Rechnungs-E-Mail",
+                                                           "timezone":  "Zeitzone",
+                                                           "domain":  "Domain",
+                                                           "nonStandardLegalReviewRequired":  "Rechtliche PrÃ¼fung fÃ¼r nicht standardisierte VertrÃ¤ge verlangen",
+                                                           "nonStandardLegalReviewRequiredHelp":  "Wenn aktiviert, muss jede MoA-Regel fÃ¼r nicht standardisierte VertrÃ¤ge einen Schritt zur rechtlichen PrÃ¼fung enthalten.",
+                                                           "saving":  "Speichern...",
+                                                           "saveAction":  "Einstellungen speichern",
+                                                           "billingPlaceholder":  "billing@example.com",
+                                                           "domainPlaceholder":  "z.B. acme.com"
+                                                       }
+                                      },
+                     "terminology":  {
+                                         "loading":  "Terminologie wird geladen...",
+                                         "description":  "Benennen Sie Plattformbegriffe um, um sie an den Wortschatz Ihrer Organisation anzupassen (z.B. \"Gegenpartei\" â†’ \"Lieferant\"). Ãœberschreibungen gelten fÃ¼r die gesamte App fÃ¼r alle in Ihrer Organisation. Leer lassen fÃ¼r den Standardwert.",
+                                         "groups":  {
+                                                        "moduleNames":  "Modulnamen",
+                                                        "contracts":  "VertrÃ¤ge",
+                                                        "matters":  "Angelegenheiten",
+                                                        "compliance":  "Compliance",
+                                                        "whistleblowing":  "Hinweisgeberschutz",
+                                                        "general":  "Allgemein"
+                                                    },
+                                         "labels":  {
+                                                        "module_contracts":  "VertrÃ¤ge",
+                                                        "module_litigation":  "Angelegenheiten",
+                                                        "module_compliance":  "Compliance",
+                                                        "module_whistleblowing":  "Hinweisgeberschutz",
+                                                        "module_secretarial":  "Sekretariat",
+                                                        "module_land":  "VermÃ¶genswerte",
+                                                        "module_reporting":  "Berichtswesen",
+                                                        "contracts_counterparty":  "Gegenpartei",
+                                                        "contracts_contract":  "Vertrag",
+                                                        "litigation_case":  "Angelegenheit",
+                                                        "litigation_hearing":  "Verhandlung",
+                                                        "compliance_counterparty":  "Gegenpartei",
+                                                        "compliance_screening":  "PrÃ¼fung",
+                                                        "whistleblowing_case":  "Bericht",
+                                                        "common_department":  "Abteilung",
+                                                        "common_region":  "Region"
+                                                    },
+                                         "descriptions":  {
+                                                              "module_contracts":  "Der Name des VertrÃ¤ge-Moduls (Seitenleiste / Dashboard).",
+                                                              "module_litigation":  "Der Name des Angelegenheiten-Moduls.",
+                                                              "module_compliance":  "Der Name des Compliance-Moduls.",
+                                                              "module_whistleblowing":  "Der Name des Hinweisgeberschutz-Moduls.",
+                                                              "module_secretarial":  "Der Name des Sekretariats-Moduls.",
+                                                              "module_land":  "Der Name des VermÃ¶genswerte-Moduls.",
+                                                              "module_reporting":  "Der Name des Berichtswesen-Moduls.",
+                                                              "contracts_counterparty":  "Die externe Partei eines Vertrags (z.B. \"Lieferant\", \"Anbieter\").",
+                                                              "contracts_contract":  "Ein einzelner Vertragsdatensatz.",
+                                                              "litigation_case":  "Ein Angelegenheiten-Datensatz.",
+                                                              "litigation_hearing":  "Eine geplante Gerichtsverhandlung.",
+                                                              "compliance_counterparty":  "Dritte, die einer Sorgfaltspflicht unterliegen.",
+                                                              "compliance_screening":  "Ein Antrag auf SorgfaltsprÃ¼fung.",
+                                                              "whistleblowing_case":  "Ein Hinweisgeberbericht / Fall.",
+                                                              "common_department":  "Organisationsabteilung / Kostenstelle.",
+                                                              "common_region":  "Niederlassung / Region."
+                                                          },
+                                         "saveAction":  "Speichern",
+                                         "resetAction":  "ZurÃ¼cksetzen"
+                                     },
+                     "features":  {
+                                      "loading":  "Funktionen werden geladen...",
+                                      "description":  "Aktivieren oder deaktivieren Sie optionale Funktionen fÃ¼r Ihre Organisation. Diese sind feiner granuliert als der Modulzugriff (der von Ihrem Plattformadministrator festgelegt wird).",
+                                      "empty":  "Keine konfigurierbaren Funktionen verfÃ¼gbar.",
+                                      "labels":  {
+                                                     "contracts.esignature":  "Elektronische Signatur (DocuSign)",
+                                                     "contracts.idd_gate":  "Sorgfaltspflicht-Tor fÃ¼r VertrÃ¤ge",
+                                                     "ai.summarize":  "KI-Dokumentenzusammenfassung",
+                                                     "search.semantic":  "Semantische (KI-)Suche"
+                                                 },
+                                      "descriptions":  {
+                                                           "contracts.esignature":  "AusfÃ¼hrungsbereite VertrÃ¤ge zur elektronischen Signatur senden.",
+                                                           "contracts.idd_gate":  "Die VertragsausfÃ¼hrung blockieren, bis die Sorgfaltspflicht der Gegenpartei geklÃ¤rt ist.",
+                                                           "ai.summarize":  "Zusammenfassungen langer Dokumente erstellen.",
+                                                           "search.semantic":  "NatÃ¼rlichsprachliche Abfrage Ã¼ber indexierte DatensÃ¤tze."
+                                                       }
+                                  },
+                     "customFields":  {
+                                          "studio":  {
+                                                         "title":  "Benutzerdefiniertes Feld-Studio",
+                                                         "description":  "FÃ¼gen Sie organisationsspezifische Felder fÃ¼r VertrÃ¤ge, Angelegenheiten, Gegenparteien und VermÃ¶genswerte hinzu."
+                                                     },
+                                          "stats":  {
+                                                        "configured":  "Konfiguriert",
+                                                        "modules":  "Module",
+                                                        "required":  "Erforderlich",
+                                                        "sensitive":  "Sensibel"
+                                                    },
+                                          "badge":  {
+                                                        "selected":  "AusgewÃ¤hlt"
+                                                    },
+                                          "list":  {
+                                                       "title":  "{{entity}}-Felder",
+                                                       "addAction":  "Benutzerdefiniertes Feld hinzufÃ¼gen",
+                                                       "loading":  "Felder werden geladen...",
+                                                       "emptyTitle":  "Keine benutzerdefinierten Felder fÃ¼r {{entity}}",
+                                                       "emptyDescription":  "FÃ¼gen Sie ein benutzerdefiniertes Feld hinzu, um organisationsspezifische Daten in {{entity}}-DatensÃ¤tzen zu erfassen.",
+                                                       "deleteAction":  "LÃ¶schen"
+                                                   },
+                                          "fieldBadge":  {
+                                                             "required":  "Erforderlich",
+                                                             "searchable":  "Durchsuchbar",
+                                                             "sensitive":  "Sensibel",
+                                                             "inactive":  "Inaktiv"
+                                                         },
+                                          "guide":  {
+                                                        "title":  "Platzierungsanleitung"
+                                                    },
+                                          "drawer":  {
+                                                         "title":  "{{entity}}-Feld hinzufÃ¼gen",
+                                                         "subtitle":  "Definieren Sie ein neues benutzerdefiniertes Feld fÃ¼r {{entity}}-DatensÃ¤tze.",
+                                                         "placementHeader":  "Platzierung",
+                                                         "sectionLabel":  "Abschnitt",
+                                                         "detailsHeader":  "Felddetails",
+                                                         "label":  "Feldbezeichnung",
+                                                         "apiKeyLabel":  "API-SchlÃ¼ssel",
+                                                         "apiKeyHint":  "Automatisch aus der Bezeichnung generiert. Wird in Exporten und API-Antworten verwendet.",
+                                                         "typeLabel":  "Feldtyp",
+                                                         "optionsLabel":  "Optionen",
+                                                         "optionsHint":  "Eine Option pro Zeile.",
+                                                         "behaviorHeader":  "Verhalten",
+                                                         "behavior":  {
+                                                                          "required":  {
+                                                                                           "title":  "Erforderlich",
+                                                                                           "hint":  "Muss ausgefÃ¼llt sein, bevor der Datensatz gespeichert werden kann."
+                                                                                       },
+                                                                          "searchable":  {
+                                                                                             "title":  "Durchsuchbar",
+                                                                                             "hint":  "In die globalen Suchergebnisse einbeziehen."
+                                                                                         },
+                                                                          "sensitive":  {
+                                                                                            "title":  "Sensibel",
+                                                                                            "hint":  "Wert fÃ¼r Nicht-Admin-Benutzer maskieren."
+                                                                                        }
+                                                                      },
+                                                         "resetAction":  "ZurÃ¼cksetzen",
+                                                         "adding":  "HinzufÃ¼gen...",
+                                                         "addAction":  "Feld hinzufÃ¼gen",
+                                                         "labelPlaceholder":  "z.B. Kostenstellen-Code",
+                                                         "apiKeyPlaceholder":  "cost_center_code",
+                                                         "optionsPlaceholder":  "Niedrig\nMittel\nHoch"
+                                                     },
+                                          "entities":  {
+                                                           "contract":  {
+                                                                            "label":  "VertrÃ¤ge",
+                                                                            "module":  "VertrÃ¤ge",
+                                                                            "description":  "Vereinbarungsmetadaten, Eigentum, Wert und Lebenszyklusfelder.",
+                                                                            "appearsOn":  "Vertragsdetails \u003e ZusÃ¤tzliche Informationen",
+                                                                            "placements":  {
+                                                                                               "identity":  {
+                                                                                                                "label":  "IdentitÃ¤t",
+                                                                                                                "description":  "Grundlegende Vertragskennungen."
+                                                                                                            },
+                                                                                               "valueampterm":  {
+                                                                                                                    "label":  "Wert \u0026 Laufzeit",
+                                                                                                                    "description":  "Kommerzielle Bedingungen und Termine."
+                                                                                                                },
+                                                                                               "ownership":  {
+                                                                                                                 "label":  "Eigentum",
+                                                                                                                 "description":  "EigentÃ¼mer, Anwalt und Abteilungskontext."
+                                                                                                             },
+                                                                                               "compliance":  {
+                                                                                                                  "label":  "Compliance",
+                                                                                                                  "description":  "Risiko-, Genehmigungs- und Richtlinienmetadaten."
+                                                                                                              }
+                                                                                           }
+                                                                        },
+                                                           "litigation_case":  {
+                                                                                   "label":  "Angelegenheiten",
+                                                                                   "module":  "Angelegenheiten",
+                                                                                   "description":  "FallidentitÃ¤t, Gerichtsdetails, Zuweisung, Risiken und Ergebnisse.",
+                                                                                   "appearsOn":  "Angelegenheiten-Details \u003e ZusÃ¤tzliche Informationen",
+                                                                                   "placements":  {
+                                                                                                      "identity":  {
+                                                                                                                       "label":  "IdentitÃ¤t",
+                                                                                                                       "description":  "Fallsname, Aktenzeichen und Kategorie."
+                                                                                                                   },
+                                                                                                      "courtampschedule":  {
+                                                                                                                               "label":  "Gericht \u0026 Zeitplan",
+                                                                                                                               "description":  "Gericht, Verhandlung und Datumsfelder."
+                                                                                                                           },
+                                                                                                      "assignment":  {
+                                                                                                                         "label":  "Zuweisung",
+                                                                                                                         "description":  "Zugewiesener, Abteilung, Parteien und Anwalt."
+                                                                                                                     },
+                                                                                                      "riskampoutcome":  {
+                                                                                                                             "label":  "Risiko \u0026 Ergebnis",
+                                                                                                                             "description":  "Exposition, Status und Abschlusskontext."
+                                                                                                                         }
+                                                                                                  }
+                                                                               },
+                                                           "counterparty":  {
+                                                                                "label":  "Gegenparteien",
+                                                                                "module":  "Compliance",
+                                                                                "description":  "Sorgfaltspflicht des Dritten, Profil- und Beziehungsdaten.",
+                                                                                "appearsOn":  "Gegenpartei-Details \u003e ZusÃ¤tzliche Informationen",
+                                                                                "placements":  {
+                                                                                                   "profile":  {
+                                                                                                                   "label":  "Profil",
+                                                                                                                   "description":  "IdentitÃ¤t, Registrierung und Kontaktinformationen."
+                                                                                                               },
+                                                                                                   "duediligence":  {
+                                                                                                                        "label":  "Sorgfaltspflicht",
+                                                                                                                        "description":  "IDD-Status, PrÃ¼fung und Genehmigungen."
+                                                                                                                    },
+                                                                                                   "relationship":  {
+                                                                                                                        "label":  "Beziehung",
+                                                                                                                        "description":  "Sponsor, Beziehungsart und Umfang des Engagements."
+                                                                                                                    },
+                                                                                                   "risk":  {
+                                                                                                                "label":  "Risiko",
+                                                                                                                "description":  "Risikostufe, VerlÃ¤ngerung und ÃœberprÃ¼fungsmetadaten."
+                                                                                                            }
+                                                                                               }
+                                                                            },
+                                                           "land_asset":  {
+                                                                              "label":  "VermÃ¶genswerte",
+                                                                              "module":  "VermÃ¶genswerte",
+                                                                              "description":  "VermÃ¶genswertprofil, Verwahrung, Standort, Bewertung und Risikofelder.",
+                                                                              "appearsOn":  "VermÃ¶genswert-Details \u003e Ãœbersicht \u003e ZusÃ¤tzliche Informationen",
+                                                                              "placements":  {
+                                                                                                 "assetprofile":  {
+                                                                                                                      "label":  "VermÃ¶genswertprofil",
+                                                                                                                      "description":  "IdentitÃ¤t, Typ und Status des VermÃ¶genswerts."
+                                                                                                                  },
+                                                                                                 "location":  {
+                                                                                                                  "label":  "Standort",
+                                                                                                                  "description":  "Bezirk, Tehsil, Mauza, Koordinaten und Standortkontext."
+                                                                                                              },
+                                                                                                 "custodyampvalue":  {
+                                                                                                                         "label":  "Verwahrung \u0026 Wert",
+                                                                                                                         "description":  "Verwahrer, Abteilung, Kosten und aktueller Wert."
+                                                                                                                     },
+                                                                                                 "riskampdocument":  {
+                                                                                                                         "label":  "Risiko \u0026 Dokument",
+                                                                                                                         "description":  "Belastung, Garantie und Datensatzmetadaten."
+                                                                                                                     }
+                                                                                             }
+                                                                          }
+                                                       },
+                                          "types":  {
+                                                        "TEXT":  {
+                                                                     "help":  "Kurzer einzeiliger Text"
+                                                                 },
+                                                        "TEXTAREA":  {
+                                                                         "help":  "Lange Notizen oder Beschreibung"
+                                                                     },
+                                                        "NUMBER":  {
+                                                                       "help":  "Ganzzahl"
+                                                                   },
+                                                        "DECIMAL":  {
+                                                                        "help":  "Dezimalbetrag oder Messwert"
+                                                                    },
+                                                        "BOOLEAN":  {
+                                                                        "help":  "Ja / Nein-KontrollkÃ¤stchen"
+                                                                    },
+                                                        "DATE":  {
+                                                                     "help":  "Kalenderdatum"
+                                                                 },
+                                                        "DATETIME":  {
+                                                                         "help":  "Datum und Uhrzeit"
+                                                                     },
+                                                        "SELECT":  {
+                                                                       "help":  "Eine Option aus einer Liste"
+                                                                   },
+                                                        "MULTISELECT":  {
+                                                                            "help":  "Mehrere Optionen aus einer Liste"
+                                                                        },
+                                                        "EMAIL":  {
+                                                                      "help":  "E-Mail-Adresse"
+                                                                  },
+                                                        "URL":  {
+                                                                    "help":  "Website oder Link"
+                                                                }
+                                                    },
+                                          "bottomNotice":  "Benutzerdefinierte Felder sind derzeit fÃ¼r VertrÃ¤ge, Angelegenheiten, Gegenparteien und VermÃ¶genswerte aktiviert. Weitere Module kÃ¶nnen hinzugefÃ¼gt werden, wenn ihre Detailseiten einen stabilen Abschnitt ZusÃ¤tzliche Informationen bereitstellen."
+                                      },
+                     "layouts":  {
+                                     "description":  "WÃ¤hlen Sie die Spalten aus, die in Listenansichten angezeigt werden sollen, und steuern Sie deren Reihenfolge. Ã„nderungen gelten fÃ¼r alle Mitglieder Ihrer Organisation.",
+                                     "listLabel":  "Liste",
+                                     "columnsHeader":  "Spalten",
+                                     "loading":  "Layout wird geladen...",
+                                     "saved":  "Gespeichert",
+                                     "resetAction":  "Auf Standard zurÃ¼cksetzen",
+                                     "saving":  "Speichern...",
+                                     "saveAction":  "Layout speichern",
+                                     "moveUp":  "Nach oben verschieben",
+                                     "moveDown":  "Nach unten verschieben"
+                                 },
+                     "lifecycle":  {
+                                       "description":  "Passen Sie die Statusbezeichnungen und Farben an, die in {{entity}}-Lebenszyklusansichten verwendet werden. Ãœberschreibungen gelten fÃ¼r Ihre gesamte Organisation.",
+                                       "recordTypeLabel":  "Datensatztyp",
+                                       "statusesHeader":  "Statusse",
+                                       "loading":  "Lebenszyklus wird geladen...",
+                                       "defaultColor":  "Standardfarbe",
+                                       "showing":  "Zeige {{start}}-{{end}} von {{total}} Statussen",
+                                       "saved":  "Gespeichert",
+                                       "resetAction":  "Auf Standard zurÃ¼cksetzen",
+                                       "saving":  "Speichern...",
+                                       "saveAction":  "Statusse speichern"
+                                   }
+                 }
+}

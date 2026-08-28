@@ -1,0 +1,186 @@
+{
+  "contractTypes": {
+    "defaultNonStandard": "Classer les nouveaux contrats comme non standard par défaut"
+  },
+  "table": {
+    "columns": {
+      "contract": "Contrat",
+      "counterparty": "Contrepartie",
+      "type": "Type",
+      "value": "Valeur",
+      "expiry": "Expiration",
+      "owner": "Responsable",
+      "status": "Statut"
+    }
+  },
+  "repository": {
+    "newContract": "Nouveau contrat"
+  },
+  "lifecycle": {
+    "steps": {
+      "draft": "Brouillon",
+      "inReview": "En revue",
+      "pendingApproval": "En attente d'approbation",
+      "approved": "Approuvé",
+      "pendingExecution": "En attente d'exécution",
+      "executed": "Exécuté"
+    },
+    "next": {
+      "submit": "Suivant : soumettre pour approbation — un collègue disposant de l'autorisation de soumission doit le faire. Le créateur ne peut pas soumettre son propre contrat.",
+      "approvals": "Suivant : approbations — les approbateurs désignés décident dans l'ordre. Le créateur ne peut pas approuver son propre contrat.",
+      "execute": "Suivant : exécution — une personne disposant de l'autorisation d'exécution peut signer dans Civorah, envoyer via DocuSign ou enregistrer une exécution manuelle.",
+      "signatures": "Suivant : finaliser les signatures — en attente des signataires, puis le contrat sera exécuté."
+    },
+    "terminal": {
+      "active": "Ce contrat est actif.",
+      "executed": "Ce contrat est exécuté.",
+      "expired": "Ce contrat a expiré.",
+      "terminated": "Ce contrat a été résilié.",
+      "renewed": "Ce contrat a été renouvelé.",
+      "archived": "Ce contrat est archivé."
+    }
+  },
+  "obligations": {
+    "title": "Obligations et renouvellements",
+    "addShort": "Obligation",
+    "empty": "Aucune obligation suivie. Ajoutez des échéances de renouvellement et des jalons clés pour recevoir des alertes automatiques.",
+    "markOpen": "Marquer comme ouverte",
+    "markComplete": "Marquer comme terminée",
+    "due": "Échéance {{date}}",
+    "alerts": "Alertes : {{days}} j avant",
+    "deleteAria": "Supprimer l'obligation",
+    "newTitle": "Nouvelle obligation",
+    "newSubtitle": "Suivez une échéance de renouvellement, un jalon ou une exigence récurrente",
+    "fieldTitle": "Titre",
+    "titlePlaceholder": "ex. Date limite de préavis de renouvellement",
+    "scheduling": "Planification",
+    "dueDate": "Date d'échéance",
+    "selectDate": "Sélectionner une date",
+    "alertDaysBefore": "Jours d'alerte avant",
+    "alertsPlaceholder": "180, 120, 90, 60, 30",
+    "commaSeparated": "Jours séparés par des virgules",
+    "description": "Description",
+    "descriptionPlaceholder": "Contexte supplémentaire sur cette obligation",
+    "descriptionHint": "Aidez l'équipe à comprendre l'action requise et pourquoi",
+    "addObligation": "Ajouter une obligation",
+    "added": "Ajoutée",
+    "confirmDeleteTitle": "Supprimer l'obligation ?",
+    "confirmDeletePrefix": "Supprimer",
+    "confirmDeleteSuffix": " ? Cette action est irréversible.",
+    "toast": {
+      "added": "Obligation ajoutée",
+      "deleted": "Obligation supprimée",
+      "markedComplete": "Obligation marquée comme terminée",
+      "reopened": "Obligation rouverte"
+    }
+  },
+  "approvals": {
+    "ownerGate": {
+      "how": "Le responsable du contrat sélectionné démarre le MoA avec la permission Soumettre ; le créateur ne peut ni être responsable ni démarrer son propre contrat.",
+      "title": "Approbation du responsable du contrat",
+      "strictOrder": "Le responsable du contrat démarre le flux. Les étapes MoA sont approuvées strictement dans l’ordre.",
+      "starting": "Démarrage du MoA...",
+      "startButton": "Approuver et démarrer le MoA",
+      "started": "Workflow MoA démarré",
+      "creatorHint": "Vous avez créé ce contrat : vous ne pouvez donc pas en être responsable ni démarrer le MoA. Le responsable sélectionné doit le vérifier.",
+      "onlyOwnerHint": "Seul le responsable du contrat sélectionné peut vérifier ce contrat et démarrer le MoA.",
+      "ownerPermissionHint": "Vous êtes le responsable du contrat. Votre rôle doit également avoir la permission Soumettre un contrat pour démarrer le MoA.",
+      "ownerCannotDecide": "Vous avez démarré le flux MoA de ce contrat comme responsable. Un autre approbateur désigné doit décider cette étape."
+    },
+    "title": "Workflow d'approbation",
+    "how": {
+      "title": "Fonctionnement de l'approbation du contrat",
+      "create": "Cr?ez et modifiez le brouillon avec la permission Cr?er/Modifier.",
+      "submit": "La soumission est effectu?e par un autre coll?gue disposant de la permission Soumettre ; le cr?ateur ne peut pas soumettre son propre contrat.",
+      "chain": "? la soumission, la cha?ne d'approbation est g?n?r?e automatiquement depuis les r?gles MoA, ou construite manuellement si aucune r?gle ne correspond.",
+      "approvers": "Les approbateurs d?cident chaque ?tape dans l?ordre. Le cr?ateur ne peut pas approuver son propre contrat.",
+      "execute": "Une fois approuv?, une personne avec la permission Ex?cuter l'ex?cute dans Civorah, via DocuSign ou par ex?cution manuelle enregistr?e."
+    },
+    "submit": {
+      "title": "Soumettre pour approbation",
+      "checkingMoa": "V?rification des r?gles MoA...",
+      "generatedOnSubmit": "Les ?tapes d'approbation de cette r?gle sont g?n?r?es lors de la soumission du contrat.",
+      "legal": "Juridique",
+      "anyApprover": "tout approbateur",
+      "strictOrder": "Approbation strictement dans l?ordre ; le cr?ateur ne peut pas approuver son propre contrat.",
+      "submitting": "Soumission...",
+      "submitButton": "Soumettre pour approbation",
+      "step": "?tape",
+      "stepPlaceholder": "ex. Approbation du directeur g?n?ral",
+      "approver": "Approbateur *",
+      "removeStep": "Supprimer l??tape",
+      "addStep": "Ajouter une ?tape",
+      "progression": "La progression ne peut pas ?tre contourn?e. Les ?tapes pr?c?dentes doivent ?tre d?cid?es d?abord."
+    }
+  },
+  "statusManagedByWorkflow": "Le statut évolue au moyen des actions autorisées d’approbation, d’exécution, de renouvellement, de résiliation ou d’archivage.",
+  "workflowUi": {
+    "rolesAnyHolderApproves": "Rôles (tout membre admissible peut approuver)",
+    "roleOption": "{{role}} — {{count}} membre(s)",
+    "anyEligibleHolder": "tout membre admissible",
+    "roleLabel": "Rôle",
+    "action": {
+      "approve": "Approbation",
+      "review_legal": "Revue juridique",
+      "execute": "Exécution",
+      "review": "Révision"
+    },
+    "decisionCommentPlaceholder": "Commentaire de décision (obligatoire pour un refus ou une escalade)…",
+    "escalate": "Escalader",
+    "escalateHint": "À utiliser uniquement si vous ne pouvez pas valider cette étape (mauvais assigné, conflit d’intérêt ou approbateur indisponible). Le gestionnaire de contrats la réaffectera.",
+    "reassignApprover": "Réaffecter l’approbateur",
+    "reassign": "Réaffecter"
+  },
+  "actions": {
+    "renew": "Renouveler",
+    "archive": "Archiver",
+    "renewed": "Contrat renouvelé",
+    "archived": "Contrat archivé",
+    "renewConfirmTitle": "Renouveler le contrat ?",
+    "renewConfirmDescription": "Le contrat sera marqué comme renouvelé à compter d’aujourd’hui.",
+    "archiveConfirmTitle": "Archiver le contrat ?",
+    "archiveConfirmDescription": "Le contrat deviendra un document historique en lecture seule.",
+    "deleteConfirmTitle": "Supprimer le contrat ?",
+    "deleteConfirmDescription": "Ce contrat sera supprimé logiquement (conservé pour audit) et masqué du référentiel. Cette action est irréversible."
+  },
+  "moa": {
+    "assignmentType": "Affecter l’étape à",
+    "specificUser": "Utilisateur précis",
+    "rolePool": "Rôle (tous les membres admissibles)",
+    "approver": "Approbateur",
+    "selectUser": "Sélectionner un utilisateur admissible…",
+    "selectRole": "Sélectionner un rôle admissible…",
+    "roleOption": "{{role}} — {{count}} membre(s)",
+    "markLegalReviewStep": "Marquer comme étape de revue juridique",
+    "markExecutionStep": "Marquer comme étape d’exécution",
+    "validation": {
+      "ruleNameRequired": "Le nom de la règle est obligatoire.",
+      "atLeastOneStep": "Ajoutez au moins une étape d’approbation.",
+      "missingApprover": "Chaque étape doit être affectée à un seul utilisateur ou à un seul rôle.",
+      "exclusiveStepType": "Une étape ne peut pas être à la fois une revue juridique et une exécution.",
+      "singleExecutionStep": "Une règle ne peut contenir qu’une seule étape d’exécution.",
+      "missingLegalReview": "Une règle de contrat non standard doit comporter une étape de revue juridique."
+    }
+  },
+  "assignment": {
+    "owner": "Responsable du contrat",
+    "legalCounsel": "Conseiller juridique",
+    "selectOwner": "Sélectionner le responsable du contrat",
+    "none": "Aucun"
+  },
+  "documents": {
+    "title": "Documents",
+    "upload": "Televerser",
+    "empty": "Aucun document joint. Televersez les brouillons, accords signes et avenants ; ils seront traites par OCR et rendus consultables automatiquement.",
+    "ocr": {
+      "searchable": "Consultable",
+      "processing": "OCR en cours",
+      "failed": "Echec OCR"
+    },
+    "actions": {
+      "edit": "Modifier",
+      "history": "Historique",
+      "open": "Ouvrir"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "generic": "Something went wrong. Please try again.",
+  "network": "Could not reach the server. Check your connection and try again.",
+  "timeout": "The request timed out. Check your connection and try again.",
+  "badResponse": "Unexpected response from the server. Please try again or contact support.",
+  "unauthorized": "Your session has expired. Please sign in again.",
+  "forbidden": "You don't have permission to perform this action.",
+  "notFound": "We couldn't find what you were looking for.",
+  "conflict": "That conflicts with the current state. Please refresh and try again.",
+  "tooManyRequests": "Too many requests. Please wait a moment and try again.",
+  "serverError": "The server is temporarily unavailable. Please try again shortly.",
+  "validation": "Some of the information looks incorrect. Please review the form and try again.",
+  "status": {
+    "400": "Some of the information looks incorrect. Please review the form and try again.",
+    "401": "Your session has expired. Please sign in again.",
+    "403": "You don't have permission to perform this action.",
+    "404": "We couldn't find what you were looking for.",
+    "409": "That conflicts with the current state. Please refresh and try again.",
+    "422": "Some of the information looks incorrect. Please review the form and try again.",
+    "429": "Too many requests. Please wait a moment and try again.",
+    "500": "The server is temporarily unavailable. Please try again shortly."
+  },
+  "whistleblowing": {
+    "termsRequired": "You must accept the reporting terms and conditions to submit a report.",
+    "namedEmailRequired": "An email is required when you choose to disclose your identity.",
+    "independentReviewUnavailable": "Independent review is not configured for this organization. Please contact the reporting administrator.",
+    "conflictReviewerProtected": "The organization owner and the final eligible administrator cannot be excluded.",
+    "administratorUnavailable": "No active whistleblowing administrator is available to receive this report.",
+    "invalidCredentials": "Invalid case reference or password.",
+    "caseNotFound": "Case not found.",
+    "portalClosed": "This case has been closed and the reporting portal is no longer available for it.",
+    "portalNotFound": "Reporting portal not found.",
+    "portalDisabled": "This organization has not enabled the whistleblowing portal.",
+    "invalidRegion": "Selected region is invalid.",
+    "closedNoUpdates": "This case is closed; no further updates can be added.",
+    "referenceAllocationFailed": "Could not allocate a case reference number. Please retry.",
+    "invalidSession": "Invalid or expired session. Please log in again.",
+    "invalidSessionToken": "Invalid session token."
+  }
+}

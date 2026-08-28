@@ -1,0 +1,1073 @@
+﻿{
+    "dashboard":  {
+                      "welcome":  "Welcome{{name}}.",
+                      "consoleFor":  "Organization management console for {{org}}. Manage members, oversight, roles, regions, and settings from here.",
+                      "yourOrganization":  "your organization",
+                      "planBadge":  "{{plan}} plan",
+                      "activeRegion":  "Active region: {{region}}",
+                      "allRegions":  "All regions",
+                      "loading":  "Loading dashboardâ€¦",
+                      "loadError":  "Failed to load dashboard stats.",
+                      "viewOversight":  "View oversight",
+                      "moduleTabs":  {
+                                         "label":  "Dashboard view",
+                                         "overview":  "Overview",
+                                         "contracts":  "Contracts",
+                                         "matters":  "Matters",
+                                         "assets":  "Assets",
+                                         "whistleblowing":  "Whistleblowing",
+                                         "empty":  "No module dashboards are enabled for this organization."
+                                     },
+                      "attention":  {
+                                        "title":  "Needs your attention",
+                                        "adminSeats":  "Admin seats almost full ({{used}}/{{max}})",
+                                        "userSeats":  "User seats almost full ({{used}}/{{max}})",
+                                        "pendingInvites":  "Pending invitations: {{count}}"
+                                    },
+                      "overview":  {
+                                       "title":  "Organization Overview",
+                                       "members":  "Total Members",
+                                       "membersSub":  "Admins: {{admins}} Â· Users: {{users}}",
+                                       "pendingInvitations":  "Pending Invitations",
+                                       "pendingInvitationsSub":  "Accepted total: {{count}}",
+                                       "activeRegions":  "Active Regions",
+                                       "activeRegionsSub":  "Total regions: {{count}}",
+                                       "modulesEnabled":  "Modules Enabled",
+                                       "modulesEnabledSub":  "Licensed modules",
+                                       "modulesEnabledPlan":  "{{plan}} plan"
+                                   },
+                      "licensing":  {
+                                        "title":  "Licensing \u0026 Seats",
+                                        "adminSeats":  "Admin Seats",
+                                        "userSeats":  "User Seats",
+                                        "approachingLimit":  "Approaching seat limit",
+                                        "aiCredits":  "AI Credits",
+                                        "low":  "Low",
+                                        "aiAllowance":  "Monthly allowance remaining"
+                                    },
+                      "members":  {
+                                      "byRegion":  "Members by Region",
+                                      "byRole":  "Members by Role Type",
+                                      "admins":  "Admins",
+                                      "users":  "Users"
+                                  },
+                      "quick":  {
+                                    "title":  "Quick Access",
+                                    "manage":  "Manage",
+                                    "members":  "Team Members",
+                                    "membersBody":  "Invite new members, manage roles, and review pending invitations.",
+                                    "roles":  "Roles \u0026 Permissions",
+                                    "rolesBody":  "Build custom roles and fine-tune their assigned permissions.",
+                                    "plan":  "Plan \u0026 Limits",
+                                    "planBody":  "Review your plan, seat usage, AI credits, and module entitlements.",
+                                    "settings":  "Settings",
+                                    "settingsBody":  "Configure organization profile, branding, and integrations."
+                                },
+                      "contracts":  {
+                                        "title":  "Contracts",
+                                        "sub":  "Contract portfolio at a glance",
+                                        "total":  "Total Contracts",
+                                        "totalSub":  "Active: {{count}}",
+                                        "inFlight":  "In Flight",
+                                        "inFlightSub":  "Draft, review \u0026 approval",
+                                        "inFlightPending":  "Approvals pending: {{count}}",
+                                        "expiring":  "Expiring Soon",
+                                        "expiringSub":  "Next 90 days",
+                                        "expiredSub":  "Expired: {{count}}",
+                                        "value":  "Total Value",
+                                        "valueSub":  "Executed portfolio value",
+                                        "chartStatus":  "Contracts by Status",
+                                        "chartStatusSub":  "Distribution across the lifecycle",
+                                        "chartExecExpiring":  "Executed vs. Expiring",
+                                        "chartExecExpiringSub":  "Annual execution against expiries",
+                                        "chartType":  "Contracts by Type",
+                                        "chartRegion":  "Contracts by Region",
+                                        "chartClassification":  "Standard vs. Non-Standard",
+                                        "chartClassificationSub":  "Contract classification split",
+                                        "approvalsAlert":  "Approval decisions awaiting a decision across the organization: {{count}}"
+                                    },
+                      "litigation":  {
+                                         "title":  "Matters",
+                                         "sub":  "Matter portfolio at a glance",
+                                         "total":  "Total Matters",
+                                         "totalSub":  "Closed: {{count}}",
+                                         "open":  "Open Matters",
+                                         "openSub":  "Active matters",
+                                         "hearings":  "Upcoming Hearings",
+                                         "hearingsSub":  "Next 30 days",
+                                         "hearingsOverdue":  "Overdue: {{count}}",
+                                         "liability":  "Contingent Liability",
+                                         "liabilitySub":  "Legal spend {{spend}}",
+                                         "chartStatus":  "Matters by Status",
+                                         "chartStatusSub":  "Distribution across the lifecycle",
+                                         "chartFiledDisposed":  "Matters Filed vs. Disposed",
+                                         "chartFiledDisposedSub":  "Annual intake against closures",
+                                         "chartRisk":  "Matters by Risk Tier",
+                                         "chartRegion":  "Matters by Region",
+                                         "chartOutcome":  "Outcome Mix",
+                                         "chartOutcomeSub":  "Resolved matter outcome split",
+                                         "overdueAlert":  "Hearings past their scheduled date needing an outcome: {{count}}"
+                                     },
+                      "land":  {
+                                   "title":  "Assets",
+                                   "sub":  "Land portfolio, documents, and encumbrances at a glance",
+                                   "total":  "Total Assets",
+                                   "totalSub":  "Districts: {{count}}",
+                                   "encumbered":  "Encumbered",
+                                   "encumberedSub":  "Dispute, lien, charge, or claim",
+                                   "documented":  "Documented",
+                                   "documentedSub":  "Assets with secured records",
+                                   "linkedMatters":  "Linked Matters",
+                                   "linkedMattersSub":  "Connected legal matters",
+                                   "chartDistrict":  "Assets by District",
+                                   "chartQuality":  "Portfolio Quality"
+                               },
+                      "whistleblowing":  {
+                                             "title":  "Whistleblowing",
+                                             "sub":  "Confidential case portfolio at a glance",
+                                             "total":  "Total Matters",
+                                             "totalSub":  "Closed: {{count}}",
+                                             "open":  "Open",
+                                             "openSub":  "Escalated: {{count}}",
+                                             "investigating":  "Under Investigation",
+                                             "investigatingSub":  "In progress",
+                                             "investigatingAvg":  "Avg resolution: {{days}}d",
+                                             "atRisk":  "SLA At Risk",
+                                             "atRiskSub":  "Within deadline",
+                                             "breachedSub":  "Breached: {{count}}",
+                                             "chartStatus":  "Matters by Status",
+                                             "chartCategory":  "Matters by Category",
+                                             "chartPriority":  "Matters by Risk Rating",
+                                             "breachedAlert":  "Cases past their SLA deadline needing attention: {{count}}"
+                                         },
+                      "health":  {
+                                     "title":  "Organization Health",
+                                     "good":  "Healthy",
+                                     "watch":  "Monitor",
+                                     "critical":  "Action needed"
+                                 }
+                  },
+    "matters":  {
+                    "title":  "Matters Oversight",
+                    "subtitleAll":  "Organization-wide view of every matter logged by your members. All regions.",
+                    "subtitleScoped":  "Organization-wide view of every matter logged by your members. Your regions.",
+                    "tabs":  {
+                                 "overview":  "Overview",
+                                 "register":  "Case Register"
+                             },
+                    "filters":  {
+                                    "region":  "Region",
+                                    "allRegions":  "All regions",
+                                    "year":  "Year",
+                                    "allTime":  "All time",
+                                    "search":  "Search cases...",
+                                    "status":  "Status",
+                                    "allStatuses":  "All statuses"
+                                },
+                    "view":  {
+                                 "grid":  "Grid view",
+                                 "list":  "List view"
+                             },
+                    "grid":  {
+                                 "noHearing":  "No hearing set"
+                             },
+                    "loading":  {
+                                    "analytics":  "Loading matters analytics...",
+                                    "cases":  "Loading cases..."
+                                },
+                    "errors":  {
+                                   "analytics":  "Matters analytics are unavailable right now."
+                               },
+                    "empty":  {
+                                  "register":  "No cases match the current filters."
+                              },
+                    "hearings":  {
+                                     "description":  "Across the organization Â· next 60 days"
+                                 },
+                    "kpis":  {
+                                 "total":  "Total Cases",
+                                 "totalHint":  "{{count}} closed",
+                                 "open":  "Open Cases",
+                                 "hearings":  "Upcoming Hearings",
+                                 "hearingsHint":  "Next 30 days",
+                                 "hearingsOverdue":  "{{count}} overdue",
+                                 "liability":  "Contingent Liability",
+                                 "liabilityHint":  "Legal spend {{spend}}"
+                             },
+                    "charts":  {
+                                   "risk":  "Risk Tier Split",
+                                   "riskSub":  "Portfolio split by risk tier",
+                                   "filedDisposed":  "Cases Filed vs. Disposed",
+                                   "filedDisposedSub":  "Annual intake against closures",
+                                   "region":  "Cases by Region",
+                                   "filingTrend":  "Filing Trend",
+                                   "filingTrendSub":  "Filed and disposed matters over time",
+                                   "filingVolume":  "Filing Volume",
+                                   "filingVolumeSub":  "Annual filing and disposal volume",
+                                   "status":  "Status Mix",
+                                   "statusSub":  "Case status share across the portfolio",
+                                   "outcome":  "Outcome Mix",
+                                   "outcomeSub":  "Resolved case outcome split",
+                                   "category":  "Cases by Category"
+                               },
+                    "series":  {
+                                   "filed":  "Filed",
+                                   "disposed":  "Disposed"
+                               },
+                    "alerts":  {
+                                   "overdueHearings":  "{{count}} hearing is past its scheduled date and needs an outcome recorded.",
+                                   "overdueHearings_plural":  "{{count}} hearings are past their scheduled date and need an outcome recorded."
+                               },
+                    "table":  {
+                                  "case":  "Case",
+                                  "status":  "Status",
+                                  "region":  "Region",
+                                  "courtLocation":  "Court / Location",
+                                  "nextHearing":  "Next Hearing",
+                                  "lawyer":  "Lawyer",
+                                  "contingentLiability":  "Contingent Liability",
+                                  "unassigned":  "Unassigned"
+                              }
+                },
+    "members":  {
+                    "invite":  {
+                                   "member":  "Invite Member",
+                                   "firstMember":  "Invite your first member",
+                                   "emailInvalid":  "Enter a valid email address (e.g. name@company.com).",
+                                   "failed":  "Failed to send invitation.",
+                                   "accessEquals":  "Access =",
+                                   "portalStep":  "1 Portal",
+                                   "roleStep":  "2 Role",
+                                   "regionStep":  "3 Region",
+                                   "accessHint":  "These three choices decide what the person can do. You can change any of them later.",
+                                   "portal":  "Portal (System Role) *",
+                                   "portalHint":  "Tenant = manage the organization. User = do day-to-day legal work.",
+                                   "tenantHelp":  "This user will have access to the Tenant portal and can manage members, roles, and regions.",
+                                   "userHelp":  "This user will have access to the User portal with module-level permissions.",
+                                   "email":  "Email *",
+                                   "displayName":  "Display Name",
+                                   "displayNamePlaceholder":  "Optional display name",
+                                   "role":  "Role *",
+                                   "roleHint":  "A role bundles the permissions for a job. Only roles for the selected portal are shown.",
+                                   "selectRole":  "Select role...",
+                                   "adminSeatsUsed":  "Admin seats: {{used}}/{{max}} used",
+                                   "userSeatsUsed":  "User seats: {{used}}/{{max}} used",
+                                   "region":  "Region *",
+                                   "regionHint":  "The branch whose data this member will work in.",
+                                   "selectRegion":  "Select region...",
+                                   "regionScopeHint":  "You can only invite members to regions you are an admin of.",
+    "workspacesHint":  "Select only the workspaces this invitation can access, then choose a workspace role and region for each. No workspace access is granted until those choices are complete.",
+    "workspaceRoles": "Workspace roles *",
+    "workspaceRegions": "Workspace regions *",
+    "allocationIncomplete": "Each selected workspace needs at least one workspace role and one region.",
+    "noWorkspaceRoles": "No workspace roles are available for this portal.",
+                                   "defaultWorkspace":  "Default",
+                                   "workspaces":  "Workspaces"
+                               },
+                    "title":  "Team Members",
+                    "subtitleAll":  "Manage organization members and invitations across every region.",
+                    "subtitleScoped":  "Managing members for: {{regions}}.",
+                    "yourRegion":  "your region",
+                    "admin":  "Admin",
+                    "user":  "User",
+                    "seatsInfo":  "Admin seats are Tenant-portal users; User seats are User-portal users. Each member uses one.",
+                    "intro":  {
+                                  "title":  "How team access works",
+                                  "body":  "A member access is three choices: portal, role, and region. Set them when you invite, and change them later from Edit."
+                              },
+                    "tabs":  {
+                                 "members":  "Members",
+                                 "invitations":  "Invitations"
+                             },
+                    "search":  "Search by name or email...",
+                    "loadingMembers":  "Loading members...",
+                    "loadMembersFailed":  "Failed to load members.",
+                    "tryAgain":  "Please try again later.",
+                    "noMatch":  "No members match your search.",
+                    "noMembers":  "No members yet.",
+                    "emptyHint":  "Invite colleagues to your organization. You will choose their portal, role, and region for each person.",
+                    "table":  {
+                                  "nameEmail":  "Name / Email",
+                                  "regions":  "Regions",
+                                  "status":  "Status",
+                                  "roles":  "Roles",
+                                  "joined":  "Joined",
+                                  "actions":  "Actions",
+                                  "email":  "Email",
+                                  "region":  "Region",
+                                  "expires":  "Expires",
+                                  "invitedBy":  "Invited By"
+                              },
+                    "none":  "None",
+                    "noName":  "No name",
+                    "notAvailable":  "N/A",
+                    "edit":  "Edit",
+                    "cancel":  "Cancel",
+                    "status":  {
+                                   "active":  "Active",
+                                   "suspended":  "Suspended",
+                                   "removed":  "Removed"
+                               },
+                    "editSheet":  {
+                                      "title":  "Edit {{name}}",
+                                      "titlePrefix":  "Edit",
+                                      "fallbackTitle":  "Edit Member",
+                                      "saving":  "Saving...",
+                                      "saveChanges":  "Save Changes",
+                                      "regionAssignments":  "Region Assignments",
+                                      "regionAssignmentsHint":  "Check a region to grant membership; uncheck to revoke. Current regions are pre-checked.",
+                                      "primary":  "primary",
+                                      "externalCounselRolesLocked":  "External Counsel roles are managed through the External Counsel invitation workflow.",
+                                      "regionScopedHint":  "You can change this member\u0027s role and status within your region. Only the organization owner can grant access to additional regions."
+                                  },
+                    "sending":  "Sending...",
+                    "sendInvitation":  "Send Invitation",
+                    "invitationsIntro":  "Pending email invites. They expire after 7 days; revoke any you no longer want.",
+                    "loadingInvitations":  "Loading invitations...",
+                    "loadInvitationsFailed":  "Failed to load invitations.",
+                    "noInvitations":  "No pending invitations.",
+                    "noInvitationsHint":  "Invite a colleague and their pending invite will appear here until they accept it.",
+                    "revoke":  "Revoke",
+                    "help":  {
+                                 "relatedTopics":  "Related topics",
+                                 "concepts":  {
+                                                  "how-access-works":  {
+                                                                           "title":  "How access works: Portal -\u003e Role -\u003e Region",
+                                                                           "summary":  "Three choices decide what a person can do. Set them once when you invite, then change them anytime.",
+                                                                           "learnMoreButton":  "Learn more about access"
+                                                                       },
+                                                  "portals-system-roles":  {
+                                                                               "title":  "Portals (system roles)",
+                                                                               "summary":  "Portal decides whether someone uses the tenant admin portal or the user work portal.",
+                                                                               "learnMoreButton":  "Learn more about portals"
+                                                                           },
+                                                  "roles-permissions":  {
+                                                                            "title":  "Roles \u0026 permissions",
+                                                                            "summary":  "A role is a named bundle of permissions. Members can hold one or more roles.",
+                                                                            "learnMoreButton":  "Learn more about roles"
+                                                                        },
+                                                  "regions":  {
+                                                                  "title":  "Regions",
+                                                                  "summary":  "A region is a branch or jurisdiction. Membership and access are scoped by region.",
+                                                                  "learnMoreButton":  "Learn more about regions"
+                                                              },
+                                                  "departments":  {
+                                                                      "title":  "Departments",
+                                                                      "summary":  "Your internal org structure. Tags contracts \u0026 cases for reporting and approval routing.",
+                                                                      "learnMoreButton":  "Learn more about departments"
+                                                                  },
+                                                  "folders":  {
+                                                                  "title":  "Folders",
+                                                                  "summary":  "Simple containers to organize cases/contracts. They never change access or region.",
+                                                                  "learnMoreButton":  "Learn more about folders"
+                                                              },
+                                                  "counterparties-idd":  {
+                                                                             "title":  "Counterparties \u0026 IDD clearance",
+                                                                             "summary":  "The third party to a contract. IDD screens them before the contract can be executed.",
+                                                                             "learnMoreButton":  "Learn more about counterparties"
+                                                                         },
+                                                  "moa-approvals":  {
+                                                                        "title":  "Matrix of Authority (MoA) approvals",
+                                                                        "summary":  "Configurable rules that build the approval chain a contract must clear before execution.",
+                                                                        "learnMoreButton":  "Learn more about MoA approvals"
+                                                                    },
+                                                  "external-counsel":  {
+                                                                           "title":  "External counsel",
+                                                                           "summary":  "Outside lawyers given scoped access to specific cases or contracts via allocations.",
+                                                                           "learnMoreButton":  "Learn more about external counsel"
+                                                                       },
+                                                  "seats-licensing":  {
+                                                                          "title":  "Seats \u0026 licensing",
+                                                                          "summary":  "Your plan includes a set number of Admin and User seats. Inviting consumes one.",
+                                                                          "learnMoreButton":  "Learn more about licensing"
+                                                                      },
+                                                  "integrations":  {
+                                                                       "title":  "Integrations",
+                                                                       "summary":  "Connect your organization with external providers such as DocuSign or World-Check.",
+                                                                       "learnMoreButton":  "Learn more about integrations"
+                                                                   }
+                                              },
+                                 "howAccess":  {
+                                                   "body":  {
+                                                                "intro":  "Every member\u0027s access is the combination of three independent choices:",
+                                                                "portal":  "\u003cterm\u003e1. Portal\u003c/term\u003e decides which app they log into. Tenant portal users manage the organization; User portal users do day-to-day legal work.",
+                                                                "role":  "\u003cterm\u003e2. Role\u003c/term\u003e decides what they can do there. Pick one or more roles that match the person\u0027s job.",
+                                                                "region":  "\u003cterm\u003e3. Region\u003c/term\u003e decides which branch or jurisdiction data they see. The same person can have different roles in different regions.",
+                                                                "example":  "Example: a Matter Manager in UAE and a portal user in Pakistan is one complete assignment. Change any choice from Members."
+                                                            }
+                                               },
+                                 "portals-system-roles":  {
+                                                              "body":  {
+                                                                           "intro":  "A member belongs to exactly one of two internal portals, chosen when you invite them:",
+                                                                           "tenant":  "\u003cterm\u003eTenant portal\u003c/term\u003e (admin) â€” manage members \u0026 invitations, roles, regions, departments, and view organization-wide oversight of contracts \u0026 litigation. This is where you are now.",
+                                                                           "user":  "\u003cterm\u003eUser portal\u003c/term\u003e â€” the module workspace: create and work on contracts, litigation cases, compliance, and more, scoped to the member\u0027s region(s).",
+                                                                           "outro":  "The portal you pick decides which login the member uses and which \u003cterm\u003eroles\u003c/term\u003e are available to assign. (A third, platform-level \u003cterm\u003eSuper Admin\u003c/term\u003e exists for the Civorah operators and isn\u0027t managed here.)"
+                                                                       }
+                                                          },
+                                 "roles-permissions":  {
+                                                           "body":  {
+                                                                        "intro":  "\u003cterm\u003ePermissions\u003c/term\u003e are fine-grained capabilities such as \"create contract\" or \"approve case fees\". You never assign them one by one â€” instead you assign \u003cterm\u003eroles\u003c/term\u003e, which bundle related permissions for a job.",
+                                                                        "bullet1":  "A member can hold \u003cterm\u003emore than one role\u003c/term\u003e; their effective access is the \u003cterm\u003eunion\u003c/term\u003e of all permissions across those roles.",
+                                                                        "bullet2":  "Civorah ships ready-made templates â€” e.g. \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” and you can create your own under \u003cterm\u003eRoles\u003c/term\u003e.",
+                                                                        "bullet3":  "Roles are tied to a portal: Tenant-portal roles grant admin abilities; User-portal roles grant module abilities."
+                                                                    }
+                                                       },
+                                 "regions":  {
+                                                 "body":  {
+                                                              "intro":  "A region is a branch or jurisdiction of your organization (often a country, e.g. UAE, Pakistan). One region is your headquarters.",
+                                                              "bullet1":  "Contracts, cases, departments, and members all belong to a region â€” switching the active region filters what you see.",
+                                                              "bullet2":  "A person can be a member of several regions, with a different role in each. The organization owner works across all regions.",
+                                                              "bullet3":  "Region is a data \u0026 access boundary â€” unlike a folder or department, it controls visibility."
+                                                          }
+                                             },
+                                 "departments":  {
+                                                     "body":  {
+                                                                  "intro":  "Departments mirror your internal structure as a hierarchy: Department â€º Sub-Department / Cost Center â€º Business / Function.",
+                                                                  "bullet1":  "When creating a contract or case you can tag it with a department â€” used for reporting and to route Matrix-of-Authority approvals to the right people.",
+                                                                  "bullet2":  "A department can have a Head of Department and a cost center / business function for finance grouping.",
+                                                                  "bullet3":  "Departments are organizational, not a security boundary â€” they don\u0027t decide who can see a record (region and roles do that).",
+                                                                  "outro":  "Optional but recommended â€” set them up under the Departments page."
+                                                              }
+                                                 },
+                                 "folders":  {
+                                                 "body":  {
+                                                              "intro":  "Folders are the labelled containers in the file-explorer view â€” a convenient way to group related cases or contracts (by matter, client, yearâ€¦ however you like).",
+                                                              "bullet1":  "A record lives in exactly one folder, or none. Records with no folder appear under Unfiled on the Home view.",
+                                                              "bullet2":  "Folders are purely organizational â€” they never change who can access a record, its region, or its approvals.",
+                                                              "bullet3":  "Deleting a folder doesn\u0027t delete its records; they simply move back to Unfiled.",
+                                                              "outro":  "Think of folders like folders on your computer, and departments like an org chart â€” different jobs."
+                                                          }
+                                             },
+                                 "counterparties-idd":  {
+                                                            "body":  {
+                                                                         "intro":  "A \u003cterm\u003ecounterparty\u003c/term\u003e is the external party on the other side of a contract (a vendor, client, partner). They\u0027re created once under \u003cterm\u003eCompliance â†’ Counterparties\u003c/term\u003e and then linked to any contract.",
+                                                                         "bullet1":  "\u003cterm\u003eIDD\u003c/term\u003e (Integrity Due Diligence / Anti-Bribery \u0026 Corruption) screens a counterparty against watch-lists (World-Check) and assigns a risk tier.",
+                                                                         "bullet2":  "If a contract has \u003cterm\u003e\"Require IDD clearance\"\u003c/term\u003e turned on, it \u003cterm\u003ecannot be executed\u003c/term\u003e until its linked counterparty has an approved IDD clearance.",
+                                                                         "bullet3":  "The contract form shows the counterparty\u0027s current clearance status so you know before you start."
+                                                                     }
+                                                        },
+                                 "moa-approvals":  {
+                                                       "body":  {
+                                                                    "intro":  "The Matrix of Authority decides who must approve a contract before it can be executed. You define rules once; the right chain is generated automatically per contract.",
+                                                                    "bullet1":  "A rule matches contracts by criteria â€” type, department, value range, and risk tier â€” and lists ordered approval steps (a specific person or a role, with an SLA).",
+                                                                    "bullet2":  "When a contract is submitted, the most specific matching rule builds its approval chain; each approver signs off in order.",
+                                                                    "bullet3":  "Configure rules under Contracts â†’ MoA Rules."
+                                                                }
+                                                   },
+                                 "external-counsel":  {
+                                                          "body":  {
+                                                                       "intro":  "\u003cterm\u003eExternal counsel\u003c/term\u003e are outside lawyers or consultants who need to see specific matters without being full members of your organization.",
+                                                                       "bullet1":  "You grant access through an \u003cterm\u003eallocation\u003c/term\u003e to a single case or contract, at \u003cterm\u003eView\u003c/term\u003e or \u003cterm\u003eContribute\u003c/term\u003e level, optionally with an expiry.",
+                                                                       "bullet2":  "They sign into a dedicated, stripped-down \u003cterm\u003eexternal portal\u003c/term\u003e that shows only their allocated matters.",
+                                                                       "bullet3":  "Allocations are managed by Tenant admins; module users get a read-only directory of outside counsel engaged in their region."
+                                                                   }
+                                                      },
+                                 "seats-licensing":  {
+                                                         "body":  {
+                                                                      "intro":  "Your subscription includes two seat pools:",
+                                                                      "bullet1":  "\u003cterm\u003eAdmin seats\u003c/term\u003e â€” consumed by members in the \u003cterm\u003eTenant portal\u003c/term\u003e.",
+                                                                      "bullet2":  "\u003cterm\u003eUser seats\u003c/term\u003e â€” consumed by members in the \u003cterm\u003eUser portal\u003c/term\u003e.",
+                                                                      "outro":  "The badges on the Members page show \u003cterm\u003eused / total\u003c/term\u003e. Inviting someone reserves a seat of the portal you choose; if a pool is full, free one up (set a member to \u003cterm\u003eRemoved\u003c/term\u003e) or contact your account manager to raise the limit."
+                                                                  }
+                                                     },
+                                 "integrations":  {
+                                                      "body":  {
+                                                                   "intro":  "Integrations allow Civorah to connect directly with external services to automate workloads.",
+                                                                   "bullet1":  "\u003cterm\u003eE-Signatures (DocuSign)\u003c/term\u003e â€” automatically send finalized contracts to DocuSign for legally-binding signing, and track the status inside Civorah.",
+                                                                   "bullet2":  "\u003cterm\u003eCounterparty Screening (World-Check)\u003c/term\u003e â€” run automated IDD checks on your third parties against global sanctions, PEP, and enforcement lists.",
+                                                                   "bullet3":  "\u003cterm\u003eSingle Sign-On (SSO)\u003c/term\u003e â€” allow members to log in securely using their existing Microsoft or Google work credentials."
+                                                               }
+                                                  },
+                                 "title":  "Help \u0026 Concepts",
+                                 "subtitle":  "Plain-language explanations of how the platform fits together â€” portals, roles, regions, departments, folders, approvals, and more.",
+                                 "searchPlaceholder":  "Search topicsâ€¦",
+                                 "noTopics":  "No topics match \"{{query}}\"."
+                             }
+                },
+    "regions":  {
+                    "title":  "Regions \u0026 Branches",
+                    "subtitle":  "Manage the geographic regions and branches within your organization.",
+                    "addRegion":  "Add Region",
+                    "introCallout":  "A region is a branch or jurisdiction of your organization. Unlike folders or departments, a region is a data \u0026 access boundary: members, contracts, and cases all belong to a region, and people only see the region(s) they\u0027re assigned to. One region is your headquarters.",
+                    "loading":  "Loading regions...",
+                    "loadError":  "Failed to load regions.",
+                    "emptyState":  "No regions configured yet. Click \"Add Region\" to create one.",
+                    "table":  {
+                                  "code":  "Region Code",
+                                  "name":  "Display Name",
+                                  "timezone":  "Timezone",
+                                  "currency":  "Currency",
+                                  "hq":  "HQ",
+                                  "status":  "Status",
+                                  "members":  "Members",
+                                  "actions":  "Actions"
+                              },
+                    "status":  {
+                                   "active":  "Active",
+                                   "inactive":  "Inactive"
+                               },
+                    "actions":  {
+                                    "deactivate":  "Deactivate",
+                                    "cancel":  "Cancel",
+                                    "create":  "Create",
+                                    "saving":  "Saving...",
+                                    "creating":  "Creating..."
+                                },
+                    "form":  {
+                                 "title":  "New Region",
+                                 "subtitle":  "Create a new geographic region or branch for your organization.",
+                                 "nameLabel":  "Display Name *",
+                                 "nameHelp":  "A friendly name for this branch. Auto-filled from country but you can customize it.",
+                                 "timezoneLabel":  "Timezone *",
+                                 "currencyLabel":  "Currency *",
+                                 "codePlaceholder":  "Region Code",
+                                 "namePlaceholder":  "e.g. Pakistan - Head Office",
+                                 "countryPlaceholder":  "Select a country...",
+                                 "timezonePlaceholder":  "Select timezone...",
+                                 "currencyPlaceholder":  "Select currency...",
+                                 "countryLabel":  "Country / Region *",
+                                 "createError":  "Failed to create region. Please check your input and try again."
+                             },
+                    "deactivateModal":  {
+                                            "title":  "Deactivate Region",
+                                            "confirm":  "Confirm Deactivate",
+                                            "deactivating":  "Deactivating...",
+                                            "warning":  "Deactivating this region changes its data \u0026 access access parameters. Members assigned strictly to this branch may lose visibility on connected entities.",
+                                            "error":  "An error occurred while deactivating. Please try again."
+                                        },
+                    "edit":  "Edit region",
+                    "activate":  "Activate region",
+                    "editTitle":  "Edit Region",
+                    "save":  "Save Region",
+                    "saving":  "Saving...",
+                    "deactivateTitle":  "Deactivate region",
+                    "deactivateConfirm":  "Deactivate region",
+                    "deactivateWarning":  "Members assigned strictly to this branch may lose visibility on connected entities.",
+                    "hqAlwaysActive":  "Headquarters regions must remain active.",
+                    "failedUpdate":  "Failed to update region.",
+                    "failedDeactivate":  "An error occurred while deactivating. Please try again."
+                },
+    "departments":  {
+                        "title":  "Departments",
+                        "subtitle":  "Configure the organization hierarchy used to classify and route contracts and cases: Department â†’ Sub-Department / Cost Center, with a Business / Function and a Head of Department. The MoA approval matrix can route by department.",
+                        "introCallout":  "Departments mirror your internal structure and are used to tag contracts and cases for reporting and to route approvals. They are not a visibility control â€” who can see a record is decided by its region and the member\u0027s roles, not its department.",
+                        "emptyState":  "No departments yet. Create your first one.",
+                        "editTitle":  "Edit department",
+                        "newTitle":  "New department",
+                        "formSubtitle":  "Department, sub-department / cost center, business function, and head.",
+                        "activeLabel":  "Active (available in module forms)",
+                        "nameRequired":  "Department name is required.",
+                        "noneTopLevel":  "None (top-level)",
+                        "loading":  "Loading departmentsâ€¦",
+                        "actions":  {
+                                        "cancel":  "Cancel",
+                                        "create":  "Create",
+                                        "saveChanges":  "Save changes",
+                                        "saving":  "Saving...",
+                                        "edit":  "Edit",
+                                        "delete":  "Delete"
+                                    },
+                        "form":  {
+                                     "nameLabel":  "Name *",
+                                     "codeLabel":  "Code",
+                                     "costCenterLabel":  "Cost Center",
+                                     "functionLabel":  "Business / Function",
+                                     "regionLabel":  "Region",
+                                     "parentLabel":  "Parent Department",
+                                     "headLabel":  "Head of Department",
+                                     "none":  "None",
+                                     "descriptionLabel":  "Description",
+                                     "namePlaceholder":  "e.g. Procurement",
+                                     "codePlaceholder":  "e.g. PROC",
+                                     "costCenterPlaceholder":  "e.g. CC-1024",
+                                     "functionPlaceholder":  "e.g. Supply Chain"
+                                 },
+                        "deleteModal":  {
+                                            "title":  "Delete department",
+                                            "confirmQuestion":  "Are you sure you want to delete the department ",
+                                            "confirmQuestionEnd":  "? This action cannot be undone.",
+                                            "confirmShort":  "Are you sure you want to delete this department? This action cannot be undone."
+                                        },
+                        "status":  {
+                                       "inactive":  "Inactive"
+                                   },
+                        "costCenter":  "Cost center: ",
+                        "function":  "Function: ",
+                        "contractsCount":  " contract(s) Â· ",
+                        "casesCount":  " case(s)",
+                        "addSubDepartment":  "Add sub-department"
+                    },
+    "plan":  {
+                 "introCallout":  "Your subscription includes separate pools of admin seats (for managing the organization) and user seats (for modules work like contracts, litigation, and compliance). Inviting a member consumes a seat from the corresponding portal pool.",
+                 "title":  "Plan \u0026 Limits",
+                 "subtitle":  "Your organization\u0027s subscription, the modules it includes, and how much of each limit you are using.",
+                 "currentPlan":  "Current plan",
+                 "customEntitlement":  "Custom entitlement",
+                 "bespokeConfig":  "This organization is configured with a bespoke set of modules and limits rather than a catalog plan.",
+                 "adminSeats":  "Admin seats",
+                 "userSeats":  "User seats",
+                 "aiCredits":  "AI credits",
+                 "units":  {
+                               "seats":  "seats",
+                               "credits":  "credits",
+                               "workspaces":  "workspaces",
+                               "MB":  "MB"
+                           },
+                 "ofLimit":  "of {{limit}} {{unit}} limit",
+                 "remaining":  "{{count}} {{unit}} remaining",
+                 "percentLeft":  "{{pct}}% left",
+                 "percentUsed":  "{{pct}}% used",
+                 "notIncluded":  "Not included",
+                 "perMonth":  "/ {{allowance}} per month",
+                 "monthlyAllowance":  "Monthly AI assistant allowance.",
+                 "askAdmin":  "Ask your administrator to enable AI credits.",
+                 "includedModules":  "Included modules",
+                 "includedInPlan":  "Included in your plan",
+                 "planLimits":  "Plan limits",
+                 "supportHint":  "Limits and modules are managed by your Civorah administrator. To upgrade your plan or change a limit, contact Civorah support.",
+                 "modules":  {
+                                 "contracts":  "Contracts (CLM)",
+                                 "litigation":  "Litigation",
+                                 "compliance":  "Ethics \u0026 Compliance",
+                                 "due_diligence":  "Due Diligence",
+                                 "duediligence":  "Due Diligence",
+                                 "secretarial":  "Secretarial",
+                                 "land":  "Land \u0026 Property",
+                                 "whistleblowing":  "Whistleblowing",
+                                 "reporting":  "Reporting",
+                                 "ai_assistant":  "AI Assistant",
+                                 "aiassistant":  "AI Assistant",
+                                 "external_counsel":  "External Counsel",
+                                 "externalcounsel":  "External Counsel"
+                             },
+                 "limits":  {
+                                "documentMaxUpload":  "Max document upload size",
+                                "throttlePerMinute":  "API requests / minute",
+                                "contractRenewalThresholds":  "Contract renewal reminders (days before expiry)",
+                                "whistleblowingSla":  "Whistleblowing resolution SLA (days)",
+                                "complianceRenewalMonths":  "Counterparty re-screening cadence (months)"
+                            },
+                 "externalSeats":  "External counsel seats",
+                 "workspaces":  "Workspaces",
+                 "storage":  "Storage"
+             },
+    "integrations":  {
+                         "introCallout":  "Connect your organization with external providers (such as DocuSign for signing contracts or World-Check for screening counterparties) to automate your compliance and contracting workflows.",
+                         "title":  "Integrations",
+                         "subtitle":  "Connect your own provider accounts, or run each capability manually with a full audit trail. Credentials are encrypted at rest and never displayed again.",
+                         "modeLabels":  {
+                                            "byo":  "Connect your own",
+                                            "platform":  "Use Civorah",
+                                            "manual":  "Manual",
+                                            "disabled":  "Off"
+                                        },
+                         "modeHelp":  {
+                                          "byo":  "Connect your own provider account. Usage is billed to your account.",
+                                          "platform":  "Use Civorah\u0027s managed plan (coming soon).",
+                                          "manual":  "No external provider â€” your team signs / clears manually inside Civorah, with a full audit trail.",
+                                          "disabled":  "No third-party integration. Your team still completes this manually inside Civorah (sign documents / record clearances) â€” this only hides the connect-a-provider option."
+                                      },
+                         "domains":  {
+                                         "esignature":  "E-Signature",
+                                         "screening":  "Sanctions \u0026 Watchlist Screening",
+                                         "sso_microsoft":  "Microsoft SSO",
+                                         "sso_google":  "Google SSO"
+                                     },
+                         "blurbs":  {
+                                        "esignature":  "Send contracts for legally-binding electronic signature.",
+                                        "screening":  "Screen counterparties against sanctions, PEP and watchlists.",
+                                        "sso_microsoft":  "Let your team sign in with their Microsoft work accounts.",
+                                        "sso_google":  "Let your team sign in with their Google Workspace accounts."
+                                    },
+                         "providers":  {
+                                           "docusign":  {
+                                                            "name":  "DocuSign",
+                                                            "blurb":  "Authorize Civorah to send envelopes from your DocuSign account."
+                                                        },
+                                           "worldcheck":  {
+                                                              "name":  "World-Check One",
+                                                              "blurb":  "Integrate Refinitiv World-Check One for real-time counterparty KYC screening."
+                                                          }
+                                       },
+                         "status":  {
+                                        "connected":  "Ready",
+                                        "expired":  "Reconnect needed",
+                                        "error":  "Error",
+                                        "revoked":  "Revoked",
+                                        "not_configured":  "Not configured",
+                                        "comingSoon":  "Coming soon",
+                                        "connectedDetail":  "Connected Â· {{detail}}",
+                                        "encryptedHint":  "Encrypted at rest. The secret is never displayed again."
+                                    },
+                         "actions":  {
+                                         "disconnect":  "Disconnect",
+                                         "connect":  "Connect",
+                                         "testConnection":  "Test Connection",
+                                         "configure":  "Configure",
+                                         "save":  "Save",
+                                         "cancel":  "Cancel",
+                                         "connecting":  "Connecting...",
+                                         "saving":  "Saving...",
+                                         "testing":  "Testing...",
+                                         "disconnecting":  "Disconnecting...",
+                                         "reconnect":  "Reconnect"
+                                     },
+                         "worldcheck":  {
+                                            "enter":  "Enter your World-Check One credentials",
+                                            "reconnect":  "Reconnect your World-Check One account",
+                                            "findConsole":  "Find these in the World-Check One console under",
+                                            "adminApi":  "Administration â†’ API administration",
+                                            "apiUrl":  "API URL",
+                                            "apiKey":  "API key",
+                                            "apiKeyPlaceholder":  "API key (keyId)",
+                                            "apiSecret":  "API secret",
+                                            "groupId":  "Group ID (optional)",
+                                            "groupIdPlaceholder":  "Case-management group id",
+                                            "connectAction":  "Connect World-Check",
+                                            "reconnectAction":  "Reconnect World-Check"
+                                        }
+                     },
+    "settings":  {
+                     "header":  {
+                                    "title":  "Settings",
+                                    "subtitle":  "Manage your organization configuration and account security."
+                                },
+                     "tabs":  {
+                                  "organization":  "Organization",
+                                  "terminology":  "Terminology",
+                                  "features":  "Features",
+                                  "customFields":  "Custom Fields",
+                                  "layouts":  "Layouts",
+                                  "lifecycle":  "Lifecycle",
+                                  "security":  "Security (MFA)"
+                              },
+                     "organization":  {
+                                          "loading":  "Loading organization settings...",
+                                          "loadError":  "Failed to load settings. {{message}}",
+                                          "empty":  "No settings available.",
+                                          "success":  "Settings updated successfully.",
+                                          "error":  "Failed to update settings. Please check your input and try again.",
+                                          "readOnly":  {
+                                                           "title":  "Organization Info",
+                                                           "subtitle":  "These values are managed by platform administrators and cannot be edited here.",
+                                                           "field":  "Field",
+                                                           "value":  "Value",
+                                                           "labels":  {
+                                                                          "name":  "Name",
+                                                                          "slug":  "Slug",
+                                                                          "status":  "Status",
+                                                                          "adminSeats":  "Admin Seats",
+                                                                          "userSeats":  "User Seats",
+                                                                          "country":  "Country",
+                                                                          "timezone":  "Timezone",
+                                                                          "created":  "Created"
+                                                                      },
+                                                           "showing":  "Showing {{start}}-{{end}} of {{total}} fields"
+                                                       },
+                                          "editable":  {
+                                                           "title":  "Editable Settings",
+                                                           "subtitle":  "Update the fields below and click Save to apply changes.",
+                                                           "billingEmail":  "Billing Email",
+                                                           "timezone":  "Timezone",
+                                                           "domain":  "Domain",
+                                                           "nonStandardLegalReviewRequired":  "Require Legal Review for Non-Standard Contracts",
+                                                           "nonStandardLegalReviewRequiredHelp":  "When enabled, every Non-Standard MoA rule must include a Legal Review step.",
+                                                           "saving":  "Saving...",
+                                                           "saveAction":  "Save Settings",
+                                                           "billingPlaceholder":  "billing@example.com",
+                                                           "domainPlaceholder":  "e.g. acme.com"
+                                                       }
+                                      },
+                     "terminology":  {
+                                         "loading":  "Loading terminology...",
+                                         "description":  "Rename platform terms to match your organization\u0027s vocabulary (e.g. \"Counterparty\" â†’ \"Vendor\"). Overrides apply across the app for everyone in your organization. Leave blank to use the default.",
+                                         "groups":  {
+                                                        "moduleNames":  "Module Names",
+                                                        "contracts":  "Contracts",
+                                                        "matters":  "Matters",
+                                                        "compliance":  "Compliance",
+                                                        "whistleblowing":  "Whistleblowing",
+                                                        "general":  "General"
+                                                    },
+                                         "labels":  {
+                                                        "module_contracts":  "Contracts",
+                                                        "module_litigation":  "Matters",
+                                                        "module_compliance":  "Compliance",
+                                                        "module_whistleblowing":  "Whistleblowing",
+                                                        "module_secretarial":  "Secretarial",
+                                                        "module_land":  "Assets",
+                                                        "module_reporting":  "Reporting",
+                                                        "contracts_counterparty":  "Counterparty",
+                                                        "contracts_contract":  "Contract",
+                                                        "litigation_case":  "Matter",
+                                                        "litigation_hearing":  "Hearing",
+                                                        "compliance_counterparty":  "Counterparty",
+                                                        "compliance_screening":  "Screening",
+                                                        "whistleblowing_case":  "Report",
+                                                        "common_department":  "Department",
+                                                        "common_region":  "Region"
+                                                    },
+                                         "descriptions":  {
+                                                              "module_contracts":  "The Contracts module name (sidebar / dashboard).",
+                                                              "module_litigation":  "The Matters module name.",
+                                                              "module_compliance":  "The Compliance module name.",
+                                                              "module_whistleblowing":  "The Whistleblowing module name.",
+                                                              "module_secretarial":  "The Secretarial module name.",
+                                                              "module_land":  "The Assets module name.",
+                                                              "module_reporting":  "The Reporting module name.",
+                                                              "contracts_counterparty":  "The external party to a contract (e.g. \"Vendor\", \"Supplier\").",
+                                                              "contracts_contract":  "A single contract record.",
+                                                              "litigation_case":  "A matter record.",
+                                                              "litigation_hearing":  "A scheduled court hearing.",
+                                                              "compliance_counterparty":  "A third party undergoing due diligence.",
+                                                              "compliance_screening":  "A due-diligence screening request.",
+                                                              "whistleblowing_case":  "A whistleblowing report / case.",
+                                                              "common_department":  "Organizational department / cost center.",
+                                                              "common_region":  "Branch / region."
+                                                          },
+                                         "saveAction":  "Save",
+                                         "resetAction":  "Reset"
+                                     },
+                     "features":  {
+                                      "loading":  "Loading features...",
+                                      "description":  "Toggle optional capabilities for your organization. These are finer-grained than module access (which is set by your platform administrator).",
+                                      "empty":  "No configurable features available.",
+                                      "labels":  {
+                                                     "contracts.esignature":  "E-signature (DocuSign)",
+                                                     "contracts.idd_gate":  "Due-diligence gate on contracts",
+                                                     "ai.summarize":  "AI document summarization",
+                                                     "search.semantic":  "Semantic (AI) search"
+                                                 },
+                                      "descriptions":  {
+                                                           "contracts.esignature":  "Send execution-ready contracts for electronic signature.",
+                                                           "contracts.idd_gate":  "Block contract execution until counterparty IDD is cleared.",
+                                                           "ai.summarize":  "Generate executive summaries of long documents.",
+                                                           "search.semantic":  "Natural-language querying across indexed records."
+                                                       }
+                                  },
+                     "customFields":  {
+                                          "studio":  {
+                                                         "title":  "Custom field studio",
+                                                         "description":  "Add organisation-specific fields to contracts, matters, counterparties, and assets."
+                                                     },
+                                          "stats":  {
+                                                        "configured":  "Configured",
+                                                        "modules":  "Modules",
+                                                        "required":  "Required",
+                                                        "sensitive":  "Sensitive"
+                                                    },
+                                          "badge":  {
+                                                        "selected":  "Selected"
+                                                    },
+                                          "list":  {
+                                                       "title":  "{{entity}} Fields",
+                                                       "addAction":  "Add Custom Field",
+                                                       "loading":  "Loading fields...",
+                                                       "emptyTitle":  "No custom fields for {{entity}}",
+                                                       "emptyDescription":  "Add a custom field to capture organisation-specific data on {{entity}} records.",
+                                                       "deleteAction":  "Delete"
+                                                   },
+                                          "fieldBadge":  {
+                                                             "required":  "Required",
+                                                             "searchable":  "Searchable",
+                                                             "sensitive":  "Sensitive",
+                                                             "inactive":  "Inactive"
+                                                         },
+                                          "guide":  {
+                                                        "title":  "Placement guide"
+                                                    },
+                                          "drawer":  {
+                                                         "title":  "Add {{entity}} field",
+                                                         "subtitle":  "Define a new custom field for {{entity}} records.",
+                                                         "placementHeader":  "Placement",
+                                                         "sectionLabel":  "Section",
+                                                         "detailsHeader":  "Field Details",
+                                                         "label":  "Field label",
+                                                         "apiKeyLabel":  "API key",
+                                                         "apiKeyHint":  "Auto-generated from label. Used in exports and API responses.",
+                                                         "typeLabel":  "Field type",
+                                                         "optionsLabel":  "Options",
+                                                         "optionsHint":  "One option per line.",
+                                                         "behaviorHeader":  "Behaviour",
+                                                         "behavior":  {
+                                                                          "required":  {
+                                                                                           "title":  "Required",
+                                                                                           "hint":  "Must be filled before the record can be saved."
+                                                                                       },
+                                                                          "searchable":  {
+                                                                                             "title":  "Searchable",
+                                                                                             "hint":  "Include in global search results."
+                                                                                         },
+                                                                          "sensitive":  {
+                                                                                            "title":  "Sensitive",
+                                                                                            "hint":  "Mask value for non-admin users."
+                                                                                        }
+                                                                      },
+                                                         "resetAction":  "Reset",
+                                                         "adding":  "Adding...",
+                                                         "addAction":  "Add field",
+                                                         "labelPlaceholder":  "e.g. Cost Center Code",
+                                                         "apiKeyPlaceholder":  "cost_center_code",
+                                                         "optionsPlaceholder":  "Low\nMedium\nHigh"
+                                                     },
+                                          "entities":  {
+                                                           "contract":  {
+                                                                            "label":  "Contracts",
+                                                                            "module":  "Contracts",
+                                                                            "description":  "Agreement metadata, ownership, value, and lifecycle fields.",
+                                                                            "appearsOn":  "Contract detail \u003e Additional Information",
+                                                                            "placements":  {
+                                                                                               "identity":  {
+                                                                                                                "label":  "Identity",
+                                                                                                                "description":  "Basic contract identifiers."
+                                                                                                            },
+                                                                                               "valueampterm":  {
+                                                                                                                    "label":  "Value \u0026 term",
+                                                                                                                    "description":  "Commercial terms and dates."
+                                                                                                                },
+                                                                                               "ownership":  {
+                                                                                                                 "label":  "Ownership",
+                                                                                                                 "description":  "Owner, counsel, and department context."
+                                                                                                             },
+                                                                                               "compliance":  {
+                                                                                                                  "label":  "Compliance",
+                                                                                                                  "description":  "Risk, approval, and policy metadata."
+                                                                                                              }
+                                                                                           }
+                                                                        },
+                                                           "litigation_case":  {
+                                                                                   "label":  "Matters",
+                                                                                   "module":  "Matters",
+                                                                                   "description":  "Case identity, court details, assignment, risk, and outcomes.",
+                                                                                   "appearsOn":  "Matter detail \u003e Additional Information",
+                                                                                   "placements":  {
+                                                                                                      "identity":  {
+                                                                                                                       "label":  "Identity",
+                                                                                                                       "description":  "Case title, file number, and category."
+                                                                                                                   },
+                                                                                                      "courtampschedule":  {
+                                                                                                                               "label":  "Court \u0026 schedule",
+                                                                                                                               "description":  "Court, hearing, and date fields."
+                                                                                                                           },
+                                                                                                      "assignment":  {
+                                                                                                                         "label":  "Assignment",
+                                                                                                                         "description":  "Assignee, department, parties, and counsel."
+                                                                                                                     },
+                                                                                                      "riskampoutcome":  {
+                                                                                                                             "label":  "Risk \u0026 outcome",
+                                                                                                                             "description":  "Exposure, status, and closing context."
+                                                                                                                         }
+                                                                                                  }
+                                                                               },
+                                                           "counterparty":  {
+                                                                                "label":  "Counterparties",
+                                                                                "module":  "Compliance",
+                                                                                "description":  "Third-party due diligence, profile, and relationship data.",
+                                                                                "appearsOn":  "Counterparty detail \u003e Additional Information",
+                                                                                "placements":  {
+                                                                                                   "profile":  {
+                                                                                                                   "label":  "Profile",
+                                                                                                                   "description":  "Identity, registration, and contact information."
+                                                                                                               },
+                                                                                                   "duediligence":  {
+                                                                                                                        "label":  "Due diligence",
+                                                                                                                        "description":  "IDD status, screening, and approvals."
+                                                                                                                    },
+                                                                                                   "relationship":  {
+                                                                                                                        "label":  "Relationship",
+                                                                                                                        "description":  "Sponsor, relationship type, and engagement scope."
+                                                                                                                    },
+                                                                                                   "risk":  {
+                                                                                                                "label":  "Risk",
+                                                                                                                "description":  "Risk tier, renewal, and review metadata."
+                                                                                                            }
+                                                                                               }
+                                                                            },
+                                                           "land_asset":  {
+                                                                              "label":  "Assets",
+                                                                              "module":  "Assets",
+                                                                              "description":  "Asset profile, custody, location, valuation, and risk fields.",
+                                                                              "appearsOn":  "Asset detail \u003e Overview \u003e Additional Information",
+                                                                              "placements":  {
+                                                                                                 "assetprofile":  {
+                                                                                                                      "label":  "Asset profile",
+                                                                                                                      "description":  "Asset identity, type, and status."
+                                                                                                                  },
+                                                                                                 "location":  {
+                                                                                                                  "label":  "Location",
+                                                                                                                  "description":  "District, tehsil, mauza, coordinates, and site context."
+                                                                                                              },
+                                                                                                 "custodyampvalue":  {
+                                                                                                                         "label":  "Custody \u0026 value",
+                                                                                                                         "description":  "Custodian, department, cost, and current value."
+                                                                                                                     },
+                                                                                                 "riskampdocument":  {
+                                                                                                                         "label":  "Risk \u0026 document",
+                                                                                                                         "description":  "Encumbrance, warranty, and record metadata."
+                                                                                                                     }
+                                                                                             }
+                                                                          }
+                                                       },
+                                          "types":  {
+                                                        "TEXT":  {
+                                                                     "help":  "Short single-line text"
+                                                                 },
+                                                        "TEXTAREA":  {
+                                                                         "help":  "Long notes or description"
+                                                                     },
+                                                        "NUMBER":  {
+                                                                       "help":  "Whole number"
+                                                                   },
+                                                        "DECIMAL":  {
+                                                                        "help":  "Decimal amount or measurement"
+                                                                    },
+                                                        "BOOLEAN":  {
+                                                                        "help":  "Yes / No checkbox"
+                                                                    },
+                                                        "DATE":  {
+                                                                     "help":  "Calendar date"
+                                                                 },
+                                                        "DATETIME":  {
+                                                                         "help":  "Date and time"
+                                                                     },
+                                                        "SELECT":  {
+                                                                       "help":  "One option from a list"
+                                                                   },
+                                                        "MULTISELECT":  {
+                                                                            "help":  "Multiple options from a list"
+                                                                        },
+                                                        "EMAIL":  {
+                                                                      "help":  "Email address"
+                                                                  },
+                                                        "URL":  {
+                                                                    "help":  "Website or link"
+                                                                }
+                                                    },
+                                          "bottomNotice":  "Custom fields are currently enabled for Contracts, Matters, Counterparties, and Assets. Other modules can be added when their detail pages expose a stable Additional Information section."
+                                      },
+                     "layouts":  {
+                                     "description":  "Choose which columns appear in list views and control their order. Changes apply to all members of your organization.",
+                                     "listLabel":  "List",
+                                     "columnsHeader":  "Columns",
+                                     "loading":  "Loading layout...",
+                                     "saved":  "Saved",
+                                     "resetAction":  "Reset to default",
+                                     "saving":  "Saving...",
+                                     "saveAction":  "Save layout",
+                                     "moveUp":  "Move up",
+                                     "moveDown":  "Move down"
+                                 },
+                     "lifecycle":  {
+                                       "description":  "Customise the status labels and colours used in {{entity}} lifecycle views. Overrides apply across your organisation.",
+                                       "recordTypeLabel":  "Record type",
+                                       "statusesHeader":  "Statuses",
+                                       "loading":  "Loading lifecycle...",
+                                       "defaultColor":  "Default color",
+                                       "showing":  "Showing {{start}}-{{end}} of {{total}} statuses",
+                                       "saved":  "Saved",
+                                       "resetAction":  "Reset to default",
+                                       "saving":  "Saving...",
+                                       "saveAction":  "Save statuses"
+                                   }
+                 }
+}

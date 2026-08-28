@@ -26,7 +26,7 @@ export interface WbOversightScopeView {
 }
 
 export type WbOversightCaseParams = WbCaseListParams & { regionCode?: string };
-export type WbOversightStatsParams = { regionCode?: string; dateFrom?: string; dateTo?: string };
+export type WbOversightStatsParams = { regionCode?: string; dateFrom?: string; dateTo?: string; search?: string; status?: string; category?: string; priority?: string };
 
 /**
  * Org-admin **Whistleblowing oversight** API. Read-only, org-scoped, region- and
@@ -52,6 +52,15 @@ export const wbOversightService = {
       .get<
         PaginatedResponse<WbCaseListItem>
       >(`/organizations/${getOrgId()}/whistleblowing/cases`, { params })
+      .then((r) => r.data);
+  },
+
+  exportCsv(params?: WbOversightCaseParams) {
+    return apiClient
+      .get<Blob>(`/organizations/${getOrgId()}/whistleblowing/export.csv`, {
+        params,
+        responseType: 'blob',
+      })
       .then((r) => r.data);
   },
 

@@ -49,7 +49,11 @@ function normalizeSession(data: TargetAuthResponse): LoginResponse {
 }
 
 function organizationSlug(): string {
-  return localStorage.getItem('wb.organizationSlug') ?? import.meta.env.VITE_WB_ORGANIZATION_SLUG ?? '';
+  // The standalone deployment has one configured organization. Prefer its
+  // configured slug so a stale browser context from another organization
+  // cannot make every organization-scoped login fail with a 401.
+  const configuredSlug = import.meta.env.VITE_WB_ORGANIZATION_SLUG?.trim();
+  return configuredSlug || localStorage.getItem('wb.organizationSlug')?.trim() || '';
 }
 
 export const authService = {

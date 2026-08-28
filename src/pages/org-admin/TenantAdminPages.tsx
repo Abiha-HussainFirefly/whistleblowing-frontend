@@ -6,27 +6,26 @@ import {
   AlarmClock,
   BarChart3,
   BookOpen,
-  Briefcase,
   Building2,
   Check,
   CheckCircle2,
   ChevronRight,
   Clock3,
+  Download,
+  FileSpreadsheet,
+  FileText,
   Globe,
   HelpCircle,
   Info,
   Link2,
   Layers,
-  FileText,
   LockKeyhole,
   MessageSquareWarning,
   Pencil,
   Plus,
-  Package,
   Search,
   Settings,
   Shield,
-  ShieldCheck,
   Tags,
   Table2,
   Trash2,
@@ -36,6 +35,7 @@ import {
   UserRoundCheck,
   UserCircle,
   Users,
+  X,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import {
@@ -66,6 +66,7 @@ import { getApiErrorMessage } from '@lib/api-error';
 import { contextQueryKey } from '@lib/context-query-key';
 import { useAuthStore } from '@store/authStore';
 import { tenantAdminService, type TenantInvitation, type TenantMember, type TenantRegion } from '@features/org-admin/api/tenant-admin.service';
+import { wbOversightService } from '@features/org-admin/api/whistleblowing-oversight.service';
 import { useWbOversightCases, useWbOversightStats } from '@features/org-admin/hooks/whistleblowing-oversight';
 import type { InvestigationPriority, WbCaseListItem, WbStats, WhistleblowingCategory, WhistleblowingStatus } from '@features/whistleblowing/types';
 import { WB_CATEGORY_LABEL, WB_PRIORITY_LABEL, WB_STATUS_LABEL, formatDate, wbCategoryLabelOf, wbPriorityLabelOf, wbStatusLabelOf } from '@features/whistleblowing/utils/format';
@@ -110,14 +111,10 @@ function ConceptCallout({ children }: { children: string }): ReactElement {
   return <div className="mb-6 flex items-start gap-3 rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-xs text-slate-600"><Info className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" /><span>{children}</span></div>;
 }
 
-type ReportingTab = 'overview' | 'matters' | 'contracts' | 'assets' | 'compliance' | 'whistleblowing' | 'users';
+type ReportingTab = 'overview' | 'whistleblowing' | 'users';
 
 const reportingTabs: { key: ReportingTab; label: string }[] = [
   { key: 'overview', label: 'Overview' },
-  { key: 'matters', label: 'Matters' },
-  { key: 'contracts', label: 'Contracts' },
-  { key: 'assets', label: 'Assets' },
-  { key: 'compliance', label: 'Compliance' },
   { key: 'whistleblowing', label: 'Whistleblowing' },
   { key: 'users', label: 'Users' },
 ];
@@ -125,6 +122,78 @@ const reportingTabs: { key: ReportingTab; label: string }[] = [
 interface ReportingUsersData {
   members: TenantMember[];
   invitations: TenantInvitation[];
+}
+
+type ReportExportFormat = 'csv' | 'xlsx' | 'pdf';
+type ReportExportRow = Record<string, string | number | boolean | null | undefined>;
+
+function downloadBlob(blob: Blob, filename: string): void {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 0);
+}
+
+function csvCell(value: unknown): string {
+  const raw = String(value ?? '');
+  const guarded = /^[=+\-@]/.test(raw) ? `'${raw}` : raw;
+  return `"${guarded.replace(/"/g, '""')}"`;
+}
+
+function downloadLocalReport(
+  format: ReportExportFormat,
+  filename: string,
+  columns: { key: string; label: string }[],
+  rows: ReportExportRow[],
+): void {
+  if (format === 'csv') {
+    const body = [columns.map((column) => csvCell(column.label)).join(','), ...rows.map((row) => columns.map((column) => csvCell(row[column.key])).join(','))].join('\r\n');
+    downloadBlob(new Blob([body], { type: 'text/csv;charset=utf-8' }), `${filename}.csv`);
+    return;
+  }
+
+  if (format === 'xlsx') {
+    // Excel opens this standards-compatible HTML workbook without an extra
+    // client dependency, while preserving the same visible report columns.
+    const html = `<table><thead><tr>${columns.map((column) => `<th>${column.label}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${columns.map((column) => `<td>${String(row[column.key] ?? '').replace(/[&<>]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[character] ?? character)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    downloadBlob(new Blob([`<html><body>${html}</body></html>`], { type: 'application/vnd.ms-excel' }), `${filename}.xls`);
+    return;
+  }
+
+  const lines = [filename, ...rows.map((row) => columns.map((column) => String(row[column.key] ?? '')).join(' | '))].slice(0, 48);
+  const escapePdf = (value: string): string => value.replace(/([\\()])/g, '\\$1').replace(/[^\x20-\x7e]/g, '');
+  const stream = `BT /F1 8 Tf 36 760 Td 11 TL ${lines.map((line) => `(${escapePdf(line.slice(0, 150))}) Tj T*`).join(' ')} ET`;
+  const objects = [`<< /Type /Catalog /Pages 2 0 R >>`, `<< /Type /Pages /Kids [3 0 R] /Count 1 >>`, `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>`, `<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>`, `<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`];
+  let pdf = '%PDF-1.4\n';
+  const offsets = [0];
+  objects.forEach((object, index) => { offsets[index + 1] = pdf.length; pdf += `${index + 1} 0 obj\n${object}\nendobj\n`; });
+  const xref = pdf.length;
+  pdf += `xref\n0 ${objects.length + 1}\n0000000000 65535 f \n${offsets.slice(1).map((offset) => `${String(offset).padStart(10, '0')} 00000 n `).join('\n')}\ntrailer\n<< /Size ${objects.length + 1} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
+  downloadBlob(new Blob([pdf], { type: 'application/pdf' }), `${filename}.pdf`);
+}
+
+function ReportExportActions({ disabled, onExport }: { disabled?: boolean; onExport: (format: ReportExportFormat) => Promise<void> }): ReactElement {
+  const [busy, setBusy] = useState<ReportExportFormat | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const run = async (format: ReportExportFormat): Promise<void> => {
+    setBusy(format);
+    setError(null);
+    try { await onExport(format); } catch (errorResponse) { setError(getApiErrorMessage(errorResponse)); } finally { setBusy(null); }
+  };
+  const formats: { key: ReportExportFormat; label: string; icon: LucideIcon }[] = [
+    { key: 'csv', label: 'CSV', icon: Download },
+    { key: 'xlsx', label: 'Excel', icon: FileSpreadsheet },
+    { key: 'pdf', label: 'PDF', icon: FileText },
+  ];
+  return <div className="flex flex-wrap items-center gap-2"><span className="text-xs font-medium text-slate-500">Export</span>{formats.map(({ key, label, icon: Icon }) => <Button key={key} variant="outline" size="sm" disabled={disabled === true || busy !== null} onClick={() => void run(key)}><Icon className="h-4 w-4" />{busy === key ? 'Exporting…' : label}</Button>)}{error !== null && <span className="text-xs text-red-600">{error}</span>}</div>;
+}
+
+function ReportClearButton({ active, onClick }: { active: boolean; onClick: () => void }): ReactElement | null {
+  return active ? <Button variant="ghost" size="sm" onClick={onClick} className="h-9 shrink-0 gap-1 whitespace-nowrap text-slate-500"><X className="h-4 w-4" />Clear</Button> : null;
 }
 
 export function TenantReportingPage(): ReactElement {
@@ -139,11 +208,21 @@ export function TenantReportingPage(): ReactElement {
   const users = useQuery<ReportingUsersData>({
     queryKey: tenantQueryKey('reporting-users'),
     queryFn: async () => {
-      const [members, invitations] = await Promise.all([tenantAdminService.members(), tenantAdminService.invitations()]);
-      return { members: members.data, invitations: invitations.data };
+      const firstMembers = await tenantAdminService.members({ page: 1, pageSize: 100 });
+      const remainingMembers = firstMembers.meta.totalPages > 1
+        ? await Promise.all(Array.from({ length: firstMembers.meta.totalPages - 1 }, (_, index) => tenantAdminService.members({ page: index + 2, pageSize: 100 })))
+        : [];
+      const invitations = await tenantAdminService.invitations({ page: 1, pageSize: 100 });
+      return { members: [firstMembers, ...remainingMembers].flatMap((page) => page.data), invitations: invitations.data };
     },
     enabled: tab === 'overview' || tab === 'users',
     staleTime: 30_000,
+  });
+  const regions = useQuery({
+    queryKey: tenantQueryKey('reporting-regions'),
+    queryFn: () => tenantAdminService.regions(),
+    enabled: tab === 'whistleblowing' || tab === 'users',
+    staleTime: 60_000,
   });
   return <div>
     <TenantPageHeader icon={BarChart3} title="Reporting & Analytics" subtitle="Cross-module analytics with rich filters and CSV, Excel & PDF exports." />
@@ -151,9 +230,8 @@ export function TenantReportingPage(): ReactElement {
       {reportingTabs.map((item) => <button key={item.key} type="button" onClick={() => setTab(item.key)} className={`-mb-px shrink-0 whitespace-nowrap border-b-2 px-4 py-2.5 text-sm font-medium transition-colors ${tab === item.key ? 'border-brand-accent text-brand-accent' : 'border-transparent text-slate-500 hover:border-brand-accent hover:text-brand-accent'}`}>{item.label}</button>)}
     </div>
     {tab === 'overview' && <>{wb.isLoading || tenantStats.isLoading ? <Loader label="Loading reporting overview..." /> : wb.error ? <DataState isLoading={false} error={wb.error}>{null}</DataState> : tenantStats.error ? <DataState isLoading={false} error={tenantStats.error}>{null}</DataState> : <ReportingOverview stats={wb.data} users={users} tenantStats={tenantStats.data} onSelect={setTab} />}</>}
-    {tab !== 'overview' && tab !== 'whistleblowing' && tab !== 'users' && <ReportingUnavailableView title={reportingTabs.find((item) => item.key === tab)?.label ?? 'Reporting'} />}
-    {tab === 'whistleblowing' && <>{wb.isLoading ? <Loader label="Loading Whistleblowing analytics..." /> : wb.error ? <DataState isLoading={false} error={wb.error}>{null}</DataState> : <WhistleblowingReportView stats={wb.data} />}</>}
-    {tab === 'users' && <UsersReportView query={users} totalMembers={tenantStats.data?.members} />}
+    {tab === 'whistleblowing' && <>{wb.isLoading ? <Loader label="Loading Whistleblowing analytics..." /> : wb.error ? <DataState isLoading={false} error={wb.error}>{null}</DataState> : <WhistleblowingReportView stats={wb.data} regions={regions.data} />}</>}
+    {tab === 'users' && <UsersReportView query={users} totalMembers={tenantStats.data?.members} regions={regions.data} />}
   </div>;
 }
 
@@ -164,10 +242,6 @@ function normalizeStatus(value: string): string {
 function ReportingOverview({ stats, users, tenantStats, onSelect }: { stats: WbStats | undefined; users: UseQueryResult<ReportingUsersData>; tenantStats: { members: number; users: number } | undefined; onSelect: (tab: ReportingTab) => void }): ReactElement {
   const activeUsers = users.data?.members.filter((member) => normalizeStatus(member.status) === 'active').length;
   const cards: { title: string; value: number | string; metrics: { value: number | string; label: string }[]; icon: LucideIcon; tab: ReportingTab }[] = [
-    { title: 'Matters', value: '—', metrics: [{ value: '—', label: 'Open' }, { value: '—', label: 'Claim Value' }], icon: Briefcase, tab: 'matters' },
-    { title: 'Contracts', value: '—', metrics: [{ value: '—', label: 'Active' }, { value: '—', label: 'Value' }], icon: FileText, tab: 'contracts' },
-    { title: 'Assets', value: '—', metrics: [{ value: '—', label: 'Encumbered' }, { value: '—', label: 'Documented' }], icon: Package, tab: 'assets' },
-    { title: 'Compliance', value: '—', metrics: [{ value: '—', label: 'Approved' }, { value: '—', label: 'Review Overdue' }], icon: ShieldCheck, tab: 'compliance' },
     { title: 'Whistleblowing', value: stats?.total ?? '—', metrics: [{ value: stats?.open ?? '—', label: 'Open' }, { value: stats?.slaBreached ?? '—', label: 'SLA Breached' }], icon: MessageSquareWarning, tab: 'whistleblowing' },
     { title: 'Users', value: tenantStats?.members ?? users.data?.members.length ?? '—', metrics: [{ value: activeUsers ?? '—', label: 'Active' }], icon: Users, tab: 'users' },
   ];
@@ -178,24 +252,21 @@ function ReportCard({ title, value, metrics, icon: Icon, onClick }: { title: str
   return <button type="button" onClick={onClick} className="rounded-lg border border-slate-200 bg-white p-4 text-left transition-shadow hover:shadow-md"><div className="flex items-center justify-between gap-2"><div className="flex items-center gap-2.5"><span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-accent/10 text-brand-accent"><Icon className="h-4 w-4" /></span><h3 className="text-sm font-semibold text-brand-primary">{title}</h3></div><ChevronRight className="h-4 w-4 text-slate-300" /></div><p className="mt-3 text-base font-semibold text-brand-primary">{value}</p><p className="text-xs text-slate-400">Total records</p>{metrics.length > 0 && <div className="mt-3 flex gap-8 border-t border-slate-100 pt-3">{metrics.map((metric) => <div key={metric.label}><p className="text-sm font-semibold text-slate-800">{metric.value}</p><p className="text-[11px] text-slate-500">{metric.label}</p></div>)}</div>}</button>;
 }
 
-function ReportingUnavailableView({ title }: { title: string }): ReactElement {
-  return <section className="rounded-lg border border-slate-200 bg-white p-10 text-center"><BarChart3 className="mx-auto h-8 w-8 text-slate-300" /><h3 className="mt-3 font-semibold text-slate-800">{title} reporting is unavailable</h3><p className="mt-1 text-sm text-slate-500">This standalone Whistleblowing deployment has no live {title.toLowerCase()} data source.</p></section>;
-}
-
-function WhistleblowingReportView({ stats }: { stats: WbStats | undefined }): ReactElement {
+function WhistleblowingReportView({ stats, regions }: { stats: WbStats | undefined; regions?: TenantRegion[] }): ReactElement {
   const navigate = useNavigate();
   const [view, setView] = useState<'stats' | 'table'>('stats');
   const [search, setSearch] = useState('');
   const [status, setStatus] = useState<WhistleblowingStatus | ''>('');
   const [category, setCategory] = useState<WhistleblowingCategory | ''>('');
   const [priority, setPriority] = useState<InvestigationPriority | ''>('');
+  const [regionCode, setRegionCode] = useState('');
   const [dateFrom, setDateFrom] = useState('');
   const [dateTo, setDateTo] = useState('');
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(20);
-  const params = useMemo(() => ({ page, pageSize, ...(search.trim() ? { search: search.trim() } : {}), ...(status ? { status } : {}), ...(category ? { category } : {}), ...(priority ? { priority } : {}), ...(dateFrom ? { dateFrom } : {}), ...(dateTo ? { dateTo } : {}) }), [page, pageSize, search, status, category, priority, dateFrom, dateTo]);
+  const params = useMemo(() => ({ page, pageSize, ...(search.trim() ? { search: search.trim() } : {}), ...(status ? { status } : {}), ...(category ? { category } : {}), ...(priority ? { priority } : {}), ...(regionCode ? { regionCode } : {}), ...(dateFrom ? { dateFrom } : {}), ...(dateTo ? { dateTo } : {}) }), [page, pageSize, search, status, category, priority, regionCode, dateFrom, dateTo]);
   const cases = useWbOversightCases(params);
-  const filteredStats = useWbOversightStats({ ...(dateFrom ? { dateFrom } : {}), ...(dateTo ? { dateTo } : {}) });
+  const filteredStats = useWbOversightStats({ ...(regionCode ? { regionCode } : {}), ...(search.trim() ? { search: search.trim() } : {}), ...(status ? { status } : {}), ...(category ? { category } : {}), ...(priority ? { priority } : {}), ...(dateFrom ? { dateFrom } : {}), ...(dateTo ? { dateTo } : {}) });
   const reportStats = filteredStats.data ?? stats;
   const statusRows = Object.entries(reportStats?.byStatus ?? {});
   const categoryRows = Object.entries(reportStats?.byCategory ?? {});
@@ -203,6 +274,24 @@ function WhistleblowingReportView({ stats }: { stats: WbStats | undefined }): Re
   const anonymityRows: [string, number][] = [['Anonymous', reportStats?.anonymousCount ?? 0], ['Named', reportStats?.namedCount ?? 0]];
   const hasCases = (reportStats?.total ?? 0) > 0;
   const resetPage = (): void => setPage(1);
+  const hasFilters = Boolean(search || status || category || priority || regionCode || dateFrom || dateTo);
+  const clearFilters = (): void => { setSearch(''); setStatus(''); setCategory(''); setPriority(''); setRegionCode(''); setDateFrom(''); setDateTo(''); resetPage(); };
+  const exportCases = async (format: ReportExportFormat): Promise<void> => {
+    const exportParams = { ...(search.trim() ? { search: search.trim() } : {}), ...(status ? { status } : {}), ...(category ? { category } : {}), ...(priority ? { priority } : {}), ...(regionCode ? { regionCode } : {}), ...(dateFrom ? { dateFrom } : {}), ...(dateTo ? { dateTo } : {}) };
+    if (format === 'csv') {
+      downloadBlob(await wbOversightService.exportCsv(exportParams), 'whistleblowing-report.csv');
+      return;
+    }
+    const result = await wbOversightService.listCases({ ...exportParams, page: 1, pageSize: 100 });
+    const columns = [
+      { key: 'reference', label: 'Reference' }, { key: 'category', label: 'Category' }, { key: 'priority', label: 'Priority' },
+      { key: 'status', label: 'Status' }, { key: 'region', label: 'Region' }, { key: 'anonymous', label: 'Anonymous' },
+      { key: 'investigator', label: 'Investigator' }, { key: 'submitted', label: 'Submitted' }, { key: 'slaDeadline', label: 'SLA Deadline' },
+      { key: 'slaBreached', label: 'SLA Breached' }, { key: 'closed', label: 'Closed' },
+    ];
+    const rows = result.data.map((item) => ({ reference: item.caseReferenceNumber, category: wbCategoryLabelOf(item.category), priority: wbPriorityLabelOf(item.priority), status: wbStatusLabelOf(item.status), region: item.regionCode, anonymous: item.isAnonymous ? 'Yes' : 'No', investigator: item.assignedInvestigator?.displayName ?? item.assignedInvestigator?.email, submitted: formatDate(item.submittedAt), slaDeadline: formatDate(item.slaDeadline), slaBreached: item.slaBreachedAt ? 'Yes' : 'No', closed: formatDate(item.closedAt) }));
+    downloadLocalReport(format, 'whistleblowing-report', columns, rows);
+  };
 
   return <div className="space-y-5">
     <div className="flex w-full items-center gap-2 overflow-x-auto pb-1">
@@ -210,9 +299,11 @@ function WhistleblowingReportView({ stats }: { stats: WbStats | undefined }): Re
       <ReportSelect ariaLabel="Status" value={status} onChange={(value) => { setStatus(value as WhistleblowingStatus | ''); resetPage(); }}><option value="">Status</option>{Object.entries(WB_STATUS_LABEL).map(([key, label]) => <option key={key} value={key}>{label}</option>)}</ReportSelect>
       <ReportSelect ariaLabel="Category" value={category} onChange={(value) => { setCategory(value as WhistleblowingCategory | ''); resetPage(); }}><option value="">Category</option>{Object.entries(WB_CATEGORY_LABEL).map(([key, label]) => <option key={key} value={key}>{label}</option>)}</ReportSelect>
       <ReportSelect ariaLabel="Priority" value={priority} onChange={(value) => { setPriority(value as InvestigationPriority | ''); resetPage(); }}><option value="">Priority</option>{Object.entries(WB_PRIORITY_LABEL).map(([key, label]) => <option key={key} value={key}>{label}</option>)}</ReportSelect>
+      <ReportSelect ariaLabel="Region" value={regionCode} onChange={(value) => { setRegionCode(value); resetPage(); }}><option value="">All Regions</option>{(regions ?? []).filter((region) => region.isActive).map((region) => <option key={region.regionCode} value={region.regionCode}>{region.displayName}</option>)}</ReportSelect>
       <ReportSelect ariaLabel="Submitted Date" value="submittedAt" onChange={() => undefined}><option value="submittedAt">Submitted Date</option></ReportSelect>
       <ReportDateInput ariaLabel="From" value={dateFrom} onChange={(value) => { setDateFrom(value); resetPage(); }} placeholder="From" />
       <ReportDateInput ariaLabel="To" value={dateTo} onChange={(value) => { setDateTo(value); resetPage(); }} placeholder="To" />
+      <ReportClearButton active={hasFilters} onClick={clearFilters} />
       <ReportViewToggle view={view} onChange={setView} tableLabel="Case register" />
     </div>
     {view === 'stats' && <>
@@ -231,8 +322,9 @@ function WhistleblowingReportView({ stats }: { stats: WbStats | undefined }): Re
       </div>
        <ReportChartCard title="Reports / Month" subtitle="Trailing 12 months"><ReportTimeSeries points={reportStats?.submissionsByMonth ?? []} /></ReportChartCard>
     </>}
-    {view === 'table' && <>
-      {cases.isLoading ? <Loader label="Loading Whistleblowing records..." /> : cases.error ? <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700">{getApiErrorMessage(cases.error)}</div> : <section className="overflow-hidden rounded-lg border border-slate-200 bg-white"><div className="overflow-x-auto"><table className="w-full text-sm"><thead className="bg-slate-50"><tr>{['Reference', 'Category', 'Priority', 'Status', 'Region', 'Anonymous', 'Investigator', 'Submitted', 'SLA Deadline', 'SLA Breached', 'Closed'].map((heading) => <th key={heading} className="whitespace-nowrap px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">{heading}</th>)}</tr></thead><tbody className="divide-y divide-slate-100">{(cases.data?.data ?? []).length === 0 ? <tr><td colSpan={11} className="px-3 py-10 text-center text-sm text-slate-400">{hasCases ? 'No records match these filters.' : 'No data yet.'}</td></tr> : cases.data?.data.map((item) => <WbReportRow key={item.id} item={item} onOpen={() => navigate(ROUTES.ORG_ADMIN.WHISTLEBLOWING_CASE_DETAIL(item.id))} />)}</tbody></table></div><Pagination meta={cases.data?.meta} onPageChange={setPage} onPageSizeChange={(size) => { setPageSize(size); setPage(1); }} /></section>}
+     {view === 'table' && <>
+       <div className="flex justify-end"><ReportExportActions disabled={cases.data === undefined} onExport={exportCases} /></div>
+       {cases.isLoading ? <Loader label="Loading Whistleblowing records..." /> : cases.error ? <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700">{getApiErrorMessage(cases.error)}</div> : <section className="overflow-hidden rounded-lg border border-slate-200 bg-white"><div className="overflow-x-auto"><table className="w-full text-sm"><thead className="bg-slate-50"><tr>{['Reference', 'Category', 'Priority', 'Status', 'Region', 'Anonymous', 'Investigator', 'Submitted', 'SLA Deadline', 'SLA Breached', 'Closed'].map((heading) => <th key={heading} className="whitespace-nowrap px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">{heading}</th>)}</tr></thead><tbody className="divide-y divide-slate-100">{(cases.data?.data ?? []).length === 0 ? <tr><td colSpan={11} className="px-3 py-10 text-center text-sm text-slate-400">{hasCases ? 'No records match these filters.' : 'No data yet.'}</td></tr> : cases.data?.data.map((item) => <WbReportRow key={item.id} item={item} onOpen={() => navigate(ROUTES.ORG_ADMIN.WHISTLEBLOWING_CASE_DETAIL(item.id))} />)}</tbody></table></div><Pagination meta={cases.data?.meta} onPageChange={setPage} onPageSizeChange={(size) => { setPageSize(size); setPage(1); }} /></section>}
     </>}
   </div>;
 }
@@ -304,12 +396,21 @@ function lastSixMonths(): string[] {
   });
 }
 
-function UsersReportView({ query, totalMembers }: { query: UseQueryResult<ReportingUsersData>; totalMembers?: number }): ReactElement {
+function roleBadgeVariant(roleName: string): 'default' | 'success' | 'warning' | 'danger' | 'info' {
+  const role = roleName.toLowerCase();
+  if (role.includes('super') || role.includes('owner')) return 'danger';
+  if (role.includes('admin')) return 'warning';
+  if (role.includes('user') || role.includes('member')) return 'info';
+  return 'success';
+}
+
+function UsersReportView({ query, totalMembers, regions }: { query: UseQueryResult<ReportingUsersData>; totalMembers?: number; regions?: TenantRegion[] }): ReactElement {
   const [view, setView] = useState<'stats' | 'table'>('stats');
   const [search, setSearch] = useState('');
   const [status, setStatus] = useState('');
   const [role, setRole] = useState('');
   const [accountStatus, setAccountStatus] = useState('');
+  const [regionCode, setRegionCode] = useState('');
   const [dateFrom, setDateFrom] = useState('');
   const [dateTo, setDateTo] = useState('');
   const [page, setPage] = useState(1);
@@ -324,9 +425,9 @@ function UsersReportView({ query, totalMembers }: { query: UseQueryResult<Report
     return members.filter((member) => {
       const searchable = `${member.displayName ?? ''} ${member.email}`.toLowerCase();
       const joinedDate = member.joinedAt.slice(0, 10);
-      return (!needle || searchable.includes(needle)) && (!status || member.status === status) && (!role || member.roles.some((item) => item.name === role)) && (!accountStatus || member.accountStatus === accountStatus) && (!dateFrom || joinedDate >= dateFrom) && (!dateTo || joinedDate <= dateTo);
+      return (!needle || searchable.includes(needle)) && (!status || member.status === status) && (!role || member.roles.some((item) => item.name === role)) && (!accountStatus || member.accountStatus === accountStatus) && (!regionCode || member.regionCode === regionCode) && (!dateFrom || joinedDate >= dateFrom) && (!dateTo || joinedDate <= dateTo);
     });
-  }, [accountStatus, dateFrom, dateTo, members, role, search, status]);
+  }, [accountStatus, dateFrom, dateTo, members, regionCode, role, search, status]);
   const points = useMemo(() => {
     const counts = new Map<string, number>();
     members.forEach((member) => {
@@ -346,6 +447,17 @@ function UsersReportView({ query, totalMembers }: { query: UseQueryResult<Report
   const pageRows = filtered.slice((page - 1) * pageSize, page * pageSize);
   const meta = { page, pageSize, total: filtered.length, totalPages: Math.max(1, Math.ceil(filtered.length / pageSize)) };
   const resetPage = (): void => setPage(1);
+  const hasFilters = Boolean(search || status || role || accountStatus || regionCode || dateFrom || dateTo);
+  const clearFilters = (): void => { setSearch(''); setStatus(''); setRole(''); setAccountStatus(''); setRegionCode(''); setDateFrom(''); setDateTo(''); resetPage(); };
+  const exportUsers = async (format: ReportExportFormat): Promise<void> => {
+    const columns = [
+      { key: 'email', label: 'Email' }, { key: 'displayName', label: 'Display Name' }, { key: 'region', label: 'Region' },
+      { key: 'membershipStatus', label: 'Membership Status' }, { key: 'roles', label: 'Roles' }, { key: 'accountStatus', label: 'Account Status' },
+      { key: 'joined', label: 'Joined' },
+    ];
+    const rows = filtered.map((member) => ({ email: member.email, displayName: member.displayName, region: member.regionCode, membershipStatus: titleCase(normalizeStatus(member.status)), roles: member.roles.map((item) => item.name).join(', '), accountStatus: titleCase(normalizeStatus(member.accountStatus)), joined: formatDate(member.joinedAt) }));
+    downloadLocalReport(format, 'users-report', columns, rows);
+  };
 
   if (query.isLoading) return <Loader label="Loading Users analytics..." />;
   if (query.error) return <DataState isLoading={false} error={query.error}>{null}</DataState>;
@@ -356,9 +468,11 @@ function UsersReportView({ query, totalMembers }: { query: UseQueryResult<Report
       <ReportSelect ariaLabel="Membership Status" value={status} onChange={(value) => { setStatus(value); resetPage(); }}><option value="">Membership Status</option>{statuses.map((value) => <option key={value} value={value}>{titleCase(normalizeStatus(value))}</option>)}</ReportSelect>
       <ReportSelect ariaLabel="Platform Role" value={role} onChange={(value) => { setRole(value); resetPage(); }}><option value="">Platform Role</option>{roles.map((value) => <option key={value} value={value}>{value}</option>)}</ReportSelect>
       <ReportSelect ariaLabel="Account Status" value={accountStatus} onChange={(value) => { setAccountStatus(value); resetPage(); }}><option value="">Account Status</option>{accountStatuses.map((value) => <option key={value} value={value}>{titleCase(normalizeStatus(value))}</option>)}</ReportSelect>
+      <ReportSelect ariaLabel="Region" value={regionCode} onChange={(value) => { setRegionCode(value); resetPage(); }}><option value="">All Regions</option>{(regions ?? []).filter((region) => region.isActive).map((region) => <option key={region.regionCode} value={region.regionCode}>{region.displayName}</option>)}</ReportSelect>
       <ReportSelect ariaLabel="Active Date" value="joinedAt" onChange={() => undefined}><option value="joinedAt">Active Date</option></ReportSelect>
       <ReportDateInput ariaLabel="From" value={dateFrom} onChange={(value) => { setDateFrom(value); resetPage(); }} placeholder="From" />
       <ReportDateInput ariaLabel="To" value={dateTo} onChange={(value) => { setDateTo(value); resetPage(); }} placeholder="To" />
+      <ReportClearButton active={hasFilters} onClick={clearFilters} />
       <ReportViewToggle view={view} onChange={setView} tableLabel="Table" />
     </div>
     {view === 'stats' && <>
@@ -377,7 +491,7 @@ function UsersReportView({ query, totalMembers }: { query: UseQueryResult<Report
       </div>
       <ReportChartCard title="New Members / Month" subtitle="Members joined by month"><ReportTimeSeries points={points} /></ReportChartCard>
     </>}
-    {view === 'table' && <section className="overflow-hidden rounded-lg border border-slate-200 bg-white"><div className="overflow-x-auto"><table className="w-full min-w-[980px] text-sm"><thead className="bg-slate-50"><tr>{['Email', 'Display Name', 'Region', 'Membership Status', 'Role', 'Account Status', 'MFA', 'Last Login', 'Joined'].map((heading) => <th key={heading} className="whitespace-nowrap px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">{heading}</th>)}</tr></thead><tbody className="divide-y divide-slate-100">{pageRows.length === 0 ? <tr><td colSpan={9} className="px-3 py-10 text-center text-sm text-slate-400">{members.length > 0 ? 'No records match these filters.' : 'No data yet.'}</td></tr> : pageRows.map((member) => <tr key={member.id} className="hover:bg-slate-50"><td className="whitespace-nowrap px-3 py-2 font-medium text-brand-primary">{member.email}</td><td className="whitespace-nowrap px-3 py-2 text-slate-700">{member.displayName ?? '—'}</td><td className="whitespace-nowrap px-3 py-2 text-slate-500">{member.regionCode ?? '—'}</td><td className="whitespace-nowrap px-3 py-2 text-slate-600">{titleCase(normalizeStatus(member.status))}</td><td className="whitespace-nowrap px-3 py-2 text-slate-600">{member.roles[0]?.name ?? '—'}</td><td className="whitespace-nowrap px-3 py-2 text-slate-600">{titleCase(normalizeStatus(member.accountStatus))}</td><td className="whitespace-nowrap px-3 py-2 text-slate-500">—</td><td className="whitespace-nowrap px-3 py-2 text-slate-500">—</td><td className="whitespace-nowrap px-3 py-2 text-slate-500">{formatDate(member.joinedAt)}</td></tr>)}</tbody></table></div><Pagination meta={meta} onPageChange={setPage} onPageSizeChange={(size) => { setPageSize(size); setPage(1); }} /></section>}
+    {view === 'table' && <><div className="flex justify-end"><ReportExportActions disabled={filtered.length === 0} onExport={exportUsers} /></div><section className="overflow-hidden rounded-lg border border-slate-200 bg-white"><div className="overflow-x-auto"><table className="w-full min-w-[980px] text-sm"><thead className="bg-slate-50"><tr>{['Email', 'Display Name', 'Region', 'Membership Status', 'Roles', 'Account Status', 'MFA', 'Last Login', 'Joined'].map((heading) => <th key={heading} className="whitespace-nowrap px-3 py-2.5 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">{heading}</th>)}</tr></thead><tbody className="divide-y divide-slate-100">{pageRows.length === 0 ? <tr><td colSpan={9} className="px-3 py-10 text-center text-sm text-slate-400">{members.length > 0 ? 'No records match these filters.' : 'No data yet.'}</td></tr> : pageRows.map((member) => <tr key={member.id} className="hover:bg-slate-50"><td className="whitespace-nowrap px-3 py-2 font-medium text-brand-primary">{member.email}</td><td className="whitespace-nowrap px-3 py-2 text-slate-700">{member.displayName ?? '—'}</td><td className="whitespace-nowrap px-3 py-2 text-slate-500">{member.regionCode ?? '—'}</td><td className="whitespace-nowrap px-3 py-2 text-slate-600">{titleCase(normalizeStatus(member.status))}</td><td className="px-3 py-2"><div className="flex min-w-[10rem] flex-wrap gap-1">{member.roles.length ? member.roles.map((item) => <Badge key={item.id} variant={roleBadgeVariant(item.name)}>{item.name}</Badge>) : <span className="text-slate-400">—</span>}</div></td><td className="whitespace-nowrap px-3 py-2 text-slate-600">{titleCase(normalizeStatus(member.accountStatus))}</td><td className="whitespace-nowrap px-3 py-2 text-slate-500">—</td><td className="whitespace-nowrap px-3 py-2 text-slate-500">—</td><td className="whitespace-nowrap px-3 py-2 text-slate-500">{formatDate(member.joinedAt)}</td></tr>)}</tbody></table></div><Pagination meta={meta} onPageChange={setPage} onPageSizeChange={(size) => { setPageSize(size); setPage(1); }} /></section></>}
   </div>;
 }
 

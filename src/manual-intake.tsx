@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { ROUTES } from './config/routes';
 
 const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api/v1' });
 api.interceptors.request.use((config) => {
@@ -22,7 +23,7 @@ export function ManualIntakePage() {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     try {
-      const { data } = await api.post('/whistleblowing/cases/manual', {
+      await api.post('/whistleblowing/cases/manual', {
         category: form.get('category'), priority: form.get('priority'), caseType: form.get('caseType'), intakeMethod: form.get('intakeMethod'),
         incidentDescription: String(form.get('description') ?? '').trim(), incidentDate: form.get('incidentDate') || undefined,
         incidentLocation: form.get('location') || undefined, regionCode: form.get('regionCode') || undefined,
@@ -32,7 +33,7 @@ export function ManualIntakePage() {
         whenLastOccurred: form.get('whenLastOccurred') || undefined, conductDuration: form.get('conductDuration') || undefined, awarenessSource: form.get('awarenessSource') || undefined,
         intakeChannel: form.get('channel') || undefined, isAnonymous: form.get('anonymous') === 'on', reporterEmail: form.get('email') || undefined, reporterPhone: form.get('phone') || undefined,
       });
-      navigate(`/cases/${data.id}`);
+      navigate(ROUTES.WHISTLEBLOWING_REGISTER);
     } catch (e) { setError(errorText(e)); }
   }
 

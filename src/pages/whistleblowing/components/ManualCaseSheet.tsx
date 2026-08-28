@@ -225,7 +225,7 @@ export function ManualCaseSheet({ isOpen, onClose }: ManualCaseSheetProps): Reac
         resetFields();
         setDraftRestored(false);
         onClose();
-        navigate(ROUTES.WHISTLEBLOWING_DETAIL(c.id));
+        navigate(ROUTES.WHISTLEBLOWING_REGISTER);
       },
       onError: (e) => {
         const message = getApiErrorMessage(e);

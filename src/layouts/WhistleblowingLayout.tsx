@@ -64,22 +64,9 @@ export function WhistleblowingLayout(): ReactElement {
             <X className="h-6 w-6" />
           </button>
         </div>
-
-        <nav className="sidebar-scroll flex-1 space-y-1 overflow-y-auto px-3 py-5">
-          <NavItem
-            to={ROUTES.DASHBOARD}
-            label={t('nav.dashboard', { defaultValue: 'Overview' })}
-            icon={LayoutDashboard}
-            expanded={expanded}
-            onClick={close}
-          />
-          <NavItem
-            to={ROUTES.WHISTLEBLOWING}
-            label={t('modules.whistleblowing.label', { defaultValue: 'Whistleblowing' })}
-            icon={MessageSquareWarning}
-            expanded={expanded}
-            onClick={close}
-          />
+        <nav className="flex-1 space-y-1 px-3 py-5">
+          <NavItem to={ROUTES.DASHBOARD} label={t('nav.dashboard', { defaultValue: 'Dashboard' })} icon={LayoutDashboard} expanded={expanded} onClick={close} />
+          <NavItem to={ROUTES.WHISTLEBLOWING} label={t('modules.whistleblowing.label', { defaultValue: 'Whistleblowing' })} icon={MessageSquareWarning} expanded={expanded} onClick={close} />
         </nav>
 
         {/* The secure-environment reminder from the reference dashboard. It is

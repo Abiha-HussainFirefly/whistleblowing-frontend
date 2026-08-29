@@ -39,8 +39,11 @@ export function PortalUserMenu({ placement, sidebarCollapsed = false, profileRou
   const isRtl = i18n.dir() === 'rtl';
   const rawName = user?.displayName?.trim();
   const email = user?.email?.trim();
-  const name = rawName || email || 'Guest';
-  const emailLabel = email || 'Not signed in';
+  const storedName = typeof localStorage !== 'undefined' ? localStorage.getItem('wb.userDisplayName')?.trim() : '';
+  const storedEmail = typeof localStorage !== 'undefined' ? localStorage.getItem('wb.userEmail')?.trim() : '';
+  const storedPlatformRole = typeof localStorage !== 'undefined' ? localStorage.getItem('wb.platformRole') : null;
+  const name = rawName || email || storedName || storedEmail || (storedPlatformRole === 'SUPER_ADMIN' ? 'Admin' : 'Guest');
+  const emailLabel = email || storedEmail || (storedPlatformRole === 'SUPER_ADMIN' ? 'System administrator' : 'Not signed in');
 
   const themeOptions: { value: ThemePreference; label: string; icon: typeof Sun }[] = [
     { value: 'light', label: t('theme.light'), icon: Sun },

@@ -140,14 +140,17 @@ describe('Whistleblowing React workflows', () => {
         <App />
       </MemoryRouter>,
     );
-    await waitFor(() => expect(screen.getByText('Board-ready overview')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('Case overview')).toBeInTheDocument());
     expect(screen.getByText('TOTAL REPORTS')).toBeInTheDocument();
   });
 
-  it('renders the source-style landing and real auth routes', () => {
+  it('renders the Tellara landing and real auth routes', () => {
     routed(<App />, '/');
-    expect(screen.getByText('Centralize every contract, case, and compliance record.')).toBeInTheDocument();
-    expect(screen.getAllByRole('link', { name: 'Sign In' })[0]).toHaveAttribute('href', '/auth/login');
+    // The landing page must position Tellara as a protected speak-up channel.
+    expect(screen.getByRole('heading', { name: /Speak safely\. Stay heard\./ })).toBeInTheDocument();
+    expect(screen.getAllByRole('link', { name: 'Sign in' })[0]).toHaveAttribute('href', '/auth/login');
+    // Raising a concern must never be gated behind the staff sign-in.
+    expect(screen.getByRole('link', { name: /Raise a concern/ })).toBeInTheDocument();
 
     cleanup();
     routed(<App />, '/auth/login');
@@ -156,12 +159,12 @@ describe('Whistleblowing React workflows', () => {
 
     cleanup();
     routed(<App />, '/auth/org/login');
-    expect(screen.getByRole('heading', { name: 'Admin Sign In' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Welcome back' })).toBeInTheDocument();
     expect(screen.getByLabelText('Email')).toBeRequired();
 
     cleanup();
     routed(<App />, '/auth/signup');
-    expect(screen.getByRole('heading', { name: 'Create your Civorah organization' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Create your Tellara organization' })).toBeInTheDocument();
     expect(screen.getByLabelText('Confirm password')).toBeRequired();
   });
 

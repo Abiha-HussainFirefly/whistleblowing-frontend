@@ -1,12 +1,21 @@
 import { type ReactNode } from 'react';
 import { cn } from '@lib/utils';
 
+/**
+ * Generic label chip.
+ *
+ * For whistleblowing case state use `StatusPill` / `SeverityMeter` instead —
+ * those encode the workflow/action/operational distinction the brand manual
+ * requires. This component is for neutral metadata: categories, counts, tags.
+ */
 const VARIANT_CLASSES = {
-  default: 'bg-slate-100 text-slate-700 dark:bg-slate-700/80 dark:text-slate-100',
-  success: 'bg-green-100 text-green-700 dark:bg-emerald-700/40 dark:text-emerald-100',
-  warning: 'bg-amber-100 text-amber-700 dark:bg-amber-700/40 dark:text-amber-100',
-  danger: 'bg-red-100 text-red-700 dark:bg-red-700/40 dark:text-red-100',
-  info: 'bg-blue-100 text-blue-700 dark:bg-brand-accent/35 dark:text-[#d7fbff]',
+  default: 'bg-muted text-muted-foreground border-border',
+  neutral: 'bg-muted text-muted-foreground border-border',
+  info: 'bg-signal-tint text-signal-strong border-signal/20',
+  brand: 'bg-plum-tint text-plum border-plum/20',
+  success: 'bg-moss-tint text-moss border-moss/25',
+  warning: 'bg-courage-tint text-courage-strong border-courage/30',
+  danger: 'bg-state-priority-surface text-state-priority-text border-state-priority-text/20',
 } as const;
 
 type BadgeVariant = keyof typeof VARIANT_CLASSES;
@@ -21,7 +30,7 @@ export function Badge({ children, variant = 'default', className }: BadgeProps) 
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium',
+        'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium',
         // eslint-disable-next-line security/detect-object-injection
         VARIANT_CLASSES[variant],
         className,

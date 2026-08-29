@@ -17,15 +17,15 @@ export function WbHeader({ hideNav = false }: { hideNav?: boolean }): ReactEleme
   return (
     <div className="space-y-4">
       <div className="flex items-start gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-accent text-white">
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-plum-tint text-plum">
           <MessageSquareWarning className="h-5 w-5" />
         </div>
 
         <div>
-          <PageTitle as="h2" className="text-[#042248] dark:text-white">
+          <PageTitle as="h2" className="text-foreground">
             {t('header.title', { defaultValue: 'Whistleblowing & Incident Management' })}
           </PageTitle>
-          <p className="mt-1 text-sm text-slate-500 dark:text-slate-200">
+          <p className="mt-1 text-sm text-muted-foreground">
             {t('header.subtitle', {
               defaultValue: 'Confidential intake, investigation workflow & board-ready analytics.',
             })}
@@ -34,7 +34,7 @@ export function WbHeader({ hideNav = false }: { hideNav?: boolean }): ReactEleme
       </div>
 
       {!hideNav && (
-        <nav className="flex gap-1 border-b border-slate-200 dark:border-slate-700">
+        <nav className="flex gap-1 border-b border-border">
           {TABS.map((tab) => (
             <NavLink
               key={tab.to}
@@ -44,8 +44,8 @@ export function WbHeader({ hideNav = false }: { hideNav?: boolean }): ReactEleme
                 cn(
                   '-mb-[2px] border-b-2 px-4 py-2 text-sm font-medium transition-colors',
                   isActive
-                    ? 'border-brand-accent text-brand-accent dark:border-brand-accent dark:text-brand-accent'
-                    : 'border-transparent text-slate-500 hover:text-brand-accent dark:hover:text-brand-accent',
+                    ? 'border-signal text-signal-strong'
+                    : 'border-transparent text-muted-foreground hover:text-foreground',
                 )
               }
             >

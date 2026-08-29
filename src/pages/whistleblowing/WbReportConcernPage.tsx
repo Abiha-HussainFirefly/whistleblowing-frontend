@@ -14,6 +14,7 @@ import { saveReporterToken } from '@features/whistleblowing/reporterSession';
 import { ReportIntakeForm } from '@features/whistleblowing/components/ReportIntakeForm';
 import { ReportCredentials } from '@features/whistleblowing/components/ReportCredentials';
 import { ShareReportingLink } from '@features/whistleblowing/components/ShareReportingLink';
+import { ReporterAssuranceRail } from '@features/whistleblowing/components/ReporterAssuranceRail';
 import type { ReporterSubmitResult } from '@features/whistleblowing/types';
 
 export function WbReportConcernPage(): ReactElement {
@@ -33,41 +34,40 @@ export function WbReportConcernPage(): ReactElement {
 
   return (
     <div className="mx-auto max-w-6xl space-y-6 px-4 py-2 sm:px-6">
-      <div className="flex flex-col gap-4 border-b border-slate-100 pb-5 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-4 border-b border-border pb-5 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-start gap-3">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-accent text-white">
-            <MessageSquareWarning className="h-5 w-5" />
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-signal-tint text-signal-strong">
+            <MessageSquareWarning className="h-5 w-5" aria-hidden="true" />
           </div>
           <div className="space-y-1">
-            <PageTitle className="text-slate-900 dark:text-slate-100">
-              {t('page.title', { defaultValue: 'Report a concern' })}
+            <PageTitle className="text-foreground">
+              {t('page.title', { defaultValue: 'Raise a concern' })}
             </PageTitle>
-            <p className="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
               {t('page.subtitle', {
                 defaultValue:
-                  'Confidentially report suspected misconduct. You may remain anonymous.',
+                  'Raise a concern about suspected misconduct. You are not required to provide your identity.',
               })}
             </p>
           </div>
         </div>
 
-        {/* Header-Level Tour Button */}
         <div className="shrink-0 sm:self-center">
           <Button
-            variant="default"
+            variant="outline"
+            size="sm"
             onClick={() => {
               setTourTriggerTime(Date.now());
             }}
-            className="flex h-9 items-center gap-2 rounded-lg bg-[#007d89] px-4 text-xs font-semibold text-white shadow-sm hover:bg-[#007d89]/90"
           >
-            <HelpCircle className="h-4 w-4 text-white/90" />
-            {t('form.takeTour', { defaultValue: 'Take a tour' })}
+            <HelpCircle className="h-4 w-4" aria-hidden="true" />
+            {t('form.takeTour', { defaultValue: 'How it works' })}
           </Button>
         </div>
       </div>
 
       {slug === null ? (
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 text-center text-sm text-slate-500 dark:border-slate-800 dark:bg-slate-900/50">
+        <div className="rounded-xl border border-border bg-muted/40 p-6 text-center text-sm text-muted-foreground">
           {t('page.noContext', { defaultValue: 'No active organization context.' })}
         </div>
       ) : info.isLoading ? (
@@ -79,7 +79,7 @@ export function WbReportConcernPage(): ReactElement {
           />
         </div>
       ) : info.isError || info.data === undefined ? (
-        <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-5 text-sm text-amber-900 shadow-sm dark:border-amber-950/40 dark:bg-amber-950/20 dark:text-amber-400">
+        <div className="rounded-xl border border-courage/35 bg-courage-tint p-5 text-sm text-foreground">
           {getApiErrorMessage(
             info.error,
             t('page.notEnabled', {
@@ -90,13 +90,24 @@ export function WbReportConcernPage(): ReactElement {
       ) : result !== null ? (
         <ReportCredentials
           result={result}
+          {...(info.data === undefined
+            ? {}
+            : { organizationName: info.data.organizationName })}
           onTrack={() => {
             saveReporterToken(result.token);
             window.open(ROUTES.REPORT.TRACK, '_blank');
           }}
         />
       ) : (
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start">
+        <div className="grid gap-6 lg:grid-cols-[19rem_minmax(0,1fr)] lg:items-start">
+          <aside className="space-y-4 lg:sticky lg:top-4">
+            <ReporterAssuranceRail
+              onHowItWorks={() => {
+                setTourTriggerTime(Date.now());
+              }}
+            />
+            <ShareReportingLink />
+          </aside>
           <ReportIntakeForm
             organizationSlug={slug}
             orgInfo={info.data}
@@ -104,15 +115,12 @@ export function WbReportConcernPage(): ReactElement {
               setResult(submitted);
               toast.success(
                 t('page.reportSubmittedToast', {
-                  defaultValue: 'Report submitted successfully. Save the credentials now.',
+                  defaultValue: 'Report submitted. Save your case credentials now.',
                 }),
               );
             }}
             tourTriggerTime={tourTriggerTime}
           />
-          <aside className="lg:sticky lg:top-4">
-            <ShareReportingLink />
-          </aside>
         </div>
       )}
     </div>

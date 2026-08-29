@@ -28,7 +28,7 @@
     "next": {
       "submit": "Nächster Schritt: zur Genehmigung einreichen — ein Kollege mit Einreichungsberechtigung muss dies tun. Der Ersteller kann seinen eigenen Vertrag nicht einreichen.",
       "approvals": "Nächster Schritt: Genehmigungen — die zugewiesenen Genehmiger entscheiden der Reihe nach. Der Ersteller kann seinen eigenen Vertrag nicht genehmigen.",
-      "execute": "Nächster Schritt: ausführen — jemand mit Ausführungsberechtigung kann in Civorah unterschreiben, über DocuSign senden oder eine manuelle Ausführung erfassen.",
+      "execute": "Nächster Schritt: ausführen — jemand mit Ausführungsberechtigung kann in Tellara unterschreiben, über DocuSign senden oder eine manuelle Ausführung erfassen.",
       "signatures": "Nächster Schritt: Signaturen abschließen — es wird auf Unterzeichner gewartet, danach ist der Vertrag ausgeführt."
     },
     "terminal": {
@@ -94,7 +94,7 @@
       "submit": "Die Einreichung erfolgt durch einen anderen Kollegen mit Einreichen-Berechtigung; der Ersteller kann den eigenen Vertrag nicht einreichen.",
       "chain": "Beim Einreichen wird die Genehmigungskette automatisch aus MoA-Regeln erzeugt oder manuell erstellt, wenn keine Regel passt.",
       "approvers": "Genehmiger entscheiden jeden Schritt der Reihe nach. Der Ersteller kann den eigenen Vertrag nicht genehmigen.",
-      "execute": "Nach der Genehmigung f?hrt eine Person mit Ausf?hren-Berechtigung den Vertrag in Civorah, ?ber DocuSign oder durch manuelle Ausf?hrung aus."
+      "execute": "Nach der Genehmigung f?hrt eine Person mit Ausf?hren-Berechtigung den Vertrag in Tellara, ?ber DocuSign oder durch manuelle Ausf?hrung aus."
     },
     "submit": {
       "title": "Zur Genehmigung einreichen",

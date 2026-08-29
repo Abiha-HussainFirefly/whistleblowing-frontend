@@ -259,7 +259,7 @@ export function ManualCaseSheet({ isOpen, onClose }: ManualCaseSheetProps): Reac
     >
       <div className="form-sheet-body space-y-4">
         {draftRestored && (
-          <div className="flex items-center justify-between gap-3 rounded-lg border border-brand-accent/25 bg-[#e6f5f6]/40 px-3 py-2 text-sm text-brand-primary">
+          <div className="flex items-center justify-between gap-3 rounded-lg border border-brand-accent/25 bg-[#F2EFFF]/40 px-3 py-2 text-sm text-brand-primary">
             <span className="flex items-center gap-2">
               <History className="h-4 w-4 shrink-0 text-brand-accent" />
               {t('manualCase.draftRestored', {
@@ -461,7 +461,7 @@ export function ManualCaseSheet({ isOpen, onClose }: ManualCaseSheetProps): Reac
           </div>
         </Field>
 
-        {error !== null && <p className="text-sm font-medium text-red-600">{error}</p>}
+        {error !== null && <p className="text-sm font-medium text-destructive">{error}</p>}
       </div>
     </Sheet>
   );
@@ -470,7 +470,7 @@ export function ManualCaseSheet({ isOpen, onClose }: ManualCaseSheetProps): Reac
 function Field({ label, children }: { label: string; children: ReactElement }): ReactElement {
   return (
     <label className="block w-full space-y-1.5">
-      <span className="text-sm font-medium text-slate-700 dark:text-slate-300">{label}</span>
+      <span className="text-sm font-medium text-foreground">{label}</span>
       {children}
     </label>
   );

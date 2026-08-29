@@ -22,15 +22,15 @@ export function ToggleActionButton({
     tone === 'success'
       ? 'border-emerald-200 text-emerald-700 hover:border-emerald-300 hover:bg-emerald-50'
       : tone === 'danger'
-        ? 'border-red-200 text-red-700 hover:border-red-300 hover:bg-red-50'
-        : 'border-slate-200 text-slate-600 hover:border-brand-accent/40 hover:text-brand-primary';
+        ? 'border-destructive/25 text-destructive hover:border-red-300 hover:bg-red-50'
+        : 'border-border text-muted-foreground hover:border-brand-accent/40 hover:text-brand-primary';
 
   return (
     <Button
       type="button"
       size="sm"
       variant="outline"
-      className={cn('gap-1.5 transition-all', toneClass, open && 'bg-slate-50 shadow-sm')}
+      className={cn('gap-1.5 transition-all', toneClass, open && 'bg-muted/50 shadow-sm')}
       aria-expanded={open}
       onClick={onClick}
     >
@@ -43,7 +43,7 @@ export function ToggleActionButton({
 
 export function InlineActionPanel({ children }: { children: ReactNode }): ReactElement {
   return (
-    <div className="mt-4 space-y-3 rounded-xl border border-brand-accent/20 bg-slate-50/80 p-4 shadow-inner dark:border-slate-700 dark:bg-slate-900/40">
+    <div className="mt-4 space-y-3 rounded-xl border border-brand-accent/20 bg-muted/50/80 p-4 shadow-inner">
       {children}
     </div>
   );
@@ -61,9 +61,9 @@ export function Panel({
   action?: ReactNode;
 }): ReactElement {
   return (
-    <section className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-800">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 bg-slate-50/70 px-5 py-4 dark:border-slate-700 dark:bg-slate-900/30">
-        <h3 className="flex items-center gap-2.5 text-sm font-semibold text-slate-900 dark:text-slate-100">
+    <section className="overflow-hidden rounded-xl border border-border bg-white shadow-sm">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-muted/50/70 px-5 py-4">
+        <h3 className="flex items-center gap-2.5 text-sm font-semibold text-foreground">
           {Icon !== undefined && (
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-accent/10 text-brand-accent">
               <Icon className="h-4 w-4" />
@@ -86,11 +86,11 @@ export function EmptyState({
   label: string;
 }): ReactElement {
   return (
-    <div className="flex flex-col items-center gap-2 rounded-lg border border-dashed border-slate-200 bg-slate-50/60 py-8 text-center dark:border-slate-700 dark:bg-slate-900/30">
-      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-300 shadow-sm dark:bg-slate-800">
+    <div className="flex flex-col items-center gap-2 rounded-lg border border-dashed border-border bg-muted/50/60 py-8 text-center">
+      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-muted-foreground/70 shadow-sm">
         <Icon className="h-5 w-5" />
       </span>
-      <p className="text-sm text-slate-400">{label}</p>
+      <p className="text-sm text-muted-foreground/70">{label}</p>
     </div>
   );
 }
@@ -98,9 +98,9 @@ export function EmptyState({
 export function Field({ label, value }: { label: string; value: string | null }): ReactElement {
   return (
     <div>
-      <dt className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</dt>
+      <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</dt>
       <dd
-        className="notranslate mt-1 text-sm text-slate-800 dark:text-slate-200"
+        className="notranslate mt-1 text-sm text-foreground"
         translate="no"
         dir="auto"
       >
@@ -113,8 +113,8 @@ export function Field({ label, value }: { label: string; value: string | null })
 export function CaseMeta({ label, value }: { label: string; value: string }): ReactElement {
   return (
     <div className="min-w-0">
-      <dt className="text-[11px] font-medium uppercase tracking-wide text-slate-400">{label}</dt>
-      <dd className="mt-0.5 truncate text-sm text-slate-700 dark:text-slate-200">{value}</dd>
+      <dt className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground/70">{label}</dt>
+      <dd className="mt-0.5 truncate text-sm text-foreground">{value}</dd>
     </div>
   );
 }
@@ -124,12 +124,12 @@ export function CaseStageProgress({ status }: { status: WbCaseDetail['status'] }
   const stages = ['Submitted', 'Triage', 'Investigation', 'Outcome'];
 
   return (
-    <div className="border-t border-slate-100 px-5 py-4 dark:border-slate-700">
+    <div className="border-t border-border px-5 py-4">
       <div className="flex items-center justify-between gap-3">
-        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
           Case progress
         </p>
-        <p className="text-xs text-slate-400">
+        <p className="text-xs text-muted-foreground/70">
           {stages.find((_, index) => index === activeStage) ?? stages.at(-1) ?? 'Outcome'} stage
         </p>
       </div>
@@ -145,7 +145,7 @@ export function CaseStageProgress({ status }: { status: WbCaseDetail['status'] }
                     'flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold',
                     complete || current
                       ? 'bg-brand-accent text-white'
-                      : 'bg-slate-100 text-slate-400 dark:bg-slate-700',
+                      : 'bg-muted text-muted-foreground/70',
                   )}
                 >
                   {complete ? <CheckCircle2 className="h-3.5 w-3.5" /> : index + 1}
@@ -153,7 +153,7 @@ export function CaseStageProgress({ status }: { status: WbCaseDetail['status'] }
                 <span
                   className={cn(
                     'truncate text-xs font-medium',
-                    current || complete ? 'text-slate-700 dark:text-slate-200' : 'text-slate-400',
+                    current || complete ? 'text-foreground' : 'text-muted-foreground/70',
                   )}
                 >
                   {stage}
@@ -163,7 +163,7 @@ export function CaseStageProgress({ status }: { status: WbCaseDetail['status'] }
                 <div
                   className={cn(
                     'ml-8 mt-1 h-0.5 rounded-full',
-                    index < activeStage ? 'bg-brand-accent/60' : 'bg-slate-100 dark:bg-slate-700',
+                    index < activeStage ? 'bg-brand-accent/60' : 'bg-muted',
                   )}
                 />
               )}
@@ -178,9 +178,9 @@ export function CaseStageProgress({ status }: { status: WbCaseDetail['status'] }
 export function RecordBlock({ label, value }: { label: string; value: string }): ReactElement {
   return (
     <div className="mb-3 last:mb-0">
-      <p className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</p>
+      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</p>
       <p
-        className="notranslate mt-1 whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-200"
+        className="notranslate mt-1 whitespace-pre-wrap text-sm text-foreground"
         translate="no"
         dir="auto"
       >

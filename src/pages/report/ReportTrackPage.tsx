@@ -176,7 +176,7 @@ function PrivacyHelpBanner(): ReactElement {
             <h4 className="text-sm font-bold text-white">
               {t('track.banner.privacyTitle', { defaultValue: 'Your privacy matters' })}
             </h4>
-            <p className="text-xs text-slate-300">
+            <p className="text-xs text-muted-foreground/70">
               {t('track.banner.privacyBody', {
                 defaultValue:
                   'Your report is encrypted and handled confidentially. You may report anonymously.',
@@ -192,7 +192,7 @@ function PrivacyHelpBanner(): ReactElement {
           <h4 className="text-sm font-bold text-white">
             {t('track.banner.helpTitle', { defaultValue: 'Need help?' })}
           </h4>
-          <p className="text-xs text-slate-300">
+          <p className="text-xs text-muted-foreground/70">
             {t('track.banner.helpBody', {
               defaultValue: 'If you have any questions, please contact our Whistleblowing Office.',
             })}
@@ -216,13 +216,13 @@ function TrackCardField({
     return null;
   }
   return (
-    <div className="flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50/50 p-3.5 dark:border-slate-800 dark:bg-slate-900/40">
+    <div className="flex items-start gap-3 rounded-xl border border-border bg-muted/50/50 p-3.5">
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-accent/10 text-brand-accent">
         <Icon className="h-4 w-4" />
       </span>
       <div className="space-y-0.5">
-        <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{label}</p>
-        <p className="text-sm font-semibold text-slate-800 dark:text-slate-100">{value}</p>
+        <p className="text-xs font-medium text-muted-foreground">{label}</p>
+        <p className="text-sm font-semibold text-foreground">{value}</p>
       </div>
     </div>
   );
@@ -235,7 +235,7 @@ function MessageAvatar({ fromReporter }: { fromReporter: boolean }): ReactElemen
         'flex h-8 w-8 shrink-0 items-center justify-center rounded-full',
         fromReporter
           ? 'bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300'
-          : 'bg-[#042248]/10 text-[#042248] dark:bg-slate-700 dark:text-slate-200',
+          : 'bg-[#4B2E58]/10 text-[#4B2E58]',
       )}
     >
       {fromReporter ? <User className="h-4 w-4" /> : <ShieldCheck className="h-4 w-4" />}
@@ -267,7 +267,7 @@ function UserMenu({
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white">
           <User className="h-4 w-4" />
         </span>
-        <span className="hidden max-w-[8rem] truncate text-sm font-medium text-slate-700 dark:text-slate-100 sm:inline">
+        <span className="hidden max-w-[8rem] truncate text-sm font-medium text-foreground sm:inline">
           {name}
         </span>
       </button>
@@ -282,16 +282,16 @@ function UserMenu({
               setOpen(false);
             }}
           />
-          <div className="absolute right-0 z-40 mt-2 w-60 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg dark:border-slate-700 dark:bg-slate-800">
-            <div className="flex items-center gap-3 border-b border-slate-100 px-4 py-3 dark:border-slate-700">
+          <div className="absolute right-0 z-40 mt-2 w-60 overflow-hidden rounded-lg border border-border bg-white shadow-lg">
+            <div className="flex items-center gap-3 border-b border-border px-4 py-3">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white">
                 <User className="h-4 w-4" />
               </span>
               <div className="min-w-0">
-                <p className="truncate text-sm font-semibold text-slate-800 dark:text-slate-100">
+                <p className="truncate text-sm font-semibold text-foreground">
                   {name}
                 </p>
-                <p className="flex items-center gap-1 truncate text-xs text-slate-400">
+                <p className="flex items-center gap-1 truncate text-xs text-muted-foreground/70">
                   <Mail className="h-3 w-3 shrink-0" />
                   {email}
                 </p>
@@ -303,7 +303,7 @@ function UserMenu({
                 setOpen(false);
                 onSignOut();
               }}
-              className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-red-600 transition-colors hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20"
+              className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm text-destructive transition-colors hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20"
             >
               <LogOut className="h-4 w-4" />
               {t('track.actions.signOut', { defaultValue: 'Sign out' })}
@@ -509,11 +509,11 @@ export function ReportTrackPage(): ReactElement {
       <div className="space-y-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="min-w-0">
-            <h1 className="text-2xl font-semibold tracking-normal text-slate-900 dark:text-slate-100">
+            <h1 className="text-2xl font-semibold tracking-normal text-foreground">
               {t('track.case.title', { defaultValue: 'Your report' })}
             </h1>
             <div className="mt-1 flex items-center gap-2">
-              <span className="text-sm text-slate-500 dark:text-slate-400">
+              <span className="text-sm text-muted-foreground">
                 {t('track.case.referenceSubtitle', {
                   defaultValue: 'Reference {{ref}}',
                   ref: c.caseReferenceNumber,
@@ -524,7 +524,7 @@ export function ReportTrackPage(): ReactElement {
                 onClick={() => {
                   copyReference(c.caseReferenceNumber);
                 }}
-                className="text-slate-400 transition-colors hover:text-brand-accent dark:text-slate-500 dark:hover:text-brand-accent"
+                className="text-muted-foreground/70 transition-colors hover:text-brand-accent dark:hover:text-brand-accent"
                 title="Copy reference"
               >
                 <Copy className="h-3.5 w-3.5" />
@@ -537,20 +537,20 @@ export function ReportTrackPage(): ReactElement {
               </Badge>
               <Badge
                 variant="default"
-                className="border border-slate-200 bg-transparent text-slate-600 shadow-none hover:bg-transparent"
+                className="border border-border bg-transparent text-muted-foreground shadow-none hover:bg-transparent"
               >
                 {wbCategoryLabelT(c.category, t)}
               </Badge>
             </div>
           </div>
 
-          <div className="shadow-xs flex shrink-0 items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 dark:border-slate-700 dark:bg-slate-800">
+          <div className="shadow-xs flex shrink-0 items-center gap-2 rounded-xl border border-border bg-white px-4 py-3">
             <Calendar className="h-4 w-4 text-teal-600 dark:text-teal-400" />
             <div className="text-xs">
-              <p className="text-slate-400">
+              <p className="text-muted-foreground/70">
                 {t('track.case.submittedLabel', { defaultValue: 'Submitted' })}
               </p>
-              <p className="font-semibold text-slate-700 dark:text-slate-200">
+              <p className="font-semibold text-foreground">
                 {formatDate(c.submittedAt)}
               </p>
             </div>
@@ -558,8 +558,8 @@ export function ReportTrackPage(): ReactElement {
         </div>
 
         {/* Tabbed Case Content Container */}
-        <div className="shadow-xs mt-6 rounded-2xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
-          <div className="flex items-center gap-2 border-b border-slate-100 px-4 pt-2 dark:border-slate-700">
+        <div className="shadow-xs mt-6 rounded-2xl border border-border bg-white">
+          <div className="flex items-center gap-2 border-b border-border px-4 pt-2">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -574,7 +574,7 @@ export function ReportTrackPage(): ReactElement {
                     'flex items-center gap-2 border-b-2 px-4 py-3 text-sm font-semibold transition-colors',
                     isActive
                       ? 'border-brand-accent text-brand-accent dark:border-brand-accent dark:text-brand-accent'
-                      : 'border-transparent text-slate-500 hover:text-brand-accent dark:text-slate-400 dark:hover:text-brand-accent',
+                      : 'border-transparent text-muted-foreground hover:text-brand-accent dark:hover:text-brand-accent',
                   )}
                 >
                   <Icon className="h-4 w-4" />
@@ -585,7 +585,7 @@ export function ReportTrackPage(): ReactElement {
                         'rounded-full px-2 py-0.5 text-xs',
                         isActive
                           ? 'bg-teal-100 text-teal-700 dark:bg-teal-900/40 dark:text-teal-300'
-                          : 'bg-slate-100 text-slate-600 dark:bg-slate-700 dark:text-slate-300',
+                          : 'bg-muted text-muted-foreground',
                       )}
                     >
                       {tab.count}
@@ -601,10 +601,10 @@ export function ReportTrackPage(): ReactElement {
             <div className="space-y-6 p-6">
               <div className="relative mb-6">
                 <div className="space-y-3 pr-44">
-                  <h3 className="text-base font-bold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-base font-bold text-foreground">
                     {t('track.case.detailsHeading', { defaultValue: 'Report details' })}
                   </h3>
-                  <p className="whitespace-pre-wrap text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                  <p className="whitespace-pre-wrap text-sm leading-relaxed text-muted-foreground">
                     {c.incidentDescription}
                   </p>
                 </div>
@@ -620,7 +620,7 @@ export function ReportTrackPage(): ReactElement {
                 c.conductDuration !== null ||
                 c.previouslyReported !== null ||
                 c.relationshipToOrg !== null) && (
-                <div className="grid gap-4 border-t border-slate-100 pt-6 dark:border-slate-700/60 sm:grid-cols-2">
+                <div className="grid gap-4 border-t border-border pt-6 sm:grid-cols-2">
                   <TrackCardField
                     icon={Calendar}
                     label={t('track.case.fields.dateOfOccurrence', {
@@ -671,8 +671,8 @@ export function ReportTrackPage(): ReactElement {
               )}
 
               {c.involvedPersons.length > 0 && (
-                <div className="border-t border-slate-100 pt-6 dark:border-slate-700/60">
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <div className="border-t border-border pt-6">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70">
                     {t('track.case.identifiedPersons', {
                       defaultValue: 'Person(s) you identified',
                     })}
@@ -703,7 +703,7 @@ export function ReportTrackPage(): ReactElement {
             <div className="space-y-4 p-6">
               {!isClosed && (
                 <div className="flex flex-wrap items-center justify-end gap-2">
-                  <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-slate-200 px-3 py-1.5 text-xs text-slate-500 transition-colors hover:border-brand-accent/50 hover:bg-brand-accent/10 hover:text-brand-accent dark:border-slate-700 dark:text-slate-400 dark:hover:border-brand-accent/50 dark:hover:bg-brand-accent/10 dark:hover:text-brand-accent">
+                  <label className="inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-brand-accent/50 hover:bg-brand-accent/10 hover:text-brand-accent dark:hover:border-brand-accent/50 dark:hover:bg-brand-accent/10 dark:hover:text-brand-accent">
                     <Paperclip className="h-3.5 w-3.5" />
                     {attach.isPending
                       ? t('track.messages.uploading', { defaultValue: 'Uploading...' })
@@ -729,7 +729,7 @@ export function ReportTrackPage(): ReactElement {
               )}
 
               {commentsQuery.isError ? (
-                <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-800 dark:bg-red-900/20 dark:text-red-300">
+                <div className="rounded-lg border border-destructive/25 bg-destructive/5 px-4 py-3 text-sm text-destructive dark:border-red-800 dark:bg-red-900/20 dark:text-red-300">
                   {getApiErrorMessage(commentsQuery.error)}
                 </div>
               ) : commentsQuery.isLoading || commentsQuery.data === undefined ? (
@@ -740,8 +740,8 @@ export function ReportTrackPage(): ReactElement {
                 </div>
               ) : commentsQuery.data.data.length === 0 ? (
                 <div className="flex flex-col items-center gap-2 py-8 text-center">
-                  <MessageSquare className="h-8 w-8 text-slate-200 dark:text-slate-600" />
-                  <p className="text-sm text-slate-400">
+                  <MessageSquare className="h-8 w-8 text-slate-200" />
+                  <p className="text-sm text-muted-foreground/70">
                     {t('track.messages.emptyTitle', { defaultValue: 'No messages yet.' })}
                   </p>
                 </div>
@@ -755,7 +755,7 @@ export function ReportTrackPage(): ReactElement {
                           'flex gap-3 rounded-xl border p-4 text-sm',
                           m.fromReporter
                             ? 'border-teal-100 bg-teal-50/50 dark:border-teal-800/40 dark:bg-teal-900/20'
-                            : 'border-slate-100 bg-slate-50 dark:border-slate-700 dark:bg-slate-900/40',
+                            : 'border-border bg-muted/50',
                         )}
                       >
                         <MessageAvatar fromReporter={m.fromReporter} />
@@ -766,7 +766,7 @@ export function ReportTrackPage(): ReactElement {
                                 'text-xs font-semibold',
                                 m.fromReporter
                                   ? 'text-teal-700 dark:text-teal-400'
-                                  : 'text-slate-600 dark:text-slate-300',
+                                  : 'text-muted-foreground',
                               )}
                             >
                               {m.authorLabel === 'You'
@@ -775,11 +775,11 @@ export function ReportTrackPage(): ReactElement {
                                     defaultValue: 'Investigation team',
                                   })}
                             </span>
-                            <span className="shrink-0 text-xs text-slate-400">
+                            <span className="shrink-0 text-xs text-muted-foreground/70">
                               {formatDateTime(m.createdAt)}
                             </span>
                           </div>
-                          <p className="whitespace-pre-wrap text-slate-700 dark:text-slate-300">
+                          <p className="whitespace-pre-wrap text-foreground">
                             {m.content}
                           </p>
                         </div>
@@ -809,24 +809,24 @@ export function ReportTrackPage(): ReactElement {
             <div className="p-6">
               {c.attachments.length === 0 ? (
                 <div className="flex flex-col items-center gap-2 py-8 text-center">
-                  <Paperclip className="h-8 w-8 text-slate-200 dark:text-slate-600" />
-                  <p className="text-sm text-slate-400">
+                  <Paperclip className="h-8 w-8 text-slate-200" />
+                  <p className="text-sm text-muted-foreground/70">
                     {t('track.attachments.emptyTitle', {
                       defaultValue: 'No evidence uploaded yet.',
                     })}
                   </p>
                 </div>
               ) : (
-                <ul className="divide-y divide-slate-100 dark:divide-slate-700">
+                <ul className="divide-y divide-border">
                   {c.attachments.map((a) => (
                     <li key={a.id} className="group flex items-center gap-3 py-3 text-sm">
                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-teal-50 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400">
                         <Paperclip className="h-4 w-4" />
                       </span>
-                      <span className="truncate font-medium text-slate-700 dark:text-slate-200">
+                      <span className="truncate font-medium text-foreground">
                         {a.fileName}
                       </span>
-                      <span className="ml-auto shrink-0 text-xs text-slate-400">
+                      <span className="ml-auto shrink-0 text-xs text-muted-foreground/70">
                         {formatDate(a.addedAt)}
                       </span>
                     </li>
@@ -882,7 +882,7 @@ export function ReportTrackPage(): ReactElement {
               })}
             </div>
             <div className="space-y-2">
-              <Label htmlFor="report-comment" className="text-sm font-medium text-slate-700">
+              <Label htmlFor="report-comment" className="text-sm font-medium text-foreground">
                 {t('track.comments.label', { defaultValue: 'Comment' })}
               </Label>
               <textarea
@@ -892,7 +892,7 @@ export function ReportTrackPage(): ReactElement {
                   setCommentDraft(e.target.value);
                 }}
                 rows={8}
-                className="shadow-xs outline-hidden min-h-48 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+                className="shadow-xs outline-hidden min-h-48 w-full rounded-md border border-border bg-white px-3 py-2 text-sm text-foreground transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/20"
                 placeholder={t('track.comments.placeholder', {
                   defaultValue: 'Add more information or respond to the investigators...',
                 })}
@@ -902,7 +902,7 @@ export function ReportTrackPage(): ReactElement {
         </Sheet>
 
         {mutError !== null && (
-          <p className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600 dark:border-red-800 dark:bg-red-900/20 dark:text-red-400">
+          <p className="rounded-md border border-destructive/25 bg-destructive/5 px-3 py-2 text-sm text-destructive dark:border-red-800 dark:bg-red-900/20 dark:text-red-400">
             {getApiErrorMessage(mutError)}
           </p>
         )}
@@ -936,7 +936,7 @@ function LoginView({
   const contentDir = getDirection(current);
 
   return (
-    <div className="relative flex min-h-screen w-full overflow-hidden bg-white [direction:ltr] md:bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_50%,#004d40_50%,#007d89_100%)]">
+    <div className="relative flex min-h-screen w-full overflow-hidden bg-white [direction:ltr] md:bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_50%,#004d40_50%,#6F56D9_100%)]">
       <div className="absolute right-4 top-4 z-30 md:right-6 md:top-5">
         <LanguageSwitcher variant="compact" align="end" />
       </div>
@@ -947,7 +947,7 @@ function LoginView({
         dir={contentDir}
       >
         <form
-          className="w-full max-w-md rounded-2xl border border-white bg-white p-8 text-slate-900 shadow-[0_28px_80px_-24px_rgba(0,125,137,0.45)] md:p-10"
+          className="w-full max-w-md rounded-2xl border border-white bg-white p-8 text-foreground shadow-[0_28px_80px_-24px_rgba(111, 86, 217,0.45)] md:p-10"
           onSubmit={(e) => {
             e.preventDefault();
             onSubmit();
@@ -957,7 +957,7 @@ function LoginView({
             <PageTitle className="text-teal-700">
               {t('track.login.title', { defaultValue: 'Track your report' })}
             </PageTitle>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-muted-foreground">
               {t('track.login.cardSubtitle', {
                 defaultValue: 'Enter the case reference and password exactly as provided.',
               })}
@@ -965,7 +965,7 @@ function LoginView({
           </header>
 
           <div className="mt-6">
-            <Label htmlFor="report-reference" className="dark:text-slate-800">
+            <Label htmlFor="report-reference" className="">
               {t('track.login.referenceLabel', { defaultValue: 'Case reference' })}
             </Label>
             <Input
@@ -982,7 +982,7 @@ function LoginView({
           </div>
 
           <div className="mt-4">
-            <Label htmlFor="report-password" className="dark:text-slate-800">
+            <Label htmlFor="report-password" className="">
               {t('track.login.passwordLabel', { defaultValue: 'Password' })}
             </Label>
             <PasswordInput
@@ -996,7 +996,7 @@ function LoginView({
           </div>
 
           {error !== null && (
-            <p className="mt-4 rounded-md border border-red-200 bg-red-50 px-3 py-2 text-xs text-red-600">
+            <p className="mt-4 rounded-md border border-destructive/25 bg-destructive/5 px-3 py-2 text-xs text-destructive">
               {error}
             </p>
           )}
@@ -1044,7 +1044,7 @@ function ReportTrackBrandPanel(): ReactElement {
 
           <ul className="mt-8 space-y-4">
             {assurances.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm font-medium text-slate-800">
+              <li key={item} className="flex items-start gap-3 text-sm font-medium text-foreground">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-teal-600 bg-teal-50 text-teal-600">
                   <ShieldCheck className="h-3.5 w-3.5" />
                 </span>

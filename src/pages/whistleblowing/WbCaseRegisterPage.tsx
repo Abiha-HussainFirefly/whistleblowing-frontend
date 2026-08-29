@@ -1,7 +1,16 @@
 import { type ReactElement, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
-import { AlertTriangle, LayoutGrid, List as ListIcon, Plus, Search, ShieldOff } from 'lucide-react';
+import {
+  AlertTriangle,
+  ChevronDown,
+  LayoutGrid,
+  List as ListIcon,
+  Plus,
+  Search,
+  ShieldOff,
+  SlidersHorizontal,
+} from 'lucide-react';
 import { Button } from '@components/ui/button';
 import { Input } from '@components/ui/input';
 import { Pagination } from '@components/ui/pagination';
@@ -12,6 +21,7 @@ import { getApiErrorMessage } from '@lib/api-error';
 import { cn } from '@lib/utils';
 import { ROUTES } from '@config/routes';
 import { usePermissions } from '@hooks/usePermissions';
+import { useIsCompactViewport } from '@hooks/useMediaQuery';
 import { useWbCases } from '@features/whistleblowing/hooks';
 import { WB_PERMISSIONS } from '@features/whistleblowing/permissions';
 import {
@@ -56,6 +66,19 @@ export function WbCaseRegisterPage(): ReactElement {
   const [pageSize, setPageSize] = useState(20);
   const [showManual, setShowManual] = useState(false);
   const [view, setView] = useState<ViewMode>('list');
+  // A seven-column register is unreadable on a phone, so below `lg` the
+  // card view is used regardless of the toggle. The toggle itself is
+  // hidden at those widths rather than being silently ignored.
+  const isCompact = useIsCompactViewport();
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  // Surfaced on the collapsed control so a narrowed list is never a mystery.
+  const activeFilterCount =
+    (search.length > 0 ? 1 : 0) +
+    (status !== '' ? 1 : 0) +
+    (category !== '' ? 1 : 0) +
+    (priority !== '' ? 1 : 0) +
+    (assignedToMe ? 1 : 0);
+  const effectiveView: ViewMode = isCompact ? 'grid' : view;
 
   const params: WbCaseListParams = {
     ...(search.length > 0 ? { search } : {}),
@@ -73,7 +96,7 @@ export function WbCaseRegisterPage(): ReactElement {
       <WbHeader />
 
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 className="text-base font-semibold text-slate-800 dark:text-slate-200">
+        <h2 className="text-base font-semibold text-foreground">
           {t('cases.title', { defaultValue: 'Case register' })}
         </h2>
         {canCreateManual && (
@@ -89,10 +112,40 @@ export function WbCaseRegisterPage(): ReactElement {
         )}
       </div>
 
-      {/* Filters */}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
+      {/* Filters. Below `lg` these are four full-width controls that would push
+          the first case off-screen, so they collapse behind a toggle that
+          reports how many are active. */}
+      <button
+        type="button"
+        onClick={() => {
+          setFiltersOpen((open) => !open);
+        }}
+        aria-expanded={filtersOpen}
+        className="flex min-h-11 w-full items-center justify-between gap-3 rounded-lg border border-border bg-card px-4 text-sm font-medium text-foreground transition-colors hover:border-signal/40 lg:hidden"
+      >
+        <span className="flex items-center gap-2">
+          <SlidersHorizontal className="h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+          {t('cases.filters.toggle', { defaultValue: 'Search & filters' })}
+          {activeFilterCount > 0 && (
+            <span className="rounded-full bg-signal px-2 py-0.5 text-xs font-semibold text-white">
+              {activeFilterCount}
+            </span>
+          )}
+        </span>
+        <ChevronDown
+          className={cn('h-4 w-4 shrink-0 transition-transform', filtersOpen && 'rotate-180')}
+          aria-hidden="true"
+        />
+      </button>
+
+      <div
+        className={cn(
+          'grid gap-3 sm:grid-cols-2 lg:grid-cols-6',
+          filtersOpen ? 'animate-fade-in' : 'hidden lg:grid',
+        )}
+      >
         <div className="relative sm:col-span-2 lg:col-span-1">
-          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/70" />
           <Input
             value={search}
             onChange={(e) => {
@@ -153,7 +206,7 @@ export function WbCaseRegisterPage(): ReactElement {
             </option>
           ))}
         </Select>
-        <label className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+        <label className="flex min-h-11 cursor-pointer items-center gap-2.5 text-sm text-muted-foreground">
           <input
             type="checkbox"
             checked={assignedToMe}
@@ -161,14 +214,14 @@ export function WbCaseRegisterPage(): ReactElement {
               setAssignedToMe(e.target.checked);
               setPage(1);
             }}
-            className="h-4 w-4 rounded border-slate-300"
+            className="h-[18px] w-[18px] shrink-0 rounded border-border accent-signal"
           />
           {t('cases.filters.assignedToMe', { defaultValue: 'Assigned to me' })}
         </label>
 
-        {/* View toggle */}
-        <div className="flex items-center justify-start lg:justify-end">
-          <div className="flex items-center rounded-md border border-slate-200 bg-white p-0.5 dark:border-white/10 dark:bg-[#0b1626]">
+        {/* View toggle. Hidden below `lg`, where the card view is forced. */}
+        <div className="hidden items-center justify-start lg:flex lg:justify-end">
+          <div className="flex items-center rounded-md border border-border bg-white p-0.5 dark:border-white/10 dark:bg-[#0b1626]">
             <button
               type="button"
               title={t('cases.view.grid', { defaultValue: 'Grid view' })}
@@ -176,10 +229,10 @@ export function WbCaseRegisterPage(): ReactElement {
                 setView('grid');
               }}
               className={cn(
-                'rounded p-1.5 transition-colors',
+                'flex h-9 w-9 items-center justify-center rounded transition-colors',
                 view === 'grid'
                   ? 'bg-brand-accent text-white dark:bg-brand-accent'
-                  : 'bg-white text-slate-500 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/10',
+                  : 'bg-white text-muted-foreground hover:bg-muted/60 dark:hover:bg-white/10',
               )}
             >
               <LayoutGrid className="h-4 w-4" />
@@ -191,10 +244,10 @@ export function WbCaseRegisterPage(): ReactElement {
                 setView('list');
               }}
               className={cn(
-                'rounded p-1.5 transition-colors',
+                'flex h-9 w-9 items-center justify-center rounded transition-colors',
                 view === 'list'
                   ? 'bg-brand-accent text-white dark:bg-brand-accent'
-                  : 'bg-white text-slate-500 hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-white/10',
+                  : 'bg-white text-muted-foreground hover:bg-muted/60 dark:hover:bg-white/10',
               )}
             >
               <ListIcon className="h-4 w-4" />
@@ -206,17 +259,17 @@ export function WbCaseRegisterPage(): ReactElement {
       {isLoading ? (
         <Loader label={t('cases.loading', { defaultValue: 'Loading cases...' })} />
       ) : isError || data === undefined ? (
-        <p className="text-sm text-red-600">{getApiErrorMessage(error)}</p>
+        <p className="text-sm text-destructive">{getApiErrorMessage(error)}</p>
       ) : data.data.length === 0 ? (
-        <div className="rounded-lg border border-slate-200 bg-white p-10 text-center text-sm text-slate-500 dark:border-slate-700 dark:bg-slate-800">
+        <div className="rounded-lg border border-border bg-white p-10 text-center text-sm text-muted-foreground">
           {t('cases.empty', { defaultValue: 'No cases match your filters.' })}
         </div>
-      ) : view === 'list' ? (
-        <div className="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800">
+      ) : effectiveView === 'list' ? (
+        <div className="overflow-hidden rounded-lg border border-border bg-white">
           <table className="w-full text-sm" dir={isRtl ? 'rtl' : 'ltr'}>
             <thead
               className={cn(
-                'border-b border-slate-200 bg-slate-50 text-xs uppercase tracking-wide text-slate-400 dark:border-slate-700 dark:bg-slate-900/40',
+                'border-b border-border bg-muted/50 text-xs uppercase tracking-wide text-muted-foreground/70',
                 isRtl ? 'text-right' : 'text-left',
               )}
             >
@@ -244,7 +297,7 @@ export function WbCaseRegisterPage(): ReactElement {
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
+            <tbody className="divide-y divide-border">
               {data.data.map((c) => {
                 const days = slaDaysRemaining(c.slaDeadline);
                 const breached = c.slaBreachedAt !== null;
@@ -266,17 +319,17 @@ export function WbCaseRegisterPage(): ReactElement {
                         navigate(detailPath);
                       }
                     }}
-                    className="cursor-pointer transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-accent/40 dark:hover:bg-slate-700/30"
+                    className="cursor-pointer transition-colors hover:bg-muted/60 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring"
                   >
                     <td className="px-4 py-3">
-                      <ServerText className="font-medium text-slate-900 dark:text-slate-100">
+                      <ServerText className="case-id whitespace-nowrap font-semibold text-foreground">
                         {c.caseReferenceNumber}
                       </ServerText>
-                      <div className="flex items-center gap-1 text-xs text-slate-400">
+                      <div className="flex min-w-0 flex-wrap items-center gap-1 text-xs text-muted-foreground/70">
                         {reporterLabel} · {c.reporterAlias}
                         {c.hiddenFromCount > 0 && (
                           <span
-                            className="inline-flex items-center gap-0.5 text-amber-600"
+                            className="inline-flex items-center gap-0.5 text-courage-strong"
                             title={t('cases.conflictExclusionsApplied', {
                               defaultValue: 'Conflict-of-interest exclusions applied',
                             })}
@@ -296,20 +349,20 @@ export function WbCaseRegisterPage(): ReactElement {
                     <td className="px-4 py-3">
                       <WbStatusBadge status={c.status} />
                     </td>
-                    <td className="px-4 py-3 text-slate-600 dark:text-slate-300">
+                    <td className="px-4 py-3 text-muted-foreground">
                       {c.assignedInvestigator?.displayName ?? c.assignedInvestigator?.email ?? '—'}
                     </td>
                     <td className="px-4 py-3">
                       {breached ? (
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-red-600">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-destructive">
                           <AlertTriangle className="h-3.5 w-3.5" />
                           {t('cases.sla.breached', { defaultValue: 'Breached' })}
                         </span>
                       ) : days === null ? (
-                        <span className="text-xs text-slate-400">—</span>
+                        <span className="text-xs text-muted-foreground/70">—</span>
                       ) : (
                         <span
-                          className={`text-xs ${days <= 7 ? 'font-medium text-amber-600' : 'text-slate-500'}`}
+                          className={`text-xs ${days <= 7 ? 'font-medium text-courage-strong' : 'text-muted-foreground'}`}
                         >
                           {t('cases.sla.daysLeft', {
                             count: days,
@@ -318,7 +371,7 @@ export function WbCaseRegisterPage(): ReactElement {
                         </span>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-slate-500">{formatDate(c.submittedAt)}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{formatDate(c.submittedAt)}</td>
                   </tr>
                 );
               })}
@@ -337,18 +390,18 @@ export function WbCaseRegisterPage(): ReactElement {
               <Link
                 key={c.id}
                 to={ROUTES.WHISTLEBLOWING_DETAIL(c.id)}
-                className="group flex flex-col gap-2 rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-brand-accent/40 hover:shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:hover:border-brand-accent/60"
+                className="lift group flex flex-col gap-2 rounded-xl border border-border bg-card p-4 hover:border-signal/40 hover:bg-signal-tint/30"
               >
                 <div className="flex items-start justify-between gap-2">
                   <div className="min-w-0">
-                    <ServerText className="block truncate font-medium text-slate-900 dark:text-slate-100">
+                    <ServerText className="case-id block truncate font-semibold text-foreground">
                       {c.caseReferenceNumber}
                     </ServerText>
-                    <p className="flex items-center gap-1 text-xs text-slate-400">
+                    <p className="flex items-center gap-1 text-xs text-muted-foreground/70">
                       {reporterLabel} · {c.reporterAlias}
                       {c.hiddenFromCount > 0 && (
                         <span
-                          className="inline-flex items-center gap-0.5 text-amber-600"
+                          className="inline-flex items-center gap-0.5 text-courage-strong"
                           title={t('cases.conflictExclusionsApplied', {
                             defaultValue: 'Conflict-of-interest exclusions applied',
                           })}
@@ -367,19 +420,19 @@ export function WbCaseRegisterPage(): ReactElement {
                   <WbStatusBadge status={c.status} />
                 </div>
 
-                <div className="mt-1 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+                <div className="mt-1 flex items-center justify-between text-xs text-muted-foreground">
                   <ServerText className="truncate">
                     {c.assignedInvestigator?.displayName ??
                       c.assignedInvestigator?.email ??
                       t('cases.unassigned', { defaultValue: 'Unassigned' })}
                   </ServerText>
                   {breached ? (
-                    <span className="inline-flex shrink-0 items-center gap-1 font-medium text-red-600">
+                    <span className="inline-flex shrink-0 items-center gap-1 font-medium text-destructive">
                       <AlertTriangle className="h-3.5 w-3.5" />
                       {t('cases.sla.breached', { defaultValue: 'Breached' })}
                     </span>
                   ) : days !== null ? (
-                    <span className={`shrink-0 ${days <= 7 ? 'font-medium text-amber-600' : ''}`}>
+                    <span className={`shrink-0 ${days <= 7 ? 'font-medium text-courage-strong' : ''}`}>
                       {t('cases.sla.daysLeft', {
                         count: days,
                         defaultValue: '{{count}}d left',
@@ -388,7 +441,7 @@ export function WbCaseRegisterPage(): ReactElement {
                   ) : null}
                 </div>
 
-                <p className="text-xs text-slate-400">{formatDate(c.submittedAt)}</p>
+                <p className="text-xs text-muted-foreground/70">{formatDate(c.submittedAt)}</p>
               </Link>
             );
           })}

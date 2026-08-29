@@ -6,7 +6,7 @@ const booleanLike = z
   .default('false');
 
 const envSchema = z.object({
-  VITE_APP_NAME: z.string().min(1).default('Civorah'),
+  VITE_APP_NAME: z.string().min(1).default('Tellara'),
   VITE_APP_ENV: z.enum(['development', 'staging', 'production']).default('development'),
   // Absolute http(s) URL (e.g. https://api.example.com/api/v1) OR a same-origin
   // path (e.g. /api/v1) when the dev server proxies /api to the backend.
@@ -14,7 +14,7 @@ const envSchema = z.object({
     message: 'Must be an absolute http(s) URL or a path starting with "/"',
   }),
   VITE_API_TIMEOUT_MS: z.coerce.number().int().positive().default(30_000),
-  VITE_AUTH_STORAGE_KEY: z.string().min(1).default('atlyis.auth'),
+  VITE_AUTH_STORAGE_KEY: z.string().min(1).default('tellara.auth'),
   VITE_TOKEN_REFRESH_THRESHOLD_SECONDS: z.coerce.number().int().positive().default(60),
   VITE_ENABLE_DEVTOOLS: booleanLike,
   VITE_ENABLE_ANALYTICS: booleanLike,

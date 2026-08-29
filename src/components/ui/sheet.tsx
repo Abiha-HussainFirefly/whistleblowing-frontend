@@ -92,18 +92,18 @@ export function Sheet({
   const dialogLabel = ariaLabel ?? (typeof title === 'string' ? title : undefined);
 
   const editorHeader = (
-    <div className="shrink-0 border-b border-slate-200 bg-white px-4 py-4 dark:border-white/10 dark:bg-[#0f1c2e] sm:px-6">
+    <div className="shrink-0 border-b border-border bg-white px-4 py-4 dark:border-white/10 dark:bg-[#0f1c2e] sm:px-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{title}</h2>
+          <h2 className="text-lg font-semibold text-foreground dark:text-white">{title}</h2>
           {description !== undefined && (
-            <p className="mt-0.5 text-sm text-slate-500 dark:text-slate-400">{description}</p>
+            <p className="mt-0.5 text-sm text-muted-foreground">{description}</p>
           )}
         </div>
         <button
           type="button"
           onClick={onClose}
-          className="rounded-md p-1 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800"
+          className="rounded-md p-1 text-muted-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
           aria-label={closeLabel}
         >
           <X className="h-5 w-5" />
@@ -115,11 +115,11 @@ export function Sheet({
 
   if (embedded) {
     return (
-      <section className="overflow-visible rounded-xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#0f1c2e] dark:text-white">
+      <section className="overflow-visible rounded-xl border border-border bg-white shadow-sm dark:border-white/10 dark:bg-[#0f1c2e] dark:text-white">
         {editorHeader}
         <div className="min-h-0 px-4 py-5 sm:px-6">{children}</div>
         {footer !== undefined && (
-          <div className="sticky bottom-0 z-10 shrink-0 border-t border-slate-200 bg-slate-50 px-4 py-4 dark:border-white/10 dark:bg-[#0f1c2e] sm:px-6">
+          <div className="sticky bottom-0 z-10 shrink-0 border-t border-border bg-muted/50 px-4 py-4 dark:border-white/10 dark:bg-[#0f1c2e] sm:px-6">
             {footer}
           </div>
         )}
@@ -162,7 +162,7 @@ export function Sheet({
           </div>
         </div>
         {footer !== undefined && (
-          <div className="shrink-0 border-t border-slate-200 bg-slate-50 px-4 py-4 dark:border-white/10 dark:bg-white/5 sm:px-6">
+          <div className="shrink-0 border-t border-border bg-muted/50 px-4 py-4 dark:border-white/10 dark:bg-white/5 sm:px-6">
             {footer}
           </div>
         )}

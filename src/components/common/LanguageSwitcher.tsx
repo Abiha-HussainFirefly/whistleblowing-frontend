@@ -107,7 +107,7 @@ export function LanguageSwitcher({
         aria-controls={open ? listboxId : undefined}
         aria-label={t('language.label')}
         className={cn(
-          'inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white font-medium text-slate-700 shadow-sm transition-colors hover:border-brand-accent/40 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/40',
+          'inline-flex items-center gap-2 rounded-lg border border-border bg-white font-medium text-foreground shadow-sm transition-colors hover:border-brand-accent/40 hover:bg-muted/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring',
           variant === 'compact' ? 'h-9 px-2 text-sm' : 'h-10 w-full justify-between px-3 text-sm',
         )}
       >
@@ -120,7 +120,7 @@ export function LanguageSwitcher({
           {variant === 'full' && <span>{active?.nativeLabel}</span>}
         </span>
         <ChevronDown
-          className={cn('h-4 w-4 text-slate-400 transition-transform', open && 'rotate-180')}
+          className={cn('h-4 w-4 text-muted-foreground/70 transition-transform', open && 'rotate-180')}
           aria-hidden="true"
         />
       </button>
@@ -132,7 +132,7 @@ export function LanguageSwitcher({
           role="listbox"
           aria-label={t('language.label')}
           className={cn(
-            'absolute z-50 mt-2 min-w-52 overflow-hidden rounded-xl border border-slate-200 bg-white p-1 shadow-xl shadow-brand-primary/10',
+            'absolute z-50 mt-2 min-w-52 overflow-hidden rounded-xl border border-border bg-white p-1 shadow-xl shadow-brand-primary/10',
             align === 'end' ? 'end-0' : 'start-0',
           )}
         >
@@ -151,16 +151,16 @@ export function LanguageSwitcher({
                   onKeyDown={onOptionKeyDown}
                   dir={locale.dir}
                   className={cn(
-                    'flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-start text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/40',
+                    'flex w-full items-center gap-3 rounded-lg px-2.5 py-2 text-start text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                     selected
                       ? 'bg-brand-accent/10 font-semibold text-brand-primary'
-                      : 'text-slate-600 hover:bg-slate-50',
+                      : 'text-muted-foreground hover:bg-muted/60',
                   )}
                 >
                   <FlagIcon code={locale.flagCode} className="text-[1.25rem]" />
                   <span className="flex min-w-0 flex-1 flex-col">
                     <span className="truncate">{locale.nativeLabel}</span>
-                    <span className="truncate text-xs font-normal text-slate-400">
+                    <span className="truncate text-xs font-normal text-muted-foreground/70">
                       {locale.label}
                     </span>
                   </span>

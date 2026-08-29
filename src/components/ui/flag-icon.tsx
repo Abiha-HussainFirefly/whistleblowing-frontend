@@ -31,7 +31,7 @@ export function FlagIcon({ code, circle = false, className }: FlagIconProps): Re
         <span
           aria-hidden="true"
           className={cn(
-            'inline-flex h-[1em] w-[1em] shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-400 ring-1 ring-black/10',
+            'inline-flex h-[1em] w-[1em] shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground/70 ring-1 ring-black/10',
             className,
           )}
         >
@@ -40,7 +40,7 @@ export function FlagIcon({ code, circle = false, className }: FlagIconProps): Re
       );
     }
     return (
-      <span aria-hidden="true" className={cn('inline-flex text-slate-400', className)}>
+      <span aria-hidden="true" className={cn('inline-flex text-muted-foreground/70', className)}>
         <Globe className="h-4 w-4 shrink-0" />
       </span>
     );

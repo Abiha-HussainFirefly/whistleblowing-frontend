@@ -20,8 +20,8 @@ export function WbCaseDetailPage(): ReactElement {
     return (
       <div className="space-y-4">
         <WbHeader hideNav />
-        <div className="rounded-lg border border-slate-200 bg-white p-8 text-center dark:border-slate-700 dark:bg-slate-800">
-          <p className="text-sm text-slate-500">
+        <div className="rounded-lg border border-border bg-white p-8 text-center">
+          <p className="text-sm text-muted-foreground">
             {getApiErrorMessage(error, 'This case could not be loaded.')}
           </p>
           <Button variant="outline" className="mt-4" asChild>

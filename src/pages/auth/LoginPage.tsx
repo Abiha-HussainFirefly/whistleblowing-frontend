@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useQueryClient } from '@tanstack/react-query';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Lock } from 'lucide-react';
 import { ROUTES } from '@config/routes';
 import { useAuthStore } from '@store/authStore';
 import { useLoginMutation, loginErrorMessage, loginRequestSchema } from '@features/auth';
@@ -101,9 +101,9 @@ export function LoginPage(): ReactElement {
 
   return (
     <div>
-      <header className="text-center">
-        <h1 className="text-2xl font-bold text-brand-accent">{t('login.title')}</h1>
-        <p className="mt-1 text-sm text-slate-500">{t('login.subtitle')}</p>
+      <header>
+        <h1 className="type-h1 text-foreground">{t('login.title')}</h1>
+        <p className="mt-1.5 text-sm text-muted-foreground">{t('login.subtitle')}</p>
       </header>
 
       <form
@@ -124,11 +124,11 @@ export function LoginPage(): ReactElement {
             disabled={submitting}
             aria-invalid={emailError !== undefined}
             className={cn(
-              emailError !== undefined && 'border-red-400 focus:border-red-500 focus:ring-red-200',
+              emailError !== undefined && 'border-destructive focus:border-destructive focus:ring-destructive',
             )}
             {...form.register('email')}
           />
-          {emailError !== undefined && <p className="mt-1 text-xs text-red-600">{emailError}</p>}
+          {emailError !== undefined && <p className="mt-1 text-xs text-destructive">{emailError}</p>}
         </div>
 
         <div className="mt-4">
@@ -142,7 +142,7 @@ export function LoginPage(): ReactElement {
             aria-invalid={passwordError !== undefined}
             className={cn(
               passwordError !== undefined &&
-                'border-red-400 focus:border-red-500 focus:ring-red-200',
+                'border-destructive focus:border-destructive focus:ring-destructive',
             )}
             {...form.register('password')}
           />
@@ -150,14 +150,14 @@ export function LoginPage(): ReactElement {
               error at a time (driven by loginPasswordSchema) rather than a
               full requirements checklist. */}
           {passwordError !== undefined && (
-            <p className="mt-1 text-xs text-red-600">{passwordError}</p>
+            <p className="mt-1 text-xs text-destructive">{passwordError}</p>
           )}
         </div>
 
         <div className="mt-4 flex items-center justify-between text-sm">
           <Link
             to={ROUTES.AUTH.FORGOT_PASSWORD}
-            className="font-medium text-brand-accent hover:underline"
+            className="inline-flex min-h-11 items-center font-medium text-brand-accent hover:underline"
           >
             {t('login.forgotPassword')}
           </Link>
@@ -170,22 +170,31 @@ export function LoginPage(): ReactElement {
               {t('login.submitting')}
             </>
           ) : (
-            t('login.submit')
+            <>
+              <Lock className="h-4 w-4" aria-hidden="true" />
+              {t('login.submit')}
+            </>
           )}
         </PrimaryButton>
       </form>
 
-      <div className="mt-5 space-y-1 text-center text-xs text-slate-400">
+      <div className="mt-6 border-t border-border pt-5 text-center text-xs text-muted-foreground">
         <p>
           Organization admin?{' '}
-          <Link to={ROUTES.AUTH.ORG_LOGIN} className="underline hover:text-slate-600">
-            Org admin sign in
+          <Link
+            to={ROUTES.AUTH.ORG_LOGIN}
+            className="inline-flex min-h-11 items-center font-medium text-brand-accent hover:underline"
+          >
+            Sign in to the organization portal
           </Link>
         </p>
-        <p>
+        <p className="mt-1.5">
           System administrator?{' '}
-          <Link to={ROUTES.AUTH.ADMIN_LOGIN} className="underline hover:text-slate-600">
-            Super admin sign in
+          <Link
+            to={ROUTES.AUTH.ADMIN_LOGIN}
+            className="inline-flex min-h-11 items-center font-medium text-brand-accent hover:underline"
+          >
+            Sign in to the system console
           </Link>
         </p>
       </div>

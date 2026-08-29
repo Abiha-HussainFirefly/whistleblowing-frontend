@@ -20,7 +20,7 @@ function SynopsisInput({
 }): ReactElement {
   return (
     <label className="block space-y-1">
-      <span className="text-xs font-medium text-slate-500">{label}</span>
+      <span className="text-xs font-medium text-muted-foreground">{label}</span>
       <Input
         value={value}
         onChange={(event) => {
@@ -118,7 +118,7 @@ export function WbCaseSynopsisTab({
             onChange={setActionTaken}
           />
           <label className="block space-y-1">
-            <span className="text-xs font-medium text-slate-500">
+            <span className="text-xs font-medium text-muted-foreground">
               {t('caseConsole.fields.potentialNextSteps', { defaultValue: 'Potential next steps' })}
             </span>
             <Textarea
@@ -130,7 +130,7 @@ export function WbCaseSynopsisTab({
             />
           </label>
           <label className="block space-y-1">
-            <span className="text-xs font-medium text-slate-500">
+            <span className="text-xs font-medium text-muted-foreground">
               {t('caseConsole.fields.synopsisNotes', { defaultValue: 'Synopsis notes' })}
             </span>
             <Textarea
@@ -158,7 +158,7 @@ export function WbCaseSynopsisTab({
             </Button>
           </div>
           {update.error !== null && (
-            <p className="text-xs text-red-600">{getApiErrorMessage(update.error)}</p>
+            <p className="text-xs text-destructive">{getApiErrorMessage(update.error)}</p>
           )}
         </div>
       ) : (

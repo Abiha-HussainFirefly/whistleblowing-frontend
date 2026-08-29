@@ -9,6 +9,7 @@ import { ROUTES } from '@config/routes';
 import { reporterService } from '@features/whistleblowing/api/reporter.service';
 import { saveReporterToken } from '@features/whistleblowing/reporterSession';
 import { ReportIntakeForm } from '@features/whistleblowing/components/ReportIntakeForm';
+import { ReporterAssuranceRail } from '@features/whistleblowing/components/ReporterAssuranceRail';
 import { ReportCredentials } from '@features/whistleblowing/components/ReportCredentials';
 import type { ReporterSubmitResult } from '@features/whistleblowing/types';
 import { ReportShell } from './ReportShell';
@@ -35,7 +36,7 @@ export function ReportPortalPage(): ReactElement {
   if (info.isError || info.data === undefined) {
     return (
       <ReportShell title={t('page.portalUnavailable', { defaultValue: 'Portal unavailable' })}>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-muted-foreground">
           {getApiErrorMessage(
             info.error,
             t('page.portalNotFound', {
@@ -58,6 +59,7 @@ export function ReportPortalPage(): ReactElement {
       >
         <ReportCredentials
           result={result}
+          organizationName={org.organizationName}
           onTrack={() => {
             // Pre-seed the session token, then open tracking in a NEW TAB — the
             // new tab inherits a copy of sessionStorage (auto-login) while this
@@ -75,7 +77,8 @@ export function ReportPortalPage(): ReactElement {
       title={t('page.title', { defaultValue: 'Report a concern' })}
       subtitle={t('page.portalSubtitle', {
         organization: org.organizationName,
-        defaultValue: 'Submit a confidential report to {{organization}}. You may remain anonymous.',
+        defaultValue:
+          'Raise a concern with {{organization}} through an independent, protected channel. You are not required to provide your identity.',
       })}
       orgName={org.organizationName}
       logoUrl={org.logoUrl}
@@ -87,7 +90,15 @@ export function ReportPortalPage(): ReactElement {
         </Button>
       }
     >
-      <ReportIntakeForm organizationSlug={slug} orgInfo={org} onSubmitted={setResult} />
+      {/* Reassurance sits alongside the form, and comes first in the DOM on
+          narrow screens — protection is explained before data is collected
+          (manual §09 rule 01). */}
+      <div className="grid gap-6 lg:grid-cols-[19rem_minmax(0,1fr)] lg:items-start">
+        <aside className="lg:sticky lg:top-24">
+          <ReporterAssuranceRail />
+        </aside>
+        <ReportIntakeForm organizationSlug={slug} orgInfo={org} onSubmitted={setResult} />
+      </div>
     </ReportShell>
   );
 }

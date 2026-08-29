@@ -18,8 +18,8 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           ref={ref}
           type={visible ? 'text' : 'password'}
           className={cn(
-            'flex h-11 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 pr-11 text-sm text-slate-900 placeholder:text-slate-400',
-            'focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-accent/25',
+            'flex h-11 w-full rounded-lg border border-border bg-muted/50 px-4 pr-11 text-sm text-foreground placeholder:text-muted-foreground/70',
+            'focus:border-signal focus:bg-card focus:outline-none focus:ring-2 focus:ring-ring',
             'disabled:cursor-not-allowed disabled:opacity-60',
             className,
           )}
@@ -32,7 +32,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           onClick={() => {
             setVisible((v) => !v);
           }}
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+          className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-foreground"
         >
           <ToggleIcon className="h-4 w-4" />
         </button>

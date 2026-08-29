@@ -1,24 +1,24 @@
 {
   "page": {
-    "title": "Report a concern",
-    "subtitle": "Confidentially report suspected misconduct. You may remain anonymous.",
+    "title": "Raise a concern",
+    "subtitle": "Raise a concern about suspected misconduct. You are not required to provide your identity.",
     "noContext": "No active organization context.",
     "loading": "Loading…",
     "notEnabled": "Whistleblowing reporting is not enabled for your organization.",
-    "loadingSecure": "Loading secure intake portal...",
+    "loadingSecure": "Opening the protected intake channel...",
     "portalUnavailable": "Portal unavailable",
     "portalNotFound": "This reporting portal could not be found.",
-    "reportSubmitted": "Report submitted",
-    "reportSubmittedToast": "Report submitted successfully. Save the credentials now.",
-    "portalSubtitle": "Submit a confidential report to {{organization}}. You may remain anonymous."
+    "reportSubmitted": "Report received",
+    "reportSubmittedToast": "Report submitted. Save your case credentials now.",
+    "portalSubtitle": "Raise a concern with {{organization}} through an independent, protected channel. You are not required to provide your identity."
   },
   "form": {
-    "takeTour": "Take a tour",
+    "takeTour": "How it works",
     "steps": {
-      "incident": "Incident details",
-      "location": "Location",
+      "incident": "About the concern",
+      "location": "Where it happened",
       "details": "People & timing",
-      "identity": "Identity",
+      "identity": "Identity & contact",
       "review": "Review & submit"
     },
     "cards": {
@@ -50,7 +50,7 @@
     "fields": {
       "category": "Incident category",
       "whatHappened": "What happened?",
-      "whatHappenedHint": "Who, what, where, when, and how. Your anonymity is protected.",
+      "whatHappenedHint": "Who, what, where, when, and how you know. Share only what you are comfortable sharing.",
       "location": "Location where incident occurred",
       "city": "City",
       "state": "State / Province",
@@ -58,8 +58,8 @@
       "country": "Country",
       "region": "Region / business unit",
       "relationship": "Your relationship to the organization",
-      "involved": "Person(s) engaged in this behavior",
-      "previouslyReported": "Has this been previously reported to management?",
+      "involved": "Person(s) named in this report",
+      "previouslyReported": "Has this been raised with management before?",
       "dateOfOccurrence": "Date of occurrence",
       "whenLast": "When did this last happen?",
       "duration": "How long has this been happening?",
@@ -72,11 +72,15 @@
       "selectCategory": "Select a category…",
       "selectOne": "Select one…",
       "notSpecified": "Not specified",
-      "whatHappened": "Please provide as much detail as possible — who, what, where, when and how you know this. Avoid including your own identity if you wish to remain anonymous.",
-      "location": "Physical address, branch and/or store number",
+      "whatHappened": "Provide as much detail as you can — who, what, where, when, and how you know this.",
+      "location": "Physical address, branch, department and/or store number",
       "whenLast": "e.g. Two weeks ago",
       "email": "you@example.com",
-      "bestTime": "e.g. Weekday mornings"
+      "bestTime": "e.g. Weekday mornings",
+      "searchCategory": "Search categories...",
+      "noCategoryMatch": "No category matches that search.",
+      "showAllCategories": "Show {{count}} more categories",
+      "showFewerCategories": "Show fewer categories"
     },
     "characters": "{{count}} characters",
     "anonymous": {
@@ -91,31 +95,83 @@
       "none": "No independent reviewers are currently configured."
     },
     "conflict": {
-      "title": "Conflict of interest",
+      "title": "Route this to independent review",
       "optional": "(optional)",
-      "description": "If this report involves someone who may normally handle whistleblowing cases, select this option. The report will be routed to the organization’s independent-review team and the ordinary team will not receive access."
+      "description": "The report will go to the organization’s independent-review team, and the team that normally handles whistleblowing cases will not receive access."
     },
     "terms": "I agree to the terms and conditions of making this report and confirm the information provided is true to the best of my knowledge.",
     "submit": "Submit report",
     "submitting": "Submitting…",
     "navigation": {
       "back": "Back",
-      "next": "Next"
+      "next": "Continue to next step"
     },
     "expect": {
-      "title": "What to expect",
+      "title": "Stay informed, privately",
       "directToCompliance": "Your report goes to the appropriate independent review or Compliance team.",
       "caseReference": "You'll receive a case reference to track progress.",
-      "noRetaliation": "Retaliation against reporters is strictly prohibited."
+      "noRetaliation": "Retaliation against people who raise concerns is prohibited.",
+      "lede": "After you submit, you will receive a private case reference and return key. They are shown once — save them before you close the page.",
+      "saveCredentials": "Keep your case reference and return key somewhere safe.",
+      "returnAnytime": "You can return at any time to read updates, answer questions and attach evidence.",
+      "reviewedFairly": "Your report is reviewed by the people assigned to it, following a documented process."
     },
     "validation": {
       "category": "Please choose an incident category.",
       "description": "Please provide a fuller description (at least 10 characters).",
-      "email": "Provide an email, or choose to report anonymously.",
+      "email": "Provide an email, or choose to submit without your identity.",
       "terms": "Please accept the terms and conditions to submit your report.",
       "descriptionTooLong": "Please shorten the description to 20,000 characters or fewer.",
       "futureDate": "The incident date cannot be in the future."
-    }
+    },
+    "q": {
+      "category": {
+        "title": "What is your concern about?",
+        "hint": "Choose the category that best matches your concern."
+      },
+      "description": {
+        "title": "Please describe the concern in detail",
+        "hint": "Include what happened, how often, and who was involved."
+      },
+      "location": {
+        "title": "Where did this happen?",
+        "hint": "Location or department where the incident occurred."
+      },
+      "people": {
+        "title": "Who is involved?",
+        "hint": "Naming someone here records them as a person named in the report. It is not a finding against them."
+      },
+      "timing": {
+        "title": "When did this happen?",
+        "hint": "Approximate answers are fine. Leave anything blank if you are unsure."
+      },
+      "identity": {
+        "title": "How should we contact you?",
+        "hint": "You can submit without providing your identity. Either way, your private case credentials let you return and respond."
+      },
+      "conflict": {
+        "title": "Is there a conflict of interest?",
+        "hint": "Only answer this if your concern involves someone who would normally review reports."
+      },
+      "review": {
+        "title": "Review and submit",
+        "hint": "Confirm the terms of making this report before you send it."
+      }
+    },
+    "identity": {
+      "anonymous": {
+        "title": "Do not include my identity",
+        "body": "Your name and contact details are not attached to this report. You can still receive questions and reply."
+      },
+      "named": {
+        "title": "Share my contact details",
+        "body": "Reviewers can reach you directly. Your details are visible only to the people handling this case."
+      }
+    },
+    "tips": {
+      "beSpecific": "Stick to facts you know, and include specific details like dates, times, places and what was said. If you are unsure about something, say so — an incomplete report is still worth making."
+    },
+    "footerAssurance": "This report is encrypted and access-controlled."
   },
   "persons": {
     "firstName": "First name",
@@ -145,29 +201,39 @@
   },
   "credentials": {
     "receivedTitle": "Your report has been received.",
-    "receivedDescription": "Save these credentials now — the password is shown only once and cannot be recovered. Use them to log back in and track your case.",
-    "saveTitle": "Save these credentials now.",
-    "saveDescription": "Download them as a text file or copy them somewhere secure. The password will not be shown again.",
-    "loginCredentials": "Your login credentials",
+    "receivedDescription": "It is now with the people assigned to review it. Nothing further is required from you unless they ask a question.",
+    "saveTitle": "Save these before you leave this page",
+    "saveDescription": "Your return key is shown once and is not stored in a recoverable form. If you lose it, we cannot reissue it and you will not be able to reopen this case.",
+    "loginCredentials": "Your private case credentials",
     "caseReference": "Case reference",
-    "password": "Password",
+    "password": "Return key",
     "track": "Track my case",
-    "download": "Download text file",
-    "downloadTitle": "Whistleblowing report credentials",
-    "downloadReminder": "Save these credentials securely. The password is shown only once.",
-    "trackDescription": "Opens in a new tab so your case reference and password stay visible here. Save them before you leave this page — the password is shown only once.",
+    "download": "Download file",
+    "downloadTitle": "Tellara — private case credentials",
+    "downloadReminder": "Keep these somewhere only you can reach. The return key is shown once and cannot be reissued.",
+    "trackDescription": "Tracking opens in a new tab so your credentials stay visible here. Anonymity is not affected by returning to your case.",
     "reveal": "Reveal",
     "hide": "Hide",
     "copy": "Copy",
-    "copied": "Copied!"
+    "copied": "Copied",
+    "print": "Print / Save as PDF",
+    "copyBoth": "Copy both",
+    "keepTitle": "Keep a copy",
+    "keepDescription": "Use whichever you trust. A printed copy or a saved file works even if you lose access to this device.",
+    "acknowledge": "I have saved my case reference and return key somewhere I can find them again.",
+    "acknowledgeHint": "Until you confirm, your browser will warn you before this page closes.",
+    "organization": "Organization",
+    "savedOn": "Saved on",
+    "trackAt": "Track your case at"
   },
   "shell": {
-    "defaultOrgName": "Whistleblowing Portal",
+    "defaultOrgName": "Protected reporting",
     "organizationLogoAlt": "Organization",
-    "subtitle": "Confidential reporting",
-    "footerPrefix": "Your report is encrypted and handled confidentially. You may report anonymously.",
-    "trackExisting": "Track an existing report",
-    "trackReport": "Track a report"
+    "subtitle": "Protected reporting channel",
+    "footerPrefix": "This channel is encrypted and access-controlled. You are not required to provide your identity.",
+    "trackExisting": "Track a case I already filed",
+    "trackReport": "Track my case",
+    "footerAssurance": "This channel is encrypted and access-controlled. You are not required to provide your identity."
   },
   "track": {
     "actions": {
@@ -250,19 +316,19 @@
     }
   },
   "header": {
-    "title": "Whistleblowing & Incident Management",
-    "subtitle": "Confidential intake, investigation workflow & board-ready analytics.",
+    "title": "Whistleblowing & case management",
+    "subtitle": "Protected intake, impartial review and a documented conclusion for every report.",
     "tabs": {
       "dashboard": "Dashboard",
       "cases": "Cases"
     }
   },
   "dashboard": {
-    "title": "Board-ready overview",
+    "title": "Case overview",
     "empty": "No data to display yet.",
     "loading": "Loading analytics...",
     "actions": {
-      "submitReport": "Submit a report",
+      "submitReport": "Raise a concern",
       "exporting": "Exporting...",
       "exportCsv": "Export CSV",
       "viewAllCases": "View all cases"
@@ -270,23 +336,26 @@
     "series": {
       "openCases": "Open Cases",
       "escalatedCases": "Escalated Cases",
-      "anonymous": "Anonymous",
-      "named": "Named"
+      "anonymous": "Identity not provided",
+      "named": "Identity shared"
     },
     "kpi": {
-      "totalReports": "Total Reports",
-      "openReports": "Open Reports",
-      "underInvestigation": "Under Investigation",
-      "escalated": "Escalated",
-      "closed": "{{count}} closed",
-      "atRisk": "{{count}} at risk",
-      "onTrack": "On track",
-      "slaBreached": "{{count}} SLA breached"
+      "totalReports": "Total reports",
+      "openReports": "Awaiting triage",
+      "underInvestigation": "In investigation",
+      "escalated": "Priority attention",
+      "closed": "{{count}} concluded",
+      "atRisk": "{{count}} approaching deadline",
+      "onTrack": "All within target",
+      "slaBreached": "{{count}} past deadline",
+      "avgResolution": "Avg. time to conclude",
+      "days": "{{count}} days",
+      "noBreaches": "No missed deadlines"
     },
     "charts": {
       "reportsByCategory": {
-        "title": "Reports by Category",
-        "description": "Distribution across the lifecycle"
+        "title": "Category insights",
+        "description": "What concerns are being raised"
       },
       "openVsEscalated": {
         "title": "Open vs Escalated",
@@ -296,16 +365,37 @@
         "title": "Reports by Priority"
       },
       "reportsByStatus": {
-        "title": "Reports by Status"
+        "title": "Case status breakdown",
+        "description": "Where every open case currently sits"
       },
       "anonymousVsNamed": {
-        "title": "Anonymous vs Named",
-        "description": "Reporting anonymity split"
+        "title": "How people are reporting",
+        "description": "A healthy channel carries both kinds of report"
       },
       "submissionsTrend": {
-        "title": "Submissions Trend",
-        "description": "Monthly intake (last 6 months)"
-      }
+        "title": "Reports received over time",
+        "description": "Monthly intake across the last six months"
+      },
+      "moreCategories": "+ {{count}} more categories"
+    },
+    "greetingNamed": "Welcome back, {{name}}",
+    "subtitle": "Here's what's happening across your case management workflow.",
+    "protected": {
+      "title": "Protected environment",
+      "body": "Reporter identities stay separate from case content. Every view, assignment and status change is recorded.",
+      "allegation": {
+        "title": "An allegation, not a finding",
+        "body": "Refer to people named in a report as such until an investigation concludes."
+      },
+      "audit": {
+        "title": "Everything is audited",
+        "body": "Access to a case is attributable and timestamped."
+      },
+      "action": "Go to the case register"
+    },
+    "footer": {
+      "title": "Confidential. Secure. Accountable.",
+      "body": "Activity on cases is recorded and auditable. Reporter identities are never revealed by this dashboard."
     }
   },
   "cases": {
@@ -319,7 +409,8 @@
       "allStatuses": "All statuses",
       "allCategories": "All categories",
       "allRiskRatings": "All risk ratings",
-      "assignedToMe": "Assigned to me"
+      "assignedToMe": "Assigned to me",
+      "toggle": "Search & filters"
     },
     "view": {
       "grid": "Grid view",
@@ -464,7 +555,7 @@
     "WB_ESCALATED": "Escalated",
     "RESOLVED": "Resolved",
     "WB_CLOSED": "Closed",
-    "WB_DISMISSED": "Dismissed"
+    "WB_DISMISSED": "Closed after assessment"
   },
   "priority": {
     "PRIORITY_LOW": "Low",
@@ -854,5 +945,30 @@
         "closed": "Closed"
       }
     }
+  },
+  "rail": {
+    "title": "Your voice matters",
+    "intro": "Raising a concern helps build a safer, fairer workplace. Share what you know — you decide how much you reveal about yourself.",
+    "identity": {
+      "title": "You choose what to reveal",
+      "body": "You can submit this report without providing your identity. Nothing in this form requires your name."
+    },
+    "secure": {
+      "title": "Secure and access-controlled",
+      "body": "Your report is encrypted in transit and at rest, and is readable only by the people assigned to review it."
+    },
+    "fair": {
+      "title": "Reviewed impartially",
+      "body": "Every report follows the same documented process. If it involves someone who would normally handle it, it is routed to an independent reviewer."
+    },
+    "help": {
+      "title": "Need help?",
+      "body": "See how a report is handled, from submission through to a documented conclusion.",
+      "action": "How it works"
+    },
+    "courage": "Raising a concern takes courage.",
+    "notAlone": "You are not alone.",
+    "showProtections": "How you are protected",
+    "hideProtections": "Hide how you are protected"
   }
 }

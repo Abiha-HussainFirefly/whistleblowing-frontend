@@ -51,7 +51,7 @@ export function PasswordRequirements({
             key={rule.id}
             className={cn(
               'flex items-center gap-1.5 text-xs transition-colors',
-              met ? 'text-green-600' : 'text-slate-400',
+              met ? 'text-moss' : 'text-muted-foreground/70',
             )}
           >
             {met ? (

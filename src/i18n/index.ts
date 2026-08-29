@@ -34,7 +34,7 @@ import urWhistleblowing from './locales/ur/whistleblowing.json';
 import urOrgAdmin from './locales/ur/orgAdmin.json';
 
 export { getDirection, supportedLocales } from './config';
-export const LANG_STORAGE_KEY = 'civorah.lang';
+export const LANG_STORAGE_KEY = 'tellara.lang';
 
 const resources = {
   en: { auth: enAuth, common: enCommon, errors: enErrors, settings: enSettings, whistleblowing: enWhistleblowing, orgAdmin: enOrgAdmin },

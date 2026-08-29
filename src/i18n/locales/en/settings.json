@@ -126,7 +126,7 @@
     "error": "Failed to update password. Please try again."
   },
   "recoveryCodes": {
-    "title": "Civorah MFA Recovery Codes",
+    "title": "Tellara MFA Recovery Codes",
     "separator": "========================",
     "saveHint": "Save these codes in a secure location.",
     "onceHint": "Each code can only be used once."

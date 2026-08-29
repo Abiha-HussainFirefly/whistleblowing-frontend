@@ -1,6 +1,6 @@
 ﻿{
     "app":  {
-                "name":  "Civorah",
+                "name":  "Tellara",
                 "tagline":  "Plattform fÃ¼r RechtsablÃ¤ufe"
             },
     "sessionRestoration":  {
@@ -442,7 +442,7 @@
                                               "mutationNumber":  "z.B. Inteqal 8802",
                                               "leaseNumber":  "z.B. Pacht-17/2021",
                                               "rightsType":  "z.B. Eigentum, Pacht, Wegerecht",
-                                              "rightHolder":  "z.B. Civorah",
+                                              "rightHolder":  "z.B. Tellara",
                                               "shareDescription":  "z.B. 100% Eigentum oder 1/2 Anteil",
                                               "surveySheetNumber":  "z.B. Blatt 42-B",
                                               "mapScale":  "z.B. 1:500",
@@ -619,7 +619,7 @@
                                                 "aiSearch":  "KI-Suche",
                                                 "matters":  "Rechtsstreitigkeiten"
                                             },
-                               "copyright":  "Â© {{year}} Civorah. Alle Rechte vorbehalten."
+                               "copyright":  "Â© {{year}} Tellara. Alle Rechte vorbehalten."
                            }
              },
     "states":  {
@@ -1415,7 +1415,7 @@
                                 },
                       "form":  {
                                    "portalLabel":  "Portal (Systemrolle)",
-                                   "portalSuperAdminHint":  "Erstellt eine GLOBALE Rolle fÃ¼r das Civorah-Plattform-Admin-Portal.",
+                                   "portalSuperAdminHint":  "Erstellt eine GLOBALE Rolle fÃ¼r das Tellara-Plattform-Admin-Portal.",
                                    "portalTenantHint":  "Erstellt eine VORLAGEN-Rolle fÃ¼r das Mandantenportal. Mandantenbenutzer kÃ¶nnen ihre Organisation verwalten und auch auf Modulberechtigungen zugreifen.",
                                    "portalUserHint":  "Erstellt eine VORLAGEN-Rolle fÃ¼r das Benutzerportal mit Berechtigungen auf Modulebene.",
                                    "nameLabel":  "Name",

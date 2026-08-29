@@ -41,17 +41,17 @@ export function ShareReportingLink(): ReactElement | null {
   ];
 
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900">
-      <div className="border-b border-slate-100 bg-slate-50/80 px-5 py-4 dark:border-slate-800 dark:bg-slate-800/60">
+    <div className="overflow-hidden rounded-xl border border-border bg-white shadow-sm">
+      <div className="border-b border-border bg-muted/50/80 px-5 py-4">
         <div className="flex items-start gap-3">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#007d89]/10 text-[#007d89]">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#6F56D9]/10 text-[#6F56D9]">
             <Link2 className="h-4 w-4" />
           </span>
           <div>
-            <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+            <h3 className="text-sm font-semibold text-foreground">
               {t('share.publicTitle', { defaultValue: 'Public reporting link' })}
             </h3>
-            <p className="mt-1 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+            <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
               {t('share.publicDescription', {
                 defaultValue:
                   'Share this with employees, contractors, vendors, or external reporters.',
@@ -63,7 +63,7 @@ export function ShareReportingLink(): ReactElement | null {
 
       <div className="space-y-4 p-5">
         <code
-          className="block min-w-0 truncate rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-xs text-slate-700 dark:border-slate-700 dark:bg-slate-950/40 dark:text-slate-300"
+          className="block min-w-0 truncate rounded-lg border border-border bg-muted/50 px-3 py-2.5 text-xs text-foreground"
           title={url}
         >
           {url}
@@ -73,7 +73,7 @@ export function ShareReportingLink(): ReactElement | null {
           <button
             type="button"
             onClick={copy}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-[#007d89] px-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#007d89]/90"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-[#6F56D9] px-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#6F56D9]/90"
           >
             <Copy className="h-4 w-4" />
             {copied
@@ -85,17 +85,17 @@ export function ShareReportingLink(): ReactElement | null {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-slate-200 px-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-lg border border-border px-3 text-sm font-semibold text-foreground transition-colors hover:bg-muted/60"
           >
             <ExternalLink className="h-4 w-4" />
             {t('share.openPublicForm', { defaultValue: 'Open public form' })}
           </a>
         </div>
 
-        <ul className="space-y-2 border-t border-slate-100 pt-4 dark:border-slate-800">
+        <ul className="space-y-2 border-t border-border pt-4">
           {bullets.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-xs text-slate-500">
-              <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#007d89]" />
+            <li key={item} className="flex items-start gap-2 text-xs text-muted-foreground">
+              <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#6F56D9]" />
               {item}
             </li>
           ))}

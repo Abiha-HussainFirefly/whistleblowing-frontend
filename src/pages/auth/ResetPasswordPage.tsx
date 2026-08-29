@@ -62,11 +62,11 @@ export function ResetPasswordPage(): ReactElement {
     return (
       <div>
         <header className="text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-moss-tint text-moss">
             <CheckCircle2 className="h-6 w-6" />
           </div>
           <h1 className="mt-3 text-2xl font-bold text-brand-primary">Password Updated</h1>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-muted-foreground">
             {successMessage.length > 0
               ? successMessage
               : 'Your password has been reset. Please sign in with your new password.'}
@@ -92,7 +92,7 @@ export function ResetPasswordPage(): ReactElement {
     <div>
       <header className="text-center">
         <h1 className="text-2xl font-bold text-brand-accent">Set New Password</h1>
-        <p className="mt-1 text-sm text-slate-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           {hasToken ? 'Choose a new password for your account' : 'Reset link is missing or invalid'}
         </p>
       </header>
@@ -117,12 +117,12 @@ export function ResetPasswordPage(): ReactElement {
               aria-invalid={passwordError.length > 0}
               className={cn(
                 passwordError.length > 0 &&
-                  'border-red-400 focus:border-red-500 focus:ring-red-200',
+                  'border-destructive focus:border-destructive focus:ring-destructive',
               )}
               required
             />
             {passwordError.length > 0 && (
-              <p className="mt-1 text-xs text-red-600">{passwordError}</p>
+              <p className="mt-1 text-xs text-destructive">{passwordError}</p>
             )}
             <PasswordRequirements value={password} />
           </div>
@@ -144,11 +144,11 @@ export function ResetPasswordPage(): ReactElement {
               disabled={submitting}
               aria-invalid={confirmError.length > 0}
               className={cn(
-                confirmError.length > 0 && 'border-red-400 focus:border-red-500 focus:ring-red-200',
+                confirmError.length > 0 && 'border-destructive focus:border-destructive focus:ring-destructive',
               )}
               required
             />
-            {confirmError.length > 0 && <p className="mt-1 text-xs text-red-600">{confirmError}</p>}
+            {confirmError.length > 0 && <p className="mt-1 text-xs text-destructive">{confirmError}</p>}
           </div>
 
           <PrimaryButton type="submit" className="mt-6" disabled={!isFormValid || submitting}>
@@ -163,7 +163,7 @@ export function ResetPasswordPage(): ReactElement {
           </PrimaryButton>
         </form>
       ) : (
-        <div className="mt-8 rounded-lg border border-red-100 bg-red-50 p-4 text-center text-sm text-red-700">
+        <div className="mt-8 rounded-lg border border-red-100 bg-destructive/5 p-4 text-center text-sm text-destructive">
           This reset link is missing a token. Please request a new one.
         </div>
       )}

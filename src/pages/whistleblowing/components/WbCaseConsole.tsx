@@ -515,20 +515,20 @@ export function WbCaseConsole({
       <div className="space-y-6">
         <Link
           to={backTo}
-          className="inline-flex items-center gap-1 text-sm text-slate-500 transition-colors hover:text-slate-700"
+          className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
           {backLabel}
         </Link>
 
         {/* Title row */}
-        <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-800">
+        <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+              <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                 {t('caseConsole.header.reference', { defaultValue: 'Case reference' })}
               </p>
-              <PageTitle className="mt-1 text-slate-900 dark:text-slate-100">
+              <PageTitle className="mt-1 text-foreground">
                 <ServerText>{c.caseReferenceNumber}</ServerText>
               </PageTitle>
               <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -536,7 +536,7 @@ export function WbCaseConsole({
                 <WbPriorityBadge priority={c.priority} />
                 <WbCategoryBadge category={c.category} />
               </div>
-              <p className="mt-1.5 text-sm text-slate-500">
+              <p className="mt-1.5 text-sm text-muted-foreground">
                 {c.isAnonymous
                   ? t('caseConsole.reporter.anonymous', { defaultValue: 'Anonymous reporter' })
                   : t('caseConsole.reporter.named', { defaultValue: 'Named reporter' })}{' '}
@@ -551,13 +551,13 @@ export function WbCaseConsole({
             </div>
             <div className="flex flex-wrap items-center justify-end gap-2">
               {c.slaBreachedAt !== null ? (
-                <span className="inline-flex shrink-0 items-center gap-1 rounded-md bg-red-50 px-3 py-1.5 text-sm font-medium text-red-700">
+                <span className="inline-flex shrink-0 items-center gap-1 rounded-md bg-destructive/5 px-3 py-1.5 text-sm font-medium text-destructive">
                   <AlertTriangle className="h-5 w-5" />
                   {t('caseConsole.sla.breached', { defaultValue: 'SLA breached' })}
                 </span>
               ) : slaDays !== null ? (
                 <span
-                  className={`inline-flex shrink-0 items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium ${slaDays <= 7 ? 'bg-amber-50 text-amber-700' : 'bg-slate-50 text-slate-600'}`}
+                  className={`inline-flex shrink-0 items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium ${slaDays <= 7 ? 'bg-courage-tint text-courage-strong' : 'bg-muted/50 text-muted-foreground'}`}
                 >
                   {t('caseConsole.sla.remaining', {
                     count: slaDays,
@@ -673,7 +673,7 @@ export function WbCaseConsole({
         </div>
 
         {errMsg !== null && (
-          <p className="rounded-md border border-red-100 bg-red-50 px-3 py-2 text-sm text-red-600">
+          <p className="rounded-md border border-red-100 bg-destructive/5 px-3 py-2 text-sm text-destructive">
             {errMsg}
           </p>
         )}
@@ -753,18 +753,18 @@ export function WbCaseConsole({
                 />
               </dl>
 
-              <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-700">
-                <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+              <div className="mt-4 border-t border-border pt-4">
+                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                   {t('caseConsole.fields.location', { defaultValue: 'Location' })}
                 </p>
-                <ServerText className="mt-1 block text-sm text-slate-700 dark:text-slate-200">
+                <ServerText className="mt-1 block text-sm text-foreground">
                   {formatLocation(c)}
                 </ServerText>
               </div>
 
               {!c.isAnonymous &&
                 (c.reporterPhone !== null || c.reporterPreferredContact !== null) && (
-                  <div className="mt-4 grid gap-x-6 gap-y-2 border-t border-slate-100 pt-4 text-sm dark:border-slate-700 sm:grid-cols-2">
+                  <div className="mt-4 grid gap-x-6 gap-y-2 border-t border-border pt-4 text-sm sm:grid-cols-2">
                     <Field
                       label={t('caseConsole.fields.reporterPhone', {
                         defaultValue: 'Reporter phone',
@@ -780,23 +780,23 @@ export function WbCaseConsole({
                   </div>
                 )}
 
-              <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-700">
-                <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+              <div className="mt-4 border-t border-border pt-4">
+                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                   {t('caseConsole.fields.description', { defaultValue: 'Description' })}
                 </p>
-                <ServerText className="mt-1 block whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-200">
+                <ServerText className="mt-1 block whitespace-pre-wrap text-sm text-foreground">
                   {c.incidentDescription}
                 </ServerText>
               </div>
 
               {c.involvedPersons.length > 0 && (
-                <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-700">
-                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                <div className="mt-4 border-t border-border pt-4">
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                     {t('caseConsole.fields.involvedPersons', {
                       defaultValue: 'Person(s) engaged in this behavior',
                     })}
                   </p>
-                  <ul className="mt-1 space-y-1 text-sm text-slate-700 dark:text-slate-200">
+                  <ul className="mt-1 space-y-1 text-sm text-foreground">
                     {c.involvedPersons.map((p, i) => (
                       <li key={i}>
                         {formatPerson(
@@ -811,13 +811,13 @@ export function WbCaseConsole({
                 </div>
               )}
               {c.personsInvolved !== null && (
-                <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-700">
-                  <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+                <div className="mt-4 border-t border-border pt-4">
+                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                     {t('caseConsole.fields.personsInvolvedNotes', {
                       defaultValue: 'Persons involved (notes)',
                     })}
                   </p>
-                  <p className="mt-1 whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-200">
+                  <p className="mt-1 whitespace-pre-wrap text-sm text-foreground">
                     {c.personsInvolved}
                   </p>
                 </div>
@@ -901,7 +901,7 @@ export function WbCaseConsole({
               icon={MessageSquare}
             >
               <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-                <div className="inline-flex rounded-lg border border-slate-200 bg-white p-0.5">
+                <div className="inline-flex rounded-lg border border-border bg-white p-0.5">
                   {(
                     [
                       {
@@ -925,7 +925,7 @@ export function WbCaseConsole({
                       className={`inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
                         activityView === option.key
                           ? 'bg-brand-accent text-white shadow-sm'
-                          : 'text-slate-500 hover:text-slate-700'
+                          : 'text-muted-foreground hover:text-foreground'
                       }`}
                     >
                       {option.key === 'communication' ? (
@@ -970,7 +970,7 @@ export function WbCaseConsole({
               </div>
 
               {activityView === 'communication' ? (
-                <div className="rounded-md border border-slate-200 bg-slate-50/60 p-3 dark:border-slate-700 dark:bg-slate-900/40">
+                <div className="rounded-md border border-border bg-muted/50/60 p-3">
                   {c.messages.length === 0 ? (
                     <EmptyState
                       icon={MessageSquare}
@@ -985,18 +985,18 @@ export function WbCaseConsole({
                           key={m.id}
                           className={`rounded-md border p-3 text-sm ${
                             m.isFromReporter
-                              ? 'border-blue-100 bg-blue-50/60 dark:border-blue-900/40 dark:bg-blue-950/20'
+                              ? 'border-blue-100 bg-signal-tint/60 dark:border-blue-900/40 dark:bg-blue-950/20'
                               : m.isInternal
-                                ? 'border-amber-100 bg-amber-50/60 dark:border-amber-900/40 dark:bg-amber-950/20'
-                                : 'border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900/40'
+                                ? 'border-amber-100 bg-courage-tint/60 dark:border-amber-900/40 dark:bg-amber-950/20'
+                                : 'border-border bg-white'
                           }`}
                         >
-                          <div className="mb-1 flex items-center justify-between text-xs text-slate-400">
-                            <span className="flex items-center gap-1.5 font-medium text-slate-600 dark:text-slate-300">
+                          <div className="mb-1 flex items-center justify-between text-xs text-muted-foreground/70">
+                            <span className="flex items-center gap-1.5 font-medium text-muted-foreground">
                               {m.isFromReporter ? (
                                 <Inbox className="h-4 w-4 text-blue-500" />
                               ) : (
-                                <UserCheck className="h-4 w-4 text-slate-400" />
+                                <UserCheck className="h-4 w-4 text-muted-foreground/70" />
                               )}
                               {m.isFromReporter ? (
                                 t('caseConsole.communication.reporter', {
@@ -1012,7 +1012,7 @@ export function WbCaseConsole({
                                 </ServerText>
                               )}
                               {m.isInternal && (
-                                <span className="ml-1 inline-flex items-center gap-0.5 text-amber-600">
+                                <span className="ml-1 inline-flex items-center gap-0.5 text-courage-strong">
                                   <Lock className="h-4 w-4" />
                                   {t('caseConsole.communication.internal', {
                                     defaultValue: 'Internal',
@@ -1022,7 +1022,7 @@ export function WbCaseConsole({
                             </span>
                             <span>{formatDateTime(m.createdAt)}</span>
                           </div>
-                          <ServerText className="block whitespace-pre-wrap text-slate-700 dark:text-slate-200">
+                          <ServerText className="block whitespace-pre-wrap text-foreground">
                             {m.content}
                           </ServerText>
                         </li>
@@ -1034,7 +1034,7 @@ export function WbCaseConsole({
                   )}
                 </div>
               ) : (
-                <div className="rounded-md border border-slate-200 bg-slate-50/60 p-3 dark:border-slate-700 dark:bg-slate-900/40">
+                <div className="rounded-md border border-border bg-muted/50/60 p-3">
                   {c.attachments.length === 0 ? (
                     <EmptyState
                       icon={Paperclip}
@@ -1043,18 +1043,18 @@ export function WbCaseConsole({
                       })}
                     />
                   ) : (
-                    <ul className="max-h-72 divide-y divide-slate-100 overflow-y-auto dark:divide-slate-700">
+                    <ul className="max-h-72 divide-y divide-border overflow-y-auto">
                       {visibleAttachments.map((a) => (
                         <li
                           key={a.id}
                           className="flex items-center justify-between gap-2 py-2 text-sm"
                         >
                           <div className="flex min-w-0 items-center gap-2">
-                            <Paperclip className="h-5 w-5 shrink-0 text-slate-400" />
-                            <span className="truncate text-slate-700 dark:text-slate-200">
+                            <Paperclip className="h-5 w-5 shrink-0 text-muted-foreground/70" />
+                            <span className="truncate text-foreground">
                               {a.fileName}
                             </span>
-                            <span className="shrink-0 text-xs text-slate-400">
+                            <span className="shrink-0 text-xs text-muted-foreground/70">
                               {formatBytes(a.sizeBytes)} ·{' '}
                               {a.isFromReporter
                                 ? t('caseConsole.evidence.reporter', { defaultValue: 'reporter' })
@@ -1068,7 +1068,7 @@ export function WbCaseConsole({
                               onClick={() => {
                                 onDownload(a.id);
                               }}
-                              className="inline-flex shrink-0 items-center gap-1 text-xs text-slate-500 hover:text-brand-accent"
+                              className="inline-flex shrink-0 items-center gap-1 text-xs text-muted-foreground hover:text-brand-accent"
                             >
                               <Download className="h-4 w-4" />
                               {t('caseConsole.evidence.download', { defaultValue: 'Download' })}
@@ -1082,7 +1082,7 @@ export function WbCaseConsole({
                     <Pagination meta={attachmentsMeta} onPageChange={setAttachmentsPage} />
                   )}
                   {addAttachment.error !== null && (
-                    <p className="mt-2 text-xs text-red-600">
+                    <p className="mt-2 text-xs text-destructive">
                       {getApiErrorMessage(addAttachment.error)}
                     </p>
                   )}
@@ -1096,9 +1096,9 @@ export function WbCaseConsole({
                 </div>
               )}
 
-              <div className="mt-4 border-t border-slate-100 pt-4 dark:border-slate-700">
+              <div className="mt-4 border-t border-border pt-4">
                 <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">
+                  <h3 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     {t('caseConsole.panels.relatedCases', { defaultValue: 'Related cases' })}
                   </h3>
                   {(canInvestigate || canAdmin) && !isClosed ? (
@@ -1126,7 +1126,7 @@ export function WbCaseConsole({
                       <li key={r.id} className="flex items-center justify-between gap-2">
                         <Link
                           to={detailRoute(r.id)}
-                          className="text-slate-700 hover:text-brand-accent dark:text-slate-200"
+                          className="text-foreground hover:text-brand-accent"
                         >
                           <ServerText>{r.caseReferenceNumber}</ServerText>
                         </Link>
@@ -1135,7 +1135,7 @@ export function WbCaseConsole({
                             onClick={() => {
                               handleUnlinkCase(r.id);
                             }}
-                            className="text-xs text-slate-400 hover:text-red-600"
+                            className="text-xs text-muted-foreground/70 hover:text-red-600"
                           >
                             {t('caseConsole.actions.unlink', { defaultValue: 'Unlink' })}
                           </button>
@@ -1207,7 +1207,7 @@ export function WbCaseConsole({
           }
         >
           <div className="form-sheet-body space-y-4">
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label className="block text-sm font-medium text-foreground">
               {t('caseConsole.fields.priority', { defaultValue: 'Priority' })}
               <Select
                 value={priority}
@@ -1222,7 +1222,7 @@ export function WbCaseConsole({
                 ))}
               </Select>
             </label>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label className="block text-sm font-medium text-foreground">
               {t('caseConsole.fields.preliminaryAssessment', {
                 defaultValue: 'Preliminary assessment',
               })}
@@ -1269,7 +1269,7 @@ export function WbCaseConsole({
           }
         >
           <div className="form-sheet-body space-y-4">
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label className="block text-sm font-medium text-foreground">
               {t('caseConsole.fields.findings', { defaultValue: 'Findings' })}
               <Textarea
                 value={findings}
@@ -1279,7 +1279,7 @@ export function WbCaseConsole({
                 rows={6}
               />
             </label>
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label className="block text-sm font-medium text-foreground">
               {t('caseConsole.fields.disciplinaryRecommendation', {
                 defaultValue: 'Disciplinary recommendation',
               })}
@@ -1326,7 +1326,7 @@ export function WbCaseConsole({
           }
         >
           <div className="form-sheet-body">
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label className="block text-sm font-medium text-foreground">
               {t('caseConsole.fields.escalationReason', { defaultValue: 'Escalation reason' })}
               <Textarea
                 value={escalateReason}
@@ -1387,7 +1387,7 @@ export function WbCaseConsole({
           }
         >
           <div className="form-sheet-body">
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-200">
+            <label className="block text-sm font-medium text-foreground">
               {t('caseConsole.fields.closureOutcome', { defaultValue: 'Closure outcome' })}
               <Textarea
                 value={closureOutcome}
@@ -1436,7 +1436,7 @@ export function WbCaseConsole({
           }
         >
           <div className="form-sheet-body space-y-4">
-            <p className="text-sm text-slate-600 dark:text-slate-300">
+            <p className="text-sm text-muted-foreground">
               {c.assignedInvestigator !== null
                 ? t('caseConsole.assignment.assignedPrefix', {
                     defaultValue: 'Assigned: {{name}}',
@@ -1536,14 +1536,14 @@ export function WbCaseConsole({
           }
         >
           <div className="form-sheet-body">
-            <div className="rounded-lg border border-brand-accent/20 bg-[#e6f5f6]/50 px-4 py-3 text-sm text-brand-primary">
+            <div className="rounded-lg border border-brand-accent/20 bg-[#F2EFFF]/50 px-4 py-3 text-sm text-brand-primary">
               {t('caseConsole.communication.commentGuidance', {
                 defaultValue:
                   'Use this for case updates, investigator notes, follow-up questions, or additional context.',
               })}
             </div>
             <label className="block space-y-1">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-200">
+              <span className="text-sm font-medium text-foreground">
                 {t('caseConsole.communication.commentLabel', { defaultValue: 'Comment' })}
               </span>
               <Textarea
@@ -1557,14 +1557,14 @@ export function WbCaseConsole({
                 })}
               />
             </label>
-            <label className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+            <label className="flex items-center gap-2 text-sm text-muted-foreground">
               <input
                 type="checkbox"
                 checked={commentInternal}
                 onChange={(e) => {
                   setCommentInternal(e.target.checked);
                 }}
-                className="h-4 w-4 rounded border-slate-300"
+                className="h-4 w-4 rounded border-border"
               />
               {t('caseConsole.communication.internalNote', {
                 defaultValue: 'Internal note (hidden from reporter)',
@@ -1590,7 +1590,7 @@ export function WbCaseConsole({
         >
           <div className="form-sheet-body space-y-5">
             <div className="space-y-1">
-              <label className="text-xs font-medium text-slate-500 dark:text-slate-400">
+              <label className="text-xs font-medium text-muted-foreground">
                 {t('caseConsole.related.searchLabel', {
                   defaultValue: 'Search case reference or keywords',
                 })}
@@ -1619,29 +1619,29 @@ export function WbCaseConsole({
             </div>
 
             {linkRef.trim().length > 0 && (
-              <div className="rounded-lg border border-slate-200 bg-slate-50/70 p-3 dark:border-slate-700 dark:bg-slate-900/50">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">
+              <div className="rounded-lg border border-border bg-muted/50/70 p-3">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground/70">
                   {t('caseConsole.related.searchResults', { defaultValue: 'Matching cases' })}
                 </p>
                 {searchCases.isLoading ? (
-                  <p className="py-2 text-xs text-slate-400">
+                  <p className="py-2 text-xs text-muted-foreground/70">
                     {t('common.loading', { defaultValue: 'Searching cases...' })}
                   </p>
                 ) : availableSuggestions.length === 0 ? (
-                  <p className="py-2 text-xs text-slate-500">
+                  <p className="py-2 text-xs text-muted-foreground">
                     {t('caseConsole.related.noMatches', {
                       defaultValue: 'No matching unlinked cases found.',
                     })}
                   </p>
                 ) : (
-                  <ul className="max-h-56 divide-y divide-slate-200/60 overflow-y-auto dark:divide-slate-700/60">
+                  <ul className="max-h-56 divide-y divide-border/60 overflow-y-auto">
                     {availableSuggestions.map((item) => (
                       <li
                         key={item.id}
                         className="flex items-center justify-between gap-3 py-2 text-sm"
                       >
                         <div className="min-w-0 flex-1">
-                          <span className="font-semibold text-slate-800 dark:text-slate-200">
+                          <span className="font-semibold text-foreground">
                             {item.caseReferenceNumber}
                           </span>
                           <span className="ml-2 inline-flex items-center text-xs">
@@ -1667,8 +1667,8 @@ export function WbCaseConsole({
               </div>
             )}
 
-            <div className="border-t border-slate-200 pt-4 dark:border-slate-700">
-              <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-300">
+            <div className="border-t border-border pt-4">
+              <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                 {t('caseConsole.panels.relatedCases', { defaultValue: 'Currently Linked Cases' })} (
                 {c.relatedCases.length})
               </h4>
@@ -1682,11 +1682,11 @@ export function WbCaseConsole({
                   {visibleRelatedCases.map((r) => (
                     <li
                       key={r.id}
-                      className="flex items-center justify-between gap-2 rounded-md border border-slate-100 bg-white p-2.5 dark:border-slate-800 dark:bg-slate-900"
+                      className="flex items-center justify-between gap-2 rounded-md border border-border bg-white p-2.5"
                     >
                       <Link
                         to={detailRoute(r.id)}
-                        className="font-medium text-slate-700 hover:text-brand-accent dark:text-slate-200"
+                        className="font-medium text-foreground hover:text-brand-accent"
                       >
                         <ServerText>{r.caseReferenceNumber}</ServerText>
                       </Link>
@@ -1698,7 +1698,7 @@ export function WbCaseConsole({
                           onClick={() => {
                             handleUnlinkCase(r.id);
                           }}
-                          className="h-7 text-xs text-red-600 hover:bg-red-50 hover:text-red-700 dark:hover:bg-red-950/30"
+                          className="h-7 text-xs text-destructive hover:bg-red-50 hover:text-red-700 dark:hover:bg-red-950/30"
                         >
                           {t('caseConsole.actions.unlink', { defaultValue: 'Unlink' })}
                         </Button>

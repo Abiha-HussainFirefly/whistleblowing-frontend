@@ -12,7 +12,7 @@
  * security- or context-sensitive is cached here and it can never desync.
  */
 
-const STORAGE_KEY = 'civorah.session.v1';
+const STORAGE_KEY = 'tellara.session.v1';
 
 export interface PersistedSession {
   /** Epoch ms when the refresh token expires. */

@@ -1,14 +1,25 @@
-import { type ReactElement, type ReactNode, useEffect, useState } from 'react';
+import { type ReactElement, type ReactNode, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@tanstack/react-query';
-import { CheckCircle2, EyeOff, FileText, Globe, Info, User } from 'lucide-react';
+import {
+  AlertCircle,
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle2,
+  EyeOff,
+  KeyRound,
+  Lock,
+  Send,
+} from 'lucide-react';
 
 import { Button } from '@components/ui/button';
+import { Callout } from '@components/ui/callout';
 import { Input } from '@components/ui/input';
 import { Select } from '@components/ui/select';
-import { StepBar } from '@components/ui/step-bar';
+import { StepBar, StepBarCompact } from '@components/ui/step-bar';
 import { Textarea } from '@components/ui/textarea';
 import { getApiErrorMessage } from '@lib/api-error';
+import { cn } from '@lib/utils';
 import { reporterService } from '../api/reporter.service';
 import { useReportTour } from '../hooks/useReportTour';
 import {
@@ -35,6 +46,7 @@ import type {
   WbRelationship,
   WhistleblowingCategory,
 } from '../types';
+import { CategoryPicker } from './CategoryPicker';
 import { InvolvedPersonsField } from './InvolvedPersonsField';
 
 type ReportStepKey = 'incident' | 'location' | 'details' | 'identity' | 'review';
@@ -46,16 +58,18 @@ interface ReportStep {
 }
 
 const REPORT_STEPS: readonly ReportStep[] = [
-  { key: 'incident', titleKey: 'form.steps.incident', fallback: 'Incident details' },
-  { key: 'location', titleKey: 'form.steps.location', fallback: 'Location' },
+  { key: 'incident', titleKey: 'form.steps.incident', fallback: 'About the concern' },
+  { key: 'location', titleKey: 'form.steps.location', fallback: 'Where it happened' },
   { key: 'details', titleKey: 'form.steps.details', fallback: 'People & timing' },
-  { key: 'identity', titleKey: 'form.steps.identity', fallback: 'Identity' },
+  { key: 'identity', titleKey: 'form.steps.identity', fallback: 'Identity & contact' },
   { key: 'review', titleKey: 'form.steps.review', fallback: 'Review & submit' },
 ] as const;
 
 const INCIDENT_STEP_INDEX = 0;
 const IDENTITY_STEP_INDEX = 3;
 const REVIEW_STEP_INDEX = 4;
+
+const DESCRIPTION_MAX = 20_000;
 
 interface ReportIntakeFormProps {
   organizationSlug: string;
@@ -75,11 +89,12 @@ export function ReportIntakeForm({
     mutationFn: (data: SubmitReportInput) => reporterService.submit(data),
   });
   const [step, setStep] = useState(0);
+  const formTopRef = useRef<HTMLDivElement>(null);
   // eslint-disable-next-line security/detect-object-injection -- step is clamped by wizard navigation
   const currentStep: ReportStep = REPORT_STEPS[step] ?? {
     key: 'incident',
     titleKey: 'form.steps.incident',
-    fallback: 'Incident details',
+    fallback: 'About the concern',
   };
   const reportStepTitles = REPORT_STEPS.map((item) =>
     t(item.titleKey, { defaultValue: item.fallback }),
@@ -148,7 +163,7 @@ export function ReportIntakeForm({
         defaultValue: 'Please provide a fuller description (at least 10 characters).',
       });
     }
-    if (description.length > 20_000) {
+    if (description.length > DESCRIPTION_MAX) {
       return t('form.validation.descriptionTooLong', {
         defaultValue: 'Please shorten the description to 20,000 characters or fewer.',
       });
@@ -192,9 +207,31 @@ export function ReportIntakeForm({
     return null;
   };
 
+  /**
+   * Bring the top of the wizard back into view after a step change.
+   *
+   * The step buttons sit at the BOTTOM of a long form, so without this the
+   * reporter presses "Continue" and is left staring at the footer of the next
+   * step with no visible indication that anything happened. Scrolls the
+   * scrollable ancestor when there is one (the authenticated shell scrolls a
+   * `<main>`, not the window).
+   */
+  const scrollToTop = (): void => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    const anchor = formTopRef.current;
+    if (anchor === null) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const goBack = (): void => {
     setError(null);
     setStep((value) => Math.max(0, value - 1));
+    scrollToTop();
   };
 
   const goNext = (): void => {
@@ -204,6 +241,7 @@ export function ReportIntakeForm({
       return;
     }
     setError(null);
+    scrollToTop();
     setStep((value) => Math.min(REPORT_STEPS.length - 1, value + 1));
   };
 
@@ -284,91 +322,102 @@ export function ReportIntakeForm({
   };
 
   return (
-    <div className="w-full space-y-5">
-      <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-700 dark:bg-slate-900 sm:p-5">
-        <StepBar titles={reportStepTitles} current={step} />
+    <div ref={formTopRef} className="w-full scroll-mt-24 space-y-6">
+      {/* ---------------------------------------------------------- progress */}
+      <div className="rounded-xl border border-border bg-card p-5">
+        <StepBar
+          titles={reportStepTitles}
+          current={step}
+          className="hidden sm:block"
+          onStepSelect={(index) => {
+            setError(null);
+            setStep(index);
+            scrollToTop();
+          }}
+        />
+        <StepBarCompact titles={reportStepTitles} current={step} className="sm:hidden" />
       </div>
 
+      {/* ------------------------------------------------- step 1: incident */}
       {currentStep.key === 'incident' && (
-        <SectionCard
-          number="1"
-          title={t('form.cards.overview.title', { defaultValue: 'Incident Overview' })}
-          subtitle={t('form.cards.overview.subtitle', {
-            defaultValue: "Describe the nature of the concern you're reporting",
-          })}
-          icon={<FileText />}
-        >
-          <div data-tour="category">
-            <FormField
-              label={t('form.fields.category', { defaultValue: 'Incident category' })}
-              required
-            >
-              <Select
+        <div key="incident" className="animate-fade-up space-y-6">
+          <QuestionCard
+            number={1}
+            title={t('form.q.category.title', { defaultValue: 'What is your concern about?' })}
+            hint={t('form.q.category.hint', {
+              defaultValue: 'Choose the category that best matches your concern.',
+            })}
+            required
+          >
+            <div data-tour="category">
+              <CategoryPicker
+                categories={orgInfo.categories}
                 value={category}
-                onChange={(e) => {
-                  setCategory(e.target.value as WhistleblowingCategory | '');
-                }}
-              >
-                <option value="">
-                  {t('form.placeholders.selectCategory', {
-                    defaultValue: 'Select a category...',
-                  })}
-                </option>
-                {orgInfo.categories.map((c) => (
-                  <option key={c} value={c}>
-                    {wbCategoryLabelT(c, t)}
-                  </option>
-                ))}
-              </Select>
-            </FormField>
-          </div>
+                onChange={setCategory}
+                labelFor={(value) => wbCategoryLabelT(value, t)}
+                searchPlaceholder={t('form.placeholders.searchCategory', {
+                  defaultValue: 'Search categories...',
+                })}
+                emptyLabel={t('form.placeholders.noCategoryMatch', {
+                  defaultValue: 'No category matches that search.',
+                })}
+                showAllLabel={t('form.placeholders.showAllCategories', {
+                  defaultValue: 'Show {{count}} more categories',
+                })}
+                showLessLabel={t('form.placeholders.showFewerCategories', {
+                  defaultValue: 'Show fewer categories',
+                })}
+              />
+            </div>
+          </QuestionCard>
 
-          <div data-tour="description">
-            <FormField
-              label={t('form.fields.whatHappened', { defaultValue: 'What happened?' })}
-              required
-              hint={t('form.fields.whatHappenedHint', {
-                defaultValue: 'Who, what, where, when, and how. Your anonymity is protected.',
-              })}
-            >
+          <QuestionCard
+            number={2}
+            title={t('form.q.description.title', {
+              defaultValue: 'Please describe the concern in detail',
+            })}
+            hint={t('form.q.description.hint', {
+              defaultValue: 'Include what happened, how often, and who was involved.',
+            })}
+            required
+          >
+            <div data-tour="description" className="space-y-2">
               <Textarea
                 value={description}
-                maxLength={20_000}
+                maxLength={DESCRIPTION_MAX}
                 onChange={(e) => {
                   setDescription(e.target.value);
                 }}
-                rows={7}
+                rows={9}
                 placeholder={t('form.placeholders.whatHappened', {
                   defaultValue:
-                    'Please provide as much detail as possible - who, what, where, when and how you know this. Avoid including your own identity if you wish to remain anonymous.',
+                    'Provide as much detail as you can — who, what, where, when, and how you know this.',
                 })}
               />
-            </FormField>
-          </div>
-          <p className="text-right text-xs text-slate-400">
-            {t('form.characters', {
-              count: description.length,
-              defaultValue: '{{count}} characters',
-            })}
-          </p>
-        </SectionCard>
+              <CharacterCount value={description.length} max={DESCRIPTION_MAX} />
+            </div>
+
+            <Callout tone="tip" className="mt-4">
+              {t('form.tips.beSpecific', {
+                defaultValue:
+                  'Stick to facts you know, and include specific details like dates, times, places and what was said. If you are unsure about something, say so — an incomplete report is still worth making.',
+              })}
+            </Callout>
+          </QuestionCard>
+        </div>
       )}
 
+      {/* ------------------------------------------------- step 2: location */}
       {currentStep.key === 'location' && (
-        <SectionCard
-          number="2"
-          title={t('form.cards.location.title', { defaultValue: 'Where Did This Happen?' })}
-          subtitle={t('form.cards.location.subtitle', {
-            defaultValue: 'Help us understand the location of the incident',
-          })}
-          icon={<Globe />}
-        >
-          <div data-tour="location">
-            <FormField
-              label={t('form.fields.location', {
-                defaultValue: 'Location where incident occurred',
-              })}
-            >
+        <div key="location" className="animate-fade-up space-y-6">
+          <QuestionCard
+            number={3}
+            title={t('form.q.location.title', { defaultValue: 'Where did this happen?' })}
+            hint={t('form.q.location.hint', {
+              defaultValue: 'Location or department where the incident occurred.',
+            })}
+          >
+            <div data-tour="location">
               <Textarea
                 value={location}
                 onChange={(e) => {
@@ -376,258 +425,276 @@ export function ReportIntakeForm({
                 }}
                 rows={3}
                 placeholder={t('form.placeholders.location', {
-                  defaultValue: 'Physical address, branch and/or store number',
+                  defaultValue: 'Physical address, branch, department and/or store number',
                 })}
               />
-            </FormField>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <FormField label={t('form.fields.city', { defaultValue: 'City' })}>
-              <Input
-                value={city}
-                onChange={(e) => {
-                  setCity(e.target.value);
-                }}
-              />
-            </FormField>
-            <FormField label={t('form.fields.state', { defaultValue: 'State / Province' })}>
-              <Input
-                value={stateProvince}
-                onChange={(e) => {
-                  setStateProvince(e.target.value);
-                }}
-              />
-            </FormField>
-            <FormField label={t('form.fields.postalCode', { defaultValue: 'Zip / Postal code' })}>
-              <Input
-                value={postalCode}
-                onChange={(e) => {
-                  setPostalCode(e.target.value);
-                }}
-              />
-            </FormField>
-            <FormField label={t('form.fields.country', { defaultValue: 'Country' })}>
-              <Input
-                value={country}
-                onChange={(e) => {
-                  setCountry(e.target.value);
-                }}
-              />
-            </FormField>
-          </div>
-          {orgInfo.regions.length > 0 && (
-            <FormField label={t('form.fields.region', { defaultValue: 'Region / business unit' })}>
-              <Select
-                value={region}
-                onChange={(e) => {
-                  setRegion(e.target.value);
-                }}
-              >
-                <option value="">
-                  {t('form.placeholders.notSpecified', { defaultValue: 'Not specified' })}
-                </option>
-                {orgInfo.regions.map((r) => (
-                  <option key={r.regionCode} value={r.regionCode}>
-                    {r.displayName}
-                  </option>
-                ))}
-              </Select>
-            </FormField>
-          )}
-        </SectionCard>
+            </div>
+
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              <Field label={t('form.fields.city', { defaultValue: 'City' })}>
+                <Input
+                  value={city}
+                  onChange={(e) => {
+                    setCity(e.target.value);
+                  }}
+                />
+              </Field>
+              <Field label={t('form.fields.state', { defaultValue: 'State / Province' })}>
+                <Input
+                  value={stateProvince}
+                  onChange={(e) => {
+                    setStateProvince(e.target.value);
+                  }}
+                />
+              </Field>
+              <Field label={t('form.fields.postalCode', { defaultValue: 'Zip / Postal code' })}>
+                <Input
+                  value={postalCode}
+                  onChange={(e) => {
+                    setPostalCode(e.target.value);
+                  }}
+                />
+              </Field>
+              <Field label={t('form.fields.country', { defaultValue: 'Country' })}>
+                <Input
+                  value={country}
+                  onChange={(e) => {
+                    setCountry(e.target.value);
+                  }}
+                />
+              </Field>
+            </div>
+
+            {orgInfo.regions.length > 0 && (
+              <div className="mt-4">
+                <Field
+                  label={t('form.fields.region', { defaultValue: 'Region / business unit' })}
+                >
+                  <Select
+                    value={region}
+                    onChange={(e) => {
+                      setRegion(e.target.value);
+                    }}
+                  >
+                    <option value="">
+                      {t('form.placeholders.notSpecified', { defaultValue: 'Not specified' })}
+                    </option>
+                    {orgInfo.regions.map((r) => (
+                      <option key={r.regionCode} value={r.regionCode}>
+                        {r.displayName}
+                      </option>
+                    ))}
+                  </Select>
+                </Field>
+              </div>
+            )}
+          </QuestionCard>
+        </div>
       )}
 
+      {/* -------------------------------------------------- step 3: details */}
       {currentStep.key === 'details' && (
-        <SectionCard
-          number="3"
-          title={t('form.cards.more.title', { defaultValue: 'Tell Us More' })}
-          subtitle={t('form.cards.more.subtitle', {
-            defaultValue: 'Additional context helps us investigate thoroughly',
-          })}
-          icon={<Info />}
-        >
-          <div data-tour="relationship">
-            <FormField
-              label={t('form.fields.relationship', {
-                defaultValue: 'Your relationship to the organization',
-              })}
-            >
-              <Select
-                value={relationship}
-                onChange={(e) => {
-                  setRelationship(e.target.value as WbRelationship | '');
-                }}
+        <div key="details" className="animate-fade-up space-y-6">
+          <QuestionCard
+            number={4}
+            title={t('form.q.people.title', { defaultValue: 'Who is involved?' })}
+            hint={t('form.q.people.hint', {
+              defaultValue:
+                'Naming someone here records them as a person named in the report. It is not a finding against them.',
+            })}
+          >
+            <div data-tour="relationship">
+              <Field
+                label={t('form.fields.relationship', {
+                  defaultValue: 'Your relationship to the organization',
+                })}
               >
-                <option value="">
-                  {t('form.placeholders.selectOne', { defaultValue: 'Select one...' })}
-                </option>
-                {WB_RELATIONSHIP_OPTIONS.map((o) => (
-                  <option key={o.value} value={o.value}>
-                    {wbRelationshipLabelT(o.value, t)}
-                  </option>
-                ))}
-              </Select>
-            </FormField>
-          </div>
-
-          <div data-tour="involved">
-            <FormField
-              label={t('form.fields.involved', {
-                defaultValue: 'Person(s) engaged in this behavior',
-              })}
-            >
-              <div className="[&_button:not([type='submit'])]:border-[#007d89] [&_button:not([type='submit'])]:text-[#007d89] [&_button:not([type='submit'])]:transition-colors [&_button:not([type='submit'])]:hover:bg-[#007d89] [&_button:not([type='submit'])]:hover:text-white">
-                <InvolvedPersonsField value={involved} onChange={setInvolved} />
-              </div>
-            </FormField>
-          </div>
-
-          <div>
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-200">
-              {t('form.fields.previouslyReported', {
-                defaultValue: 'Has this been previously reported to management?',
-              })}
-            </span>
-            <div className="mt-2 flex flex-wrap gap-4">
-              {WB_PREVIOUSLY_REPORTED_OPTIONS.map((o) => (
-                <label
-                  key={o.value}
-                  className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300"
+                <Select
+                  value={relationship}
+                  onChange={(e) => {
+                    setRelationship(e.target.value as WbRelationship | '');
+                  }}
                 >
-                  <input
-                    type="radio"
-                    name="previouslyReported"
-                    checked={previouslyReported === o.value}
-                    onChange={() => {
-                      setPreviouslyReported(o.value);
-                    }}
-                    className="h-4 w-4 accent-[#007d89]"
-                  />
-                  {wbPreviouslyReportedLabelT(o.value, t)}
-                </label>
-              ))}
+                  <option value="">
+                    {t('form.placeholders.selectOne', { defaultValue: 'Select one...' })}
+                  </option>
+                  {WB_RELATIONSHIP_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {wbRelationshipLabelT(o.value, t)}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
             </div>
-          </div>
 
-          <div className="grid gap-4 sm:grid-cols-2" data-tour="dates">
-            <FormField
-              label={t('form.fields.dateOfOccurrence', { defaultValue: 'Date of occurrence' })}
-            >
-              <div className="relative">
+            <div data-tour="involved" className="mt-4">
+              <Field
+                label={t('form.fields.involved', {
+                  defaultValue: 'Person(s) named in this report',
+                })}
+              >
+                <InvolvedPersonsField value={involved} onChange={setInvolved} />
+              </Field>
+            </div>
+
+            <div className="mt-5">
+              <span className="text-sm font-medium text-foreground">
+                {t('form.fields.previouslyReported', {
+                  defaultValue: 'Has this been raised with management before?',
+                })}
+              </span>
+              <div className="mt-2.5 flex flex-wrap gap-2">
+                {WB_PREVIOUSLY_REPORTED_OPTIONS.map((o) => (
+                  <label
+                    key={o.value}
+                    className={cn(
+                      'flex cursor-pointer items-center gap-2 rounded-lg border px-3.5 py-2 text-sm transition-colors',
+                      previouslyReported === o.value
+                        ? 'border-signal bg-signal-tint text-signal-strong'
+                        : 'border-border bg-card text-foreground hover:border-signal/40',
+                    )}
+                  >
+                    <input
+                      type="radio"
+                      name="previouslyReported"
+                      checked={previouslyReported === o.value}
+                      onChange={() => {
+                        setPreviouslyReported(o.value);
+                      }}
+                      className="h-4 w-4 accent-signal"
+                    />
+                    {wbPreviouslyReportedLabelT(o.value, t)}
+                  </label>
+                ))}
+              </div>
+            </div>
+          </QuestionCard>
+
+          <QuestionCard
+            number={5}
+            title={t('form.q.timing.title', { defaultValue: 'When did this happen?' })}
+            hint={t('form.q.timing.hint', {
+              defaultValue: 'Approximate answers are fine. Leave anything blank if you are unsure.',
+            })}
+          >
+            <div className="grid gap-4 sm:grid-cols-2" data-tour="dates">
+              <Field
+                label={t('form.fields.dateOfOccurrence', { defaultValue: 'Date of occurrence' })}
+              >
                 <input
                   type="date"
                   value={incidentDate}
                   onChange={(e) => {
                     setIncidentDate(e.target.value);
                   }}
-                  className="w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 shadow-sm transition-colors [color-scheme:light] focus:border-[#007d89] focus:outline-none focus:ring-2 focus:ring-[#007d89]/20 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:[color-scheme:dark] [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-40 [&::-webkit-calendar-picker-indicator]:hover:opacity-70"
+                  className="flex h-11 w-full rounded-lg border border-border bg-muted/50 px-4 text-sm text-foreground transition-colors [color-scheme:light] focus:border-signal focus:bg-card focus:outline-none focus:ring-2 focus:ring-ring dark:[color-scheme:dark] [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:opacity-50 [&::-webkit-calendar-picker-indicator]:hover:opacity-80"
                 />
-              </div>
-            </FormField>
-            <FormField
-              label={t('form.fields.whenLast', {
-                defaultValue: 'When did this last happen?',
-              })}
-            >
-              <Input
-                value={whenLast}
-                onChange={(e) => {
-                  setWhenLast(e.target.value);
-                }}
-                placeholder={t('form.placeholders.whenLast', {
-                  defaultValue: 'e.g. Two weeks ago',
+              </Field>
+              <Field
+                label={t('form.fields.whenLast', { defaultValue: 'When did this last happen?' })}
+              >
+                <Input
+                  value={whenLast}
+                  onChange={(e) => {
+                    setWhenLast(e.target.value);
+                  }}
+                  placeholder={t('form.placeholders.whenLast', {
+                    defaultValue: 'e.g. Two weeks ago',
+                  })}
+                />
+              </Field>
+              <Field
+                label={t('form.fields.duration', {
+                  defaultValue: 'How long has this been happening?',
                 })}
-              />
-            </FormField>
-            <FormField
-              label={t('form.fields.duration', {
-                defaultValue: 'How long has this been happening?',
-              })}
-            >
-              <Select
-                value={duration}
-                onChange={(e) => {
-                  setDuration(e.target.value as WbConductDuration | '');
-                }}
               >
-                <option value="">
-                  {t('form.placeholders.selectOne', { defaultValue: 'Select one...' })}
-                </option>
-                {WB_DURATION_OPTIONS.map((o) => (
-                  <option key={o.value} value={o.value}>
-                    {wbDurationLabelT(o.value, t)}
+                <Select
+                  value={duration}
+                  onChange={(e) => {
+                    setDuration(e.target.value as WbConductDuration | '');
+                  }}
+                >
+                  <option value="">
+                    {t('form.placeholders.selectOne', { defaultValue: 'Select one...' })}
                   </option>
-                ))}
-              </Select>
-            </FormField>
-            <FormField
-              label={t('form.fields.awareness', {
-                defaultValue: 'How did you become aware of this?',
-              })}
-            >
-              <Select
-                value={awareness}
-                onChange={(e) => {
-                  setAwareness(e.target.value as WbAwarenessSource | '');
-                }}
+                  {WB_DURATION_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {wbDurationLabelT(o.value, t)}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              <Field
+                label={t('form.fields.awareness', {
+                  defaultValue: 'How did you become aware of this?',
+                })}
               >
-                <option value="">
-                  {t('form.placeholders.selectOne', { defaultValue: 'Select one...' })}
-                </option>
-                {WB_AWARENESS_OPTIONS.map((o) => (
-                  <option key={o.value} value={o.value}>
-                    {wbAwarenessLabelT(o.value, t)}
+                <Select
+                  value={awareness}
+                  onChange={(e) => {
+                    setAwareness(e.target.value as WbAwarenessSource | '');
+                  }}
+                >
+                  <option value="">
+                    {t('form.placeholders.selectOne', { defaultValue: 'Select one...' })}
                   </option>
-                ))}
-              </Select>
-            </FormField>
-          </div>
-        </SectionCard>
+                  {WB_AWARENESS_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {wbAwarenessLabelT(o.value, t)}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+            </div>
+          </QuestionCard>
+        </div>
       )}
 
+      {/* ------------------------------------------------- step 4: identity */}
       {currentStep.key === 'identity' && (
-        <div className="space-y-5">
-          <SectionCard
-            number="4"
-            title={t('form.cards.identity.title', { defaultValue: 'Identity & Confidentiality' })}
-            subtitle={t('form.cards.identity.subtitle', {
-              defaultValue: 'Choose how we may contact you and who should be excluded',
+        <div key="identity" className="animate-fade-up space-y-6">
+          <QuestionCard
+            number={6}
+            title={t('form.q.identity.title', { defaultValue: 'How should we contact you?' })}
+            hint={t('form.q.identity.hint', {
+              defaultValue:
+                'You can submit without providing your identity. Either way, your private case credentials let you return and respond.',
             })}
-            icon={<User />}
           >
-            <div
-              data-tour="anonymous"
-              className="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60"
-            >
-              <label className="flex cursor-pointer items-center gap-3">
-                <input
-                  type="checkbox"
-                  checked={anonymous}
-                  onChange={(e) => {
-                    setAnonymous(e.target.checked);
-                  }}
-                  className="h-4 w-4 accent-[#007d89]"
-                />
-                <div>
-                  <p className="text-sm font-medium text-slate-800 dark:text-slate-200">
-                    {t('form.anonymous.title', { defaultValue: 'Submit anonymously' })}
-                  </p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
-                    {anonymous
-                      ? t('form.anonymous.on', {
-                          defaultValue: 'Your identity will not be shared.',
-                        })
-                      : t('form.anonymous.off', {
-                          defaultValue: 'Your contact details will be included.',
-                        })}
-                  </p>
-                </div>
-              </label>
+            <div data-tour="anonymous" className="grid gap-3 sm:grid-cols-2">
+              <IdentityChoice
+                selected={anonymous}
+                onSelect={() => {
+                  setAnonymous(true);
+                }}
+                icon={EyeOff}
+                title={t('form.identity.anonymous.title', {
+                  defaultValue: 'Do not include my identity',
+                })}
+                body={t('form.identity.anonymous.body', {
+                  defaultValue:
+                    'Your name and contact details are not attached to this report. You can still receive questions and reply.',
+                })}
+              />
+              <IdentityChoice
+                selected={!anonymous}
+                onSelect={() => {
+                  setAnonymous(false);
+                }}
+                icon={Send}
+                title={t('form.identity.named.title', {
+                  defaultValue: 'Share my contact details',
+                })}
+                body={t('form.identity.named.body', {
+                  defaultValue:
+                    'Reviewers can reach you directly. Your details are visible only to the people handling this case.',
+                })}
+              />
             </div>
 
             {!anonymous && (
-              <div className="grid gap-4 sm:grid-cols-2">
-                <FormField
+              <div className="mt-5 grid gap-4 border-t border-border pt-5 sm:grid-cols-2">
+                <Field
                   label={t('form.fields.email', { defaultValue: 'Your email (for updates)' })}
                   required
                 >
@@ -637,19 +704,21 @@ export function ReportIntakeForm({
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
-                    placeholder={t('form.placeholders.email', { defaultValue: 'you@example.com' })}
+                    placeholder={t('form.placeholders.email', {
+                      defaultValue: 'you@example.com',
+                    })}
                   />
-                </FormField>
-                <FormField label={t('form.fields.phone', { defaultValue: 'Your phone number' })}>
+                </Field>
+                <Field label={t('form.fields.phone', { defaultValue: 'Your phone number' })}>
                   <Input
                     value={phone}
                     onChange={(e) => {
                       setPhone(e.target.value);
                     }}
                   />
-                </FormField>
+                </Field>
                 <div className="sm:col-span-2">
-                  <FormField
+                  <Field
                     label={t('form.fields.bestTime', { defaultValue: 'Best time to reach you' })}
                   >
                     <Input
@@ -661,16 +730,30 @@ export function ReportIntakeForm({
                         defaultValue: 'e.g. Weekday mornings',
                       })}
                     />
-                  </FormField>
+                  </Field>
                 </div>
               </div>
             )}
+          </QuestionCard>
 
-            <div
-              data-tour="conflict"
-              className="rounded-lg border border-amber-200 bg-amber-50/70 p-4 dark:border-amber-800/40 dark:bg-amber-900/20"
+          {/* Conflict of interest — a routing control, not an accusation. */}
+          <div data-tour="conflict">
+            <QuestionCard
+              number={7}
+              title={t('form.q.conflict.title', { defaultValue: 'Is there a conflict of interest?' })}
+              hint={t('form.q.conflict.hint', {
+                defaultValue:
+                  'Only answer this if your concern involves someone who would normally review reports.',
+              })}
             >
-              <label className="flex cursor-pointer items-start gap-2.5">
+              <label
+                className={cn(
+                  'flex cursor-pointer items-start gap-3 rounded-xl border p-4 transition-colors',
+                  conflictOfInterestDeclared
+                    ? 'border-courage/40 bg-courage-tint'
+                    : 'border-border bg-card hover:border-courage/30',
+                )}
+              >
                 <input
                   type="checkbox"
                   checked={conflictOfInterestDeclared}
@@ -680,72 +763,83 @@ export function ReportIntakeForm({
                       setExcludedIndependentReviewerIds([]);
                     }
                   }}
-                  className="mt-0.5 h-4 w-4 shrink-0 accent-[#007d89]"
+                  className="mt-0.5 h-4 w-4 shrink-0 accent-signal"
                 />
-                <span>
-                  <span className="flex items-center gap-1.5 text-sm font-semibold text-amber-800 dark:text-amber-400">
-                    <EyeOff className="h-4 w-4" />
-                    {t('form.conflict.title', { defaultValue: 'Conflict of interest' })}
+                <span className="min-w-0">
+                  <span className="block text-sm font-semibold text-foreground">
+                    {t('form.conflict.title', {
+                      defaultValue: 'Route this to independent review',
+                    })}
                   </span>
-                  <span className="mt-1.5 block text-xs leading-relaxed text-amber-900/70 dark:text-amber-300/70">
+                  <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
                     {t('form.conflict.description', {
                       defaultValue:
-                        'If this report involves someone who may normally handle whistleblowing cases, select this option. The report will be routed to the organization’s independent-review team and the ordinary team will not receive access.',
+                        'The report will go to the organization’s independent-review team, and the team that normally handles whistleblowing cases will not receive access.',
                     })}
                   </span>
                 </span>
               </label>
+
               {conflictOfInterestDeclared && (
-                <div className="mt-4 border-t border-amber-200 pt-3 dark:border-amber-800/40">
-                  <p className="text-sm font-medium text-amber-900 dark:text-amber-300">
+                <div className="mt-4 rounded-xl border border-border bg-muted/40 p-4">
+                  <p className="text-sm font-semibold text-foreground">
                     {t('conflictReviewerSelection.title', {
                       defaultValue: 'Exclude specific independent reviewers (optional)',
                     })}
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-amber-900/70 dark:text-amber-300/70">
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                     {t('conflictReviewerSelection.description', {
                       defaultValue:
                         'Select only the independent reviewer(s) who may have a conflict. Other independent reviewers can access this report.',
                     })}
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-amber-900/70 dark:text-amber-300/70">
+                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                     {t('conflictReviewerSelection.protected', {
                       defaultValue:
                         'The organization owner is always protected, and at least one eligible administrator must remain available.',
                     })}
                   </p>
-                  <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                    {orgInfo.complianceTeam.map((reviewer) => (
-                      <label
-                        key={reviewer.id}
-                        className={`flex items-center gap-2 rounded-md border border-amber-200 bg-white/70 px-3 py-2 text-sm text-slate-700 dark:border-amber-800/40 dark:bg-slate-900/40 dark:text-slate-200 ${reviewer.canExclude ? 'cursor-pointer' : 'cursor-not-allowed opacity-60'}`}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={excludedIndependentReviewerIds.includes(reviewer.id)}
-                          disabled={
-                            !reviewer.canExclude ||
-                            (reviewer.isAdmin &&
-                              !excludedIndependentReviewerIds.includes(reviewer.id) &&
-                              excludedIndependentAdminCount >= independentAdminCount - 1)
-                          }
-                          onChange={(event) => {
-                            setExcludedIndependentReviewerIds((current) =>
-                              event.target.checked
-                                ? [...current, reviewer.id]
-                                : current.filter((id) => id !== reviewer.id),
-                            );
-                          }}
-                          className="h-4 w-4 accent-[#007d89]"
-                        />
-                        <span translate="no" dir="auto">
-                          {reviewer.displayName}
-                        </span>
-                      </label>
-                    ))}
+
+                  <div className="mt-3.5 grid gap-2 sm:grid-cols-2">
+                    {orgInfo.complianceTeam.map((reviewer) => {
+                      const checked = excludedIndependentReviewerIds.includes(reviewer.id);
+                      const disabled =
+                        !reviewer.canExclude ||
+                        (reviewer.isAdmin &&
+                          !checked &&
+                          excludedIndependentAdminCount >= independentAdminCount - 1);
+
+                      return (
+                        <label
+                          key={reviewer.id}
+                          className={cn(
+                            'flex items-center gap-2.5 rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground',
+                            disabled ? 'cursor-not-allowed opacity-55' : 'cursor-pointer',
+                          )}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={checked}
+                            disabled={disabled}
+                            onChange={(event) => {
+                              setExcludedIndependentReviewerIds((current) =>
+                                event.target.checked
+                                  ? [...current, reviewer.id]
+                                  : current.filter((id) => id !== reviewer.id),
+                              );
+                            }}
+                            className="h-4 w-4 accent-signal"
+                          />
+                          <span translate="no" dir="auto">
+                            {reviewer.displayName}
+                          </span>
+                        </label>
+                      );
+                    })}
                   </div>
+
                   {orgInfo.complianceTeam.length === 0 && (
-                    <p className="mt-2 text-xs text-amber-900/70 dark:text-amber-300/70">
+                    <p className="mt-2.5 text-xs text-muted-foreground">
                       {t('conflictReviewerSelection.none', {
                         defaultValue: 'No independent reviewers are currently configured.',
                       })}
@@ -753,163 +847,276 @@ export function ReportIntakeForm({
                   )}
                 </div>
               )}
-            </div>
-          </SectionCard>
+            </QuestionCard>
+          </div>
         </div>
       )}
 
+      {/* --------------------------------------------------- step 5: review */}
       {currentStep.key === 'review' && (
-        <SectionCard
-          number="5"
-          title={t('form.cards.review.title', { defaultValue: 'Review & Submit' })}
-          subtitle={t('form.cards.review.subtitle', {
-            defaultValue: 'Confirm the report terms before submitting',
-          })}
-          icon={<CheckCircle2 />}
-        >
-          <label className="flex cursor-pointer items-start gap-2.5">
-            <input
-              type="checkbox"
-              checked={agreed}
-              onChange={(e) => {
-                setAgreed(e.target.checked);
-              }}
-              className="mt-0.5 h-4 w-4 shrink-0 accent-[#007d89]"
-            />
-            <span className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              {t('form.terms', {
-                defaultValue:
-                  'I agree to the terms and conditions of making this report and confirm the information provided is true to the best of my knowledge.',
-              })}
-            </span>
-          </label>
+        <div key="review" className="animate-fade-up space-y-6">
+          <QuestionCard
+            number={8}
+            title={t('form.q.review.title', { defaultValue: 'Review and submit' })}
+            hint={t('form.q.review.hint', {
+              defaultValue: 'Confirm the terms of making this report before you send it.',
+            })}
+            required
+          >
+            <label
+              className={cn(
+                'flex cursor-pointer items-start gap-3 rounded-xl border p-4 transition-colors',
+                agreed ? 'border-signal bg-signal-tint' : 'border-border bg-card',
+              )}
+            >
+              <input
+                type="checkbox"
+                checked={agreed}
+                onChange={(e) => {
+                  setAgreed(e.target.checked);
+                }}
+                className="mt-0.5 h-4 w-4 shrink-0 accent-signal"
+              />
+              <span className="text-sm leading-relaxed text-foreground">
+                {t('form.terms', {
+                  defaultValue:
+                    'I agree to the terms and conditions of making this report and confirm the information provided is true to the best of my knowledge.',
+                })}
+              </span>
+            </label>
+          </QuestionCard>
 
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
-              {t('form.expect.title', { defaultValue: 'What to expect' })}
-            </p>
-            <ul className="space-y-2.5">
-              {[
-                t('form.expect.directToCompliance', {
-                  defaultValue: 'Your report goes directly to the Compliance team.',
-                }),
-                t('form.expect.caseReference', {
-                  defaultValue: "You'll receive a case reference to track progress.",
-                }),
-                t('form.expect.noRetaliation', {
-                  defaultValue: 'Retaliation against reporters is strictly prohibited.',
-                }),
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2 text-xs text-slate-500 dark:text-slate-400"
-                >
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#007d89]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+          {/* The private case receipt is the single most important thing the
+              reporter must understand before submitting. */}
+          <div className="rounded-xl border border-plum/20 bg-plum-tint p-5">
+            <div className="flex items-start gap-3">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-plum/12 text-plum">
+                <KeyRound className="h-4 w-4" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <h3 className="text-sm font-semibold text-foreground">
+                  {t('form.expect.title', { defaultValue: 'Stay informed, privately' })}
+                </h3>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                  {t('form.expect.lede', {
+                    defaultValue:
+                      'After you submit, you will receive a private case reference and return key. They are shown once — save them before you close the page.',
+                  })}
+                </p>
+
+                <ul className="mt-4 space-y-2.5">
+                  {[
+                    t('form.expect.saveCredentials', {
+                      defaultValue: 'Keep your case reference and return key somewhere safe.',
+                    }),
+                    t('form.expect.returnAnytime', {
+                      defaultValue:
+                        'You can return at any time to read updates, answer questions and attach evidence.',
+                    }),
+                    t('form.expect.reviewedFairly', {
+                      defaultValue:
+                        'Your report is reviewed by the people assigned to it, following a documented process.',
+                    }),
+                    t('form.expect.noRetaliation', {
+                      defaultValue: 'Retaliation against people who raise concerns is prohibited.',
+                    }),
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-xs leading-relaxed text-muted-foreground"
+                    >
+                      <CheckCircle2
+                        className="mt-0.5 h-3.5 w-3.5 shrink-0 text-moss"
+                        aria-hidden="true"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-        </SectionCard>
+        </div>
       )}
 
+      {/* ------------------------------------------------------------ errors */}
       {error !== null && (
-        <p className="rounded-md border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600 dark:border-red-800 dark:bg-red-900/20 dark:text-red-400">
+        <div
+          role="alert"
+          className="animate-scale-in flex items-start gap-2.5 rounded-xl border border-destructive/25 bg-destructive/5 px-4 py-3 text-sm text-destructive"
+        >
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
           {error}
-        </p>
+        </div>
       )}
 
-      <div className="flex flex-col-reverse gap-3 border-t border-slate-100 pt-4 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
+      {/* ------------------------------------------------------ step actions */}
+      <div className="flex flex-col-reverse gap-3 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
         <Button
           type="button"
-          variant="ghost"
+          variant="outline"
           onClick={goBack}
           disabled={isFirstStep || submit.isPending}
         >
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           {t('form.navigation.back', { defaultValue: 'Back' })}
         </Button>
 
         {isLastStep ? (
-          <Button
-            data-tour="submit"
-            className="h-11 rounded-lg bg-[#007d89] px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#007d89]/90"
-            onClick={onSubmit}
-            disabled={submit.isPending}
-          >
+          <Button data-tour="submit" onClick={onSubmit} disabled={submit.isPending}>
+            <Lock className="h-4 w-4" aria-hidden="true" />
             {submit.isPending
               ? t('form.submitting', { defaultValue: 'Submitting...' })
               : t('form.submit', { defaultValue: 'Submit report' })}
           </Button>
         ) : (
-          <Button
-            type="button"
-            className="h-11 rounded-lg bg-[#007d89] px-5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#007d89]/90"
-            onClick={goNext}
-          >
-            {t('form.navigation.next', { defaultValue: 'Next' })}
+          <Button type="button" onClick={goNext}>
+            {t('form.navigation.next', { defaultValue: 'Continue to next step' })}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Button>
         )}
       </div>
+
+      <p className="flex items-center justify-center gap-2 text-center text-xs text-muted-foreground">
+        <Lock className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+        {t('form.footerAssurance', {
+          defaultValue: 'This report is encrypted and access-controlled.',
+        })}
+      </p>
     </div>
   );
 }
 
-function SectionCard({
+/* -------------------------------------------------------------------------- */
+
+/**
+ * One numbered question block. Numbering the questions (rather than the wizard
+ * cards) gives a reporter a stable way to refer back to a specific answer, and
+ * keeps a long intake feeling like a sequence of small asks.
+ */
+function QuestionCard({
   number,
   title,
-  subtitle,
-  icon,
+  hint,
+  required = false,
   children,
 }: {
-  number: string;
+  number: number;
   title: string;
-  subtitle: string;
-  icon: ReactElement;
+  hint?: string;
+  required?: boolean;
   children: ReactNode;
 }): ReactElement {
   return (
-    <div className="w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-700/60 dark:bg-slate-900">
-      <div className="flex items-start gap-4 border-b border-slate-100 px-6 py-4 dark:border-slate-800">
-        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#007d89] text-sm font-bold text-white">
-          {number}
-        </span>
-        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-[#007d89] [&>svg]:h-6 [&>svg]:w-6 [&>svg]:stroke-[2]">
-          {icon}
-        </span>
-        <div className="min-w-0 flex-1">
-          <h3 className="text-sm font-semibold leading-tight text-slate-800 dark:text-slate-100">
+    <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
+      <header className="mb-5">
+        <h3 className="flex items-baseline gap-2 text-base font-semibold text-foreground">
+          <span className="text-signal-strong">{number}.</span>
+          <span>
             {title}
-          </h3>
-          <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">{subtitle}</p>
-        </div>
-      </div>
-
-      <div className="space-y-5 p-6">{children}</div>
-    </div>
+            {required && (
+              <span className="ms-1 text-destructive" aria-hidden="true">
+                *
+              </span>
+            )}
+          </span>
+        </h3>
+        {hint !== undefined && (
+          <p className="ms-5 mt-1 text-sm leading-relaxed text-muted-foreground">{hint}</p>
+        )}
+      </header>
+      {children}
+    </section>
   );
 }
 
-function FormField({
+function Field({
   label,
   required = false,
-  hint,
   children,
 }: {
   label: string;
   required?: boolean;
-  hint?: string;
-  children: ReactElement;
+  children: ReactNode;
 }): ReactElement {
   return (
-    <div className="block w-full space-y-1">
-      <label className="text-sm font-medium text-slate-700 dark:text-slate-200">
+    <div className="w-full space-y-1.5">
+      <label className="block text-sm font-medium text-foreground">
         {label}
-        {required && <span className="ml-0.5 text-red-500">*</span>}
+        {required && (
+          <span className="ms-0.5 text-destructive" aria-hidden="true">
+            *
+          </span>
+        )}
       </label>
-      {hint !== undefined && hint.length > 0 && (
-        <p className="text-xs text-slate-400 dark:text-slate-500">{hint}</p>
-      )}
       {children}
     </div>
+  );
+}
+
+function CharacterCount({ value, max }: { value: number; max: number }): ReactElement {
+  const nearLimit = value > max * 0.9;
+  return (
+    <p
+      className={cn(
+        'text-end text-xs tabular-nums',
+        nearLimit ? 'text-courage-strong' : 'text-muted-foreground/70',
+      )}
+    >
+      {value.toLocaleString()} / {max.toLocaleString()}
+    </p>
+  );
+}
+
+function IdentityChoice({
+  selected,
+  onSelect,
+  icon: Icon,
+  title,
+  body,
+}: {
+  selected: boolean;
+  onSelect: () => void;
+  icon: typeof EyeOff;
+  title: string;
+  body: string;
+}): ReactElement {
+  return (
+    <button
+      type="button"
+      role="radio"
+      aria-checked={selected}
+      onClick={onSelect}
+      className={cn(
+        'flex flex-col items-start gap-2.5 rounded-xl border p-4 text-start transition-colors',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+        selected
+          ? 'border-signal bg-signal-tint'
+          : 'border-border bg-card hover:border-signal/40 hover:bg-signal-tint/40',
+      )}
+    >
+      <span className="flex w-full items-center gap-2.5">
+        <span
+          className={cn(
+            'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg',
+            selected ? 'bg-signal/15 text-signal-strong' : 'bg-muted text-muted-foreground',
+          )}
+        >
+          <Icon className="h-4 w-4" aria-hidden="true" />
+        </span>
+        <span
+          className={cn(
+            'text-sm font-semibold',
+            selected ? 'text-signal-strong' : 'text-foreground',
+          )}
+        >
+          {title}
+        </span>
+        {selected && (
+          <CheckCircle2 className="ms-auto h-4 w-4 shrink-0 text-signal" aria-hidden="true" />
+        )}
+      </span>
+      <span className="text-xs leading-relaxed text-muted-foreground">{body}</span>
+    </button>
   );
 }

@@ -93,15 +93,15 @@ export function OrgLoginPage(): ReactElement {
 
   return (
     <div>
-      <header className="text-center">
-        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600">
-          <Building2 className="h-6 w-6" />
-        </div>
-        <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Organization Portal
+      <header>
+        <span className="inline-flex items-center gap-2 rounded-full bg-plum-tint px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-plum">
+          <Building2 className="h-3.5 w-3.5" aria-hidden="true" />
+          Organization portal
+        </span>
+        <h1 className="type-h1 mt-4 text-foreground">Welcome back</h1>
+        <p className="mt-1.5 text-sm text-muted-foreground">
+          Sign in to your organization&apos;s Tellara workspace.
         </p>
-        <h1 className="mt-1 text-2xl font-bold text-brand-accent">Admin Sign In</h1>
-        <p className="mt-1 text-sm text-slate-500">For organization owners and administrators</p>
       </header>
 
       <form
@@ -122,11 +122,11 @@ export function OrgLoginPage(): ReactElement {
             disabled={submitting}
             aria-invalid={emailError !== undefined}
             className={cn(
-              emailError !== undefined && 'border-red-400 focus:border-red-500 focus:ring-red-200',
+              emailError !== undefined && 'border-destructive focus:border-destructive focus:ring-destructive',
             )}
             {...form.register('email')}
           />
-          {emailError !== undefined && <p className="mt-1 text-xs text-red-600">{emailError}</p>}
+          {emailError !== undefined && <p className="mt-1 text-xs text-destructive">{emailError}</p>}
         </div>
 
         <div className="mt-4">
@@ -140,7 +140,7 @@ export function OrgLoginPage(): ReactElement {
             aria-invalid={passwordError !== undefined}
             className={cn(
               passwordError !== undefined &&
-                'border-red-400 focus:border-red-500 focus:ring-red-200',
+                'border-destructive focus:border-destructive focus:ring-destructive',
             )}
             {...form.register('password')}
           />
@@ -148,14 +148,14 @@ export function OrgLoginPage(): ReactElement {
               error at a time (driven by loginPasswordSchema) rather than a
               full requirements checklist. */}
           {passwordError !== undefined && (
-            <p className="mt-1 text-xs text-red-600">{passwordError}</p>
+            <p className="mt-1 text-xs text-destructive">{passwordError}</p>
           )}
         </div>
 
         <div className="mt-4 flex justify-end text-sm">
           <Link
             to={ROUTES.AUTH.FORGOT_PASSWORD}
-            className="font-medium text-brand-accent hover:underline"
+            className="inline-flex min-h-11 items-center font-medium text-brand-accent hover:underline"
           >
             Forgot Password?
           </Link>
@@ -173,9 +173,9 @@ export function OrgLoginPage(): ReactElement {
         </PrimaryButton>
       </form>
 
-      <p className="mt-5 text-center text-xs text-slate-400">
+      <p className="mt-5 text-center text-xs text-muted-foreground/70">
         {t('roleSwitch.notOrganizationAdmin')}{' '}
-        <Link to={ROUTES.AUTH.LOGIN} className="underline hover:text-slate-600">
+        <Link to={ROUTES.AUTH.LOGIN} className="underline hover:text-foreground">
           {t('roleSwitch.userSignIn')}
         </Link>
       </p>

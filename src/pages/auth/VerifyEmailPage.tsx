@@ -342,16 +342,16 @@ export function VerifyEmailPage(): ReactElement {
           <Mail className="h-6 w-6" />
         </div>
         <h1 className="mt-3 text-2xl font-bold text-brand-accent">{t('verify.title')}</h1>
-        <p className="mt-2 text-sm text-slate-500">
+        <p className="mt-2 text-sm text-muted-foreground">
           {t('verifyFlow.codeSentTo')}{' '}
-          <span className="font-medium text-slate-700">
+          <span className="font-medium text-foreground">
             <ServerText>{state.maskedEmail}</ServerText>
           </span>
         </p>
       </header>
 
       <div className="mt-8">
-        <label className="block text-center text-sm font-medium text-slate-600">
+        <label className="block text-center text-sm font-medium text-muted-foreground">
           {t('verify.codeLabel')}
         </label>
 
@@ -383,7 +383,7 @@ export function VerifyEmailPage(): ReactElement {
               onPaste={index === 0 ? handlePaste : undefined}
               className={cn(
                 'h-12 w-11 rounded-lg border text-center text-xl font-semibold text-brand-accent outline-none transition-all',
-                'border-slate-300 bg-white focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20',
+                'border-border bg-white focus:border-signal focus:ring-2 focus:ring-ring',
                 submitting && 'cursor-not-allowed opacity-60',
                 formError !== null && digit === '' && 'border-red-300',
               )}
@@ -409,7 +409,7 @@ export function VerifyEmailPage(): ReactElement {
       </div>
 
       <div className="mt-6 text-center">
-        <p className="text-sm text-slate-500">{t('verifyFlow.didNotReceive')}</p>
+        <p className="text-sm text-muted-foreground">{t('verifyFlow.didNotReceive')}</p>
         {canResend ? (
           <button
             type="button"
@@ -421,7 +421,7 @@ export function VerifyEmailPage(): ReactElement {
             {t('verify.resend')}
           </button>
         ) : (
-          <p className="mt-1 text-sm text-slate-400">
+          <p className="mt-1 text-sm text-muted-foreground/70">
             {t('verifyFlow.resendAvailableIn', {
               time: `${String(Math.floor(resendCooldown / 60))}:${String(resendCooldown % 60).padStart(2, '0')}`,
             })}
@@ -429,8 +429,8 @@ export function VerifyEmailPage(): ReactElement {
         )}
       </div>
 
-      <p className="mt-6 text-center text-xs text-slate-400">
-        <Link to={ROUTES.AUTH.LOGIN} className="underline hover:text-slate-600">
+      <p className="mt-6 text-center text-xs text-muted-foreground/70">
+        <Link to={ROUTES.AUTH.LOGIN} className="underline hover:text-foreground">
           {t('verifyFlow.backToSignIn')}
         </Link>
       </p>

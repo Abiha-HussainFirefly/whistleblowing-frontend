@@ -19,7 +19,7 @@ export function CaseTabNav({
   return (
     <nav
       aria-label="Case detail sections"
-      className="overflow-x-auto border-b border-slate-200 dark:border-slate-700"
+      className="overflow-x-auto border-b border-border"
     >
       <div className="flex min-w-max gap-1" role="tablist" aria-label="Case detail sections">
         {WB_CASE_TABS.map((tab) => {
@@ -38,10 +38,10 @@ export function CaseTabNav({
                 onChange(tab.key);
               }}
               className={cn(
-                'inline-flex shrink-0 items-center gap-2 border-b-2 px-3 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/40',
+                'inline-flex shrink-0 items-center gap-2 border-b-2 px-3 py-3 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
                 isActive
                   ? 'border-brand-accent text-brand-primary dark:text-white'
-                  : 'border-transparent text-slate-500 hover:border-slate-300 hover:text-brand-primary dark:text-slate-400 dark:hover:text-white',
+                  : 'border-transparent text-muted-foreground hover:border-signal/40 hover:text-brand-primary dark:hover:text-white',
               )}
             >
               <Icon className="h-4 w-4" aria-hidden="true" />
@@ -70,11 +70,11 @@ export function CaseSection({
   return (
     <section
       className={cn(
-        'min-w-0 overflow-x-clip rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800',
+        'min-w-0 overflow-x-clip rounded-lg border border-border bg-white',
         className,
       )}
     >
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 px-5 py-4 dark:border-slate-700">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border px-5 py-4">
         <h2 className="flex items-center gap-2 text-sm font-semibold tracking-tight text-brand-primary dark:text-white">
           {Icon !== undefined && <Icon className="h-5 w-5 text-brand-accent" aria-hidden="true" />}
           {title}
@@ -122,12 +122,12 @@ export function CaseProgress({
   const currentDate = isComplete ? closedAt : currentStep?.date;
 
   return (
-    <div className="mt-5 border-t border-slate-100 pt-5 dark:border-slate-700">
+    <div className="mt-5 border-t border-border pt-5">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <h2 className="text-sm font-semibold text-slate-900 dark:text-white">
+        <h2 className="text-sm font-semibold text-foreground dark:text-white">
           {t('caseConsole.progress.title', { defaultValue: 'Case progress' })}
         </h2>
-        <span className="text-xs font-medium uppercase tracking-wide text-slate-400">
+        <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
           {isComplete
             ? t('caseConsole.progress.completed', { defaultValue: 'Completed' })
             : (currentStep?.label ??
@@ -147,7 +147,7 @@ export function CaseProgress({
                   isCurrent && 'bg-brand-accent text-white ring-2 ring-brand-accent/30',
                   !isComplete &&
                     !isCurrent &&
-                    'bg-slate-100 text-slate-400 dark:bg-slate-700 dark:text-slate-500',
+                    'bg-muted text-muted-foreground/70',
                 )}
                 aria-current={isCurrent ? 'step' : undefined}
               >
@@ -157,10 +157,10 @@ export function CaseProgress({
                 className={cn(
                   'ml-2 whitespace-nowrap text-xs font-medium',
                   isCurrent
-                    ? 'text-slate-900 dark:text-white'
+                    ? 'text-foreground dark:text-white'
                     : isComplete
-                      ? 'text-slate-600 dark:text-slate-300'
-                      : 'text-slate-400',
+                      ? 'text-muted-foreground'
+                      : 'text-muted-foreground/70',
                 )}
               >
                 {step.label}
@@ -169,7 +169,7 @@ export function CaseProgress({
                 <span
                   className={cn(
                     'mx-2 h-px w-5 sm:w-8',
-                    index < currentStage ? 'bg-emerald-400' : 'bg-slate-200 dark:bg-slate-700',
+                    index < currentStage ? 'bg-emerald-400' : 'bg-muted',
                   )}
                   aria-hidden="true"
                 />
@@ -178,8 +178,8 @@ export function CaseProgress({
           );
         })}
       </ol>
-      <div className="mt-3 border-t border-slate-100 pt-3 dark:border-slate-700">
-        <p className="text-xs text-slate-500 dark:text-slate-400">
+      <div className="mt-3 border-t border-border pt-3">
+        <p className="text-xs text-muted-foreground">
           {currentDate !== null && currentDate !== undefined
             ? formatDate(currentDate)
             : t('caseConsole.progress.inProgress', { defaultValue: 'In progress' })}
@@ -208,8 +208,8 @@ function progressStageFor(status: WhistleblowingStatus): number {
 export function CaseField({ label, value }: { label: string; value: string | null }): ReactElement {
   return (
     <div>
-      <dt className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</dt>
-      <dd className="notranslate mt-1 text-slate-800 dark:text-slate-200" translate="no" dir="auto">
+      <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</dt>
+      <dd className="notranslate mt-1 text-foreground" translate="no" dir="auto">
         {value !== null && value.length > 0 ? value : '—'}
       </dd>
     </div>
@@ -219,9 +219,9 @@ export function CaseField({ label, value }: { label: string; value: string | nul
 export function CaseRecord({ label, value }: { label: string; value: string }): ReactElement {
   return (
     <div className="space-y-1">
-      <p className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</p>
+      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</p>
       <p
-        className="notranslate whitespace-pre-wrap text-sm leading-6 text-slate-700 dark:text-slate-200"
+        className="notranslate whitespace-pre-wrap text-sm leading-6 text-foreground"
         translate="no"
         dir="auto"
       >
@@ -239,9 +239,9 @@ export function CaseEmptyState({
   label: string;
 }): ReactElement {
   return (
-    <div className="flex min-h-32 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-slate-200 bg-slate-50/60 px-5 py-8 text-center dark:border-slate-700 dark:bg-slate-900/30">
-      <Icon className="h-6 w-6 text-slate-300" aria-hidden="true" />
-      <p className="text-sm text-slate-400">{label}</p>
+    <div className="flex min-h-32 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-border bg-muted/50/60 px-5 py-8 text-center">
+      <Icon className="h-6 w-6 text-muted-foreground/70" aria-hidden="true" />
+      <p className="text-sm text-muted-foreground/70">{label}</p>
     </div>
   );
 }
@@ -295,13 +295,13 @@ export function LabeledInput({
 }): ReactElement {
   return (
     <label className="block space-y-1">
-      <span className="text-xs font-medium text-slate-500">{label}</span>
+      <span className="text-xs font-medium text-muted-foreground">{label}</span>
       <input
         value={value}
         onChange={(event) => {
           onChange(event.target.value);
         }}
-        className="h-10 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-800 outline-none transition focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
+        className="h-10 w-full rounded-md border border-border bg-white px-3 text-sm text-foreground outline-none transition focus:border-signal focus:ring-2 focus:ring-ring"
       />
     </label>
   );

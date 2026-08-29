@@ -35,7 +35,7 @@ export function InvolvedPersonsField({ value, onChange, max = 10 }: Props): Reac
   return (
     <div className="space-y-2">
       {value.length > 0 && (
-        <div className="hidden gap-2 px-1 text-xs font-medium text-slate-500 sm:grid sm:grid-cols-[1fr_1fr_1fr_auto]">
+        <div className="hidden gap-2 px-1 text-xs font-medium text-muted-foreground sm:grid sm:grid-cols-[1fr_1fr_1fr_auto]">
           <span>{t('persons.firstName', { defaultValue: 'First name' })}</span>
           <span>{t('persons.lastName', { defaultValue: 'Last name' })}</span>
           <span>{t('persons.titleRole', { defaultValue: 'Title / role' })}</span>
@@ -71,7 +71,7 @@ export function InvolvedPersonsField({ value, onChange, max = 10 }: Props): Reac
               remove(i);
             }}
             aria-label={t('persons.remove', { defaultValue: 'Remove person' })}
-            className="flex h-11 w-8 items-center justify-center rounded-md text-slate-400 hover:bg-red-50 hover:text-red-600"
+            className="flex h-11 w-8 items-center justify-center rounded-md text-muted-foreground/70 hover:bg-red-50 hover:text-red-600"
           >
             <Trash2 className="h-4 w-4" />
           </button>
@@ -85,7 +85,7 @@ export function InvolvedPersonsField({ value, onChange, max = 10 }: Props): Reac
             : t('persons.addAnother', { defaultValue: 'Add another' })}
         </Button>
       )}
-      <p className="text-xs text-slate-400">
+      <p className="text-xs text-muted-foreground/70">
         {t('persons.examples', {
           defaultValue:
             'Examples: "John Doe, Director of Internal Audit" - "Unknown, Unknown, Night Supervisor"',

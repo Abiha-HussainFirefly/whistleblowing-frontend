@@ -49,7 +49,7 @@ export function WbCaseClassificationTab({
       ) : (
         <div className="space-y-4">
           <label className="block space-y-1">
-            <span className="text-xs font-medium text-slate-500">
+            <span className="text-xs font-medium text-muted-foreground">
               {t('caseConsole.fields.caseType', { defaultValue: 'Case type' })}
             </span>
             <Select
@@ -66,7 +66,7 @@ export function WbCaseClassificationTab({
             </Select>
           </label>
           <label className="block space-y-1">
-            <span className="text-xs font-medium text-slate-500">
+            <span className="text-xs font-medium text-muted-foreground">
               {t('caseConsole.fields.intakeMethod', { defaultValue: 'Intake method' })}
             </span>
             <Select
@@ -106,7 +106,7 @@ export function WbCaseClassificationTab({
                 })}
           </Button>
           {update.error !== null && (
-            <p className="text-xs text-red-600">{getApiErrorMessage(update.error)}</p>
+            <p className="text-xs text-destructive">{getApiErrorMessage(update.error)}</p>
           )}
         </div>
       )}

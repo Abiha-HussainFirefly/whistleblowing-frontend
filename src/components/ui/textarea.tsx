@@ -3,18 +3,16 @@ import { cn } from '@lib/utils';
 
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-/**
- * Styled native textarea — mirrors the Input component's visual treatment:
- * light gray fill, soft border, navy focus ring.
- */
+/** Mirrors the Input treatment. Sized for narrative answers, not one-liners. */
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => {
     return (
       <textarea
         ref={ref}
         className={cn(
-          'flex min-h-[80px] w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400',
-          'focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-accent/25',
+          'flex min-h-[96px] w-full rounded-lg border border-border bg-muted/50 px-4 py-3 text-sm leading-relaxed text-foreground placeholder:text-muted-foreground/70',
+          'transition-colors focus:border-signal focus:bg-card focus:outline-none focus:ring-2 focus:ring-ring',
+          'aria-[invalid=true]:border-destructive aria-[invalid=true]:focus:ring-destructive/25',
           'disabled:cursor-not-allowed disabled:opacity-60',
           className,
         )}

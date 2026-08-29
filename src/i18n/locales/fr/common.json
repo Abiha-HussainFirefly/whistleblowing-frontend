@@ -1,6 +1,6 @@
 ﻿{
     "app":  {
-                "name":  "Civorah",
+                "name":  "Tellara",
                 "tagline":  "Plateforme d\u0027opÃ©rations juridiques"
             },
     "sessionRestoration":  {
@@ -442,7 +442,7 @@
                                               "mutationNumber":  "ex. Inteqal 8802",
                                               "leaseNumber":  "ex. Bail-17/2021",
                                               "rightsType":  "ex. Propriete, bail, droit de passage",
-                                              "rightHolder":  "ex. Civorah",
+                                              "rightHolder":  "ex. Tellara",
                                               "shareDescription":  "ex. 100% propriete ou part 1/2",
                                               "surveySheetNumber":  "ex. Feuille 42-B",
                                               "mapScale":  "ex. 1:500",
@@ -619,7 +619,7 @@
                                                 "aiSearch":  "Recherche IA",
                                                 "matters":  "Contentieux"
                                             },
-                               "copyright":  "Â© {{year}} Civorah. Tous droits rÃ©servÃ©s."
+                               "copyright":  "Â© {{year}} Tellara. Tous droits rÃ©servÃ©s."
                            }
              },
     "states":  {
@@ -1415,7 +1415,7 @@
                                 },
                       "form":  {
                                    "portalLabel":  "Portail (RÃ´le du systÃ¨me)",
-                                   "portalSuperAdminHint":  "CrÃ©e un rÃ´le GLOBAL pour le portail d\u0027administration de la plateforme Civorah.",
+                                   "portalSuperAdminHint":  "CrÃ©e un rÃ´le GLOBAL pour le portail d\u0027administration de la plateforme Tellara.",
                                    "portalTenantHint":  "CrÃ©e un rÃ´le MODÃˆLE pour le portail du locataire. Les utilisateurs locataires peuvent gÃ©rer leur organisation et Ã©galement accÃ©der aux autorisations du module.",
                                    "portalUserHint":  "CrÃ©e un rÃ´le MODÃˆLE pour le portail de l\u0027utilisateur avec des autorisations au niveau du module.",
                                    "nameLabel":  "Nom",

@@ -77,13 +77,13 @@ const PAGE_SIZE = 10;
 
 // ── Palette (brand-first, cycles for overflow categories) ──────────────────
 const CHART_COLORS = [
-  '#007d89', // brand-accent (teal)
+  '#6F56D9', // brand-accent (teal)
   '#3b82f6', // blue-500
   '#f59e0b', // amber-500
   '#ef4444', // red-500
   '#22c55e', // green-500
   '#8b5cf6', // purple-500
-  '#042248', // brand-primary (navy)
+  '#4B2E58', // brand-primary (navy)
   '#94a3b8', // slate-400 (overflow)
 ];
 
@@ -105,12 +105,12 @@ function ChartCard({
   children: ReactElement;
 }): ReactElement {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-5">
-      <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
-      {description !== undefined && <p className="text-xs text-slate-400">{description}</p>}
+    <div className="rounded-lg border border-border bg-white p-5">
+      <h3 className="text-sm font-semibold text-foreground">{title}</h3>
+      {description !== undefined && <p className="text-xs text-muted-foreground/70">{description}</p>}
       <div className="mt-4">
         {isEmpty ? (
-          <div className="flex h-40 items-center justify-center text-sm text-slate-300">
+          <div className="flex h-40 items-center justify-center text-sm text-muted-foreground/70">
             {emptyLabel}
           </div>
         ) : (
@@ -131,14 +131,14 @@ function StatCard({
   icon: ReactElement;
 }): ReactElement {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-4">
+    <div className="rounded-lg border border-border bg-white p-4">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</span>
+        <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</span>
         <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-accent/10 text-brand-accent">
           {icon}
         </span>
       </div>
-      <p className="mt-2 text-2xl font-semibold text-slate-900">{value}</p>
+      <p className="mt-2 text-2xl font-semibold text-foreground">{value}</p>
     </div>
   );
 }
@@ -178,8 +178,8 @@ function RadialStatusChart({ data }: { data: Record<string, number> }): ReactEle
               className="h-2.5 w-2.5 shrink-0 rounded-full"
               style={{ backgroundColor: d.fill }}
             />
-            <span className="text-slate-600">{d.name}</span>
-            <span className="font-medium text-slate-900">{d.value}</span>
+            <span className="text-muted-foreground">{d.name}</span>
+            <span className="font-medium text-foreground">{d.value}</span>
           </li>
         ))}
       </ul>
@@ -201,8 +201,8 @@ function SubmissionsTrendChart({
         <AreaChart data={data} margin={{ top: 8, right: 8, left: -20, bottom: 0 }}>
           <defs>
             <linearGradient id="wbTrendFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#007d89" stopOpacity={0.35} />
-              <stop offset="100%" stopColor="#007d89" stopOpacity={0} />
+              <stop offset="0%" stopColor="#6F56D9" stopOpacity={0.35} />
+              <stop offset="100%" stopColor="#6F56D9" stopOpacity={0} />
             </linearGradient>
           </defs>
           <CartesianGrid vertical={false} stroke="#f1f5f9" />
@@ -227,14 +227,14 @@ function SubmissionsTrendChart({
             type="monotone"
             dataKey="count"
             name={label}
-            stroke="#007d89"
+            stroke="#6F56D9"
             strokeWidth={2}
             fill="url(#wbTrendFill)"
-            dot={{ r: 3, fill: '#007d89' }}
+            dot={{ r: 3, fill: '#6F56D9' }}
           />
         </AreaChart>
       </ResponsiveContainer>
-      <div className="mt-1 flex items-center gap-1.5 text-xs text-slate-500">
+      <div className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
         <span className="h-2 w-2 rounded-full bg-brand-accent" />
         {label}
       </div>
@@ -260,7 +260,7 @@ function VerticalColumnChart({
         <BarChart data={chartData} margin={{ top: 16, right: 8, left: -20, bottom: 0 }}>
           <defs>
             <linearGradient id="wbColumnFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#007d89" />
+              <stop offset="0%" stopColor="#6F56D9" />
               <stop offset="100%" stopColor="#9fd3d8" />
             </linearGradient>
           </defs>
@@ -319,8 +319,8 @@ function CategoryPieChart({
               className="h-2.5 w-2.5 shrink-0 rounded-full"
               style={{ backgroundColor: d.fill }}
             />
-            <span className="text-slate-600">{d.name}</span>
-            <span className="font-medium text-slate-900">
+            <span className="text-muted-foreground">{d.name}</span>
+            <span className="font-medium text-foreground">
               {d.value} ({Math.round((d.value / total) * 100)}%)
             </span>
           </li>
@@ -345,7 +345,7 @@ function AnonymousDonutChart({
 }): ReactElement {
   const total = anonymousCount + namedCount;
   const chartData = [
-    { name: anonymousLabel, value: anonymousCount, fill: '#007d89' },
+    { name: anonymousLabel, value: anonymousCount, fill: '#6F56D9' },
     { name: namedLabel, value: namedCount, fill: '#3b82f6' },
   ].filter((d) => d.value > 0);
 
@@ -370,8 +370,8 @@ function AnonymousDonutChart({
           </PieChart>
         </ResponsiveContainer>
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-xl font-semibold text-slate-900">{total}</span>
-          <span className="text-[10px] uppercase tracking-wide text-slate-400">{totalLabel}</span>
+          <span className="text-xl font-semibold text-foreground">{total}</span>
+          <span className="text-[10px] uppercase tracking-wide text-muted-foreground/70">{totalLabel}</span>
         </div>
       </div>
       <ul className="space-y-1.5">
@@ -381,8 +381,8 @@ function AnonymousDonutChart({
               className="h-2.5 w-2.5 shrink-0 rounded-full"
               style={{ backgroundColor: d.fill }}
             />
-            <span className="text-slate-600">{d.name}</span>
-            <span className="font-medium text-slate-900">
+            <span className="text-muted-foreground">{d.name}</span>
+            <span className="font-medium text-foreground">
               {d.value} ({total > 0 ? Math.round((d.value / total) * 100) : 0}%)
             </span>
           </li>
@@ -451,8 +451,8 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
             <MessageSquareWarning className="h-5 w-5" />
           </div>
           <div>
-            <PageTitle className="text-slate-900">{t('oversight.title')}</PageTitle>
-            <p className="mt-1 text-sm text-slate-500">{t('oversight.subtitle')}</p>
+            <PageTitle className="text-foreground">{t('oversight.title')}</PageTitle>
+            <p className="mt-1 text-sm text-muted-foreground">{t('oversight.subtitle')}</p>
           </div>
         </div>
 
@@ -480,13 +480,13 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
       </div>
 
       {/* CoI notice */}
-      <div className="flex items-start gap-2 rounded-lg border border-amber-200 bg-amber-50/60 px-4 py-2.5 text-xs text-amber-800">
+      <div className="flex items-start gap-2 rounded-lg border border-courage/35 bg-courage-tint/60 px-4 py-2.5 text-xs text-courage-strong">
         <ShieldOff className="mt-0.5 h-4 w-4 shrink-0" />
         <span>{t('oversight.confidentialityNotice')}</span>
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-1 border-b border-slate-200">
+      <div className="flex gap-1 border-b border-border">
         {tabs.map((t) => {
           const Icon = t.icon;
           const active = tab === t.key;
@@ -501,7 +501,7 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                 'flex shrink-0 items-center gap-2 border-b-2 px-4 py-2.5 text-sm font-medium transition-colors',
                 active
                   ? 'border-brand-accent text-brand-accent'
-                  : 'border-transparent text-slate-500 hover:border-brand-accent hover:text-brand-accent',
+                  : 'border-transparent text-muted-foreground hover:border-brand-accent hover:text-brand-accent',
               )}
             >
               <Icon className="h-4 w-4" />
@@ -510,7 +510,7 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                 <span
                   className={cn(
                     'rounded-full px-1.5 text-xs font-medium',
-                    active ? 'bg-brand-accent/10 text-brand-accent' : 'bg-slate-100 text-slate-500',
+                    active ? 'bg-brand-accent/10 text-brand-accent' : 'bg-muted text-muted-foreground',
                   )}
                 >
                   {t.count}
@@ -526,7 +526,7 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
         (statsLoading ? (
           <Loader label="Loading whistleblowing analytics…" />
         ) : statsError || stats === undefined ? (
-          <div className="rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+          <div className="rounded-lg border border-destructive/25 bg-destructive/5 p-4 text-sm text-destructive">
             {getApiErrorMessage(statsErr, t('oversight.errors.analytics'))}
           </div>
         ) : (
@@ -689,7 +689,7 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
 
             <div className="flex items-center gap-2">
               <div className="relative">
-                <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+                <Search className="pointer-events-none absolute left-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/70" />
                 <Input
                   placeholder={t('cases.filters.searchPlaceholder')}
                   value={search}
@@ -700,7 +700,7 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                   className="h-9 w-56 bg-white pl-8"
                 />
               </div>
-              <div className="flex items-center rounded-md border border-slate-200 bg-white p-0.5">
+              <div className="flex items-center rounded-md border border-border bg-white p-0.5">
                 <button
                   type="button"
                   title={t('cases.view.grid')}
@@ -711,7 +711,7 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                     'rounded p-1.5 transition-colors',
                     view === 'grid'
                       ? 'bg-brand-accent text-white'
-                      : 'bg-white text-slate-500 hover:bg-slate-50',
+                      : 'bg-white text-muted-foreground hover:bg-muted/60',
                   )}
                 >
                   <LayoutGrid className="h-4 w-4" />
@@ -726,7 +726,7 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                     'rounded p-1.5 transition-colors',
                     view === 'list'
                       ? 'bg-brand-accent text-white'
-                      : 'bg-white text-slate-500 hover:bg-slate-50',
+                      : 'bg-white text-muted-foreground hover:bg-muted/60',
                   )}
                 >
                   <ListIcon className="h-4 w-4" />
@@ -738,14 +738,14 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
           {casesLoading ? (
             <Loader label={t('cases.loading')} />
           ) : caseList === undefined || caseList.data.length === 0 ? (
-            <div className="rounded-lg border border-slate-200 bg-white px-5 py-12 text-center text-sm text-slate-400">
+            <div className="rounded-lg border border-border bg-white px-5 py-12 text-center text-sm text-muted-foreground/70">
               {t('cases.empty')}
             </div>
           ) : view === 'list' ? (
             <>
-              <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+              <div className="overflow-hidden rounded-lg border border-border bg-white">
                 <table className="w-full text-sm">
-                  <thead className="border-b border-slate-200 bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-400">
+                  <thead className="border-b border-border bg-muted/50 text-left text-xs uppercase tracking-wide text-muted-foreground/70">
                     <tr>
                       <th className="px-4 py-2.5 font-medium">{t('cases.table.reference')}</th>
                       <th className="px-4 py-2.5 font-medium">{t('cases.table.category')}</th>
@@ -757,20 +757,20 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                       <th className="px-4 py-2.5" />
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100">
+                  <tbody className="divide-y divide-border">
                     {caseList.data.map((c) => {
                       const days = slaDaysRemaining(c.slaDeadline);
                       const breached = c.slaBreachedAt !== null;
                       return (
-                        <tr key={c.id} className="hover:bg-slate-50">
+                        <tr key={c.id} className="hover:bg-muted/60">
                           <td className="px-4 py-3">
                             <Link
                               to={ROUTES.ORG_ADMIN.WHISTLEBLOWING_CASE_DETAIL(c.id)}
-                              className="font-medium text-slate-900 hover:text-brand-primary"
+                              className="font-medium text-foreground hover:text-brand-primary"
                             >
                               {c.caseReferenceNumber}
                             </Link>
-                            <div className="text-xs text-slate-400">
+                            <div className="text-xs text-muted-foreground/70">
                               {c.isAnonymous
                                 ? t('cases.reporter.anonymous')
                                 : t('cases.reporter.named')}
@@ -788,32 +788,32 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                           <td className="px-4 py-3">
                             <WbStatusBadge status={c.status} />
                           </td>
-                          <td className="px-4 py-3 text-slate-600">
+                          <td className="px-4 py-3 text-muted-foreground">
                             {c.assignedInvestigator?.displayName ??
                               c.assignedInvestigator?.email ??
                               '—'}
                           </td>
                           <td className="px-4 py-3">
                             {breached ? (
-                              <span className="inline-flex items-center gap-1 text-xs font-medium text-red-600">
+                              <span className="inline-flex items-center gap-1 text-xs font-medium text-destructive">
                                 <AlertTriangle className="h-3.5 w-3.5" />
                                 {t('cases.sla.breached')}
                               </span>
                             ) : days === null ? (
-                              <span className="text-xs text-slate-400">—</span>
+                              <span className="text-xs text-muted-foreground/70">—</span>
                             ) : (
                               <span
-                                className={`text-xs ${days <= 7 ? 'font-medium text-amber-600' : 'text-slate-500'}`}
+                                className={`text-xs ${days <= 7 ? 'font-medium text-courage-strong' : 'text-muted-foreground'}`}
                               >
                                 {t('cases.sla.daysLeft', { count: days })}
                               </span>
                             )}
                           </td>
-                          <td className="px-4 py-3 text-slate-500">{formatDate(c.submittedAt)}</td>
+                          <td className="px-4 py-3 text-muted-foreground">{formatDate(c.submittedAt)}</td>
                           <td className="px-4 py-3 text-right">
                             <Link
                               to={ROUTES.ORG_ADMIN.WHISTLEBLOWING_CASE_DETAIL(c.id)}
-                              className="inline-flex items-center gap-1 text-xs text-slate-500 hover:text-brand-primary"
+                              className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-brand-primary"
                             >
                               <Eye className="h-3.5 w-3.5" />
                               {t('cases.actions.view')}
@@ -844,17 +844,17 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                     <Link
                       key={c.id}
                       to={ROUTES.ORG_ADMIN.WHISTLEBLOWING_CASE_DETAIL(c.id)}
-                      className="group flex flex-col gap-3 rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-brand-accent/40 hover:shadow-sm"
+                      className="group flex flex-col gap-3 rounded-lg border border-border bg-white p-4 transition-all hover:border-brand-accent/40 hover:shadow-sm"
                     >
                       <div className="flex items-start gap-2.5">
                         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-brand-accent/10 text-brand-accent">
                           <MessageSquareWarning className="h-5 w-5" />
                         </span>
                         <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-medium text-slate-900 group-hover:text-brand-primary">
+                          <p className="truncate text-sm font-medium text-foreground group-hover:text-brand-primary">
                             {c.caseReferenceNumber}
                           </p>
-                          <p className="flex items-center gap-1 truncate text-xs text-slate-400">
+                          <p className="flex items-center gap-1 truncate text-xs text-muted-foreground/70">
                             <UserCircle2 className="h-3 w-3" />
                             {c.isAnonymous
                               ? t('cases.reporter.anonymous')
@@ -870,19 +870,19 @@ export function OrgAdminWhistleblowingPage(): ReactElement {
                         <WbStatusBadge status={c.status} />
                       </div>
 
-                      <div className="flex items-center justify-between text-xs text-slate-400">
+                      <div className="flex items-center justify-between text-xs text-muted-foreground/70">
                         <span>
                           {c.assignedInvestigator?.displayName ??
                             c.assignedInvestigator?.email ??
                             t('cases.unassigned')}
                         </span>
                         {breached ? (
-                          <span className="inline-flex items-center gap-1 font-medium text-red-600">
+                          <span className="inline-flex items-center gap-1 font-medium text-destructive">
                             <AlertTriangle className="h-3 w-3" />
                             {t('cases.sla.breached')}
                           </span>
                         ) : days !== null ? (
-                          <span className={days <= 7 ? 'font-medium text-amber-600' : ''}>
+                          <span className={days <= 7 ? 'font-medium text-courage-strong' : ''}>
                             {t('cases.sla.daysLeft', { count: days })}
                           </span>
                         ) : null}
@@ -921,7 +921,7 @@ function RegisterPagination({
   t: TFunction;
 }): ReactElement {
   return (
-    <div className="flex items-center justify-between text-sm text-slate-500">
+    <div className="flex items-center justify-between text-sm text-muted-foreground">
       <span>{t('cases.pagination.total', { count: total })}</span>
       <div className="flex items-center gap-2">
         <button
@@ -930,11 +930,11 @@ function RegisterPagination({
           onClick={() => {
             onPage((p) => Math.max(1, p - 1));
           }}
-          className="rounded-md border border-slate-200 px-3 py-1.5 font-medium text-slate-600 transition-colors hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-md border border-border px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:bg-muted/60 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {t('cases.pagination.previous')}
         </button>
-        <span className="text-xs text-slate-400">
+        <span className="text-xs text-muted-foreground/70">
           {t('cases.pagination.pageOf', { page, totalPages })}
         </span>
         <button
@@ -943,7 +943,7 @@ function RegisterPagination({
           onClick={() => {
             onPage((p) => Math.min(totalPages, p + 1));
           }}
-          className="rounded-md border border-slate-200 px-3 py-1.5 font-medium text-slate-600 transition-colors hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-50"
+          className="rounded-md border border-border px-3 py-1.5 font-medium text-muted-foreground transition-colors hover:bg-muted/60 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {t('cases.pagination.next')}
         </button>

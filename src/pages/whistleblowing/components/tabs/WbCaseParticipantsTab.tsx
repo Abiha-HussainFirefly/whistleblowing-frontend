@@ -152,7 +152,7 @@ export function WbCaseParticipantsTab({
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="text-left text-xs font-medium uppercase tracking-wide text-slate-400">
+                  <tr className="text-left text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                     <th className="py-2 pr-3">
                       {t('caseConsole.participants.name', { defaultValue: 'Name' })}
                     </th>
@@ -168,11 +168,11 @@ export function WbCaseParticipantsTab({
                     {canEdit && <th className="w-16 py-2" />}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
+                <tbody className="divide-y divide-border">
                   {visibleParticipants.map((participant) => (
                     <tr
                       key={participant.id}
-                      className="notranslate text-slate-700 dark:text-slate-200"
+                      className="notranslate text-foreground"
                       translate="no"
                       dir="auto"
                     >
@@ -199,7 +199,7 @@ export function WbCaseParticipantsTab({
                               aria-label={t('caseConsole.participants.edit', {
                                 defaultValue: 'Edit participant',
                               })}
-                              className="text-slate-400 hover:text-brand-accent"
+                              className="text-muted-foreground/70 hover:text-brand-accent"
                             >
                               <Pencil className="h-4 w-4" />
                             </button>
@@ -211,7 +211,7 @@ export function WbCaseParticipantsTab({
                               aria-label={t('caseConsole.participants.remove', {
                                 defaultValue: 'Remove participant',
                               })}
-                              className="text-slate-400 hover:text-red-600"
+                              className="text-muted-foreground/70 hover:text-red-600"
                             >
                               <Trash2 className="h-4 w-4" />
                             </button>
@@ -229,7 +229,7 @@ export function WbCaseParticipantsTab({
           )}
 
           {error !== null && (
-            <p className="mt-3 text-xs text-red-600">{getApiErrorMessage(error)}</p>
+            <p className="mt-3 text-xs text-destructive">{getApiErrorMessage(error)}</p>
           )}
         </CaseSection>
       )}

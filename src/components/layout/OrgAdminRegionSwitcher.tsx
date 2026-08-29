@@ -34,13 +34,13 @@ export function OrgAdminRegionSwitcher(): ReactElement {
 
   return (
     <div ref={ref} className="relative">
-      <button type="button" onClick={() => setOpen((value) => !value)} className="inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 bg-white px-2.5 text-sm font-medium text-slate-600 shadow-sm hover:bg-slate-50" aria-haspopup="listbox" aria-expanded={open}>
+      <button type="button" onClick={() => setOpen((value) => !value)} className="inline-flex h-9 items-center gap-2 rounded-lg border border-border bg-white px-2.5 text-sm font-medium text-muted-foreground shadow-sm hover:bg-muted/60" aria-haspopup="listbox" aria-expanded={open}>
         <Globe className="h-4 w-4 text-brand-accent" />
         <span className="hidden sm:inline">{label}</span>
-        <ChevronDown className="h-4 w-4 text-slate-400" />
+        <ChevronDown className="h-4 w-4 text-muted-foreground/70" />
       </button>
       {open && (
-        <div className="absolute end-0 top-full z-[9999] mt-2 min-w-52 overflow-hidden rounded-xl border border-slate-200 bg-white p-1 shadow-xl shadow-brand-primary/10">
+        <div className="absolute end-0 top-full z-[9999] mt-2 min-w-52 overflow-hidden rounded-xl border border-border bg-white p-1 shadow-xl shadow-brand-primary/10">
           <RegionOption label={t('regions.all', { defaultValue: 'All regions' })} selected={selected.length === 0} onClick={() => choose('')} />
           {(scope?.regions ?? []).map((region) => <RegionOption key={region.regionCode} label={`${region.regionCode} (${region.caseCount})`} selected={selected === region.regionCode} onClick={() => choose(region.regionCode)} />)}
         </div>
@@ -50,5 +50,5 @@ export function OrgAdminRegionSwitcher(): ReactElement {
 }
 
 function RegionOption({ label, selected, onClick }: { label: string; selected: boolean; onClick: () => void }): ReactElement {
-  return <button type="button" onClick={onClick} className={`flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-start text-sm ${selected ? 'bg-brand-accent/10 font-semibold text-brand-primary' : 'text-slate-600 hover:bg-slate-50'}`}><span className="flex-1">{label}</span>{selected && <Check className="h-4 w-4 text-brand-accent" />}</button>;
+  return <button type="button" onClick={onClick} className={`flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-start text-sm ${selected ? 'bg-brand-accent/10 font-semibold text-brand-primary' : 'text-muted-foreground hover:bg-muted/60'}`}><span className="flex-1">{label}</span>{selected && <Check className="h-4 w-4 text-brand-accent" />}</button>;
 }

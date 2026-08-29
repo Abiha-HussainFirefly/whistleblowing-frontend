@@ -401,14 +401,14 @@
                                                                            "intro":  "Un membre appartient Ã  exactement un des deux portails internes, choisi lors de son invitation :",
                                                                            "tenant":  "\u003cterm\u003ePortail Tenant\u003c/term\u003e (admin) â€” gÃ©rez les membres \u0026 invitations, les rÃ´les, les rÃ©gions, les dÃ©partements, et accÃ©dez Ã  la supervision globale des contrats et litiges de l\u0027organisation. C\u0027est l\u0027endroit oÃ¹ vous vous trouvez actuellement.",
                                                                            "user":  "\u003cterm\u003ePortail Utilisateur\u003c/term\u003e â€” l\u0027espace de travail des modules : crÃ©ez et gÃ©rez des contrats, des dossiers de litiges, de la conformitÃ©, et plus, dans la limite de la ou des rÃ©gions affectÃ©es au membre.",
-                                                                           "outro":  "Le portail que vous choisissez dÃ©termine la connexion utilisÃ©e par le membre ainsi que les \u003cterm\u003erÃ´les\u003c/term\u003e pouvant lui Ãªtre assignÃ©s. (Un troisiÃ¨me niveau, \u003cterm\u003eSuper Admin\u003c/term\u003e, est destinÃ© aux opÃ©rateurs Civorah et n\u0027est pas gÃ©rÃ© ici.)"
+                                                                           "outro":  "Le portail que vous choisissez dÃ©termine la connexion utilisÃ©e par le membre ainsi que les \u003cterm\u003erÃ´les\u003c/term\u003e pouvant lui Ãªtre assignÃ©s. (Un troisiÃ¨me niveau, \u003cterm\u003eSuper Admin\u003c/term\u003e, est destinÃ© aux opÃ©rateurs Tellara et n\u0027est pas gÃ©rÃ© ici.)"
                                                                        }
                                                           },
                                  "roles-permissions":  {
                                                            "body":  {
                                                                         "intro":  "\u003cterm\u003eLes autorisations\u003c/term\u003e sont des capacitÃ©s dÃ©taillÃ©es telles que \"crÃ©er un contrat\" ou \"approuver les frais de dossier\". Vous ne les attribuez jamais une par une â€” vous assignez plutÃ´t des \u003cterm\u003erÃ´les\u003c/term\u003e, qui regroupent les autorisations liÃ©es Ã  un poste.",
                                                                         "bullet1":  "Un membre peut dÃ©tenir \u003cterm\u003eplusieurs rÃ´les\u003c/term\u003e ; son accÃ¨s effectif est la \u003cterm\u003erÃ©union\u003c/term\u003e de toutes les autorisations de ces rÃ´les.",
-                                                                        "bullet2":  "Civorah propose des modÃ¨les prÃªts Ã  l\u0027emploi â€” par exemple \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” et vous pouvez crÃ©er les vÃ´tres sous \u003cterm\u003eRÃ´les\u003c/term\u003e.",
+                                                                        "bullet2":  "Tellara propose des modÃ¨les prÃªts Ã  l\u0027emploi â€” par exemple \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” et vous pouvez crÃ©er les vÃ´tres sous \u003cterm\u003eRÃ´les\u003c/term\u003e.",
                                                                         "bullet3":  "Les rÃ´les sont liÃ©s Ã  un portail : les rÃ´les du portail Tenant confÃ¨rent des droits administratifs ; ceux du portail Utilisateur confÃ¨rent des droits liÃ©s aux modules."
                                                                     }
                                                        },
@@ -472,8 +472,8 @@
                                                      },
                                  "integrations":  {
                                                       "body":  {
-                                                                   "intro":  "Les intÃ©grations permettent Ã  Civorah de se connecter directement Ã  des services externes pour automatiser les tÃ¢ches.",
-                                                                   "bullet1":  "\u003cterm\u003eSignatures Ã©lectroniques (DocuSign)\u003c/term\u003e â€” envoyez automatiquement les contrats finalisÃ©s Ã  DocuSign pour signature lÃ©gale, et suivez le statut dans Civorah.",
+                                                                   "intro":  "Les intÃ©grations permettent Ã  Tellara de se connecter directement Ã  des services externes pour automatiser les tÃ¢ches.",
+                                                                   "bullet1":  "\u003cterm\u003eSignatures Ã©lectroniques (DocuSign)\u003c/term\u003e â€” envoyez automatiquement les contrats finalisÃ©s Ã  DocuSign pour signature lÃ©gale, et suivez le statut dans Tellara.",
                                                                    "bullet2":  "\u003cterm\u003eContrÃ´le des tiers (World-Check)\u003c/term\u003e â€” exÃ©cutez des vÃ©rifications IDD automatisÃ©es sur vos tiers par rapport aux listes de sanctions mondiales, PEP et d\u0027application.",
                                                                    "bullet3":  "\u003cterm\u003eAuthentification unique (SSO)\u003c/term\u003e â€” permettez aux membres de se connecter en toute sÃ©curitÃ© Ã  l\u0027aide de leurs identifiants de travail Microsoft ou Google existants."
                                                                }
@@ -624,7 +624,7 @@
                  "includedModules":  "Modules inclus",
                  "includedInPlan":  "Inclus dans votre formule",
                  "planLimits":  "Limites de la formule",
-                 "supportHint":  "Les limites et les modules sont gÃ©rÃ©s par votre administrateur Civorah. Pour mettre Ã  niveau votre formule ou modifier une limite, contactez le support Civorah.",
+                 "supportHint":  "Les limites et les modules sont gÃ©rÃ©s par votre administrateur Tellara. Pour mettre Ã  niveau votre formule ou modifier une limite, contactez le support Tellara.",
                  "modules":  {
                                  "contracts":  "Contrats (CLM)",
                                  "litigation":  "Litiges",
@@ -657,15 +657,15 @@
                          "subtitle":  "Connectez vos propres comptes de fournisseurs ou exÃ©cutez chaque fonctionnalitÃ© manuellement avec une piste d\u0027audit complÃ¨te. Les identifiants sont chiffrÃ©s au repos et ne sont plus jamais affichÃ©s.",
                          "modeLabels":  {
                                             "byo":  "Connectez le vÃ´tre",
-                                            "platform":  "Utiliser Civorah",
+                                            "platform":  "Utiliser Tellara",
                                             "manual":  "Manuel",
                                             "disabled":  "DÃ©sactivÃ©"
                                         },
                          "modeHelp":  {
                                           "byo":  "Connectez votre propre compte fournisseur. L\u0027utilisation est facturÃ©e sur votre compte.",
-                                          "platform":  "Utiliser la formule gÃ©rÃ©e de Civorah (prochainement).",
-                                          "manual":  "Aucun fournisseur externe â€” votre Ã©quipe signe ou valide manuellement dans Civorah, avec une piste d\u0027audit complÃ¨te.",
-                                          "disabled":  "Aucune intÃ©gration tierce. Votre Ã©quipe effectue toujours cette validation manuellement dans Civorah (signature de documents / enregistrement des validations) â€” ceci masque uniquement l\u0027option de connexion Ã  un fournisseur."
+                                          "platform":  "Utiliser la formule gÃ©rÃ©e de Tellara (prochainement).",
+                                          "manual":  "Aucun fournisseur externe â€” votre Ã©quipe signe ou valide manuellement dans Tellara, avec une piste d\u0027audit complÃ¨te.",
+                                          "disabled":  "Aucune intÃ©gration tierce. Votre Ã©quipe effectue toujours cette validation manuellement dans Tellara (signature de documents / enregistrement des validations) â€” ceci masque uniquement l\u0027option de connexion Ã  un fournisseur."
                                       },
                          "domains":  {
                                          "esignature":  "Signature Ã©lectronique",
@@ -682,7 +682,7 @@
                          "providers":  {
                                            "docusign":  {
                                                             "name":  "DocuSign",
-                                                            "blurb":  "Autorisez Civorah Ã  envoyer des enveloppes depuis votre compte DocuSign."
+                                                            "blurb":  "Autorisez Tellara Ã  envoyer des enveloppes depuis votre compte DocuSign."
                                                         },
                                            "worldcheck":  {
                                                               "name":  "World-Check One",

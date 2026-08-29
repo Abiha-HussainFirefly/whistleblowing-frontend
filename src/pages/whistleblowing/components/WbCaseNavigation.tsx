@@ -23,7 +23,7 @@ export function WbCaseNavigation({
   return (
     <nav
       aria-label={t('caseConsole.navigation.primary', { defaultValue: 'Case sections' })}
-      className="overflow-hidden rounded-xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800"
+      className="overflow-hidden rounded-xl border border-border bg-white"
     >
       <div className="grid gap-1 p-1.5 sm:grid-cols-2 xl:grid-cols-4">
         {WB_CASE_MAIN_NAV.map((item) => {
@@ -42,7 +42,7 @@ export function WbCaseNavigation({
                 'flex min-h-[3.75rem] items-center gap-3 rounded-lg px-4 py-3 text-left transition-all',
                 isActive
                   ? 'bg-brand-primary text-white shadow-sm'
-                  : 'text-slate-600 hover:bg-slate-50 hover:text-brand-primary dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white',
+                  : 'text-muted-foreground hover:bg-muted/60 hover:text-brand-primary dark:hover:text-white',
               )}
             >
               <span
@@ -50,7 +50,7 @@ export function WbCaseNavigation({
                   'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg',
                   isActive
                     ? 'bg-white/15 text-white'
-                    : 'bg-slate-100 text-brand-accent dark:bg-slate-700',
+                    : 'bg-muted text-brand-accent',
                 )}
               >
                 <Icon className="h-4 w-4" />
@@ -62,7 +62,7 @@ export function WbCaseNavigation({
                 <span
                   className={cn(
                     'mt-0.5 block text-[11px]',
-                    isActive ? 'text-white/70' : 'text-slate-400',
+                    isActive ? 'text-white/70' : 'text-muted-foreground/70',
                   )}
                 >
                   {mainDescription(item.key, t)}
@@ -73,8 +73,8 @@ export function WbCaseNavigation({
         })}
       </div>
 
-      <div className="flex flex-wrap items-center gap-x-1 gap-y-1 border-t border-slate-100 px-3 py-2 dark:border-slate-700">
-        <span className="mr-2 text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+      <div className="flex flex-wrap items-center gap-x-1 gap-y-1 border-t border-border px-3 py-2">
+        <span className="mr-2 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground/70">
           {t('caseConsole.navigation.currentArea', { defaultValue: 'Current area' })}
         </span>
         {activeMain.tabKeys.map((tabKey) => {
@@ -97,13 +97,13 @@ export function WbCaseNavigation({
                 'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors',
                 isActive
                   ? 'bg-brand-accent/10 text-brand-primary dark:text-white'
-                  : 'text-slate-500 hover:bg-slate-50 hover:text-brand-primary dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-white',
+                  : 'text-muted-foreground hover:bg-muted/60 hover:text-brand-primary dark:hover:text-white',
               )}
             >
               <Icon className="h-3.5 w-3.5" />
               {t(tab.labelKey, { defaultValue: tab.fallback })}
               {count !== null && (
-                <span className="rounded-full bg-slate-100 px-1.5 text-[10px] text-slate-500 dark:bg-slate-700 dark:text-slate-300">
+                <span className="rounded-full bg-muted px-1.5 text-[10px] text-muted-foreground">
                   {count}
                 </span>
               )}

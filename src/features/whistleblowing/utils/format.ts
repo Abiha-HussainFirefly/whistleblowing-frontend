@@ -10,8 +10,46 @@ import type {
   WhistleblowingCategory,
   WhistleblowingStatus,
 } from '../types';
+import type { StateTone } from '@components/ui/status-pill';
 
 type BadgeVariant = 'default' | 'success' | 'warning' | 'danger' | 'info';
+
+/**
+ * Workflow status -> state tone (brand manual §12).
+ *
+ * These are WORKFLOW positions, not judgements. `WB_ESCALATED` is the only
+ * entry that maps to the operational `priority` tone, because escalation is a
+ * genuine time-sensitivity signal rather than a finding about the case.
+ * `WB_DISMISSED` and `WB_CLOSED` both read as "closed after assessment" — the
+ * UI never renders a case as "rejected".
+ */
+const WB_STATUS_TONE: Record<WhistleblowingStatus, StateTone> = {
+  SUBMITTED: 'submitted',
+  UNDER_TRIAGE: 'review',
+  UNDER_INVESTIGATION: 'investigation',
+  WB_ESCALATED: 'priority',
+  RESOLVED: 'resolved',
+  WB_CLOSED: 'closed',
+  WB_DISMISSED: 'closed',
+};
+
+/** Severity as a 1-4 step level, kept deliberately separate from status. */
+const WB_PRIORITY_LEVEL: Record<InvestigationPriority, number> = {
+  PRIORITY_LOW: 1,
+  PRIORITY_MEDIUM: 2,
+  PRIORITY_HIGH: 3,
+  PRIORITY_CRITICAL: 4,
+};
+
+export function wbStatusTone(s: WhistleblowingStatus): StateTone {
+  // eslint-disable-next-line security/detect-object-injection
+  return WB_STATUS_TONE[s] ?? 'submitted';
+}
+
+export function wbPriorityLevel(p: InvestigationPriority): number {
+  // eslint-disable-next-line security/detect-object-injection
+  return WB_PRIORITY_LEVEL[p] ?? 1;
+}
 
 export interface LabeledOption<K extends string = string> {
   value: K;

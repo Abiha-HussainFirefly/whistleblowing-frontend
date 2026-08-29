@@ -383,7 +383,7 @@
                                                                       },
                                                   "integrations":  {
                                                                        "title":  "Integrationen",
-                                                                       "summary":  "Civorah verbindet sich mit externen Anbietern (DocuSign, World-Check), um Workflows zu automatisieren.",
+                                                                       "summary":  "Tellara verbindet sich mit externen Anbietern (DocuSign, World-Check), um Workflows zu automatisieren.",
                                                                        "learnMoreButton":  "Mehr erfahren"
                                                                    }
                                               },
@@ -392,14 +392,14 @@
                                                                            "intro":  "Ihr Abonnement umfasst zwei getrennte Portale:",
                                                                            "tenant":  "\u003cterm\u003e1. Tenant-Portal\u003c/term\u003e (Administrationskonsole) â€” fÃ¼r das Management der Organisation (Mitglieder, Rollen, Regionen, Abteilungen, Abrechnung). Nur Mitglieder mit Admin-Rechten nutzen dieses Portal.",
                                                                            "user":  "\u003cterm\u003e2. Benutzerportal\u003c/term\u003e (Mitarbeiterkonsole) â€” fÃ¼r die tÃ¤gliche juristische Arbeit in Modulen wie VertrÃ¤gen, Rechtsstreitigkeiten und Compliance.",
-                                                                           "outro":  "Das ausgewÃ¤hlte Portal bestimmt, welche Anmeldung das Mitglied nutzt und welche \u003cterm\u003eRollen\u003c/term\u003e zur Zuweisung verfÃ¼gbar sind. (Ein drittes, Plattform-level \u003cterm\u003eSuper-Admin\u003c/term\u003e-Portal existiert fÃ¼r die Civorah-Betreiber und wird hier nicht verwaltet.)"
+                                                                           "outro":  "Das ausgewÃ¤hlte Portal bestimmt, welche Anmeldung das Mitglied nutzt und welche \u003cterm\u003eRollen\u003c/term\u003e zur Zuweisung verfÃ¼gbar sind. (Ein drittes, Plattform-level \u003cterm\u003eSuper-Admin\u003c/term\u003e-Portal existiert fÃ¼r die Tellara-Betreiber und wird hier nicht verwaltet.)"
                                                                        }
                                                           },
                                  "roles-permissions":  {
                                                            "body":  {
                                                                         "intro":  "\u003cterm\u003eBerechtigungen\u003c/term\u003e sind feingranulare FÃ¤higkeiten wie \"Vertrag erstellen\" oder \"FallgebÃ¼hren genehmigen\". Sie weisen diese niemals einzeln zu â€” stattdessen weisen Sie \u003cterm\u003eRollen\u003c/term\u003e zu, die verwandte Berechtigungen fÃ¼r eine Aufgabe bÃ¼ndeln.",
                                                                         "bullet1":  "Ein Mitglied kann \u003cterm\u003emehr als eine Rolle\u003c/term\u003e besitzen; sein effektiver Zugriff ist die \u003cterm\u003eVereinigung\u003c/term\u003e aller Berechtigungen Ã¼ber diese Rollen.",
-                                                                        "bullet2":  "Civorah wird mit fertigen Vorlagen geliefert â€” z. B. \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” und Sie kÃ¶nnen unter \u003cterm\u003eRollen\u003c/term\u003e Ihre eigenen erstellen.",
+                                                                        "bullet2":  "Tellara wird mit fertigen Vorlagen geliefert â€” z. B. \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” und Sie kÃ¶nnen unter \u003cterm\u003eRollen\u003c/term\u003e Ihre eigenen erstellen.",
                                                                         "bullet3":  "Rollen sind an ein Portal gebunden: Tenant-Portal-Rollen gewÃ¤hren Admin-FÃ¤higkeiten; Benutzerportal-Rollen gewÃ¤hren ModulfÃ¤higkeiten."
                                                                     }
                                                        },
@@ -463,8 +463,8 @@
                                                      },
                                  "integrations":  {
                                                       "body":  {
-                                                                   "intro":  "Integrationen ermÃ¶glichen es Civorah, sich direkt mit externen Diensten zu verbinden, um ArbeitsablÃ¤ufe zu automatisieren.",
-                                                                   "bullet1":  "\u003cterm\u003eE-Signaturen (DocuSign)\u003c/term\u003e â€” senden Sie finalisierte VertrÃ¤ge automatisch an DocuSign zur rechtsverbindlichen Unterzeichnung und verfolgen Sie den Status in Civorah.",
+                                                                   "intro":  "Integrationen ermÃ¶glichen es Tellara, sich direkt mit externen Diensten zu verbinden, um ArbeitsablÃ¤ufe zu automatisieren.",
+                                                                   "bullet1":  "\u003cterm\u003eE-Signaturen (DocuSign)\u003c/term\u003e â€” senden Sie finalisierte VertrÃ¤ge automatisch an DocuSign zur rechtsverbindlichen Unterzeichnung und verfolgen Sie den Status in Tellara.",
                                                                    "bullet2":  "\u003cterm\u003eVertragspartner-PrÃ¼fung (World-Check)\u003c/term\u003e â€” fÃ¼hren Sie automatisierte IDD-PrÃ¼fungen fÃ¼r Ihre Drittparteien gegen globale Sanktions-, PEP- und Strafverfolgungslisten durch.",
                                                                    "bullet3":  "\u003cterm\u003eSingle Sign-On (SSO)\u003c/term\u003e â€” ermÃ¶glichen Sie es Mitgliedern, sich sicher mit ihren bestehenden Microsoft- oder Google-Arbeitskonten anzumelden."
                                                                }
@@ -624,7 +624,7 @@
                  "includedModules":  "Enthaltene Module",
                  "includedInPlan":  "In Ihrem Tarif enthalten",
                  "planLimits":  "Tarifgrenzen",
-                 "supportHint":  "Limits und Module werden von Ihrem Civorah-Administrator verwaltet. Wenden Sie sich an den Civorah-Support, um Ihren Tarif zu aktualisieren oder ein Limit zu Ã¤ndern.",
+                 "supportHint":  "Limits und Module werden von Ihrem Tellara-Administrator verwaltet. Wenden Sie sich an den Tellara-Support, um Ihren Tarif zu aktualisieren oder ein Limit zu Ã¤ndern.",
                  "modules":  {
                                  "contracts":  "VertrÃ¤ge (CLM)",
                                  "litigation":  "Rechtsstreitigkeiten",
@@ -657,15 +657,15 @@
                          "subtitle":  "Verbinden Sie Ihre eigenen Anbieterkonten oder fÃ¼hren Sie Funktionen manuell mit lÃ¼ckenlosem Audit-Trail aus. Zugangsdaten werden verschlÃ¼sselt gespeichert und nie wieder angezeigt.",
                          "modeLabels":  {
                                             "byo":  "Eigenen verbinden",
-                                            "platform":  "Civorah nutzen",
+                                            "platform":  "Tellara nutzen",
                                             "manual":  "Manuell",
                                             "disabled":  "Aus"
                                         },
                          "modeHelp":  {
                                           "byo":  "Verbinden Sie Ihr eigenes Anbieterkonto. Die Nutzung wird Ã¼ber Ihr Konto abgerechnet.",
-                                          "platform":  "Nutzen Sie den verwalteten Tarif von Civorah (in KÃ¼rze).",
-                                          "manual":  "Kein externer Anbieter â€” Ihr Team unterzeichnet oder prÃ¼ft manuell in Civorah, mit vollstÃ¤ndigem Audit-Trail.",
-                                          "disabled":  "Keine Drittanbieter-Integration. Ihr Team schlieÃŸt dies weiterhin manuell in Civorah ab (Dokumente unterzeichnen / Freigaben erfassen) â€” dies blendet lediglich die Option aus."
+                                          "platform":  "Nutzen Sie den verwalteten Tarif von Tellara (in KÃ¼rze).",
+                                          "manual":  "Kein externer Anbieter â€” Ihr Team unterzeichnet oder prÃ¼ft manuell in Tellara, mit vollstÃ¤ndigem Audit-Trail.",
+                                          "disabled":  "Keine Drittanbieter-Integration. Ihr Team schlieÃŸt dies weiterhin manuell in Tellara ab (Dokumente unterzeichnen / Freigaben erfassen) â€” dies blendet lediglich die Option aus."
                                       },
                          "domains":  {
                                          "esignature":  "E-Signatur",
@@ -682,7 +682,7 @@
                          "providers":  {
                                            "docusign":  {
                                                             "name":  "DocuSign",
-                                                            "blurb":  "Autorisieren Sie Civorah, UmschlÃ¤ge Ã¼ber Ihr DocuSign-Konto zu senden."
+                                                            "blurb":  "Autorisieren Sie Tellara, UmschlÃ¤ge Ã¼ber Ihr DocuSign-Konto zu senden."
                                                         },
                                            "worldcheck":  {
                                                               "name":  "World-Check One",

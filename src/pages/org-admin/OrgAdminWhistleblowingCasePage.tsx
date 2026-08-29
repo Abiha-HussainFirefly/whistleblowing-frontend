@@ -88,7 +88,7 @@ function StatusPipeline({ status }: { status: string }): ReactElement {
                     ? 'border-brand-accent bg-brand-accent text-white'
                     : done
                       ? 'border-brand-accent bg-brand-accent/10 text-brand-accent'
-                      : 'border-slate-200 bg-white text-slate-300',
+                      : 'border-border bg-white text-muted-foreground/70',
                 )}
               >
                 {done && !current ? <Check className="h-3 w-3" /> : i + 1}
@@ -96,7 +96,7 @@ function StatusPipeline({ status }: { status: string }): ReactElement {
               <span
                 className={cn(
                   'whitespace-nowrap text-[11px] font-medium',
-                  current || done ? 'text-slate-700' : 'text-slate-400',
+                  current || done ? 'text-foreground' : 'text-muted-foreground/70',
                 )}
               >
                 {t(step.labelKey)}
@@ -106,7 +106,7 @@ function StatusPipeline({ status }: { status: string }): ReactElement {
               <div
                 className={cn(
                   'mx-1 h-0.5 flex-1 rounded-full',
-                  i < activeIndex ? 'bg-brand-accent' : 'bg-slate-200',
+                  i < activeIndex ? 'bg-brand-accent' : 'bg-muted',
                 )}
               />
             )}
@@ -141,16 +141,16 @@ function SlaCard({ c }: { c: WbCaseDetail }): ReactElement | null {
   const barColor = breached ? 'bg-red-500' : urgent ? 'bg-amber-500' : 'bg-brand-accent';
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
       <div className="mb-3 flex items-center gap-2">
         <span className="flex h-7 w-7 items-center justify-center rounded-md bg-brand-accent/10 text-brand-accent">
           <Clock className="h-4 w-4" />
         </span>
-        <h3 className="text-sm font-semibold text-slate-900">{t('oversight.detail.sla.title')}</h3>
+        <h3 className="text-sm font-semibold text-foreground">{t('oversight.detail.sla.title')}</h3>
       </div>
 
       {breached ? (
-        <div className="flex items-center gap-2 rounded-lg bg-red-50 px-3 py-2.5 text-sm font-medium text-red-700">
+        <div className="flex items-center gap-2 rounded-lg bg-destructive/5 px-3 py-2.5 text-sm font-medium text-destructive">
           <AlertTriangle className="h-4 w-4 shrink-0" />
           {t('oversight.detail.sla.breachedOn', { date: formatDate(c.slaBreachedAt) })}
         </div>
@@ -160,24 +160,24 @@ function SlaCard({ c }: { c: WbCaseDetail }): ReactElement | null {
             <span
               className={cn(
                 'text-xl font-semibold tabular-nums',
-                urgent ? 'text-amber-600' : 'text-slate-900',
+                urgent ? 'text-courage-strong' : 'text-foreground',
               )}
             >
               {days ?? '—'}
-              <span className="ml-1 text-base font-medium text-slate-400">
+              <span className="ml-1 text-base font-medium text-muted-foreground/70">
                 {t('oversight.detail.sla.daysLeft')}
               </span>
             </span>
           </div>
-          <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-slate-100">
+          <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted">
             <div
               className={cn('h-full rounded-full transition-all', barColor)}
               style={{ width: `${String(percentElapsed)}%` }}
             />
           </div>
-          <div className="mt-2 flex items-center justify-between text-xs text-slate-400">
+          <div className="mt-2 flex items-center justify-between text-xs text-muted-foreground/70">
             <span>{t('oversight.detail.sla.opened', { date: formatDate(c.submittedAt) })}</span>
-            <span className="font-medium text-slate-500">
+            <span className="font-medium text-muted-foreground">
               {t('oversight.detail.sla.due', { date: formatDate(c.slaDeadline) })}
             </span>
           </div>
@@ -211,7 +211,7 @@ function ActivityTimeline({ c }: { c: WbCaseDetail }): ReactElement {
   }, [c.messages, c.attachments]);
 
   if (items.length === 0) {
-    return <p className="text-sm text-slate-400">{t('oversight.detail.activity.empty')}</p>;
+    return <p className="text-sm text-muted-foreground/70">{t('oversight.detail.activity.empty')}</p>;
   }
 
   return (
@@ -221,17 +221,17 @@ function ActivityTimeline({ c }: { c: WbCaseDetail }): ReactElement {
         return (
           <li key={`${item.kind}-${String(i)}`} className="relative flex gap-3 pb-5 last:pb-0">
             {!isLast && (
-              <span className="bg-slate-150 absolute left-[15px] top-8 h-[calc(100%-1.75rem)] w-px bg-slate-200" />
+              <span className="bg-slate-150 absolute left-[15px] top-8 h-[calc(100%-1.75rem)] w-px bg-muted" />
             )}
             <span
               className={cn(
                 'z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-white shadow-sm',
                 item.kind === 'attachment'
-                  ? 'bg-slate-100 text-slate-500'
+                  ? 'bg-muted text-muted-foreground'
                   : item.data.isFromReporter
-                    ? 'bg-blue-50 text-blue-600'
+                    ? 'bg-signal-tint text-signal-strong'
                     : item.data.isInternal
-                      ? 'bg-amber-50 text-amber-600'
+                      ? 'bg-courage-tint text-courage-strong'
                       : 'bg-brand-accent/10 text-brand-accent',
               )}
             >
@@ -247,14 +247,14 @@ function ActivityTimeline({ c }: { c: WbCaseDetail }): ReactElement {
                 className={cn(
                   'flex-1 rounded-lg border p-3.5 text-sm',
                   item.data.isFromReporter
-                    ? 'border-blue-100 bg-blue-50/60'
+                    ? 'border-blue-100 bg-signal-tint/60'
                     : item.data.isInternal
-                      ? 'border-amber-100 bg-amber-50/60'
+                      ? 'border-amber-100 bg-courage-tint/60'
                       : 'border-brand-accent/20 bg-brand-accent/5',
                 )}
               >
-                <div className="mb-1 flex items-center justify-between gap-2 text-xs text-slate-400">
-                  <span className="font-medium text-slate-600">
+                <div className="mb-1 flex items-center justify-between gap-2 text-xs text-muted-foreground/70">
+                  <span className="font-medium text-muted-foreground">
                     {item.data.isFromReporter ? (
                       t('caseConsole.communication.reporter')
                     ) : (
@@ -265,7 +265,7 @@ function ActivityTimeline({ c }: { c: WbCaseDetail }): ReactElement {
                       </ServerText>
                     )}
                     {item.data.isInternal && (
-                      <span className="ml-2 inline-flex items-center gap-0.5 rounded-full bg-amber-100 px-1.5 py-0.5 text-amber-700">
+                      <span className="ml-2 inline-flex items-center gap-0.5 rounded-full bg-amber-100 px-1.5 py-0.5 text-courage-strong">
                         <Lock className="h-3 w-3" />
                         {t('caseConsole.communication.internal', { defaultValue: 'Internal' })}
                       </span>
@@ -273,22 +273,22 @@ function ActivityTimeline({ c }: { c: WbCaseDetail }): ReactElement {
                   </span>
                   <span className="shrink-0">{formatDateTime(item.data.createdAt)}</span>
                 </div>
-                <ServerText className="block whitespace-pre-wrap leading-relaxed text-slate-700">
+                <ServerText className="block whitespace-pre-wrap leading-relaxed text-foreground">
                   {item.data.content}
                 </ServerText>
               </div>
             ) : (
-              <div className="flex flex-1 items-center gap-2 rounded-lg border border-slate-200 bg-white p-3 text-sm">
-                <ServerText className="min-w-0 flex-1 truncate font-medium text-slate-700">
+              <div className="flex flex-1 items-center gap-2 rounded-lg border border-border bg-white p-3 text-sm">
+                <ServerText className="min-w-0 flex-1 truncate font-medium text-foreground">
                   {item.data.fileName}
                 </ServerText>
-                <span className="shrink-0 text-xs text-slate-400">
+                <span className="shrink-0 text-xs text-muted-foreground/70">
                   {formatBytes(item.data.sizeBytes)} ·{' '}
                   {item.data.isFromReporter
                     ? t('caseConsole.evidence.reporter', { defaultValue: 'reporter' })
                     : t('caseConsole.evidence.investigator', { defaultValue: 'investigator' })}
                 </span>
-                <span className="shrink-0 text-xs text-slate-400">
+                <span className="shrink-0 text-xs text-muted-foreground/70">
                   {formatDateTime(item.data.addedAt)}
                 </span>
               </div>
@@ -319,8 +319,8 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
     return (
       <div className="space-y-4">
         <Back />
-        <div className="rounded-lg border border-slate-200 bg-white p-8 text-center">
-          <p className="text-sm text-slate-500">
+        <div className="rounded-lg border border-border bg-white p-8 text-center">
+          <p className="text-sm text-muted-foreground">
             {getApiErrorMessage(
               error,
               'This case is unavailable — it may have been hidden from your profile by the reporter (conflict of interest).',
@@ -338,14 +338,14 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
       <Back />
 
       {/* Header card */}
-      <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div className="flex items-start gap-4">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-brand-accent text-white">
               <ShieldAlert className="h-5 w-5" />
             </span>
             <div>
-              <PageTitle className="text-slate-900">
+              <PageTitle className="text-foreground">
                 <ServerText>{c.caseReferenceNumber}</ServerText>
               </PageTitle>
               <div className="mt-1.5 flex flex-wrap items-center gap-1.5">
@@ -353,14 +353,14 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
                 <WbPriorityBadge priority={c.priority} />
                 <WbCategoryBadge category={c.category} />
               </div>
-              <p className="mt-2 flex flex-wrap items-center gap-3 text-xs text-slate-400">
+              <p className="mt-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground/70">
                 <span>
                   {c.isAnonymous
                     ? t('caseConsole.reporter.anonymous')
                     : t('caseConsole.reporter.named')}{' '}
                   - <ServerText>{c.reporterAlias}</ServerText>
                 </span>
-                <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-slate-500">
+                <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-muted-foreground">
                   <Lock className="h-3 w-3" />
                   {t('oversight.readOnly')}
                 </span>
@@ -370,14 +370,14 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
         </div>
 
         {/* Status pipeline — hidden for escalated/dismissed, shown as callout instead */}
-        <div className="mt-5 border-t border-slate-100 pt-5">
+        <div className="mt-5 border-t border-border pt-5">
           {isBranchStatus ? (
             <div
               className={cn(
                 'flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium',
                 c.status === 'WB_ESCALATED'
-                  ? 'bg-red-50 text-red-700'
-                  : 'bg-slate-50 text-slate-600',
+                  ? 'bg-destructive/5 text-destructive'
+                  : 'bg-muted/50 text-muted-foreground',
               )}
             >
               <AlertTriangle className="h-4 w-4 shrink-0" />
@@ -415,20 +415,20 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
                 value={formatDateTime(c.submittedAt)}
               />
             </dl>
-            <div className="mt-4 border-t border-slate-100 pt-4">
-              <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+            <div className="mt-4 border-t border-border pt-4">
+              <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                 {t('caseConsole.fields.description')}
               </p>
-              <ServerText className="mt-1.5 block whitespace-pre-wrap text-sm leading-relaxed text-slate-700">
+              <ServerText className="mt-1.5 block whitespace-pre-wrap text-sm leading-relaxed text-foreground">
                 {c.incidentDescription}
               </ServerText>
             </div>
             {c.personsInvolved !== null && (
-              <div className="mt-4 border-t border-slate-100 pt-4">
-                <p className="text-xs font-medium uppercase tracking-wide text-slate-400">
+              <div className="mt-4 border-t border-border pt-4">
+                <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                   {t('caseConsole.fields.personsInvolvedNotes')}
                 </p>
-                <ServerText className="mt-1.5 block whitespace-pre-wrap text-sm leading-relaxed text-slate-700">
+                <ServerText className="mt-1.5 block whitespace-pre-wrap text-sm leading-relaxed text-foreground">
                   {c.personsInvolved}
                 </ServerText>
               </div>
@@ -477,10 +477,10 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
           >
             {c.messages.length === 0 && c.attachments.length === 0 ? (
               <div className="flex flex-col items-center gap-2 py-8 text-center">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-50 text-slate-300">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-muted/50 text-muted-foreground/70">
                   <MessageSquare className="h-5 w-5" />
                 </span>
-                <p className="text-sm text-slate-400">{t('oversight.detail.activity.empty')}</p>
+                <p className="text-sm text-muted-foreground/70">{t('oversight.detail.activity.empty')}</p>
               </div>
             ) : (
               <ActivityTimeline c={c} />
@@ -500,16 +500,16 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
                     .toUpperCase()}
                 </span>
                 <div className="min-w-0">
-                  <ServerText className="block truncate text-sm font-medium text-slate-800">
+                  <ServerText className="block truncate text-sm font-medium text-foreground">
                     {c.assignedInvestigator.displayName ?? c.assignedInvestigator.email}
                   </ServerText>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-muted-foreground/70">
                     {t('caseConsole.communication.investigator')}
                   </p>
                 </div>
               </div>
             ) : (
-              <div className="flex items-center gap-2 rounded-lg border border-dashed border-slate-200 px-3 py-2.5 text-sm text-slate-400">
+              <div className="flex items-center gap-2 rounded-lg border border-dashed border-border px-3 py-2.5 text-sm text-muted-foreground/70">
                 <UserCheck className="h-4 w-4 shrink-0" />
                 {t('caseConsole.assignment.unassigned')}
               </div>
@@ -533,10 +533,10 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
           <Panel title={t('caseConsole.panels.relatedCases')} icon={Link2}>
             {c.relatedCases.length === 0 ? (
               <div className="flex flex-col items-center gap-2 py-6 text-center">
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 text-slate-300">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-muted/50 text-muted-foreground/70">
                   <Link2 className="h-4 w-4" />
                 </span>
-                <p className="text-sm text-slate-400">{t('caseConsole.related.empty')}</p>
+                <p className="text-sm text-muted-foreground/70">{t('caseConsole.related.empty')}</p>
               </div>
             ) : (
               <ul className="space-y-1.5">
@@ -544,7 +544,7 @@ export function OrgAdminWhistleblowingCasePage(): ReactElement {
                   <li key={r.id}>
                     <Link
                       to={ROUTES.ORG_ADMIN.WHISTLEBLOWING_CASE_DETAIL(r.id)}
-                      className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-slate-700 transition-colors hover:bg-brand-accent/5 hover:text-brand-primary"
+                      className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-foreground transition-colors hover:bg-brand-accent/5 hover:text-brand-primary"
                     >
                       <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" />
                       <ServerText>{r.caseReferenceNumber}</ServerText>
@@ -565,7 +565,7 @@ function Back(): ReactElement {
   return (
     <Link
       to={ROUTES.ORG_ADMIN.WHISTLEBLOWING}
-      className="inline-flex items-center gap-1 text-sm text-slate-500 transition-colors hover:text-brand-accent"
+      className="inline-flex items-center gap-1 text-sm text-muted-foreground transition-colors hover:text-brand-accent"
     >
       <ArrowLeft className="h-4 w-4" />
       {t('oversight.back')}
@@ -585,15 +585,15 @@ function Panel({
   children: ReactNode;
 }): ReactElement {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
       <div className="mb-4 flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <span className="flex h-7 w-7 items-center justify-center rounded-md bg-brand-accent/10 text-brand-accent">
             <Icon className="h-4 w-4" />
           </span>
-          <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
+          <h3 className="text-sm font-semibold text-foreground">{title}</h3>
         </div>
-        {subtitle !== undefined && <span className="text-xs text-slate-400">{subtitle}</span>}
+        {subtitle !== undefined && <span className="text-xs text-muted-foreground/70">{subtitle}</span>}
       </div>
       {children}
     </div>
@@ -611,14 +611,14 @@ function Field({
 }): ReactElement {
   return (
     <div>
-      <dt className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</dt>
+      <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</dt>
       <dd
-        className="notranslate mt-0.5 flex items-center gap-1 text-slate-800"
+        className="notranslate mt-0.5 flex items-center gap-1 text-foreground"
         translate="no"
         dir="auto"
       >
         {Icon !== undefined && value !== null && value.length > 0 && (
-          <Icon className="h-3.5 w-3.5 shrink-0 text-slate-300" />
+          <Icon className="h-3.5 w-3.5 shrink-0 text-muted-foreground/70" />
         )}
         {value !== null && value.length > 0 ? value : '—'}
       </dd>
@@ -628,10 +628,10 @@ function Field({
 
 function RecordBlock({ label, value }: { label: string; value: string }): ReactElement {
   return (
-    <div className="mb-4 border-t border-slate-100 pt-4 first:mt-0 first:border-t-0 first:pt-0">
-      <p className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</p>
+    <div className="mb-4 border-t border-border pt-4 first:mt-0 first:border-t-0 first:pt-0">
+      <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</p>
       <p
-        className="notranslate mt-1.5 whitespace-pre-wrap text-sm leading-relaxed text-slate-700"
+        className="notranslate mt-1.5 whitespace-pre-wrap text-sm leading-relaxed text-foreground"
         translate="no"
         dir="auto"
       >

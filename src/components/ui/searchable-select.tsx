@@ -269,22 +269,22 @@ export function SearchableSelect({
         aria-controls={open ? listboxId : undefined}
         {...(ariaLabel !== undefined ? { 'aria-label': ariaLabel } : {})}
         className={cn(
-          'flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-slate-900',
-          'focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-accent/25',
+          'flex h-11 w-full items-center justify-between gap-2 rounded-lg border border-border bg-muted/50 px-4 text-sm text-foreground',
+          'focus:border-signal focus:bg-card focus:outline-none focus:ring-2 focus:ring-ring',
           'disabled:cursor-not-allowed disabled:opacity-60',
-          open && 'border-brand-primary bg-white ring-2 ring-brand-accent/25',
+          open && 'border-signal bg-card ring-2 ring-ring',
           className,
         )}
       >
         <span className="flex min-w-0 flex-1 items-center gap-2">
           {selected?.icon}
-          <span className={cn('truncate text-left', triggerLabel.length === 0 && 'text-slate-400')}>
+          <span className={cn('truncate text-left', triggerLabel.length === 0 && 'text-muted-foreground/70')}>
             {triggerLabel.length > 0 ? triggerLabel : placeholder}
           </span>
         </span>
         <ChevronDown
           className={cn(
-            'h-4 w-4 shrink-0 text-slate-400 transition-transform',
+            'h-4 w-4 shrink-0 text-muted-foreground/70 transition-transform',
             open && 'rotate-180',
           )}
         />
@@ -303,10 +303,10 @@ export function SearchableSelect({
             }}
             // Must sit above the Sheet/drawer portal (z-[9999]) — both render to
             // document.body, so a lower z-index would hide the dropdown behind it.
-            className="z-[10000] flex flex-col overflow-hidden rounded-[12px] border border-slate-200 bg-white shadow-lg"
+            className="z-[10000] flex flex-col overflow-hidden rounded-[12px] border border-border bg-white shadow-lg"
           >
-            <div className="flex items-center gap-2 border-b border-slate-100 px-3 py-2">
-              <Search className="h-4 w-4 shrink-0 text-slate-400" />
+            <div className="flex items-center gap-2 border-b border-border px-3 py-2">
+              <Search className="h-4 w-4 shrink-0 text-muted-foreground/70" />
               <input
                 ref={inputRef}
                 value={query}
@@ -315,7 +315,7 @@ export function SearchableSelect({
                 }}
                 onKeyDown={onSearchKeyDown}
                 placeholder={searchPlaceholder}
-                className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
+                className="w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none"
                 aria-label={searchPlaceholder}
               />
             </div>
@@ -328,14 +328,14 @@ export function SearchableSelect({
               style={{ maxHeight: PANEL_MAX_HEIGHT - 44 }}
             >
               {rows.length === 0 ? (
-                <p className="px-3 py-6 text-center text-sm text-slate-400">No matches.</p>
+                <p className="px-3 py-6 text-center text-sm text-muted-foreground/70">No matches.</p>
               ) : (
                 rows.map((row) => {
                   if (row.kind === 'header') {
                     return (
                       <div
                         key={row.key}
-                        className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wide text-slate-400"
+                        className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground/70"
                       >
                         {row.label}
                       </div>
@@ -370,9 +370,9 @@ export function SearchableSelect({
                       disabled={rowDisabled}
                       className={cn(
                         'flex w-full items-center justify-between gap-2 px-3 py-1.5 text-left text-sm transition-colors',
-                        isActive ? 'bg-brand-accent/10' : 'hover:bg-slate-50',
-                        isSelected ? 'font-medium text-brand-primary' : 'text-slate-700',
-                        row.kind === 'empty' && rowValue.length === 0 && 'text-slate-400',
+                        isActive ? 'bg-brand-accent/10' : 'hover:bg-muted/60',
+                        isSelected ? 'font-medium text-brand-primary' : 'text-foreground',
+                        row.kind === 'empty' && rowValue.length === 0 && 'text-muted-foreground/70',
                         rowDisabled && 'cursor-not-allowed opacity-45 hover:bg-transparent',
                       )}
                     >

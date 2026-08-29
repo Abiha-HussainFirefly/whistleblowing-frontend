@@ -63,7 +63,7 @@ export interface OrgContextInfo {
   id: string;
   name: string;
   slug: string;
-  /** White-label branding (per-org). Null/absent → Civorah default palette. */
+  /** White-label branding (per-org). Null/absent → Tellara default palette. */
   logoUrl?: string | null;
   brandColor?: string | null;
   brandAccentColor?: string | null;

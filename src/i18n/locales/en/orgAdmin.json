@@ -401,14 +401,14 @@
                                                                            "intro":  "A member belongs to exactly one of two internal portals, chosen when you invite them:",
                                                                            "tenant":  "\u003cterm\u003eTenant portal\u003c/term\u003e (admin) â€” manage members \u0026 invitations, roles, regions, departments, and view organization-wide oversight of contracts \u0026 litigation. This is where you are now.",
                                                                            "user":  "\u003cterm\u003eUser portal\u003c/term\u003e â€” the module workspace: create and work on contracts, litigation cases, compliance, and more, scoped to the member\u0027s region(s).",
-                                                                           "outro":  "The portal you pick decides which login the member uses and which \u003cterm\u003eroles\u003c/term\u003e are available to assign. (A third, platform-level \u003cterm\u003eSuper Admin\u003c/term\u003e exists for the Civorah operators and isn\u0027t managed here.)"
+                                                                           "outro":  "The portal you pick decides which login the member uses and which \u003cterm\u003eroles\u003c/term\u003e are available to assign. (A third, platform-level \u003cterm\u003eSuper Admin\u003c/term\u003e exists for the Tellara operators and isn\u0027t managed here.)"
                                                                        }
                                                           },
                                  "roles-permissions":  {
                                                            "body":  {
                                                                         "intro":  "\u003cterm\u003ePermissions\u003c/term\u003e are fine-grained capabilities such as \"create contract\" or \"approve case fees\". You never assign them one by one â€” instead you assign \u003cterm\u003eroles\u003c/term\u003e, which bundle related permissions for a job.",
                                                                         "bullet1":  "A member can hold \u003cterm\u003emore than one role\u003c/term\u003e; their effective access is the \u003cterm\u003eunion\u003c/term\u003e of all permissions across those roles.",
-                                                                        "bullet2":  "Civorah ships ready-made templates â€” e.g. \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” and you can create your own under \u003cterm\u003eRoles\u003c/term\u003e.",
+                                                                        "bullet2":  "Tellara ships ready-made templates â€” e.g. \u003cterm\u003eorg_owner\u003c/term\u003e, \u003cterm\u003eorg_admin\u003c/term\u003e, \u003cterm\u003econtract_manager\u003c/term\u003e, \u003cterm\u003elitigation_manager\u003c/term\u003e â€” and you can create your own under \u003cterm\u003eRoles\u003c/term\u003e.",
                                                                         "bullet3":  "Roles are tied to a portal: Tenant-portal roles grant admin abilities; User-portal roles grant module abilities."
                                                                     }
                                                        },
@@ -472,8 +472,8 @@
                                                      },
                                  "integrations":  {
                                                       "body":  {
-                                                                   "intro":  "Integrations allow Civorah to connect directly with external services to automate workloads.",
-                                                                   "bullet1":  "\u003cterm\u003eE-Signatures (DocuSign)\u003c/term\u003e â€” automatically send finalized contracts to DocuSign for legally-binding signing, and track the status inside Civorah.",
+                                                                   "intro":  "Integrations allow Tellara to connect directly with external services to automate workloads.",
+                                                                   "bullet1":  "\u003cterm\u003eE-Signatures (DocuSign)\u003c/term\u003e â€” automatically send finalized contracts to DocuSign for legally-binding signing, and track the status inside Tellara.",
                                                                    "bullet2":  "\u003cterm\u003eCounterparty Screening (World-Check)\u003c/term\u003e â€” run automated IDD checks on your third parties against global sanctions, PEP, and enforcement lists.",
                                                                    "bullet3":  "\u003cterm\u003eSingle Sign-On (SSO)\u003c/term\u003e â€” allow members to log in securely using their existing Microsoft or Google work credentials."
                                                                }
@@ -624,7 +624,7 @@
                  "includedModules":  "Included modules",
                  "includedInPlan":  "Included in your plan",
                  "planLimits":  "Plan limits",
-                 "supportHint":  "Limits and modules are managed by your Civorah administrator. To upgrade your plan or change a limit, contact Civorah support.",
+                 "supportHint":  "Limits and modules are managed by your Tellara administrator. To upgrade your plan or change a limit, contact Tellara support.",
                  "modules":  {
                                  "contracts":  "Contracts (CLM)",
                                  "litigation":  "Litigation",
@@ -657,15 +657,15 @@
                          "subtitle":  "Connect your own provider accounts, or run each capability manually with a full audit trail. Credentials are encrypted at rest and never displayed again.",
                          "modeLabels":  {
                                             "byo":  "Connect your own",
-                                            "platform":  "Use Civorah",
+                                            "platform":  "Use Tellara",
                                             "manual":  "Manual",
                                             "disabled":  "Off"
                                         },
                          "modeHelp":  {
                                           "byo":  "Connect your own provider account. Usage is billed to your account.",
-                                          "platform":  "Use Civorah\u0027s managed plan (coming soon).",
-                                          "manual":  "No external provider â€” your team signs / clears manually inside Civorah, with a full audit trail.",
-                                          "disabled":  "No third-party integration. Your team still completes this manually inside Civorah (sign documents / record clearances) â€” this only hides the connect-a-provider option."
+                                          "platform":  "Use Tellara\u0027s managed plan (coming soon).",
+                                          "manual":  "No external provider â€” your team signs / clears manually inside Tellara, with a full audit trail.",
+                                          "disabled":  "No third-party integration. Your team still completes this manually inside Tellara (sign documents / record clearances) â€” this only hides the connect-a-provider option."
                                       },
                          "domains":  {
                                          "esignature":  "E-Signature",
@@ -682,7 +682,7 @@
                          "providers":  {
                                            "docusign":  {
                                                             "name":  "DocuSign",
-                                                            "blurb":  "Authorize Civorah to send envelopes from your DocuSign account."
+                                                            "blurb":  "Authorize Tellara to send envelopes from your DocuSign account."
                                                         },
                                            "worldcheck":  {
                                                               "name":  "World-Check One",

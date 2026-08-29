@@ -49,16 +49,16 @@ export function ForgotPasswordPage(): ReactElement {
     return (
       <div>
         <header className="text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-moss-tint text-moss">
             <CheckCircle2 className="h-6 w-6" />
           </div>
           <h1 className="mt-3 text-2xl font-bold text-brand-primary">Check Your Email</h1>
-          <p className="mt-2 text-sm text-slate-500">
+          <p className="mt-2 text-sm text-muted-foreground">
             {successMessage.length > 0 ? successMessage : 'Please check your email for next steps.'}
           </p>
         </header>
 
-        <p className="mt-8 text-center text-xs text-slate-400">
+        <p className="mt-8 text-center text-xs text-muted-foreground/70">
           Didn&apos;t get it? Check your spam folder, or{' '}
           <button
             type="button"
@@ -66,7 +66,7 @@ export function ForgotPasswordPage(): ReactElement {
               setSuccessMessage('');
               setSubmitted(false);
             }}
-            className="font-medium text-brand-primary underline hover:text-slate-600"
+            className="font-medium text-brand-primary underline hover:text-foreground"
           >
             try a different email
           </button>
@@ -90,16 +90,18 @@ export function ForgotPasswordPage(): ReactElement {
 
   return (
     <div>
-      <header className="text-center">
-        <h1 className="text-2xl font-bold text-brand-accent">Reset Password</h1>
-        <p className="mt-1 text-sm text-slate-500">Enter your email to reset your password</p>
+      <header>
+        <h1 className="type-h1 text-foreground">Reset your password</h1>
+        <p className="mt-1.5 text-sm text-muted-foreground">
+          Enter the email on your account and we&apos;ll send a reset link.
+        </p>
       </header>
 
       <form onSubmit={onSubmit} className="mt-8" noValidate>
         <div>
           <Label htmlFor="email">Email Address</Label>
           <div className="relative">
-            <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <Mail className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground/70" />
             <input
               id="email"
               name="email"
@@ -117,13 +119,13 @@ export function ForgotPasswordPage(): ReactElement {
               required
               aria-invalid={emailError.length > 0}
               className={cn(
-                'flex h-11 w-full rounded-lg border border-slate-200 bg-slate-50 pl-10 pr-4 text-sm text-slate-900 placeholder:text-slate-400',
-                'focus:border-brand-accent focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-accent/25',
-                emailError.length > 0 && 'border-red-400 focus:border-red-500 focus:ring-red-200',
+                'flex h-11 w-full rounded-lg border border-border bg-muted/50 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground/70',
+                'focus:border-signal focus:bg-card focus:outline-none focus:ring-2 focus:ring-ring',
+                emailError.length > 0 && 'border-destructive focus:border-destructive focus:ring-destructive',
               )}
             />
           </div>
-          {emailError.length > 0 && <p className="mt-1 text-xs text-red-600">{emailError}</p>}
+          {emailError.length > 0 && <p className="mt-1 text-xs text-destructive">{emailError}</p>}
         </div>
 
         <PrimaryButton type="submit" className="mt-6" disabled={submitting}>

@@ -100,17 +100,17 @@ function RowsPerPage({
           }}
           aria-haspopup="listbox"
           aria-expanded={open}
-          className="flex h-8 items-center gap-1.5 rounded-md border border-slate-200 bg-white px-2.5 text-xs font-semibold text-slate-700 transition-colors hover:border-brand-accent/50 focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20 disabled:cursor-not-allowed disabled:opacity-40"
+          className="flex h-8 items-center gap-1.5 rounded-md border border-border bg-white px-2.5 text-xs font-semibold text-foreground transition-colors hover:border-brand-accent/50 focus:border-signal focus:outline-none focus:ring-2 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-40"
         >
           {value}
           <ChevronDown
-            className={cn('h-3.5 w-3.5 text-slate-400 transition-transform', open && 'rotate-180')}
+            className={cn('h-3.5 w-3.5 text-muted-foreground/70 transition-transform', open && 'rotate-180')}
           />
         </button>
         {open && (
           <div
             role="listbox"
-            className="absolute bottom-full left-0 z-20 mb-1.5 min-w-full overflow-hidden rounded-lg border border-slate-200 bg-white py-1 shadow-lg"
+            className="absolute bottom-full left-0 z-20 mb-1.5 min-w-full overflow-hidden rounded-lg border border-border bg-white py-1 shadow-lg"
           >
             {options.map((opt) => (
               <button
@@ -123,8 +123,8 @@ function RowsPerPage({
                   setOpen(false);
                 }}
                 className={cn(
-                  'flex w-full items-center justify-between gap-3 px-3 py-1.5 text-left text-xs transition-colors hover:bg-[#e6f5f6] hover:text-brand-accent',
-                  opt === value ? 'font-semibold text-brand-accent' : 'text-slate-600',
+                  'flex w-full items-center justify-between gap-3 px-3 py-1.5 text-left text-xs transition-colors hover:bg-[#F2EFFF] hover:text-brand-accent',
+                  opt === value ? 'font-semibold text-brand-accent' : 'text-muted-foreground',
                 )}
               >
                 {opt}
@@ -139,7 +139,7 @@ function RowsPerPage({
 }
 
 const ARROW_CLASS =
-  'flex h-8 w-8 items-center justify-center rounded-md text-slate-500 transition-colors hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40';
+  'flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted disabled:cursor-not-allowed disabled:opacity-40';
 
 /**
  * Shared, RTL-aware server-side pagination control — an optional rows-per-page
@@ -187,7 +187,7 @@ export function Pagination({
   return (
     <div
       className={cn(
-        'flex flex-col gap-3 border-t border-slate-100 px-3 py-3 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between',
+        'flex flex-col gap-3 border-t border-border px-3 py-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between',
         className,
       )}
     >
@@ -202,8 +202,8 @@ export function Pagination({
         )}
         <span>
           {from.toLocaleString()}–{to.toLocaleString()}
-          <span className="mx-1 text-slate-400">/</span>
-          <span className="font-medium text-slate-700">{total.toLocaleString()}</span>
+          <span className="mx-1 text-muted-foreground/70">/</span>
+          <span className="font-medium text-foreground">{total.toLocaleString()}</span>
         </span>
       </div>
 
@@ -223,7 +223,7 @@ export function Pagination({
 
           {pageItems(page, totalPages).map((item, index) =>
             item === 'gap' ? (
-              <span key={`gap-${String(index)}`} className="px-1 text-slate-400">
+              <span key={`gap-${String(index)}`} className="px-1 text-muted-foreground/70">
                 …
               </span>
             ) : (
@@ -239,7 +239,7 @@ export function Pagination({
                   'h-8 min-w-[2rem] rounded-md px-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40',
                   item === page
                     ? 'bg-brand-accent text-white shadow-sm'
-                    : 'text-slate-600 hover:bg-slate-100',
+                    : 'text-muted-foreground hover:bg-muted',
                 )}
               >
                 {item}

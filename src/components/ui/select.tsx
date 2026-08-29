@@ -98,8 +98,8 @@ function groupsFromChildren(children: ReactNode): SearchableSelectGroup[] {
 
 function nativeSelectClass(className: string | undefined): string {
   return cn(
-    'flex h-11 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 pr-10 text-sm text-slate-900',
-    'focus:border-brand-primary focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-accent/25',
+    'flex h-11 w-full rounded-lg border border-border bg-muted/50 px-4 pr-10 text-sm text-foreground',
+    'transition-colors focus:border-signal focus:bg-card focus:outline-none focus:ring-2 focus:ring-ring',
     'disabled:cursor-not-allowed disabled:opacity-60',
     className,
   );

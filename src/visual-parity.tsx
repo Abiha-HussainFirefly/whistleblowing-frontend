@@ -52,7 +52,7 @@ api.interceptors.request.use((config) => {
 const apiError = (error: unknown) => axios.isAxiosError(error) ? String(error.response?.data?.message ?? 'Request failed.') : 'Request failed.';
 
 function Logo() {
-  return <img className="brand-logo" src="/civorah-logo.png" alt="Civorah" />;
+  return <img className="brand-logo" src="/tellara-logo.png" alt="Tellara" />;
 }
 
 function VisualSidebar({ expanded, open, onToggle, onClose }: { expanded: boolean; open: boolean; onToggle: () => void; onClose: () => void }) {

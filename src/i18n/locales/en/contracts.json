@@ -28,7 +28,7 @@
     "next": {
       "submit": "Next: submit for approval — a colleague with the Submit permission must submit it. The creator cannot submit their own contract.",
       "approvals": "Next: approvals — assigned approvers decide in order. The creator cannot approve their own contract.",
-      "execute": "Next: execute — someone with the Execute permission can sign in Civorah, send via DocuSign, or record a manual execution.",
+      "execute": "Next: execute — someone with the Execute permission can sign in Tellara, send via DocuSign, or record a manual execution.",
       "signatures": "Next: finalize signatures — awaiting signers, then the contract is executed."
     },
     "terminal": {
@@ -94,7 +94,7 @@
       "submit": "Submit for approval is done by a different colleague with the Submit permission; the creator cannot submit their own contract.",
       "chain": "On submit, the approval chain is generated automatically from MoA rules, or built manually if no rule matches.",
       "approvers": "Approvers decide each step in order. The creator cannot approve their own contract.",
-      "execute": "Once approved, someone with Execute permission executes it in Civorah, via DocuSign, or by recording manual execution."
+      "execute": "Once approved, someone with Execute permission executes it in Tellara, via DocuSign, or by recording manual execution."
     },
     "submit": {
       "title": "Submit for approval",

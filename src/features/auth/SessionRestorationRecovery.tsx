@@ -12,17 +12,17 @@ export function SessionRestorationRecovery(): ReactElement {
     <main className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top,#e7f5f3_0%,#f8fafc_48%,#edf2f7_100%)] px-5 py-12">
       <section
         role="alert"
-        className="w-full max-w-lg rounded-2xl border border-amber-200 bg-white p-8 shadow-xl shadow-slate-900/10"
+        className="w-full max-w-lg rounded-2xl border border-courage/35 bg-white p-8 shadow-xl shadow-slate-900/10"
       >
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-courage-strong">
           <ShieldAlert className="h-6 w-6" aria-hidden="true" />
         </div>
-        <h1 className="mt-5 text-2xl font-semibold tracking-tight text-slate-900">
+        <h1 className="mt-5 text-2xl font-semibold tracking-tight text-foreground">
           {t('sessionRestoration.title', {
             defaultValue: 'Session restoration needs attention',
           })}
         </h1>
-        <p className="mt-3 text-sm leading-6 text-slate-600">
+        <p className="mt-3 text-sm leading-6 text-muted-foreground">
           {t('sessionRestoration.description', {
             defaultValue:
               'We could not safely confirm whether your session was refreshed. To protect your account, we did not try again automatically.',

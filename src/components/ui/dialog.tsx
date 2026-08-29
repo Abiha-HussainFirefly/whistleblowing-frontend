@@ -74,7 +74,7 @@ export function Dialog({
     >
       <div
         className={cn(
-          'flex max-h-[calc(100vh-2rem)] w-full flex-col rounded-lg border border-slate-200 bg-white shadow-xl dark:border-white/15 dark:bg-[#0f1c2e] dark:text-white',
+          'flex max-h-[calc(100vh-2rem)] w-full flex-col rounded-lg border border-border bg-white shadow-xl dark:border-white/15 dark:bg-[#0f1c2e] dark:text-white',
           // eslint-disable-next-line security/detect-object-injection
           SIZE_CLASSES[size],
           panelClassName,
@@ -83,12 +83,12 @@ export function Dialog({
         aria-modal="true"
         aria-label={title}
       >
-        <div className="flex shrink-0 items-center justify-between border-b border-slate-200 px-6 py-4 dark:border-white/10">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">{title}</h2>
+        <div className="flex shrink-0 items-center justify-between border-b border-border px-6 py-4 dark:border-white/10">
+          <h2 className="text-lg font-semibold text-foreground dark:text-white">{title}</h2>
           <button
             type="button"
             onClick={onClose}
-            className="rounded-md p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
+            className="rounded-md p-1 text-muted-foreground/70 hover:bg-muted hover:text-foreground dark:hover:bg-white/10 dark:hover:text-white"
             aria-label={closeLabel}
           >
             <X className="h-5 w-5" />
@@ -98,7 +98,7 @@ export function Dialog({
           {children}
         </div>
         {footer !== undefined && (
-          <div className="shrink-0 rounded-b-lg border-t border-slate-200 bg-slate-50 px-6 py-4 dark:border-white/10 dark:bg-white/5">
+          <div className="shrink-0 rounded-b-lg border-t border-border bg-muted/50 px-6 py-4 dark:border-white/10 dark:bg-white/5">
             {footer}
           </div>
         )}

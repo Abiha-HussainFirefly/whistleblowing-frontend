@@ -11,7 +11,7 @@ import type { AuthSessionPayload } from '@/types/auth';
 import { csrfHeaders, readCookie } from '@lib/csrf';
 
 /**
- * Hardened Axios instance for the Civorah backend.
+ * Hardened Axios instance for the Tellara backend.
  *
  * AUTH MODE (INTERIM): Bearer tokens in body.
  * The backend currently returns access + refresh tokens in `/auth/login`'s
@@ -48,7 +48,7 @@ function toError(reason: unknown): Error {
 function activeLanguage(): string {
   const fromDoc = typeof document !== 'undefined' ? document.documentElement.lang : '';
   const fromStore =
-    typeof localStorage !== 'undefined' ? localStorage.getItem('civorah.lang') : null;
+    typeof localStorage !== 'undefined' ? localStorage.getItem('tellara.lang') : null;
   const raw = (fromDoc.length > 0 ? fromDoc : (fromStore ?? 'en')).toLowerCase();
   const base = raw.split('-')[0];
   return base !== undefined && base.length > 0 ? base : 'en';

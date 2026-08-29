@@ -3,7 +3,7 @@
  * (cleared when the tab closes), never in the global auth store. This keeps the
  * anonymous reporter session fully separate from any platform-user session.
  */
-const REPORTER_TOKEN_KEY = 'civorah.wb.reporter';
+const REPORTER_TOKEN_KEY = 'tellara.wb.reporter';
 
 export function saveReporterToken(token: string): void {
   sessionStorage.setItem(REPORTER_TOKEN_KEY, token);

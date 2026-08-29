@@ -1,5 +1,7 @@
-export const APP_NAME = 'Civorah';
-export const APP_TAGLINE = 'Legal Operations Platform';
+export const APP_NAME = 'Tellara';
+export const APP_TAGLINE = 'Protected reporting · accountable action';
+/** Reporter-facing promise from the brand platform. Never phrase anonymity as absolute. */
+export const APP_PROMISE = 'You can report without surrendering control of your identity.';
 
 export const PAGINATION = Object.freeze({
   DEFAULT_PAGE: 1,
@@ -14,10 +16,10 @@ export const QUERY_DEFAULTS = Object.freeze({
 });
 
 export const STORAGE_KEYS = Object.freeze({
-  THEME: 'atlyis.theme',
-  LOCALE: 'atlyis.locale',
+  THEME: 'tellara.theme',
+  LOCALE: 'tellara.locale',
   /** Namespace prefix for auto-saved, half-finished form drafts. */
-  DRAFT_PREFIX: 'atlyis.draft.',
+  DRAFT_PREFIX: 'tellara.draft.',
 });
 
 export const HTTP_STATUS = Object.freeze({

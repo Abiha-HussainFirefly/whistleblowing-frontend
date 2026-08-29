@@ -28,7 +28,7 @@
     "next": {
       "submit": "Suivant : soumettre pour approbation — un collègue disposant de l'autorisation de soumission doit le faire. Le créateur ne peut pas soumettre son propre contrat.",
       "approvals": "Suivant : approbations — les approbateurs désignés décident dans l'ordre. Le créateur ne peut pas approuver son propre contrat.",
-      "execute": "Suivant : exécution — une personne disposant de l'autorisation d'exécution peut signer dans Civorah, envoyer via DocuSign ou enregistrer une exécution manuelle.",
+      "execute": "Suivant : exécution — une personne disposant de l'autorisation d'exécution peut signer dans Tellara, envoyer via DocuSign ou enregistrer une exécution manuelle.",
       "signatures": "Suivant : finaliser les signatures — en attente des signataires, puis le contrat sera exécuté."
     },
     "terminal": {
@@ -94,7 +94,7 @@
       "submit": "La soumission est effectu?e par un autre coll?gue disposant de la permission Soumettre ; le cr?ateur ne peut pas soumettre son propre contrat.",
       "chain": "? la soumission, la cha?ne d'approbation est g?n?r?e automatiquement depuis les r?gles MoA, ou construite manuellement si aucune r?gle ne correspond.",
       "approvers": "Les approbateurs d?cident chaque ?tape dans l?ordre. Le cr?ateur ne peut pas approuver son propre contrat.",
-      "execute": "Une fois approuv?, une personne avec la permission Ex?cuter l'ex?cute dans Civorah, via DocuSign ou par ex?cution manuelle enregistr?e."
+      "execute": "Une fois approuv?, une personne avec la permission Ex?cuter l'ex?cute dans Tellara, via DocuSign ou par ex?cution manuelle enregistr?e."
     },
     "submit": {
       "title": "Soumettre pour approbation",

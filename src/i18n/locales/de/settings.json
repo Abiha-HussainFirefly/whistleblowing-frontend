@@ -126,7 +126,7 @@
     "error": "Passwort konnte nicht aktualisiert werden. Bitte versuchen Sie es erneut."
   },
   "recoveryCodes": {
-    "title": "Civorah MFA-Wiederherstellungscodes",
+    "title": "Tellara MFA-Wiederherstellungscodes",
     "separator": "========================",
     "saveHint": "Speichern Sie diese Codes an einem sicheren Ort.",
     "onceHint": "Jeder Code kann nur einmal verwendet werden."

@@ -188,15 +188,6 @@ export function LoginPage(): ReactElement {
             Sign in to the organization portal
           </Link>
         </p>
-        <p className="mt-1.5">
-          System administrator?{' '}
-          <Link
-            to={ROUTES.AUTH.ADMIN_LOGIN}
-            className="inline-flex min-h-11 items-center font-medium text-brand-accent hover:underline"
-          >
-            Sign in to the system console
-          </Link>
-        </p>
       </div>
     </div>
   );

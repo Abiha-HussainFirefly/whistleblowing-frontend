@@ -57,7 +57,6 @@ export function Callout({
   icon,
   className,
 }: CalloutProps): ReactElement {
-  // eslint-disable-next-line security/detect-object-injection -- tone is a closed union
   const spec = TONE[tone] ?? TONE.info;
   const Icon = icon ?? spec.icon;
 

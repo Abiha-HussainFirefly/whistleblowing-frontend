@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { apiClient } from '@lib/axios';
+import { clearAccessToken, setAccessToken } from '@lib/auth-token';
 import { env } from '@config/env';
-import type { AuthSessionPayload, AuthUser, MeResponse, PlatformRole } from '@/types/auth';
+import type { AuthSessionPayload, MeResponse, PlatformRole } from '@/types/auth';
 import { loginRequestSchema, type LoginRequest, type LoginResponse } from '../schemas/login.schema';
 import { verifyOtpRequestSchema, type VerifyOtpRequest, type VerifyOtpResponse, resendOtpRequestSchema, type ResendOtpRequest, type ResendOtpResponse } from '../schemas/email-verification.schema';
 import { forgotPasswordRequestSchema, resetPasswordRequestSchema, passwordResetMessageSchema, type ForgotPasswordRequest, type ResetPasswordRequest, type PasswordResetMessageResponse } from '../schemas/password-reset.schema';
@@ -31,8 +32,11 @@ function normalizeUser(user: TargetAuthResponse['user']): AuthenticatedLogin['us
 
 function normalizeSession(data: TargetAuthResponse): LoginResponse {
   const expiresIn = seconds(data.expiresIn);
-  localStorage.setItem('wb.internalToken', data.token);
-  localStorage.setItem('wb.permissions', JSON.stringify(data.permissions));
+  // The access token is held in memory only; the refresh token arrives as an
+  // HttpOnly cookie the browser will not expose to script. Permissions are NOT
+  // cached here any more - they are authorization data that a user could edit in
+  // devtools and that goes stale the moment a role changes. /auth/me owns them.
+  setAccessToken(data.token, expiresIn);
   localStorage.setItem('wb.platformRole', data.user.platformRole ?? 'USER');
   if (data.organization !== null && data.organization !== undefined) {
     localStorage.setItem('wb.organizationId', data.organization.id);
@@ -69,7 +73,7 @@ export const authService = {
   async resetPassword(input: ResetPasswordRequest): Promise<PasswordResetMessageResponse> { const { data } = await apiClient.post<unknown>('/auth/password/reset', resetPasswordRequestSchema.parse(input)); return passwordResetMessageSchema.parse(data); },
   async me(accessToken?: string): Promise<MeResponse> { const { data } = await apiClient.get<MeResponse>('/auth/me', accessToken === undefined ? undefined : { headers: { Authorization: `Bearer ${accessToken}` } }); return data; },
   async refresh(): Promise<AuthSessionPayload> { const { data } = await axios.post<AuthSessionPayload>(`${env.apiBaseUrl}/auth/refresh`); return data; },
-  async logout(): Promise<void> { localStorage.removeItem('wb.internalToken'); localStorage.removeItem('wb.permissions'); localStorage.removeItem('wb.platformRole'); localStorage.removeItem('wb.organizationId'); localStorage.removeItem('wb.organizationSlug'); localStorage.removeItem('wb.organizationName'); localStorage.removeItem('wb.userDisplayName'); localStorage.removeItem('wb.userEmail'); await apiClient.post('/auth/logout', {}); },
+  async logout(): Promise<void> { clearAccessToken(); localStorage.removeItem('wb.internalToken'); localStorage.removeItem('wb.permissions'); localStorage.removeItem('wb.platformRole'); localStorage.removeItem('wb.organizationId'); localStorage.removeItem('wb.organizationSlug'); localStorage.removeItem('wb.organizationName'); localStorage.removeItem('wb.userDisplayName'); localStorage.removeItem('wb.userEmail'); await apiClient.post('/auth/logout', {}); },
   async adminLogin(input: LoginRequest): Promise<LoginResponse> {
     const payload = loginRequestSchema.parse(input);
     const { data } = await apiClient.post<TargetAuthResponse>('/auth/admin/login', payload);

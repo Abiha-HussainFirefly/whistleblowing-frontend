@@ -205,11 +205,25 @@ function progressStageFor(status: WhistleblowingStatus): number {
   return 5;
 }
 
+/**
+ * One labelled value inside a case card.
+ *
+ * `min-w-0` and `break-words` are load-bearing, not cosmetic. A grid or flex
+ * item defaults to `min-width: auto`, which refuses to shrink below the width of
+ * its longest unbreakable run — so a reporter's email address, a pasted URL or a
+ * long location string pushes straight out through the side of the card instead
+ * of wrapping. Case data is user-supplied and routinely contains exactly those
+ * strings.
+ */
 export function CaseField({ label, value }: { label: string; value: string | null }): ReactElement {
   return (
-    <div>
+    <div className="min-w-0">
       <dt className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</dt>
-      <dd className="notranslate mt-1 text-foreground" translate="no" dir="auto">
+      <dd
+        className="notranslate mt-1 break-words text-foreground"
+        translate="no"
+        dir="auto"
+      >
         {value !== null && value.length > 0 ? value : '—'}
       </dd>
     </div>
@@ -218,10 +232,15 @@ export function CaseField({ label, value }: { label: string; value: string | nul
 
 export function CaseRecord({ label, value }: { label: string; value: string }): ReactElement {
   return (
-    <div className="space-y-1">
+    <div className="min-w-0 space-y-1">
       <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">{label}</p>
+      {/*
+        `whitespace-pre-wrap` preserves the reporter's own line breaks but will
+        not break a single long token, so `break-words` is needed alongside it:
+        a pasted URL in a report description would otherwise widen the card.
+      */}
       <p
-        className="notranslate whitespace-pre-wrap text-sm leading-6 text-foreground"
+        className="notranslate whitespace-pre-wrap break-words text-sm leading-6 text-foreground"
         translate="no"
         dir="auto"
       >

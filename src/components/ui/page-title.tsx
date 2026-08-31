@@ -18,5 +18,5 @@ export function PageTitle({
   className,
   ...props
 }: PageTitleProps): ReactElement {
-  return <Component className={cn('app-page-title', className)} {...props} />;
+  return <Component className={cn('break-words app-page-title', className)} {...props} />;
 }

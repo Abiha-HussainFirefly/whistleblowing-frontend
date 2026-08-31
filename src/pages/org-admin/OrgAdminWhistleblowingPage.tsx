@@ -173,13 +173,15 @@ function RadialStatusChart({ data }: { data: Record<string, number> }): ReactEle
       </div>
       <ul className="space-y-1.5">
         {chartData.map((d) => (
-          <li key={d.name} className="flex items-center gap-2 text-sm">
+          <li key={d.name} className="flex min-w-0 items-center gap-2 text-sm">
             <span
               className="h-2.5 w-2.5 shrink-0 rounded-full"
               style={{ backgroundColor: d.fill }}
+              aria-hidden="true"
             />
-            <span className="text-muted-foreground">{d.name}</span>
-            <span className="font-medium text-foreground">{d.value}</span>
+            {/* The label yields space; the value never does — it is the datum. */}
+            <span className="min-w-0 truncate text-muted-foreground">{d.name}</span>
+            <span className="ms-auto shrink-0 font-medium tabular-nums text-foreground">{d.value}</span>
           </li>
         ))}
       </ul>
@@ -305,7 +307,6 @@ function CategoryPieChart({
           <PieChart>
             <Pie data={chartData} dataKey="value" nameKey="name" outerRadius="90%">
               {chartData.map((d) => (
-                // eslint-disable-next-line @typescript-eslint/no-deprecated -- Recharts Pie still uses Cell for per-slice colors.
                 <Cell key={d.name} fill={d.fill} />
               ))}
             </Pie>
@@ -314,13 +315,15 @@ function CategoryPieChart({
       </div>
       <ul className="space-y-1.5">
         {chartData.map((d) => (
-          <li key={d.name} className="flex items-center gap-2 text-sm">
+          <li key={d.name} className="flex min-w-0 items-center gap-2 text-sm">
             <span
               className="h-2.5 w-2.5 shrink-0 rounded-full"
               style={{ backgroundColor: d.fill }}
+              aria-hidden="true"
             />
-            <span className="text-muted-foreground">{d.name}</span>
-            <span className="font-medium text-foreground">
+            {/* The label yields space; the value never does — it is the datum. */}
+            <span className="min-w-0 truncate text-muted-foreground">{d.name}</span>
+            <span className="ms-auto shrink-0 whitespace-nowrap font-medium tabular-nums text-foreground">
               {d.value} ({Math.round((d.value / total) * 100)}%)
             </span>
           </li>
@@ -363,7 +366,6 @@ function AnonymousDonutChart({
               paddingAngle={total > 0 ? 2 : 0}
             >
               {chartData.map((d) => (
-                // eslint-disable-next-line @typescript-eslint/no-deprecated -- Recharts Pie still uses Cell for per-slice colors.
                 <Cell key={d.name} fill={d.fill} />
               ))}
             </Pie>
@@ -376,13 +378,15 @@ function AnonymousDonutChart({
       </div>
       <ul className="space-y-1.5">
         {chartData.map((d) => (
-          <li key={d.name} className="flex items-center gap-2 text-sm">
+          <li key={d.name} className="flex min-w-0 items-center gap-2 text-sm">
             <span
               className="h-2.5 w-2.5 shrink-0 rounded-full"
               style={{ backgroundColor: d.fill }}
+              aria-hidden="true"
             />
-            <span className="text-muted-foreground">{d.name}</span>
-            <span className="font-medium text-foreground">
+            {/* The label yields space; the value never does — it is the datum. */}
+            <span className="min-w-0 truncate text-muted-foreground">{d.name}</span>
+            <span className="ms-auto shrink-0 whitespace-nowrap font-medium tabular-nums text-foreground">
               {d.value} ({total > 0 ? Math.round((d.value / total) * 100) : 0}%)
             </span>
           </li>

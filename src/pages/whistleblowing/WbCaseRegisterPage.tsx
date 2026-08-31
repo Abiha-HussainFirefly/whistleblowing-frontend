@@ -52,7 +52,6 @@ export function WbCaseRegisterPage(): ReactElement {
   const { t, i18n } = useTranslation('whistleblowing');
   const { has } = usePermissions();
   const navigate = useNavigate();
-  const canAdmin = has(WB_PERMISSIONS.admin);
   const canCreateManual = has(WB_PERMISSIONS.create);
   const isRtl = i18n.dir() === 'rtl';
   const tableHeaderClass = cn('px-4 py-2.5 font-medium', isRtl ? 'text-right' : 'text-left');

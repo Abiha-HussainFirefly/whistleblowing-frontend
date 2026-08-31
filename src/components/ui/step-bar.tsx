@@ -114,7 +114,6 @@ export function StepBarCompact({
   current: number;
   className?: string;
 }): ReactElement {
-  // eslint-disable-next-line security/detect-object-injection
   const currentTitle = titles[current] ?? '';
 
   return (

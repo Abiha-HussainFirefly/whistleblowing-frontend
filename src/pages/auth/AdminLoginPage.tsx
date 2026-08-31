@@ -12,6 +12,15 @@ import { useAuthStore } from '@store/authStore';
 import { toast } from '@store/toastStore';
 import { useAdminLoginMutation, loginErrorMessage, loginRequestSchema, type LoginRequest } from '@features/auth';
 
+/**
+ * System console sign-in.
+ *
+ * Deliberately NOT linked from the landing page, the organization sign-in page,
+ * or anywhere else in the client. Platform administration is an internal
+ * capability; advertising its entry point tells an attacker where the
+ * highest-value account lives and invites credential stuffing against it.
+ * Operators reach this route by knowing the URL.
+ */
 export function AdminLoginPage() {
   const navigate = useNavigate();
   const queryClient = useQueryClient();

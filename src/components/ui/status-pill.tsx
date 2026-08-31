@@ -75,7 +75,6 @@ export function StatusPill({
   showIcon = true,
   className,
 }: StatusPillProps): ReactElement {
-  // eslint-disable-next-line security/detect-object-injection -- tone is a closed union
   const spec = TONE[tone] ?? TONE.submitted;
   const Icon = spec.icon;
 

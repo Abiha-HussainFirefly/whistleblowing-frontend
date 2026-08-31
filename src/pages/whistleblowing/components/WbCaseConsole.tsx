@@ -40,6 +40,7 @@ import {
   wbRelationshipLabelT,
 } from '@features/whistleblowing/utils/i18n';
 import { usePermissions } from '@hooks/usePermissions';
+import { CaseCompliancePanel } from '@features/whistleblowing/components/CaseCompliancePanel';
 import { getApiErrorMessage, getApiSuccessMessage } from '@lib/api-error';
 import { toast } from '@store/toastStore';
 import {
@@ -54,6 +55,8 @@ import {
   Lock,
   MessageSquare,
   Paperclip,
+  EyeOff,
+  Scale,
   Send,
   UserCheck,
   UserPlus,
@@ -524,7 +527,12 @@ export function WbCaseConsole({
         {/* Title row */}
         <div className="rounded-xl border border-border bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-start justify-between gap-3">
-            <div>
+            {/*
+              `min-w-0` lets this column shrink inside the flex row; without it a
+              long reporter alias or email holds the column open at its full
+              content width and pushes the status badges out of the card.
+            */}
+            <div className="min-w-0 flex-1">
               <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground/70">
                 {t('caseConsole.header.reference', { defaultValue: 'Case reference' })}
               </p>
@@ -536,7 +544,7 @@ export function WbCaseConsole({
                 <WbPriorityBadge priority={c.priority} />
                 <WbCategoryBadge category={c.category} />
               </div>
-              <p className="mt-1.5 text-sm text-muted-foreground">
+              <p className="mt-1.5 break-words text-sm text-muted-foreground">
                 {c.isAnonymous
                   ? t('caseConsole.reporter.anonymous', { defaultValue: 'Anonymous reporter' })
                   : t('caseConsole.reporter.named', { defaultValue: 'Named reporter' })}{' '}
@@ -548,6 +556,22 @@ export function WbCaseConsole({
                   </>
                 )}
               </p>
+              {/*
+                Say plainly that identity is restricted rather than showing an
+                empty field. Without this the screen is ambiguous in exactly the
+                wrong direction: "no contact details on file" and "you are not
+                permitted to see them" look identical, and only one of them means
+                someone else can act on the report.
+              */}
+              {c.identityWithheld === true && (
+                <p className="mt-1.5 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+                  <EyeOff className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  {t('caseConsole.reporter.identityWithheld', {
+                    defaultValue:
+                      'Reporter contact details are restricted. Access requires the identity permission, and every disclosure is recorded.',
+                  })}
+                </p>
+              )}
             </div>
             <div className="flex flex-wrap items-center justify-end gap-2">
               {c.slaBreachedAt !== null ? (
@@ -685,6 +709,26 @@ export function WbCaseConsole({
         />
 
         <div className="space-y-6">
+          {/*
+            Statutory obligations lead the overview. They are legal deadlines
+            owed to the reporter, and burying them below the incident detail
+            would make the one thing with a legal clock the last thing seen.
+          */}
+          {activeTab === 'overview' && c.compliance !== undefined && (
+            <Panel
+              title={t('caseConsole.panels.obligations', { defaultValue: 'Obligations' })}
+              icon={Scale}
+            >
+              <CaseCompliancePanel
+                caseId={caseId}
+                compliance={c.compliance}
+                legalHold={c.legalHold ?? false}
+                canAct={has(WB_PERMISSIONS.investigate)}
+                canPlaceLegalHold={has(WB_PERMISSIONS.admin)}
+              />
+            </Panel>
+          )}
+
           {activeTab === 'overview' && (
             <Panel
               title={t('caseConsole.panels.incident', { defaultValue: 'Incident' })}

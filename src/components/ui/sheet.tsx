@@ -129,12 +129,17 @@ export function Sheet({
 
   return createPortal(
     <div className="fixed inset-0 z-[9999]">
+      {/*
+        Presentational backdrop. Clicking it is a convenience; Escape (handled
+        above) is the keyboard path, and the panel carries role="dialog".
+      */}
       <div
         className={cn(
           'absolute inset-0 bg-black/40 transition-opacity duration-200',
           show ? 'opacity-100' : 'opacity-0',
         )}
         onClick={onClose}
+        role="presentation"
       />
 
       {/* Panel */}
@@ -145,7 +150,6 @@ export function Sheet({
         style={{ height: '100dvh', transitionDuration: '250ms' }}
         className={cn(
           'form-sheet-surface fixed bottom-0 right-0 top-0 flex w-full max-w-[100vw] flex-col bg-white shadow-2xl transition-transform ease-out dark:bg-[#0f1c2e] dark:text-white',
-          // eslint-disable-next-line security/detect-object-injection
           WIDTH_CLASSES[width],
           show ? 'translate-x-0' : 'translate-x-full',
         )}

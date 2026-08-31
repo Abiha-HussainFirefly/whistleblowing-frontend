@@ -42,12 +42,10 @@ const WB_PRIORITY_LEVEL: Record<InvestigationPriority, number> = {
 };
 
 export function wbStatusTone(s: WhistleblowingStatus): StateTone {
-  // eslint-disable-next-line security/detect-object-injection
   return WB_STATUS_TONE[s] ?? 'submitted';
 }
 
 export function wbPriorityLevel(p: InvestigationPriority): number {
-  // eslint-disable-next-line security/detect-object-injection
   return WB_PRIORITY_LEVEL[p] ?? 1;
 }
 
@@ -61,7 +59,6 @@ function optionsFrom<K extends string>(
   keys: readonly K[],
   labels: Record<K, string>,
 ): LabeledOption<K>[] {
-  // eslint-disable-next-line security/detect-object-injection
   return keys.map((k) => ({ value: k, label: labels[k] }));
 }
 
@@ -307,23 +304,18 @@ export const WB_PARTICIPANT_ROLE_OPTIONS = optionsFrom(
 // ── Accessors (eslint-safe object indexing) ──────────────────────────────────
 
 export function wbStatusLabel(s: WhistleblowingStatus): string {
-  // eslint-disable-next-line security/detect-object-injection
   return WB_STATUS_LABEL[s];
 }
 export function wbStatusVariant(s: WhistleblowingStatus): BadgeVariant {
-  // eslint-disable-next-line security/detect-object-injection
   return WB_STATUS_VARIANT[s];
 }
 export function wbCategoryLabel(c: WhistleblowingCategory): string {
-  // eslint-disable-next-line security/detect-object-injection
   return WB_CATEGORY_LABEL[c];
 }
 export function wbPriorityLabel(p: InvestigationPriority): string {
-  // eslint-disable-next-line security/detect-object-injection
   return WB_PRIORITY_LABEL[p];
 }
 export function wbPriorityVariant(p: InvestigationPriority): BadgeVariant {
-  // eslint-disable-next-line security/detect-object-injection
   return WB_PRIORITY_VARIANT[p];
 }
 

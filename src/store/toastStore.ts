@@ -90,13 +90,11 @@ function show(type: ToastType, message: string, options?: ToastOptions): number 
     }
   }
 
-  // eslint-disable-next-line security/detect-object-injection -- type indexes static toast-title keys
   const title = options?.title ?? i18n.t(DEFAULT_TITLE_KEY[type]);
   return useToastStore.getState().push({
     type,
     message,
     title,
-    // eslint-disable-next-line security/detect-object-injection -- type indexes static toast durations
     duration: options?.duration ?? DURATION[type],
   });
 }

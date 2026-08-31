@@ -81,6 +81,13 @@ export const PERMISSIONS = {
   WHISTLEBLOWING_CASE_INVESTIGATE: 'whistleblowing_case:investigate',
   WHISTLEBLOWING_CASE_ADMIN: 'whistleblowing_case:admin',
   WHISTLEBLOWING_CASE_INDEPENDENT_REVIEW: 'whistleblowing_case:independent_review',
+  /**
+   * Seeing WHO filed a report, as distinct from reading the report itself.
+   * Deliberately separate from `read`: most investigative work does not need
+   * the reporter's identity, and several regimes require it to be restricted to
+   * a named, limited set of people. Every disclosure is audited server-side.
+   */
+  WHISTLEBLOWING_CASE_REVEAL_IDENTITY: 'whistleblowing_case:reveal_identity',
   AI_ASSISTANT_USE: 'ai_assistant:use',
   DOCUMENT_UPLOAD: 'document:upload',
   DOCUMENT_READ: 'document:read',

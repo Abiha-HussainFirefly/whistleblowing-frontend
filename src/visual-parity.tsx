@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { clearAccessToken, getAccessToken } from '@lib/auth-token';
 import {
   AlertTriangle,
   Bell,
@@ -44,7 +45,7 @@ type DashboardStats = {
 
 const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api/v1' });
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('wb.internalToken');
+  const token = getAccessToken();
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
@@ -84,7 +85,7 @@ function VisualShell({ children }: { children: React.ReactNode }) {
   const organizationSlug = localStorage.getItem('wb.organizationSlug') || import.meta.env.VITE_WB_ORGANIZATION_SLUG || '';
   const displayName = localStorage.getItem('wb.userDisplayName') || 'Authenticated user';
   const organizationLabel = organizationSlug ? organizationSlug.replaceAll('-', ' ') : 'Organization';
-  const signOut = () => { localStorage.removeItem('wb.internalToken'); localStorage.removeItem('wb.permissions'); localStorage.removeItem('wb.userDisplayName'); localStorage.removeItem('wb.userEmail'); navigate('/auth/login'); };
+  const signOut = () => { clearAccessToken(); localStorage.removeItem('wb.internalToken'); localStorage.removeItem('wb.permissions'); localStorage.removeItem('wb.userDisplayName'); localStorage.removeItem('wb.userEmail'); navigate('/auth/login'); };
   return <div className="source-app-shell">
     <VisualSidebar expanded={expanded} open={sidebarOpen} onToggle={() => setExpanded(value => !value)} onClose={() => setSidebarOpen(false)} />
     {!sidebarOpen && <button className="mobile-menu-button" aria-label="Open menu" onClick={() => setSidebarOpen(true)}><Menu /></button>}

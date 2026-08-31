@@ -279,8 +279,14 @@
   }
 
   /* Status pill. Always rendered with an icon + label; the colour is support. */
+  /*
+   * `min-w-0` is required, not decorative: as a flex item the pill defaults to
+   * `min-width: auto` and refuses to shrink below its label, so the `truncate`
+   * on its inner span never engages and the pill pushes siblings out of the
+   * container instead of clipping itself.
+   */
   .state-pill {
-    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium;
+    @apply inline-flex min-w-0 items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium;
   }
   .state-submitted {
     background-color: hsl(var(--state-submitted-surface));

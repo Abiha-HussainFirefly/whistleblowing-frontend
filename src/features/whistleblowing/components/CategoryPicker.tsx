@@ -184,7 +184,6 @@ export function CategoryPicker({
           className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 xl:grid-cols-4"
         >
           {visible.map((category) => {
-            // eslint-disable-next-line security/detect-object-injection -- key comes from a typed union
             const Icon = CATEGORY_ICON[category] ?? HelpCircle;
             const selected = value === category;
 

@@ -43,7 +43,6 @@ export function SurfaceCard({
       className={cn(
         'rounded-xl border',
         interactive && 'lift',
-        // eslint-disable-next-line security/detect-object-injection -- tone is a closed union
         TONE_CLASS[tone] ?? TONE_CLASS.default,
         flush ? '' : 'p-5',
         className,

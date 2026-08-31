@@ -391,7 +391,13 @@ function StatusBreakdown({
         {data.map((item) => {
           const share = charted > 0 ? Math.round((item.count / charted) * 100) : 0;
           return (
-            <li key={item.key} className="flex items-center gap-3">
+            /*
+              `min-w-0` on the row is what lets the status label truncate. The
+              count and share are `shrink-0` by design — they are the numbers the
+              reader came for — so without it the row cannot fit and the count is
+              pushed outside the card once the sidebar narrows this column.
+            */
+            <li key={item.key} className="flex min-w-0 items-center gap-3">
               <span
                 className="h-2.5 w-2.5 shrink-0 rounded-full"
                 style={{ backgroundColor: item.fill }}

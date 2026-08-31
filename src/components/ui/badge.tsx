@@ -31,7 +31,6 @@ export function Badge({ children, variant = 'default', className }: BadgeProps) 
     <span
       className={cn(
         'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium',
-        // eslint-disable-next-line security/detect-object-injection
         VARIANT_CLASSES[variant],
         className,
       )}

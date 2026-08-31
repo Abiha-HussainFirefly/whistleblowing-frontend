@@ -84,7 +84,6 @@ export function VerifyEmailPage(): ReactElement {
   }, [hasState]);
 
   const focusInput = useCallback((index: number) => {
-    // eslint-disable-next-line security/detect-object-injection
     inputRefs.current[index]?.focus();
   }, []);
 
@@ -207,7 +206,6 @@ export function VerifyEmailPage(): ReactElement {
 
       setDigits((prev) => {
         const next = [...prev];
-        // eslint-disable-next-line security/detect-object-injection
         next[index] = value;
 
         if (value.length === 1 && index < OTP_LENGTH - 1) {
@@ -229,7 +227,6 @@ export function VerifyEmailPage(): ReactElement {
 
   const handleKeyDown = useCallback(
     (index: number, e: KeyboardEvent<HTMLInputElement>) => {
-      // eslint-disable-next-line security/detect-object-injection
       if (e.key === 'Backspace' && digits[index] === '' && index > 0) {
         focusInput(index - 1);
       }
@@ -247,7 +244,6 @@ export function VerifyEmailPage(): ReactElement {
 
       const next = Array(OTP_LENGTH).fill('') as string[];
       for (let i = 0; i < pasted.length; i++) {
-        // eslint-disable-next-line security/detect-object-injection
         next[i] = pasted[i] ?? '';
       }
       setDigits(next);
@@ -364,7 +360,6 @@ export function VerifyEmailPage(): ReactElement {
             <input
               key={index}
               ref={(el) => {
-                // eslint-disable-next-line security/detect-object-injection
                 inputRefs.current[index] = el;
               }}
               type="text"

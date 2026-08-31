@@ -14,7 +14,6 @@ import {
 
 // Re-export the country helpers from the data module so existing call sites can
 // keep importing them from '@components/ui/region-select' unchanged.
-// eslint-disable-next-line react-refresh/only-export-components
 export { regionName, regionTimezone, regionCurrency, localizedCountryName, localizedCurrencyName };
 
 export interface RegionSelectProps {

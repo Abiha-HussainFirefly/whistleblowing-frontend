@@ -36,5 +36,12 @@ export function shouldRecoverSessionAfterUnauthorized(url: string): boolean {
   if (path.includes('/auth/') || path.includes('/invitations/')) {
     return false;
   }
+  // The reporter portal is a separate, case-scoped session that has nothing to do
+  // with a staff sign-in. Without this, an expired reporter token would trigger a
+  // refresh attempt and then clear the auth store — signing out an investigator
+  // who happened to be signed in on another tab.
+  if (path.startsWith('/whistleblowing/portal')) {
+    return false;
+  }
   return true;
 }

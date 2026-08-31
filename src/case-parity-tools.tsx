@@ -1,8 +1,9 @@
 import { FormEvent, useEffect, useState } from 'react';
 import axios from 'axios';
+import { getAccessToken } from '@lib/auth-token';
 
 const api = axios.create({ baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api/v1' });
-api.interceptors.request.use(config => { const token = localStorage.getItem('wb.internalToken'); if (token) config.headers.Authorization = `Bearer ${token}`; return config; });
+api.interceptors.request.use(config => { const token = getAccessToken(); if (token) config.headers.Authorization = `Bearer ${token}`; return config; });
 const errorText = (e: unknown) => axios.isAxiosError(e) ? String(e.response?.data?.message ?? 'Request failed.') : 'Request failed.';
 
 export function CaseParityTools({ caseId, participants = [], relatedCaseIds = [], caseData, enabled }: { caseId: string; participants?: any[]; relatedCaseIds?: string[]; caseData?: any; enabled: boolean }) {

@@ -71,11 +71,18 @@ export function Dialog({
       ref={overlayRef}
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 p-4"
       onClick={handleOverlayClick}
+      /*
+       * Presentational: the backdrop is decoration, and clicking it is a
+       * convenience only. Keyboard users close this the same way they close any
+       * dialog — Escape, handled above — and the panel itself carries
+       * role="dialog" aria-modal="true". Marking it presentation is therefore
+       * accurate rather than a way of quieting the linter.
+       */
+      role="presentation"
     >
       <div
         className={cn(
           'flex max-h-[calc(100vh-2rem)] w-full flex-col rounded-lg border border-border bg-white shadow-xl dark:border-white/15 dark:bg-[#0f1c2e] dark:text-white',
-          // eslint-disable-next-line security/detect-object-injection
           SIZE_CLASSES[size],
           panelClassName,
         )}

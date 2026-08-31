@@ -91,10 +91,35 @@ export function PortalUserMenu({ placement, sidebarCollapsed = false, profileRou
       <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-accent text-white ring-2 ring-brand-accent/20 sm:h-9 sm:w-9"><User className="h-4 w-4 sm:h-5 sm:w-5" /></span>
       <span className="hidden max-w-[6.5rem] truncate text-start font-medium sm:block lg:max-w-40" dir="auto">{name}</span>
     </button>
+  ) : sidebarCollapsed ? (
+    /*
+     * Collapsed rail: the avatar alone.
+     *
+     * The expanded trigger renders a name and email beside the avatar. Inside a
+     * 4.5rem rail there is no room for them, so they collapsed to a sliver of
+     * truncated address and crowded the avatar out of view. The identity is still
+     * announced to assistive technology and shown on hover, so nothing is lost —
+     * it is just no longer competing for space that does not exist.
+     */
+    <button
+      type="button"
+      onClick={toggle}
+      className="group mx-auto flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+      aria-haspopup="menu"
+      aria-expanded={open}
+      aria-label={t('menu.openAccountMenu', { defaultValue: 'Account menu' })}
+      title={`${name}${emailLabel ? ` — ${emailLabel}` : ''}`}
+    >
+      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-accent text-white ring-2 ring-brand-accent/15">
+        <User className="h-5 w-5" aria-hidden="true" />
+      </span>
+      <span className="sr-only">{name}</span>
+    </button>
   ) : (
-    <button type="button" onClick={toggle} className="group relative flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-start transition-colors hover:bg-white/10" aria-haspopup="menu" aria-expanded={open}>
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white ring-2 ring-brand-accent/15"><User className="h-5 w-5" /></span>
-      <span className="min-w-0 flex-1"><span className="block truncate text-sm font-medium text-porcelain">{name}</span><span className="block truncate text-xs text-porcelain/55">{emailLabel}</span></span>
+    <button type="button" onClick={toggle} className="group relative flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-start transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-haspopup="menu" aria-expanded={open}>
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white ring-2 ring-brand-accent/15"><User className="h-5 w-5" aria-hidden="true" /></span>
+      {/* min-w-0 is what allows `truncate` to work inside a flex row. */}
+      <span className="min-w-0 flex-1"><span className="block truncate text-sm font-medium text-porcelain" dir="auto">{name}</span><span className="block truncate text-xs text-porcelain/55" dir="auto">{emailLabel}</span></span>
     </button>
   );
 

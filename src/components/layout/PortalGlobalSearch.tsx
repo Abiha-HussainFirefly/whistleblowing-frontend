@@ -34,7 +34,7 @@ export function PortalGlobalSearch({ admin = false }: { admin?: boolean }): Reac
 
   return <>
     <button type="button" onClick={() => setOpen(true)} className="rounded-md p-1.5 text-brand-primary hover:bg-muted" aria-label="Search" title="Search"><Search className="h-5 w-5" /></button>
-    {open && <div className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 p-2 pt-3 sm:p-4 sm:pt-[10vh]" onClick={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
+    {open && <div role="presentation" className="fixed inset-0 z-50 flex items-start justify-center bg-black/50 p-2 pt-3 sm:p-4 sm:pt-[10vh]" onClick={(event) => { if (event.target === event.currentTarget) setOpen(false); }}>
       <div className="flex max-h-[calc(100vh-1.5rem)] w-full max-w-2xl flex-col overflow-hidden rounded-xl border border-border bg-white shadow-2xl" role="dialog" aria-modal="true" aria-label="Global search">
         <div className="flex items-center gap-3 border-b border-border px-4"><Search className="h-5 w-5 shrink-0 text-muted-foreground/70" /><input ref={inputRef} value={term} onChange={(event) => setTerm(event.target.value)} placeholder="Search cases…" className="h-14 min-w-0 flex-1 bg-transparent text-base text-foreground placeholder:text-muted-foreground/70 focus:outline-none" /><button type="button" onClick={() => setOpen(false)} className="rounded-md p-1 text-muted-foreground/70 hover:bg-muted" aria-label="Close search"><X className="h-5 w-5" /></button></div>
         <div className="min-h-[12rem] overflow-y-auto py-2">

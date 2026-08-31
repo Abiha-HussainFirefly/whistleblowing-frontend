@@ -970,5 +970,13 @@
     "notAlone": "You are not alone.",
     "showProtections": "How you are protected",
     "hideProtections": "Hide how you are protected"
+  },
+  "selfIdentification": {
+    "heading": "This may reveal who you are",
+    "contactDetails": "Your message appears to include contact details such as an email address or phone number.",
+    "explicitIdentity": "Your message appears to state your name.",
+    "uniqueRole": "Your message describes a role only one person holds, which may point to you.",
+    "smallGroup": "Your message narrows this to a small group, which may point to you.",
+    "footer": "You can still send your report exactly as written — this is only a prompt to check."
   }
 }

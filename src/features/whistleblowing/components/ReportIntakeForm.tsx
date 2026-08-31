@@ -1,4 +1,4 @@
-import { type ReactElement, type ReactNode, useEffect, useRef, useState } from 'react';
+import { type ReactElement, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@tanstack/react-query';
 import {
@@ -14,6 +14,7 @@ import {
 
 import { Button } from '@components/ui/button';
 import { Callout } from '@components/ui/callout';
+import { detectSelfIdentification } from '../utils/self-identification';
 import { Input } from '@components/ui/input';
 import { Select } from '@components/ui/select';
 import { StepBar, StepBarCompact } from '@components/ui/step-bar';
@@ -78,6 +79,19 @@ interface ReportIntakeFormProps {
   tourTriggerTime?: number;
 }
 
+/**
+ * English fallbacks for the self-identification advice.
+ *
+ * Wording follows the brand voice: it describes what the reader can check, and
+ * never implies the report is wrong or that anonymity has already failed.
+ */
+const SELF_ID_FALLBACKS: Record<string, string> = {
+  'contact-details': 'Your message appears to include contact details such as an email address or phone number.',
+  'explicit-identity': 'Your message appears to state your name.',
+  'unique-role': 'Your message describes a role only one person holds, which may point to you.',
+  'small-group': 'Your message narrows this to a small group, which may point to you.',
+};
+
 export function ReportIntakeForm({
   organizationSlug,
   orgInfo,
@@ -90,7 +104,6 @@ export function ReportIntakeForm({
   });
   const [step, setStep] = useState(0);
   const formTopRef = useRef<HTMLDivElement>(null);
-  // eslint-disable-next-line security/detect-object-injection -- step is clamped by wizard navigation
   const currentStep: ReportStep = REPORT_STEPS[step] ?? {
     key: 'incident',
     titleKey: 'form.steps.incident',
@@ -127,6 +140,17 @@ export function ReportIntakeForm({
   const [duration, setDuration] = useState<WbConductDuration | ''>('');
   const [awareness, setAwareness] = useState<WbAwarenessSource | ''>('');
   const [anonymous, setAnonymous] = useState(true);
+
+  /**
+   * Advisory check on the reporter's own draft. Runs in the browser only - the
+   * text is never sent anywhere to be analysed, which would create exactly the
+   * exposure being warned about. Skipped once the reporter has chosen to be
+   * named, since there is then nothing to reveal accidentally.
+   */
+  const selfIdentificationFindings = useMemo(
+    () => (anonymous ? detectSelfIdentification(description) : []),
+    [anonymous, description],
+  );
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [preferredContact, setPreferredContact] = useState('');
@@ -395,6 +419,39 @@ export function ReportIntakeForm({
                 })}
               />
               <CharacterCount value={description.length} max={DESCRIPTION_MAX} />
+              {/*
+                A persistent live region rather than a conditionally mounted one:
+                screen readers announce changes inside an existing region
+                reliably, but often miss one that appears at the same moment. It
+                is `polite` so it never interrupts someone mid-sentence.
+              */}
+              <div aria-live="polite" className="empty:hidden">
+                {selfIdentificationFindings.length > 0 ? (
+                  <Callout
+                    tone="caution"
+                    className="mt-2"
+                    title={t('selfIdentification.heading', {
+                      defaultValue: 'This may reveal who you are',
+                    })}
+                  >
+                    <ul className="list-disc space-y-1 ps-5">
+                      {selfIdentificationFindings.map((finding) => (
+                        <li key={finding.risk}>
+                          {t(finding.messageKey, {
+                            defaultValue: SELF_ID_FALLBACKS[finding.risk] ?? '',
+                          })}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-2">
+                      {t('selfIdentification.footer', {
+                        defaultValue:
+                          'You can still send your report exactly as written — this is only a prompt to check.',
+                      })}
+                    </p>
+                  </Callout>
+                ) : null}
+              </div>
             </div>
 
             <Callout tone="tip" className="mt-4">

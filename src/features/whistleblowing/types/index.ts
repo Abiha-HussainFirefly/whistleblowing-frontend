@@ -162,6 +162,21 @@ export interface WbCaseListItem {
 }
 
 export interface WbCaseDetail extends WbCaseListItem {
+  /**
+   * Statutory deadline state (EU Directive). Optional so a response from an
+   * older API, or a list projection that omits it, still typechecks.
+   */
+  compliance?: CaseComplianceState;
+  /** True while the case is exempt from scheduled retention deletion. */
+  legalHold?: boolean;
+  retentionExpiresAt?: string | null;
+  /**
+   * True when this viewer is not permitted to see who filed a named report.
+   * The contact fields are null in that case, and the UI should say so rather
+   * than render an empty field that looks like missing data.
+   */
+  identityWithheld?: boolean;
+
   incidentDescription: string;
   personsInvolved: string | null;
   reporterEmail: string | null;
@@ -424,4 +439,66 @@ export interface SubmitReportInput {
   acceptedTerms: boolean;
   conflictOfInterestDeclared?: boolean;
   hiddenFromUserPublicIds?: string[];
+}
+
+/* ------------------------------------------------------------------ *
+ * Statutory obligations
+ *
+ * These mirror the API exactly. The two clocks are kept separate from the
+ * internal `slaDeadline` because they measure different things: the SLA is a
+ * performance target the organization sets for itself, while these are legal
+ * obligations to the reporter under the EU Whistleblower Directive. A case can
+ * be comfortably inside its SLA and still be out of compliance.
+ * ------------------------------------------------------------------ */
+
+/** Deadline state for one case, as returned alongside the case detail. */
+export interface CaseComplianceState {
+  /** Art. 9(1)(b): receipt must be acknowledged within seven days. */
+  acknowledgementDueAt: string | null;
+  acknowledgedAt: string | null;
+  acknowledgementOverdue: boolean;
+  /** Negative once the deadline has passed; null once acknowledged. */
+  acknowledgementDueInDays: number | null;
+  /** Art. 9(1)(f): feedback within three months of acknowledgement. */
+  feedbackDueAt: string | null;
+  feedbackProvidedAt: string | null;
+  feedbackOverdue: boolean;
+  feedbackDueInDays: number | null;
+}
+
+/** Organization-wide posture shown on the dashboard. */
+export interface ComplianceOverview {
+  jurisdiction: {
+    profile: string;
+    label: string;
+    acknowledgementDays: number;
+    feedbackDays: number;
+    retentionDays: number | null;
+  };
+  acknowledgement: { overdue: number; dueWithinTwoDays: number };
+  feedback: { overdue: number; dueWithinTwoDays: number };
+  legalHolds: number;
+  /** Present so the figures are never mistaken for a compliance opinion. */
+  disclaimer: string;
+}
+
+/** One entry in the tamper-evident audit trail. */
+export interface AuditTrailEntry {
+  id: string;
+  sequence: string;
+  action: string;
+  resourceType: string;
+  resourcePublicId: string;
+  actorUserId: string | null;
+  metadata: Record<string, unknown>;
+  actorIp: string | null;
+  requestId: string | null;
+  /** False for entries written before the hash chain existed. */
+  chained: boolean;
+  createdAt: string;
+}
+
+export interface AuditTrailPage {
+  data: AuditTrailEntry[];
+  meta: { page: number; pageSize: number; total: number; totalPages: number };
 }

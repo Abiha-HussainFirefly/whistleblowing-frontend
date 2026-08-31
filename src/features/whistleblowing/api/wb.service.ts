@@ -1,5 +1,10 @@
 import { apiClient } from '@lib/axios';
 import type {
+  AuditTrailPage,
+  CaseComplianceState,
+  ComplianceOverview,
+} from '../types';
+import type {
   UserRef,
   AssignInput,
   CloseInput,
@@ -160,6 +165,51 @@ export const wbService = {
 
   getStats() {
     return apiClient.get<WbStats>('/whistleblowing/dashboard/stats').then((r) => r.data);
+  },
+
+  /* ---------------------- statutory obligations ---------------------- */
+
+  /**
+   * Acknowledges receipt of a report (EU Directive art. 9(1)(b), within 7 days).
+   * Acknowledging re-anchors the three-month feedback clock, so the response
+   * carries the updated deadline state.
+   */
+  acknowledge(caseId: string, message?: string) {
+    return apiClient
+      .post<CaseComplianceState>(`/whistleblowing/cases/${caseId}/acknowledge`,
+        message === undefined ? {} : { message })
+      .then((r) => r.data);
+  },
+
+  /** Records the feedback required within three months (art. 9(1)(f)). */
+  provideFeedback(caseId: string, message: string) {
+    return apiClient
+      .post<CaseComplianceState>(`/whistleblowing/cases/${caseId}/feedback`, { message })
+      .then((r) => r.data);
+  },
+
+  /** Places or releases a legal hold, which suspends retention deletion. */
+  setLegalHold(caseId: string, hold: boolean, reason?: string) {
+    return apiClient
+      .post<{ legalHold: boolean; legalHoldReason: string | null }>(
+        `/whistleblowing/cases/${caseId}/legal-hold`,
+        hold ? { hold, reason } : { hold },
+      )
+      .then((r) => r.data);
+  },
+
+  /** Organization-wide deadline posture for the dashboard. */
+  complianceOverview() {
+    return apiClient
+      .get<ComplianceOverview>('/whistleblowing/compliance/overview')
+      .then((r) => r.data);
+  },
+
+  /** Audit trail for one case, newest first. */
+  caseAuditTrail(caseId: string, page = 1, pageSize = 50) {
+    return apiClient
+      .get<AuditTrailPage>(`/whistleblowing/audit/case/${caseId}?page=${page}&pageSize=${pageSize}`)
+      .then((r) => r.data);
   },
 
   /** Fetch the CSV as a blob (so the bearer + region headers are attached). */

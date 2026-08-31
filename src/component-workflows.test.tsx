@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
@@ -20,6 +20,8 @@ vi.mock('axios', () => ({
 }));
 
 import { App } from './App';
+import { useAuthStore } from '@store/authStore';
+import { clearAccessToken, setAccessToken } from '@lib/auth-token';
 import { CaseParityTools } from './case-parity-tools';
 import { EnrichedReport } from './enriched-report';
 import { InternalAttachments } from './attachments';
@@ -36,10 +38,43 @@ function routed(element: React.ReactElement, path: string) {
   );
 }
 
+/**
+ * Establishes an authenticated session the way the application now does it: an
+ * access token in memory and the authorization context in the store. The token
+ * is deliberately not reachable from localStorage any more, so a test cannot
+ * simulate sign-in by writing a key there.
+ */
+function signIn(permissions: string[], platformRole: 'USER' | 'TENANT' | 'SUPPORT' | 'SUPER_ADMIN' = 'USER') {
+  setAccessToken('test-access-token', 900);
+  useAuthStore.setState({
+    isInitialized: true,
+    isAuthenticated: true,
+    isAuthorizationReady: true,
+    permissions,
+    user: {
+      id: 'user-1',
+      email: 'investigator@example.test',
+      // Left unset: the dashboard greets a named user with "Welcome back, …" and
+      // falls back to "Case overview" otherwise, and the assertions below cover
+      // the unnamed variant.
+      displayName: null,
+      platformRole,
+      persona: 'INTERNAL',
+      kind: 'STANDARD',
+      status: 'ACTIVE',
+      mfaEnabled: false,
+      emailVerifiedAt: null,
+      lastLoginAt: null,
+    },
+  });
+}
+
 beforeEach(() => {
   vi.clearAllMocks();
   localStorage.clear();
   sessionStorage.clear();
+  clearAccessToken();
+  useAuthStore.getState().clear();
   apiMock.get.mockResolvedValue({ data: {} });
   apiMock.post.mockResolvedValue({ data: { id: 'new-case', token: 'reporter-token' } });
   apiMock.patch.mockResolvedValue({ data: {} });
@@ -124,8 +159,7 @@ describe('Whistleblowing React workflows', () => {
   });
 
   it('renders actual application notification and analytics states through App routes', async () => {
-    localStorage.setItem('wb.internalToken', 'internal-token');
-    localStorage.setItem('wb.permissions', JSON.stringify(['whistleblowing_case:read']));
+    signIn(['whistleblowing_case:read']);
     apiMock.get.mockImplementation((url: string) => {
       if (url === '/whistleblowing/notifications') return Promise.resolve({ data: { data: [] } });
       return Promise.resolve({ data: { total: 0, open: 0, underInvestigation: 0, escalated: 0, closed: 0, anonymousCount: 0, namedCount: 0, slaBreached: 0, slaAtRisk: 0, avgResolutionDays: null, byStatus: {}, byPriority: {}, byCategory: {}, submissionsByMonth: [] } });
@@ -135,12 +169,16 @@ describe('Whistleblowing React workflows', () => {
     expect(screen.getByText('No notifications yet.')).toBeInTheDocument();
     expect(apiMock.get).toHaveBeenCalledWith('/whistleblowing/notifications', expect.any(Object));
 
+    cleanup();
+    signIn(['whistleblowing_case:read']);
     render(
       <MemoryRouter initialEntries={['/whistleblowing']}>
         <App />
       </MemoryRouter>,
     );
-    await waitFor(() => expect(screen.getByText('Case overview')).toBeInTheDocument());
+    // Authenticated routes are lazy-loaded chunks now, so the assertion has to
+    // wait for the dynamic import as well as the data fetch.
+    expect(await screen.findByText('Case overview', {}, { timeout: 5000 })).toBeInTheDocument();
     expect(screen.getByText('TOTAL REPORTS')).toBeInTheDocument();
   });
 
@@ -163,14 +201,16 @@ describe('Whistleblowing React workflows', () => {
     expect(screen.getByLabelText('Email')).toBeRequired();
 
     cleanup();
+    // Public self-service organization creation is deliberately gone: it let any
+    // caller provision a tenant and grant themselves the full whistleblowing
+    // permission set. The route now redirects to sign-in.
     routed(<App />, '/auth/signup');
-    expect(screen.getByRole('heading', { name: 'Create your Tellara organization' })).toBeInTheDocument();
-    expect(screen.getByLabelText('Confirm password')).toBeRequired();
+    expect(screen.getByRole('heading', { name: 'Sign in' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Create your Tellara organization' })).not.toBeInTheDocument();
   });
 
   it('renders the real case-register row and notification error state', async () => {
-    localStorage.setItem('wb.internalToken', 'internal-token');
-    localStorage.setItem('wb.permissions', JSON.stringify(['whistleblowing_case:read']));
+    signIn(['whistleblowing_case:read']);
     apiMock.get.mockImplementation((url: string) => {
       if (url === '/whistleblowing/cases') {
         return Promise.resolve({ data: { data: [{ id: 'case-1', caseReferenceNumber: 'WB-001', category: 'FRAUD', status: 'SUBMITTED', priority: 'PRIORITY_MEDIUM', isAnonymous: true, reporterAlias: 'Reporter-1', submittedAt: '2026-01-01T00:00:00Z', slaDeadline: null, slaBreachedAt: null }], meta: { total: 1, page: 1, pageSize: 20, totalPages: 1 } } });

@@ -12,6 +12,7 @@ import { Button } from '@components/ui/button';
 import { BrandLogo } from '@components/common/BrandLogo';
 import { ROUTES } from '@config/routes';
 import type { ReactElement, ReactNode } from 'react';
+import { hasAccessToken } from '@lib/auth-token';
 
 /**
  * Public entry page.
@@ -22,7 +23,7 @@ import type { ReactElement, ReactNode } from 'react';
  * absolute anonymity, or frames the reporter as adversarial to their employer.
  */
 export function LandingPage(): ReactElement {
-  const loggedIn = Boolean(localStorage.getItem('wb.internalToken'));
+  const loggedIn = hasAccessToken();
   const destination = loggedIn ? ROUTES.WHISTLEBLOWING : ROUTES.AUTH.LOGIN;
 
   const slug =
@@ -174,9 +175,6 @@ export function LandingPage(): ReactElement {
             <BrandLogo white iconOnly className="h-6 w-6" />
             <p>© {new Date().getFullYear()} Tellara. Protected reporting · accountable action.</p>
           </div>
-          <Link to={ROUTES.AUTH.ADMIN_LOGIN} className="inline-flex min-h-11 items-center rounded-md transition-colors hover:text-porcelain">
-            System administrator sign in
-          </Link>
         </div>
       </footer>
     </div>

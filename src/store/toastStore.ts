@@ -74,10 +74,34 @@ const DEFAULT_TITLE_KEY: Record<ToastType, string> = {
   loading: 'toast.title.loading',
 };
 
-interface ToastOptions {
+export interface ToastOptions {
   title?: string;
   duration?: number;
   source?: 'api' | 'ui';
+}
+
+type PersistedToastType = Exclude<ToastType, 'loading'>;
+const PENDING_TOAST_KEY = 'tellara.pendingToast';
+const PERSISTED_TOAST_TYPES: PersistedToastType[] = ['success', 'error', 'info', 'warning'];
+
+/** Queue one notification for the next page load (used by full-page logout). */
+export function queueToast(type: PersistedToastType, message: string, options?: Pick<ToastOptions, 'title'>): void {
+  if (typeof sessionStorage === 'undefined') return;
+  sessionStorage.setItem(PENDING_TOAST_KEY, JSON.stringify({ type, message, title: options?.title }));
+}
+
+export function consumeQueuedToast(): { type: PersistedToastType; message: string; title?: string } | null {
+  if (typeof sessionStorage === 'undefined') return null;
+  const raw = sessionStorage.getItem(PENDING_TOAST_KEY);
+  if (raw === null) return null;
+  sessionStorage.removeItem(PENDING_TOAST_KEY);
+  try {
+    const parsed = JSON.parse(raw) as { type?: PersistedToastType; message?: string; title?: string };
+    if (!parsed.type || !PERSISTED_TOAST_TYPES.includes(parsed.type) || !parsed.message) return null;
+    return { type: parsed.type, message: parsed.message, ...(parsed.title ? { title: parsed.title } : {}) };
+  } catch {
+    return null;
+  }
 }
 
 function show(type: ToastType, message: string, options?: ToastOptions): number {

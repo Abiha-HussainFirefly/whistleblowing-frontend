@@ -8,6 +8,7 @@ import { type ReactElement, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { queueToast } from '@store/toastStore';
 
 interface PortalUserMenuProps {
   placement: 'header' | 'sidebar';
@@ -68,7 +69,8 @@ export function PortalUserMenu({ placement, sidebarCollapsed = false, profileRou
     const updatePosition = (): void => {
       if (!ref.current) return;
       const rect = ref.current.getBoundingClientRect();
-      setMenuPosition({ left: Math.max(EDGE_GAP, Math.min(isRtl ? rect.left - MENU_WIDTH - 12 : rect.right + 12, window.innerWidth - MENU_WIDTH - EDGE_GAP)), bottom: Math.max(EDGE_GAP, window.innerHeight - rect.bottom) });
+      const menuWidth = Math.min(MENU_WIDTH, Math.max(0, window.innerWidth - EDGE_GAP * 2));
+      setMenuPosition({ left: Math.max(EDGE_GAP, Math.min(isRtl ? rect.left - menuWidth - 12 : rect.right + 12, window.innerWidth - menuWidth - EDGE_GAP)), bottom: Math.max(EDGE_GAP, window.innerHeight - rect.bottom) });
     };
     updatePosition();
     window.addEventListener('resize', updatePosition);
@@ -78,10 +80,12 @@ export function PortalUserMenu({ placement, sidebarCollapsed = false, profileRou
 
   const handleLogout = async (): Promise<void> => {
     setLoggingOut(true);
-    try { await authService.logout(); } catch { /* Local logout remains authoritative if the API is unavailable. */ }
+    let logoutFailed = false;
+    try { await authService.logout(); } catch { logoutFailed = true; }
     clear();
     queryClient.clear();
     onClose?.();
+    queueToast(logoutFailed ? 'error' : 'success', logoutFailed ? 'Signed out locally; the server session could not be closed.' : 'You have been signed out.');
     window.location.replace(logoutRoute);
   };
 
@@ -116,15 +120,15 @@ export function PortalUserMenu({ placement, sidebarCollapsed = false, profileRou
       <span className="sr-only">{name}</span>
     </button>
   ) : (
-    <button type="button" onClick={toggle} className="group relative flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-start transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-haspopup="menu" aria-expanded={open}>
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white ring-2 ring-brand-accent/15"><User className="h-5 w-5" aria-hidden="true" /></span>
+    <button type="button" onClick={toggle} className="group relative flex w-full items-center gap-3 rounded-lg px-3 py-4 text-start transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-haspopup="menu" aria-expanded={open}>
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-accent text-white ring-2 ring-brand-accent/15"><User className="h-5 w-5" aria-hidden="true" /></span>
       {/* min-w-0 is what allows `truncate` to work inside a flex row. */}
       <span className="min-w-0 flex-1"><span className="block truncate text-sm font-medium text-porcelain" dir="auto">{name}</span><span className="block truncate text-xs text-porcelain/55" dir="auto">{emailLabel}</span></span>
     </button>
   );
 
   const menu = open ? (
-    <div ref={menuRef} dir={isRtl ? 'rtl' : 'ltr'} className={`absolute isolate z-[9999] overflow-hidden rounded-xl border border-border bg-popover text-popover-foreground shadow-raised ${placement === 'header' ? 'top-full mt-2 w-72 ltr:right-0 rtl:left-0' : sidebarCollapsed ? 'fixed w-72' : 'inset-x-0 bottom-full mb-2 w-full'}`} style={shouldPortalSidebarMenu ? { left: menuPosition.left, bottom: menuPosition.bottom } : undefined} role="menu">
+    <div ref={menuRef} dir={isRtl ? 'rtl' : 'ltr'} className={`isolate z-[9999] rounded-xl border border-border bg-popover text-popover-foreground shadow-raised ${placement === 'header' ? 'absolute top-full mt-2 w-72 overflow-hidden ltr:right-0 rtl:left-0' : sidebarCollapsed ? 'fixed max-h-[calc(100dvh-2rem)] w-[min(18rem,calc(100vw-2rem))] overflow-y-auto' : 'absolute inset-x-0 bottom-full mb-2 min-h-[16rem] w-full max-w-full max-h-[calc(100dvh-2rem)] overflow-y-auto'}`} style={shouldPortalSidebarMenu ? { left: menuPosition.left, bottom: menuPosition.bottom } : undefined} role="menu">
       <div className="border-b border-border px-4 py-3"><div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent text-white ring-2 ring-brand-accent/20"><User className="h-5 w-5" /></span><div className="min-w-0"><p className="truncate text-sm font-semibold text-foreground" dir="auto">{name}</p><p className="truncate text-xs text-muted-foreground" dir="auto">{emailLabel}</p></div></div></div>
       <div className="p-1.5">
         <Link to={profileRoute} onClick={() => { setOpen(false); onClose?.(); }} className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-signal-tint hover:text-signal-strong" role="menuitem"><UserCircle className="h-5 w-5 text-signal" />{t('menu.profile')}</Link>
@@ -135,5 +139,5 @@ export function PortalUserMenu({ placement, sidebarCollapsed = false, profileRou
     </div>
   ) : null;
 
-  return <div ref={ref} className="relative">{trigger}{shouldPortalSidebarMenu && menu ? createPortal(menu, document.body) : menu}</div>;
+  return <div ref={ref} className={placement === 'sidebar' && !sidebarCollapsed ? 'relative w-full min-w-0' : 'relative'}>{trigger}{shouldPortalSidebarMenu && menu ? createPortal(menu, document.body) : menu}</div>;
 }

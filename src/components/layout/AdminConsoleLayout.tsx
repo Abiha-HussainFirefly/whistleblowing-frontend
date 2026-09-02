@@ -1,6 +1,6 @@
 import { useState, type ReactElement } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import { BarChart3, Boxes, KeyRound, LayoutDashboard, Menu, Settings, Shield, Users, X } from 'lucide-react';
+import { BadgeDollarSign, Boxes, KeyRound, LayoutDashboard, Menu, Settings, Shield, Users, X } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { BrandLogo } from '@components/common/BrandLogo';
 import { LanguageSwitcher } from '@components/common/LanguageSwitcher';
@@ -13,8 +13,7 @@ const items: { to: string; label: string; icon: LucideIcon }[] = [
   { to: ROUTES.ADMIN.PERMISSIONS, label: 'Permissions', icon: KeyRound },
   { to: ROUTES.ADMIN.ROLES, label: 'Roles', icon: Shield },
   { to: ROUTES.ADMIN.ORGANIZATIONS, label: 'Organizations', icon: Boxes },
-  { to: ROUTES.ADMIN.PLANS, label: 'Licensing Plans', icon: BarChart3 },
-  { to: ROUTES.ADMIN.CONFIG_PACKS, label: 'Config Packs', icon: Boxes },
+  { to: ROUTES.ADMIN.PLANS, label: 'Licensing Plans', icon: BadgeDollarSign },
   { to: ROUTES.ADMIN.CAPABILITIES, label: 'Capabilities', icon: Shield },
   { to: ROUTES.ADMIN.USERS, label: 'Users', icon: Users },
   { to: ROUTES.ADMIN.SETTINGS, label: 'Settings', icon: Settings },
@@ -36,7 +35,6 @@ export function AdminConsoleLayout(): ReactElement {
           {items.map(({ to, label, icon: Icon }) => <NavLink key={to} to={to} end={to === ROUTES.ADMIN.DASHBOARD} onClick={close} title={expanded ? undefined : label} className={({ isActive }) => `flex items-center rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${expanded ? 'gap-3' : 'lg:mx-auto lg:h-10 lg:w-10 lg:justify-center lg:p-0'} ${isActive ? 'bg-signal text-white' : 'text-porcelain/65 hover:bg-white/10 hover:text-porcelain'}`}><Icon className="h-5 w-5 shrink-0" /><span className={expanded ? '' : 'lg:hidden'}>{label}</span></NavLink>)}
         </nav>
         <div className={`flex shrink-0 items-center border-t border-white/10 p-3 ${expanded ? '' : 'lg:justify-center lg:px-0'}`}><PortalUserMenu placement="sidebar" sidebarCollapsed={!expanded} profileRoute={ROUTES.ADMIN.SETTINGS} settingsRoute={ROUTES.ADMIN.MFA_SETTINGS} logoutRoute={ROUTES.AUTH.ADMIN_LOGIN} /></div>
-        <button type="button" onClick={() => setExpanded((value) => !value)} className="absolute -end-3 bottom-20 hidden h-6 w-6 rounded-full border border-white/15 bg-ink text-porcelain/70 transition-colors hover:text-porcelain lg:grid lg:place-items-center" aria-label="Toggle sidebar">{expanded ? '‹' : '›'}</button>
       </aside>
       {mobileOpen && <div className="fixed inset-0 z-30 bg-ink/60 lg:hidden" onClick={close} aria-hidden="true" />}
       <div className="flex min-w-0 flex-1 flex-col overflow-hidden bg-porcelain lg:rounded-s-2xl">

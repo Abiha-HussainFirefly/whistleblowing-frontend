@@ -12,9 +12,9 @@ import i18n from '@/i18n';
 // Shared button chrome — mirrors the driver.js module tours so Back/Next look
 // identical across every tour in the app.
 const PRIMARY_BTN =
-  'rounded-md bg-teal-600 px-3.5 py-1.5 text-sm font-medium text-white hover:bg-teal-700 transition-colors';
+  'rounded-md bg-brand-accent px-3.5 py-1.5 text-sm font-medium text-white hover:bg-brand-accent/90 transition-colors';
 const SECONDARY_BTN =
-  'rounded-md border border-slate-200 bg-white px-3.5 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-50 transition-colors';
+  'rounded-md border border-border bg-white px-3.5 py-1.5 text-sm font-medium text-muted-foreground hover:bg-muted/60 transition-colors';
 
 type Placement = 'top' | 'bottom' | 'left' | 'right';
 

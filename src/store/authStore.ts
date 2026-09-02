@@ -94,19 +94,11 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
     localStorage.setItem('wb.userDisplayName', payload.user.displayName ?? '');
     localStorage.setItem('wb.userEmail', payload.user.email);
     const refreshTokenExpiresAt = now + payload.refreshTokenExpiresIn * 1000;
-    const storedPermissions = JSON.parse(localStorage.getItem('wb.permissions') ?? '[]') as unknown;
-    const permissions = Array.isArray(storedPermissions)
-      ? storedPermissions.filter((value): value is string => typeof value === 'string')
-      : [];
-    const organizationId = localStorage.getItem('wb.organizationId');
-    const organizationSlug = localStorage.getItem('wb.organizationSlug');
-    const organizationName = localStorage.getItem('wb.organizationName');
-    const activeOrganization = organizationId !== null && organizationSlug !== null
-      ? { id: organizationId, name: organizationName ?? organizationSlug, slug: organizationSlug }
-      : null;
+    const permissions = payload.permissions ?? [];
+    const activeOrganization = payload.activeOrganization ?? null;
     set({
       permissions,
-      activeRegion: null,
+      activeRegion: payload.activeRegion ?? null,
       availableRegions: [],
       activeOrganization,
       availableOrganizations: [],

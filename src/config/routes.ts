@@ -152,7 +152,6 @@ export const ROUTES = Object.freeze({
     ROLE_DETAIL: (id = ':roleId') => `/admin/roles/${id}`,
     ORGANIZATIONS: '/admin/organizations',
     ORG_DETAIL: (id = ':orgId') => `/admin/organizations/${id}`,
-    CONFIG_PACKS: '/admin/config-packs',
     CAPABILITIES: '/admin/capabilities',
     USERS: '/admin/users',
     USER_DETAIL: (id = ':userId') => `/admin/users/${id}`,

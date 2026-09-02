@@ -15,6 +15,7 @@ import type {
   PaginatedResponse,
   ParticipantInput,
   ResolveInput,
+  ReviewInput,
   SetPriorityInput,
   TriageInput,
   UpdateCaseDetailsInput,
@@ -71,6 +72,11 @@ export const wbService = {
   resolve(id: string, data: ResolveInput) {
     return apiClient
       .post<WbCaseDetail>(`/whistleblowing/cases/${id}/resolve`, data)
+      .then((r) => r.data);
+  },
+  review(id: string, data: ReviewInput) {
+    return apiClient
+      .post<WbCaseDetail>(`/whistleblowing/cases/${id}/review`, data)
       .then((r) => r.data);
   },
   close(id: string, data: CloseInput) {

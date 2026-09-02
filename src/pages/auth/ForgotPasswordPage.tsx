@@ -35,6 +35,7 @@ export function ForgotPasswordPage(): ReactElement {
         onSuccess(result) {
           // Always show the same confirmation regardless of whether the
           // address is registered — the backend never reveals this.
+          toast.success('Password reset instructions requested.');
           setSuccessMessage(result.message);
           setSubmitted(true);
         },

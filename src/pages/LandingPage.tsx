@@ -24,7 +24,7 @@ import { hasAccessToken } from '@lib/auth-token';
  */
 export function LandingPage(): ReactElement {
   const loggedIn = hasAccessToken();
-  const destination = loggedIn ? ROUTES.WHISTLEBLOWING : ROUTES.AUTH.LOGIN;
+  const destination = loggedIn ? ROUTES.DASHBOARD : ROUTES.AUTH.LOGIN;
 
   const slug =
     (typeof localStorage === 'undefined' ? null : localStorage.getItem('wb.organizationSlug')) ??

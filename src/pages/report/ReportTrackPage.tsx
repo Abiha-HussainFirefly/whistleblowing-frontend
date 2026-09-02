@@ -1,4 +1,5 @@
 import { getDirection } from '@/i18n';
+import { BrandLogo } from '@components/common/BrandLogo';
 import { LanguageSwitcher } from '@components/common/LanguageSwitcher';
 import { Loader } from '@components/common/Loader';
 import { Badge } from '@components/ui/badge';
@@ -936,25 +937,25 @@ function LoginView({
   const contentDir = getDirection(current);
 
   return (
-    <div className="relative flex min-h-screen w-full overflow-hidden bg-white [direction:ltr] md:bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_50%,#004d40_50%,#6F56D9_100%)]">
-      <div className="absolute right-4 top-4 z-30 md:right-6 md:top-5">
+    <div className="relative flex min-h-screen w-full flex-col bg-background [direction:ltr] lg:flex-row">
+      <div className="absolute end-4 top-4 z-30 sm:end-6 sm:top-5">
         <LanguageSwitcher variant="compact" align="end" />
       </div>
       <ReportTrackBrandPanel />
 
       <section
-        className="relative z-10 flex w-full items-center justify-center px-4 py-10 md:w-1/2 md:px-8 lg:px-16"
+        className="relative z-10 flex w-full flex-1 items-center justify-center px-4 py-10 sm:px-6 lg:w-[54%] lg:px-10 xl:px-16"
         dir={contentDir}
       >
         <form
-          className="w-full max-w-md rounded-2xl border border-white bg-white p-8 text-foreground shadow-[0_28px_80px_-24px_rgba(111, 86, 217,0.45)] md:p-10"
+          className="w-full max-w-lg rounded-2xl border border-border bg-card p-6 text-foreground shadow-raised sm:p-8 lg:p-10"
           onSubmit={(e) => {
             e.preventDefault();
             onSubmit();
           }}
         >
           <header className="text-center">
-            <PageTitle className="text-teal-700">
+            <PageTitle className="text-foreground">
               {t('track.login.title', { defaultValue: 'Track your report' })}
             </PageTitle>
             <p className="mt-1 text-sm text-muted-foreground">
@@ -1026,16 +1027,21 @@ function ReportTrackBrandPanel(): ReactElement {
   ];
 
   return (
-    <aside className="relative z-10 hidden bg-white p-10 text-teal-800 md:flex md:w-1/2 md:flex-col lg:p-14">
-      <div className="relative z-10 flex flex-1 flex-col justify-center">
+    <aside className="relative isolate flex w-full flex-col justify-between overflow-hidden bg-ink px-6 py-10 text-porcelain sm:px-10 lg:w-[46%] lg:px-14 lg:py-14">
+      <div aria-hidden="true" className="wash-ink animate-drift pointer-events-none absolute inset-0 -z-10" />
+      <header className="relative z-10">
+        <BrandLogo white className="h-12 w-auto sm:h-14" />
+      </header>
+
+      <div className="relative z-10 my-10 flex flex-1 flex-col justify-center lg:my-0">
         <div className="max-w-xl">
-          <p className="text-xs font-semibold uppercase tracking-wider text-teal-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-signal-soft">
             {t('track.login.eyebrow', { defaultValue: 'Confidential case access' })}
           </p>
-          <h2 className="mt-5 text-3xl font-semibold leading-tight text-teal-900 lg:text-4xl">
+          <h2 className="mt-5 text-3xl font-semibold leading-tight text-porcelain lg:text-4xl">
             {t('track.login.title', { defaultValue: 'Track your report' })}
           </h2>
-          <p className="mt-5 max-w-md text-base leading-relaxed text-teal-700">
+          <p className="mt-5 max-w-md text-base leading-relaxed text-porcelain/70">
             {t('track.login.description', {
               defaultValue:
                 'Use the credentials generated when you submitted the report. The case password is not recoverable, so keep it private.',
@@ -1044,8 +1050,8 @@ function ReportTrackBrandPanel(): ReactElement {
 
           <ul className="mt-8 space-y-4">
             {assurances.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm font-medium text-foreground">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-teal-600 bg-teal-50 text-teal-600">
+              <li key={item} className="flex items-start gap-3 text-sm font-medium text-porcelain">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-signal-soft/40 bg-white/5 text-signal-soft">
                   <ShieldCheck className="h-3.5 w-3.5" />
                 </span>
                 <span>{item}</span>
@@ -1055,7 +1061,7 @@ function ReportTrackBrandPanel(): ReactElement {
         </div>
       </div>
 
-      <footer className="relative z-10 text-xs text-teal-600">
+      <footer className="relative z-10 text-xs text-porcelain/45">
         {t('shell.footerPrefix', {
           defaultValue:
             'Your report is encrypted and handled confidentially. You may report anonymously.',

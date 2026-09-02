@@ -38,6 +38,8 @@ export interface TenantInvitation {
   status: string;
   expiresAt: string;
   invitedBy?: { id: string | null; email: string | null; displayName: string | null } | null;
+  inviteUrl?: string;
+  delivery?: 'development-preview';
 }
 
 export interface TenantRole {
@@ -72,7 +74,9 @@ export interface TenantSettings {
 export const tenantAdminService = {
   stats() { return apiClient.get<TenantStats>(`/organizations/${organizationId()}/stats`).then((r) => r.data); },
   members(params?: { page?: number; pageSize?: number; search?: string }) { return apiClient.get<{ data: TenantMember[]; meta: { page: number; pageSize: number; total: number; totalPages: number } }>(`/organizations/${organizationId()}/members`, { params }).then((r) => r.data); },
-  updateMember(id: string, data: { status?: string; regionCode?: string | null }) { return apiClient.patch(`/organizations/${organizationId()}/members/${id}`, data); },
+  exportMembersPdf(search?: string) { return apiClient.get<Blob>(`/organizations/${organizationId()}/members/export.pdf`, { params: search ? { search } : undefined, responseType: 'blob' }).then((r) => r.data); },
+  updateMember(id: string, data: { status?: string; regionCode?: string | null; roleIds?: string[] }) { return apiClient.patch(`/organizations/${organizationId()}/members/${id}`, data); },
+  deleteMember(id: string) { return apiClient.delete(`/organizations/${organizationId()}/members/${id}`); },
   invitations(params?: { page?: number; pageSize?: number }) { return apiClient.get<{ data: TenantInvitation[]; meta: { page: number; pageSize: number; total: number; totalPages: number } }>(`/organizations/${organizationId()}/invitations`, { params }).then((r) => r.data); },
   createInvitation(data: { email: string; displayName?: string; regionCode?: string; roleId?: string }) { return apiClient.post<TenantInvitation>(`/organizations/${organizationId()}/invitations`, data).then((r) => r.data); },
   revokeInvitation(id: string) { return apiClient.delete(`/organizations/${organizationId()}/invitations/${id}`); },

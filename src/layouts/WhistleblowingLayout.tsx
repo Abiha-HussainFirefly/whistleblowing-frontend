@@ -1,6 +1,4 @@
 import {
-  ChevronLeft,
-  ChevronRight,
   LayoutDashboard,
   Lock,
   Menu,
@@ -34,6 +32,7 @@ export function WhistleblowingLayout(): ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [expanded, setExpanded] = useState(true);
   const activeOrganization = useAuthStore((state) => state.activeOrganization);
+  const mfaEnabled = useAuthStore((state) => state.user?.mfaEnabled ?? false);
   const close = (): void => setMobileOpen(false);
 
   return (
@@ -48,7 +47,7 @@ export function WhistleblowingLayout(): ReactElement {
             expanded ? '' : 'lg:justify-center lg:px-0'
           }`}
         >
-          <Link to={ROUTES.WHISTLEBLOWING} onClick={close} className="overflow-hidden">
+          <Link to={ROUTES.DASHBOARD} onClick={close} className="overflow-hidden">
             <BrandLogo
               white={expanded}
               iconOnly={!expanded}
@@ -73,22 +72,15 @@ export function WhistleblowingLayout(): ReactElement {
             not decoration: case managers act differently when they are aware
             their access is recorded. */}
         {expanded && (
-          <div className="mx-3 mb-3 rounded-xl border border-white/10 bg-white/[0.04] p-4">
+          <Link to={ROUTES.MFA_SETTINGS} onClick={close} className="mx-3 mb-3 block rounded-xl border border-white/10 bg-white/[0.04] p-4 transition-colors hover:border-courage/40 hover:bg-white/[0.08]">
             <div className="flex items-center gap-2">
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white/10 text-courage">
                 <Lock className="h-3.5 w-3.5" aria-hidden="true" />
               </span>
-              <p className="text-sm font-semibold text-porcelain">
-                {t('shell.secureEnvironment.title', { defaultValue: 'Secure environment' })}
-              </p>
+              <div className="min-w-0"><p className="text-sm font-semibold text-porcelain">{t('shell.secureEnvironment.title', { defaultValue: 'Secure environment' })}</p><p className="mt-0.5 text-[11px] text-porcelain/55">{mfaEnabled ? 'MFA is protecting this account' : 'Account protection can be strengthened'}</p></div>
             </div>
-            <p className="mt-2 text-xs leading-relaxed text-porcelain/55">
-              {t('shell.secureEnvironment.body', {
-                defaultValue:
-                  'Reporter identities are protected. Activity on cases is recorded and audited.',
-              })}
-            </p>
-          </div>
+            <div className="mt-3 flex items-center justify-between border-t border-white/10 pt-3 text-[11px] font-medium"><span className="inline-flex items-center gap-1.5 text-porcelain/70"><span className={`h-1.5 w-1.5 rounded-full ${mfaEnabled ? 'bg-emerald-400' : 'bg-courage'}`} />{mfaEnabled ? 'Protected' : 'Review security settings'}</span><span className="text-courage">Open security →</span></div>
+          </Link>
         )}
 
         <div
@@ -105,18 +97,6 @@ export function WhistleblowingLayout(): ReactElement {
           />
         </div>
 
-        <button
-          type="button"
-          onClick={() => setExpanded((value) => !value)}
-          className="absolute -end-3 bottom-24 hidden h-6 w-6 place-items-center rounded-full border border-white/15 bg-ink text-porcelain/70 transition-colors hover:text-porcelain lg:grid"
-          aria-label={t('shell.toggleSidebar', { defaultValue: 'Toggle sidebar' })}
-        >
-          {expanded ? (
-            <ChevronLeft className="h-3.5 w-3.5" />
-          ) : (
-            <ChevronRight className="h-3.5 w-3.5" />
-          )}
-        </button>
       </aside>
 
       {mobileOpen && (

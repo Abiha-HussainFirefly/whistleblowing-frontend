@@ -1,19 +1,44 @@
-import { useEffect, useRef, useState, type ReactElement } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactElement } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { Check, ChevronDown, Globe } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { tenantAdminService } from '@features/org-admin/api/tenant-admin.service';
 import { useWbOversightScope } from '@features/org-admin/hooks/whistleblowing-oversight';
+import { contextQueryKey } from '@lib/context-query-key';
+
+interface RegionOptionData {
+  code: string;
+  label: string;
+}
 
 export function OrgAdminRegionSwitcher(): ReactElement {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const { data: scope } = useWbOversightScope();
+  const { data: configuredRegions } = useQuery({
+    queryKey: contextQueryKey('org-admin-header-regions'),
+    queryFn: () => tenantAdminService.regions(),
+    staleTime: 60_000,
+  });
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const params = new URLSearchParams(location.search);
   const selected = params.get('regionCode') ?? '';
-  const label = selected.length > 0 ? selected : t('regions.all', { defaultValue: 'All regions' });
+  const regionOptions = useMemo<RegionOptionData[]>(() => {
+    if (configuredRegions !== undefined) {
+      return configuredRegions
+        .filter((region) => region.isActive)
+        .map((region) => ({ code: region.regionCode, label: `${region.displayName} (${region.regionCode})` }));
+    }
+    return (scope?.regions ?? []).map((region) => ({
+      code: region.regionCode,
+      label: `${region.regionCode} (${region.caseCount})`,
+    }));
+  }, [configuredRegions, scope?.regions]);
+  const selectedRegion = regionOptions.find((region) => region.code === selected);
+  const label = selectedRegion?.label ?? (selected.length > 0 ? selected : t('regions.all', { defaultValue: 'All regions' }));
 
   useEffect(() => {
     if (!open) return;
@@ -42,7 +67,7 @@ export function OrgAdminRegionSwitcher(): ReactElement {
       {open && (
         <div className="absolute end-0 top-full z-[9999] mt-2 min-w-52 overflow-hidden rounded-xl border border-border bg-white p-1 shadow-xl shadow-brand-primary/10">
           <RegionOption label={t('regions.all', { defaultValue: 'All regions' })} selected={selected.length === 0} onClick={() => choose('')} />
-          {(scope?.regions ?? []).map((region) => <RegionOption key={region.regionCode} label={`${region.regionCode} (${region.caseCount})`} selected={selected === region.regionCode} onClick={() => choose(region.regionCode)} />)}
+          {regionOptions.map((region) => <RegionOption key={region.code} label={region.label} selected={selected === region.code} onClick={() => choose(region.code)} />)}
         </div>
       )}
     </div>

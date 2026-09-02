@@ -12,22 +12,24 @@ import {
 } from '@features/contracts/components/charts/palette';
 import { downloadWbCsv } from '@features/whistleblowing/api/wb.service';
 import { ShareReportingLink } from '@features/whistleblowing/components/ShareReportingLink';
-import { useWbStats } from '@features/whistleblowing/hooks';
+import { useWbCases, useWbStats } from '@features/whistleblowing/hooks';
 import {
   wbCategoryLabelT,
   wbStatusLabelT,
 } from '@features/whistleblowing/utils/i18n';
-import { wbStatusTone } from '@features/whistleblowing/utils/format';
+import { formatDate, wbPriorityLabelOf, wbStatusTone } from '@features/whistleblowing/utils/format';
 import type {
   WhistleblowingCategory,
   WhistleblowingStatus,
+  WbCaseListItem,
 } from '@features/whistleblowing/types';
 import { getApiErrorMessage } from '@lib/api-error';
-import { useAuthStore } from '@store/authStore';
 import {
   AlertTriangle,
   ArrowRight,
+  ChevronDown,
   Download,
+  Filter,
   FolderOpen,
   Inbox,
   Lock,
@@ -55,6 +57,15 @@ import { WbHeader } from './components/WbHeader';
 const TOOLTIP_ITEM_STYLE = { fontSize: '12px', color: CHART_COLORS.plum };
 const AXIS_STROKE = 'hsl(255 10% 55%)';
 const GRID_STROKE = 'hsl(32 16% 89%)';
+const STATUS_CHART_COLORS: Partial<Record<WhistleblowingStatus, string>> = {
+  SUBMITTED: '#A99BDE',
+  UNDER_TRIAGE: '#D79A3E',
+  UNDER_INVESTIGATION: '#E66E83',
+  WB_ESCALATED: '#E66E83',
+  RESOLVED: '#3F7564',
+  WB_CLOSED: '#3F7564',
+  WB_DISMISSED: '#B8B0C7',
+};
 
 /**
  * Case-manager overview.
@@ -68,9 +79,14 @@ const GRID_STROKE = 'hsl(32 16% 89%)';
 export function WbDashboardPage(): ReactElement {
   const { t } = useTranslation('whistleblowing');
   const { data: stats, isLoading, isError, error } = useWbStats();
+  const [statusFilter, setStatusFilter] = useState<WhistleblowingStatus | ''>('');
+  const { data: recentCases, isLoading: recentCasesLoading, isError: recentCasesError, error: recentCasesErrorValue } = useWbCases({
+    page: 1,
+    pageSize: 5,
+    ...(statusFilter !== '' ? { status: statusFilter } : {}),
+  });
   const [exporting, setExporting] = useState(false);
   const [exportError, setExportError] = useState<string | null>(null);
-  const displayName = useAuthStore((s) => s.user?.displayName ?? null);
 
   const onExport = (): void => {
     setExporting(true);
@@ -90,7 +106,7 @@ export function WbDashboardPage(): ReactElement {
         name: wbStatusLabelT(key as WhistleblowingStatus, t),
         count,
         // Same colour the status pill uses, so the chart and the legend agree.
-        fill: colorForTone(wbStatusTone(key as WhistleblowingStatus)),
+        fill: STATUS_CHART_COLORS[key as WhistleblowingStatus] ?? colorForTone(wbStatusTone(key as WhistleblowingStatus)),
       }))
     : [];
 
@@ -103,6 +119,11 @@ export function WbDashboardPage(): ReactElement {
         }))
         .sort((a, b) => b.count - a.count)
     : [];
+  const priorityData = stats
+    ? Object.entries(stats.byPriority)
+        .map(([key, count]) => ({ name: key.replace(/^PRIORITY_/, '').replaceAll('_', ' ').toLowerCase().replace(/\b\w/g, (letter) => letter.toUpperCase()), count }))
+        .sort((a, b) => b.count - a.count)
+    : [];
 
   const emptyChartLabel = t('dashboard.empty', { defaultValue: 'No data to display yet.' });
 
@@ -110,54 +131,37 @@ export function WbDashboardPage(): ReactElement {
     <div className="space-y-6">
       <WbHeader />
 
-      {/* ------------------------------------------------------------ intro */}
-      <div className="animate-fade-up flex flex-wrap items-end justify-between gap-4">
-        <div className="min-w-0">
-          <h2 className="type-h2 text-foreground">
-            {displayName !== null && displayName.length > 0
-              ? t('dashboard.greetingNamed', {
-                  name: displayName,
-                  defaultValue: 'Welcome back, {{name}}',
-                })
-              : t('dashboard.title', { defaultValue: 'Case overview' })}
-          </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {t('dashboard.subtitle', {
-              defaultValue: "Here's what's happening across your case management workflow.",
-            })}
-          </p>
-        </div>
-
-        <div className="flex w-full flex-col items-stretch gap-2 sm:w-auto sm:flex-row sm:items-center">
-          <Button variant="outline" size="sm" asChild>
-            <Link to={ROUTES.REPORT_CONCERN}>
-              {t('dashboard.actions.submitReport', { defaultValue: 'Raise a concern' })}
-            </Link>
-          </Button>
-          <Button variant="outline" size="sm" onClick={onExport} disabled={exporting}>
-            <Download className="h-4 w-4" aria-hidden="true" />
-            {exporting
-              ? t('dashboard.actions.exporting', { defaultValue: 'Exporting...' })
-              : t('dashboard.actions.exportCsv', { defaultValue: 'Export CSV' })}
-          </Button>
-          <Button size="sm" asChild>
-            <Link to={ROUTES.WHISTLEBLOWING_REGISTER}>
-              {t('dashboard.actions.viewAllCases', { defaultValue: 'View all cases' })}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Button>
-        </div>
-      </div>
-
       {exportError !== null && <p className="text-sm text-destructive">{exportError}</p>}
       <span className="sr-only">TOTAL REPORTS</span>
 
-      {isLoading ? (
+      {isLoading || recentCasesLoading ? (
         <Loader label={t('dashboard.loading', { defaultValue: 'Loading analytics...' })} />
-      ) : isError || stats === undefined ? (
-        <p className="text-sm text-destructive">{getApiErrorMessage(error)}</p>
+      ) : isError || recentCasesError || stats === undefined ? (
+        <p className="text-sm text-destructive">{getApiErrorMessage(error ?? recentCasesErrorValue)}</p>
       ) : (
         <>
+          <div className="animate-fade-up flex flex-wrap items-end justify-between gap-4 rounded-xl border border-border bg-card px-5 py-4 shadow-sm sm:px-6">
+            <div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-accent">Case workspace</p><h2 className="mt-1 text-xl font-semibold tracking-tight text-foreground">Your accessible reports</h2><p className="mt-1 text-sm text-muted-foreground">Review live case activity, deadlines, and workflow status in one place.</p></div>
+            <div className="flex flex-wrap items-center gap-2">
+              <Button size="sm" asChild><Link to={ROUTES.REPORT_CONCERN}>Raise a concern <ArrowRight className="h-4 w-4" /></Link></Button>
+              <label className="relative flex items-center">
+                <Filter className="pointer-events-none absolute left-3 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+                <span className="sr-only">Filter recent reports</span>
+                <select
+                  value={statusFilter}
+                  onChange={(event) => setStatusFilter(event.target.value as WhistleblowingStatus | '')}
+                  aria-label="Filter recent reports by status"
+                  className="h-9 appearance-none rounded-lg border border-border bg-card py-1.5 pl-9 pr-8 text-sm font-medium text-foreground outline-none transition-colors hover:border-signal/40 focus:border-signal focus:ring-2 focus:ring-signal/20"
+                >
+                  <option value="">All reports</option>
+                  {statusData.map((item) => <option key={item.key} value={item.key}>{item.name}</option>)}
+                </select>
+                <ChevronDown className="pointer-events-none absolute right-2.5 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              </label>
+              <Button variant="outline" size="sm" onClick={onExport} disabled={exporting}><Download className="h-4 w-4" />{exporting ? 'Exporting...' : 'Export CSV'}</Button>
+            </div>
+          </div>
+
           {/* ------------------------------------------------------- metrics */}
           <div className="stagger grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
             <StatTile
@@ -172,12 +176,14 @@ export function WbDashboardPage(): ReactElement {
                   defaultValue: '{{count}} closed',
                 }),
               }}
+              className="border-t-2 border-t-signal"
             />
             <StatTile
               label={t('dashboard.kpi.openReports', { defaultValue: 'Awaiting triage' })}
               value={stats.open}
               icon={Inbox}
               iconClassName="bg-plum-tint text-plum"
+              className="border-t-2 border-t-plum"
             />
             <StatTile
               label={t('dashboard.kpi.underInvestigation', {
@@ -197,6 +203,7 @@ export function WbDashboardPage(): ReactElement {
                       })
                     : t('dashboard.kpi.onTrack', { defaultValue: 'All within target' }),
               }}
+              className="border-t-2 border-t-signal"
             />
             <StatTile
               label={t('dashboard.kpi.escalated', { defaultValue: 'Priority attention' })}
@@ -214,6 +221,7 @@ export function WbDashboardPage(): ReactElement {
                       })
                     : t('dashboard.kpi.noBreaches', { defaultValue: 'No missed deadlines' }),
               }}
+              className="border-t-2 border-t-courage"
             />
             <StatTile
               label={t('dashboard.kpi.avgResolution', { defaultValue: 'Avg. time to conclude' })}
@@ -227,11 +235,13 @@ export function WbDashboardPage(): ReactElement {
               }
               icon={Timer}
               iconClassName="bg-moss-tint text-moss"
+              className="border-t-2 border-t-moss"
             />
           </div>
 
-          {/* -------------------------------------- status + protected panel */}
-          <div className="animate-fade-up grid gap-4 [animation-delay:0.18s] xl:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_20rem]">
+          {/* ------------------------------------ reports + status + security */}
+          <div className="animate-fade-up grid gap-4 [animation-delay:0.18s] xl:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)_20rem]">
+            <RecentReportsCard rows={recentCases?.data ?? []} />
             <SurfaceCard>
               <SectionHeader
                 title={t('dashboard.charts.reportsByStatus.title', {
@@ -245,6 +255,29 @@ export function WbDashboardPage(): ReactElement {
                 <EmptyChart label={emptyChartLabel} />
               ) : (
                 <StatusBreakdown data={statusData} total={stats.total} />
+              )}
+            </SurfaceCard>
+
+            <ProtectedEnvironmentCard />
+          </div>
+
+          <ShareReportingLink />
+
+          {/* ----------------------------------- analytics secondary to cases */}
+          <div className="animate-fade-up grid gap-4 [animation-delay:0.26s] xl:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)_minmax(0,1fr)]">
+            <SurfaceCard>
+              <SectionHeader
+                title={t('dashboard.charts.submissionsTrend.title', {
+                  defaultValue: 'Reports received over time',
+                })}
+                description={t('dashboard.charts.submissionsTrend.description', {
+                  defaultValue: 'Monthly intake across the last six months',
+                })}
+              />
+              {stats.submissionsByMonth.length === 0 ? (
+                <EmptyChart label={emptyChartLabel} />
+              ) : (
+                <SubmissionsTrendChart data={stats.submissionsByMonth} />
               )}
             </SurfaceCard>
 
@@ -269,27 +302,6 @@ export function WbDashboardPage(): ReactElement {
               )}
             </SurfaceCard>
 
-            <ProtectedEnvironmentCard />
-          </div>
-
-          {/* ------------------------------------------- trend + anonymity */}
-          <div className="animate-fade-up grid gap-4 [animation-delay:0.26s] xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-            <SurfaceCard>
-              <SectionHeader
-                title={t('dashboard.charts.submissionsTrend.title', {
-                  defaultValue: 'Reports received over time',
-                })}
-                description={t('dashboard.charts.submissionsTrend.description', {
-                  defaultValue: 'Monthly intake across the last six months',
-                })}
-              />
-              {stats.submissionsByMonth.length === 0 ? (
-                <EmptyChart label={emptyChartLabel} />
-              ) : (
-                <SubmissionsTrendChart data={stats.submissionsByMonth} />
-              )}
-            </SurfaceCard>
-
             <SurfaceCard>
               <SectionHeader
                 title={t('dashboard.charts.anonymousVsNamed.title', {
@@ -311,7 +323,12 @@ export function WbDashboardPage(): ReactElement {
             </SurfaceCard>
           </div>
 
-          <ShareReportingLink />
+          <div className="grid gap-4 xl:grid-cols-2">
+            <SurfaceCard>
+              <SectionHeader title="Priority mix" description="Operational priority assigned to reports in scope." />
+              <PriorityMix data={priorityData} emptyLabel={emptyChartLabel} />
+            </SurfaceCard>
+          </div>
 
           {/* ------------------------------------------------------- footer */}
           <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-card px-5 py-3.5">
@@ -335,6 +352,24 @@ export function WbDashboardPage(): ReactElement {
 }
 
 /* -------------------------------------------------------------------------- */
+
+function RecentReportsCard({ rows }: { rows: WbCaseListItem[] }): ReactElement {
+  const { t } = useTranslation('whistleblowing');
+
+  return (
+    <SurfaceCard flush>
+      <div className="flex items-start justify-between gap-3 border-b border-border px-5 py-4">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-brand-accent">Case activity</p>
+          <h3 className="mt-1 text-base font-semibold text-foreground">My recent reports</h3>
+          <p className="mt-1 text-sm text-muted-foreground">The latest reports available in your permitted scope.</p>
+        </div>
+        <Link to={ROUTES.WHISTLEBLOWING_REGISTER} className="shrink-0 text-xs font-semibold text-brand-accent hover:underline">View all <ArrowRight className="inline h-3.5 w-3.5" /></Link>
+      </div>
+      {rows.length === 0 ? <div className="flex min-h-56 items-center justify-center px-5 text-sm text-muted-foreground">No reports have been submitted yet.</div> : <div className="overflow-x-auto"><table className="w-full min-w-[650px] text-sm"><thead><tr className="border-b border-border text-left text-[10px] uppercase tracking-[0.08em] text-muted-foreground"><th className="px-5 py-3 font-semibold">Case ID</th><th className="px-3 py-3 font-semibold">Category</th><th className="px-3 py-3 font-semibold">Priority</th><th className="px-3 py-3 font-semibold">Status</th><th className="px-5 py-3 text-right font-semibold">Updated</th></tr></thead><tbody className="divide-y divide-border">{rows.map((row) => <tr key={row.id} className="transition-colors hover:bg-muted/40"><td className="px-5 py-3"><Link to={ROUTES.WHISTLEBLOWING_DETAIL(row.id)} className="font-semibold text-brand-primary hover:text-brand-accent hover:underline">{row.caseReferenceNumber}</Link></td><td className="max-w-48 truncate px-3 py-3 text-muted-foreground">{wbCategoryLabelT(row.category, t)}</td><td className="px-3 py-3 text-muted-foreground">{wbPriorityLabelOf(row.priority)}</td><td className="px-3 py-3"><StatusPill tone={wbStatusTone(row.status)} showIcon={false}>{wbStatusLabelT(row.status, t)}</StatusPill></td><td className="whitespace-nowrap px-5 py-3 text-right text-xs text-muted-foreground">{formatDate(row.updatedAt)}</td></tr>)}</tbody></table></div>}
+    </SurfaceCard>
+  );
+}
 
 function EmptyChart({ label }: { label: string }): ReactElement {
   return (
@@ -530,6 +565,13 @@ function ProtectedEnvironmentCard(): ReactElement {
       </Link>
     </SurfaceCard>
   );
+}
+
+function PriorityMix({ data, emptyLabel }: { data: { name: string; count: number }[]; emptyLabel: string }): ReactElement {
+  if (data.length === 0) return <EmptyChart label={emptyLabel} />;
+  const total = data.reduce((sum, item) => sum + item.count, 0);
+  const colors = [CHART_COLORS.violet, CHART_COLORS.amber, CHART_COLORS.red, CHART_COLORS.moss];
+  return <div className="mt-5 flex min-h-52 flex-col items-center gap-5 sm:flex-row"><div className="relative h-40 w-40 shrink-0"><ResponsiveContainer width="100%" height="100%"><PieChart><Pie data={data} dataKey="count" nameKey="name" innerRadius={52} outerRadius={74} paddingAngle={2} stroke="none">{data.map((item, index) => <Cell key={item.name} fill={colors[index % colors.length]} />)}</Pie><Tooltip contentStyle={CHART_TOOLTIP_STYLE} itemStyle={TOOLTIP_ITEM_STYLE} /></PieChart></ResponsiveContainer><div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center"><span className="text-2xl font-semibold tabular-nums text-foreground">{total}</span><span className="text-[10px] uppercase tracking-wide text-muted-foreground">reports</span></div></div><ul className="w-full min-w-0 space-y-2.5">{data.map((item, index) => <li key={item.name} className="flex min-w-0 items-center gap-2 text-xs"><span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ backgroundColor: colors[index % colors.length] }} /><span className="min-w-0 flex-1 truncate text-muted-foreground">{item.name}</span><strong className="shrink-0 tabular-nums text-foreground">{item.count}</strong><span className="w-9 shrink-0 text-right tabular-nums text-muted-foreground">{total > 0 ? Math.round((item.count / total) * 100) : 0}%</span></li>)}</ul></div>;
 }
 
 function AnonymitySplit({

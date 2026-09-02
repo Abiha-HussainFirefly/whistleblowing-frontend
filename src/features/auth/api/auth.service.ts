@@ -8,12 +8,15 @@ import { verifyOtpRequestSchema, type VerifyOtpRequest, type VerifyOtpResponse, 
 import { forgotPasswordRequestSchema, resetPasswordRequestSchema, passwordResetMessageSchema, type ForgotPasswordRequest, type ResetPasswordRequest, type PasswordResetMessageResponse } from '../schemas/password-reset.schema';
 
 type TargetAuthResponse = {
+  nextStep?: 'authenticated';
   token: string;
   expiresIn?: string | number;
   user: { id: string; email: string; displayName: string | null; platformRole?: PlatformRole };
   organization?: { id: string; name: string; slug: string } | null;
   permissions: string[];
 };
+type MfaChallengeResponse = Extract<LoginResponse, { nextStep: 'mfa_required' }>;
+type EmailVerificationResponse = Extract<LoginResponse, { nextStep: 'email_verification_required' }>;
 type AuthenticatedLogin = Extract<LoginResponse, { nextStep: 'authenticated' }>;
 
 function seconds(value: string | number | undefined): number {
@@ -27,15 +30,22 @@ function seconds(value: string | number | undefined): number {
 
 function normalizeUser(user: TargetAuthResponse['user']): AuthenticatedLogin['user'] {
   const platformRole = user.platformRole ?? 'USER';
-  return { ...user, platformRole, kind: 'STANDARD', status: 'ACTIVE', persona: platformRole === 'SUPER_ADMIN' ? null : 'INTERNAL', mfaEnabled: false, emailVerifiedAt: null, lastLoginAt: null };
+  return { ...user, platformRole, kind: 'STANDARD', status: 'ACTIVE', persona: platformRole === 'TENANT' ? 'TENANT' : platformRole === 'SUPER_ADMIN' ? null : 'INTERNAL', mfaEnabled: false, emailVerifiedAt: null, lastLoginAt: null };
 }
 
-function normalizeSession(data: TargetAuthResponse): LoginResponse {
+function normalizeSession(data: TargetAuthResponse | MfaChallengeResponse | EmailVerificationResponse): LoginResponse {
+  // MFA and email-verification responses intentionally do not contain a user
+  // or access token. They must pass through to the corresponding next step;
+  // treating them as authenticated sessions causes a client-side TypeError.
+  if (data.nextStep === 'mfa_required' || data.nextStep === 'email_verification_required') {
+    return data;
+  }
+
   const expiresIn = seconds(data.expiresIn);
   // The access token is held in memory only; the refresh token arrives as an
-  // HttpOnly cookie the browser will not expose to script. Permissions are NOT
-  // cached here any more - they are authorization data that a user could edit in
-  // devtools and that goes stale the moment a role changes. /auth/me owns them.
+  // HttpOnly cookie the browser will not expose to script. Permissions are
+  // passed to the in-memory session for the first render, but are never
+  // persisted; /auth/me remains the live authorization source of truth.
   setAccessToken(data.token, expiresIn);
   localStorage.setItem('wb.platformRole', data.user.platformRole ?? 'USER');
   if (data.organization !== null && data.organization !== undefined) {
@@ -49,7 +59,7 @@ function normalizeSession(data: TargetAuthResponse): LoginResponse {
   }
   localStorage.setItem('wb.userDisplayName', data.user.displayName ?? '');
   localStorage.setItem('wb.userEmail', data.user.email);
-  return { nextStep: 'authenticated', accessToken: data.token, tokenType: 'Bearer', expiresIn, refreshTokenExpiresIn: expiresIn, user: normalizeUser(data.user), activeOrganization: data.organization ?? null, activeRegion: null };
+  return { nextStep: 'authenticated', accessToken: data.token, tokenType: 'Bearer', expiresIn, refreshTokenExpiresIn: expiresIn, user: normalizeUser(data.user), permissions: data.permissions, activeOrganization: data.organization ?? null, activeRegion: null };
 }
 
 function organizationSlug(): string {
@@ -66,7 +76,11 @@ export const authService = {
     const { data } = await apiClient.post<TargetAuthResponse>('/auth/login', { ...payload, organizationSlug: organizationSlug() });
     return normalizeSession(data);
   },
-  async orgLogin(input: LoginRequest): Promise<LoginResponse> { return this.login(input); },
+  async orgLogin(input: LoginRequest): Promise<LoginResponse> {
+    const payload = loginRequestSchema.parse(input);
+    const { data } = await apiClient.post<TargetAuthResponse>('/auth/org/login', { ...payload, organizationSlug: organizationSlug() });
+    return normalizeSession(data);
+  },
   async verifyOtp(input: VerifyOtpRequest): Promise<VerifyOtpResponse> { const { data } = await apiClient.post<VerifyOtpResponse>('/auth/email/verify-otp', verifyOtpRequestSchema.parse(input)); return data; },
   async resendOtp(input: ResendOtpRequest): Promise<ResendOtpResponse> { const { data } = await apiClient.post<ResendOtpResponse>('/auth/email/resend-otp', resendOtpRequestSchema.parse(input)); return data; },
   async forgotPassword(input: ForgotPasswordRequest): Promise<PasswordResetMessageResponse> { const { data } = await apiClient.post<unknown>('/auth/password/forgot', forgotPasswordRequestSchema.parse(input)); return passwordResetMessageSchema.parse(data); },

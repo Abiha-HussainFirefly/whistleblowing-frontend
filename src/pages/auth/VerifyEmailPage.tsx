@@ -14,6 +14,7 @@ import { Loader2, Mail, RotateCw } from 'lucide-react';
 import { ROUTES } from '@config/routes';
 import { useAuthStore } from '@store/authStore';
 import { toast } from '@store/toastStore';
+import { markPostLoginWelcome } from '@lib/post-login-welcome';
 import {
   authService,
   useVerifyOtpMutation,
@@ -154,7 +155,12 @@ export function VerifyEmailPage(): ReactElement {
                 expiresIn: result.expiresIn,
                 ...(result.refreshToken === undefined ? {} : { refreshToken: result.refreshToken }),
                 refreshTokenExpiresIn: result.refreshTokenExpiresIn,
+                permissions: result.permissions,
+                activeOrganization: result.activeOrganization ?? null,
+                activeRegion: result.activeRegion ?? null,
               });
+              markPostLoginWelcome();
+              toast.success('Signed in successfully.');
 
               navigate(
                 routeAfterInvitationAuthentication(

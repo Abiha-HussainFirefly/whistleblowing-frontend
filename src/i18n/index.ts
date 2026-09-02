@@ -12,11 +12,12 @@ import enErrors from './locales/en/errors.json';
 import enSettings from './locales/en/settings.json';
 import enWhistleblowing from './locales/en/whistleblowing.json';
 import enOrgAdmin from './locales/en/orgAdmin.json';
+import enTours from './locales/en/tours.json';
 
 export { getDirection, supportedLocales } from './config';
 export const LANG_STORAGE_KEY = 'tellara.lang';
 
-const NAMESPACES = ['auth', 'common', 'errors', 'settings', 'whistleblowing', 'orgAdmin'] as const;
+const NAMESPACES = ['auth', 'common', 'errors', 'settings', 'whistleblowing', 'orgAdmin', 'tours'] as const;
 type Namespace = (typeof NAMESPACES)[number];
 
 /**
@@ -38,6 +39,7 @@ const localeLoaders: Record<string, () => Promise<Record<Namespace, unknown>>> =
     settings: (await import('./locales/fr/settings.json')).default,
     whistleblowing: (await import('./locales/fr/whistleblowing.json')).default,
     orgAdmin: (await import('./locales/fr/orgAdmin.json')).default,
+    tours: (await import('./locales/fr/tours.json')).default,
   }),
   de: async () => ({
     auth: (await import('./locales/de/auth.json')).default,
@@ -46,6 +48,7 @@ const localeLoaders: Record<string, () => Promise<Record<Namespace, unknown>>> =
     settings: (await import('./locales/de/settings.json')).default,
     whistleblowing: (await import('./locales/de/whistleblowing.json')).default,
     orgAdmin: (await import('./locales/de/orgAdmin.json')).default,
+    tours: (await import('./locales/de/tours.json')).default,
   }),
   ar: async () => ({
     auth: (await import('./locales/ar/auth.json')).default,
@@ -54,6 +57,7 @@ const localeLoaders: Record<string, () => Promise<Record<Namespace, unknown>>> =
     settings: (await import('./locales/ar/settings.json')).default,
     whistleblowing: (await import('./locales/ar/whistleblowing.json')).default,
     orgAdmin: (await import('./locales/ar/orgAdmin.json')).default,
+    tours: (await import('./locales/ar/tours.json')).default,
   }),
   ur: async () => ({
     auth: (await import('./locales/ur/auth.json')).default,
@@ -62,6 +66,7 @@ const localeLoaders: Record<string, () => Promise<Record<Namespace, unknown>>> =
     settings: (await import('./locales/ur/settings.json')).default,
     whistleblowing: (await import('./locales/ur/whistleblowing.json')).default,
     orgAdmin: (await import('./locales/ur/orgAdmin.json')).default,
+    tours: (await import('./locales/ur/tours.json')).default,
   }),
 };
 
@@ -100,6 +105,7 @@ const resources = {
     settings: enSettings,
     whistleblowing: enWhistleblowing,
     orgAdmin: enOrgAdmin,
+    tours: enTours,
   },
 } as const;
 
@@ -109,7 +115,7 @@ void i18n.use(LanguageDetector).use(initReactI18next).init({
   supportedLngs: supportedLocales.map((locale) => locale.code),
   load: 'languageOnly',
   defaultNS: 'common',
-  ns: ['common', 'auth', 'errors', 'settings', 'whistleblowing', 'orgAdmin'],
+  ns: ['common', 'auth', 'errors', 'settings', 'whistleblowing', 'orgAdmin', 'tours'],
   returnNull: false,
   interpolation: { escapeValue: false },
   react: { useSuspense: false },

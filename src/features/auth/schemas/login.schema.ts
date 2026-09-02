@@ -89,6 +89,7 @@ const authenticatedResponseSchema = z.object({
   refreshToken: z.string().min(1).optional(),
   refreshTokenExpiresIn: z.number().int().positive(),
   user: authUserSchema,
+  permissions: z.array(z.string()).default([]),
   activeOrganization: orgContextSchema.nullable().optional(),
   activeRegion: z.string().nullable().optional(),
 });

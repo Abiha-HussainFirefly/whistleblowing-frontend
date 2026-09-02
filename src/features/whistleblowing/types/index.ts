@@ -198,6 +198,12 @@ export interface WbCaseDetail extends WbCaseListItem {
   preliminaryAssessment: string | null;
   investigationFindings: string | null;
   disciplinaryRecommendation: string | null;
+  reviewNotes: string | null;
+  reviewedAt: string | null;
+  reviewedBy: UserRef | null;
+  resolvedAt?: string | null;
+  resolvedBy?: UserRef | null;
+  closedBy?: UserRef | null;
   // Synopsis / outcome
   primaryOutcome: string | null;
   secondaryOutcome: string | null;
@@ -267,6 +273,9 @@ export interface EscalateInput {
 export interface ResolveInput {
   investigationFindings: string;
   disciplinaryRecommendation?: string;
+}
+export interface ReviewInput {
+  reviewNotes: string;
 }
 export interface CloseInput {
   closureOutcome: string;

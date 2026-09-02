@@ -10,6 +10,7 @@ import { PrimaryButton } from '@components/ui/primary-button';
 import { ROUTES } from '@config/routes';
 import { useAuthStore } from '@store/authStore';
 import { toast } from '@store/toastStore';
+import { markPostLoginWelcome } from '@lib/post-login-welcome';
 import { useAdminLoginMutation, loginErrorMessage, loginRequestSchema, type LoginRequest } from '@features/auth';
 
 /**
@@ -32,7 +33,9 @@ export function AdminLoginPage() {
     mutation.mutate(values, { onSuccess: (result) => {
       if (result.nextStep !== 'authenticated') { toast.error('Additional authentication is required.'); return; }
       clear(); queryClient.clear();
-      setSession({ user: result.user, accessToken: result.accessToken, expiresIn: result.expiresIn, refreshTokenExpiresIn: result.refreshTokenExpiresIn });
+      setSession({ user: result.user, accessToken: result.accessToken, expiresIn: result.expiresIn, refreshTokenExpiresIn: result.refreshTokenExpiresIn, permissions: result.permissions, activeOrganization: result.activeOrganization ?? null, activeRegion: result.activeRegion ?? null });
+      markPostLoginWelcome();
+      toast.success('System administrator sign-in successful.');
       navigate(ROUTES.ADMIN.DASHBOARD, { replace: true });
     }, onError: (error) => { toast.error(loginErrorMessage(error)); form.setFocus('password'); } });
   };

@@ -56,7 +56,7 @@ function Logo() {
   return <img className="brand-logo" src="/tellara-logo.png" alt="Tellara" />;
 }
 
-function VisualSidebar({ expanded, open, onToggle, onClose }: { expanded: boolean; open: boolean; onToggle: () => void; onClose: () => void }) {
+function VisualSidebar({ expanded, open, onClose }: { expanded: boolean; open: boolean; onClose: () => void }) {
   const location = useLocation();
   const links = [
     { label: 'Dashboard', icon: LayoutDashboard },
@@ -74,7 +74,6 @@ function VisualSidebar({ expanded, open, onToggle, onClose }: { expanded: boolea
     <div className="source-sidebar-logo"><Link to="/whistleblowing"><Logo /></Link><button aria-label="Close menu" onClick={onClose}>×</button></div>
     <nav className="source-sidebar-nav">{links.map(({ label, icon: Icon }) => <Link key={label} to={label === 'Whistleblowing' ? '/whistleblowing/cases' : '/whistleblowing'} onClick={onClose} className={label === 'Whistleblowing' && whistleblowingActive ? 'active' : ''}><Icon /><span className={expanded ? '' : 'sr-only'}>{label}</span></Link>)}</nav>
     <div className="source-sidebar-footer"><UserCircle /><span className={expanded ? '' : 'sr-only'}><strong>{displayName}</strong>{email && <small>{email}</small>}</span></div>
-    <button className="source-sidebar-toggle" onClick={onToggle} aria-label="Toggle sidebar">{expanded ? '‹' : '›'}</button>
   </aside>;
 }
 
@@ -87,7 +86,7 @@ function VisualShell({ children }: { children: React.ReactNode }) {
   const organizationLabel = organizationSlug ? organizationSlug.replaceAll('-', ' ') : 'Organization';
   const signOut = () => { clearAccessToken(); localStorage.removeItem('wb.internalToken'); localStorage.removeItem('wb.permissions'); localStorage.removeItem('wb.userDisplayName'); localStorage.removeItem('wb.userEmail'); navigate('/auth/login'); };
   return <div className="source-app-shell">
-    <VisualSidebar expanded={expanded} open={sidebarOpen} onToggle={() => setExpanded(value => !value)} onClose={() => setSidebarOpen(false)} />
+    <VisualSidebar expanded={expanded} open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
     {!sidebarOpen && <button className="mobile-menu-button" aria-label="Open menu" onClick={() => setSidebarOpen(true)}><Menu /></button>}
     <div className="source-app-main">
       <header className="source-app-header"><div className="source-header-left"><button className="source-icon-button" aria-label="Toggle sidebar" onClick={() => { setSidebarOpen(true); setExpanded(value => !value); }}><Menu /></button><strong>Atlyis Legal Portal</strong></div><div className="source-header-actions"><button className="source-icon-button" aria-label="Search"><Search /></button><Link className="source-header-action" to="/whistleblowing/report-concern"><ShieldAlert /><span>Report a concern</span></Link><Link className="source-header-action source-upload" to="/whistleblowing/report-concern"><UploadCloud /><span>Upload</span></Link><span className="source-header-context"><span>{organizationLabel} / User</span></span><span className="source-header-status">Organization scoped</span><label className="source-language"><span>🇬🇧</span><select aria-label="Language"><option>English</option></select></label><Link className="source-icon-button" aria-label="Notifications" to="/notifications"><Bell /></Link><button className="source-user-button" onClick={signOut}><UserCircle /><span>{displayName}</span></button></div></header>

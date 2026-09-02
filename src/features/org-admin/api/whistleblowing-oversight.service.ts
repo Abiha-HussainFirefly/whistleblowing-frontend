@@ -29,10 +29,11 @@ export type WbOversightCaseParams = WbCaseListParams & { regionCode?: string };
 export type WbOversightStatsParams = { regionCode?: string; dateFrom?: string; dateTo?: string; search?: string; status?: string; category?: string; priority?: string };
 
 /**
- * Org-admin **Whistleblowing oversight** API. Read-only, org-scoped, region- and
+ * Org-admin **Whistleblowing oversight** reads are org-scoped, region- and
  * Conflict-of-Interest-aware. Backed by `/organizations/:orgId/whistleblowing/*`
- * (gated by `organization:read`). A case the reporter hid from the calling admin
- * is excluded server-side (list omits it; detail 404s).
+ * (gated by `whistleblowing_case:read`). Case workflow actions deliberately use
+ * the shared internal case endpoints so the backend can enforce each granular
+ * permission (for example, `whistleblowing_case:close`).
  */
 export const wbOversightService = {
   getScope() {
@@ -58,6 +59,15 @@ export const wbOversightService = {
   exportCsv(params?: WbOversightCaseParams) {
     return apiClient
       .get<Blob>(`/organizations/${getOrgId()}/whistleblowing/export.csv`, {
+        params,
+        responseType: 'blob',
+      })
+      .then((r) => r.data);
+  },
+
+  exportPdf(params?: WbOversightCaseParams) {
+    return apiClient
+      .get<Blob>(`/organizations/${getOrgId()}/whistleblowing/export.pdf`, {
         params,
         responseType: 'blob',
       })

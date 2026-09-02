@@ -1034,12 +1034,7 @@ export function ReportIntakeForm({
         )}
       </div>
 
-      <p className="flex items-center justify-center gap-2 text-center text-xs text-muted-foreground">
-        <Lock className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-        {t('form.footerAssurance', {
-          defaultValue: 'This report is encrypted and access-controlled.',
-        })}
-      </p>
+      
     </div>
   );
 }

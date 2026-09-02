@@ -19,6 +19,7 @@ import { PasswordInput } from '@components/ui/password-input';
 import { PrimaryButton } from '@components/ui/primary-button';
 import { cn } from '@lib/utils';
 import { toast } from '@store/toastStore';
+import { markPostLoginWelcome } from '@lib/post-login-welcome';
 
 export function LoginPage(): ReactElement {
   const { t } = useTranslation('auth');
@@ -62,6 +63,7 @@ export function LoginPage(): ReactElement {
             state: {
               challengeToken: result.challengeToken,
               challengeExpiresIn: result.challengeExpiresIn,
+              loginPath: ROUTES.AUTH.LOGIN,
               ...(hasInvitationToken ? { invitationToken } : {}),
             },
             replace: true,
@@ -81,7 +83,13 @@ export function LoginPage(): ReactElement {
           expiresIn: result.expiresIn,
           ...(result.refreshToken === undefined ? {} : { refreshToken: result.refreshToken }),
           refreshTokenExpiresIn: result.refreshTokenExpiresIn,
+          permissions: result.permissions,
+          activeOrganization: result.activeOrganization ?? null,
+          activeRegion: result.activeRegion ?? null,
         });
+        markPostLoginWelcome();
+
+        toast.success('Signed in successfully.');
 
         navigate(
           routeAfterInvitationAuthentication(invitationToken, routeAfterTenantAuthentication()),

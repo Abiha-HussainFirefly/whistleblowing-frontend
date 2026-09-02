@@ -23,11 +23,10 @@ export function routeAfterInvitationAuthentication(
   invitationToken: string | null | undefined,
   fallback: string,
 ): string {
-  // Pending invitations are now surfaced by the authenticated organization
-  // picker. Selecting one sends the email code; no post-login acceptance page
-  // or button is involved.
+  // Return to the invitation so an existing account can securely attach the
+  // pending membership after signing in.
   return invitationToken !== null && invitationToken !== undefined && invitationToken.length > 0
-    ? ROUTES.REGION_PICKER
+    ? invitationAcceptPath(invitationToken)
     : fallback;
 }
 

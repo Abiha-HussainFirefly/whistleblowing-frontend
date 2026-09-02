@@ -18,6 +18,7 @@ import type {
   PaginatedResponse,
   ParticipantInput,
   ResolveInput,
+  ReviewInput,
   SetPriorityInput,
   TriageInput,
   UpdateCaseDetailsInput,
@@ -131,6 +132,8 @@ export const useEscalateCase = (): DetailMutation<EscalateInput> =>
   useDetailMutation((id, data) => wbService.escalate(id, data));
 export const useResolveCase = (): DetailMutation<ResolveInput> =>
   useDetailMutation((id, data) => wbService.resolve(id, data));
+export const useReviewCase = (): DetailMutation<ReviewInput> =>
+  useDetailMutation((id, data) => wbService.review(id, data));
 export const useCloseCase = (): DetailMutation<CloseInput> =>
   useDetailMutation((id, data) => wbService.close(id, data));
 export const useLinkCase = (): DetailMutation<LinkInput> =>

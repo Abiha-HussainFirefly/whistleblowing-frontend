@@ -48,6 +48,7 @@ export function ResetPasswordPage(): ReactElement {
       { token, newPassword: passwordParse.data },
       {
         onSuccess(result) {
+          toast.success('Password updated successfully.');
           setSuccessMessage(result.message);
           setDone(true);
         },

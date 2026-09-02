@@ -99,29 +99,31 @@ export function WbReportConcernPage(): ReactElement {
           }}
         />
       ) : (
-        <div className="grid gap-6 lg:grid-cols-[19rem_minmax(0,1fr)] lg:items-start">
-          <aside className="space-y-4 lg:sticky lg:top-4">
-            <ReporterAssuranceRail
-              onHowItWorks={() => {
-                setTourTriggerTime(Date.now());
+        <>
+          <div className="grid gap-6 lg:grid-cols-[19rem_minmax(0,1fr)] lg:items-start">
+            <aside className="space-y-4 lg:sticky lg:top-4">
+              <ReporterAssuranceRail
+                onHowItWorks={() => {
+                  setTourTriggerTime(Date.now());
+                }}
+              />
+            </aside>
+            <ReportIntakeForm
+              organizationSlug={slug}
+              orgInfo={info.data}
+              onSubmitted={(submitted) => {
+                setResult(submitted);
+                toast.success(
+                  t('page.reportSubmittedToast', {
+                    defaultValue: 'Report submitted. Save your case credentials now.',
+                  }),
+                );
               }}
+              tourTriggerTime={tourTriggerTime}
             />
-            <ShareReportingLink />
-          </aside>
-          <ReportIntakeForm
-            organizationSlug={slug}
-            orgInfo={info.data}
-            onSubmitted={(submitted) => {
-              setResult(submitted);
-              toast.success(
-                t('page.reportSubmittedToast', {
-                  defaultValue: 'Report submitted. Save your case credentials now.',
-                }),
-              );
-            }}
-            tourTriggerTime={tourTriggerTime}
-          />
-        </div>
+          </div>
+          <ShareReportingLink />
+        </>
       )}
     </div>
   );

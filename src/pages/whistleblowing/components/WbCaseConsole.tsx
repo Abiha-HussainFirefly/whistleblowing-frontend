@@ -15,6 +15,7 @@ import {
   useEscalateCase,
   useLinkCase,
   useResolveCase,
+  useReviewCase,
   useSetPriority,
   useTriageCase,
   useUnlinkCase,
@@ -133,12 +134,15 @@ export function WbCaseConsole({
   // would inevitably return 403.
   const canInvestigate = has(WB_PERMISSIONS.investigate);
   const canAdmin = has(WB_PERMISSIONS.admin);
+  const canClose = has(WB_PERMISSIONS.close);
+  const canReview = has(WB_PERMISSIONS.independent_review);
 
   const triage = useTriageCase();
   const setPriorityM = useSetPriority();
   const assign = useAssignCase();
   const escalate = useEscalateCase();
   const resolve = useResolveCase();
+  const review = useReviewCase();
   const close = useCloseCase();
   const link = useLinkCase();
   const unlink = useUnlinkCase();
@@ -153,6 +157,7 @@ export function WbCaseConsole({
   const [escalateReason, setEscalateReason] = useState('');
   const [findings, setFindings] = useState('');
   const [discipline, setDiscipline] = useState('');
+  const [reviewNotes, setReviewNotes] = useState('');
   const [closureOutcome, setClosureOutcome] = useState('');
   const [commentText, setCommentText] = useState('');
   const [commentInternal, setCommentInternal] = useState(false);
@@ -165,6 +170,7 @@ export function WbCaseConsole({
   const [assignmentOpen, setAssignmentOpen] = useState(false);
   const [triageOpen, setTriageOpen] = useState(false);
   const [resolveOpen, setResolveOpen] = useState(false);
+  const [reviewOpen, setReviewOpen] = useState(false);
   const [escalateOpen, setEscalateOpen] = useState(false);
   const [closureOpen, setClosureOpen] = useState(false);
   const [commentOpen, setCommentOpen] = useState(false);
@@ -183,6 +189,7 @@ export function WbCaseConsole({
     assign.error ??
     escalate.error ??
     resolve.error ??
+    review.error ??
     close.error ??
     link.error ??
     comment.error ??
@@ -326,6 +333,34 @@ export function WbCaseConsole({
           setFindings('');
           setDiscipline('');
           setResolveOpen(false);
+        },
+        onError: showMutationError,
+      },
+    );
+  };
+
+  const handleReview = (): void => {
+    const notes = validateText(
+      reviewNotes,
+      10,
+      t('caseConsole.validation.reviewNotesMin', {
+        defaultValue: 'Add at least 10 characters explaining the independent review.',
+      }),
+    );
+    if (notes === null) {
+      return;
+    }
+    setActionError(null);
+    review.mutate(
+      { id: caseId, data: { reviewNotes: notes } },
+      {
+        onSuccess: (data) => {
+          showSuccess(
+            data,
+            t('caseConsole.toasts.reviewed', { defaultValue: 'Independent review completed.' }),
+          );
+          setReviewNotes('');
+          setReviewOpen(false);
         },
         onError: showMutationError,
       },
@@ -672,7 +707,19 @@ export function WbCaseConsole({
                   </Button>
                 </>
               )}
-              {canAdmin && !isClosed && isResolved && (
+              {canReview && !isClosed && isResolved && c.reviewedAt === null && (
+                <Button
+                  type="button"
+                  size="sm"
+                  onClick={() => {
+                    setReviewOpen(true);
+                  }}
+                >
+                  <CheckCircle2 className="h-4 w-4" />
+                  {t('caseConsole.actions.review', { defaultValue: 'Review case' })}
+                </Button>
+              )}
+              {canClose && !isClosed && isResolved && c.reviewedAt !== null && (
                 <Button
                   type="button"
                   variant="outline"
@@ -692,6 +739,7 @@ export function WbCaseConsole({
             submittedAt={c.submittedAt}
             triagedAt={c.triagedAt}
             assignedAt={c.assignedAt}
+            reviewedAt={c.reviewedAt}
             closedAt={c.closedAt}
           />
         </div>
@@ -919,6 +967,32 @@ export function WbCaseConsole({
                         value={c.closureOutcome}
                       />
                     )}
+                    <div className="mt-4 grid gap-4 border-t border-border pt-4 sm:grid-cols-3">
+                      <RecordBlock
+                        label={t('caseConsole.fields.resolvedBy', { defaultValue: 'Resolved by' })}
+                        value={
+                          c.resolvedBy === null || c.resolvedBy === undefined
+                            ? '—'
+                            : `${c.resolvedBy.displayName ?? 'Unknown user'} (${c.resolvedBy.email})`
+                        }
+                      />
+                      <RecordBlock
+                        label={t('caseConsole.fields.reviewedBy', { defaultValue: 'Reviewed by' })}
+                        value={
+                          c.reviewedBy === null
+                            ? 'Pending independent review'
+                            : `${c.reviewedBy.displayName ?? 'Unknown user'} (${c.reviewedBy.email})`
+                        }
+                      />
+                      <RecordBlock
+                        label={t('caseConsole.fields.closedBy', { defaultValue: 'Closed by' })}
+                        value={
+                          c.closedBy === null || c.closedBy === undefined
+                            ? 'Not closed'
+                            : `${c.closedBy.displayName ?? 'Unknown user'} (${c.closedBy.email})`
+                        }
+                      />
+                    </div>
                   </>
                 )}
               </Panel>
@@ -1384,7 +1458,62 @@ export function WbCaseConsole({
         </Sheet>
       )}
 
-      {canAdmin && !isClosed && isResolved && (
+      {canReview && !isClosed && isResolved && c.reviewedAt === null && (
+        <Sheet
+          isOpen={reviewOpen}
+          onClose={() => {
+            setReviewOpen(false);
+          }}
+          title={t('caseConsole.panels.review', { defaultValue: 'Independent case review' })}
+          description={t('caseConsole.review.sheetDescription', {
+            defaultValue:
+              'Review the investigation findings independently before an administrator closes this case.',
+          })}
+          width="2xl"
+          footer={
+            <div className="form-sheet-footer">
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setReviewOpen(false);
+                }}
+                disabled={review.isPending}
+              >
+                {t('caseConsole.actions.cancel', { defaultValue: 'Cancel' })}
+              </Button>
+              <Button onClick={handleReview} disabled={review.isPending}>
+                {review.isPending
+                  ? t('caseConsole.actions.saving', { defaultValue: 'Saving...' })
+                  : t('caseConsole.actions.completeReview', { defaultValue: 'Complete review' })}
+              </Button>
+            </div>
+          }
+        >
+          <div className="form-sheet-body space-y-4">
+            <div className="rounded-md border border-border bg-muted/20 px-3 py-3 text-sm text-muted-foreground">
+              {t('caseConsole.review.guidance', {
+                defaultValue:
+                  'Confirm that the investigation record is complete, impartial, and supported by the evidence. Your notes are retained in the case audit trail.',
+              })}
+            </div>
+            <label className="block text-sm font-medium text-foreground">
+              {t('caseConsole.fields.reviewNotes', { defaultValue: 'Review notes' })}
+              <Textarea
+                value={reviewNotes}
+                onChange={(event) => {
+                  setReviewNotes(event.target.value);
+                }}
+                rows={7}
+                placeholder={t('caseConsole.review.placeholder', {
+                  defaultValue: 'Summarize your independent review and any follow-up required.',
+                })}
+              />
+            </label>
+          </div>
+        </Sheet>
+      )}
+
+      {canClose && !isClosed && isResolved && c.reviewedAt !== null && (
         <Sheet
           isOpen={closureOpen}
           onClose={() => {

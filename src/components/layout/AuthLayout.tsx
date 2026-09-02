@@ -2,7 +2,7 @@ import { getDirection } from '@/i18n';
 import { BrandLogo } from '@components/common/BrandLogo';
 import { LanguageSwitcher } from '@components/common/LanguageSwitcher';
 import { ROUTES } from '@config/routes';
-import { KeyRound, Lock, Mail, Megaphone, ShieldCheck } from 'lucide-react';
+import { Lock, Mail, ShieldCheck } from 'lucide-react';
 import { type ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, Outlet } from 'react-router-dom';
@@ -39,8 +39,6 @@ export function AuthLayout(): ReactElement {
             <Outlet />
           </div>
 
-          <AlternateAccessRow />
-
           <p className="mt-6 flex items-start justify-center gap-2 text-center text-xs leading-relaxed text-muted-foreground">
             <Lock className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
             <span>{t('auth.privacyNote')}</span>
@@ -50,7 +48,6 @@ export function AuthLayout(): ReactElement {
     </div>
   );
 }
-
 /**
  * The three promises, taken from the brand platform: identity protection,
  * secure case access, confidential follow-up. Anonymity is never stated as
@@ -111,59 +108,5 @@ function BrandPanel(): ReactElement {
 
       <footer className="text-xs text-porcelain/45">{t('auth.panel.footer')}</footer>
     </aside>
-  );
-}
-
-/**
- * The doors that are NOT a staff sign-in.
- *
- * A reporter who lands here from a workplace poster must be able to leave
- * without creating an account — anonymity fails the moment we force a login.
- * The public portal is tenant-scoped by slug; where a deployment has not
- * configured one we fall back to the case-login surface rather than linking to
- * a URL that would 404 on someone already under stress.
- */
-function reporterPortalPath(): string {
-  const slug =
-    (typeof localStorage === 'undefined' ? null : localStorage.getItem('wb.organizationSlug')) ??
-    (import.meta.env.VITE_WB_ORGANIZATION_SLUG as string | undefined) ??
-    '';
-  return slug.length > 0 ? ROUTES.REPORT.PORTAL(slug) : ROUTES.REPORT.TRACK;
-}
-
-function AlternateAccessRow(): ReactElement {
-  const { t } = useTranslation();
-  const doors = [
-    { key: 'raise', to: reporterPortalPath(), icon: Megaphone, chip: 'bg-signal-tint text-signal-strong' },
-    { key: 'track', to: ROUTES.REPORT.TRACK, icon: KeyRound, chip: 'bg-courage-tint text-courage-strong' },
-  ] as const;
-
-  return (
-    <div className="mt-6 rounded-2xl border border-border bg-card/60 p-5">
-      <p className="text-sm font-semibold text-foreground">{t('auth.alternate.title')}</p>
-      <p className="mt-1 text-xs text-muted-foreground">{t('auth.alternate.lede')}</p>
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        {doors.map(({ key, to, icon: Icon, chip }) => (
-          <Link
-            key={key}
-            to={to}
-            className="group rounded-xl border border-border bg-card p-4 transition-colors hover:border-signal/40 hover:bg-signal-tint/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          >
-            <span
-              className={`inline-flex h-9 w-9 items-center justify-center rounded-lg ${chip}`}
-              aria-hidden="true"
-            >
-              <Icon className="h-4 w-4" />
-            </span>
-            <span className="mt-3 block text-sm font-semibold text-foreground">
-              {t(`auth.alternate.${key}.title`)}
-            </span>
-            <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
-              {t(`auth.alternate.${key}.body`)}
-            </span>
-          </Link>
-        ))}
-      </div>
-    </div>
   );
 }

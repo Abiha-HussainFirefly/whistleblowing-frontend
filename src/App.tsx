@@ -1,8 +1,9 @@
 import { QueryClientProvider } from '@tanstack/react-query';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Suspense, lazy, useEffect, type ReactElement, type ReactNode } from 'react';
+import { Suspense, lazy, useEffect, useState, type ReactElement, type ReactNode } from 'react';
 import { AuthLayout } from '@components/layout/AuthLayout';
 import { ErrorBoundary } from '@components/common/ErrorBoundary';
+import { ToastViewport } from '@components/common/ToastViewport';
 import { Loader } from '@components/common/Loader';
 import { queryClient } from '@lib/queryClient';
 import { applyThemePreference, readThemePreference } from '@lib/theme';
@@ -19,6 +20,8 @@ import { VerifyEmailPage } from '@pages/auth/VerifyEmailPage';
 import { ForgotPasswordPage } from '@pages/auth/ForgotPasswordPage';
 import { ResetPasswordPage } from '@pages/auth/ResetPasswordPage';
 import { InvitationAcceptPage } from '@pages/InvitationAcceptPage';
+import { PostLoginWelcome } from '@components/common/PostLoginWelcome';
+import { consumePostLoginWelcome } from '@lib/post-login-welcome';
 
 /*
  * Route-level code splitting.
@@ -44,6 +47,12 @@ const WhistleblowingLayout = lazy(() =>
 );
 const WbDashboardPage = lazy(() =>
   import('@pages/whistleblowing/WbDashboardPage').then((m) => ({ default: m.WbDashboardPage })),
+);
+const UserOverviewPage = lazy(() =>
+  import('@pages/dashboard/UserOverviewPage').then((m) => ({ default: m.UserOverviewPage })),
+);
+const ProfilePage = lazy(() =>
+  import('@pages/ProfilePage').then((m) => ({ default: m.ProfilePage })),
 );
 const WbCaseRegisterPage = lazy(() =>
   import('@pages/whistleblowing/WbCaseRegisterPage').then((m) => ({ default: m.WbCaseRegisterPage })),
@@ -83,20 +92,16 @@ const AdminConsoleLayout = lazy(() =>
 );
 
 const tenantPages = () => import('@pages/org-admin/TenantAdminPages');
-const TenantHelpPage = lazy(() => tenantPages().then((m) => ({ default: m.TenantHelpPage })));
-const TenantIntegrationsPage = lazy(() => tenantPages().then((m) => ({ default: m.TenantIntegrationsPage })));
+const TenantHelpPage = lazy(() => import('@pages/org-admin/TenantHelpPage').then((m) => ({ default: m.TenantHelpPage })));
 const TenantMembersPage = lazy(() => tenantPages().then((m) => ({ default: m.TenantMembersPage })));
-const TenantPlanPage = lazy(() => tenantPages().then((m) => ({ default: m.TenantPlanPage })));
+const TenantPlanPage = lazy(() => import('@pages/org-admin/TenantPlanPage').then((m) => ({ default: m.TenantPlanPage })));
 const TenantProfilePage = lazy(() => tenantPages().then((m) => ({ default: m.TenantProfilePage })));
 const TenantRegionsPage = lazy(() => tenantPages().then((m) => ({ default: m.TenantRegionsPage })));
 const TenantReportingPage = lazy(() => tenantPages().then((m) => ({ default: m.TenantReportingPage })));
-const TenantRoleCreatePage = lazy(() => tenantPages().then((m) => ({ default: m.TenantRoleCreatePage })));
-const TenantRolesPage = lazy(() => tenantPages().then((m) => ({ default: m.TenantRolesPage })));
-const TenantSettingsPage = lazy(() => tenantPages().then((m) => ({ default: m.TenantSettingsPage })));
+const TenantSecurityPage = lazy(() => import('@pages/org-admin/TenantSecurityPage').then((m) => ({ default: m.TenantSecurityPage })));
 
 const adminPages = () => import('@pages/admin/AdminConsolePages');
 const AdminCapabilitiesPage = lazy(() => adminPages().then((m) => ({ default: m.AdminCapabilitiesPage })));
-const AdminConfigPacksPage = lazy(() => adminPages().then((m) => ({ default: m.AdminConfigPacksPage })));
 const AdminDashboardPage = lazy(() => adminPages().then((m) => ({ default: m.AdminDashboardPage })));
 const AdminOrganizationsPage = lazy(() => adminPages().then((m) => ({ default: m.AdminOrganizationsPage })));
 const AdminPermissionsPage = lazy(() => adminPages().then((m) => ({ default: m.AdminPermissionsPage })));
@@ -115,9 +120,25 @@ const AdminUsersPage = lazy(() => adminPages().then((m) => ({ default: m.AdminUs
 function RequireAuth({ children }: { children: ReactNode }): ReactElement {
   const isInitialized = useAuthStore((state) => state.isInitialized);
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const [showPostLoginWelcome, setShowPostLoginWelcome] = useState(false);
+
+  useEffect(() => {
+    if (consumePostLoginWelcome()) setShowPostLoginWelcome(true);
+  }, []);
+
+  useEffect(() => {
+    if (!showPostLoginWelcome) return;
+    const timeout = window.setTimeout(() => setShowPostLoginWelcome(false), 3000);
+    return () => window.clearTimeout(timeout);
+  }, [showPostLoginWelcome]);
 
   if (!isInitialized) return <Loader />;
-  return isAuthenticated ? <>{children}</> : <Navigate to={ROUTES.AUTH.LOGIN} replace />;
+  return isAuthenticated ? (
+    <>
+      {children}
+      {showPostLoginWelcome && <PostLoginWelcome />}
+    </>
+  ) : <Navigate to={ROUTES.AUTH.LOGIN} replace />;
 }
 
 /**
@@ -186,12 +207,15 @@ function AppRoutes(): ReactElement {
         </Route>
 
         <Route element={<RequireAuth><WhistleblowingLayout /></RequireAuth>}>
-          <Route path={ROUTES.DASHBOARD} element={<Navigate to={ROUTES.WHISTLEBLOWING} replace />} />
+          <Route path={ROUTES.DASHBOARD} element={<UserOverviewPage />} />
+          <Route path={ROUTES.PROFILE} element={<ProfilePage />} />
           <Route path={ROUTES.WHISTLEBLOWING} element={<WbDashboardPage />} />
           <Route path={ROUTES.WHISTLEBLOWING_REGISTER} element={<WbCaseRegisterPage />} />
           <Route path={ROUTES.WHISTLEBLOWING_DETAIL()} element={<WbCaseDetailPage />} />
           <Route path={ROUTES.REPORT_CONCERN} element={<WbReportConcernPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path={ROUTES.SETTINGS} element={<Navigate to={ROUTES.MFA_SETTINGS} replace />} />
+          <Route path={ROUTES.MFA_SETTINGS} element={<TenantSecurityPage />} />
           <Route path="/cases/new" element={<ManualIntakePage />} />
           <Route path="/cases" element={<WbCaseRegisterPage />} />
         </Route>
@@ -205,6 +229,7 @@ function AppRoutes(): ReactElement {
             </RequireAuth>
           }
         >
+          <Route path={ROUTES.ORG_ADMIN.ROOT} element={<Navigate to={ROUTES.ORG_ADMIN.DASHBOARD} replace />} />
           <Route path={ROUTES.ORG_ADMIN.DASHBOARD} element={<OrgAdminDashboardPage />} />
           <Route path={ROUTES.ORG_ADMIN.WHISTLEBLOWING} element={<OrgAdminWhistleblowingPage />} />
           <Route path={ROUTES.ORG_ADMIN.WHISTLEBLOWING_CASE_DETAIL()} element={<OrgAdminWhistleblowingCasePage />} />
@@ -213,12 +238,9 @@ function AppRoutes(): ReactElement {
           <Route path={ROUTES.ORG_ADMIN.REPORTING} element={<TenantReportingPage />} />
           <Route path={ROUTES.ORG_ADMIN.MEMBERS} element={<TenantMembersPage />} />
           <Route path={ROUTES.ORG_ADMIN.MEMBER_INVITATIONS} element={<TenantMembersPage />} />
-          <Route path={ROUTES.ORG_ADMIN.ROLES} element={<TenantRolesPage />} />
-          <Route path={ROUTES.ORG_ADMIN.ROLE_CREATE} element={<TenantRoleCreatePage />} />
           <Route path={ROUTES.ORG_ADMIN.REGIONS} element={<TenantRegionsPage />} />
           <Route path={ROUTES.ORG_ADMIN.PLAN} element={<TenantPlanPage />} />
-          <Route path={ROUTES.ORG_ADMIN.INTEGRATIONS} element={<TenantIntegrationsPage />} />
-          <Route path={ROUTES.ORG_ADMIN.SETTINGS} element={<TenantSettingsPage />} />
+          <Route path={ROUTES.ORG_ADMIN.SETTINGS} element={<TenantSecurityPage />} />
           <Route path={ROUTES.ORG_ADMIN.PROFILE} element={<TenantProfilePage />} />
           <Route path={ROUTES.ORG_ADMIN.HELP} element={<TenantHelpPage />} />
         </Route>
@@ -237,10 +259,10 @@ function AppRoutes(): ReactElement {
           <Route path={ROUTES.ADMIN.ROLES} element={<AdminRolesPage />} />
           <Route path={ROUTES.ADMIN.ORGANIZATIONS} element={<AdminOrganizationsPage />} />
           <Route path={ROUTES.ADMIN.PLANS} element={<AdminPlansPage />} />
-          <Route path={ROUTES.ADMIN.CONFIG_PACKS} element={<AdminConfigPacksPage />} />
           <Route path={ROUTES.ADMIN.CAPABILITIES} element={<AdminCapabilitiesPage />} />
           <Route path={ROUTES.ADMIN.USERS} element={<AdminUsersPage />} />
           <Route path={ROUTES.ADMIN.SETTINGS} element={<AdminSettingsPage />} />
+          <Route path={ROUTES.ADMIN.MFA_SETTINGS} element={<TenantSecurityPage />} />
         </Route>
 
         <Route path={ROUTES.REPORT.TRACK} element={<ReportTrackPage />} />
@@ -260,6 +282,7 @@ export function App(): ReactElement {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <ToastViewport />
       <ErrorBoundary>
         <AppRoutes />
       </ErrorBoundary>

@@ -77,14 +77,11 @@ const PAGE_SIZE = 10;
 
 // ── Palette (brand-first, cycles for overflow categories) ──────────────────
 const CHART_COLORS = [
-  '#6F56D9', // brand-accent (teal)
-  '#3b82f6', // blue-500
-  '#f59e0b', // amber-500
-  '#ef4444', // red-500
-  '#22c55e', // green-500
-  '#8b5cf6', // purple-500
-  '#4B2E58', // brand-primary (navy)
-  '#94a3b8', // slate-400 (overflow)
+  '#6F56D9',
+  '#3F7564',
+  '#4B2E58',
+  '#D79A3E',
+  '#94a3b8',
 ];
 
 function colorFor(index: number): string {
@@ -349,7 +346,7 @@ function AnonymousDonutChart({
   const total = anonymousCount + namedCount;
   const chartData = [
     { name: anonymousLabel, value: anonymousCount, fill: '#6F56D9' },
-    { name: namedLabel, value: namedCount, fill: '#3b82f6' },
+    { name: namedLabel, value: namedCount, fill: '#3F7564' },
   ].filter((d) => d.value > 0);
 
   return (

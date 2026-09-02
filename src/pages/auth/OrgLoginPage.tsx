@@ -18,6 +18,7 @@ import { PasswordInput } from '@components/ui/password-input';
 import { PrimaryButton } from '@components/ui/primary-button';
 import { cn } from '@lib/utils';
 import { toast } from '@store/toastStore';
+import { markPostLoginWelcome } from '@lib/post-login-welcome';
 
 export function OrgLoginPage(): ReactElement {
   const { t } = useTranslation('auth');
@@ -57,6 +58,7 @@ export function OrgLoginPage(): ReactElement {
             state: {
               challengeToken: result.challengeToken,
               challengeExpiresIn: result.challengeExpiresIn,
+              loginPath: ROUTES.AUTH.ORG_LOGIN,
             },
             replace: true,
           });
@@ -76,7 +78,13 @@ export function OrgLoginPage(): ReactElement {
           expiresIn: result.expiresIn,
           ...(result.refreshToken === undefined ? {} : { refreshToken: result.refreshToken }),
           refreshTokenExpiresIn: result.refreshTokenExpiresIn,
+          permissions: result.permissions,
+          activeOrganization: result.activeOrganization ?? null,
+          activeRegion: result.activeRegion ?? null,
         });
+        markPostLoginWelcome();
+
+        toast.success('Organization administrator sign-in successful.');
 
         navigate(routeAfterOrganizationAdminAuthentication(), { replace: true });
       },

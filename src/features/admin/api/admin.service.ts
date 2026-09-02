@@ -1,12 +1,13 @@
 import { apiClient } from '@lib/axios';
 
-export interface AdminDashboardStats { organizations: number; users: number; permissions: number; roles: number; cases: number }
+export interface AdminDashboardStats { organizations: number; users: number; permissions: number; roles: number; cases: number; casesByStatus?: Record<string, number>; casesByCategory?: Record<string, number>; casesByMonth?: { month: string; count: number }[] }
 export interface AdminOrganization { id: string; name: string; slug: string; status: string; members: number; cases: number; createdAt: string }
 export interface AdminPermission { id: string; key: string; resource: string; action: string; roles: number; isActive: boolean; locked: boolean }
 export interface AdminRolePermission { id: string; key: string }
 export interface AdminRole { id: string; name: string; scope: string; organizationId: string | null; system: boolean; locked: boolean; permissions: AdminRolePermission[] }
 export interface AdminUser { id: string; email: string; displayName: string | null; platformRole: string; roles: string[]; status: string; organizations: number; createdAt: string }
 export interface AdminSettings { product: string; apiEnvironment: string; organizations: number; users: number; cases: number }
+export interface AdminPlan { id: string; name: string; description: string; isActive: boolean; priceCents: number | null; currency: string; adminSeats: number; userSeats: number; aiCredits: number; externalSeats: number; workspaces: number; storageMb: number; includedModules: string[]; organizations: number; createdAt: string }
 
 export const adminService = {
   dashboard: () => apiClient.get<AdminDashboardStats>('/admin/dashboard').then((r) => r.data),
@@ -22,8 +23,11 @@ export const adminService = {
   users: () => apiClient.get<AdminUser[]>('/admin/users').then((r) => r.data),
   createUser: (input: { email: string; password: string; displayName?: string }) => apiClient.post<AdminUser>('/admin/users', input).then((r) => r.data),
   updateUser: (id: string, input: { status?: 'Active' | 'Suspended'; displayName?: string | null }) => apiClient.patch<AdminUser>(`/admin/users/${id}`, input).then((r) => r.data),
+  deleteUser: (id: string) => apiClient.delete<void>(`/admin/users/${id}`).then((r) => r.data),
   settings: () => apiClient.get<AdminSettings>('/admin/settings').then((r) => r.data),
-  plans: () => apiClient.get<unknown[]>('/admin/plans').then((r) => r.data),
-  configPacks: () => apiClient.get<unknown[]>('/admin/config-packs').then((r) => r.data),
+  plans: () => apiClient.get<AdminPlan[]>('/admin/plans').then((r) => r.data),
+  createPlan: (input: Omit<AdminPlan, 'id' | 'organizations' | 'createdAt'>) => apiClient.post<AdminPlan>('/admin/plans', input).then((r) => r.data),
+  updatePlan: (id: string, input: Partial<Omit<AdminPlan, 'id' | 'organizations' | 'createdAt'>>) => apiClient.patch<AdminPlan>(`/admin/plans/${id}`, input).then((r) => r.data),
+  deletePlan: (id: string) => apiClient.delete<void>(`/admin/plans/${id}`).then((r) => r.data),
   capabilities: () => apiClient.get<AdminPermission[]>('/admin/capabilities').then((r) => r.data),
 };

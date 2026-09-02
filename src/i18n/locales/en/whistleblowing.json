@@ -869,7 +869,7 @@
     "readOnly": "Read-only oversight",
     "back": "Back to oversight",
     "title": "Whistleblowing Oversight",
-    "subtitle": "Organization-wide monitoring of reported incidents (read-only).",
+    "subtitle": "Organization-wide oversight of reported incidents. Open a case to complete actions allowed by your role.",
     "confidentialityNotice": "Confidentiality is preserved: any case a reporter has chosen to hide from your profile (conflict of interest) is excluded from these views.",
     "emptyChart": "No data yet.",
     "total": "Total",

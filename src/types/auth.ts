@@ -37,6 +37,10 @@ export interface AuthSessionPayload {
   /** Legacy migration field. New sessions keep the refresh token in an HttpOnly cookie. */
   refreshToken?: string;
   refreshTokenExpiresIn: number;
+  /** Authorization returned with an interactive login. */
+  permissions?: string[];
+  activeOrganization?: OrgContextInfo | null;
+  activeRegion?: string | null;
 }
 
 export interface EmailVerificationState {

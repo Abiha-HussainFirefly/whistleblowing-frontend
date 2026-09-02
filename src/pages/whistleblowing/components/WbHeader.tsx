@@ -17,13 +17,13 @@ export function WbHeader({ hideNav = false }: { hideNav?: boolean }): ReactEleme
   return (
     <div className="space-y-4">
       <div className="flex items-start gap-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-plum-tint text-plum">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-accent text-white shadow-sm">
           <MessageSquareWarning className="h-5 w-5" />
         </div>
 
         <div>
           <PageTitle as="h2" className="text-foreground">
-            {t('header.title', { defaultValue: 'Whistleblowing & Incident Management' })}
+            {t('header.title', { defaultValue: 'Whistleblowing & Case Management' })}
           </PageTitle>
           <p className="mt-1 text-sm text-muted-foreground">
             {t('header.subtitle', {

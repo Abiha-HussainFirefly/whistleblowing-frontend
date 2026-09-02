@@ -91,16 +91,18 @@ export function CaseProgress({
   submittedAt,
   triagedAt,
   assignedAt,
+  reviewedAt,
   closedAt,
 }: {
   status: WhistleblowingStatus;
   submittedAt: string;
   triagedAt: string | null;
   assignedAt: string | null;
+  reviewedAt: string | null;
   closedAt: string | null;
 }): ReactElement {
   const { t } = useTranslation('whistleblowing');
-  const currentStage = progressStageFor(status);
+  const currentStage = progressStageFor(status, reviewedAt);
   const steps = [
     {
       label: t('caseConsole.progress.received', { defaultValue: 'Case received' }),
@@ -114,7 +116,7 @@ export function CaseProgress({
       label: t('caseConsole.progress.investigation', { defaultValue: 'Investigation' }),
       date: assignedAt,
     },
-    { label: t('caseConsole.progress.review', { defaultValue: 'Review' }), date: null },
+    { label: t('caseConsole.progress.review', { defaultValue: 'Review' }), date: reviewedAt },
     { label: t('caseConsole.progress.resolution', { defaultValue: 'Resolution' }), date: closedAt },
   ];
   const isComplete = currentStage >= steps.length;
@@ -189,7 +191,7 @@ export function CaseProgress({
   );
 }
 
-function progressStageFor(status: WhistleblowingStatus): number {
+function progressStageFor(status: WhistleblowingStatus, reviewedAt: string | null): number {
   if (status === 'SUBMITTED') {
     return 0;
   }
@@ -200,7 +202,7 @@ function progressStageFor(status: WhistleblowingStatus): number {
     return 2;
   }
   if (status === 'RESOLVED') {
-    return 3;
+    return reviewedAt === null ? 3 : 4;
   }
   return 5;
 }

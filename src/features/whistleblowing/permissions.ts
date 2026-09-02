@@ -16,6 +16,7 @@ export const WB_PERMISSIONS = {
   create: 'whistleblowing_case:create',
   investigate: 'whistleblowing_case:investigate',
   admin: 'whistleblowing_case:admin',
+  close: 'whistleblowing_case:close',
   independent_review: 'whistleblowing_case:independent_review',
   reveal_identity: 'whistleblowing_case:reveal_identity',
 } as const;
